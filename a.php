@@ -1,2 +1,3 @@
 <?php
-ehco "a";
+echo "a";
+echo "aaaaa"
