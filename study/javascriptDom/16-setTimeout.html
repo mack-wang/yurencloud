@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+body {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<body>
+    <h2 class="title">What to buy</h2>
+    <p class="title-p" style="color:white;" id="t" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <p class="title-p2" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <div class="ddd" id="box">It`s me2</div>
+    <ul class="ul">
+        <li>apple</li>
+        <li>pear</li>
+        <li>tomato</li>
+    </ul>
+    <script type="text/javascript">
+    function addLoadEvent(func) { //加载执行代码函数，无论打算页面加载完成时执行多少个函数，只要多写一条就可以了
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function() {
+                oldonload();
+                func();
+            }
+        }
+    }
+    addLoadEvent(addcolor);//页面加载时，执行该函数
+    addLoadEvent(cleartime);//页面加载时，执行该函数
+
+    function addcolor() {
+        var p = document.getElementById('t');
+        p.style.color="red";
+        color = setTimeout("changecolor()",3000);//设置3秒后，执行下面的那个函数，并把这个计时附值给color,同时因为color未用var来定义，所以color是一个全局变量，下面的函数也可以使用这个color
+        /*clearTimeout(color);//清除color的计时*/
+    }
+
+    function changecolor(){
+        var p = document.getElementById('t');
+        p.style.color="yellow";
+    }
+
+    /*function cleartime(){
+        clearTimeout(color);//使用上面的那个全局计时变量color
+    }*/
+    </script>
+</body>
+
+</html>

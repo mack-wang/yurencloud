@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+body {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<body>
+    <button>用ajax发送get</button>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("button").click(function() {
+            $.get("demo_test.php",{ 'num' : 9 }, function(data){//num是作为get参数被传递给了demo_test.php，data是返回php的输出
+            alert("Data: " + data);
+            });
+            });
+        });
+    </script>
+</body>
+
+</html>

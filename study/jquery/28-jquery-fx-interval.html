@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+.red {
+    color: red;
+}
+</style>
+
+<body style="position:relative;">
+    <div>
+        <p>John Resig</p>
+    </div>
+    <div class="geo" style="position: absolute; top:300px;">George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form>
+        <input type="text" value="q">
+        <input type="text" value="w">
+        <input type="text" value="e">
+        <input type="text" value="r">
+    </form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+    <button onclick="fun3()">确定</button>
+    <button onclick="fun4()">确定</button>
+</body>
+<script type="text/javascript">
+$(document).ready(function() {
+    jQuery.fx.interval=1000;//设置动画帧数，原先动画的时长，移动变化都不变，但显示帧数会变少。看起来一闪一闪的
+    $(".geo").delay(500).animate({
+            left: '+1000px'
+        }, 6000) //delay设置延迟时间
+});
+
+function fun2(argument) {
+    $(".geo").stop() //控制当前动画，让动画停下来，可以用来制作游戏动画
+}
+
+function fun3(argument) {
+    $(".geo").finish() //finish()直接完成动画
+}
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+body {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<body>
+    <h2 class="title">What to buy</h2>
+    <p class="title-p" style="color:white;" id="t" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <p class="title-p2" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <div class="ddd" id="div1">It`s me2</div>
+    <button>用ajax发送get</button>
+    <ul class="ul">
+        <li>apple</li>
+        <li>pear</li>
+        <li>tomato</li>
+    </ul>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("button").click(function() {
+            $.get("demo_test.php", function(data, status) {//data是接收php返回的数据，可以是echo，return,var_dump等任何输出的信息；status是返回此次ajax的连接是否成功，成功会返回success,失败竟然没反应
+                alert("数据: " + data + "\n状态: " + status);
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

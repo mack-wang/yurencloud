@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+body {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<body>
+    <input type="text" name="username">
+    <span></span>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("input").keyup(function() {//当按键弹起时就执行下面的ajax
+            txt = $("input").val();//获得input的value值
+            $.post("demo_ajax_post.php", {//发送到服务器的demo_ajax_post.php去接收
+                username: txt//发送的数据是post键名username,键值txt
+            }, function(result) {//获得php返回的结果
+                $("span").html(result);//把结果插入span
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>

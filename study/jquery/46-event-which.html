@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+.red {
+    color: red;
+}
+</style>
+
+<body style="position:relative;">
+    <input id="whichkey" value="type something">
+      <div id="log"></div>
+      <script>
+        $('#whichkey').bind('keydown',function(e){
+        $('#log').html(e.type + ': ' +  e.which );  });//e.type返回当前的事件名称，e.which返回键盘的操作
+      </script>
+</body>
+
+</html>

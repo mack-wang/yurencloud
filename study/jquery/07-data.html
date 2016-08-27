@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+.red {
+    color: red;
+}
+</style>
+
+<body>
+    <div class="john">John Resig</div>
+    <div>George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form></form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+</body>
+<script type="text/javascript">
+function fun() {
+    $('.john').data("key", "wlc"); //用get(0)或者[0]获得的jquery对象中的第一个DOM元素，所以是DOM对象，只能DOM函数操作，不能用jQuery
+    alert($('div').data("key"))
+}
+
+/*    在元素上存放或读取数据,返回jQuery对象。
+
+当参数只有一个key的时候，为读取该jQuery对象对应DOM中存储的key对应的值，值得注意的是，如果浏览器支持HTML5，同样可以读取该DOM中使用 data-[key] = [value] 所存储的值。参见最后一个示例。
+
+当参数为两个时，为像该jQuery对象对应的DOM中存储key-value键值对的数据。
+
+
+如果jQuery集合指向多个元素，那将在所有元素上设置对应数据。 这个函数不用建立一个新的expando，就能在一个元素上存放任何格式的数据，而不仅仅是字符串。
+
+V1.4.3 新增用法, data(obj) 可传入key-value形式的数据。*/
+</script>
+
+</html>

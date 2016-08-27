@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+.red {
+    color: red;
+}
+</style>
+
+<body style="position:relative;">
+    <div>
+        <p>John Resig</p>
+    </div>
+    <div class="geo" style="position: absolute; top:300px;">George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form>
+        <input type="text" value="q">
+        <input type="text" value="w">
+        <input type="text" value="e">
+        <input type="text" value="r">
+    </form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+    <button onclick="fun3()">确定</button>
+    <button onclick="fun4()">确定</button>
+</body>
+<script type="text/javascript">
+function fun(argument) {
+    var settings = {
+        validate: false,
+        limit: 5,
+        name: "foo"
+    };
+    var options = {
+        validate: true,
+        name: "bar"
+    };
+    //jQuery.extend()，传入多个数组，会将所有数组合并，后者覆盖前者，最后的数组会附给第一个传入的数组名，
+    //即下面的结果应该是   settings == { validate: true, limit: 5, name: "bar" }
+    console.log(jQuery.extend(settings, options));//打印，和var_dump一样的功能
+}
+</script>
+
+</html>

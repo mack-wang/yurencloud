@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+    .red{
+        color: red;
+    }
+</style>
+<body>
+    <div>John Resig</div>
+    <div>George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form></form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+</body>
+<script type="text/javascript">
+    function fun() {
+        alert($('div').get(0).innerHTML);//用get(0)或者[0]获得的jquery对象中的第一个DOM元素，所以是DOM对象，只能DOM函数操作，不能用jQuery
+    }
+    function fun2() {
+        alert($('div')[0].innerHTML);
+    }
+</script>
+
+</html>

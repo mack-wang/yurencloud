@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>标题</div>
+    <div>我是内容</div>
+    <input type="button" onclick="fun()" name="" value="确认">
+</body>
+<script type="text/javascript">
+function fun() {
+    alert(isNaN(NaN));//返回true，是一个非数值
+    alert(isNaN("10"));//返回false，是一个数值,字符串，true，false，等等如果能转化成数值，则会被转化成数值，因为都会返回false
+    alert(isNaN("blue"));//不能被转化成数值，所以是一个false
+}
+</script>
+
+</html>

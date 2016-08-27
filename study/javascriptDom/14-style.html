@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+body {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<body>
+    <h2 class="title">What to buy</h2>
+    <p class="title-p" id="t" title="我是P标签的标题" style="font-family:'微软雅黑';">Don`t forget to buy this stuff</p>
+    <p class="title-p2" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <div class="ddd" id="box">It`s me2</div>
+    <ul class="ul">
+        <li>apple</li>
+        <li>pear</li>
+        <li>tomato</li>
+    </ul>
+    <script type="text/javascript">
+    var p=document.getElementById('t');
+    alert("this is id t font family "+ p.style.fontFamily);//font-family在js中的要改成驼峰命名法fontFamily
+    </script>
+</body>
+
+</html>

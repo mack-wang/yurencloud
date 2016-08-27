@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+body {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<body>
+    <h2 class="title">What to buy</h2>
+    <p class="title-p" id="t" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <p class="title-p2" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <div class="ddd" id="box">It`s me2</div>
+    <ul class="ul">
+        <li>apple</li>
+        <li>pear</li>
+        <li>tomato</li>
+    </ul>
+    <script type="text/javascript">
+    var text=document.getElementById('box');
+    var p=document.getElementById('t');
+    text.parentNode.insertBefore(text,p);//insertBefore(自已，要插的对象)就把text移动p前面，但要在p的你节点parentNode(现在是指body)下移动
+    </script>
+</body>
+
+</html>

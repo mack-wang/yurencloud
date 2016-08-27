@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+body {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<body>
+    <h2 class="title">What to buy</h2>
+    <p class="title-p" style="color:white;" id="t" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <p class="title-p2" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <div class="ddd" id="div1">It`s me2</div>
+    <button>用ajax给div1增加内容(无刷新)</button>
+    <ul class="ul">
+        <li>apple</li>
+        <li>pear</li>
+        <li>tomato</li>
+    </ul>
+    <script type="text/javascript">
+        $("button").click(function() {//点击button启动ajax
+            $.ajax({
+                url: "demo_test.txt",//到服务器下的demo_test.txt获取内容
+                success: function(result) {//把内容获取，并执行成功后的函数，给div1加内容
+                    $("#div1").html(result);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

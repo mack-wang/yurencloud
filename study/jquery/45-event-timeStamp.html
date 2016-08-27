@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+.red {
+    color: red;
+}
+</style>
+
+<body style="position:relative;">
+    <div></div>
+    <button onclick="fun()">hahahahahah</button>
+</body>
+<script type="text/javascript">
+function fun(argument) {
+    var last,diff;
+    if ($("div").data('last')) {//判断有没有毫秒级的时间戳存在div身上
+        diff = (event.timeStamp)/1000 - ($("div").data('last'))/1000;//有的话，二者相减，得出时间差
+        $('div').append('time since last event: ' + diff + '<br/>');
+    } else {
+        $('div').append('Click again.<br/>');//没有的话，要求再点击一遍
+    }
+    last=event.timeStamp;//获得当前的时间戳
+    $("div").data('last', last)//把时间戳寄存到div身上，留给下一次用，变相的static的用法，自创
+}
+
+</script>
+
+</html>

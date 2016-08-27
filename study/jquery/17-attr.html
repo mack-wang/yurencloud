@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+.red {
+    color: red;
+}
+</style>
+
+<body>
+    <div><p>John Resig</p></div>
+    <div class="geo">George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form>
+        <input type="text" value="q">
+        <input type="text" value="w">
+        <input type="text" value="e">
+        <input type="text" value="r">
+    </form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+    <button onclick="fun3()">确定</button>
+</body>
+<script type="text/javascript">
+function fun(argument) {
+    $("div").attr({
+        style: 'color:red',//设置选中元素的style为color:red，
+    });
+}
+
+function fun2(argument) {
+    alert($(".geo").attr('class'))//获取选中元素的类名
+}
+
+function fun3(argument) {
+    $("div").attr("title",function (argument) {//属性的设置，可以用函数来设置
+        var p="hello";
+        return p
+    });
+}
+</script>
+
+</html>

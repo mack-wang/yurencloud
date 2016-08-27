@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+
+<body>
+    <div>John Resig</div>
+    <div>George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form></form>
+    <button onclick="fun()">确定</button>
+</body>
+<script type="text/javascript">
+    function fun() {
+        $('<input>',{
+            type:"text",
+            val:"Test",
+            focusin:(function(event) {
+                $(this).addClass('active');
+            }),
+            focusout:(function(event) {
+                $(this).removeClass('active');
+            })
+        }).appendTo('form');//动态添加input，并添加到form上去
+    }
+</script>
+
+</html>

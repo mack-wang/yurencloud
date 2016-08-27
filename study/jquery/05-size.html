@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+    .red{
+        color: red;
+    }
+</style>
+<body>
+    <div>John Resig</div>
+    <div>George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form></form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+</body>
+<script type="text/javascript">
+    function fun() {
+        alert($('div').size());//和length的效果一样，计数功能，此处是计算选中的div的个数
+    }
+    function fun2() {
+        alert($('div').length);//和size()的效果一样，计数功能，此处是计算选中的div的个数
+    }
+</script>
+
+</html>

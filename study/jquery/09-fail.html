@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+.red {
+    color: red;
+}
+</style>
+
+<body>
+    <div>John Resig</div>
+    <div>George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form></form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+</body>
+<script type="text/javascript">
+function fun() {
+    $.get('demo_test.php')
+        .done(function() {
+            alert("$.get succeeded");
+        }) //延迟成功
+        .fail(function() {
+            alert("$.get failed!");//如果服务器没开，或者服务器没有上述的处理php文件，则会返回错误信息
+        }); //延迟失败
+}
+</script>
+
+</html>

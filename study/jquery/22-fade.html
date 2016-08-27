@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+.red {
+    color: red;
+}
+.geo{
+    display: none;
+}
+</style>
+
+<body>
+    <div><p>John Resig</p></div>
+    <div class="geo">George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form>
+        <input type="text" value="q">
+        <input type="text" value="w">
+        <input type="text" value="e">
+        <input type="text" value="r">
+    </form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+    <button onclick="fun3()">确定</button>
+    <button onclick="fun4()">确定</button>
+</body>
+<script type="text/javascript">
+function fun(argument) {
+    $(".geo").fadeIn()//下滑出现
+}
+function fun2(argument) {
+    $(".geo").fadeOut()//上滑隐藏
+}
+function fun3(argument) {
+    $(".geo").fadeToggle()//直接出现
+}
+function fun4(argument) {
+    $(".geo").fadeTo()//直接出现
+}
+</script>
+
+</html>

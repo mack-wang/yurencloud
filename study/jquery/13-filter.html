@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+    .red{
+        color: red;
+    }
+</style>
+<body>
+    <div><p>John Resig</p></div>
+    <div class="geo">George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form></form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+</body>
+<script type="text/javascript">
+    $('div').filter(function(index) {
+        return $("p", this).length == 0;//filter筛选，可以是class,可以是：first，可以是函数，基本上的筛选条件都可以用，最主要用的是函数判断条件
+    }).addClass("red");
+</script>
+
+</html>

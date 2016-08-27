@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="ajax/jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+    .red{
+        color: red;
+    }
+</style>
+<body>
+    <div>John Resig</div>
+    <div>George Martin</div>
+    <div>Malcom John Sinclair</div>
+    <div>J. Ohn</div>
+    <form></form>
+    <button onclick="fun()">确定</button>
+    <button onclick="fun2()">确定</button>
+</body>
+<script type="text/javascript">
+    function fun() {
+        $('div').each(function(i) {//遍历所有div,可以设置一个if函数，用return来停止循环
+            $(this).css('color', 'red');//$(this)是指每个jQuery选中的元素----------即选中的是jquery对象，是一个数组，可以用jquery的函数，但不对用dom的函数
+        });
+    }
+    function fun2() {
+        $('div').each(function(i) {
+            this.style="color:red;"//this是指每个DOM选中的元素，原生javascript选中的对象-----即是DOM对象，是一个元素，不可以使用jquery的函数，只能用dom函数
+        });
+    }
+</script>
+
+</html>

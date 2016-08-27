@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+body {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<body>
+    <h2 class="title">What to buy</h2>
+    <p class="title-p" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <p class="title-p2" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <div class="ddd" id="box">It`s me2</div>
+    <ul class="ul">
+        <li>apple</li>
+        <li>pear</li>
+        <li>tomato</li>
+    </ul>
+    <script type="text/javascript">
+    function addLoadEvent(func) {//加载执行代码函数，无论打算页面加载完成时执行多少个函数，只要多写一条就可以了
+        var oldonload = window.onload;
+        if (typeof window.onload !='function') {
+            window.onload = func;
+        } else {
+            window.onload = function(){
+                oldonload();
+                func();
+            }
+        }
+    }
+    addLoadEvent(function1);
+    addLoadEvent(function2);//等等，可以一直加，这些函数都会在页面加载 完成时执行完毕
+
+    </script>
+</body>
+
+</html>

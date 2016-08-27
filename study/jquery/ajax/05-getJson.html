@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+</head>
+<style type="text/css">
+body {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<body>
+    <h2 class="title">What to buy</h2>
+    <p class="title-p" style="color:white;" id="t" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <p class="title-p2" title="我是P标签的标题">Don`t forget to buy this stuff</p>
+    <div class="ddd" id="div1">It`s me2</div>
+    <button>用ajax发送get</button>
+    <ul class="ul">
+        <li>apple</li>
+        <li>pear</li>
+        <li>tomato</li>
+    </ul>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $("button").click(function() {
+            $.getJSON("demo_ajax_json.php", function(result) {//直接用ajax到demo_ajax_json.php获得返回的json数据，不包含键名，只有键值。如果不是json格式，什么都不会返回
+                $.each(result, function(i, field) {
+                    $("div").append(field + " ");
+                });
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
