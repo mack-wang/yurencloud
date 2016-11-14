@@ -13,20 +13,18 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        var uri = "http://www.yurencloud.com?name=王乐城&age=24";
-        alert(encodeURIComponent(uri));//会转译冒号斜杠中文之类的
-        alert(encodeURI(uri));//不会转译冒号斜杠之类的，会转译中文
-        //通常不会对整个uri进行转译
+    var uri = "http://www.yurencloud.com?name=王乐城&age=24";
+    alert(encodeURIComponent(uri));//会转译冒号斜杠中文之类的
+    alert(encodeURI(uri));//不会转译冒号斜杠之类的，会转译中文
+    //通常不会对整个uri进行转译
 
-        var name = "王乐城";
-        var URI = "http://www.yurencloud.com?name="+encodeURIComponent(name)+"&age=24";//这样才是常用方法
-        alert(URI);
-        var a = encodeURIComponent("王小花")
-        alert(a);
-        alert(decodeURIComponent(a));//解释编译，还原原来的字符串
+    var name = "王乐城";
+    var URI = "http://www.yurencloud.com?name=" + encodeURIComponent(name) + "&age=24";//这样才是常用方法
+    alert(URI);
+    var a = encodeURIComponent("王小花")
+    alert(a);
+    alert(decodeURIComponent(a));//解释编译，还原原来的字符串
 
-    }
 </script>
 
 </html>

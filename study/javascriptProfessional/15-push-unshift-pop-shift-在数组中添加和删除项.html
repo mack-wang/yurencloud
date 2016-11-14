@@ -13,21 +13,19 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        var color = ['red','green','blue','black'];
-        var count = color.push('dark','light');//在数组最后面插入2项，并返回新数组的length
-        alert(color);
-        alert(count);
-        var count2 = color.unshift('new','old');//在数组最前面插入2项，并返回新数组的length
-        alert(color);
-        alert(count2);
-        var last = color.pop();//取得数组的最后一项，并将其从数组中删除
-        alert(last);
-        alert(color);
-        var first = color.shift();//取得数组的第一项，并将其从数组中删除
-        alert(first);
-        alert(color);
-    }
+    var color = ['red', 'green', 'blue', 'black'];
+    var count = color.push('dark', 'light');//在数组最后面插入2项，并返回新数组的length
+    alert(color);
+    alert(count);
+    var count2 = color.unshift('new', 'old');//在数组最前面插入2项，并返回新数组的length
+    alert(color);
+    alert(count2);
+    var last = color.pop();//取得数组的最后一项，并将其从数组中删除
+    alert(last);
+    alert(color);
+    var first = color.shift();//取得数组的第一项，并将其从数组中删除
+    alert(first);
+    alert(color);
 </script>
 
 </html>

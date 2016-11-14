@@ -16,7 +16,7 @@
     function fun1() {
         var str = "i have a beautiful summer vacation";
         var pattern = /ummer/g;
-        if(pattern.test(str)){
+        if (pattern.test(str)) {
             alert(RegExp.input); //返回要匹配的字符串全内容
             alert(RegExp.leftContext);//返回ummer左边的内容
             alert(RegExp.rightContext);//返回ummmer右边的内容，即vacation
@@ -30,7 +30,7 @@
     function fun2() {
         var str = "i have a beautiful summer vacation";
         var pattern = /ummer/g;
-        if(pattern.test(str)){//是上面的简写
+        if (pattern.test(str)) {//是上面的简写
             alert(RegExp.$_); //返回要匹配的字符串全内容
             alert(RegExp["$&"]);//返回ummer左边的内容
             alert(RegExp["$+"]);//返回ummmer右边的内容，即vacation

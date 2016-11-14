@@ -15,17 +15,17 @@
 <script type="text/javascript">
 
 
-
     //借用构造函数继承
     function fun1() {
         function A() {
-            this.color = ['green','red','yellow'];
+            this.color = ['green', 'red', 'yellow'];
         }
 
         function B() {
             //继承A函数,我觉得原理其实就是B函数中嵌套了A函数，所以B继承了A
-                A.call(this);
+            A.call(this);
         }
+
         //实例化B函数，生成instance实例对象
         var instance = new B();
         alert(instance.color);

@@ -13,22 +13,20 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        var person = {
-            name : "wlc",
-            age : 24,
-            height : "174cm"
-        };
+    var person = {
+        name: "wlc",
+        age: 24,
+        height: "174cm"
+    };
 
-        Object.defineProperty(person, "name",{//此处设置了person的name属性不可写，所以下文的wlc3没有生效
-            writable: false,
-            value: "wlc2"
-        });
+    Object.defineProperty(person, "name", {//此处设置了person的name属性不可写，所以下文的wlc3没有生效
+        writable: false,
+        value: "wlc2"
+    });
 
-        alert(person.name);
-        person.name = "wlc3";
-        alert(person.name);
-    }
+    alert(person.name);
+    person.name = "wlc3";
+    alert(person.name);
 
 </script>
 

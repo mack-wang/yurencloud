@@ -13,22 +13,20 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        function Person(name,age,job) {//构造函数
-            this.name = name;
-            this.age = age;
-            this.job = job;
-            this.sayname=function () {
-                alert(this.name);
-            }
+    function Person(name, age, job) {//构造函数
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.sayname = function () {
+            alert(this.name);
         }
-        var person = new Person("wlc","23","design");//使用了new，新建了实例，就是构造函数的使用
-        person.sayname();
-
-        Person('wlc2','23','design');//如果没有使用new，直接把他当成普通函数，也是可以使用的，但对象的主体是window
-        window.sayname();
-
     }
+    var person = new Person("wlc", "23", "design");//使用了new，新建了实例，就是构造函数的使用
+    person.sayname();
+
+    Person('wlc2', '23', 'design');//如果没有使用new，直接把他当成普通函数，也是可以使用的，但对象的主体是window
+    window.sayname();
+
 </script>
 
 </html>

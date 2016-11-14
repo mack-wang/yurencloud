@@ -13,13 +13,11 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        //js的参数是比较松散的，可以传任意类型，任意数量，因为所有的参数都被arguments这个对象接收了，可以看作一个数组，通过索引按顺序去访问每个参数
-        function callSome() {
-            alert("我在叫你们名字"+arguments[0]+","+arguments[1]+","+arguments[2]+","+arguments[3]+","+arguments[4]+","+arguments.length+",")
-        }
-        callSome('tom','sam','cindy','linda');
+    //js的参数是比较松散的，可以传任意类型，任意数量，因为所有的参数都被arguments这个对象接收了，可以看作一个数组，通过索引按顺序去访问每个参数
+    function callSome() {
+        alert("我在叫你们名字" + arguments[0] + "," + arguments[1] + "," + arguments[2] + "," + arguments[3] + "," + arguments[4] + "," + arguments.length + ",")
     }
+    callSome('tom', 'sam', 'cindy', 'linda');
 </script>
 
 </html>

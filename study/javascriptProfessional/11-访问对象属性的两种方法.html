@@ -13,19 +13,17 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        var person = {
-            name : 'wlc',
-            age : 24
-        }
-        alert(person.name);
-        alert(person.age);
-        alert(person['name']);//用方括号，像访问数组一样访问对象中的属性值
-        alert(person['age']);
+    var person = {
+        name: 'wlc',
+        age: 24
+    };
+    alert(person.name);
+    alert(person.age);
+    alert(person['name']);//用方括号，像访问数组一样访问对象中的属性值
+    alert(person['age']);
 
-        var myname = 'name';
-        alert(person[myname]);//用方括号的好处是，可以在括号内使用变量
-    }
+    var myname = 'name';
+    alert(person[myname]);//用方括号的好处是，可以在括号内使用变量
 </script>
 
 </html>

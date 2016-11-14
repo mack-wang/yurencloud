@@ -13,13 +13,11 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        var a = "yellow";
-        alert(a.localeCompare("black"));//b比y先，所以返回1
-        alert(a.localeCompare("yea"));//a比l先，所以返回1,因为前两个字母一样，所以比较第三个字母
-        alert(a.localeCompare("yellow"));//相等，所以返回0
-        alert(a.localeCompare("zoom"));//z比y后，所以返回-1z
-    }
+    var a = "yellow";
+    alert(a.localeCompare("black"));//b比y先，所以返回1
+    alert(a.localeCompare("yea"));//a比l先，所以返回1,因为前两个字母一样，所以比较第三个字母
+    alert(a.localeCompare("yellow"));//相等，所以返回0
+    alert(a.localeCompare("zoom"));//z比y后，所以返回-1z
 </script>
 
 </html>

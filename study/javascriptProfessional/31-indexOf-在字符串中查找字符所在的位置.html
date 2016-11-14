@@ -13,13 +13,11 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        var str = "hello world how are you";
-        alert(str.indexOf("o"));//从前往后数的第一个o所在的位置是4
-        alert(str.indexOf("o",6));//从6开始向后数，所以是world的7
-        alert(str.lastIndexOf("o"));//从后往前数第一个o所有的位置是you，是21
-        alert(str.lastIndexOf("o",6));//从6往前数，所以是hello的4
-    }
+    var str = "hello world how are you";
+    alert(str.indexOf("o"));//从前往后数的第一个o所在的位置是4
+    alert(str.indexOf("o", 6));//从6开始向后数，所以是world的7
+    alert(str.lastIndexOf("o"));//从后往前数第一个o所有的位置是you，是21
+    alert(str.lastIndexOf("o", 6));//从6往前数，所以是hello的4
 </script>
 
 </html>

@@ -13,23 +13,21 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        function Person() {//新建一个函数，会自动创建constructor原型（这个就是指Person）;还有prototype属性
-        }
-
-        Person.prototype.name = "wlc";//通过prototype来设置原型属性//原型属性的原理是：当实例person1访问name时，会先访问Person.name,如果没有
-        Person.prototype.age = 23;//就继续访问Person的原型属性，Person.prototype.name
-        Person.prototype.job = "design";
-        Person.prototype.sayname= function () {
-            alert(this.name)
-        }
-
-        var person1 = new Person();
-        var person2 = new Person();
-        person1.name = "wlc2";
-        alert(person1.name);//弹出wlc2，是由实例后设置的
-        alert(person2.name);//弹出wlc，是原型属性
+    function Person() {//新建一个函数，会自动创建constructor原型（这个就是指Person）;还有prototype属性
     }
+
+    Person.prototype.name = "wlc";//通过prototype来设置原型属性//原型属性的原理是：当实例person1访问name时，会先访问Person.name,如果没有
+    Person.prototype.age = 23;//就继续访问Person的原型属性，Person.prototype.name
+    Person.prototype.job = "design";
+    Person.prototype.sayname = function () {
+        alert(this.name)
+    }
+
+    var person1 = new Person();
+    var person2 = new Person();
+    person1.name = "wlc2";
+    alert(person1.name);//弹出wlc2，是由实例后设置的
+    alert(person2.name);//弹出wlc，是原型属性
 </script>
 
 </html>

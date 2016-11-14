@@ -13,23 +13,21 @@
 <button onclick="fun5()">fun5</button>
 </body>
 <script type="text/javascript">
-    function fun1() {
-        function Person(name, age, job) {//封装，函数传入参数，参数作为对象的属性。
-            var o = new Object();
-            o.name = name;
-            o.age = age;
-            o.job = job;
-            o.sayname = function () {
-                alert(this.name);
-            }
-            return o;
+    function Person(name, age, job) {//封装，函数传入参数，参数作为对象的属性。
+        var o = new Object();
+        o.name = name;
+        o.age = age;
+        o.job = job;
+        o.sayname = function () {
+            alert(this.name);
         }
-
-        var person1 = Person("wlc","23","design");
-        alert(person1.name);
-
-
+        return o;
     }
+
+    var person1 = Person("wlc", "23", "design");
+    alert(person1.name);
+
+
 </script>
 
 </html>
