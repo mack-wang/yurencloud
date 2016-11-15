@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        //会弹出一个确认和取消按钮的窗口，提供用户选择，选择确认，会返回true,选择取消，会返回false
+        if(confirm("你确认要删除吗？")){
+            alert("删除成功")
+        }else{
+            alert("已经取消删除")
+        }
+    }
+</script>
+
+</html>

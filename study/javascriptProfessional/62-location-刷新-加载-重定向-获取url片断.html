@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        //返回#号后的内容
+        alert(location.hash);
+        //返回域名+口号
+        alert(location.host);
+        //返回域名
+        alert(location.hostname);
+        //返回完整uri链接地址
+        alert(location.href);
+        //返回域名后面的文件地址
+        alert(location.pathname);
+        //返回端口号
+        alert(location.port);
+        //返回协议名
+        alert(location.protocol);
+        //返回？后的参数
+        alert(location.earch);
+    }
+
+    //刷新，reload，原理：地址.链接=跳转到当前链接
+    function fun2() {
+        location.href=location.href;
+    }
+
+    //重定向,redirect,原理：地址.链接=跳转到指定链接。一定要加http://，不加的话，会变成参数，不跳转
+    function fun3() {
+        location.href="http://www.yurencloud.com";
+    }
+    
+</script>
+
+</html>

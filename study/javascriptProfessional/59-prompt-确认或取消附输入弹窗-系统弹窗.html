@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        //会弹出一个确认和取消按钮的窗口，以及一个输入框。会显示默认值，即第二个参数。若没输入，则返回null；若有输入，则返回输入的字符串
+        var str = prompt("请输入你的名字","默认暂无");
+
+        if((str != null)){
+            alert(str)
+        }else{
+            alert("您没有填写名字")
+        }
+    }
+</script>
+
+</html>
