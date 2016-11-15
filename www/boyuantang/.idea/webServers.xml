@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b69c678c-e8a4-4d78-9bce-6ba41a6dd7c3" name="yurencloud" url="http://www.yurencloud.com">
+        <fileTransfer host="www.yurencloud.com" port="22" rootFolder="/data/wwwroot/wordpress/boyuantang" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

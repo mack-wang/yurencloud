@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - boyuantang@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="boyuantang">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="book"/>
+    <schema id="3" name="information_schema"/>
+    <schema id="4" name="intellij"/>
+    <schema id="5" name="mysql"/>
+    <schema id="6" name="performance_schema"/>
+    <schema id="7" name="sys"/>
+    <schema id="8" name="ynzy"/>
+    <table id="9" parent="1" name="group"/>
+    <table id="10" parent="1" name="manager"/>
+    <table id="11" parent="1" name="member"/>
+    <table id="12" parent="1" name="member_address"/>
+    <table id="13" parent="1" name="member_scores"/>
+    <table id="14" parent="1" name="shop"/>
+    <table id="15" parent="1" name="shop_address"/>
+    <table id="16" parent="1" name="shop_scores"/>
+    <table id="17" parent="1" name="shop_code"/>
+    <column id="18" parent="9" name="group_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="19" parent="9" name="group_name">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="20" parent="9" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="21" parent="9" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="22" parent="9" name="PRIMARY">
+      <columns>group_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="23" parent="10" name="manager_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="24" parent="10" name="manager_name">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="25" parent="10" name="password">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="26" parent="10" name="password_comfirm">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="27" parent="10" name="manager_phone">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="28" parent="10" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="29" parent="10" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="30" parent="10" name="PRIMARY">
+      <columns>manager_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="31" parent="11" name="member_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="32" parent="11" name="shop_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="33" parent="11" name="member_nickname">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="34" parent="11" name="member_name">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="35" parent="11" name="member_phone">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="36" parent="11" name="member_headimgurl">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="37" parent="11" name="member_openid">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="38" parent="11" name="member_sex">
+      <data-type>varchar(2)|0</data-type>
+    </column>
+    <column id="39" parent="11" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="40" parent="11" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="41" parent="11" name="PRIMARY">
+      <columns>member_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="42" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="43" parent="12" name="member_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="44" parent="12" name="member_province">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="45" parent="12" name="member_city">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="46" parent="12" name="member_county">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="47" parent="12" name="member_address">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="48" parent="12" name="member_postcode">
+      <data-type>tinyint(8)|0</data-type>
+    </column>
+    <column id="49" parent="12" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="50" parent="12" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="51" parent="12" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="52" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="53" parent="13" name="member_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="54" parent="13" name="member_total_scores">
+      <data-type>tinyint(8)|0</data-type>
+    </column>
+    <column id="55" parent="13" name="member_left_scores">
+      <data-type>tinyint(8)|0</data-type>
+    </column>
+    <column id="56" parent="13" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="57" parent="13" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="58" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="59" parent="14" name="shop_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="60" parent="14" name="group_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="61" parent="14" name="shop_name">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="62" parent="14" name="shop_phone">
+      <data-type>varchar(11)|0</data-type>
+    </column>
+    <column id="63" parent="14" name="shop_headimgurl">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="64" parent="14" name="shop_openid">
+      <data-type>varchar(60)|0</data-type>
+    </column>
+    <column id="65" parent="14" name="shop_nickname">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="66" parent="14" name="shop_number">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="67" parent="14" name="shop_owner_name">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="68" parent="14" name="shop_note">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="69" parent="14" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="70" parent="14" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="71" parent="14" name="PRIMARY">
+      <columns>shop_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="72" parent="15" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="73" parent="15" name="shop_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="74" parent="15" name="shop_province">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="75" parent="15" name="shop_city">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="76" parent="15" name="shop_county">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="77" parent="15" name="shop_address">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="78" parent="15" name="shop_postcode">
+      <data-type>tinyint(8)|0</data-type>
+    </column>
+    <column id="79" parent="15" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="80" parent="15" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="81" parent="15" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="82" parent="16" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="83" parent="16" name="shop_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="84" parent="16" name="shop_total_scores">
+      <data-type>tinyint(8)|0</data-type>
+    </column>
+    <column id="85" parent="16" name="shop_left_scores">
+      <data-type>tinyint(8)|0</data-type>
+    </column>
+    <column id="86" parent="16" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="87" parent="16" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="88" parent="16" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="89" parent="17" name="code_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="90" parent="17" name="shop_phone">
+      <data-type>varchar(11)|0</data-type>
+    </column>
+    <column id="91" parent="17" name="shop_code">
+      <data-type>varchar(6)|0</data-type>
+    </column>
+    <column id="92" parent="17" name="created_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <column id="93" parent="17" name="updated_at">
+      <data-type>timestamp|0</data-type>
+    </column>
+    <key id="94" parent="17" name="PRIMARY">
+      <columns>code_id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
