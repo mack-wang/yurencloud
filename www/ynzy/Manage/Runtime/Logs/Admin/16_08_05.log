@@ -1,0 +1,261 @@
+[ 2016-08-05T15:07:56+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-05T16:37:32+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-05T16:37:33+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-05T16:37:54+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Wed/del?wed_id=10
+ERR: 非法操作:del
+
+[ 2016-08-05T16:40:37+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-05T17:34:29+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_auth' doesn't exist
+
+[ 2016-08-05T17:39:47+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'auth_id' in 'order clause'
+
+[ 2016-08-05T17:53:33+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/delGift?auth_gift_id=22
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_auth_gift' doesn't exist
+
+[ 2016-08-05T17:55:02+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/delGift?auth_gift_id=22
+ERR: Think\Model:del方法不存在！
+
+[ 2016-08-05T17:55:11+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/delGift?auth_gift_id=22
+ERR: Think\Model:del方法不存在！
+
+[ 2016-08-05T18:07:19+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_auth' doesn't exist
+
+[ 2016-08-05T18:08:02+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_auth' doesn't exist
+
+[ 2016-08-05T18:22:52+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_page' doesn't exist
+
+[ 2016-08-05T20:09:44+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_authgift' doesn't exist
+
+[ 2016-08-05T20:09:45+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_authgift' doesn't exist
+
+[ 2016-08-05T20:09:46+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_authgift' doesn't exist
+
+[ 2016-08-05T20:10:51+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:11:08+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:11:20+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+NOTIC: D方法实例化没找到模型类.\Model\AuthGiftModel
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:11:34+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_authgift' doesn't exist
+
+[ 2016-08-05T20:12:48+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:13:15+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:13:16+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:14:25+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+NOTIC: D方法实例化没找到模型类Model\Model\AuthgiftModel
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:14:27+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+NOTIC: D方法实例化没找到模型类Model\Model\AuthgiftModel
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:15:37+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+NOTIC: D方法实例化没找到模型类Model\Model\AuthgiftModel
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:15:40+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+NOTIC: D方法实例化没找到模型类Model\Model\AuthgiftModel
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:16:20+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+NOTIC: D方法实例化没找到模型类Model\Model\AuthgiftModel
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-05T20:17:10+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_auth_gift' doesn't exist
+
+[ 2016-08-05T20:57:32+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Shop\shop.html"  on line 66 "&lt;a href=&quot;javascript:;&quot; onclick=&quot;if(confirm('确认要删除该商品么？')){del_shop({$v.shop_id})}&quot;&gt;&lt;i class=&quot;icon-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;" unknown function "del_shop"
+
+[ 2016-08-05T21:00:03+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Shop\shop.html"  on line 71 "data:{'shop_id':shop_id},"  - Unexpected ":", expected one of: "}" , " "
+
+[ 2016-08-05T21:00:52+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Shop\shop.html"  on line 67 "&lt;a href=&quot;javascript:;&quot; onclick=&quot;if(confirm('确认要删除该商品么？')){del_shop({$v.shop_id})}&quot;&gt;&lt;i class=&quot;icon-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;" unknown function "del_shop"
+
+[ 2016-08-05T21:02:48+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Shop\shop.html"  on line 71 "data:{'shop_id':shop_id},"  - Unexpected ":", expected one of: "}" , " "
+
+[ 2016-08-05T21:03:23+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Shop\shop.html"  on line 82 "&lt;a href=&quot;javascript:;&quot; onclick=&quot;if(confirm('确认要删除该商品么？')){del_shop({$v.shop_id})}&quot;&gt;&lt;i class=&quot;icon-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;" unknown function "del_shop"
+
+[ 2016-08-05T21:04:11+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=18
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001572s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0383s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='18' ) [ RunTime:0.0027s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001152s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001288s ]
+
+[ 2016-08-05T21:04:29+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=19
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001544s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0352s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='19' ) [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001012s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001123s ]
+
+[ 2016-08-05T21:04:36+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=13
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001459s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0457s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='13' ) [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000904s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001002s ]
+
+[ 2016-08-05T21:04:52+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=22
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001134s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0376s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='22' ) [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001226s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001377s ]
+
+[ 2016-08-05T21:10:04+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/%7B$smarty.const.__CONTROLLER__%7D/del?shop_id=%5Bobject+Object%5D
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+ERR: 非法操作:{$smarty.const.__CONTROLLER__}
+
+[ 2016-08-05T21:11:30+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=31
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001014s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001726s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0415s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='31' ) [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001154s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001282s ]
+
+[ 2016-08-05T21:38:04+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/__MODULE__/Shop/shop
+ERR: 非法操作:__MODULE__
+
+[ 2016-08-05T21:38:18+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/__MODULE__/Shop/shop
+ERR: 非法操作:__MODULE__
+
+[ 2016-08-05T21:50:58+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/__MODULE__/Shop/shop
+ERR: 非法操作:__MODULE__
+
+[ 2016-08-05T21:51:08+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/__MODULE__/Shop/shop
+ERR: 非法操作:__MODULE__
+
+[ 2016-08-05T21:51:11+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 31 "&lt;li&gt;&lt;a class=&quot;left-btn&quot; href=&quot;{__MODULE__}/Shop/shop&quot; target=&quot;right&quot;&gt;店铺管理&lt;/a&gt;&lt;/li&gt;" unknown tag "__MODULE__"
+
+[ 2016-08-05T21:52:15+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 1 "{__NOLAYOUT__}" unknown tag "__NOLAYOUT__"
+
+[ 2016-08-05T21:52:18+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 1 "{__NOLAYOUT__}" unknown tag "__NOLAYOUT__"
+
+[ 2016-08-05T21:52:38+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 32 "&lt;li&gt;&lt;a class=&quot;left-btn&quot; href=&quot;{__MODULE__}/Shop/shop&quot; target=&quot;right&quot;&gt;店铺管理&lt;/a&gt;&lt;/li&gt;" unknown tag "__MODULE__"
+
+[ 2016-08-05T21:52:41+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 32 "&lt;li&gt;&lt;a class=&quot;left-btn&quot; href=&quot;{__MODULE__}/Shop/shop&quot; target=&quot;right&quot;&gt;店铺管理&lt;/a&gt;&lt;/li&gt;" unknown tag "__MODULE__"
+
+[ 2016-08-05T21:52:59+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 1 "{__NOLAYOUT__}" unknown tag "__NOLAYOUT__"
+
+[ 2016-08-05T21:53:15+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 1 "{__NOLAYOUT__}" unknown tag "__NOLAYOUT__"
+
+[ 2016-08-05T21:53:53+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 32 "&lt;li&gt;&lt;a class=&quot;left-btn&quot; href=&quot;{__MODULE__}/Shop/shop&quot; target=&quot;right&quot;&gt;店铺管理&lt;/a&gt;&lt;/li&gt;" unknown tag "__MODULE__"
+
+[ 2016-08-05T21:53:54+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 32 "&lt;li&gt;&lt;a class=&quot;left-btn&quot; href=&quot;{__MODULE__}/Shop/shop&quot; target=&quot;right&quot;&gt;店铺管理&lt;/a&gt;&lt;/li&gt;" unknown tag "__MODULE__"
+
+[ 2016-08-05T21:53:56+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 32 "&lt;li&gt;&lt;a class=&quot;left-btn&quot; href=&quot;{__MODULE__}/Shop/shop&quot; target=&quot;right&quot;&gt;店铺管理&lt;/a&gt;&lt;/li&gt;" unknown tag "__MODULE__"
+
+[ 2016-08-05T21:54:08+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 32 "&lt;li&gt;&lt;a class=&quot;left-btn&quot; href=&quot;{__MODULE__}/Shop/shop&quot; target=&quot;right&quot;&gt;店铺管理&lt;/a&gt;&lt;/li&gt;" unknown tag "__MODULE__"
+
+[ 2016-08-05T21:54:10+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 32 "&lt;li&gt;&lt;a class=&quot;left-btn&quot; href=&quot;{__MODULE__}/Shop/shop&quot; target=&quot;right&quot;&gt;店铺管理&lt;/a&gt;&lt;/li&gt;" unknown tag "__MODULE__"
+
+[ 2016-08-05T21:54:58+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 1 "{__NOLAYOUT__}" unknown tag "__NOLAYOUT__"
+
+[ 2016-08-05T21:57:25+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 3 "{__NOLAYOUT__}" unknown tag "__NOLAYOUT__"
+
+[ 2016-08-05T21:58:59+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "F:/WWW/ynzy/Manage/Admin/View\Index\left.html"  on line 3 "{__NOLAYOUT__}" unknown tag "__NOLAYOUT__"
+
+[ 2016-08-05T21:59:35+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'auth_id' in 'order clause'
+
+[ 2016-08-05T21:59:44+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/wedauth
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_authwed' doesn't exist
+
+[ 2016-08-05T21:59:55+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'auth_id' in 'order clause'
+
+[ 2016-08-05T22:00:12+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'auth_id' in 'order clause'
+
+[ 2016-08-05T22:29:20+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=32
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0287s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='32' ) [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000838s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000926s ]
+
+[ 2016-08-05T22:36:18+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'auth_id' in 'order clause'
+
+[ 2016-08-05T22:46:31+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/update
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_auth' doesn't exist
+
+[ 2016-08-05T22:47:25+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/delGift?auth_gift_id=26
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_authgift' doesn't exist
+
+[ 2016-08-05T22:52:29+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/giftauth
+ERR: Think\Model:assign方法不存在！
+
+[ 2016-08-05T23:33:13+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/delWed?auth_wed_id=23
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_authwed' doesn't exist
+
+[ 2016-08-05T23:35:17+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'auth_wed_id' in 'order clause'
+

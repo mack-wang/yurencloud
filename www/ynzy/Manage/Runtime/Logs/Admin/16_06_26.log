@@ -1,0 +1,99 @@
+[ 2016-06-26T09:02:51+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-06-26T09:27:28+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "E:/wamp/www/ynzy/Manage/Admin/View\Index\left.html"  on line 11 "html{overflow-x: hidden;/* 禁止横向滚动条 */}"  - Unexpected ": ", expected one of: "}" , " "
+
+[ 2016-06-26T09:27:28+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/right.html
+ERR: Syntax Error in template "E:/wamp/www/ynzy/Manage/Admin/View\Index\right.html"  on line 11 "html{overflow-x: hidden;/* 禁止横向滚动条 */}"  - Unexpected ": ", expected one of: "}" , " "
+
+[ 2016-06-26T09:27:36+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/left.html
+ERR: Syntax Error in template "E:/wamp/www/ynzy/Manage/Admin/View\Index\left.html"  on line 11 "html{overflow-x: hidden;/* 禁止横向滚动条 */}"  - Unexpected ": ", expected one of: "}" , " "
+
+[ 2016-06-26T10:26:14+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-06-26T10:38:07+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/del?auth_id=2
+ERR: 非法操作:del
+
+[ 2016-06-26T10:59:16+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/update
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'shop_id' inconnu dans order clause
+
+[ 2016-06-26T11:31:25+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/update
+ERR: 模板不存在:E:/wamp/www/ynzy/Manage/Admin/View/Auth/update.html
+
+[ 2016-06-26T11:37:28+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-26T11:39:20+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/auth.html
+ERR: 非法操作:auth
+
+[ 2016-06-26T12:33:17+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/wedauth
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'auth_wed' inconnu dans where clause
+
+[ 2016-06-26T12:33:56+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/wedauth
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'auth_wed' inconnu dans where clause
+
+[ 2016-06-26T12:34:11+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/wedauth
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'auth_wed' inconnu dans where clause
+
+[ 2016-06-26T12:48:56+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/update
+ERR: Think\Model:fetchData方法不存在！
+
+[ 2016-06-26T12:49:04+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/update
+ERR: Think\Model:fetchData方法不存在！
+
+[ 2016-06-26T13:02:55+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/del?auth_id=7
+ERR: 非法操作:del
+
+[ 2016-06-26T14:48:16+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group.html
+ERR: 非法操作:group
+
+[ 2016-06-26T14:49:10+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: 非法操作:group
+
+[ 2016-06-26T14:49:42+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: 非法操作:group
+
+[ 2016-06-26T14:50:08+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: 非法操作:group
+
+[ 2016-06-26T14:54:17+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'group_id' inconnu dans order clause
+
+[ 2016-06-26T14:55:33+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'group_id' inconnu dans order clause
+
+[ 2016-06-26T14:56:09+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'group_id' inconnu dans order clause
+
+[ 2016-06-26T14:58:17+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'group_id' inconnu dans order clause
+
+[ 2016-06-26T14:58:20+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'group_id' inconnu dans order clause
+
+[ 2016-06-26T14:59:35+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'group_id' inconnu dans order clause
+
+[ 2016-06-26T15:01:43+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'group_id' inconnu dans order clause
+
+[ 2016-06-26T15:10:30+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/updategroup
+ERR: 非法操作:updategroup
+
+[ 2016-06-26T15:18:05+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/admin
+ERR: 非法操作:admin
+
+[ 2016-06-26T15:45:45+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/change_group?group_id=2
+ERR: 参数错误或者未定义:shop_id
+
+[ 2016-06-26T17:40:04+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/changepwd
+ERR: Syntax Error in template "E:/wamp/www/ynzy/Manage/Admin/View\Manage\changepwd.html"  on line 27 "&lt;input type=&quot;text&quot; name=&quot;password&quot; pattern=&quot;^([\w]|[\、\~\`\!\@\#\$\%\^\&amp;\*\(\)\_\+\|\{\}\[\]\/\&lt;\&gt;\,\.\=\-\￥\]){6,32}$&quot;&gt;"  - Unexpected "\"
+
+[ 2016-06-26T19:06:00+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-26T20:28:01+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+

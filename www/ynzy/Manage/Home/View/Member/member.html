@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大美云南管理后台</title>
+    <link rel="stylesheet" type="text/css" href="{$smarty.const.HOME_CSS_URL}basic.css">
+    <script type="text/javascript" src="{$smarty.const.HOME_JS_URL}jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="{$smarty.const.HOME_JS_URL}main.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<script>
+wx.config({
+    debug: true, //调式模式，设置为ture后会直接在网页上弹出调试信息，用于排查问题
+    appId: '{$signPackage.appId}',
+    timestamp: '{$signPackage.timestamp}',
+    nonceStr: '{$signPackage.nonceStr}',
+    signature: '{$signPackage.signature}',
+    jsApiList: [ //需要使用的网页服务接口
+        'checkJsApi', //判断当前客户端版本是否支持指定JS接口
+        'onMenuShareTimeline', //分享给好友
+        'onMenuShareAppMessage', //分享到朋友圈
+        'onMenuShareQQ', //分享到QQ
+        'onMenuShareWeibo' //分享到微博
+    ]
+});
+wx.ready(function() { //ready函数用于调用API，如果你的网页在加载后就需要自定义分享和回调功能，需要在此调用分享函数。//如果是微信游戏结束后，需要点击按钮触发得到分值后分享，这里就不需要调用API了，可以在按钮上绑定事件直接调用。因此，微信游戏由于大多需要用户先触发获取分值，此处请不要填写如下所示的分享API
+    wx.onMenuShareTimeline({ //例如分享到朋友圈的API
+        title: '', // 分享标题
+        link: '', // 分享链接
+        imgUrl: '', // 分享图标
+        success: function() {
+            // 用户确认分享后执行的回调函数
+        },
+        cancel: function() {
+            // 用户取消分享后执行的回调函数
+        }
+    });
+    wx.onMenuShareAppMessage({
+    title: '你好', // 分享标题
+    desc: '', // 分享描述
+    link: '', // 分享链接
+    imgUrl: '', // 分享图标
+    type: '', // 分享类型,music、video或link，不填默认为link
+    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+    success: function () {
+        // 用户确认分享后执行的回调函数
+    },
+    cancel: function () {
+        // 用户取消分享后执行的回调函数
+    }
+});
+});
+wx.error(function(res) {
+    alert(res.errMsg); //打印错误消息。及把 debug:false,设置为debug:ture就可以直接在网页上看到弹出的错误提示
+});
+</script>
+
+<body>
+    <header class="home-top">
+        <img src="{$smarty.const.HOME_IMG_URL}logo.png" alt="logo" class="home-logo">
+    </header>
+    <div class="tijiao">
+        <form action="{$smarty.const.__CONTROLLER_}/addmember" method="post" enctype="multipart/form-data" id="btnform">
+            <input type="text" name="shop_tel" maxlength="20" placeholder="  注册手机号" class="text-input" value="{$smarty.session.shop_tel}">
+            <input type="button" value="获取验证码" class="submit-input" id="tijiao-btn">
+        </form>
+        <form action="{$smarty.const.__CONTROLLER__}/logincheck" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="session_id" value="{$session_id}">
+            <input type="text" name="shotcode" placeholder="  填写验证码" class="text-input">
+            <input type="submit" name="admin_password" value="提交" class="submit-input">
+            <div class="info-input">{$info}</div>
+        </form>
+        <span class="span-input">© 博渊堂 · 版权所有 2013-2018</span>
+    </div>
+</body>
+
+</html>

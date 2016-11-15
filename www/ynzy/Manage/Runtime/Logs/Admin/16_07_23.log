@@ -1,0 +1,9 @@
+[ 2016-07-23T09:05:29+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/login
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-07-23T09:07:00+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/login
+ERR: SQLSTATE[42000] [1049] Unknown database 'ynzy'
+
+[ 2016-07-23T09:11:21+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+

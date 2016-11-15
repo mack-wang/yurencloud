@@ -1,0 +1,138 @@
+[ 2016-08-12T00:00:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0409s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001533s ]
+
+[ 2016-08-12T00:00:50+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001282s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000743s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000846s ]
+
+[ 2016-08-12T00:00:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000531s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000605s ]
+
+[ 2016-08-12T00:01:05+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001443s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0426s ]
+SQL: UPDATE `yn_shop` SET `shop_headimgurl`=NULL,`shop_openid`=NULL,`shop_nickname`=NULL,`register_time`='2016-08-12 00:01:02' WHERE `shop_tel` = '15757130092' [ RunTime:0.0021s ]
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: Access denied for user ''@'localhost' (using password: NO) F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: A link to the server could not be established F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002136s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002430s ]
+
+[ 2016-08-12T00:01:05+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/tips?key=false
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001501s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010468s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010560s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000370s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000527s ]
+
+[ 2016-08-12T00:01:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001420s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0443s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001120s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001221s ]
+
+[ 2016-08-12T00:01:32+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2016-08-12T00:01:43+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001176s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000547s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000628s ]
+
+[ 2016-08-12T00:01:47+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000672s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000763s ]
+
+[ 2016-08-12T00:01:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001144s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0381s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001144s ]
+
+[ 2016-08-12T00:01:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000885s ]
+
+[ 2016-08-12T00:01:58+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001895s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001110s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001265s ]
+
+[ 2016-08-12T00:02:02+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001158s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0382s ]
+SQL: UPDATE `yn_shop` SET `shop_headimgurl`=NULL,`shop_openid`=NULL,`shop_nickname`=NULL,`register_time`='2016-08-12 00:02:00' WHERE `shop_tel` = '15757130092' [ RunTime:0.0018s ]
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: Access denied for user ''@'localhost' (using password: NO) F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: A link to the server could not be established F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002019s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002265s ]
+
+[ 2016-08-12T00:02:02+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/tips?key=false
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000863s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001479s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013637s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013727s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000522s ]
+

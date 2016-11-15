@@ -1,0 +1,18 @@
+[ 2016-07-06T14:35:43+08:00 ] 127.0.0.1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-07-06T14:38:11+08:00 ] 127.0.0.1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-07-06T14:38:12+08:00 ] 127.0.0.1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-07-06T14:38:13+08:00 ] 127.0.0.1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-07-06T14:38:18+08:00 ] 127.0.0.1 /ynzy/Manage/index.php/Admin/Wed/wedshop
+ERR: 无法加载控制器:Wed
+
+[ 2016-07-06T15:53:14+08:00 ] 127.0.0.1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+

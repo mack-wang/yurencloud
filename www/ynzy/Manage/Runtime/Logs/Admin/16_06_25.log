@@ -1,0 +1,72 @@
+[ 2016-06-25T10:21:38+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shopdel?del_id=7
+ERR: 非法操作:shopdel
+
+[ 2016-06-25T10:22:33+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?del_id=5
+ERR: 参数错误或者未定义:shop_id
+
+[ 2016-06-25T10:23:49+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?Shop_id=7
+ERR: 参数错误或者未定义:shop_id
+
+[ 2016-06-25T10:24:21+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shopdel?Shop_id=7
+ERR: 无法加载控制器:Shopdel
+
+[ 2016-06-25T16:03:36+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/admin.html
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 La table 'ynzy.yn_manage' n'existe pas
+
+[ 2016-06-25T16:06:42+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/update
+ERR: 非法操作:update
+
+[ 2016-06-25T16:15:03+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/change?admin_id=1
+ERR: 非法操作:change
+
+[ 2016-06-25T16:18:00+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/update
+ERR: 非法操作:update
+
+[ 2016-06-25T18:41:50+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manageadmin
+ERR: 无法加载控制器:Manageadmin
+
+[ 2016-06-25T18:56:33+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-25T18:56:38+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/check.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-25T20:10:57+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/login.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 Erreur de syntaxe près de 'WHERE `admin_name` = 'admin' AND `admin_password` = '123456'' à la ligne 1
+
+[ 2016-06-25T21:51:33+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-25T21:51:35+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-25T22:00:23+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/del?admin_id=3
+ERR: 模板不存在:E:/wamp/www/ynzy/Manage/Admin/View/Manage/index.html
+
+[ 2016-06-25T22:14:51+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-25T22:22:54+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-25T22:22:56+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/check.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-25T22:34:13+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-06-25T22:42:02+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-06-25T22:42:05+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-06-25T22:42:28+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-06-25T23:07:13+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/update
+ERR: 非法操作:update
+
+[ 2016-06-25T23:07:21+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/update
+ERR: 非法操作:update
+

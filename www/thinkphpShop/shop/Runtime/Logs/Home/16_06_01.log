@@ -1,0 +1,21 @@
+[ 2016-06-01T22:59:55+08:00 ] ::1 /tp/shop/index.php/home/User/login.html
+ERR: 模板不存在:E:/wamp/www/tp/shop/Home/View/User/login.html
+
+[ 2016-06-01T23:01:52+08:00 ] ::1 /tp/shop/index.php/Home/User/login
+ERR: 模板不存在:E:/wamp/www/tp/shop/Home/View/User/login.html
+
+[ 2016-06-01T23:01:55+08:00 ] ::1 /tp/shop/index.php/Home/User/login
+ERR: 模板不存在:E:/wamp/www/tp/shop/Home/View/User/login.html
+
+[ 2016-06-01T23:02:13+08:00 ] ::1 /tp/shop/index.php/Home/User/login
+ERR: 模板不存在:E:/wamp/www/tp/shop/Home/View/User/login.html
+
+[ 2016-06-01T23:02:15+08:00 ] ::1 /tp/shop/index.php/home/User/login.html
+ERR: 模板不存在:E:/wamp/www/tp/shop/Home/View/User/login.html
+
+[ 2016-06-01T23:02:18+08:00 ] ::1 /tp/shop/index.php/Home/User/login
+ERR: 模板不存在:E:/wamp/www/tp/shop/Home/View/User/login.html
+
+[ 2016-06-01T23:02:19+08:00 ] ::1 /tp/shop/index.php/Home/User/login
+ERR: 模板不存在:E:/wamp/www/tp/shop/Home/View/User/login.html
+

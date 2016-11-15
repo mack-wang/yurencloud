@@ -1,0 +1,48 @@
+[ 2016-08-04T09:08:42+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-04T10:06:50+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member?shop_name=%E9%87%91%E5%8D%8E%E7%8E%8B%E9%9C%96%E5%BA%97&member_nickname=&member_tel=&search-submit=%E6%9F%A5%E8%AF%A2
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'shop' in 'field list'
+
+[ 2016-08-04T10:07:31+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member?shop_name=%E9%87%91%E5%8D%8E%E7%8E%8B%E9%9C%96%E5%BA%97&member_nickname=&member_tel=&search-submit=%E6%9F%A5%E8%AF%A2
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'shop' in 'where clause'
+
+[ 2016-08-04T10:10:22+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member?shop_name=%E9%87%91%E5%8D%8E%E7%8E%8B%E9%9C%96%E5%BA%97&member_nickname=&member_tel=&search-submit=%E6%9F%A5%E8%AF%A2
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '金华王霖店' in 'where clause'
+
+[ 2016-08-04T10:13:16+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member?shop_name=%E6%9D%AD%E5%B7%9E%E7%8E%8B%E4%B9%90%E5%9F%8E2%E5%93%88%E5%93%88%E4%BF%AE%E6%94%B9&member_nickname=&member_tel=&search-submit=%E6%9F%A5%E8%AF%A2
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column '杭州王乐城2哈哈修改' in 'where clause'
+
+[ 2016-08-04T12:53:20+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'order clause'
+
+[ 2016-08-04T12:53:34+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'order clause'
+
+[ 2016-08-04T12:54:36+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'order clause'
+
+[ 2016-08-04T12:54:37+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'order clause'
+
+[ 2016-08-04T12:54:48+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/group
+ERR: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'group_id' in 'order clause'
+
+[ 2016-08-04T14:17:04+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop?shop_name=&shop_tel=15757130021
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''15757130021' ) LIMIT 1' at line 1
+
+[ 2016-08-04T14:17:10+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop?shop_name=&shop_tel=15757130021
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''15757130021' ) LIMIT 1' at line 1
+
+[ 2016-08-04T14:50:46+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/del_gift?auth_id=20
+ERR: 非法操作:del_gift
+
+[ 2016-08-04T14:50:53+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/del_wed?auth_id=19
+ERR: 非法操作:del_wed
+
+[ 2016-08-04T14:55:00+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/del?member_id=4
+ERR: 模板不存在:D:/phpStudy/WWW/ynzy/Manage/Admin/View/Member/del.html
+
+[ 2016-08-04T14:56:31+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/del?member_id=2
+ERR: 模板不存在:D:/phpStudy/WWW/ynzy/Manage/Admin/View/Member/del.html
+

@@ -1,0 +1,96 @@
+[ 2016-07-03T11:42:49+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/register
+ERR: 非法操作:register
+
+[ 2016-07-03T11:44:36+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T11:44:42+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T11:44:45+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T11:58:02+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/register
+ERR: 非法操作:register
+
+[ 2016-07-03T13:25:08+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T13:25:10+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-07-03T13:25:11+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T13:25:20+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T13:47:46+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T13:48:27+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T13:48:31+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T13:48:44+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T13:48:56+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T14:24:30+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T14:25:48+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-07-03T17:05:21+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'shop_id' inconnu dans order clause
+
+[ 2016-07-03T17:10:23+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'gift_group' inconnu dans field list
+
+[ 2016-07-03T17:10:25+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'gift_group' inconnu dans field list
+
+[ 2016-07-03T17:10:41+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42S22]: Column not found: 1054 Champ 'gift_group' inconnu dans field list
+
+[ 2016-07-03T17:29:48+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1066 Table/alias: 'yn_gift' non unique
+
+[ 2016-07-03T17:32:32+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1066 Table/alias: 'yn_gift' non unique
+
+[ 2016-07-03T17:38:59+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1066 Table/alias: 'yn_gift' non unique
+
+[ 2016-07-03T17:41:12+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1066 Table/alias: 'yn_gift' non unique
+
+[ 2016-07-03T17:43:09+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1066 Table/alias: 'yn_gift' non unique
+
+[ 2016-07-03T17:44:10+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1066 Table/alias: 'yn_gift' non unique
+
+[ 2016-07-03T17:45:39+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1066 Table/alias: 'yn_gift' non unique
+
+[ 2016-07-03T18:14:23+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: 模板不存在:E:/wamp/www/ynzy/Manage/Admin/View/Shop/giftshop.html
+
+[ 2016-07-03T18:14:43+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: 模板不存在:E:/wamp/www/ynzy/Manage/Admin/View/Shop/giftshop.html
+
+[ 2016-07-03T18:15:26+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: 模板不存在:E:/wamp/www/ynzy/Manage/Admin/View/Shop/giftshop.html
+
+[ 2016-07-03T18:16:03+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/giftshop
+ERR: 模板不存在:E:/wamp/www/ynzy/Manage/Admin/View/Shop/giftshop.html
+
+[ 2016-07-03T21:57:31+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Wed/wed
+ERR: 无法加载控制器:Wed
+

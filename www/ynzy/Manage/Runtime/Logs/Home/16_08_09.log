@@ -1,0 +1,340 @@
+[ 2016-08-09T17:44:31+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Undefined index: shop_tel D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 77 行.
+NOTIC: [8] Undefined index: session_id D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T17:44:46+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Undefined index: shop_tel D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 77 行.
+NOTIC: [8] Undefined index: session_id D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T17:46:09+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Undefined index: shop_tel D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 77 行.
+NOTIC: [8] Undefined index: session_id D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015600s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015600s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T17:46:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Undefined index: shop_tel D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 77 行.
+NOTIC: [8] Undefined index: session_id D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T17:48:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Undefined index: shop_tel D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 77 行.
+NOTIC: [8] Undefined index: session_id D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T17:51:39+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/test
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-08-09T17:51:46+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/test
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-08-09T18:02:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_id` = 12 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-08-09T18:09:51+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index
+ERR: 非法操作:index
+
+[ 2016-08-09T18:19:26+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/test
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Undefined index: shop_tel D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 77 行.
+NOTIC: [8] Undefined index: session_id D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Undefined index: info D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 87 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 87 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-08-09T18:19:34+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/test
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Undefined index: shop_tel D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 77 行.
+NOTIC: [8] Undefined index: session_id D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Undefined index: info D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 87 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 87 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T18:20:11+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_id` = 0 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Undefined index: shop_tel D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 77 行.
+NOTIC: [8] Undefined index: session_id D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Undefined index: info D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 87 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 87 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-08-09T18:21:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_id` = 0 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 56 行.
+NOTIC: [8] Undefined index: tips D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 62 行.
+NOTIC: [8] Undefined index: shop_tel D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 77 行.
+NOTIC: [8] Undefined index: session_id D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 83 行.
+NOTIC: [8] Undefined index: info D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 87 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\ynzy\Manage\Runtime\Cache\c90a6c8f15a5b7798490b633ec4715038bc70ea4.file.login.html.php 第 87 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046800s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046800s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T18:21:30+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_id` = 0 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-08-09T18:22:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_id` = 0 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T18:23:03+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_id` = 0 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-08-09T18:23:14+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_id` = 2147483647 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T18:23:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_id` = 2147483647 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-08-09T18:24:02+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_id` = 2147483647 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T18:26:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T18:26:52+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-08-09T18:27:35+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-08-09T18:27:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

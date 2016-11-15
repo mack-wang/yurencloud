@@ -1,0 +1,3 @@
+[ 2016-06-05T18:30:14+08:00 ] ::1 /tp/shop/index.php
+ERR: Syntax Error in template "E:/wamp/www/tp/shop/Home/View\Index\index.html"  on line 405 ".boxCenterList form{display:inline;}"  - Unexpected ":", expected one of: "}" , " "
+

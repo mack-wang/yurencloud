@@ -1,0 +1,2564 @@
+[ 2016-08-14T20:47:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000915s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0399s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0116s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002535s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002808s ]
+
+[ 2016-08-14T20:47:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001386s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000856s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000993s ]
+
+[ 2016-08-14T20:48:32+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001395s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130094' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001920s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002142s ]
+
+[ 2016-08-14T20:58:28+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001342s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001473s ]
+
+[ 2016-08-14T21:01:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000978s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002559s ]
+
+[ 2016-08-14T21:02:12+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001650s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001943s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002192s ]
+
+[ 2016-08-14T21:04:00+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002544s ]
+
+[ 2016-08-14T21:04:00+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001074s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002559s ]
+
+[ 2016-08-14T21:04:16+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001082s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001674s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000502s ]
+
+[ 2016-08-14T21:14:42+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002456s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002681s ]
+
+[ 2016-08-14T21:14:42+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004554s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004964s ]
+
+[ 2016-08-14T21:16:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000983s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003370s ]
+
+[ 2016-08-14T21:16:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001270s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001400s ]
+
+[ 2016-08-14T21:31:17+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001975s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002194s ]
+
+[ 2016-08-14T21:31:17+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000425s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000485s ]
+
+[ 2016-08-14T21:31:39+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000642s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000765s ]
+
+[ 2016-08-14T21:33:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001669s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15425422147' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002872s ]
+
+[ 2016-08-14T21:33:21+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15425422147' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002776s ]
+
+[ 2016-08-14T21:33:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001421s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15425422147' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001950s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002178s ]
+
+[ 2016-08-14T21:33:32+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001421s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15425422147' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002078s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002381s ]
+
+[ 2016-08-14T21:33:49+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000810s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001329s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002402s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002661s ]
+
+[ 2016-08-14T21:34:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001142s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002534s ]
+
+[ 2016-08-14T21:34:14+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001987s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002207s ]
+
+[ 2016-08-14T21:34:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001414s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000814s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000952s ]
+
+[ 2016-08-14T21:34:32+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001929s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002151s ]
+
+[ 2016-08-14T21:37:18+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001660s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001183s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001294s ]
+
+[ 2016-08-14T21:37:22+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001874s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002096s ]
+
+[ 2016-08-14T21:37:26+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000592s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001962s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002235s ]
+
+[ 2016-08-14T21:37:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002074s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002302s ]
+
+[ 2016-08-14T21:37:34+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001144s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130032' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002257s ]
+
+[ 2016-08-14T21:37:39+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001301s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130036' LIMIT 1   [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001995s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002261s ]
+
+[ 2016-08-14T21:37:42+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001100s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001027s ]
+
+[ 2016-08-14T21:37:48+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001108s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0149s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002659s ]
+
+[ 2016-08-14T21:38:05+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001312s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002007s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002235s ]
+
+[ 2016-08-14T21:38:11+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001429s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130225' LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001964s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002185s ]
+
+[ 2016-08-14T21:38:12+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001521s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130225' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002390s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002615s ]
+
+[ 2016-08-14T21:38:13+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001155s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130225' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002228s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002447s ]
+
+[ 2016-08-14T21:38:16+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130224' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000982s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001094s ]
+
+[ 2016-08-14T21:38:21+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001102s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130228' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001926s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002148s ]
+
+[ 2016-08-14T21:38:22+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001196s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130228' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002227s ]
+
+[ 2016-08-14T21:38:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000909s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130228' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001945s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002165s ]
+
+[ 2016-08-14T21:38:24+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001552s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130228' LIMIT 1   [ RunTime:0.0028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001908s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002126s ]
+
+[ 2016-08-14T21:38:25+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000913s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130228' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002012s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002237s ]
+
+[ 2016-08-14T21:38:26+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001299s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130228' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001987s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002245s ]
+
+[ 2016-08-14T21:38:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001478s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002574s ]
+
+[ 2016-08-14T21:38:46+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000698s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001146s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002165s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002421s ]
+
+[ 2016-08-14T21:39:03+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001381s ]
+
+[ 2016-08-14T21:39:08+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001223s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0027s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002106s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002365s ]
+
+[ 2016-08-14T21:39:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001209s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001936s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002153s ]
+
+[ 2016-08-14T21:39:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001356s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002430s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002699s ]
+
+[ 2016-08-14T21:39:42+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001139s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001060s ]
+
+[ 2016-08-14T21:39:44+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002204s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002428s ]
+
+[ 2016-08-14T21:39:45+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001126s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0027s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001925s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002139s ]
+
+[ 2016-08-14T21:39:48+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001141s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002155s ]
+
+[ 2016-08-14T21:39:49+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001319s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002196s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002421s ]
+
+[ 2016-08-14T21:39:50+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001109s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002033s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002263s ]
+
+[ 2016-08-14T21:39:55+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001606s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001964s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002178s ]
+
+[ 2016-08-14T21:39:59+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001895s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002110s ]
+
+[ 2016-08-14T21:40:00+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001235s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001957s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002232s ]
+
+[ 2016-08-14T21:40:02+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001127s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001946s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001969s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002191s ]
+
+[ 2016-08-14T21:40:03+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001216s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0031s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002068s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002430s ]
+
+[ 2016-08-14T21:40:05+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001130s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0149s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001578s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001765s ]
+
+[ 2016-08-14T21:40:06+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001224s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001966s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002186s ]
+
+[ 2016-08-14T21:40:08+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001944s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002186s ]
+
+[ 2016-08-14T21:40:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000926s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001567s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001947s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002183s ]
+
+[ 2016-08-14T21:40:11+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000929s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001628s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001889s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002109s ]
+
+[ 2016-08-14T21:40:13+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000948s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001591s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002127s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002406s ]
+
+[ 2016-08-14T21:40:15+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001376s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001956s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002221s ]
+
+[ 2016-08-14T21:40:16+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001118s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0081s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001492s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001693s ]
+
+[ 2016-08-14T21:40:21+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000821s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001386s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002052s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002335s ]
+
+[ 2016-08-14T21:40:24+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001413s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001937s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002225s ]
+
+[ 2016-08-14T21:40:26+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001214s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002205s ]
+
+[ 2016-08-14T21:40:27+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001383s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001946s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002168s ]
+
+[ 2016-08-14T21:40:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002200s ]
+
+[ 2016-08-14T21:40:30+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000880s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001981s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002204s ]
+
+[ 2016-08-14T21:40:33+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001362s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002074s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002310s ]
+
+[ 2016-08-14T21:40:35+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001408s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001897s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002119s ]
+
+[ 2016-08-14T21:40:36+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002268s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002553s ]
+
+[ 2016-08-14T21:40:37+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001142s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002903s ]
+
+[ 2016-08-14T21:40:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001136s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001925s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002199s ]
+
+[ 2016-08-14T21:40:39+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001943s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002165s ]
+
+[ 2016-08-14T21:40:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001338s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001843s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002059s ]
+
+[ 2016-08-14T21:41:17+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001075s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001737s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002295s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002544s ]
+
+[ 2016-08-14T21:45:47+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001697s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002513s ]
+
+[ 2016-08-14T21:45:49+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001914s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002135s ]
+
+[ 2016-08-14T21:45:51+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001975s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002260s ]
+
+[ 2016-08-14T21:45:53+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001908s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002134s ]
+
+[ 2016-08-14T21:45:55+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001211s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002134s ]
+
+[ 2016-08-14T21:45:56+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001149s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001980s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002208s ]
+
+[ 2016-08-14T21:46:04+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001911s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002170s ]
+
+[ 2016-08-14T21:46:05+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001126s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002074s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002337s ]
+
+[ 2016-08-14T21:46:06+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001580s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001924s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002147s ]
+
+[ 2016-08-14T21:46:15+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001113s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130223' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001953s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002174s ]
+
+[ 2016-08-14T21:46:16+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000706s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001227s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130223' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001881s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002102s ]
+
+[ 2016-08-14T21:46:17+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001378s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130223' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002575s ]
+
+[ 2016-08-14T21:46:21+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001185s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130222' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001958s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002185s ]
+
+[ 2016-08-14T21:46:26+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001262s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130222' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002028s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002282s ]
+
+[ 2016-08-14T21:46:27+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001393s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130222' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002170s ]
+
+[ 2016-08-14T21:53:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001340s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130095' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002286s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002511s ]
+
+[ 2016-08-14T21:53:26+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001109s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0031s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003067s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003518s ]
+
+[ 2016-08-14T21:53:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002878s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001865s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002085s ]
+
+[ 2016-08-14T21:53:33+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001211s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130099' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001954s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002122s ]
+
+[ 2016-08-14T21:53:36+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001646s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0086s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130099' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000997s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001109s ]
+
+[ 2016-08-14T21:53:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000949s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001592s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130099' LIMIT 1   [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001936s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002155s ]
+
+[ 2016-08-14T21:53:39+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001128s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130099' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002174s ]
+
+[ 2016-08-14T21:53:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001626s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130099' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001956s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002173s ]
+
+[ 2016-08-14T21:53:44+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001904s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002127s ]
+
+[ 2016-08-14T21:53:46+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001082s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001144s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001275s ]
+
+[ 2016-08-14T21:53:48+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000721s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001225s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000900s ]
+
+[ 2016-08-14T21:53:49+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001125s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001892s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002537s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002763s ]
+
+[ 2016-08-14T21:53:50+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001329s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002293s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002520s ]
+
+[ 2016-08-14T21:53:51+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000947s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001695s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0027s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002062s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002230s ]
+
+[ 2016-08-14T21:54:19+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001099s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130010' LIMIT 1   [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002124s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002391s ]
+
+[ 2016-08-14T21:54:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001549s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130010' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002158s ]
+
+[ 2016-08-14T21:55:57+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001324s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002281s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002509s ]
+
+[ 2016-08-14T21:56:00+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001531s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001981s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002203s ]
+
+[ 2016-08-14T21:56:03+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001935s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002159s ]
+
+[ 2016-08-14T21:56:05+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001113s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002261s ]
+
+[ 2016-08-14T21:56:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001617s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001969s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002252s ]
+
+[ 2016-08-14T21:56:08+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002049s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002280s ]
+
+[ 2016-08-14T21:56:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001271s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002069s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002302s ]
+
+[ 2016-08-14T21:56:11+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001894s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002859s ]
+
+[ 2016-08-14T21:56:12+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000997s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001656s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0027s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002564s ]
+
+[ 2016-08-14T21:56:13+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001272s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001010s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001125s ]
+
+[ 2016-08-14T21:56:14+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001490s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002653s ]
+
+[ 2016-08-14T21:56:47+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001583s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002513s ]
+
+[ 2016-08-14T21:57:00+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001406s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130012' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000987s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001106s ]
+
+[ 2016-08-14T21:57:06+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001547s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001906s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002118s ]
+
+[ 2016-08-14T21:57:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000952s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000982s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001095s ]
+
+[ 2016-08-14T21:57:08+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001930s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002149s ]
+
+[ 2016-08-14T21:57:09+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002174s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002059s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002321s ]
+
+[ 2016-08-14T21:57:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001116s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130014' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001966s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002239s ]
+
+[ 2016-08-14T22:07:04+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001035s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001682s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0121s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0027s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002399s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002643s ]
+
+[ 2016-08-14T22:07:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001990s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002237s ]
+
+[ 2016-08-14T22:07:09+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001438s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001239s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001397s ]
+
+[ 2016-08-14T22:07:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001628s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001044s ]
+
+[ 2016-08-14T22:07:11+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001057s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001784s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002285s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002528s ]
+
+[ 2016-08-14T22:07:16+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001401s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002362s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002599s ]
+
+[ 2016-08-14T22:07:21+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001252s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0152s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002245s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002488s ]
+
+[ 2016-08-14T22:07:22+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002007s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002230s ]
+
+[ 2016-08-14T22:07:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001396s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001996s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002252s ]
+
+[ 2016-08-14T22:07:27+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001930s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002154s ]
+
+[ 2016-08-14T22:07:31+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001987s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002212s ]
+
+[ 2016-08-14T22:07:35+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001439s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130021' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002407s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002694s ]
+
+[ 2016-08-14T22:07:36+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001034s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001850s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130021' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000929s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001030s ]
+
+[ 2016-08-14T22:07:37+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001584s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130021' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000753s ]
+
+[ 2016-08-14T22:07:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001980s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130021' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002284s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002537s ]
+
+[ 2016-08-14T22:07:39+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001310s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130021' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002395s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002690s ]
+
+[ 2016-08-14T22:07:40+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001695s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130021' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001388s ]
+
+[ 2016-08-14T22:07:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001183s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130021' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002083s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002314s ]
+
+[ 2016-08-14T22:07:42+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130021' LIMIT 1   [ RunTime:0.0025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002582s ]
+
+[ 2016-08-14T22:09:28+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001449s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000968s ]
+
+[ 2016-08-14T22:09:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001522s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002473s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002744s ]
+
+[ 2016-08-14T22:09:36+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002013s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002299s ]
+
+[ 2016-08-14T22:09:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001223s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001922s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002141s ]
+
+[ 2016-08-14T22:09:42+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001393s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001944s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002161s ]
+
+[ 2016-08-14T22:09:44+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001299s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001870s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002092s ]
+
+[ 2016-08-14T22:09:45+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002032s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002327s ]
+
+[ 2016-08-14T22:09:46+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001350s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002712s ]
+
+[ 2016-08-14T22:12:06+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002563s ]
+
+[ 2016-08-14T22:12:08+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001389s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0115s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001955s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002175s ]
+
+[ 2016-08-14T22:12:17+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0137s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001159s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001290s ]
+
+[ 2016-08-14T22:12:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002798s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002970s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003445s ]
+
+[ 2016-08-14T22:12:24+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001688s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002820s ]
+
+[ 2016-08-14T22:12:25+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001982s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002207s ]
+
+[ 2016-08-14T22:12:26+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001230s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000815s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2016-08-14T22:12:27+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001253s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001906s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002130s ]
+
+[ 2016-08-14T22:12:28+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002055s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001983s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002251s ]
+
+[ 2016-08-14T22:12:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001244s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003021s ]
+
+[ 2016-08-14T22:12:32+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001551s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001923s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002138s ]
+
+[ 2016-08-14T22:12:34+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001112s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0124s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001958s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002180s ]
+
+[ 2016-08-14T22:12:35+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001381s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002904s ]
+
+[ 2016-08-14T22:12:40+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001370s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001992s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002222s ]
+
+[ 2016-08-14T22:12:42+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001121s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001909s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002157s ]
+
+[ 2016-08-14T22:12:45+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001202s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002988s ]
+
+[ 2016-08-14T22:12:46+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000800s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001403s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002057s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002333s ]
+
+[ 2016-08-14T22:12:47+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001132s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002269s ]
+
+[ 2016-08-14T22:12:48+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002112s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002338s ]
+
+[ 2016-08-14T22:12:49+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001351s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001087s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001188s ]
+
+[ 2016-08-14T22:12:50+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001961s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002389s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002665s ]
+
+[ 2016-08-14T22:12:51+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002053s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002331s ]
+
+[ 2016-08-14T22:12:52+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001089s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002186s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002404s ]
+
+[ 2016-08-14T22:12:53+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001535s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002790s ]
+
+[ 2016-08-14T22:12:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000804s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002166s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002404s ]
+
+[ 2016-08-14T22:12:55+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001967s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002184s ]
+
+[ 2016-08-14T22:14:34+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002053s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002495s ]
+
+[ 2016-08-14T22:14:37+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002056s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002312s ]
+
+[ 2016-08-14T22:14:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000808s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2016-08-14T22:14:39+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001378s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002360s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002610s ]
+
+[ 2016-08-14T22:14:40+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001119s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000887s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000983s ]
+
+[ 2016-08-14T22:14:44+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001005s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001595s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001975s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002254s ]
+
+[ 2016-08-14T22:14:46+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001398s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001954s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002171s ]
+
+[ 2016-08-14T22:14:47+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000918s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0031s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002012s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002285s ]
+
+[ 2016-08-14T22:14:48+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001100s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0035s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001942s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002165s ]
+
+[ 2016-08-14T22:14:49+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001204s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0131s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002403s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002745s ]
+
+[ 2016-08-14T22:14:50+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000981s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001637s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002020s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002247s ]
+
+[ 2016-08-14T22:34:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001972s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002820s ]
+
+[ 2016-08-14T22:36:31+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001170s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001920s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002584s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002867s ]
+
+[ 2016-08-14T22:36:35+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000632s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001084s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001878s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002139s ]
+
+[ 2016-08-14T22:40:43+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000884s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001413s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002313s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002540s ]
+
+[ 2016-08-14T22:42:52+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001715s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001133s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001245s ]
+
+[ 2016-08-14T22:42:55+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0134s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001527s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001699s ]
+
+[ 2016-08-14T22:42:59+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000880s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002108s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002394s ]
+
+[ 2016-08-14T22:43:02+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001395s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001985s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002268s ]
+
+[ 2016-08-14T22:43:03+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001111s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000976s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001093s ]
+
+[ 2016-08-14T22:43:04+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001521s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001223s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001337s ]
+
+[ 2016-08-14T22:43:05+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001367s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002152s ]
+
+[ 2016-08-14T22:43:06+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001309s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001947s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002165s ]
+
+[ 2016-08-14T22:43:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001139s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001882s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002135s ]
+
+[ 2016-08-14T22:43:08+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001924s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002163s ]
+
+[ 2016-08-14T22:43:09+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000947s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001539s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002274s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002496s ]
+
+[ 2016-08-14T22:43:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000880s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002474s ]
+
+[ 2016-08-14T22:43:11+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001246s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002583s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002894s ]
+
+[ 2016-08-14T22:43:13+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001381s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002747s ]
+
+[ 2016-08-14T22:43:14+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000875s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002096s ]
+
+[ 2016-08-14T22:43:15+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001091s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002167s ]
+
+[ 2016-08-14T22:43:16+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0118s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001974s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002208s ]
+
+[ 2016-08-14T22:43:17+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001126s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002140s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002402s ]
+
+[ 2016-08-14T22:43:18+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0027s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001949s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002320s ]
+
+[ 2016-08-14T22:43:19+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001228s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002152s ]
+
+[ 2016-08-14T22:43:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001166s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002171s ]
+
+[ 2016-08-14T22:43:21+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002868s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130001' LIMIT 1   [ RunTime:0.0032s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002534s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002944s ]
+
+[ 2016-08-14T22:43:22+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001574s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130001' LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000966s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001078s ]
+
+[ 2016-08-14T22:43:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001370s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130001' LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002189s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002432s ]
+
+[ 2016-08-14T22:43:24+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000867s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130001' LIMIT 1   [ RunTime:0.0029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002623s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003016s ]
+
+[ 2016-08-14T22:43:25+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130001' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002043s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002321s ]
+
+[ 2016-08-14T22:43:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001582s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130011' LIMIT 1   [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001896s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002179s ]
+
+[ 2016-08-14T22:43:35+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001762s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0126s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130001' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001932s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002152s ]
+
+[ 2016-08-14T22:43:36+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001719s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0105s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130001' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001900s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002121s ]
+
+[ 2016-08-14T22:43:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001382s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001221s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001352s ]
+
+[ 2016-08-14T22:43:59+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000940s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001575s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130022' LIMIT 1   [ RunTime:0.0030s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001940s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002171s ]
+
+[ 2016-08-14T22:44:03+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001934s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002230s ]
+
+[ 2016-08-14T22:44:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001450s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0028s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001948s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002181s ]
+
+[ 2016-08-14T22:44:18+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001624s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0117s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001984s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002206s ]
+
+[ 2016-08-14T22:44:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001606s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001945s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002162s ]
+
+[ 2016-08-14T22:44:21+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001576s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0113s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001890s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002108s ]
+
+[ 2016-08-14T22:44:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001426s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0122s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001553s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001764s ]
+
+[ 2016-08-14T23:07:28+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001179s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001909s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0125s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130091' LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002562s ]
+
+[ 2016-08-14T23:07:31+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001253s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001942s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002161s ]
+
+[ 2016-08-14T23:08:00+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001422s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001281s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001410s ]
+
+[ 2016-08-14T23:08:02+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000969s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001621s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000941s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001075s ]
+
+[ 2016-08-14T23:08:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001224s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000713s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000815s ]
+
+[ 2016-08-14T23:08:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000524s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0127s ]
+SQL: UPDATE `yn_shop` SET `shop_headimgurl`=NULL,`shop_openid`=NULL,`shop_nickname`=NULL,`register_time`='2016-08-14 23:08:08' WHERE `shop_tel` = '15757130092' [ RunTime:0.0092s ]
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: Access denied for user ''@'localhost' (using password: NO) F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: A link to the server could not be established F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002154s ]
+
+[ 2016-08-14T23:08:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/tips?key=false
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000970s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001741s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016634s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016771s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000952s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001065s ]
+
+[ 2016-08-14T23:13:19+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001709s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002292s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002518s ]
+
+[ 2016-08-14T23:13:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001227s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000711s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000813s ]
+
+[ 2016-08-14T23:13:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001375s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000811s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000926s ]
+
+[ 2016-08-14T23:13:27+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001404s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0142s ]
+SQL: UPDATE `yn_shop` SET `shop_headimgurl`=NULL,`shop_openid`=NULL,`shop_nickname`=NULL,`register_time`='2016-08-14 23:13:25' WHERE `shop_tel` = '15757130092' [ RunTime:0.0039s ]
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: Access denied for user ''@'localhost' (using password: NO) F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: A link to the server could not be established F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001893s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002166s ]
+
+[ 2016-08-14T23:13:27+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/tips?key=false
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001377s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012294s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012383s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000480s ]
+
+[ 2016-08-14T23:18:49+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001978s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001510s ]
+
+[ 2016-08-14T23:18:50+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000557s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000641s ]
+
+[ 2016-08-14T23:18:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000818s ]
+
+[ 2016-08-14T23:18:57+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0103s ]
+SQL: UPDATE `yn_shop` SET `shop_headimgurl`=NULL,`shop_openid`=NULL,`shop_nickname`=NULL,`register_time`='2016-08-14 23:18:55' WHERE `shop_tel` = '15757130092' [ RunTime:0.0027s ]
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: Access denied for user ''@'localhost' (using password: NO) F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+NOTIC: [2] mysql_affected_rows() [<a href='function.mysql-affected-rows'>function.mysql-affected-rows</a>]: A link to the server could not be established F:\WWW\ynzy\Manage\Home\Controller\IndexController.class.php 第 95 行.
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034016s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000886s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000543s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000605s ]
+
+[ 2016-08-14T23:24:37+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkPhone
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001704s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `yn_shop` WHERE `shop_tel` = '15757130092' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000767s ]
+
+[ 2016-08-14T23:24:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000656s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2016-08-14T23:24:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000412s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000471s ]
+
+[ 2016-08-14T23:24:43+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/sendShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001340s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000752s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000855s ]
+
+[ 2016-08-14T23:24:46+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/checkShortnum
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000417s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000477s ]
+

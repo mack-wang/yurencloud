@@ -1,0 +1,52 @@
+/* --------------------------------------css样式初始化 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; color: black;}
+a:hover { text-decoration:none; color: #00b7ee }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+body { font-family: "微软雅黑" }
+html,body{width: 100%;height: 100%;}
+/* 去除苹果手机默认的按钮样式 */
+input[type="button"], input[type="submit"], input[type="reset"] {-webkit-appearance: none; }
+/* -----------------------------------------------placehoslder样式 */
+input::-webkit-input-placeholder { /* WebKit browsers */font-family: "微软雅黑";color: #ddd;}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */font-family: "微软雅黑";color: #ddd;}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */font-family: "微软雅黑";color: #ddd;}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */font-family: "微软雅黑";color: #ddd;}
+/*文字排版*/
+.f12{font-size:12px}.f13{font-size:13px}.f14{font-size:14px}.f16{font-size:16px}.f20{font-size:20px}.fb{font-weight:bold}.fn{font-weight:normal}.t2{text-indent:2em}.lh150{line-height:150%}.lh180{line-height:180%}.lh200{line-height:200%}.unl{text-decoration:underline;}.no_unl{text-decoration:none;}/*定位*/.tl{text-align:left}.tc{text-align:center}.tr{text-align:right}.bc{margin-left:auto;margin-right:auto;}.fl{float:left;display:inline}.fr{float:right;display:inline}.cb{clear:both}.cl{clear:left}.cr{clear:right}.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.clearfix{display:inline-block}* html .clearfix{height:1%}.clearfix{display:block}.vm{vertical-align:middle}.pr{position:relative}.pa{position:absolute}.abs-right{position:absolute;right:0}.zoom{zoom:1}.hidden{visibility:hidden}.none{display:none}/
+/* ---------------------------------------------------- */
+.top-container{width:100%; height:100%;background-color: #F2F2F2}
+.home-top {width: 100%; height: 20%; background-color: #1b1b1b; }
+.home-logo {margin: 70px 100px; height: 50%; }
+.tijiao {position: relative; width: 80%; height: 65%; margin: 50px auto; padding-top: 100px; padding-bottom: -50px;}
+
+.login-success {font-size: 3rem; position: absolute; left: 10%; top: 30%; text-align: left; }
+#showtimes {color: red; }
+.my-btn {display: inline-block; width: 70%; height: 6rem; background-color: #6fb3e0; border: 0; color: white; text-align: center; font-size: 3rem; font-family: "微软雅黑"; }
+.my-btn:active {background-color: #4f99c6; }
+.up-div-1 {display: block; width: 100%; }
+.up-div-1 label {display: block; margin: 10px 10px 10px 10px; font-size: 2.6rem; color:#AAA;}
+.up-div-1 label>span{padding-right: 3rem;}
+.up-div-1 input {display: block; margin: 0 0 80px 10px; height: 6rem; padding: 5px 0 5px 5px; border: 1px solid #A8A8A8; width: 93%; font-size: 2.6rem;}
+.up-div-1 select {height: 34px; border: 1px solid #DDD; margin: 0 10px 10px 10px; width: 94%; }
+.up-div-btn {margin: 10px 0 20px 0; }
+.add-group {border: 1px solid #DDD; height: 30px; }
+.inline{ display: inline;}
+.icon-style{font-size: 2.6rem;padding-top:1.7rem;padding-left: 0.1rem}
+.success{color: #87B87F}
+.warning{color: #D15B47}
+.disabled-bgcolor{background-color: #C4C4C4}
+.footer {position: absolute; bottom: 6rem; left: 25%; font-size: 2rem; color: #878787; }
+.yanhua{width: 30%; padding-right: 30%;}
+.register-tips{font-size: 4rem; margin-top:40%; }

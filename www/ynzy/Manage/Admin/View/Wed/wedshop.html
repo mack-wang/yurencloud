@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大美云南管理后台</title>
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}font-awesome.min.css" />
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}basic.css">
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="all-pages">婚宴推广 > 预定提交&nbsp&nbsp&nbsp&nbsp&nbsp
+        </div>
+        <div class="search-form-div">
+            <form action="{$smarty.const.__SELF__}" method="get" enctype="multipart/form-data" id="searchForm">
+                <ul class="select">
+                    <li>
+                        <input type="text" name="shop_tel" class="search" placeholder="  店铺手机号">
+                    </li>
+                    <li>
+                        <input type="text" name="shop_name" class="search" placeholder="  店铺名称">
+                    </li>
+                    <li>
+                        <input type="text" name="wed_tel" class="search" placeholder="  预定手机号">
+                    </li>
+                    <li>
+                        <input type="text" name="wed_name" class="search" placeholder="  预定姓名">
+                        <button id="searchSubmit" class="search-submit my-btn"><i class="icon-search"></i>&nbsp查询</button>
+                    </li>
+                    <button class="excel-btn my-btn">导出表格</button>
+                </ul>
+            </form>
+        </div>
+        <div class="table-div">
+            <form action="{$smarty.const.__SELF__}" method="post" enctype="multipart/form-data">
+                <table class="table">
+                    <tr>
+                        <th class="percent5">序号</th>
+                        <th class="percent5">头像</th>
+                        <th class="percent10">昵称</th>
+                        <th class="percent5">分组</th>
+                        <th class="percent20 overflow-hidden">店铺名称</th>
+                        <th class="percent10">手机</th>
+                        <th class="percent5">预定姓名</th>
+                        <th class="percent15">预定手机</th>
+                        <th class="percent5">预定数量</th>
+                        <th class="percent15">上传日期</th>
+                        <th class="percent10">操作</th>
+                    </tr>
+                    {foreach $info as $k => $v}
+                    <tr class="{if $v@iteration is even}change-color{else}{/if}">
+                        <td class="text-center width50 ">{{$v@iteration}+{$num}}</td>
+                        <td class="text-center"><img src="{$v.shop.shop_headimgurl}" alt="" class="headimgurl" /></td>
+                        <td class="padding-left10">{$v.shop.shop_nickname}</td>
+                        <td class="padding-left10">{$v.shop.shop_group}</td>
+                        <td class="padding-left10">{$v.shop.shop_name}</td>
+                        <td class="padding-left10">{$v.shop.shop_tel}</td>
+                        <td class="padding-left10">{$v.wed_name}</td>
+                        <td class="padding-left10">{$v.wed_tel}</td>
+                        <td class="padding-left10">{$v.wed_order}</td>
+                        <td class="padding-left10">{$v.create_time}</td>
+                        <td class="text-center">
+                            <a href="{$smarty.const.__CONTROLLER__}/del?wed_id={$v.wed_id}"><i class="icon-trash"></i></a>
+                        </td>
+                    </tr>
+                    {/foreach}
+                </table>
+            </form>
+            <div class="bottom-page">
+                <ul class="page-ul">
+                    {$pagelist}
+                </ul>
+                <form action="{$smarty.const.__SELF__}" method="get" enctype="multipart/form-data" class="page-form">
+                    <input type="text" name="per" class="pages" maxlength="2">&nbsp条/页
+                    <input type="submit" name="" class="pages-submit" value="确定">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

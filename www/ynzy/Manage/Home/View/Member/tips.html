@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大美云南管理后台</title>
+    <link rel="stylesheet" type="text/css" href="{$smarty.const.HOME_CSS_URL}basic.css">
+    <script type="text/javascript" src="{$smarty.const.HOME_JS_URL}jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="{$smarty.const.HOME_JS_URL}main.js"></script>
+</head>
+
+<body>
+    <header class="home-top">
+        <img src="{$smarty.const.HOME_IMG_URL}logo.png" alt="logo" class="home-logo">
+    </header>
+    <div class="tijiao">
+        <span class="login-success">{$tips}<br><span id="showtimes"></span><span>秒后跳转</span></span>
+        <span class="span-input">© 博渊堂 · 版权所有 2013-2018</span>
+    </div>
+</body>
+<script type="text/javascript">
+//设定倒数秒数
+var t = 5;
+//显示倒数秒数
+function showTime() {
+    t -= 1;
+    document.getElementById('showtimes').innerHTML = t;
+    if (t == 0) {
+        location.href = 'login.html';
+    }
+    //每秒执行一次,showTime()
+    setTimeout("showTime()", 1000);
+}
+//执行showTime()
+showTime();
+</script>
+
+</html>

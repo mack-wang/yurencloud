@@ -1,0 +1,155 @@
+[ 2016-08-06T21:43:46+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=33
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001910s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0341s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='33' ) [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000833s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000925s ]
+
+[ 2016-08-06T21:44:06+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/delAdmin?admin_id=28
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001026s ]
+SQL: SHOW COLUMNS FROM `yn_admin` [ RunTime:0.0379s ]
+SQL: SELECT * FROM `yn_admin` WHERE `admin_id` = 28 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `yn_admin` [ RunTime:0.0152s ]
+SQL: DELETE FROM `yn_admin` WHERE ( admin_id='28' ) [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001135s ]
+
+[ 2016-08-06T21:45:26+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/delAdmin?admin_id=26
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001174s ]
+
+[ 2016-08-06T21:45:34+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/delAdmin?admin_id=26
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+
+[ 2016-08-06T22:11:26+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/delMember?member_id=6
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+SQL: SHOW COLUMNS FROM `yn_member` [ RunTime:0.0397s ]
+SQL: DELETE FROM `yn_member` WHERE ( member_id='6' ) [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001179s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001316s ]
+
+[ 2016-08-06T22:11:30+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/delMember?member_id=7
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001544s ]
+SQL: SHOW COLUMNS FROM `yn_member` [ RunTime:0.0424s ]
+SQL: DELETE FROM `yn_member` WHERE ( member_id='7' ) [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000817s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000905s ]
+
+[ 2016-08-06T22:12:01+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/delMember?member_id=8
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001203s ]
+SQL: SHOW COLUMNS FROM `yn_member` [ RunTime:0.0343s ]
+SQL: DELETE FROM `yn_member` WHERE ( member_id='8' ) [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001014s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001121s ]
+
+[ 2016-08-06T22:17:40+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001052s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0454s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='5' ) [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000827s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000916s ]
+
+[ 2016-08-06T22:19:59+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: Think\Model:fetchdataGift方法不存在！
+
+[ 2016-08-06T22:20:18+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=4
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000941s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0440s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='4' ) [ RunTime:0.0019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000822s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000909s ]
+
+[ 2016-08-06T22:21:00+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/delMember?member_id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001336s ]
+SQL: SHOW COLUMNS FROM `yn_member` [ RunTime:0.0335s ]
+SQL: DELETE FROM `yn_member` WHERE ( member_id='5' ) [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000994s ]
+
+[ 2016-08-06T22:40:57+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/delMember?member_id=11
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+SQL: SHOW COLUMNS FROM `yn_member` [ RunTime:0.0344s ]
+SQL: DELETE FROM `yn_member` WHERE ( 11 ) [ RunTime:0.0029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001151s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001280s ]
+
+[ 2016-08-06T23:05:29+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=34
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000578s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001183s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0483s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='34' ) [ RunTime:0.0038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002066s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002286s ]
+
+[ 2016-08-06T23:10:08+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/delMember?member_id=12
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001006s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001925s ]
+SQL: SHOW COLUMNS FROM `yn_member` [ RunTime:0.0154s ]
+SQL: DELETE FROM `yn_member` WHERE ( member_id='12' ) [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000736s ]
+
+[ 2016-08-06T23:16:03+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=21
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001447s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0266s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='21' ) [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000701s ]
+
+[ 2016-08-06T23:16:13+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=12
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001298s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0363s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='12' ) [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000988s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001092s ]
+
+[ 2016-08-06T23:31:04+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/delMember?member_id=70
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001585s ]
+SQL: SHOW COLUMNS FROM `yn_member` [ RunTime:0.0242s ]
+SQL: DELETE FROM `yn_member` WHERE ( member_id='70' ) [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000943s ]
+

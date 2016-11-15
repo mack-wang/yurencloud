@@ -1,0 +1,192 @@
+[ 2016-06-24T00:15:54+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/Manage/logout
+ERR: 非法操作:Manage
+
+[ 2016-06-24T00:15:58+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/Manage/logout
+ERR: 非法操作:Manage
+
+[ 2016-06-24T00:16:34+08:00 ] ::1 /ynzy/Manage/index.php/Admin/IndexManage/logout
+ERR: 无法加载控制器:IndexManage
+
+[ 2016-06-24T00:18:11+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/Manage/logout
+ERR: 非法操作:Manage
+
+[ 2016-06-24T00:18:40+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/Manage/logout
+ERR: 非法操作:Manage
+
+[ 2016-06-24T00:21:22+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/Manage/logout
+ERR: 非法操作:Manage
+
+[ 2016-06-24T00:21:24+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/Manage/logout
+ERR: 非法操作:Manage
+
+[ 2016-06-24T00:21:40+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:22:05+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:24:01+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:26:04+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:27:20+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:27:23+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:27:41+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/ynzy/Manage/index.php/Admin/Manage/logout
+ERR: 非法操作:ynzy
+
+[ 2016-06-24T00:31:29+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:41:13+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:41:38+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:41:39+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:41:44+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:42:50+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:44:10+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:44:12+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:44:20+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:44:22+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:49:22+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T00:49:27+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T01:34:35+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Verify/verifyImg
+ERR: 无法加载控制器:Verify
+
+[ 2016-06-24T01:34:36+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Verify/verifyImg
+ERR: 无法加载控制器:Verify
+
+[ 2016-06-24T01:36:24+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Verify/verifyImg
+ERR: 无法加载控制器:Verify
+
+[ 2016-06-24T01:36:34+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Verify/verifyImg
+ERR: 无法加载控制器:Verify
+
+[ 2016-06-24T01:39:29+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Admin
+
+[ 2016-06-24T01:39:29+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Admin
+
+[ 2016-06-24T01:39:30+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Admin
+
+[ 2016-06-24T01:39:30+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Admin
+
+[ 2016-06-24T01:39:52+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Admin
+
+[ 2016-06-24T01:40:09+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Admin
+
+[ 2016-06-24T01:40:42+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Controller
+
+[ 2016-06-24T01:40:43+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Controller
+
+[ 2016-06-24T01:40:43+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Controller
+
+[ 2016-06-24T01:40:43+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Controller
+
+[ 2016-06-24T01:40:44+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Controller
+
+[ 2016-06-24T01:41:02+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Controller/Verify/verifyImg
+ERR: 无法加载控制器:Controller
+
+[ 2016-06-24T01:41:41+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Verify/verifyImg
+ERR: 无法加载控制器:Verify
+
+[ 2016-06-24T01:41:42+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Verify/verifyImg
+ERR: 无法加载控制器:Verify
+
+[ 2016-06-24T01:41:42+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Verify/verifyImg
+ERR: 无法加载控制器:Verify
+
+[ 2016-06-24T01:41:43+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Verify/verifyImg
+ERR: 无法加载控制器:Verify
+
+[ 2016-06-24T01:42:35+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manager/login.html
+ERR: 无法加载控制器:Manager
+
+[ 2016-06-24T09:29:09+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+[ 2016-06-24T09:29:17+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+[ 2016-06-24T09:30:28+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+[ 2016-06-24T10:30:45+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop?shop_id=24&shop_name=&shop_tel=&search_submit=%E6%9F%A5%E8%AF%A2
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Limit 0, 7 )' at line 1
+
+[ 2016-06-24T12:08:35+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/shop?shop_id=&shop_name=&shop_tel=15757130092&search_submit=%E6%9F%A5%E8%AF%A2
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Limit 0, 2' at line 1
+
+[ 2016-06-24T13:10:16+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-24T15:55:36+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-24T15:55:37+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/check.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-24T17:21:39+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-24T17:21:41+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/check.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-24T21:56:35+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/update
+ERR: Unable to load template file 'w\ynzy\ThinkPHP/Tpl/dispatch_jump.tpl'
+
+[ 2016-06-24T21:59:47+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/update
+ERR: Unable to load template file 'w\ynzy\ThinkPHP/Tpl/dispatch_jump.tpl'
+
+[ 2016-06-24T22:02:40+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/shop.html
+ERR: 非法操作:shop
+
+[ 2016-06-24T22:03:19+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/shop.html
+ERR: 非法操作:shop
+
+[ 2016-06-24T22:08:07+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/shop.html
+ERR: 非法操作:shop
+
+[ 2016-06-24T22:09:23+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/shop.html
+ERR: 非法操作:shop
+
+[ 2016-06-24T22:10:04+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Manage/shop.html
+ERR: 非法操作:shop
+

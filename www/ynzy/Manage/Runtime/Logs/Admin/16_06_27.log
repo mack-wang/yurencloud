@@ -1,0 +1,15 @@
+[ 2016-06-27T09:00:37+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-27T09:00:39+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-06-27T09:00:40+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Gift/check.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-27T09:00:41+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-06-27T09:00:42+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+

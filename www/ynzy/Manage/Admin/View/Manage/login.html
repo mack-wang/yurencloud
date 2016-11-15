@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大美云南管理后台</title>
+    <link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}basic.css">
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}main.js"></script>
+</head>
+
+<body>
+    <header class="top">
+        <img src="{$smarty.const.ADMIN_IMG_URL}logo.png" alt="logo" class="logo">
+    </header>
+    <form action="{$smarty.const.__SELF__}" method="post" enctype="multipart/form-data" class="login">
+        <img src="{$smarty.const.ADMIN_IMG_URL}sanjiao.png" alt="三角" class="sanjiao">
+        <ul>
+            <li>
+                <div><img src="{$smarty.const.ADMIN_IMG_URL}man.png"></div>
+                <input type="text" name="admin_name" maxlength="20" placeholder="  管理员账号">
+            </li>
+            <li>
+                <div><img src="{$smarty.const.ADMIN_IMG_URL}locked.png"></div>
+                <input type="password" name="admin_password" placeholder="  密码">
+                <span class="login_tips">{$tips_pwd}</span>
+            </li>
+            <li>
+                <div><img src="{$smarty.const.ADMIN_IMG_URL}scan-label.png"></div>
+                <input type="text" name="admin_verify" placeholder="  验证码">
+                <span class="login_tips">{$tips_ver}</span>
+            </li>
+        </ul>
+        <div class="box1">
+            <span class="text1">验证码：</span>
+            <div class="verify"><img src="{$smarty.const.__MODULE__}/Verify/verifyImg" onclick="this.src='{$smarty.const.__MODULE__}/Verify/verifyImg/'+Math.random()" alt="" /></div>
+        </div>
+        <input type="submit" class="login-submit-btn">
+    </form>
+</body>
+
+</html>

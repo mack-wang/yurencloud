@@ -1,0 +1,433 @@
+[ 2016-06-23T16:38:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-06-23T16:38:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:38:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/left.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:38:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/right.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:38:42+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:38:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Member/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:38:55+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:38:56+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:38:57+08:00 ] ::1 /ynzy/Manage/index.php/Home/Gift/gift.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:39:19+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:39:19+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:39:19+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/right.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:39:19+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/left.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:39:19+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:39:28+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:39:28+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:39:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:39:30+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:41:06+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:41:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:41:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/right.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:41:07+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/left.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:41:08+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:48:15+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:48:15+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/right.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:48:15+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:48:15+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/left.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:48:16+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:48:18+08:00 ] ::1 /ynzy/Manage/index.php/Home/Member/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:48:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:48:23+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/change?shop_id=21
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:48:24+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:48:25+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:48:27+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:48:30+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html?shop_id=24&shop_name=&shop_tel=&search-submit=%E6%9F%A5%E8%AF%A2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:48:32+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:49:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:49:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/right.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:49:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:49:54+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/left.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:49:55+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:49:55+08:00 ] ::1 /ynzy/Manage/index.php/Home/Member/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_member' doesn't exist
+
+[ 2016-06-23T16:52:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:52:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/right.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:52:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/left.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:52:38+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:52:39+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:52:40+08:00 ] ::1 /ynzy/Manage/index.php/Home/Member/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:52:41+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:52:42+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/welcome.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:52:43+08:00 ] ::1 /ynzy/Manage/index.php/Home/Gift/gift.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:53:28+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:53:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:53:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/right.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-06-23T16:53:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/left.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:53:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:53:31+08:00 ] ::1 /ynzy/Manage/index.php/Home/Gift/gift.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-23T16:54:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:54:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/left.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:54:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/top.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:54:10+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/right.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:54:11+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:54:13+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:54:15+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html?&page=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T16:54:19+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/perpage?per=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:54:20+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-06-23T16:54:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Member/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-06-23T17:24:28+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T17:24:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Member/member.html
+ERR: 无法加载控制器:Member
+
+[ 2016-06-23T17:24:31+08:00 ] ::1 /ynzy/Manage/index.php/Home/Gift/gift.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-23T17:24:33+08:00 ] ::1 /ynzy/Manage/index.php/Home/Gift/check.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-23T17:24:35+08:00 ] ::1 /ynzy/Manage/index.php/Home/Gift/check.html
+ERR: 无法加载控制器:Gift
+
+[ 2016-06-23T17:25:05+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:05:52+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:06:27+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:07:14+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:11:11+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:11:18+08:00 ] ::1 /ynzy/Manage/index.php/Home/Member/member.html
+ERR: 无法加载控制器:Member
+
+[ 2016-06-23T20:12:06+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:13:24+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:14:16+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:18:24+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:25:00+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:25:05+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:27:03+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:27:06+08:00 ] ::1 /ynzy/Manage/index.php/Home/Member/member.html
+ERR: 无法加载控制器:Member
+
+[ 2016-06-23T20:30:34+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T20:30:35+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T21:33:06+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T21:41:15+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T21:42:29+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T21:43:45+08:00 ] ::1 /ynzy/Manage/index.php/Home/Shop/shop.html
+ERR: 无法加载控制器:Shop
+
+[ 2016-06-23T21:53:46+08:00 ] ::1 /ynzy/Manage/index.php/A/Index/index
+ERR: 无法加载控制器:A
+
+[ 2016-06-23T21:53:47+08:00 ] ::1 /ynzy/Manage/index.php/AD/Index/index
+ERR: 无法加载控制器:AD
+
+[ 2016-06-23T21:53:48+08:00 ] ::1 /ynzy/Manage/index.php/A/Index/index
+ERR: 无法加载控制器:A
+
+[ 2016-06-23T21:53:49+08:00 ] ::1 /ynzy/Manage/index.php/Ad/Index/index
+ERR: 无法加载控制器:Ad
+
+[ 2016-06-23T21:53:49+08:00 ] ::1 /ynzy/Manage/index.php/Adm/Index/index
+ERR: 无法加载控制器:Adm
+
+[ 2016-06-23T21:53:49+08:00 ] ::1 /ynzy/Manage/index.php/Admn/Index/index
+ERR: 无法加载控制器:Admn
+
+[ 2016-06-23T21:53:55+08:00 ] ::1 /ynzy/Manage/index.php/Admi/Index/index
+ERR: 无法加载控制器:Admi
+

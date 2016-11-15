@@ -1,0 +1,9 @@
+[ 2016-07-03T20:05:00+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index.html
+ERR: 非法操作:index
+
+[ 2016-07-03T21:16:31+08:00 ] ::1 /ynzy/Manage/index.php/Home/Index/index
+ERR: 非法操作:index
+
+[ 2016-07-03T21:57:43+08:00 ] ::1 /ynzy/Manage/index.php/Home/Wed/wed
+ERR: 无法加载控制器:Wed
+

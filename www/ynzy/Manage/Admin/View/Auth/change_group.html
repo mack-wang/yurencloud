@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大美云南管理后台</title>
+    <link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}basic.css">
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="all-pages">权限设置 > 管理员表 > 添加分组&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+        <a href="{$smarty.const.__CONTROLLER__}/group" class="back-shop-manage my-btn">返回</a>
+        <div class="table-div">
+            <form action="{$smarty.const.__SELF__}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="group_id" value="{$info.group_id}" />
+                <table class="table update-table" border=1>
+                    <tr>
+                        <th>分组名称</th>
+                        <td>
+                            <input type="text" name="group_name" placeholder="{$info.group_name}" value="{$tips.group_name}">
+                        </td>
+                    </tr>
+                </table>
+                <div class="update-submit">
+                    <input type="submit" name="update_submit" class="my-btn" value="提交">
+                    <a href="{$smarty.const.__CONTROLLER__}/group" class="my-btn">取消</a>
+                </div>
+        </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>01-php</title>
+</head>
+<style>
+	body {
+		width: 100%;
+		height: 100%;
+	}
+	.box1 {
+		width: 250px;
+		margin: 100px auto;
+	}
+</style>
+<body>
+	<form class="box1" method="post" action="my.php">
+		<h2 align="center">注册</h2>
+		<table>
+			<tr><td>名字</td><td><input type="text" name="name" ></input></td></tr>
+			<tr><td>密码</td><td><input type="password" name="pwd"></input></td></tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" name="submit" value="提交">
+					<input type="reset" name="reset" value="重置">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

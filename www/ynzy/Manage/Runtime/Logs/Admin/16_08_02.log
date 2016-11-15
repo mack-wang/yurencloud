@@ -1,0 +1,39 @@
+[ 2016-08-02T08:50:29+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-02T08:50:31+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-02T15:57:10+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/change?shop_openid=oWLIVtwHBtK5kUlVP9Oqpt_PsSVA
+ERR: 参数错误或者未定义:shop_id
+
+[ 2016-08-02T16:56:03+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/change?shop_openid=oWLIVt1phZFWJyZJiEsD7F8TcPZk
+ERR: 参数错误或者未定义:shop_id
+
+[ 2016-08-02T21:20:43+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'yn_shop'
+
+[ 2016-08-02T22:28:58+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'yn_shop'
+
+[ 2016-08-02T22:40:31+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'shop_id' in field list is ambiguous
+
+[ 2016-08-02T23:19:55+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'shop_id' in field list is ambiguous
+
+[ 2016-08-02T23:25:24+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'shop_id' in field list is ambiguous
+
+[ 2016-08-02T23:25:50+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'shop_id' in field list is ambiguous
+
+[ 2016-08-02T23:25:52+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'shop_id' in field list is ambiguous
+
+[ 2016-08-02T23:27:15+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'shop_id' in field list is ambiguous
+
+[ 2016-08-02T23:29:04+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'shop_id' in field list is ambiguous
+

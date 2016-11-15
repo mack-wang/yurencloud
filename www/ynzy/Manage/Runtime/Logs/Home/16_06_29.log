@@ -1,0 +1,6 @@
+[ 2016-06-29T11:49:09+08:00 ] 127.0.0.1 /ynzy/Manage/index.php/Home/Index/login
+ERR: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-06-29T18:35:41+08:00 ] 60.186.197.58 /ynzy/Manage/index.php/Home/Index/login?code=0311ZQZq0q2Xsb1oaeZq0u9SZq01ZQZ2&state=1
+ERR: Think\Controller:http_get方法不存在！
+

@@ -1,0 +1,535 @@
+/* --------------------------------------css样式初始化 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:14px, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; color: #404040;}
+a:hover { text-decoration:none; color: #00b7ee }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%;}
+table { border-collapse:collapse; border-spacing:0; table-layout:fixed;}
+body { font-family: '微软雅黑'; color:#404040;}
+/* -----------------------------------------------add */
+.percent5{width: 5%;}
+.percent10{width: 10%;}
+.percent15{width: 15%;}
+.percent20{width: 20%;}
+.percent25{width: 25%;}
+.percent30{width: 30%;}
+.percent35{width: 35%;}
+.percent40{width: 40%;}
+.percent50{width: 50%;}
+.percent60{width: 60%;}
+.percent70{width: 70%;}
+.percent80{width: 80%;}
+.percent90{width: 90%;}
+.percent100{width: 100%;}
+.font-size10{font-size: 10px;}
+.font-size16{font-size: 16px;}
+.font-size20{font-size: 20px;}
+.font-size22{font-size: 22px;}
+.font-size30{font-size: 30px;}
+.font-size40{font-size: 40px;}
+.font-size50{font-size: 50px;}
+.font-weight-lighter{font-weight: lighter;}
+.warning {
+    color: red;
+}
+.hide {
+    display: none;
+}
+.add-admin {
+    width: 100px !important;
+}
+.admin-table {
+    margin-top: 20px;
+}
+.select li {
+    display: inline-block;
+}
+.select li input{
+    width: 100px;
+}
+/* header */
+.top {
+    width: 100%;
+    height: 90px;
+    background-color: #1b1b1b;
+}
+.logo {
+    height: 60px;
+    margin:15px 76px;
+}
+
+/* -----------------------------------------------login */
+.login {
+    position: relative;
+    float: right;
+    width: 300px;
+    height: 400px;
+    margin: 35px 76px;
+    border: 1px solid #bfbfbf;
+    background-color: #eeeeee;
+}
+.sanjiao {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.login ul {
+    margin: 50px auto;
+}
+.login ul li {
+    margin: 30px auto;
+    width: 240px;
+    height: 30px;
+    border: 1px solid #bfbfbf;
+}
+.login ul li div {
+    float: left;
+    width: 30px;
+    height: 30px;
+    background-color: #d2d2d2;
+}
+.login ul li div img {
+    margin: 5px 5px;
+    width: 20px;
+    height: 20px;
+}
+.login ul li input {
+    float: left;
+    width: 210px;
+    height: 30px;
+    border: none;
+}
+.box1 {
+    position: absolute;
+    margin-left: 30px;
+    line-height: 30px;
+    right: 30px;
+    margin-top:-20px;
+}
+.text1 {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+}
+.verify {
+    position: relative;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #bfbfbf;
+    display: inline-block;
+    right: 0px;
+}
+.login-submit-btn {
+    width: 240px;
+    height: 40px;
+    border-radius: 5px;
+    border-color: #1b1b1b;
+    background-color: #1b1b1b;
+    margin:40px 0 0 30px;
+    color: #dbdbdb;
+}
+/* -----------------------------------------------index */
+.change-password {
+    float: right;
+    margin: 55px 76px 0 0;
+}
+.change-password a {
+    margin-left: 20px;
+    color:#eeeeee;
+}
+.change-password a:hover {
+    margin-left: 20px;
+    color:#00b7ee;
+}
+/* -----------------------------------------------left */
+.left {
+    float: left;
+    width: 150px;
+    margin-top: 20px;
+    margin-left:76px;
+}
+.ul-title {
+    width: 148px;
+    height: 30px;
+    border: 1px solid #DDDDDD;
+    line-height: 30px;
+    text-align: center;
+    background-color: #EDEDED;
+    margin-top: -1px;
+    color: #888888;
+}
+.ul-container li {
+    width: 148px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #DDDDDD;
+    margin-top: -1px;
+}
+.show {
+    display: block;
+}
+.shop-system a:hover {
+    color: #00b7ee;
+}
+/* -----------------------------------------------right */
+.right {
+    float: left;
+    display: inline-block;
+    width: 950px;/* 原先是950px */
+    height: 500px;
+    margin: 20px 76px 0 20px;
+    border: 1px solid black;
+}
+/* -----------------------------------------------welcome */
+.welcome-ul {
+    margin-left: 20px;
+}
+.pic1 {
+    width: 30px;
+    height: 30px;
+}
+.welcome-ul strong {
+    padding-left: 20px;
+}
+.welcome-ul li {
+    margin-top: 20px;
+}
+/* -----------------------------------------------container */
+.container {
+    position: relative;
+    margin:20px;
+    width: 100%;
+    min-width: 1050px;
+}
+/* -----------------------------------------------shop-manage */
+.page-ul {
+    display: inline-block;
+}
+.page-form {
+    display: inline-block;
+}
+.all-pages {
+    display: inline-block;
+    float: left;
+    font-weight: lighter;
+    color: #2679b5;
+    font-size: 16px!important;
+    line-height: 30px;
+}
+.pages {
+    width: 20px;
+    height: 20px;
+}
+.search-form {
+    margin-left: 30px;
+}
+.search-form {
+    display: inline-block;
+}
+.excel-btn {
+    display: inline-block;
+}
+.my-btn {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    background-color: #6fb3e0;
+    border: 0;
+    color: white;
+    text-align: center;
+}
+.select {
+    height: 30px;
+}
+.search {
+    width: 200px;
+    height: 28px;
+    border: 1px solid #6fb3e0;
+    border-radius: 4px!important;
+    box-shadow: none!important;
+}
+.table {
+    width: 100%;
+}
+.table td{
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+    height: 40px;
+    color: #455757;
+}
+.table th{
+    height: 40px;
+    padding: 0 5px 0 10px;
+    background-color: #F1F1F1;
+    color:#707070;
+    font-weight: normal;
+    background-image: linear-gradient(to bottom,#f8f8f8 0,#ececec 100%);
+    text-align: left;
+}
+.table-div {
+    padding-top: 20px;
+    padding-right: 40px;
+}
+.bottom-page {
+    margin-top: 30px;
+}
+.bottom-page ul {
+    display: inline-block;
+}
+.bottom-page ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+.bottom-page ul li a{
+    color: black
+}
+.bottom-page ul li a:hover{
+    color: #00b7ee;
+}
+.box2 {
+    display: inline-block;
+    margin-left: 30px;
+}
+.go-pages {
+    width: 20px;
+    height: 20px;
+}
+.add-shop {
+    margin-top: 20px;
+    line-height: 30px;
+}
+.add-shop:hover{
+    color: white;
+}
+.back-shop-manage {
+    margin-left: 50px;
+    float: right;
+    margin-bottom:20px;
+}
+.back-shop-manage:hover{
+    color: white;
+}
+.table tr td{
+    position: relative;
+    border: 1px solid #DDDDDD;
+}
+.table tr th{border:1px solid #DDDDDD;
+    border-left:1px solid #DDDDDD;
+    border-bottom: 2px solid #dddddd;
+}
+.table tr td img{
+    display: inline-block;
+    border-radius: 20px;
+    width: 40px;
+}
+.table tr td a{
+    margin-bottom: 5px;
+}
+/* -----------------------------------------------delete */
+.delete {
+    position: absolute;
+    left: 375px;
+    top: 100px;
+    width: 300px;
+    height: 200px;
+    background-color: #eeeeee;
+    border: 1px solid #7d7d7d;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+.delete p {
+    text-align: left;
+    margin: 50px 20px 20px 20px;
+}
+.delete-confirm {
+    display: inline-block;
+    margin:30px 20px 0 0;
+}
+.delete-cancel {
+    display: inline-block;
+    margin:30px 0 0 20px;
+
+}
+.checkbox-style {
+    width: 17px;
+    height: 17px;
+}
+.width20 {
+    width: 20px;
+}
+.width30 {
+    width: 30px;
+}
+.width40 {
+    width: 40px;
+}
+.width50 {
+    width: 50px;
+}
+.hegiht20 {
+    height: 20px;
+}
+.hegiht30 {
+    height: 30px;
+}
+.hegiht40 {
+    height: 40px;
+}
+.padding-left10 {
+    padding-left: 10px;
+}
+.change-color {
+    background-color: #F9F9F9;
+}
+/* -----------------------------------------------update */
+.backgroundcolor1{
+    background-color: #A0A0A0;
+}
+.update-table input {
+    height: 38px;
+    width: 246px;
+    border: 0;
+}
+.update-submit {
+    margin:30px 0 0 30px;
+}
+
+
+.ul-title-color {
+    background-color: #7A7A7A;
+}
+tr:hover
+{
+background-color: #F2F2F2;
+}
+td:hover
+{
+text-overflow:inherit;
+overflow:visible;
+}
+.my-btn:hover {
+    background-color: #4f99c6;
+}
+.tr-height40 td {
+    height: 50px;
+}
+.imgdiv {
+    width: 40px
+    height:40px;
+}
+.icon-trash{
+    font-size: 22px;
+}
+.icon-pencil{
+    font-size: 22px;
+}
+.update-table {
+    width: 400px;
+    margin:30px;
+}
+.update-form{
+    margin:auto;
+}
+.update-table tr th{
+    width: 150px;
+}
+.shopgroup-select{
+    margin-left: 6px;
+    width: 226px;
+    height: 30px;
+}
+.line-height30{
+    line-height: 30px;
+}
+td a:hover{
+    color: #00b7ee;
+}
+body {
+    font-size:14px;
+}
+.text-center {
+    text-align: center;
+}
+/* -----------------------------------------------------------up-div */
+.up-div{
+    width: 40%;
+    min-width: 400px;
+    border:1px solid #DDDDDD;
+    margin: 30px;
+}
+.div-header{
+    min-height: 38px;
+    background-image: -webkit-gradient(linear,left 0,left 100%,from(#fff),to(#eee));
+    border-bottom: 1px solid #DDD;
+    color:#4f99c6;
+    padding-left: 12px;
+    line-height: 38px;
+    font-size: 16px;
+    vertical-align: center;
+}
+.small-line{
+    width: 60px;
+    height: 38px;
+    line-height: 38px;
+    border-left: 1px solid #DDD;
+    float: right;
+    display: inline-block;
+}
+.remove{
+    display: inline-block;
+    color: #D15B47;
+    float: right;
+    padding-right: 20px;
+    line-height: 38px;
+    font-size: 26px;
+    vertical-align: center;
+}
+.up-div-1{
+    display: block;
+    width: 100%;
+}
+.up-div-1 label{
+    display: block;
+    margin:10px 10px 5px 10px;
+}
+.up-div-1 input{
+    display: block;
+    margin:0 0 10px 10px;
+    height: 22px;
+    padding: 5px 0 5px 5px;
+    border:1px solid #DDD;
+    width: 93%;
+}
+.up-div-1 select{
+    height: 34px;
+    border:1px solid #DDD;
+    margin:0 10px 10px 10px;
+    width: 94%;
+}
+
+.up-div-btn{
+    margin:10px 0 20px 0;
+}
+.add-group{
+    height: 30px;
+    border:1px solid #DDD;
+}
+.login_tips{
+    float: right;
+    color: red;
+    margin-top:5px;
+}

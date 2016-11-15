@@ -1,0 +1,10 @@
+[ 2016-08-07T20:18:43+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Shop/del?shop_id=39
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001459s ]
+SQL: SHOW COLUMNS FROM `yn_shop` [ RunTime:0.0361s ]
+SQL: DELETE FROM `yn_shop` WHERE ( shop_id='39' ) [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000702s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000773s ]
+

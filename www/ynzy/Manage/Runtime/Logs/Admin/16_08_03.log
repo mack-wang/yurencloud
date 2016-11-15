@@ -1,0 +1,33 @@
+[ 2016-08-03T10:26:54+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/shop
+ERR: 非法操作:shop
+
+[ 2016-08-03T10:31:27+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Auth/del_group?group_id=15
+ERR: 非法操作:del_group
+
+[ 2016-08-03T15:26:35+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-03T16:30:14+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-03T16:32:46+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Index/welcome.html
+ERR: 非法操作:welcome
+
+[ 2016-08-03T22:50:08+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: Think\Model:relation方法不存在！
+
+[ 2016-08-03T22:52:44+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: Think\Model:relation方法不存在！
+
+[ 2016-08-03T22:54:46+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: Think\Model:relation方法不存在！
+
+[ 2016-08-03T22:54:48+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: Think\Model:relation方法不存在！
+
+[ 2016-08-03T22:55:53+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: Think\Model:relation方法不存在！
+
+[ 2016-08-03T23:29:59+08:00 ] ::1 /ynzy/Manage/index.php/Admin/Member/member
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ynzy.yn_shophaha' doesn't exist
+
