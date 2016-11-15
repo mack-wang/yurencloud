@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+
+
+    //原型链继承
+    function fun1() {
+        function A() {
+            this.color = ['green', 'red', 'yellow'];
+        }
+
+        //创建空的B函数
+        function B() {
+        }
+
+        //B函数的原型prototype继承A函数
+        B.prototype = new A();
+        //实例化B函数，生成instance实例对象
+        var instance = new B();
+        alert(instance.color);
+    }
+
+
+</script>
+
+</html>

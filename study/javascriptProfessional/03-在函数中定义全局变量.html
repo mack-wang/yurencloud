@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+    function fun() {
+        message = "全局变量"; //在变量前不加var，则该变量在全局有效。但不推荐这样使用，严格模式下会报错。
+    }
+    fun();
+    alert(message);
+</script>
+
+</html>

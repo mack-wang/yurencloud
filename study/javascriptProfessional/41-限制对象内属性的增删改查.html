@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    var person = {
+        name: "wlc",
+        age: 24,
+        height: "174cm"
+    };
+
+    Object.defineProperty(person, "name", {//此处设置了person的name属性不可写，所以下文的wlc3没有生效
+        writable: false,
+        value: "wlc2"
+    });
+
+    alert(person.name);
+    person.name = "wlc3";
+    alert(person.name);
+
+</script>
+
+</html>

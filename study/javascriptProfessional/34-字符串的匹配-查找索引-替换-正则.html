@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    var str = "hello world how are you";
+    var pattern = /world/;
+    var myMatch = str.match(pattern);//匹配后返回一个对象，包含下列的属性
+    alert(myMatch.index);
+    alert(myMatch[0]);
+    alert(myMatch.lastIndex);
+
+    var position = str.search(/how/);//匹配后返回一个索引值，表示第一次搜索到匹配值时的位置
+    alert(position);
+
+    var result = str.replace(/you/g, "YOURS");//参数：第一个参数正则式，第二个参数要替换的文字。
+    alert(result);
+
+</script>
+
+</html>

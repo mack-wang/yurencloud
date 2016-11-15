@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    var str = "第一名，46分；第二名，33分；第三名，44分；第四名，55分";
+    var newstr = str.split("；");//实际上，字符串已经以";"为分隔，并一个一个放入数组了，newstr[3]，就会是第四名的信息
+    alert(newstr[3]);
+</script>
+
+</html>

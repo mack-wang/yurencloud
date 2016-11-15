@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+        var now = new Date();//生成当前时间的格式化日期
+        alert(now);
+
+        var old = new Date("6/13/2016");
+        alert(old);
+
+        var num = new Date(Date.parse("6/13/2016"));
+        alert(num);
+
+        var now2 = Date.now();//返回当前时间的毫秒数
+        alert(now2);
+
+        var now3 = Date.now();
+        alert(now3-now2);
+</script>
+
+</html>

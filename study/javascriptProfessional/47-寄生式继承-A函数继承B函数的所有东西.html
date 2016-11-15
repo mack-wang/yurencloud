@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+
+
+    //寄生式继承
+    function fun1() {
+
+        //创建A，允许传入一个对象B，让A继承B
+        function A(original) {
+            var clone = Object(original);
+            clone.sayname = function () {
+                alert("hi");
+            };
+            return clone;
+        }
+
+        //创建对象B
+        var B = {
+            name: "wlc",
+            age: "23"
+        };
+
+        //实例化A，同时把B输入，继承B的属性
+        var instance = A(B);
+        instance.sayname();
+        alert(instance.age)
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    //1
+    function sum(num1, num2) {//函数声明
+        return num1 + num2;
+    }
+    //2
+    var sum2 = function (num1, num2) {//函数表达式
+        return num1 + num2;
+    };
+    //3
+    var sum3 = new Function("num1", "num2", "return num1+num2");//函数表达式及构造
+    //4
+    var sum4 = function sum4(num1, num2) { //同时使用函数声明，函数表达式。但在safari中会出错。
+        return num1 + num2;
+    }
+    alert(sum(4, 5));
+    alert(sum2(4, 6));
+    alert(sum3(5, 6));
+    alert(sum4(6, 6));
+    //函数声明与函数表达式的区别：函数声明的函数，会被js优先加载，所以在声明之前调用该函数是没问题的。但函数表达式得按从上到下的顺序执行。
+
+</script>
+
+</html>

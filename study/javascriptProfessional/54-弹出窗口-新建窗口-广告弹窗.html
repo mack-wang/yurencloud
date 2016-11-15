@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+
+    function fun1() {
+        //一共可以设置三个参数，地址，新建窗口位置，长宽高位置等
+        window.open("http://www.baidu.com","_blank","height=720,width=1080,top=150,left=400")
+
+        //这个很好用，可以用来加载，更新新的页面
+        //可以用worxWin.resizeTo(500,500)来调整窗口位置
+        //可以用wroxWin.close();来关闭弹出的窗口【只能关闭弹出的窗口，不能关闭主窗口】
+    }
+</script>
+
+</html>

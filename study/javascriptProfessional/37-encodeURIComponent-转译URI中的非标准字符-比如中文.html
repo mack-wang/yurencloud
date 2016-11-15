@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    var uri = "http://www.yurencloud.com?name=王乐城&age=24";
+    alert(encodeURIComponent(uri));//会转译冒号斜杠中文之类的
+    alert(encodeURI(uri));//不会转译冒号斜杠之类的，会转译中文
+    //通常不会对整个uri进行转译
+
+    var name = "王乐城";
+    var URI = "http://www.yurencloud.com?name=" + encodeURIComponent(name) + "&age=24";//这样才是常用方法
+    alert(URI);
+    var a = encodeURIComponent("王小花")
+    alert(a);
+    alert(decodeURIComponent(a));//解释编译，还原原来的字符串
+
+</script>
+
+</html>

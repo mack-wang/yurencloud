@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function Person(name, age, job) {//构造函数
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.sayname = function () {
+            alert(this.name);
+        }
+    }
+    var person = new Person("wlc", "23", "design");//使用了new，新建了实例，就是构造函数的使用
+    person.sayname();
+
+    Person('wlc2', '23', 'design');//如果没有使用new，直接把他当成普通函数，也是可以使用的，但对象的主体是window
+    window.sayname();
+
+</script>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        // var expression = / pattern / flags ; / 正规表达式 / 标志（g:全局，i：不区别大小写，m：到末尾时还继续查找下一行是否有匹配项）
+        var pattern1 = /at/g;
+        var str = "you_at_my_home";
+        if (str.match(pattern1)) {
+            alert('该字符串中有at两个字母');
+        } else {
+            alert('该字符串中没有at两个字母');
+        }
+    }
+
+    function fun2() {
+        // var expression = / pattern / flags ; / 正规表达式 / 标志（g:全局，i：不区别大小写，m：到末尾时还继续查找下一行是否有匹配项）
+        var pattern1 = /[bc]at/gi;
+        var str = "you_cat_my_home";
+        if (str.match(pattern1)) {
+            alert('该字符串中有bat或者cat');
+        } else {
+            alert('该字符串中没有bat或者cat');
+        }
+    }
+
+    function fun3() {
+        // var expression = / pattern / flags ; / 正规表达式 / 标志（g:全局，i：不区别大小写，m：到末尾时还继续查找下一行是否有匹配项）
+        var pattern1 = /\.jpg/gi;
+        var src = "meinv.jpg";
+        if (src.match(pattern1)) {
+            alert('该字符串中有.jpg图片');
+        } else {
+            alert('该字符串中没有.jpg图片');
+        }
+
+    }
+
+    function fun4() {
+        // var expression = / pattern / flags ; / 正规表达式 / 标志（g:全局，i：不区别大小写，m：到末尾时还继续查找下一行是否有匹配项）
+        var pattern = new RegExp('cat', 'g');//使用RegExp构造函数法
+        var src = "ihaveacat";
+        if (src.match(pattern)) {
+            alert('该字符串中有cat');
+        } else {
+            alert('该字符串中没有cat');
+        }
+    }
+
+    function fun5() {
+
+        var pattern1 = /\.jpg/gi;
+        var src = "meinv.jpg";
+        if (pattern1.test(src)) {//test是pattern1的一个方法，传入的参数是要匹配的对象，成功返回true
+            alert('该字符串中有.jpg图片');
+        } else {
+            alert('该字符串中没有.jpg图片');
+        }
+
+    }
+</script>
+
+</html>

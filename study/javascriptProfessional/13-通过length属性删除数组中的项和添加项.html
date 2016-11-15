@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    var color = ['red', 'green', 'blue', 'black'];
+    color.length = 2; //原本长度为4，现在设置长度为2，那么只能保存前2个
+    alert(color[2]);//访问第三个时，undefined
+    color[color.length] = 'white';//在所有项后，增加1个新项
+    alert(color[2]);
+</script>
+
+</html>

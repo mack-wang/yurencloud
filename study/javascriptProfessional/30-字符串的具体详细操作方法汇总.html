@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        var str = "hello world";
+        alert(str.charAt(1));
+        alert(str.charCodeAt(1));
+        alert(str[1]);
+        alert(str.concat(" my girl", " how are you"));//可以插入多个字符串
+
+    }
+
+    function fun2() {
+        var str = "hello world";
+        alert(str.slice(3));
+        alert(str.substring(3));
+        alert(str.substring(3, 7));
+        alert(str.substr(3));
+        alert(str.substr(3, 7));
+        alert(str.slice(3, 7));
+    }
+</script>
+
+</html>

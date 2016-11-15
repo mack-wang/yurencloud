@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        var str = "i have a beautiful summer vacation";
+        var pattern = /ummer/g;
+        if (pattern.test(str)) {
+            alert(RegExp.input); //返回要匹配的字符串全内容
+            alert(RegExp.leftContext);//返回ummer左边的内容
+            alert(RegExp.rightContext);//返回ummmer右边的内容，即vacation
+            alert(RegExp.lastMatch);//返回最后一次匹配的内容，并不会返回summer，返回ummer，要想返回summer，改为（.）ummer就可以
+            alert(RegExp.lastParen);//因为上一条的原因，所以没返回
+            alert(RegExp.multiline);
+        }
+
+    }
+
+    function fun2() {
+        var str = "i have a beautiful summer vacation";
+        var pattern = /ummer/g;
+        if (pattern.test(str)) {//是上面的简写
+            alert(RegExp.$_); //返回要匹配的字符串全内容
+            alert(RegExp["$&"]);//返回ummer左边的内容
+            alert(RegExp["$+"]);//返回ummmer右边的内容，即vacation
+            alert(RegExp["$`"]);//返回最后一次匹配的内容，并不会返回summer，返回ummer，要想返回summer，改为（.）ummer就可以
+            alert(RegExp["$*"]);//因为上一条的原因，所以没返回
+            alert(RegExp["$'"]);
+        }
+    }
+</script>
+
+</html>

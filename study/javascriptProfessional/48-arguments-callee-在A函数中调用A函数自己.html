@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+
+
+    //寄生式继承
+    function fun1() {
+        //递归阶乘函数
+        function A(num) {
+            if (num <= 1) {
+                return 1;
+            } else {
+                return num * arguments.callee(num - 1);//这里也可以写成A(num-1),但会引发一些问题，所以使用arguments.callee，会避免问题
+            }
+        }
+
+        alert(A(5));
+
+
+    }
+
+
+</script>
+
+</html>

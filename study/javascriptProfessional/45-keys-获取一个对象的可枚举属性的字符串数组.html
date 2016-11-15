@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function Person() {//新建一个函数，会自动创建constructor原型（这个就是指Person）;还有prototype属性
+    }
+
+    Person.prototype.name = "wlc";//通过prototype来设置原型属性//原型属性的原理是：当实例person1访问name时，会先访问Person.name,如果没有
+    Person.prototype.age = 23;//就继续访问Person的原型属性，Person.prototype.name
+    Person.prototype.job = "design";
+    Person.prototype.sayname = function () {
+        alert(this.name)
+    }
+
+    var keys = Object.keys(Person.prototype);
+
+    alert(keys);//会弹出prototype的四个属性名，name,age,job,sayname
+</script>
+
+</html>

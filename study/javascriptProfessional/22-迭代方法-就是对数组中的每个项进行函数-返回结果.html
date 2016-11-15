@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        var num = [2, 6, 3, 4, 7, 3, 4, 14, 99, 88];
+        var result1 = num.every(//every(函数)，对数组中的每个项进行函数运算，全部符合，返回true，否则false;
+                function (item, index, array) {
+                    return (item > 6)
+                }
+        )
+        alert(result1)
+    }
+
+    function fun2() {
+        var num = [2, 6, 3, 4, 7, 3, 4, 14, 99, 88];
+        var result1 = num.some(//some(函数)，对数组中的每个项进行函数运算，只要有一项符合，返回true，全部不符合为false;
+                function (item, index, array) {
+                    return (item > 6)
+                }
+        )
+        alert(result1)
+    }
+
+    function fun3() {
+        var num = [2, 6, 3, 4, 7, 3, 4, 14, 99, 88];
+        var result1 = num.filter(//filter(函数)，对数组中的每个项进行函数运算，返回符合运算的项组成的新的数组
+                function (item, index, array) {
+                    return (item > 6)
+                }
+        )
+        alert(result1)
+    }
+
+    function fun4() {
+        var num = [2, 6, 3, 4, 7, 3, 4, 14, 99, 88];
+        var result1 = num.filter(//forEach(函数)，对数组中的每个项进行函数运算，没有返回值。
+                function (item, index, array) {
+                    if (item > 6) {
+                        alert(item)//弹出符合条件的数
+                    }
+                }
+        )
+        alert(result1)
+    }
+
+    function fun5() {
+        var num = [2, 6, 3, 4, 7, 3, 4, 14, 99, 88];
+        var result1 = num.map(//map(函数)，对数组中的每个项进行函数运算，返回每项的运算结果组成的新的数组
+                function (item, index, array) {
+                    return (item > 6)
+                }
+        )
+        alert(result1)
+    }
+</script>
+
+</html>

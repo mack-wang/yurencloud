@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        var num = [2, 6, 3, 4, 7, 3, 4];
+        var sum = num.reduce(//2+6=8 8+3=11 11+4=15 15+7=22 22+3=25 25+4=29  sum=29前两个合并的结果与第三个合并，直到最后。reduceRight()刚好反向相加
+                function (prev, cur, index, array) {
+                    return prev + cur;
+                }
+        )
+        alert(sum);
+
+    }
+
+    function fun2() {
+        var num = ['1', '2', '3', '4', '5'];
+        var sum = num.reduce(
+                function (prev, cur, index, array) {
+                    return prev * cur;
+                }
+        )
+        alert(sum);
+
+    }
+</script>
+
+</html>
