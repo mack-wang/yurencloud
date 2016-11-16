@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+
+    //自封装检测插件名的函数（在IE中无效）IE的插件检测方法，就不写了，要用到时参考书的212页
+    function hasPlugin(name) {//参数：待检测的插件名
+        name = name.toLowerCase();//因为插件名经常有大写小写混杂，所以要统一变成小写
+        for (var i = 0;i<navigator.plugins.length; i++){//遍历所有的插件名
+            if (navigator.plugins[i].name.toLowerCase().indexOf(name)>-1){//name存在时返回true
+                return true;
+            }
+        }
+        return false;
+    }
+
+    alert(hasPlugin("flash"));//如果有插件flash，则弹出true
+
+
+</script>
+
+</html>

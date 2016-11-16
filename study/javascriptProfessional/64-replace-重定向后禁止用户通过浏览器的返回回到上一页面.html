@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        //此次跳转无法通过浏览器返回上一页面，主要用来强制用户在当前页面操作，观看，禁止用户回到上一页面
+        location.replace("http://www.yurencloud.com")
+    }
+
+    function fun2() {
+        //此次跳转可以通过浏览器返回上一页面
+        location.href="http://www.yurencloud.com";
+    }
+</script>
+
+</html>

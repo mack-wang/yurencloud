@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    //创建一个用于测试的空对象，该对象会继承Object，当然也可以new Object()；但之前大括号更快一些，哈哈。
+    var a = {};
+    //自封装函数，输入参数：对象，属性或者方法；输出：该对象中是某包含该属性或者方法，返回布尔值;但不一定百分百准确
+    function isHostMethod(object,property) {
+        var t = typeof object[property];//检测类型
+        return t=='function'||(!!(t=='object'&&object[property]))||t=='unknown';//两个叹号叫双非，即把结果转成布尔值的一种方式
+    }
+
+    //检测对象中是否含有toString方法
+    alert(isHostMethod(a,"toString"));
+    alert(isHostMethod(a,"lalal"));
+</script>
+
+</html>

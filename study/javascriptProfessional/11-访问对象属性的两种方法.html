@@ -24,6 +24,10 @@
 
     var myname = 'name';
     alert(person[myname]);//用方括号的好处是，可以在括号内使用变量
+
+    //for(var attributeName in object) attributeName是属性名，下面会自动遍历所有的属性名，同时attributeName就是属性名的变量，可以依次输出
+    for(var attribute in person)
+        alert(person[attribute]);
 </script>
 
 </html>

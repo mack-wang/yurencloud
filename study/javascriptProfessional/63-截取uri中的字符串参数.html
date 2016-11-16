@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function getQueryString() {
+        //取得查询字符串
+        //如果url有带参数，则截取参数部分字符串，若没有，则则为空字符串
+        var query = (location.search.length > 0 ? location.search.substring(1) : ""),
+                //创建一个空对象
+                args = {},
+                //若有截取参数，则把参数按&符号分开，并组成一个数组，这个数组的每项应该是 ：  参数名=参数值
+                items = query.length ? query.split("&") : [],
+                item = null,
+                name = null,
+                value = null,
+                len = items.length;
+        //遍历items数组，把参数名变成键名，参数值变成键值
+        for (var i = 0; i < len; i++) {
+            //将数组中的每项按=号分开，并组成一个数组，该数组的第一项是参数名，第二项是参数值
+            item = items[i].split("=");
+            //将上述数组解析（例如把中文转译出来）
+            name = decodeURIComponent(item[0]);
+            value = decodeURIComponent(item[1]);
+            //把上述数组按健值对的方式，参数名：参数值，这样组成新的数组，该数组就是最终成果。以后就可以用参数名去访问参数值了
+            if (name.length) {
+                args[name] = value;
+            }
+        }
+        return args;
+    }
+
+    //把返回的参数数组，赋值给args
+    var args =getQueryString();
+    //获取参数中_ijt的参数值
+    alert(args["_ijt"]);
+
+
+</script>
+
+</html>
+0

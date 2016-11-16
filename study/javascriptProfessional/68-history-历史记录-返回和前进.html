@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+<button onclick="fun6()">到另一页</button>
+</body>
+<script type="text/javascript">
+    //后退到上一页
+    function fun1() {
+        history.go(-1);
+    }
+    //前进到下一页（在有后退的时候，才会出现前进）
+    function fun2() {
+        history.go(1);
+    }
+    //跳转到最近浏览记录中，包含有yurecloud.com字符串的历史记录，若没有，则什么也不发生
+    function fun3() {
+        history.go("yurencloud.com");
+    }
+    //后退一页
+    function fun4() {
+        history.back();
+    }
+    //前进一页
+    function fun5() {
+        history.forward();
+    }
+
+    function fun6() {
+        location.href="http://www.yurencloud.com";
+    }
+</script>
+
+</html>

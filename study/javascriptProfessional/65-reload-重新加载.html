@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    function fun1() {
+        //重新加载，有可能从缓存中直接加载，有可能更快
+        location.reload();
+    }
+
+    function fun2() {
+        //重新加载，强制从服务器重新加载
+        location.reload(true);
+    }
+</script>
+
+</html>
