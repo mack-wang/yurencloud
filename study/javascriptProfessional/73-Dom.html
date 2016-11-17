@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="box"></div>
+<button onclick="fun1()">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    var box = document.getElementById("box");
+
+    //确定一个对象是不是一个元素，以下方法在IE中不行
+    if (box.nodeType == Node.ELEMENT_NODE){
+        alert("这是一个元素")
+    }
+
+    //以下方法在所有浏览器中都可行
+    if (box.nodeType == 1){
+        alert("这是一个元素")
+    }
+
+    if(box.nodeType == 1){
+        alert(box.nodeName);//返回的是标签名（测试时返回的是大写的标签名DIV）
+    }
+
+    //以下是节点的常量，用来判断节点的类型，比如上面第一个if中，box的nodeType，和Node.ELEMENT_NOTE这个常量比，如果相等就说明box是元素
+    alert(Node.ATTRIBUTE_NODE);
+    alert(Node.DOCUMENT_NODE);
+    alert(Node.ELEMENT_NODE);
+    alert(Node.ENTITY_SECTION_NODE);
+</script>
+
+</html>

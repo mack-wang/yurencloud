@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <div>
+        <ul id="myul">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul></ul>
+        <ul></ul>
+    </div>
+    <div id="people">
+        <div>Tom</div>
+        <div>Linda</div>
+        <div>Cindy</div>
+        <p>Cindy</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var ul = document.getElementById("myul");
+    var people = document.getElementById("people");
+
+    //新增节点到子节点末尾，新增成功后，返回新增的节点============================
+    //要通过以下方式，才能新建一个元素节点li
+    var newli = document.createElement("li");
+    //要通过以下方式，才能在元素节点内新建一个文本节点6
+    newli.innerHTML="6";
+    var returnNode = ul.appendChild(newli);
+    if (returnNode == newli){
+        console.log("true",newli)
+    }
+    //空节点，即节点内没有文字，该节点的长度为0，有文字的节点长度才为1（这里有点小问题，没弄明白）
+    console.log(newli.childNodes.item(0));
+
+
+    //插入新节点到指定节点前面，新增成功后，返回新增的节点=========================
+    //在第6个节点，即<li>3<li>前增加一个节点
+    var insertli = ul.insertBefore(newli,ul.childNodes.item(5));
+
+    //替换节点
+    var replaceli = ul.replaceChild(newli,ul.firstChild);
+    //删除节点
+    var removeli = ul.removeChild(ul.lastChild.previousSibling);
+
+</script>
+
+</html>

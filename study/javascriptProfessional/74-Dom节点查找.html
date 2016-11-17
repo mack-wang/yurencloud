@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <div>
+        <ul id="myul">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul></ul>
+        <ul></ul>
+    </div>
+    <div id="people">
+        <div>Tom</div>
+        <div>Linda</div>
+        <div>Cindy</div>
+        <p>Cindy</p>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var ul = document.getElementById("myul");
+    var people = document.getElementById("people");
+
+    //每一个节点都有一个childNodes属性，该属性保存着一个NodeList对象，是一个类数组，可以通过方括号方式访问到节点，并且有length属性
+    // var childNodes = NodeList{item[0:li,1:li,2:li,3:li...];length:5}   我随便写的，形象一下
+
+
+    //下面并没有像想像中的那样，会出现#text这样的节点和正常节点交叉出现。原因：标签中的文本也是节点！但是把文本删除，文本节点还是在！！！
+    var firstChild = ul.childNodes[0];
+    var secondChild = ul.childNodes.item(1);
+    var count = ul.childNodes.length;
+    console.log(firstChild, secondChild, count);
+
+
+    var f = people.childNodes[0];
+    var s = people.childNodes.item(4);
+    var c = people.childNodes.length;
+    console.log(f, s, c)
+
+    //下面是将NodeList转成真正的数组
+    var arrayOfNodes = Array.prototype.slice.call(ul.childNodes,0);
+    console.log(arrayOfNodes);
+
+    //下面是通过hasChildNodes()来判断子节点是否包含某标签，返回布尔值
+    console.log(people.hasChildNodes("span"))
+
+    //通过nextSibling可以不断的按照节点顺序，查找下一个节点，以下就是通过第一个点，经过三次nextSibling访问到第四个节点
+    var fourthChild = ul.childNodes[0].nextSibling.nextSibling.nextSibling;
+    //以下和上面刚好相反，是访问上一个节点，以下是通过第四节点，访问上一节点，即第三节点
+    var thirdChild = ul.childNodes.item(3).previousSibling;
+    console.log(fourthChild,thirdChild);
+
+    //访问第一个节点的简便方法
+    var first = ul.firstChild;
+    //访问最后一个节点的简便方法
+    var last = ul.lastChild;
+    console.log(first,last);
+</script>
+
+</html>
