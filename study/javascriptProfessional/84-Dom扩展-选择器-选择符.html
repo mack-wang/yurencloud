@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <ul id="myul" class="red" title="article" mackwang="wlc">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="four">4</li>
+        <li name="five">5</li>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<div id="people">我是文本节点1
+    <div name="tomname">Tom</div>我是文本节点2
+    <div>Linda</div>我是文本节点4
+    <div>Cindy</div>
+    <p>Cindy</p>
+</div>
+
+<div id="test" class="red">
+    我是文本节点,
+    我是文本节点,
+    我是文本节点,
+</div>
+
+</body>
+<script type="text/javascript">
+    var ul = document.getElementById('myul');
+    //querySelector()接收一个CSS的选择符，并返回匹配的第一个元素，若无则返回null。【注意：只返回第一个元素，比如class选择器就不适合多选了】
+    var a = document.querySelector(".red");
+    var b = document.querySelector("#people");
+    var c = document.querySelector("div>p");
+    var d = ul.querySelector(".four")//可以通过document类调用,也可以通过element类调用
+    var e = document.querySelector("ul>li");
+    console.log(a,b,c,d,e);
+
+
+    //querySelectorAll()  获取NodeList的实例，就是返回多个元素对象，可以通过方括号[]或者item()来访问
+    var f = document.querySelectorAll("li");
+    var g = document.querySelectorAll(".red");
+    console.log(f[2],g[1],f.item(2),g.item(1))
+
+
+</script>
+
+</html>

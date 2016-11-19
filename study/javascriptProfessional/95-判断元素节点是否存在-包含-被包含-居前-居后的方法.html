@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="box1">
+
+
+</div>
+
+<ul id="list1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+<div id="box2"></div>
+
+</body>
+<script type="text/javascript">
+
+    var ul = document.getElementById("list1");
+    var li = ul.children;
+    var box1 = document.getElementById("box1");
+    var box2 = document.getElementById("box2");
+
+    console.log(ul, li[2])
+    if (ul.contains(li[2])) {
+        console.log("true");
+    }
+    //a:给定节点，b:参考节点。a在b前，返回2；a在b后返回4;a在b中，返回16；a包含b，返回8；a不在文档中，返回1；上面的contain方法就是16的结果
+    //box1是参考节点，ul是给定节点，以下是判断ul在box1的后面，返回的是4
+    if (box1.compareDocumentPosition(ul) == 4){
+        console.log("true")
+    }
+
+    console.log(box1.compareDocumentPosition(ul));
+
+
+</script>
+
+</html>

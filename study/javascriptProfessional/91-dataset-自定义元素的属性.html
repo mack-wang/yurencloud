@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="fun1()" id="btn" data-fun="doSomePrivate" data-username="wlc">fun1</button>
+<button onclick="fun2()">fun2</button>
+<button onclick="fun3()">fun3</button>
+<button onclick="fun4()">fun4</button>
+<button onclick="fun5()">fun5</button>
+</body>
+<script type="text/javascript">
+    //button的属性中设置了非标准的自定义属性，按HTML5的规定，自定义的属性前要加"data-"前缀，
+    //以下可以通过元素对象的dataset属性来访问自定义的属性，而且不用加前缀data-
+    var btn = document.getElementById("btn");
+    var a = btn.dataset.fun;
+    var b = btn.dataset.username;
+
+    console.log(a,b);
+
+    btn.dataset.fun="newdo";
+    btn.dataset.username="mack";
+    console.log(btn.dataset.fun,btn.dataset.username);
+</script>
+
+</html>

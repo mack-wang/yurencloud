@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="input1">
+<input type="text" id="input2">
+<input type="text" id="input3">
+<input type="text" id="input4">
+<input type="text" id="input5">
+
+</body>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = null;
+            }
+        }
+    };
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    var input3 = document.getElementById("input3");
+    var input4 = document.getElementById("input4");
+    var input5 = document.getElementById("input5");
+
+
+    EventUtil.addHandler(input1,"blur",function (event) {
+        alert("哈哈，我失去焦点了blur");
+    });
+
+    EventUtil.addHandler(input2,"focusin",function (event) {
+        alert("哈哈，我获得焦点了focusin,在标签上的话是onfocus");
+    });
+
+    EventUtil.addHandler(input4,"focus",function (event) {
+        alert("哈哈，我获得焦点了focus,在标签上的话是onfocus");
+    });
+
+    EventUtil.addHandler(input3,"focusout",function (event) {
+        alert("哈哈，我失去焦点了focusout!和blur等价,在标签上的话是blur");
+    });
+
+
+
+</script>
+
+</html>

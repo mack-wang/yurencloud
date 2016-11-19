@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <ul id="myul" class="red" title="article" mackwang="wlc">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li name="five">5</li>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<div id="people">我是文本节点1
+    <div name="tomname">Tom</div>我是文本节点2
+    <div>Linda</div>我是文本节点4
+    <div>Cindy</div>
+    <p>Cindy</p>
+</div>
+
+<div id="test">
+    我是文本节点,
+    我是文本节点,
+    我是文本节点,
+</div>
+</body>
+<script type="text/javascript">
+    var ul = document.getElementById("myul");
+    //为什么有了firstChild还要有firstElementChild,因为IE不含文本节点！！为了兼容IE，返回仅为元素节点，没有文本节点。
+    var count = ul.childElementCount;
+    var first = ul.firstElementChild;
+    var last = ul.lastElementChild;
+    var pre = last.previousElementSibling;
+    var next = first.nextElementSibling;
+    console.log(count,first,last,pre,next);
+
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <ul id="myul" class="red" title="article" mackwang="wlc">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li name="five">5</li>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<div id="people">我是文本节点1
+    <div name="tomname">Tom</div>我是文本节点2
+    <div>Linda</div>我是文本节点4
+    <div>Cindy</div>
+    <p>Cindy</p>
+</div>
+
+<div id="test">
+    我是文本节点,
+    我是文本节点,
+    我是文本节点,
+</div>
+</body>
+<script type="text/javascript">
+    var people = document.getElementById("people");
+    var test = document.getElementById("test");
+    //什么是文本节点，
+    //<div></div>这个就没有文本节点
+    //<div> </div>这个有一个文本节点，空格
+    //若<div></div>这对标签在不同的行，则有一个文本节点，回车键
+    //所以上面的people一共有11个节点，9个节点，4个元素节点，5个文本节点
+    //元素内的子元素把文本节点拆成了一又一个，如果子元素都并排在一起，且不含空格和换行的话，就不会产生文本节点
+
+    console.log(people.childNodes[0]);
+    console.log(test.childNodes.length);//等于1，有且只有1个节点，节点为文本节点
+    console.log(people.childNodes[2]);
+    console.log(people.childNodes[2].nodeValue);
+
+    //改变文本节点的内容
+    people.childNodes[2].nodeValue="修改后的文本节点2";
+
+    //插入新的文本节点
+
+    var hehe = document.createTextNode("Hello");
+    test.appendChild(hehe);
+    console.log(test.childNodes[1]);
+
+</script>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="input1">
+<input type="text" id="input2">
+<input type="text" id="input3">
+<input type="text" id="input4">
+<input type="text" id="input5">
+
+</body>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = null;
+            }
+        }
+    };
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    var input3 = document.getElementById("input3");
+    var input4 = document.getElementById("input4");
+    var input5 = document.getElementById("input5");
+
+
+    EventUtil.addHandler(input1,"click",function (event) {
+        alert("哈哈，我被鼠标点击了一下click,也可以是回车键按一下");
+    });
+
+    EventUtil.addHandler(input2,"dblclick",function (event) {
+        alert("哈哈，我被鼠标点击了两下dblclick");
+    });
+
+    EventUtil.addHandler(input3,"mousedown",function (event) {
+        alert("哈哈，我被鼠标点击了一下mousedown");
+    });
+
+    EventUtil.addHandler(input3,"mouseenter",function (event) {
+        alert("哈哈，我进入该input的上空了，mouseenter");
+    });
+
+    EventUtil.addHandler(input3,"mouseleave",function (event) {
+        alert("哈哈，我离开该input的上空了，mouseleave");
+    });
+
+    EventUtil.addHandler(input4,"mousemove",function (event) {
+        alert("只要我在这个input上一直移动，事件就会一直发生，mousemove");
+    });
+
+    //mouseout,鼠标离开某元素时触发,
+
+
+
+
+
+</script>
+
+</html>

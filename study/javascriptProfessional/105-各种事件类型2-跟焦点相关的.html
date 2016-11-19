@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="alert('hello')">点击启动事件1</button>
+<button onclick="call()">点击启动事件2</button>
+<button id="btn">点击启动事件2</button>
+<button id="btn2">点击启动事件3</button>
+<a href="www.baidu.com">去百度</a>
+<div style="height: 1000px"></div>
+
+</body>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = null;
+            }
+        }
+    };
+    var btn = document.getElementById("btn");
+    var btn2 = document.getElementById("btn2");
+
+    EventUtil.addHandler(window,"load",function (event) {
+        alert("已经加载完毕");
+    });
+
+
+
+</script>
+
+</html>

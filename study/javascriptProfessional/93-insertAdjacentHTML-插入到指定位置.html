@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="box1">
+
+
+</div>
+
+<ul id="list1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+
+</body>
+<script type="text/javascript">
+
+    var ul = document.getElementById("list1");
+    //同辈，插到前一个
+    ul.insertAdjacentHTML("beforebegin","<p>hello world</p>");
+    //子辈，插到第一个
+    ul.insertAdjacentHTML("afterbegin","<p>hello world</p>");
+    //子辈，插到最后一个
+    ul.insertAdjacentHTML("beforeend","<p>hello world</p>");
+    //同辈，插到后一个
+    ul.insertAdjacentHTML("afterend","<p>hello world</p>");
+
+
+
+
+
+</script>
+
+</html>

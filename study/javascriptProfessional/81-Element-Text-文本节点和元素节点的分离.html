@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <ul id="myul" class="red" title="article" mackwang="wlc">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li name="five">5</li>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<div id="people">
+    <div name="tomname">Tom</div>
+    <div>Linda</div>
+    <div>Cindy</div>
+    <p>Cindy</p>
+</div>
+</body>
+<script type="text/javascript">
+    var ul = document.getElementById('myul');
+    //IE下没有区分元素节点和文本节点，但其他的浏览器都有区分
+    //遍历ul的所有节点，并把节点的类型和1比较（和1相等的，是元素节点）
+    for (var i=0 ; i<ul.childNodes.length-1; i++){
+        if (ul.childNodes[i].nodeType == 1){
+            console.log(ul.childNodes[i]);
+        }
+    }
+
+    //遍历ul的所有节点，并把节点的类型和1比较（和3相等的，是文本节点）
+    for (var i=0 ; i<ul.childNodes.length-1; i++){
+        if (ul.childNodes[i].nodeType == 3){
+            console.log(ul.childNodes[i]);
+        }
+    }
+
+</script>
+
+</html>

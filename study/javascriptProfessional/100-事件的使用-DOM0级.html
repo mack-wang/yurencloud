@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="alert('hello')">点击启动事件1</button>
+<button onclick="call()">点击启动事件2</button>
+<button id="btn">点击启动事件2</button>
+
+
+</body>
+<script type="text/javascript">
+    //使用方式一：直接在标签上使用事件处理程序，并赋值添加js命令，直接执行
+
+    var btn = document.getElementById("btn");
+
+    //使用方式二：在标签上使用事件处理程序，调用js函数方法，然后在script中定义该函数方法
+    function call() {
+        alert('call wlc')
+    }
+
+
+    //使用方式三：在script中使用事件处理程序，绑定到声明好的元素对象上，并执行匿名函数
+    btn.onclick = function () {
+        alert('success')
+    }
+
+    //取消或删除事件处理程序
+    btn.onclick = null;
+
+
+</script>
+
+</html>

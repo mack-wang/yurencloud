@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <ul id="myul" class="red green danger" title="article" mackwang="wlc">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li name="five">5</li>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<div id="people">我是文本节点1
+    <div name="tomname">Tom</div>我是文本节点2
+    <div>Linda</div>我是文本节点4
+    <div>Cindy</div>
+    <p>Cindy</p>
+</div>
+
+<div id="test">
+    我是文本节点,
+    我是文本节点,
+    我是文本节点,
+</div>
+</body>
+<script type="text/javascript">
+    var ul = document.getElementById('myul');
+    //列出元素的class的classList对象，好像只有firefox,chrome支持，现在我想大多都支持了吧
+    var ulclassList = ul.classList;
+
+
+    //以下的操作方法都是classList这个类的，所以不能直接在ul后操作
+    //增加class
+    ulclassList.add("newred");
+    //判断是否包含某个class
+    if(ulclassList.contains("green")){
+        console.log("true")
+    }else {
+        console.log("false")
+    }
+
+    //删除某个class
+    ulclassList.remove("danger");
+    //toggle某个class，如果已经存在就删除，如果不存在则添加
+    ulclassList.toggle("music");
+
+
+    console.log(ulclassList);
+
+
+
+</script>
+
+</html>

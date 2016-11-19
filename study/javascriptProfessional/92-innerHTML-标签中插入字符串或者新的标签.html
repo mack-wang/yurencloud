@@ -24,7 +24,13 @@
 </body>
 <script type="text/javascript">
 
-
+    var box = document.getElementById("box1");
+    //直接在div中插入字符串
+    box.innerHTML="hello world";
+    //直接在div中插入新标签和字符串
+    box.innerHTML="<strong>hello world</strong>";
+    //直接获取div中的内容
+    console.log(box.innerHTML);
 
 
 

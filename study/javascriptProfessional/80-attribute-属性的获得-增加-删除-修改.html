@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <ul id="myul" class="red" title="article" mackwang="wlc">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li name="five">5</li>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<div id="people">
+    <div name="tomname">Tom</div>
+    <div>Linda</div>
+    <div>Cindy</div>
+    <p>Cindy</p>
+</div>
+</body>
+<script type="text/javascript">
+    var ul = document.getElementById('myul');
+    //获得属性getAttribute,  ul.getAttribute("id")和ul.id效果是一样的，都能得到id属性
+    //但是getAttribute可以获取所有的属性，包括一定非标准的自定义的属性,比如属性mackwang，而像ul.id,ul.className,ul.title这种只有标准属性可以
+    console.log(ul.getAttribute("id"),ul.getAttribute("class"),ul.getAttribute("title"));
+
+    //设置属性
+    ul.setAttribute("id","myul2");
+    ul.setAttribute("class","red2");
+    ul.setAttribute("title","article2");
+    ul.setAttribute("mackwang","wlc2");
+    console.log(ul.getAttribute("id"),ul.getAttribute("class"),ul.getAttribute("title"),ul.getAttribute("mackwang"));
+
+    //删除属性,此时用chrome查看元素时，就没有class属性了
+    ul.removeAttribute("class");
+
+</script>
+
+</html>

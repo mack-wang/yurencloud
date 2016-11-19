@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="alert('hello')">点击启动事件1</button>
+<button onclick="call()">点击启动事件2</button>
+<button id="btn">点击启动事件2</button>
+<a href="http://www.baidu.com" id="mylink"></a>
+
+</body>
+<script type="text/javascript">
+    //以下是事件自定义方法：添加事件addHandler(element,type,handler),移除事件removeHandler(element,type,handler)
+    //为什么用自定义的方法，不用原生的方法？主要是为了兼容大部分浏览器
+    var btn=document.getElementById("btn");
+
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+
+        preventDefault: function (event) {
+            if(event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue = false;
+            }
+        },
+
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = null;
+            }
+        },
+
+        stopPropagation: function (event) {
+            if (event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+        }
+    };
+
+    //使用方法 EventUtil对象下有两个方法:添加事件addHandler(element,type,handler),移除事件removeHandler(element,type,handler)
+    var handler = function () {
+        alert("我在使用自定义的事件添加方法")
+    };
+    EventUtil.addHandler(btn, "click", handler);
+    //下面是移除上面事件的用法
+    //    EventUtil.removeHandler(btn,"click",handler);
+
+    //获得event对象
+    btn.onclick = function (event) {
+        event = EventUtil.getEvent(event);
+    };
+
+    //获得事件对象
+    btn.onclick=function (event) {
+        event = EventUtil.getEvent(event);//要传入获得的event对象
+        var target = EventUtil.getTarget(event)
+    }
+
+    //取消默认行为
+    var link = document.getElementById("mylink");
+    link.onclick = function (event) {
+        event = EventUtil.getEvent(event);//要传入获得的event对象
+        EventUtil.preventDefault(event);
+    }
+
+    //阻止事件冒泡
+    btn.onclick= function (event) {
+        alert("clicked");
+        event = EventUtil.getEvent(event);
+        EventUtil.stopPropagation(event);
+    }
+
+    document.body.onclick = function (event) {
+        alert("body clicked");//已经被上面阻止，所以此项不会发生
+    }
+
+</script>
+
+</html>

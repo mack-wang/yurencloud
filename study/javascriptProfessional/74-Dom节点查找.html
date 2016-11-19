@@ -34,7 +34,7 @@
     // var childNodes = NodeList{item[0:li,1:li,2:li,3:li...];length:5}   我随便写的，形象一下
 
 
-    //下面并没有像想像中的那样，会出现#text这样的节点和正常节点交叉出现。原因：标签中的文本也是节点！但是把文本删除，文本节点还是在！！！
+    //下面并没有像想像中的那样，会出现#text这样的文本节点和元素节点交叉出现。原因：标签中的文本也是节点！但是把文本删除，文本节点还是在！！！
     var firstChild = ul.childNodes[0];
     var secondChild = ul.childNodes.item(1);
     var count = ul.childNodes.length;

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <ul id="myul" class="red" title="article">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li name="five">5</li>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<div id="people">
+    <div name="tomname">Tom</div>
+    <div>Linda</div>
+    <div>Cindy</div>
+    <p>Cindy</p>
+</div>
+</body>
+<script type="text/javascript">
+    var ul = document.getElementById('myul');
+    //获取元素的标签名，可以使用tagName,或者nodeName,由于返回的是大写，但在XML和XHTML中返回实际的标签名，所以统一转成小写比较，适合任何文档
+    if (ul.tagName.toLowerCase()=="ul"){
+        alert("success")
+    }
+    //获得属性
+    console.log( ul.id,ul.className,ul.title            );
+    //修改属性，直接给属性赋值就能修改属性
+    ul.className="red2";
+    ul.title="article2";
+    console.log( ul.id,ul.className,ul.title            );
+</script>
+
+</html>

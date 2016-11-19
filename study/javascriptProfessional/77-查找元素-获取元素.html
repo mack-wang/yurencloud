@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" name="userName" value="default">
+<div>
+    <ul id="myul" class="red green">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li name="five">5</li>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<div id="people">
+    <div name="tomname">Tom</div>
+    <div>Linda</div>
+    <div>Cindy</div>
+    <p>Cindy</p>
+</div>
+</body>
+<script type="text/javascript">
+    //通过id来获取元素（包含指定对象，若有多个重复的id，则只取第一个）
+    var ul = document.getElementById("myul");
+    //通过class(可以输入多个class名)来获取多个元素的集合，返回的是NodeList,因为class经常被多个元素使用
+    var uls = document.getElementsByClassName("red green");
+    //通过标签名来获取元素（是一个对象，包含零或多个元素）,可以通过li[index],li.item(0)访问其中某个对象,还可以通过namedItem()来访问其中指定的name元素
+    //同时还可以通过li["five"]来访问元素，会自动调用namedItem()这个方法
+    var li = document.getElementsByTagName("li");
+    //通过*来获取全部元素
+    var all = document.getElementsByTagName("*");
+    //通过name来获取元素，通常用在input中
+    var input = document.getElementsByName("userName");
+
+    //============以下为特殊集合=================
+    //获取所有有name属性的a链接元素，用处，可以用name或者索引来操作该a链接
+    var aHasNameAttr = document.anchors;
+    //获取所有的form,通常页面中只有一个form的话，下面这样写，会短很多
+    var form = document.form;
+    //获取所有的带href属性的a链接
+    var aHasHref = document.links;
+
+
+
+    console.log(ul, li, li.length, li[2].innerHTML, li.item(0).innerHTML, li.namedItem("five"),li["five"], all, input, uls);
+</script>
+
+</html>

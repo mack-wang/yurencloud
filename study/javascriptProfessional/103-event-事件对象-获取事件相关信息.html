@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="alert('hello')">点击启动事件1</button>
+<button onclick="call()">点击启动事件2</button>
+<button id="btn">点击启动事件2</button>
+<button id="btn2">点击启动事件3</button>
+
+
+</body>
+<script type="text/javascript">
+
+    var btn = document.getElementById("btn");
+    var btn2 = document.getElementById("btn2");
+    //event的属性和方法有：
+    /*
+    * bubbles 是否是冒泡
+    * cancelable 是否可取消事件的默认行为：比如a链接就有默认行为，跳转到href
+    * currentTarget 返回正在处理事件的元素
+    * eventPhase 返回事件正在处于什么阶段：1表示捕获阶段，2表示处于目标阶段，3表示冒泡阶段
+    * preventDefault 取消事件的默认行为，比如取消a链接的跳转行为，仅让a链接执行js函数【有用】
+    * stopPropagation 取消事件的进一步捕获或者冒泡
+    * target 返回事件的目标
+    * type 返回事件的类型
+    *
+    *
+    * */
+
+    btn.onclick = function () {
+        alert(event.type)
+    }
+
+    btn.addEventListener("click",function () {
+        alert(event.type);
+    },false);
+
+    //===============测试事件的三个阶段：1表示捕获阶段，2表示处于目标阶段，3表示冒泡阶段
+
+    //典型的捕获阶段，因为第三个参数被设置成了true | document捕获事件
+    document.body.addEventListener("click",function (event) {
+        alert(event.eventPhase);
+    },true);
+
+    //处于目标执行阶段，他也是冒泡阶段，但是他是正在执行的冒泡，所以是执行阶段 | btn2正在冒泡，正在执行，他将要传递到document，即下一阶段，冒泡阶段
+    btn2.onclick =function () {
+        alert(event.eventPhase);
+        //event.stopPropagation();//如果把这句注释去去掉，就会取消事件的进一步捕获或者冒泡，即事件只做到2，下面的3就不执行了
+    };
+
+    //最后冒泡阶段，已经从执行传递过来冒泡，btn2--->body---->document
+    document.body.onclick = function (event) {
+        alert(event.eventPhase);
+    }
+
+</script>
+
+</html>

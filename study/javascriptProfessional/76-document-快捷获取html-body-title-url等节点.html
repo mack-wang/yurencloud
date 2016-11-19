@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Document12</title>
 </head>
 <body>
 <button onclick="fun1()">fun1</button>
@@ -16,14 +16,26 @@
     //document.childNodes[0],document.firstChild效果和下面相同，都是得到html标签
     var html = document.documentElement;
 
-    //body
+    //获得body元素
     var body = document.body;
 
-    //doctype
+    //获得doctype声明
     var doctype = document.doctype;
 
-    //title
-    var title = document.title
+    //获得title元素
+    var title = document.title;
+
+    //动态设置title元素
+    var title = "new document";
+
+    //取得完整的URL
+    var url = document.URL;
+
+    //取得域名
+    var www = document.domain;
+
+
+    console.log([www]);
 </script>
 
 </html>

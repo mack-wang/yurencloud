@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <ul id="myul" class="red green danger" title="article" mackwang="wlc">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li name="five">5</li>
+    </ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<div id="people">我是文本节点1
+    <div name="tomname">Tom</div>我是文本节点2
+    <div>Linda</div>我是文本节点4
+    <div>Cindy</div>
+    <p>Cindy</p>
+</div>
+
+<div id="test">
+    我是文本节点,
+    我是文本节点,
+    我是文本节点,
+</div>
+<input type="text" id="in">
+</body>
+<script type="text/javascript">
+    var myinput = document.getElementById("in");
+    //通过focus（）方法使元素在加载出来的时候，就默认获得焦点！方便用户输入
+    myinput.focus();
+    //document.activeElement是获取当前获得焦点的元素
+    console.log(document.activeElement === myinput);
+    //document.hasFocus（）只能知道当前文档是否获得了焦点
+    console.log(document.hasFocus());
+
+
+
+
+</script>
+
+</html>

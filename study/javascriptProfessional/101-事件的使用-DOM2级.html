@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button onclick="alert('hello')">点击启动事件1</button>
+<button onclick="call()">点击启动事件2</button>
+<button id="btn">点击启动事件2</button>
+
+
+</body>
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+
+    //三个参数：事件名，执行函数，布尔值|true为捕获阶段调用，false为冒泡阶段调用
+    btn.addEventListener("click",function () {
+        alert('DOM2事件')
+    },false)
+
+    //删除上面的事件，上面事件使用了匿名函数，所以无法删除
+
+
+
+    //重新创建一个，测试删除
+    var call = function () {
+        alert('DOM2事件2')
+    };
+
+    btn.addEventListener("click",call(),false);
+    //此时，就已经把btn的点击call()事件给删除了
+    btn.removeEventListener("click",call(),false);
+
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    .myul{
+        display: block;
+        width: 100px;
+        height: 300px;
+        border: 3px solid black;
+        background-color: green;
+        color:red;
+    }
+    #box1{
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+    }
+
+    #box2{
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+    }
+</style>
+<body>
+
+<div id="box1">
+
+    hello
+
+</div>
+
+<div id="box2">
+
+    hello2
+
+</div>
+
+<ul id="list1" class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+
+</body>
+<script type="text/javascript">
+    var ul = document.getElementById("list1");
+    var box = document.getElementById("box2");
+    //offsetLeft会显示元素距窗口左边多少像素距离，offsetTop会显示元素距离窗口基部多少像素距离。该属性，只读，不能写
+    //我认为可以用来做小游戏，获取想着元素的相对窗口的距离，然后产生不同的事件
+    console.log(box.offsetLeft,box.offsetTop);
+
+
+
+
+
+
+
+
+</script>
+
+</html>
