@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    .editable{
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+    }
+</style>
+<body>
+<div class="editable" id="richedit" contenteditable></div>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+var div = document.getElementById("richedit");
+    div.contentEditable = "true";
+    //富文本编辑区，一般会用已经比较成熟的插件来实现
+    //如果非要自己给富文本实现js去设置样式，则提交的时候，需要用一个隐藏input来接收富文本中的html然后再提交
+
+
+</script>
+
+</html>

@@ -43,6 +43,14 @@
         alert("已经加载完毕");
     });
 
+    EventUtil.addHandler(window,"resize",function (event) {
+        alert("当窗口大小发生变化时，就会resize事件");
+    });
+
+    EventUtil.addHandler(window,"scroll",function (event) {
+        alert("当滚动条发生变化时，就会发生scroll事件");
+    });
+
 
 
 </script>

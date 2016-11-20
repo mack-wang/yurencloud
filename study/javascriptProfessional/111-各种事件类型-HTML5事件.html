@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="input1">
+<input type="text" id="input2">
+<input type="text" id="input3">
+<input type="text" id="input4">
+<input type="text" id="input5">
+<div style="width: 300px; height: 1000px; background-color: red;" id="box1"></div>
+
+</body>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+
+        preventDefault: function (event) {
+            if(event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue = false;
+            }
+        },
+
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = null;
+            }
+        },
+
+        stopPropagation: function (event) {
+            if (event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+        },
+        //keypress事件获得charCode字符串编码兼容用法
+        getCharCode: function (event) {
+            if (typeof event.charCode == "number"){
+                return event.charCode;
+            }else{
+                return event.keyCode;
+            }
+        },
+    };
+
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    var input3 = document.getElementById("input3");
+    var input4 = document.getElementById("input4");
+    var input5 = document.getElementById("input5");
+    var box = document.getElementById("box1");
+
+
+    //beforeunload,用户离开时警告
+    EventUtil.addHandler(window,"beforeunload",function (event) {
+        event = EventUtil.getEvent(event);
+        var message = "你真的要离开页面了吗？";//这条信息只有ie和firefox会显示，safari和chrome只显示默认的
+        event.returnValue = message;
+        return message;
+    });
+
+
+    //readystatechange，当页面的加载状态发生改变时，触发事件，有5个状态，初始化，正在加载，加载完毕，可交互，完成
+    //uninitialized,loading,loaded,interactive,complete
+    EventUtil.addHandler(document,"readystatechange",function (event) {
+        if(document.readyState == "complete"){
+            console.log("页面已经加载完成")
+        }
+    });
+
+    //苹果手机平板的横向，竖向状态获取，window.orientation,会返回3个值，0  竖向，90  home键在右的横向，-90  home键在左的横向
+
+    //devicemotion获取设备移动信息，比如某人拿着苹果手机，安卓手机在走路或者跑步
+    EventUtil.addHandler(document,"devicemotion",function (event) {
+        console.log{""}
+    });
+
+
+
+
+
+
+</script>
+
+</html>

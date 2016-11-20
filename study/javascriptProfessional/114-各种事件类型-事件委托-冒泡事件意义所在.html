@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<ul id="list1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+<ul id="list2">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+
+</body>
+<script type="text/javascript">
+    //错误用法：以下用法能实现点击每个li并弹出li中的内容，但绑定了大量的事件，创建了太多的对象，性能不好
+    var ul1 = document.getElementById("list1");
+    ul1.children[0].addEventListener("click",function (event) {
+        alert(this.innerHTML);
+    });
+    ul1.children[1].addEventListener("click",function (event) {
+        alert(this.innerHTML);
+    });
+    ul1.children[2].addEventListener("click",function (event) {
+        alert(this.innerHTML);
+    });
+    ul1.children[3].addEventListener("click",function (event) {
+        alert(this.innerHTML);
+    });
+    ul1.children[4].addEventListener("click",function (event) {
+        alert(this.innerHTML);
+    });
+
+    //正确用法：以下利用了冒泡事件的特点，所有的li都会冒泡到ul所以在ul中对target li处理事件就可以了
+
+    //假设上面有1万个li，需要写3万行，而下面只要写4行就可以了！！！！target代表
+    var ul2 = document.getElementById("list2");
+
+    ul2.addEventListener("click",function (event) {
+        var target = event.target;
+        alert(target.innerHTML);
+    },false)
+
+</script>
+
+</html>

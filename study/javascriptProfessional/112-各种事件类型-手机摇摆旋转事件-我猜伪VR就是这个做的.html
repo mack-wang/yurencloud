@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>奇怪的小球</title>
+</head>
+<body>
+<div id="ball1"
+     style="width: 100px;height: 100px;border: 2px solid blue; background-color: blue; border-radius: 50%;"></div>
+<div id="ball2"
+     style="width: 100px;height: 100px;border: 2px solid red; background-color: red; border-radius: 50%;"></div>
+<div id="ball3"
+     style="width: 100px;height: 100px;border: 2px solid green; background-color: green; border-radius: 50%;"></div>
+
+</body>
+<script type="text/javascript">
+
+    //主要是获得手机重力感应的三个值：alpha(z轴),beta(x轴),gamma(y轴)，可以根据这个来感觉手机的空间方位，然后对应地展示360度立体照片，就有VR感了
+    //还可以做些重力感应的小游戏
+    window.addEventListener("deviceorientation", function (event) {
+        var output = document.getElementById("box1");
+        var ball1 = document.getElementById("ball1");
+        var ball2 = document.getElementById("ball2");
+        var ball3 = document.getElementById("ball3");
+        if (Number(event.alpha)>300){
+            ball1.style.width=((Number(event.alpha)*10)-3000)+"px";
+            ball1.style.height=((Number(event.alpha)*10)-3000)+"px";
+        }else{
+            ball1.style.width=Number(event.alpha)*10+"px";
+            ball1.style.height=Number(event.alpha)*10+"px";
+        }
+        ball2.style.width=Number(event.beta)*10+"px";
+        ball2.style.height=Number(event.beta)*10+"px";
+        ball3.style.width=Number(event.gamma)*10+"px";
+        ball3.style.height=Number(event.gamma)*10+"px";
+    })
+
+
+</script>
+
+</html>

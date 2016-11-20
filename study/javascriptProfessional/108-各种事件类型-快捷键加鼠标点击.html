@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="input1">
+<input type="text" id="input2">
+<input type="text" id="input3">
+<input type="text" id="input4">
+<input type="text" id="input5">
+<div style="width: 300px; height: 300px; background-color: red;" id="box1"></div>
+
+</body>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+
+        preventDefault: function (event) {
+            if(event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue = false;
+            }
+        },
+
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = null;
+            }
+        },
+
+        stopPropagation: function (event) {
+            if (event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+        }
+    };
+
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    var input3 = document.getElementById("input3");
+    var input4 = document.getElementById("input4");
+    var input5 = document.getElementById("input5");
+    var box = document.getElementById("box1");
+
+
+    //快捷键主要有meta,ctrl,alt,meta(即win或者cmd键)
+    //获取上述按键是否被按下的event属性：shiftKey,ctrlKey,altKey,metaKey,返回的是布尔值
+    EventUtil.addHandler(box,"click",function (event) {
+        event = EventUtil.getEvent(event);
+
+        var keys = new Array();
+        if(event.shiftKey){
+            keys.push("已经按下shift");
+        }
+
+        if(event.ctrlKey){
+            keys.push("已经按下ctrl");
+        }
+
+        if(event.altKey){
+            keys.push("已经按下alt");
+        }
+
+        if(event.metaKey){
+            keys.push("已经按下meta");
+        }
+
+        alert(keys.join(","))
+
+    });
+
+
+
+
+
+
+
+</script>
+
+</html>

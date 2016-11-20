@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://www.yurencloud.com/h5/form.php" method="get" id="i-form">
+    <select name="location" id="selLocation">
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="tianjing" >天津</option>
+        <option value="hangzhou" >杭州</option>
+        <option value="wuhang">武汉</option>
+    </select>
+</form>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+/*
+*以下是HTMLSelectElement类
+*==========================
+* add(新的option,参考点option)，插入新的option到参考点option之前
+* multiple:布尔值，设置为ture时，可多选
+* options：所有option元素的集合
+* remove(index):删除指定的option
+* selectedIndex:选中的option的索引位置值
+* size：选择框中可见的行数
+* */
+
+/*
+ *以下是HTMLOptionElement类
+ *==========================
+ * index:当前选项在在options集合中的索引
+ * label：当前选项的标签
+ * selected:布尔值，表示当前选项是否被选中
+ * text:选项的文本
+ * value:选项的值
+ * */
+
+    var select = document.getElementById("selLocation");
+
+    //原来的方法，不推荐
+    var text = select.options[0].firstChild.nodeValue;
+    var value = select.options[0].getAttribute("value");
+
+    //现在的方法，推荐
+    var text2 = select.options[1].text;
+    var value2 = select.options[1].value;
+
+    console.log(text,value,text2,value2);
+
+    //设置当前的选择框为多选
+    select.multiple=true;
+    //把3号，4号设置为默认选择
+    select.options[2].selected=true;
+    select.options[3].selected=true;
+
+    //自定义函数，获取用户单选或者多选的项，然后返回一个数组
+    function getSelectedOptions(selectbox){
+        var result = new Array();
+        var option = null;
+         for (var i = 0,len= selectbox.options.length; i<len;i++){
+             option = selectbox.options[i];
+             if (option.selected){
+                 result.push(option);
+             }
+         }
+         return result;
+    }
+
+    var selected = getSelectedOptions(select);
+
+
+    for (var i = 0,len=selected.length; i<len;i++){
+        console.log("索引"+selected[i].index+"文本"+selected[i].text+"值"+selected[i].value)
+    }
+
+
+    //添加新的选项
+    //先用Option构造函数，建新一个选项
+    var newoption = new Option("温州","wunzhou");
+    //再用add()插入到选择框中,第二个参数不定义，就直接插到最后。定义的话，就插入到该对象选项前。
+    select.add(newoption,undefined);
+
+
+
+
+
+    
+
+
+</script>
+
+</html>

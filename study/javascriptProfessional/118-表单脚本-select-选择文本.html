@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://www.yurencloud.com/h5/form.php" method="get" id="i-form">
+    <input type="text" placeholder="请输入姓名" name="username" id="i-username">
+    <input type="text" placeholder="请输入手机号" name="phone" id="i-phone">
+    <input type="text" value="你们好吗，大家好，真的好你们好吗，大家好，真的好你们好吗，大家好，真的好你们好吗，大家好，真的好" name="email" id="i-email">
+    <input type="password" placeholder="请输入密码" name="email" id="i-password">
+    <input type="text" value="我是中国人我是中国人哈哈哈哈" name="txt">
+    <input type="submit" value="提交" name="submit" id="i-submit">
+
+    <div id="box">我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈我是中国人我是中国人哈哈哈哈</div>
+</form>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var form = document.getElementById("i-form");
+    var username = document.getElementById("i-username");
+    var phone = document.getElementById("i-phone");
+    var email = document.getElementById("i-email");
+    var password = document.getElementById("i-password");
+    var submit = document.getElementById("i-submit");
+    var box = document.getElementById("box");
+
+
+
+    //select()全选文字，下面展示了，当获得焦点时，全选文字的功能
+    EventUtil.addHandler(form.elements["txt"],"focus",function (event) {
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+        target.select();
+    });
+
+    //当选中部分文字时，就会触发事件，同时返回选中的文字
+    EventUtil.addHandler(box,"select",function (event) {
+        console.log("已经选择的文字有："+box.value)
+    });
+
+    //自定义一个跨浏览器的，选择文本函数方法,并给出焦点
+    function selectText(textbox,startIndex,stopIndex) {
+        if (textbox.setSelectionRange){
+            textbox.setSelectionRange(startIndex,stopIndex);
+        }else if (textbox.createTextRange){
+            var range = textbox.createTextRange();
+            range.collapse(true);
+            range.moveStart("character",startIndex);
+            range.moveEnd("character",stopIndex - startIndex);
+            range.select();
+        }
+        textbox.focus();
+    }
+
+    //输入参数：要进行提示的文本框，起启位置，结束位置，会自动给出焦点
+    selectText(email,1,10)
+
+
+
+
+
+    
+
+
+</script>
+
+</html>

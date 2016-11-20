@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="input1">
+<input type="text" id="input2">
+<input type="text" id="input3">
+<input type="text" id="input4">
+<input type="text" id="input5">
+<div style="width: 300px; height: 300px; background-color: red;" id="box1"></div>
+
+</body>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+
+        preventDefault: function (event) {
+            if(event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue = false;
+            }
+        },
+
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = null;
+            }
+        },
+
+        stopPropagation: function (event) {
+            if (event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+        }
+    };
+
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    var input3 = document.getElementById("input3");
+    var input4 = document.getElementById("input4");
+    var input5 = document.getElementById("input5");
+    var box = document.getElementById("box1");
+
+
+    //返回鼠标坐标，同时也可以监听鼠标坐标（在指定的范围内）
+    EventUtil.addHandler(box,"click",function (event) {
+        event = EventUtil.getEvent(event);
+        //返回鼠标在浏览器窗口中的坐标x值和y值，不含滚动条的距离
+        alert("现在我鼠标的client坐标是："+event.clientX +","+event.clientY);
+        //返回鼠标在浏览器窗口中的坐标x值和y值，若没有滚动和clinetX，clientY相同，若有滚动，则包含滚动的距离
+        alert("现在我鼠标的page坐标是："+event.pageX +","+event.pageY);
+        //返回鼠标在电脑屏幕上的坐标x值和y值，
+        alert("现在我鼠标的screeb坐标是："+event.screenX +","+event.screenY);
+    });
+
+
+
+
+
+
+
+</script>
+
+</html>

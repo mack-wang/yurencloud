@@ -27,7 +27,24 @@
     var password = document.getElementById("i-password");
     var submit = document.getElementById("i-submit");
 
+    //取消表单提交的默认行为
+    EventUtil.addHandler(form,"submit",function (event) {
+        //获取事件event对象
+        event = EventUtil.getEvent(event);
+        //阻止event的默认行为
+        EventUtil.preventDefault(event);
+        //用js提交表单
+        form.submit();
+        //重置表单
+        //from.reset();
+    });
 
+    //获取表单字段，每个form都有一个elements属性，可以通过该属性用elements[1]或者elements["username"]来访问
+    console.log(form.elements[1],form.elements["username"],form.elements.length);
+
+
+
+    
 
 
 </script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+<canvas id="drawing"></canvas>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+    var drawing = document.getElementById("drawing");
+
+    //确定浏览器支持canvas元素
+    if(drawing.getContext){
+
+        //创建绘画的对象，对象中包含2d绘画的一些属性方法
+        var context = drawing.getContext("2d");
+        var context2 = drawing.getContext("2d");
+
+        //绘制红色矩形,fillRect的四个参数是：x,y,w,h，坐标和宽高
+        context.fillStyle = "#ff0000";
+        context.fillRect(10,10,50,50);
+
+        context2.strokeStyle="green";
+        context2.strokeRect(100,100,50,50);
+        /*
+        * lineWidth:线条粗细 px
+        * lineCap:线条末端形状平头butt,圆头round，方头square
+        * lineJoin:转角处理：圆角round、斜角bevel、斜接miter
+        *
+        * */
+
+        //清除全部或者部分已经绘制好的图形
+        context.clearRect(20,20,20,20);
+        context2.clearRect(120,120,20,20);//这个没有按想象中来，但也清除了
+
+    }
+
+
+</script>
+
+</html>

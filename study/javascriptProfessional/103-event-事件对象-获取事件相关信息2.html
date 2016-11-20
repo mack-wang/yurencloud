@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="box">
+    <ul id="myul">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</div>
+
+
+</body>
+<script type="text/javascript">
+
+    var box = document.getElementById("box");
+    var myul = document.getElementById("myul");
+
+    //event的属性和方法有：
+    /*
+    * bubbles 是否是冒泡
+    * cancelable 是否可取消事件的默认行为：比如a链接就有默认行为，跳转到href
+    * currentTarget 返回正在处理事件的元素
+    * eventPhase 返回事件正在处于什么阶段：1表示捕获阶段，2表示处于目标阶段，3表示冒泡阶段
+    * preventDefault 取消事件的默认行为，比如取消a链接的跳转行为，仅让a链接执行js函数【有用】
+    * stopPropagation 取消事件的进一步捕获或者冒泡
+    * target 返回事件的目标
+    * type 返回事件的类型
+    *
+    *
+    * */
+
+    //实现点击每个li就能弹出li当中的内容
+    //传统方法：给每个li添加onclick事件，缺点：每个事件都要创建对象，存在内存中，消耗性能，假设有上万个li，也不可能为每个li都创建一个事件
+    //冒泡事件方法：li触发的事件会冒泡到ul，只要给ul绑定事件，就能处理target目标li
+    //以上事件发生流程是：document捕获事件-->传递到body-->传递到div-->传递到ul（以上是捕获阶段）-->传递到li（以下是目标阶段和冒泡阶段）-->传递到ul-->传递到div-->传递到body-->传递到document-->传递到window
+    //在冒泡的每一个阶段都可以绑定事件，比如我可以在冒泡阶段中的任何一个环节，要绑定事件，去处理li被点击的事件。
+    //以下就是在冒泡到ul阶段，处理li被点击的事件。虽然事件是绑定在ul身上，但是无论绑定到哪，都是从上层冒泡到根层。
+
+    //事件发生的顺序是：绑定在li身上的事件会先发生，然后再发生ul,div,body,document,window
+
+    //如果在事件发生之前，页面中的事件元素已经 被 removeChild()这样移除了，那么事件就不会发生了，所以事件委托最好放得高一点，比如body或者document，这样会保险一点
+
+    //如果一个页面太多一次性事件（即执行完就不用再执行了的），可以在执行的匿名函数中，最前面增加 xxx.onclick = null；类似这样，先清除事件，再执行事件。可以释放内存
+    myul.addEventListener("click",function (event) {
+        alert(event.target.innerHTML);
+    })
+
+    myul.children[0].addEventListener("click",function (event) {
+        alert("我是冒泡事件"+event.bubbles);
+    })
+
+    myul.children[1].addEventListener("click",function (event) {
+        alert("我可以取消事件的默认行为"+event.cancelable);
+    })
+
+    myul.children[2].addEventListener("click",function (event) {
+        alert("我是当前绑定事件的对象"+event.currentTarget);
+    })
+
+    myul.children[3].addEventListener("click",function (event) {
+        alert("我是当前事件正在处于的阶段"+event.eventPhase);
+    })
+
+    myul.children[4].addEventListener("click",function (event) {
+        event.preventDefault();
+        alert("我已经取消了事件的默认行为，比如a链接的跳转行为")
+    })
+
+    myul.children[5].addEventListener("click",function (event) {
+        event.stopPropagation();
+        alert("我已经阻止了事件的冒泡，就是事件不会冒泡到ul，所以就不会弹出我的内容")
+    })
+
+    myul.children[6].addEventListener("click",function (event) {
+        alert("我是事件发生的对象"+event.target)
+    })
+
+    myul.children[7].addEventListener("click",function (event) {
+        alert("我是事件发生的类型"+event.type)
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="input1">
+<input type="text" id="input2">
+<input type="text" id="input3">
+<input type="text" id="input4">
+<input type="text" id="input5">
+<div style="width: 300px; height: 1000px; background-color: red;" id="box1"></div>
+
+</body>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+
+        preventDefault: function (event) {
+            if(event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue = false;
+            }
+        },
+
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = null;
+            }
+        },
+
+        stopPropagation: function (event) {
+            if (event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+        },
+        //keypress事件获得charCode字符串编码兼容用法
+        getCharCode: function (event) {
+            if (typeof event.charCode == "number"){
+                return event.charCode;
+            }else{
+                return event.keyCode;
+            }
+        },
+    };
+
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    var input3 = document.getElementById("input3");
+    var input4 = document.getElementById("input4");
+    var input5 = document.getElementById("input5");
+    var box = document.getElementById("box1");
+
+
+    //keydown按键按下，keypress按住不放，keyup放开按键，同样支持shift,ctrl,alt,meta修改键配搭使用,textinput获取用户输入的字符串
+    EventUtil.addHandler(input1,"keydown",function (event) {
+        event = EventUtil.getEvent(event);
+        alert(event.keyCode);//返回的是字符编码，比如a是65
+    });
+
+    //获取输入值的字符串的字符编码，然后再解析该编辑，就能实时返回用户输入的值
+    EventUtil.addHandler(input2,"keypress",function (event) {
+        event = EventUtil.getEvent(event);
+        var a = EventUtil.getCharCode(event);
+    });
+
+    //textinput事件，获取用户输入的字符串,event的data中保存着获取的字符串，是实时的获取，输一个字或者词，获取一次。
+    EventUtil.addHandler(input3,"textInput",function (event) {
+        event = EventUtil.getEvent(event);
+        console.log(event.data)
+    });
+
+
+
+
+
+
+</script>
+
+</html>

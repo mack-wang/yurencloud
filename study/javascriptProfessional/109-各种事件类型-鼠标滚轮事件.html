@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="input1">
+<input type="text" id="input2">
+<input type="text" id="input3">
+<input type="text" id="input4">
+<input type="text" id="input5">
+<div style="width: 300px; height: 1000px; background-color: red;" id="box1"></div>
+
+</body>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler;
+            }
+        },
+
+        getEvent: function (event) {
+            return event ? event : window.event;
+        },
+
+        getTarget: function (event) {
+            return event.target || event.srcElement;
+        },
+
+        preventDefault: function (event) {
+            if(event.preventDefault){
+                event.preventDefault();
+            }else{
+                event.returnValue = false;
+            }
+        },
+
+        removeHandler: function (element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = null;
+            }
+        },
+
+        stopPropagation: function (event) {
+            if (event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+        }
+    };
+
+    var input1 = document.getElementById("input1");
+    var input2 = document.getElementById("input2");
+    var input3 = document.getElementById("input3");
+    var input4 = document.getElementById("input4");
+    var input5 = document.getElementById("input5");
+    var box = document.getElementById("box1");
+
+
+    //mousewheel支持的有ie,opera,chrome,safari
+    EventUtil.addHandler(document,"mousewheel",function (event) {
+        event = EventUtil.getEvent(event);
+        alert(event.wheelDelta);
+    });
+    //DOMMouseScroll支持的有firefox
+//    EventUtil.addHandler(document,"DOMMouseScroll",function (event) {
+//        event = EventUtil.getEvent(event);
+//        alert(event.DOMMouseScroll);
+//    });
+
+    //跨浏览器方案:我已经添加到了EventUtil中
+
+
+
+
+
+
+
+</script>
+
+</html>

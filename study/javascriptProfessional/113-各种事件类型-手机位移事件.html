@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>奇怪的小球2</title>
+</head>
+<body>
+<div id="box1"></div>
+
+</body>
+<script type="text/javascript">
+
+    //主要是获得手机重力感应的三个值：alpha(z轴),beta(x轴),gamma(y轴)，检测手机位移，我还没明白什么原理
+    window.addEventListener("devicemotion", function (event) {
+        var output = document.getElementById("box1");
+        output.innerHTML=event.rotationRate.alpha+"<br>"+event.rotationRate.beta+"<br>"+event.rotationRate.gamma;
+    })
+
+
+</script>
+
+</html>
