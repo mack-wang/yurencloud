@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div>hello world</div>
+<iframe src="iframe.html" frameborder="0" width=400 height=400 scrolling=auto style="border: 1px solid black;"
+        id="iframe"></iframe>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+    //没懂！
+    var iframe = document.getElementById("iframe").contentWindow;
+    iframe.postMessage("这是来自iframe框架之外的消息", "http://localhost:63342");
+    alert("我已经发送");
+    EventUtil.addHandler(window,"message",function (event) {
+        if (event.orgin == "http://localhost:63342"){
+
+            alert(processMessage(event.data));
+            event.source.postMessage("我已经收到你，框架外的消息","http://localhost:63342")
+        }
+    })
+
+
+</script>
+
+</html>

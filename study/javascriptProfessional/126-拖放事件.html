@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    .allbox > div {
+        display: inline-block;
+    }
+    .girl{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+<div class="allbox">
+    <div id="box1" style="width: 200px; height: 200px; background-color: red;">我是放置文字的框</div>
+    <div id="box2" style="width: 200px; height: 200px; background-color: green;">我是放置图片的框</div>
+    <p id="box3" style="width: 200px; height: 200px; background-color: blue;">我是打开URL的框</p>
+    <div id="box4" style="width: 200px; height: 200px; background-color: yellow;">我是自定义的事件的框</div>
+</div>
+
+<p id="p">我是文字呀</p>
+<img src="media/girl.jpg" alt="meinv" id="img" class="girl">
+<a href="http://www.baidu.com" id="a"></a>
+<div id="div" style="width: 200px;height: 200px; background-color: aqua"></div>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var box1 = document.getElementById("box1");
+    var box2 = document.getElementById("box2");
+    var box3 = document.getElementById("box3");
+    var box4 = document.getElementById("box4");
+
+    EventUtil.addHandler(box1,"dragover",function (event) {
+        EventUtil.preventDefault(event);
+        alert(event.dataTransfer.getData("text"));
+    });
+    EventUtil.addHandler(box2,"dragenter",function (event) {
+        EventUtil.preventDefault(event);
+        var img = document.createElement("img");
+        img.src="media/girl.jpg";
+        img.classList="girl";
+        box2.appendChild(img);
+    });
+
+    //这个不知道为什么，dataTransfer.getData()就是无法读取拖拽对象的文本
+    EventUtil.addHandler(box3,"dragover",function (event) {
+        event.dataTransfer.setData("text","some");
+        box3.innerHTML = event.dataTransfer.getData("text");
+    });
+
+    //
+    EventUtil.addHandler(box4,"dragover",function (event) {
+        EventUtil.preventDefault(event);
+    });
+
+    /*
+    * 拖拽一个对象是触发：dragstart,drag,dragend三个事件，如果是文本会自动触发dataTransfer的setData()把文本保存到text属性中，如果是URL会保存到URL中
+    * 放置到一个对象上会触发：dragenter,dragover,dragleave三个事件，dataTransfer的getData()会接收上面setData()设置的属性。
+    *
+    * 拖拽的时候，浏览器就负责将对象抓起，半透明然后可以移动对象，至于拖拽、放置，开始，过程，结束中的所有事件都得自己写代码。
+    *
+    * 不是所有对象都能放置，事件中增加preventDefault(event),就可以放置了
+    * 不是所有对象都能拖拽，标签中增加draggable="true"就可以
+    * */
+
+</script>
+
+</html>

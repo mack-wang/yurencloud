@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<audio src="media/2.mov"  loop controls id="music"></audio>
+<!--autoplay增加了才会自动播放，loop增加了才会循环播放，controls加了才会有控制的按钮-->
+<video src="media/20.mp4"  loop controls id="video"></video>
+
+<button onclick="check()"></button>
+<!--
+以下是视频和音频的属性
+autoplay 布尔值 自动播放
+buffered 时间范围 表示已经下载的缓冲的时间范围，比如设置成缓冲了30秒才给你播放
+buffereBytes 字节范围
+太多了，不写了，要的时候百度查一下就好了总共有三十来个属性，可以完全控制视频，音频
+有些可以直接写在标签中，有些需要用js来控制
+
+以下是视频和音频的事件
+abort 下载中断时触发的事件
+loadstart 下载开始时的事件
+waiting 下载暂停时的事件
+...
+太多了，共20来个，百度吧
+
+
+-->
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+var music = document.getElementById("music");
+var video = document.getElementById("video");
+
+
+function check() {
+    //canPlayType参数是格式，而非路径
+    //audio/mp4;audio/mpeg;audio/ogg;audio/wav;    video/mp4; video/ogg; video/webm;
+    if(video.canPlayType("audio/mpeg")){
+        alert("返回的是maybe或者probably，哈哈，这格式我能播放，")
+    }else{
+        alert("返回的是空，这格式我播放不了")
+    }
+}
+
+
+</script>
+
+</html>
