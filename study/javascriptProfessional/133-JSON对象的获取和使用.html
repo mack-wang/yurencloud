@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var book = {
+        title: "javascript",
+        authors: [
+            "tom",
+            "cindy"
+        ],
+        edition: 3,
+        year: 2016
+    };
+    //把js对象转成JSON对象，使用JSON类下的stringify()方法
+    var jsonText = JSON.stringify(book);
+    console.log(jsonText);
+
+   //把JSON对象，转成js对象
+    var book2 = JSON.parse(jsonText);
+    console.log(book2);
+
+
+</script>
+
+</html>

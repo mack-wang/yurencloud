@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://www.yurencloud.com/h5/form.php" method="get" id="i-form">
+    <input type="text" placeholder="请输入姓名" name="username" id="i-username">
+    <input type="text" placeholder="请输入手机号" name="phone" id="i-phone">
+    <input type="text" placeholder="请输入邮箱" name="email" id="i-email">
+    <input type="password" placeholder="请输入密码" name="email" id="i-password">
+    <input type="submit" value="提交" name="email" id="i-submit">
+</form>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var form = document.getElementById("i-form");
+    var username = document.getElementById("i-username");
+    var phone = document.getElementById("i-phone");
+    var email = document.getElementById("i-email");
+    var password = document.getElementById("i-password");
+    var submit = document.getElementById("i-submit");
+
+    //创建XHR对象
+    //如果你要支持IE7以前的版本，那么使用下面的方式来创建XHR对象
+    function createXHR() {
+        if(typeof XMLHttpRequest != "undefined"){
+            return new XMLHttpRequest();
+        }else if (typeof ActiveXObject != "undefined"){
+            if(typeof arguments.callee.activeXString != "string"){
+                var version = [ "MSXML2.XMLHttp.6.0","MSXML2.XMLHttp.3.0","MSXML2.XMLHttp"],
+                        i,len;
+                for (i=0,len=versions.length; i<len;i++){
+                    try{
+                        new ActiveXObject(versions[i]);
+                        arguments.callee.activeXString = versions[i];
+                        break;
+                    }catch(ex){
+
+                    }
+                }
+            }return new ActiveXObject(arguments.callee.activeXString);
+        }else{
+            throw new Error("No XHR object available.");
+        }
+    }
+
+    var xhr1 = createXHR();
+
+    //如果你不用支持IE7以前的版本，直接使用下面方式来创建XHR对象即可
+    var xhr = new XMLHttpRequest();
+
+
+
+
+</script>
+
+</html>

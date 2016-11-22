@@ -7,16 +7,15 @@ $password = $_GET['password'];
 
 if ($username){
     $array = [
+        "username"=>$username,
         "status" => 1,
         "message" => "表单上传成功",
     ];
-    echo "1";
-    return json_encode($array, JSON_UNESCAPED_UNICODE);
+    echo json_encode($array, JSON_UNESCAPED_UNICODE);
 }else{
     $array = [
         "status" => 0,
         "message" => "表单上传失败",
     ];
-    echo "0";
-    return json_encode($array, JSON_UNESCAPED_UNICODE);
+    echo json_encode($array, JSON_UNESCAPED_UNICODE);
 }
