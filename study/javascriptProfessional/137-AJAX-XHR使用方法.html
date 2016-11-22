@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form.php" method="get" id="i-form">
+    <input type="text" placeholder="请输入姓名" name="username" id="i-username">
+    <input type="text" placeholder="请输入手机号" name="phone" id="i-phone">
+    <input type="text" placeholder="请输入邮箱" name="email" id="i-email">
+    <input type="password" placeholder="请输入密码" name="email" id="i-password">
+    <input type="submit" value="提交" name="email" id="i-submit">
+</form>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var form = document.getElementById("i-form");
+    var username = document.getElementById("i-username");
+    var phone = document.getElementById("i-phone");
+    var email = document.getElementById("i-email");
+    var password = document.getElementById("i-password");
+    var submit = document.getElementById("i-submit");
+    EventUtil.addHandler(submit, "click", function (event) {
+        EventUtil.preventDefault(event);
+        //创建XHR对象
+        //如果你不用支持IE7以前的版本，直接使用下面方式来创建XHR对象即可
+        var xhr = new XMLHttpRequest();
+
+
+
+
+        //判断服务器能否响应,同时捕获由下面open请求获得的服务器返回的JSON值,并把JSON值转成js对象
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4){
+                if((xhr.status >=200 && xhr.status < 300) || xhr.status == 304){
+                    var data = JSON.parse(xhr.responseText);
+                    console.log("服务器已经收到你的用户名："+data.username);
+                }else{
+                    alert("服务器没响应，错误状态为："+xhr.status);
+                }
+            }
+        };
+
+        //参数：1、请求类型。2、请求的URL地址。3、是否需要异步，布尔值。
+        //我很疑惑，为什么open是在onreadystatechange之后调用的呢？服务器返回的值为什么是在前面？
+        var URL = "http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form.php?username=" + username.value +
+                "&phone=" + phone.value + "&email=" + email.value + "&password=" + password.value;
+        xhr.open("get", URL, false);
+        xhr.send(null);
+
+        /*
+         * 上面请求的意思是：我现在要用get传参方式，把表单传给服务器上的form.php
+         * responseText:服务器响应并返回的文本
+         * responseXML:服务器响应并返回的XML DOM文档（如果服务器被设置成返回这样格式的数据）
+         * status:响应的HTTP状态，如果status>=200并且<300，或者等于304都表示成功。其他的都为失败
+         * statusText:HTTP状态说明
+         *
+         *
+         * */
+    });
+
+
+    /*
+     * 如果你要发送特殊的请求，比如发送请求给一个txt文件，则一定要在请求后，调用send()方法
+     * xhr.open("get","receive.txt",false);
+     * xhr.send(null)
+     *
+     * */
+
+
+</script>
+
+</html>

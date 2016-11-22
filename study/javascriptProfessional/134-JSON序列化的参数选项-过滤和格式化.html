@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var book = {
+        title: "javascript",
+        authors: [
+            "tom",
+            "cindy"
+        ],
+        edition: 3,
+        year: 2016
+    };
+    //参数一：可以是数组或者函数，过滤参数外的项
+    //如果是数组，则只序列化数组内的项
+    var jsonText = JSON.stringify(book,["title","edition"]);
+    console.log(jsonText);
+
+    //如果是函数，则每个键名和键值会作为参数传入函数，然后要根据返回值来决定该键值对的去留
+    //return 自定义值,则按原键名：自定义值。return undefined，则删除该项。return value，返回默认参数，则保留原键名和键值。
+    var jsonText2 = JSON.stringify(book,function (key,value) {
+       switch (key){
+           case "authore":
+               return value.join(",");
+           case "year":
+               return 5000;
+           case "edition":
+               return undefined;
+           default:
+               return value;
+       }
+    });
+
+    console.log(jsonText2);
+
+    //参数二：可以是数字或者字符串，来用给结果缩进、空格、填充字符
+    //如果是数字，则保留相应空格缩进
+    var jsonText3 = JSON.stringify(book,null,4);
+
+    //如果是字符串，则用该字符串进行缩进
+    var jsonText4 = JSON.stringify(book,null,"****")
+
+    //toJson()的用法
+    //如果js对象中有有toJSON这个方法，则JSON.stringify()会优先按toJSON来格式化
+    //比如下面的结果是，只把title这项变成了JSON，其他被删除了。
+    var book2 = {
+        title: "javascript",
+        authors: [
+            "tom",
+            "cindy"
+        ],
+        edition: 3,
+        year: 2016,
+        toJSON:function () {
+            return this.title;
+        }
+    };
+    var jsonText5 = JSON.stringify(book2);
+
+
+
+</script>
+
+</html>

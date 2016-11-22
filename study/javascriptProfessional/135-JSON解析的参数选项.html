@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var book = {
+        title: "javascript",
+        authors: [
+            "tom",
+            "cindy"
+        ],
+        edition: 3,
+        year: 2016,
+        date: new Date(2016,11,22)
+    };
+
+    var jsonText = JSON.stringify(book);
+    //参数：为一个函数，传入JSON中的每个键值对
+    //下列函数的意思是：传入每对值，若遇到键名为date时，把其值用Date构造函数改造一翻。如果是其他的数据，则按默认地返回。
+    var book2 = JSON.parse(jsonText,function (key,value) {
+        if (key == "date"){
+            return new Date(value);
+        }else{
+            return value;
+        }
+    });
+
+
+
+
+
+</script>
+
+</html>
