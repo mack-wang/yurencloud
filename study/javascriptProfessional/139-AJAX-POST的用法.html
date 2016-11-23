@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form2.php" method="post" id="i-form">
+    <input type="text" placeholder="请输入姓名" name="username" id="i-username">
+    <input type="text" placeholder="请输入手机号" name="phone" id="i-phone">
+    <input type="text" placeholder="请输入邮箱" name="email" id="i-email">
+    <input type="password" placeholder="请输入密码" name="password" id="i-password">
+    <input type="submit" value="提交" name="email" id="i-submit">
+</form>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var form = document.getElementById("i-form");
+    var username = document.getElementById("i-username");
+    var phone = document.getElementById("i-phone");
+    var email = document.getElementById("i-email");
+    var password = document.getElementById("i-password");
+    var submit = document.getElementById("i-submit");
+    EventUtil.addHandler(submit, "click", function (event) {
+        EventUtil.preventDefault(event);
+        //创建XHR对象
+        //如果你不用支持IE7以前的版本，直接使用下面方式来创建XHR对象即可
+        var xhr = new XMLHttpRequest();
+
+
+        //判断服务器能否响应,同时捕获由下面open请求获得的服务器返回的JSON值,并把JSON值转成js对象
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                    //吸取教训，先输出返回的参数，再输出转成JSON的参数，因为前者能反馈具体错误信息
+                    console.log(xhr.responseText);
+                    var data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                } else {
+                    alert("服务器没响应，错误状态为：" + xhr.status);
+                }
+            }
+        };
+
+        //参数：1、请求类型。2、请求的URL地址。3、是否需要异步，布尔值。
+        var URL = "http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form2.php";
+        xhr.open("post", URL, true);
+        //设置HTTP头部
+        //xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        //get方法参数直接在URL中了，所以send(null),而post传递数据，靠的就是send()方法s
+        //send()方法接受的参数和get方法的参数一些，都是像username=wlc&phone=15757130092这样的序列化参数
+        //而EventUtil.serialize()是我们自定义的方法，用来自动获取并创建序列化参数
+        //FormDate()是官方定义的一个自动获取创建序列化参数的构造函数，效果和serialize()一样
+        //但如果用了FormDate()就不用写HTTP头部信息了，因为他已经帮我们添加了，所以建议使用FormDate()来序列化参数
+        xhr.send(new FormData(form));
+
+    });
+
+
+</script>
+
+</html>
