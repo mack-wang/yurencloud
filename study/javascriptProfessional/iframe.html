@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div style="width: 50px; height: 50px; background-color: red;">你好</div>
+<div style="width: 50px; height: 50px; background-color: red;">我好</div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+<div style="width: 50px; height: 50px; background-color: red;"></div>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+EventUtil.addHandler(window,"message",function (event) {
+    if (event.orgin == "http://localhost:63342"){
+
+        console.log(processMessage(event.data));
+        event.source.postMessage("http://localhost:63342")
+    }
+})
+
+
+</script>
+
+</html>

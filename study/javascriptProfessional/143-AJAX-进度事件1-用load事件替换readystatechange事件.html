@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form2.php" method="post" id="i-form">
+    <input type="text" placeholder="请输入姓名" name="username" id="i-username">
+    <input type="text" placeholder="请输入手机号" name="phone" id="i-phone">
+    <input type="text" placeholder="请输入邮箱" name="email" id="i-email">
+    <input type="password" placeholder="请输入密码" name="password" id="i-password">
+    <input type="submit" value="提交" name="email" id="i-submit">
+</form>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var form = document.getElementById("i-form");
+    var username = document.getElementById("i-username");
+    var phone = document.getElementById("i-phone");
+    var email = document.getElementById("i-email");
+    var password = document.getElementById("i-password");
+    var submit = document.getElementById("i-submit");
+    EventUtil.addHandler(submit, "click", function (event) {
+        EventUtil.preventDefault(event);
+        //创建XHR对象
+        //如果你不用支持IE7以前的版本，直接使用下面方式来创建XHR对象即可
+        var xhr = new XMLHttpRequest();
+
+
+        //可以用load事件替换readystatechange事件，原本是可以省略status的判断，直接获取xhr.responseText的，但是因为有些浏览器不支持，所以还是保留了
+        xhr.onload = function () {
+            if (xhr.readyState == 4) {
+                if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                    //吸取教训，先输出返回的参数，再输出转成JSON的参数，因为前者能反馈具体错误信息
+                    console.log(xhr.responseText);
+                    var data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                } else {
+                    alert("服务器没响应，错误状态为：" + xhr.status);
+                }
+            }
+        };
+
+        //参数：1、请求类型。2、请求的URL地址。3、是否需要异步，布尔值。
+        var URL = "http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form2.php";
+        xhr.open("post", URL, true);
+        //超时设置
+        xhr.timeout=1000;
+        xhr.ontimeout = function () {
+            alert("已经1秒钟了，服务器还是没响应哦！")
+        };
+        xhr.send(new FormData(form));
+
+    });
+
+
+</script>
+
+</html>

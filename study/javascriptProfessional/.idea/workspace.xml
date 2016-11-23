@@ -21,11 +21,109 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="110-各种事件类型-键盘与文本事件.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/110-各种事件类型-键盘与文本事件.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
               <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
+=======
+      <file leaf-file-name="139-AJAX-POST的用法.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/139-AJAX-POST的用法.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="719">
+              <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="140-AJAX-FormData序列化参数.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/140-AJAX-FormData序列化参数.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="141-AJAX-timeout-超时设置-服务器未响应时触发事件.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/141-AJAX-timeout-超时设置-服务器未响应时触发事件.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="643">
+              <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="143-AJAX-进度事件1-用load事件替换readystatechange事件.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/143-AJAX-进度事件1-用load事件替换readystatechange事件.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="35" column="99" selection-start-line="35" selection-start-column="99" selection-end-line="35" selection-end-column="99" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="144-AJAX-进度事件2-progress进度事件-持续触发.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/144-AJAX-进度事件2-progress进度事件-持续触发.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="145-AJAX-IE对CORS的实现-跨站请求-就是A网站的表单发到B网站去验证.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/145-AJAX-IE对CORS的实现-跨站请求-就是A网站的表单发到B网站去验证.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="142-AJAX-进度事件.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/142-AJAX-进度事件.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="681">
+              <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/form2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form3.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/form3.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
               <folding />
             </state>
           </provider>
@@ -43,12 +141,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/101-事件的使用-DOM2级.html" />
         <option value="$PROJECT_DIR$/101-事件的使用-创建自定义的函数-添加事件-移除事件.html" />
         <option value="$PROJECT_DIR$/101-事件的使用-创建自定义的方法-添加事件-移除事件.html" />
         <option value="$PROJECT_DIR$/103-event-事件对象-获取事件相关信息.html" />
         <option value="$PROJECT_DIR$/104-各种事件类型.html" />
         <option value="$PROJECT_DIR$/104-各种事件类型2.html" />
+=======
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
         <option value="$PROJECT_DIR$/99-事件冒泡和事件捕获的定义.html" />
         <option value="$PROJECT_DIR$/104-各种事件类型-load-resize-scroll.html" />
         <option value="$PROJECT_DIR$/105-各种事件类型2-跟焦点相关的.html" />
@@ -71,7 +172,6 @@
         <option value="$PROJECT_DIR$/116-表单脚本.html" />
         <option value="$PROJECT_DIR$/117-表单脚本-elements-表单属性.html" />
         <option value="$PROJECT_DIR$/118-表单脚本-select-选择文本.html" />
-        <option value="$PROJECT_DIR$/EventUtil.js" />
         <option value="$PROJECT_DIR$/119-表单脚本-过滤输入.html" />
         <option value="$PROJECT_DIR$/120-表单脚本-表单验证.html" />
         <option value="$PROJECT_DIR$/121-表单脚本-选择框验证.html" />
@@ -87,6 +187,7 @@
         <option value="$PROJECT_DIR$/129-js可以创建音频实例自动播放-不用插入到HTML中-适合音效控制.html" />
         <option value="$PROJECT_DIR$/130-try-catch-错误处理函数.html" />
         <option value="$PROJECT_DIR$/131-cosole-控制台输出信息.html" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/132-JSON.html" />
         <option value="$PROJECT_DIR$/133-JSON对象的获取和使用.html" />
         <option value="$PROJECT_DIR$/134-JSON序列化的参数选项-过滤和格式化.html" />
@@ -94,6 +195,22 @@
         <option value="$PROJECT_DIR$/136-AJAX-XMLHttpReques.html" />
         <option value="$PROJECT_DIR$/form.php" />
         <option value="$PROJECT_DIR$/137-AJAX-XHR使用方法.html" />
+=======
+        <option value="$PROJECT_DIR$/form.php" />
+        <option value="$PROJECT_DIR$/EventUtil.js" />
+        <option value="$PROJECT_DIR$/138-AJAX-辅助向URL尾部参加参数的函数.html" />
+        <option value="$PROJECT_DIR$/139-AJAX-POST的用法.html" />
+        <option value="$PROJECT_DIR$/139-AJAX-FormData序列化参数.html" />
+        <option value="$PROJECT_DIR$/140-AJAX-FormData序列化参数.html" />
+        <option value="$PROJECT_DIR$/140-AJAX-timeout-超时设置-服务器未响应时触发事件.html" />
+        <option value="$PROJECT_DIR$/141-AJAX-timeout-超时设置-服务器未响应时触发事件.html" />
+        <option value="$PROJECT_DIR$/142-AJAX-用load事件替换readystatechange事件.html" />
+        <option value="$PROJECT_DIR$/142-AJAX-进度事件.html" />
+        <option value="$PROJECT_DIR$/144-AJAX-进度事件2-progress进度事件-持续触发.html" />
+        <option value="$PROJECT_DIR$/form2.php" />
+        <option value="$PROJECT_DIR$/form3.php" />
+        <option value="$PROJECT_DIR$/145-AJAX-IE对CORS的实现-跨站请求-就是A网站的表单发到B网站去验证.html" />
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
       </list>
     </option>
   </component>
@@ -289,14 +406,24 @@
       <workItem from="1479518345756" duration="1221000" />
       <workItem from="1479519601741" duration="34775000" />
       <workItem from="1479614385830" duration="32189000" />
+<<<<<<< HEAD
       <workItem from="1479728154816" duration="12880000" />
       <workItem from="1479816216648" duration="8891000" />
       <workItem from="1479916035332" duration="23000" />
+=======
+      <workItem from="1479728154816" duration="12819000" />
+      <workItem from="1479829775765" duration="1117000" />
+      <workItem from="1479903587557" duration="11622000" />
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="154636000" />
+=======
+    <option name="totallyTimeSpent" value="158400000" />
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -309,7 +436,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1010" extended-state="6" />
+<<<<<<< HEAD
     <editor active="false" />
+=======
+    <editor active="true" />
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23003195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968238" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -317,7 +448,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32570806" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46514162" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -346,6 +481,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/77-查找元素-获取元素.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
@@ -395,6 +531,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
     <entry file="file://$PROJECT_DIR$/109-各种事件类型-鼠标滚轮事件.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="659">
@@ -476,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/122-表单脚本-表单序列化.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/121-表单脚本-选择框验证.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="887">
@@ -525,7 +656,10 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/EventUtil.js" />
+=======
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
     <entry file="file://$PROJECT_DIR$/125-HTML5脚本编程-iframe-跨文档消息传递.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -544,6 +678,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1045">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/iframe.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="51" />
+          <folding />
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
         </state>
       </provider>
     </entry>
@@ -591,8 +744,14 @@
     <entry file="file://$PROJECT_DIR$/135-JSON解析的参数选项.html" />
     <entry file="file://$PROJECT_DIR$/131-cosole-控制台输出信息.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="532">
           <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+=======
+        <state relative-caret-position="779">
+          <caret line="41" column="77" selection-start-line="41" selection-start-column="77" selection-end-line="41" selection-end-column="77" />
+          <folding />
+>>>>>>> 2c455bcbdf21b2fcfad9f3f05a39bb5fd15f9324
         </state>
       </provider>
     </entry>
@@ -614,6 +773,136 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/132-JSON.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/137-AJAX-XHR使用方法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/122-表单脚本-表单序列化.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="84" column="5" selection-start-line="22" selection-start-column="4" selection-end-line="84" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/136-AJAX-XMLHttpReques-创建XHR对象.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="215" column="5" selection-start-line="215" selection-start-column="5" selection-end-line="215" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/138-AJAX-辅助向URL尾部参加参数的函数.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="49" column="94" selection-start-line="49" selection-start-column="94" selection-end-line="49" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/139-AJAX-POST的用法.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/141-AJAX-timeout-超时设置-服务器未响应时触发事件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/140-AJAX-FormData序列化参数.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/143-AJAX-进度事件1-用load事件替换readystatechange事件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="35" column="99" selection-start-line="35" selection-start-column="99" selection-end-line="35" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/144-AJAX-进度事件2-progress进度事件-持续触发.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="50" column="29" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/142-AJAX-进度事件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/form3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/145-AJAX-IE对CORS的实现-跨站请求-就是A网站的表单发到B网站去验证.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
           <folding />
         </state>
       </provider>
