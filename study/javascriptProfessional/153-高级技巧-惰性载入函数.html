@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    //惰性载入：意思是，函数执行的分支，例如if...else...只会在第一次执行时执行。当第二次执行时，直接跳过所有错误分支，只执行正确的分支，以提高性能。
+    //场景描述一下：
+    /*
+     * 假设打开了一个网页，载入了一个叫hello.js的文件，该文件从第一行执行到最后一行，共执行了1000次创建AJAX函数
+     * 而我们知道每次创建AJAX时，都要对浏览进行能力判断，比如说要判断4个if分支，才能创建，所以创建1000次AJAX，判断了4000遍if（假设走完4条分支才出正确结果）。
+     *
+     * 然后使用了惰性载入：则在第一次的时候判断的时候，我们把判断的结果赋值到一个同名的函数上，那么，该函数把原来的函数覆盖了。那么接下来的999次的创建，都
+     * 使用的是覆盖后的同名函数，而该函数没有if分支。
+     * 所以我们只走了4次分支。
+     *
+     * 使用前，我们走了4000次分支。使用后，我们走了4次分支，效率提高了1000倍！
+     *
+     *
+     *
+     * */
+
+
+    //案例，假设执行4才是正确的
+    //原来的写法:
+    function createXHR() {
+        if (判断1) {
+            执行1
+        } else if (判断2) {
+            执行2
+        } else if (判断3) {
+            执行3
+        } else {
+            执行4
+        }
+    }
+
+    createXHR();//第1次执行，走了4条分支
+    createXHR();//第2次执行，走了8条分支
+    createXHR();
+    createXHR();
+    createXHR();
+    createXHR();
+    createXHR();
+    createXHR();//第1000次执行，走了4000条分支
+
+
+    //惰性载入的写法一
+
+    function createXHR() {
+        if (判断1) {
+            createXHR = function () {
+                执行1
+            }
+        } else if (判断2) {
+            createXHR = function () {
+                执行2
+            }
+        } else if (判断3) {
+            createXHR = function () {
+                执行3
+            }
+        } else {
+            createXHR = function () {
+                执行4
+            }
+        }
+
+        return createXHR();//返回正确分支，并覆盖原先的函数
+    }
+
+    createXHR();//第1次执行，走了4条分支,由于在正确分支执行4中创建的函数名字和父函数相同，子函数覆盖了父函数，
+    createXHR();//第2次执行，直接执行了子函数，执行4。跳过了执行1，执行2，执行3的判断。
+    createXHR();
+    createXHR();
+    createXHR();
+    createXHR();
+    createXHR();
+    createXHR();//第1000次执行，走了4条分支
+
+
+    /*==========惰性载入的第二种写法，和第一种的写法意思差不多==========*/
+
+    var createXHR = (function(){
+    if (判断1) {
+        return function () {
+            执行1;
+        }
+    } else if (判断2) {
+        return function () {
+            执行2;
+        }
+    } else if (判断3) {
+        return function () {
+            执行3;
+        }
+    } else {
+        return function () {
+            执行4;
+        }
+    }
+    });
+
+
+    createXHR();//第1次执行，走了4条分支,并把正确的函数return给了createXHR,此时就已经创建了只有正确分支的createXHR函数。
+    createXHR();//第2次执行，直接执行只有正确分支的createXHR函数
+    createXHR();
+    createXHR();
+    createXHR();
+    createXHR();
+    createXHR();
+    createXHR();//第1000次执行，走了4条分支
+
+
+</script>
+
+</html>

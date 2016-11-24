@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    //首先明确：构造函数就是用new操作符调用的函数，当用new调用后，在该函数中，this指的就是自己。
+    //如果没用new，调用该函数，那么this就会变成window对象。如果此时用this设置了一些值，可能会出错。比如this.name是window用来识别链接目标的。
+
+    //原函数写法：
+    function Person(name,age,job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+    }
+
+    //安全的构造函数的写法：(仅在原函数体外，做了一层判断，this对象是指向自己，则说明调用正确。如果this对象不是指向自己，则说明漏了一个new，给你返回一个用new调用的对象。这样无论，你怎样调用都是正确的)
+    function Person2(name,age,job) {
+        if (this instanceof Person2){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+        }else {
+            return new Person2(name,age,job);
+        }
+    }
+
+
+    /*
+
+       //未用new的调用
+    * var a = person2('wlc','23','design');
+    *
+    *
+    * //使用new的调用
+     * var b = new person2('wlc','23','design');
+     *
+     *
+     *
+
+    *
+    * */
+
+
+
+
+
+</script>
+
+</html>
