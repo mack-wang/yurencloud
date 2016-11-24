@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form2.php" method="post" id="i-form">
+    <input type="text" placeholder="请输入姓名" name="username" id="i-username">
+    <input type="text" placeholder="请输入手机号" name="phone" id="i-phone">
+    <input type="text" placeholder="请输入邮箱" name="email" id="i-email">
+    <input type="password" placeholder="请输入密码" name="password" id="i-password">
+    <input type="submit" value="提交" name="email" id="i-submit">
+</form>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var form = document.getElementById("i-form");
+    var username = document.getElementById("i-username");
+    var phone = document.getElementById("i-phone");
+    var email = document.getElementById("i-email");
+    var password = document.getElementById("i-password");
+    var submit = document.getElementById("i-submit");
+
+
+    //创建图片对象
+    var img = new Image();
+    //当已经加载完毕时，或者出错时触发事件
+    img.onload = img.onerror = function () {
+        console.log("我已经向服务器发起单向请求了")
+    };
+    //表面上是加载远程的图片，实际上是发送一个请求，并带上参数
+    //我已经在远程设置了form4.php接收信息，并把接收到的信息写入test.txt生成一个新文件，实践时已经成功
+    //采用这种方法，无法获得服务器的返回信息，即xhr.responseText,所以只能是单向通信，单向请求
+    //这种方法的作用：1、获得用户加载该页面的次数，可用于计算PV量，点击量，加载量（弊端，无法阻止用户作弊，刷点击量）2、可以用于计算广告点击量
+    //3、可以利用这种方法，让php接收参数，触发php做些事情
+    img.src = "http://www.yurencloud.com/h5/form4.php?name=mack&num=1";
+
+</script>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form2.php" method="post" id="i-form">
+    <input type="text" placeholder="请输入姓名" name="username" id="i-username">
+    <input type="text" placeholder="请输入手机号" name="phone" id="i-phone">
+    <input type="text" placeholder="请输入邮箱" name="email" id="i-email">
+    <input type="password" placeholder="请输入密码" name="password" id="i-password">
+    <input type="submit" value="提交" name="email" id="i-submit">
+</form>
+<div id="box"></div>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var form = document.getElementById("i-form");
+    var username = document.getElementById("i-username");
+    var phone = document.getElementById("i-phone");
+    var email = document.getElementById("i-email");
+    var password = document.getElementById("i-password");
+    var submit = document.getElementById("i-submit");
+    var box =document.getElementById("box");
+
+
+    //实现HTTP流的典型代码
+    //参数：要连接的URL，接收数据时调用的函数，关闭连接时调用的函数。
+    //试验的时候没有成功
+
+    //要玩长轮询时，还是参考网站：http://blog.csdn.net/moshengtan/article/details/12093005
+    function createStreamingClient(url, progress, finished) {
+        var xhr = new XMLHttpRequest(),
+                received = 0;
+        xhr.open("get",url,true);
+        xhr.onreadystatechange = function () {
+            var result;
+            if (xhr.readyState == 3){
+                //取得最新数据，并调整计数器，received表示接收到的字符数量
+                result = xhr.responseText.substring(received);
+                received += result.length;
+                //调用progress回调函数
+                progress(result);
+            }else if(xhr.readyState == 4){
+                finished(xhr.responseText);
+            }
+        };
+        xhr.send(null);
+        return xhr;
+    }
+
+    var client = createStreamingClient("http://www.yurencloud.com/h5/form6.php",function (data) {
+        alert("ha1");
+        console.log("received:" + data);
+    },function (data) {
+        alert("ha2");
+        console.log("完成");
+    });
+
+</script>
+
+</html>

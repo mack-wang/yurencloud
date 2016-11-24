@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form2.php" method="post" id="i-form">
+    <input type="text" placeholder="请输入姓名" name="username" id="i-username">
+    <input type="text" placeholder="请输入手机号" name="phone" id="i-phone">
+    <input type="text" placeholder="请输入邮箱" name="email" id="i-email">
+    <input type="password" placeholder="请输入密码" name="password" id="i-password">
+    <input type="submit" value="提交" name="email" id="i-submit">
+</form>
+<div id="box"></div>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var form = document.getElementById("i-form");
+    var username = document.getElementById("i-username");
+    var phone = document.getElementById("i-phone");
+    var email = document.getElementById("i-email");
+    var password = document.getElementById("i-password");
+    var submit = document.getElementById("i-submit");
+    var box =document.getElementById("box");
+
+
+    //使用jquery的AJAX实现长轮询，如下所示
+    /*$(function () {
+
+        (function longPolling() {
+
+            $.ajax({
+                url: "${pageContext.request.contextPath}/communication/user/ajax.mvc",
+                data: {"timed": new Date().getTime()},
+                dataType: "text",
+                timeout: 5000,
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    $("#state").append("[state: " + textStatus + ", error: " + errorThrown + " ]<br/>");
+                    if (textStatus == "timeout") { // 请求超时
+                        longPolling(); // 递归调用
+
+                        // 其他错误，如网络错误等
+                    } else {
+                        longPolling();
+                    }
+                },
+                success: function (data, textStatus) {
+                    $("#state").append("[state: " + textStatus + ", data: { " + data + "} ]<br/>");
+
+                    if (textStatus == "success") { // 请求成功
+                        longPolling();
+                    }
+                }
+            });
+        })();
+
+    });*/
+
+</script>
+
+</html>

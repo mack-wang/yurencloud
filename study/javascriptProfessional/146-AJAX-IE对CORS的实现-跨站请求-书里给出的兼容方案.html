@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="http://localhost/mack-wang/yurencloud/study/javascriptProfessional/form2.php" method="post" id="i-form">
+    <input type="text" placeholder="请输入姓名" name="username" id="i-username">
+    <input type="text" placeholder="请输入手机号" name="phone" id="i-phone">
+    <input type="text" placeholder="请输入邮箱" name="email" id="i-email">
+    <input type="password" placeholder="请输入密码" name="password" id="i-password">
+    <input type="submit" value="提交" name="email" id="i-submit">
+</form>
+
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var form = document.getElementById("i-form");
+    var username = document.getElementById("i-username");
+    var phone = document.getElementById("i-phone");
+    var email = document.getElementById("i-email");
+    var password = document.getElementById("i-password");
+    var submit = document.getElementById("i-submit");
+    EventUtil.addHandler(submit, "click", function (event) {
+        EventUtil.preventDefault(event);
+
+        var form = document.getElementById("i-form");
+
+        function createCORSRequest(method, url) {
+            //创建CORS
+            var xhr = new XMLHttpRequest();
+            if ("withCredentials" in xhr) {
+                xhr.open(method, url, true);
+            } else if (typeof XDomainRequest != "undefined"){
+                //以下为IE创建CORS的方法
+                xhr = new XDomainRequest();
+                xhr.open(method, url)
+            }else{
+                xhr = null;
+            }
+            return xhr;
+        }
+
+        var request = createCORSRequest('post', "http://www.yurencloud.com/h5/form3.php");
+        if (request){
+            request.onload = function () {
+                console.log(xhr.responseText);
+            };
+            request.send(new FormData(form));
+        }
+
+    });
+
+    /*
+
+在目标服务器开启跨域资源共享的步骤
+
+1、在apache的httpd.conf中开启：LoadModule headers_module modules/mod_headers.so
+
+2、允许所有的的人跨站访问本服务器
+
+<Directory />
+     Require all denied
+     Header set Access-Control-Allow-Origin *
+</Directory>
+
+推荐以下做法，只允许指定域名可以访问本服务器。
+<Directory />
+     Require all denied
+     Header set Access-Control-Allow-Origin http://www.yurencloud.com
+</Directory>
+
+3、处理请求的php文件
+<?php
+     header("Access-Control-Allow-Origin:*");
+
+
+4、发送跨站请求的javascript,1
+<script type="text/javascript">
+     function createCORSRequest(method, url) {
+     var xhr = new XMLHttpRequest();
+     if ("withCredentials" in xhr) {
+     // 此时即支持CORS的情况
+     // 检查XMLHttpRequest对象是否有“withCredentials”属性
+     // “withCredentials”仅存在于XMLHTTPRequest level 2对象里
+     } else {
+     // 否则检查是否支持XDomainRequest
+     // XDomainRequest仅存在于IE中，是IE用于支持CORS请求的方式
+     xhr = new XDomainRequest();
+     }
+     xhr.open(method, url, true);
+     xhr.send();
+     xhr.onload = function(){
+     alert(xhr.responseText);
+     }
+     }
+     createCORSRequest('GET', "http://192.168.1.58/t.php");
+<\/script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    *
+    * */
+
+
+</script>
+
+</html>
