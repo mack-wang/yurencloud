@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button id="btn">确认</button>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    //setTimeout()和setInterval()
+    //当js从上到下，一行一行执行到setTimeout(),setInterval()时，才开始计时。
+    //javaScript是单线程运行，每次执行完一个函数，事件等时，会空闲个几毫秒才开始执行下个函数，事件等。
+    //setTimeout()时等开始计时后，时间到了，把要执行的函数体插入到js中去执行
+    //setInterval()是等开始计时后，时间到了，把要执行的函数体插入到js中去执行；但此时计时器和函数体同时在执行，那么计时器第二次时间到了，但函数体还没执行完。
+    //javascript会聪明地阻止第二次插入函数体，因为第一个函数体还没执行完。这就造成某些时间间隔被跳过。
+
+    //如果解决上述问题呢？
+
+    //创建链式setTimeout()，来模拟setInterval()。
+    setTimeout(function () {
+
+
+        //此处编写要重复执行的js代码
+
+
+        //当上述函数执行完成后，再次创建自己，并执行自己。这样就避免计时器和函数体同时在执行
+
+        //这个很有意思，这有点像：每隔一秒，自己肚子里嵌套一个自己，无限地嵌套。argument.callee的意思是自我执行
+
+
+        setTimeout(arguments.callee, 1000);//这两个1000，就是要设置的间隔时间
+    },1000);
+
+
+    //个人总结：假设二者都会产生10毫秒的误差，但前者的误差会持续扩大，而后者的误差则一直是一样的。所以那还不如用setTimeout()更好
+    /*
+    * 如果用setInterval()来做，屏幕显示的间隔：1010，1000，990，980...
+    *
+    * 如果用链式setTimeout()来做，屏幕显示的间隔：1010，1010，1010，1010...
+    *
+    *
+    * 所以链式setTimeout()经常用来做js动画
+    *
+    *
+    * */
+
+    //倒计时60秒重新发送验证码【以下使用了jquery】
+    var wait=60;
+    //o为要进入计时的对象，比如按钮
+    function time(o) {
+        if (wait == 0) {//如果倒计时到了0秒，则使按钮恢复
+            o.removeAttribute("disabled");
+            o.value="免费获取验证码";
+            wait = 60;
+        } else {
+            o.setAttribute("disabled", true);//使按钮在计时的时候，失效
+            o.value="重新发送(" + wait + ")";//显示倒计时
+            wait--;//减1秒
+            setTimeout(function() {//延迟1秒来执行time()函数，time()函数在执行的时候，又自己调用自己，所以就开始了循环执行，每隔1秒。
+                        time(o)
+                    },
+                    1000)
+        }
+    }
+    document.getElementById("btn").onclick=function(){time(this);}
+
+
+
+</script>
+
+</html>

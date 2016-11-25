@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button id="btn">确认</button>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    //自定义的数组分块函数,chunk(）,参数：要分块的数组、要使用到数组的函数、要执行的环境（没有特殊要求，可不设置该项）
+    function chunk(array, process, context) {
+        setTimeout(function () {
+            //shift()删除数组中的第一项，并返回该项。pop()删除数组中的最后一项，并返回该项。
+            var item = array.shift();//所以array中的第一项会不停地被删除，并附给item，直到array被删光
+
+            //process指的是当前正在执行的函数,call是调用函数自己，这样可以传入一个函数环境
+            process.call(context, item);
+
+            //只要数组的长度大于0，这个函数就会每隔100毫秒调用一次父setTimeout(),创建一个新的计时器
+            if (array.length > 0) {//如果array被shift()删光了，就执行完毕了。
+                setTimeout(arguments.callee, 100)
+            }
+        }, 100);//为什么要设置100毫秒？当然你可以根据自己的需要设置，但推荐用100毫秒
+    }
+
+
+    //案例
+
+    //未数组分块的时候：for函数是一次性执行完毕后，一次性输出到屏幕，假设数组有上千个数据，并且for函数中还要操作DOM，就会导致单个函数执行时间过长！！报错。
+    /*var data = [12, 123, 123124, 1234124, 324, 234, 564, 7623, 3, 458, 7, 2];
+    function output(array) {
+        for (var i = 0; i < array.length - 1; i++) {
+            var body = document.body;
+            body.innerHTML += array[i] + "<br>";
+        }
+    }
+
+    output(data);*/
+
+
+
+
+    //使用了数组分块的时候：
+     var data = [12,123,123124,1234124,324,234,564,7623,3,458,7,2];
+     function output(item) {
+     var body = document.body;
+     body.innerHTML += item+"<br>";
+     }
+    chunk(data,output);
+     //如果数组分块了，每次100毫秒执行1项，那么浏览器就会不报错了。这100毫秒是计时时间，不是函数执行时间，处理单个块的函数可能只要10毫秒。而处理整个数组的时间120毫秒（上面的数组有12项，即12个块（当然每个块可以是对象，对象中又可以包含大量属性，函数，我现在只是简单的演示一下）。）
+     //如果一个函数要花费50毫秒以上的执行时间，就可以考虑把他分块执行！（虽然分块执行必然比一次性执行耗时，但是这样执行不会造成单个函数执行时间过长）
+
+    //在讲的简单一点
+    //把100张图片显示到屏幕上（假设每张图片的加载要10毫秒）
+    //如果要一次性执行完，再一次性显示，用户要等待1秒，用户要面对1秒的空白！！！
+    //如果分块执行，执行1张显示1张，用户时时都能看到图片在加载，我设置（计时器的分隔时间为10毫秒），那么用户在10毫秒的时候，就能看到第一张图片，图片就每10毫秒
+    //加载1张，图片像流水一下，一张一张依次加载出来，在这1秒中，用户一直都能看到图片。同样是等待1秒！！
+
+
+
+
+
+</script>
+
+</html>

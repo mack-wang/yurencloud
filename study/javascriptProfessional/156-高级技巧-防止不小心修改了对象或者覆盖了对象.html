@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button id="btn">确认</button>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    /*     不可扩展对象       */
+
+
+    //未做处理，可以给任何对象，随意添加属性、方法，修改属性、方法。
+    var person = { name:"wlc"};
+    person.age = "23";
+    console.log(person.age);//23
+    //即使person对象创建时只有一个name属性，但给他添加age属性里，如果没age就会自动创建age属性到person，如果有，则修改age属性为23。
+
+    //使用Object.preventExtensions()来禁止对象被添加新的属性和方法,但可以修改和删除已经有的属性和方法
+    var person2 = {name:"wlc"};
+    //禁止person2对象被添加新的属性和方法，但可以修改和删除已经有的属性和方法
+    Object.preventExtensions(perseon2);
+    person2.age="24";
+    person2.name="wlc2";
+    console.log(person2.age,person2.name);//undefined,wlc2
+    //检测对象是否可以扩展
+    alert(Object.isExtensible(person2));//false;
+
+
+    /*     密封对象       */
+
+    //使用Object.seal()来密封对象，只可以修改，不可以添加和删除
+    var person3 = {name:"wlc"};
+    //禁止person2对象被添加新的属性和方法，但可以修改和删除已经有的属性和方法
+    Object.seal(perseon3);
+    person3.age="24";
+    delete person3.name;
+    console.log(person3.age,person3.name);//undefined,wlc
+    //检测对象是否被密封了
+    alert(Object.isSealed(person3));//true
+
+    /*     冻结对象       */
+
+    //使用Object.freeze()来冻结对象，对象只可以读取。【在写javascript库的时候，最怕意外被别人修改或者删除库的属性和方法，所以冻结很有用】
+    var person4 = {name:"wlc"};
+    Object.freeze(perseon4);
+    person3.age="24";
+    delete person3.name;
+    console.log(person4.age,person4.name);//undefined,wlc
+    //检测对象是否被冻结了
+    alert(Object.isFrozen(person4));//true
+
+
+
+</script>
+
+</html>

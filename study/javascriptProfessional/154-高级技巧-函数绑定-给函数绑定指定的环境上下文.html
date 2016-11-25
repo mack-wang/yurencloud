@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<button id="btn">确认</button>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    //函数绑定：可以将函数绑定到指定环境中执行
+
+    //案例：
+
+    var A = {
+        message: "我是对象A里的message属性哦！",
+        Aclick: function (event) {
+            alert(this.message);
+        }
+    };
+
+    var btn = document.getElementById("btn");
+
+    //创建一个点击事件，使用A中的Aclick函数，弹出message
+
+    //未使用函数绑定，没绑定到A对象的环境中，结果是：弹出了undefined,因为在函数中的this指的是btn这个按钮对象，该按钮对象没有定义message内容，所以返回undefined
+    //EventUtil.addHandler(btn,"click",A.Aclick);
+
+    //使用闭包完成函数绑定，绑定到了A对象的环境中，成功弹出message
+    EventUtil.addHandler(btn,"click",function (event) {
+        A.Aclick(event);
+    });
+
+    //自定义的通用的函数绑定函数myblind(),参数：绑定函数，环境
+    function myblind(fn,context){
+        return function () {
+            return fn.apply(context,arguments);
+        }
+    }
+
+    //所以可以用bind()完成函数绑定，返回一个闭包
+    EventUtil.addHandler(btn,"click",myblind(A.Aclick,A));
+
+
+    /*         ECMAScript5给所有的函数定义了一个原生的bind()方法           */
+    //    如何使用，只要给要绑定的函数，用.bind()传入环境对象参数即可
+    EventUtil.addHandler(btn,"click",A.Aclick.bind(A))
+
+
+</script>
+
+</html>
