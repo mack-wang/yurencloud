@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="box2" class="draggable" style="width: 100px;height: 100px;background-color: red; position: absolute;"></div>
+
+<div id="box3"></div>
+<div id="box4"></div>
+<div id="box5"></div>
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+
+    //navigator.onLine这个属性值，是记录当前浏览器是否联网，但可能使用的时候，不同浏览之间会有点问题
+    if (navigator.onLine){
+        alert("我在联网状态！")
+    }else{
+        alert("我在断网状态！")
+    }
+    //这是Html5提供的一个事件，可以判断是否连网
+    EventUtil.addHandler(window,"online",function () {
+        alert("我用事件判断出了，我在联网")
+    });
+    EventUtil.addHandler(window,"offline",function () {
+        alert("我用事件判断出了，我现在断网")
+    })
+
+
+</script>
+
+</html>

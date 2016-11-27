@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="box2" class="draggable" style="width: 100px;height: 100px;background-color: red; position: absolute;"></div>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    //以下案例做到了div跟随鼠标
+    //    EventUtil.addHandler(document,"mousemove",function (event) {
+    //        var box = document.getElementById("box");
+    //        box.style.left=event.clientX+"px";
+    //        box.style.top=event.clientY + "px";
+    //    });
+
+    //以下是通用拖放函数，只要给指定元素添加draggable类即可，使其被拖动，并注意，对象的position一定得是absolute;
+
+    var DragDrop = function () {
+        var dragging = null,
+
+        diffX = 0,
+        diffY = 0;
+
+        function handleEvent(event) {
+            event = EventUtil.getEvent(event);
+            var target = EventUtil.getTarget(event);
+
+            switch (event.type) {
+                case "mousedown":
+                    if (target.className.indexOf("draggable") > -1) {
+                        dragging = target;
+                        diffX=event.clientX-target.offsetLeft;
+                        diffY=event.clientY-target.offsetTop;
+                    }
+                    break;
+
+                case "mousemove":
+                    if (dragging !== null) {
+                        dragging.style.left = (event.clientX-diffX) + "px";
+                        dragging.style.top = (event.clientY-diffY) + "px";
+
+                    }
+                    break;
+                case "mouseup":
+                    dragging = null;
+                    break;
+            }
+        };
+
+        return {
+            enable: function () {
+                EventUtil.addHandler(document, "mousedown", handleEvent);
+                EventUtil.addHandler(document, "mousemove", handleEvent);
+                EventUtil.addHandler(document, "mouseup", handleEvent);
+            },
+            disabled: function () {
+                EventUtil.removeHandler(document, "mousedown", handleEvent);
+                EventUtil.removeHandler(document, "mousemove", handleEvent);
+                EventUtil.removeHandler(document, "mouseup", handleEvent);
+            }
+        }
+
+    }();
+
+    //DragDrop类有两个方法：enable()，disable()，传入要拖放的对象或者要取消施放的对象
+    var box2 = document.getElementById("box2");
+    DragDrop.enable(box2);
+
+
+</script>
+
+</html>

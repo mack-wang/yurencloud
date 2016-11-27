@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="box2" class="draggable" style="width: 100px;height: 100px;background-color: red; position: absolute;"></div>
+
+<div id="box3"></div>
+<div id="box4"></div>
+<div id="box5"></div>
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    //1、函数，大段代码，复杂的算法，Hack等要进行规范的注释
+
+    /*
+     *function person :alert some information of person's name ,age,job
+     * params: string name;
+     * params: int name;
+     * params: string name;
+     * */
+    function person(name, age, job) {
+        alert(name + age + job);
+    }
+
+
+    //变量的命名
+    //变量名应使用名词:
+    var car = "baoma", girl = "linda";
+    //函数名应该以动词开头：getName()
+    function getName(name) {
+        alert(name);
+    }
+    //返回布尔值的应该以is开头：isEnable()
+
+    function isEnable() {
+        var a = 1, b = 1;
+        if (a == b) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //不用担心命名过长的问题，因为部署上线时，会处理和压缩过。
+
+
+    //3、耦合问题
+    //松散耦合：两个对象之间没有过密的联系，修改其中某个对象时，不会造成另一个对象的修改（或者说只是小改）
+    //紧密耦合：两个对象之间联系过于紧密，修改其中某个对象时，造成要修改另一个对象（通常要大改，而且牵扯面比较大）
+    //解耦：就是将两个相互耦合的对象分离
+
+    //尽量将HTML和javascript解耦，不要混杂在一起，以免修改或者调试难度增加
+    //尽量将CSS和javascript解耦，用js修改元素样式时，尽量以修改类的方式，而非修改style属性的方式。这样就避免修改样式的时候，还要到js当中来修改。
+
+    //4、
+
+</script>
+
+</html>
