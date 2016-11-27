@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="box"></div>
+
+</body>
+<script src="EventUtil.js"></script>
+<script type="text/javascript">
+
+//1、变量
+    var a;
+    var b = 1;
+    var b2 = 2;
+    var c = true;
+    var d = "wlc";
+    var e = document.getElementById("box");
+    var f = b + b2;
+    g = "string";//全局变量
+    var h = ["wlc", "tom", "bob", "cindy"];//数组
+    var i = function (name) {//函数
+        alert(name);
+    };
+    var j = {//对象
+        name: "wlc",
+        call: function (name) {
+            alert(name);
+        }
+    };
+    var k = new Object();//构造函数
+
+    //函数
+    function call(name) {
+        alert(name);
+    }
+
+//2、对象
+    //new加构造函数法
+    var person = new Object();
+    person.name = "wlc";
+    person.call = function (name) {
+        alert(name);
+    };
+
+    //对象字面量法（推荐，更简洁高效）
+    var person2 = {
+        name: "wlc",
+        call: function (name) {
+            alert(name)
+        }
+    };
+
+    //用对象给函数传递大量参数
+
+    function call2(name1, name2, name3) {
+        alert(name1 + name2 + name3);
+    }
+
+    call2({
+        name1: "wlc",
+        name2: "tom",
+        name3: "cindy"
+    });
+
+    //对象中嵌套对象
+
+    var person3 = {
+        name:"wlc",
+        age:{
+            one:"1",
+            two:{
+                name2:"wlc2"
+            }
+        }
+    };
+   //访问到name2    person3.age.two.name2
+
+//3、数组
+    //使用new加构造函数法（new 在这里可以省略）
+    var color = new Array();//空数组
+    var color = new Array(20);//限制数组的长度
+    var color = new Array("blue","red","green");//直接往数组中添加数据
+
+    //数组字面量法
+    var color = [];//空数组
+    var color = ["blue","red","green"];//直接往数组中添加数据
+
+
+</script>
+
+</html>
