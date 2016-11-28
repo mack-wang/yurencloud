@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+
+<div class="mydiv" id="box"></div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    $("ul li");//集合元素，返回ul下的所有li的元素的集合，包括孙子，孙孙子...等辈的li元素
+    $("ul > li");//集合元素，返回ul下的所有子辈的li元素的集合，只包含子辈的li
+    $("prev + next");//集合元素，返回prev元素同辈的，在其后面的下一个元素
+    $("prev~siblings");//集合元素，返回prev元素同辈的，在其后面的下面所有的siblings元素
+
+
+
+
+
+
+</script>
+</html>

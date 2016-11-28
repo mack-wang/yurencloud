@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+
+<div class="mydiv" id="box"></div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    $("#box");//选择id为box的单个元素
+    $(".boxes");//选择class为boxes的单个或者多个元素（因为应用该class的元素可以有一个或者多个）
+    $("p");//选择所有的p元素
+    $("*");//选择页面上所有的元素
+    $("div,span,p.myclass,.mydiv")//同时选择多个元素，每个选择器用逗号分隔开来
+
+
+
+
+
+</script>
+</html>

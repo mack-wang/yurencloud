@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+
+<div class="mydiv" id="box"></div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>5</li>
+    <li>4</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    $("div:first");//单个元素，选取第一个元素，选取所有div中的第一个div元素
+    $("div:last");//单个元素，选取最后一个元素，选取所有div中的最后一个div元素
+    $("input:not(.myinput)");//集合元素，选取除了not中的元素外的所有元素，选取除了class是myinput的元素外的所有input元素
+    $("div:even");//集合元素，选取偶数索引的元素，选取所有div中的索引是偶数的元素（索引从0开始）
+    $("div:odd");//集合元素，选取奇数索引的元素，选取所有div中的索引是奇数的元素（索引从0开始）
+    $("div:eq(2)");//单个元素，选取指定索引的元素，选取所有div中索引为2的div元素（索引从0开始）
+    $("div:gt(2)");//集合元素，选取大于指定索引的所有元素，选取所有div中索引大于2的div元素（索引从0开始）
+    $("div:lt(2)");//集合元素，选取小于指定索引的所有元素，选取所有div中索引小于2的div元素（索引从0开始）
+    $(".div1:header");//集合元素，选取所有的标题元素，例如h1,h2,h3,h4...，选取div1中所有的标题元素
+    $("div:header");//集合元素，选取正在执行动画的元素，选取正在执行动画的div元素
+    $("div:focus");//集合元素，选取当前获取焦点的元素，选取当前获取焦点的div元素
+
+
+
+
+
+
+
+</script>
+</html>

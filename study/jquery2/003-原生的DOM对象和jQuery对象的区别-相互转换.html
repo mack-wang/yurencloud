@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+
+<div class="mydiv" id="box"></div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    $(document).ready(function () {//等待DOM加载完毕
+        var $box = $('#box');//这是jQuery对象
+        var box = document.getElementById("box");//这是DOM对象
+
+        /*
+        * 注意：jQuery不能使用DOM对象的任何方法，DOM也不能使用jQuery的任何方法。
+        * */
+
+        //jQuery对象转变成Dom对象的2种方法
+        //1、jQuery对象的第一个索引对象就是原生的DOM对象，通过[0]就可以访问到
+        var box2=$box[0];
+        //2、通过jQuery的get()的方法，也可以转变为原生的DOM对象
+        var box3=$box.get(0);
+
+
+        //DOM对象转变成jQuery对象的1种方法,直接在原生的DOM对象外，包裹一层$()就可以转变成jQuery对象了
+        var $box4 = $(box);
+
+    });
+
+
+</script>
+</html>

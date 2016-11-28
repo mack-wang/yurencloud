@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv{  width: 100px;  height: 100px;  background-color: red;  }
+</style>
+<body>
+
+<div class="mydiv" id="box"></div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //方式一
+    $(document).ready(function () {//等待DOM加载完毕
+        //...
+    });
+
+    //方式二：简化的写法，效果和上面的一样
+    $(function () {//等待DOM加载完毕
+        //...
+    });
+
+    /*
+    * 以上的方式可以在同一个js文件中写多次，会从上到下依次执行（而window.onload在一个js文件中只能写1次，后者覆盖前者。）
+    *
+    *
+    * */
+
+
+
+
+
+
+
+</script>
+</html>

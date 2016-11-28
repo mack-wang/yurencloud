@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+
+<div class="mydiv" id="box"></div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //一、如果jQuery库在其他库后导入
+    //1、直接使用jQuery.noConflict()为让出变量$符号的使用权给别人
+    jQuery.noConflict();//将变量$的控制权交给其他的库，例如prototype.js
+
+    jQuery(function () {
+        alert(jQuery("#box").html());//jQuery使用完整的名字
+    });
+
+    //2、为jQuery创建一个新的快捷变量$j来替换$
+    var $j = jQuery.noConflict();
+    $j(function () {
+        alert($j("#box").html());
+    });
+
+    //3、在jQuery函数内部仍然可以使用$符号
+    jQuery.noConflict();//将变量$的控制权交给其他的库，例如prototype.js
+
+    jQuery(function ($) {//形参设置为$
+        alert($("#box").html());//仅在jQuery函数的内部可以使用$符号，而在外部，$已经让给别的库使用了
+    });
+
+
+    //二、如果jQuery库在其他库之前调用，可以不用加jQuery.noConflict(),但是$符号的使用权仍然要让给别人，自己只能使用jQuery全名
+
+
+
+
+
+</script>
+</html>
