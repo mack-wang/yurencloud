@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+<input type="text" name="username">
+<div class="mydiv" id="box">我</div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //直接在选择器后加方括号，括号内写属性
+    $("div[id]");//方括号内直接写属性名，选取拥有此属性的元素，选取拥有id属性的div元素
+    $("input[name=username]");//选取某属性名等于某属性值的元素，选取name属性为username的input元素
+    $("input[name!=username]");//选取某属性名不等于某属性值的元素，选取name属性不为username的input元素
+    $("input[attribute^=value]");//选取属性的值是以value开头的元素，选取name属性为user开头的input元素
+    $("input[attribute$=value]");//选取属性的值是以value结束的元素，选取name属性为name结束的input元素
+    $("input[attribute*=value]");//选取属性的值包含有value的元素，选取name属性中包含erna的input元素
+    $("input[attribute|=value]");//选取属性的值为value或者value-的元素（主要用于选取有统一前缀的元素），选取name属性中以user-为前缀的input元素
+    $("input[attribute~=value]");//选取属性用空格分隔的值中包含一个给定值的元素，$("div[title~='uk']"）选取属性title用空格分隔的值中包含字符uk的div
+    $("input[name=username][id=box]");//同时使用多个属性过滤选择器，返回一个或者多个都符号的元素，选取name=username,id=box的input元素
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

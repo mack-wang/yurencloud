@@ -25,10 +25,10 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 <script>
 
-    $("div:contains('我')");//选取含有指定文本内容的元素，选取含有"我"字的div
-    $("div:empty");//选取不包含子元素和文本内容的元素，选取不包含子元素且不包含文本内容的div
-    $("div:has(.mydiv)");//选取含有指定选择器的元素，选取包含有.mydiv的类的div
-    $("div:parent");//选取含有子元素或者文本的元素，选取含有子元素或者文本的div，和empty相对
+    $("div:hidden");//选取不可见的元素，包括<input type="hidden"/><div style="display=none;"><div style="visibility:hidden;">等不可见元素。
+    $("div:visible");//选取可见的元素，除去上面不可见元素则都为可见元素，哪怕该元素为空，但他应该也是可见的。
+
+
 
 
 

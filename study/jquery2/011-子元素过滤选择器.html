@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+<input type="text" name="username">
+<div class="mydiv" id="box">我</div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    $("ul:nth-child(index/even/odd)");//选取父元素下的第index个子元素或者奇偶元素（index从1算起），只匹配到子元素，孙元素不匹配
+    $("ul:first-child");//选取第一个子元素，选取ul子元素中的第一个li
+    $("ul:last-child");//选取最后一个子元素，选取ul子元素中的最后一个li
+    $("ul li:only-child");//选取父元素中的唯一子元素，如果还有其他元素，则不取。选取ul下的唯一一个li元素，但是还有其他li元素，所以li不是唯一子元素，所以无效。
+
+    //由于nth-child()比较常用，所以单独再介绍一下
+    $("ul:nth-child(even)");//选取ul元素下，索引值为偶数的li元素，返回元素集合
+    $("ul:nth-child(odd)");//选取ul元素下，索引值为奇数的li元素，返回元素集合
+    $("ul:nth-child(2)");//选取ul元素下，索引值为2的li元素，返回元素集合
+    $("ul:nth-child(3n)");//选取ul元素下，索引值为3的倍数的li元素，返回元素集合（n从1开始）
+    $("ul:nth-child(3n+1)");//选取ul元素下，索引值为（3n+1）的li元素，返回元素集合（n从1开始）
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
