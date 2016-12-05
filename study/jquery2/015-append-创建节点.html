@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+<input type="text" name="username" />
+<div class="mydiv" id="box">我</div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //创建节点，同时创建属性节点
+    var $li1 = $("<li title='我是6'>6</li>");
+    var $li2 = $("<li title='我是7'>7</li>");
+
+    $(".myul").append($li1);
+    $(".myul").append($li2);
+    //$(".myul").append($li1).append($li2)可以采取链式写法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

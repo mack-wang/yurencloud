@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+<input type="text" name="username" />
+<div class="mydiv" id="box">我</div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li title="haha">4</li>
+    <li>5</li>
+</ul>
+
+<ul class="myul2">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+</ul>
+
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //将选择的元素替换成新的元素，将A元素用B元素来替换
+    $(".myul li").replaceWith("<li>我是替换内容</li>");
+
+
+    //将新的元素替换到选择的元素中，将B元素去替换A元素（效果同上，但使用方式相反）
+    $("<li>我是替换内容2</li>").replaceAll(".myul2 li");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

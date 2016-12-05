@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+<input type="text" name="username" />
+<div class="mydiv" id="box">我</div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li title="haha">4</li>
+    <li>5</li>
+</ul>
+
+<ul class="myul2">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+</ul>
+
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //选中节点，添加一个remove()方法，即可删除该节点。删除后，会返回被删除的节点，可以利用起来
+    $remove_li = $(".myul li:eq(1)").remove();//删除第二个li
+
+    alert($remove_li.html());
+
+    //第二种方法，给remove()中传递参数，可以删除选中的元素中又符合参数的元素，（主要用来过滤删除元素）
+    $(".myul li").remove("li[title!=haha]");//获取所有的li元素，删除其中title不等于haha的li元素，应该只剩下4
+
+
+    $(".myul2 li").click(function () {
+        alert($(this).html());
+    });
+    //第三种方法，使用detach()方法来删除元素
+    //remove和detach的区别是：remove会删除元素及基绑定的事件和附加的数据，但detach会保留该元素的事件和附加的数据
+    var $remove_li2 = $(".myul2 li:eq(2)").detach();//如果用remove来删除，再点击该元素，是不会有点击事件的
+    $remove_li2.appendTo(".myul2");
+
+    //第四种方法，使用empty()清空节点内容，包括后代节点
+    $(".myul2 li:eq(1)").empty();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

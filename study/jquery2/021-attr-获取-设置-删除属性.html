@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+<input type="text" name="username" />
+<div class="mydiv" id="box">我</div>
+<ul class="myul">
+    <li class="new" id="llll">1</li>
+    <li class="old">2</li>
+    <li>3</li>
+    <li title="haha">4</li>
+    <li>5</li>
+</ul>
+
+<ul class="myul2">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+</ul>
+
+
+<ul class="myul3">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //获取指定属性名的属性值
+    alert($(".mydiv").attr("id"));
+
+    //设置指定属性名的属性值
+    $(".mydiv").attr("title","我是新增加的属性值哦");
+
+    //删除属性
+    $(".mydiv").removeAttr("id");
+
+
+    //以下是针对元素集中的第一个元素的属性操作
+    //选中多个元素，获取第一个元素的属性
+    console.log($(".myul li").prop("class"));
+
+    //选中多个元素，设置第一个元素的属性
+    $(".myul li").prop("title","是我");
+
+    //选中多个元素，删除第一个元素的属性
+    $(".myul li").removeProp("id");
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

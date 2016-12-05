@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+<input type="text" name="username" />
+<div class="mydiv" id="box">我</div>
+<ul class="myul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //一、当选择器，比如id名中包含特殊字符：.#()[]等，使用双反斜杠\\来转义
+    //id=id#b
+    $("#id\\#b");
+
+    //二、老版本的jQuery中，@已经被遗弃，所以在新版本中，原先用@来选择的，可以直接省略@
+    //$("div[@title='test']")
+    $("div[title='test']");
+
+    //三、选择器中空格的使用注意
+    $("div:hidden");//没有空格,选择div中的隐藏的div元素
+    $("div :hidden");//有空格，选择所有div元素和所有隐藏元素
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
