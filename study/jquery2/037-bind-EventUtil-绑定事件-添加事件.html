@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<div>hello world</div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //bind()和EventUtil的功能一样，都是自定义的添加事件的方法
+
+    //bind()的参数：一、事件名（不用带on） 二、可选，额外的数据  三、函数
+
+    $("div").bind("click",function () {
+        alert($(this).html());
+    });
+    /*
+    * 事件有：blur,focus,load,resize,scroll,unload,click,dbclick,mousedown,mouseup,mousemove,mouseover,mouseout,mouseenter,mouseleave,change,select,submit,keydown,keypress,keyup,error等以及自定义的事件名
+    *
+    * */
+
+</script>
+</html>

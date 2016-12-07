@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+
+    .color{
+        color: red;
+    }
+
+    .back{
+
+        background-color: green;
+    }
+</style>
+<body>
+<input type="text" name="username" value="wlc"/>
+<div class="mydiv test" id="box">我</div>
+<ul class="myul">
+    <li class="new" id="llll">1</li>
+    <li class="old">2</li>
+    <li>3</li>
+    <li title="haha">4</li>
+    <li>5</li>
+</ul>
+
+<ul class="myul2">
+    <li>a <div>A</div></li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+</ul>
+
+
+<ul class="myul3">
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+</ul>
+
+<div id="box2"></div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //获取前后所有的同辈元素
+    var $siblings = $(".myul3 li:eq(2)").siblings();
+    //将前后所有的同辈元素都设置为haha内容
+    console.log($siblings.html("haha"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

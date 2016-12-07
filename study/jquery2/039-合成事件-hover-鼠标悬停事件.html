@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<div>hello world</div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //hover()两个参数，第一个悬停时的函数，第二个离开时的函数
+    $("div").hover(function () {
+        //这是鼠标悬停事件
+        $(this).html("我的文字变了")
+    },function () {
+        //这是鼠标移开事件
+        $(this).html("hello world");
+    })
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<div>hello world</div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    /*
+    * $(document).ready()和window.onload的区别
+    * 前者是DOM就绪后，即会触发事件；后者是DOM就绪后，还要保证相关文件，例如图片，js,css文件加载完成后才会触发事件
+    *
+    * 若在jQuery中想相同地实现window.onload的事件，可以用$(window).load(function(){...})，这个和前者等价
+    *
+    * window.onload事件一个页面中写了多个，只会触发最后一个，后者覆盖前者
+    * 而$(document).ready()事件一个页面中写了多个，每个都会触发，从上到下依次触发
+    *
+    *
+    * */
+
+    //$(document).ready()的三种写法，这三种效果作用均相同
+
+    //我建议用第一种，虽然写得长了一点，但至少语义清楚，好懂，其他两个容易和其他方法相混淆
+    //1
+    $(document).ready(function () {
+
+    });
+
+    //2
+    $(function () {
+
+    });
+
+    //3
+    $().ready(function () {
+
+    })
+
+
+</script>
+</html>

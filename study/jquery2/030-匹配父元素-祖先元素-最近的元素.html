@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .mydiv {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+
+    .color{
+        color: red;
+    }
+
+    .back{
+
+        background-color: green;
+    }
+</style>
+<body>
+<input type="text" name="username" value="wlc"/>
+<div class="mydiv test" id="box">我</div>
+<ul class="myul">
+    <li class="new" id="llll">1</li>
+    <li class="old">2</li>
+    <li>3</li>
+    <li title="haha">4</li>
+    <li>5</li>
+</ul>
+
+<ul class="myul2">
+    <li>a <div>A</div></li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+</ul>
+
+<div>
+    <ul >
+        <li class="myul3">a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+    </ul>
+</div>
+
+
+<div id="box2"></div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    console.log(
+    //获取父元素,返回ul
+    $(".myul3").parent(),
+    //获取祖先元素,返回ul,div,body,html
+    $(".myul3").parents(),
+    //获取最近的祖先元素,返回最近的ul（假设ul中套ul时，返回最近的一层ul）
+    $(".myul3").closest("ul")
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
