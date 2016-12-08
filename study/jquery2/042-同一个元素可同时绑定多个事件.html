@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<span>你好</span>
+<div>
+    hello world
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+
+<p>我是P标签</p>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //span的点击事件，同时绑定了三个事件
+
+    //绑定了2个点击事件和1个鼠标滑过事件
+    $("span").bind("click",function (event) {
+        $(this).append("<strong>1</strong>");
+    }).bind("mouseover",function (event) {
+        $(this).append("<strong>2</strong>");
+    }).bind("click",function (event) {
+        $(this).append("<strong>3</strong>");
+    });
+
+
+    //同一个元素，同时绑定多个事件，更简洁的写法，推荐
+    //直接在第一个参数中，写多个事件名，以空格隔开，便可直接绑定多个事件，比分开写要简洁多了
+    $("p").bind("click mouseover mouseout",function () {
+        $(this).append("<p>233</p>");
+    })
+
+
+</script>
+</html>

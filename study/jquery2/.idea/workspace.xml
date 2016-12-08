@@ -21,101 +21,109 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="031-css-style-属性值的获取.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/031-css-style-属性值的获取.html">
+      <file leaf-file-name="042-同一个元素可同时绑定多个事件.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/042-同一个元素可同时绑定多个事件.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="67" column="67" selection-start-line="67" selection-start-column="67" selection-end-line="67" selection-end-column="67" />
+            <state relative-caret-position="665">
+              <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="032-height-width-获取和设置元素的高和宽.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/032-height-width-获取和设置元素的高和宽.html">
+      <file leaf-file-name="045-给事件添加命名空间-给事件分类-以便批量删除相关事件.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/045-给事件添加命名空间-给事件分类-以便批量删除相关事件.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="662">
-              <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
+            <state relative-caret-position="833">
+              <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="033-offset-获取元素相对当前窗口的偏移量.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/033-offset-获取元素相对当前窗口的偏移量.html">
+      <file leaf-file-name="046-jQuery动画-show-hide-显示和隐藏元素.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/046-jQuery动画-show-hide-显示和隐藏元素.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+            <state relative-caret-position="529">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="034-position-获取元素相对父元素的偏移量.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/034-position-获取元素相对父元素的偏移量.html">
+      <file leaf-file-name="047-jQuery动画-fadeIn-fadeOut-淡入和淡出元素.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/047-jQuery动画-fadeIn-fadeOut-淡入和淡出元素.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="317">
+              <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+              <folding>
+                <marker date="1481201701000" expanded="true" signature="31:839" ph="..." />
+                <marker date="1481201701000" expanded="true" signature="112:176" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="035-scrollTop-scrollLeft-获取和设置元素的滚动条移动距离.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/035-scrollTop-scrollLeft-获取和设置元素的滚动条移动距离.html">
+      <file leaf-file-name="048-jQuery动画-slideUp-slideDown-滑入和滑出元素.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/048-jQuery动画-slideUp-slideDown-滑入和滑出元素.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="628">
+              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+              <folding>
+                <marker date="1481201780000" expanded="true" signature="31:855" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="036-document-ready-页面加载完成后事件.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/036-document-ready-页面加载完成后事件.html">
+      <file leaf-file-name="049-jQuery动画-animate-自定义动画.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/049-jQuery动画-animate-自定义动画.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-              <folding />
+            <state relative-caret-position="570">
+              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="037-bind-EventUtil-绑定事件-添加事件.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/037-bind-EventUtil-绑定事件-添加事件.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="20" column="189" selection-start-line="20" selection-start-column="189" selection-end-line="20" selection-end-column="189" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="038-click-mouseover-mouseout-等常用事件简写.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/038-click-mouseover-mouseout-等常用事件简写.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="21" column="102" selection-start-line="21" selection-start-column="102" selection-end-line="21" selection-end-column="102" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="039-合成事件-hover-鼠标悬停事件.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/039-合成事件-hover-鼠标悬停事件.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="040-合成事件-toggle-事件循环-可多个事件循环.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/040-合成事件-toggle-事件循环-可多个事件循环.html">
+      <file leaf-file-name="050-jQuery动画-animate-自定义动画-按顺序依次执行.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/050-jQuery动画-animate-自定义动画-按顺序依次执行.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="494">
-              <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="051-jQuery动画-stop-停止动画.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/051-jQuery动画-stop-停止动画.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="052-jQuery动画-判断元素是否处于动画状态.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/052-jQuery动画-判断元素是否处于动画状态.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="053-jQuery动画-通过链接写法-延迟动画.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/053-jQuery动画-通过链接写法-延迟动画.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -133,14 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/001-hello-world.html" />
-        <option value="$PROJECT_DIR$/002-ready-function-在DOM加载结束后执行jquery命令.html" />
-        <option value="$PROJECT_DIR$/003-原生的DOM对象和jQuery对象的区别-相互转换.html" />
-        <option value="$PROJECT_DIR$/004-解决jQuery库和其他库冲突的办法.html" />
-        <option value="$PROJECT_DIR$/005-基本选择器.html" />
-        <option value="$PROJECT_DIR$/006-层次选择器.html" />
-        <option value="$PROJECT_DIR$/007-过滤选择器.html" />
         <option value="$PROJECT_DIR$/008-内容过滤选择器.html" />
         <option value="$PROJECT_DIR$/009-可见性过滤选择器.html" />
         <option value="$PROJECT_DIR$/010-属性过滤选择器.html" />
@@ -178,6 +178,20 @@
         <option value="$PROJECT_DIR$/039-合成事件-hover-鼠标悬停事件.html" />
         <option value="$PROJECT_DIR$/040-合成事件-toggle-事件来回切换.html" />
         <option value="$PROJECT_DIR$/040-合成事件-toggle-事件循环-可多个事件循环.html" />
+        <option value="$PROJECT_DIR$/041-事件冒泡.html" />
+        <option value="$PROJECT_DIR$/043-unbind-移除事件.html" />
+        <option value="$PROJECT_DIR$/044-one-一次性事件-触发后立即自动解绑.html" />
+        <option value="$PROJECT_DIR$/045-trigger-事件模拟-比如自动点击-自动聚焦等.html" />
+        <option value="$PROJECT_DIR$/042-同一个元素可同时绑定多个事件.html" />
+        <option value="$PROJECT_DIR$/045-给事件添加命名空间-给事件分类-以便批量删除相关事件.html" />
+        <option value="$PROJECT_DIR$/046-jQuery动画-显示和隐藏元素.html" />
+        <option value="$PROJECT_DIR$/047-jQuery动画-fadeIn-fadeOut-淡入和淡出元素.html" />
+        <option value="$PROJECT_DIR$/048-jQuery动画-slideUp-slideDown-滑入和滑出元素.html" />
+        <option value="$PROJECT_DIR$/049-jQuery动画-animate-自定义动画.html" />
+        <option value="$PROJECT_DIR$/050-jQuery动画-animate-自定义动画-按顺序依次执行.html" />
+        <option value="$PROJECT_DIR$/051-jQuery动画-stop-停止动画.html" />
+        <option value="$PROJECT_DIR$/052-jQuery动画-判断元素是否处于动画状态.html" />
+        <option value="$PROJECT_DIR$/053-jQuery动画-通过链接写法-延迟动画.html" />
       </list>
     </option>
   </component>
@@ -316,18 +330,19 @@
       <workItem from="1480335448836" duration="5665000" />
       <workItem from="1480423295642" duration="4401000" />
       <workItem from="1480943489588" duration="7309000" />
-      <workItem from="1481116894588" duration="7402000" />
+      <workItem from="1481116894588" duration="7730000" />
+      <workItem from="1481196064670" duration="8472000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24799000" />
+    <option name="totallyTimeSpent" value="33599000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1010" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2603834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2630458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -362,108 +377,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/002-ready-function-在DOM加载结束后执行jquery命令.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/003-原生的DOM对象和jQuery对象的区别-相互转换.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/004-解决jQuery库和其他库冲突的办法.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="82" selection-start-line="49" selection-start-column="82" selection-end-line="49" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/005-基本选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/006-层次选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/007-过滤选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/008-内容过滤选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery-3.1.1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery-3.1.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/001-hello-world.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/002-ready-function-在DOM加载结束后执行jquery命令.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="71" selection-start-line="35" selection-start-column="71" selection-end-line="35" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/003-原生的DOM对象和jQuery对象的区别-相互转换.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="42" column="67" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/004-解决jQuery库和其他库冲突的办法.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="82" selection-start-line="49" selection-start-column="82" selection-end-line="49" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/005-基本选择器.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
@@ -482,7 +395,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -490,7 +402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="874">
           <caret line="46" column="73" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -498,7 +409,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -506,7 +416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
           <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -514,7 +423,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -522,13 +430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="988">
           <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
-          <folding>
-            <marker date="1480948997000" expanded="true" signature="712:722" ph="..." />
-            <marker date="1480948997000" expanded="true" signature="813:823" ph="..." />
-            <marker date="1480948997000" expanded="true" signature="918:928" ph="..." />
-            <marker date="1480948997000" expanded="true" signature="1024:1030" ph="..." />
-            <marker date="1480948997000" expanded="true" signature="1024:1033" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -536,7 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1007">
           <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -544,7 +444,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -553,7 +452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -561,7 +459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -569,7 +466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -577,7 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
           <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -585,7 +480,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="30" column="61" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -593,7 +487,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
           <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -601,7 +494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
           <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -609,7 +501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="31" column="76" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -617,7 +508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
           <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -625,7 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
           <caret line="37" column="99" selection-start-line="37" selection-start-column="99" selection-end-line="37" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -633,7 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
           <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,7 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
           <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,7 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -657,7 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="54" column="15" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,13 +557,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
           <caret line="62" column="6" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/031-css-style-属性值的获取.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
+        <state relative-caret-position="1273">
           <caret line="67" column="67" selection-start-line="67" selection-start-column="67" selection-end-line="67" selection-end-column="67" />
           <folding />
         </state>
@@ -687,7 +570,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/032-height-width-获取和设置元素的高和宽.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
+        <state relative-caret-position="1121">
           <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
           <folding />
         </state>
@@ -695,7 +578,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/033-offset-获取元素相对当前窗口的偏移量.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
+        <state relative-caret-position="1102">
           <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
           <folding />
         </state>
@@ -703,7 +586,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/034-position-获取元素相对父元素的偏移量.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
+        <state relative-caret-position="1102">
           <caret line="58" column="27" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
           <folding />
         </state>
@@ -711,7 +594,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/035-scrollTop-scrollLeft-获取和设置元素的滚动条移动距离.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
+        <state relative-caret-position="1083">
           <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
           <folding />
         </state>
@@ -727,7 +610,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/037-bind-EventUtil-绑定事件-添加事件.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="380">
           <caret line="20" column="189" selection-start-line="20" selection-start-column="189" selection-end-line="20" selection-end-column="189" />
           <folding />
         </state>
@@ -749,10 +632,134 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/040-合成事件-toggle-事件循环-可多个事件循环.html">
+    <entry file="file://$PROJECT_DIR$/040-合成事件-toggle-切换元素的可见状态.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/041-事件冒泡-获取事件对象信息.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding>
+            <marker date="1481197564000" expanded="true" signature="31:848" ph="..." />
+            <marker date="1481197564000" expanded="true" signature="112:225" ph="..." />
+            <marker date="1481197564000" expanded="true" signature="281:840" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/043-unbind-移除事件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/044-one-一次性事件-触发后立即自动解绑.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/045-trigger-事件模拟-比如自动点击-自动聚焦等.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="79" selection-start-line="31" selection-start-column="79" selection-end-line="31" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/042-同一个元素可同时绑定多个事件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="35" column="49" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/045-给事件添加命名空间-给事件分类-以便批量删除相关事件.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="45" column="50" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/046-jQuery动画-show-hide-显示和隐藏元素.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/047-jQuery动画-fadeIn-fadeOut-淡入和淡出元素.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding>
+            <marker date="1481201701000" expanded="true" signature="31:839" ph="..." />
+            <marker date="1481201701000" expanded="true" signature="112:176" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/048-jQuery动画-slideUp-slideDown-滑入和滑出元素.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding>
+            <marker date="1481201780000" expanded="true" signature="31:855" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/049-jQuery动画-animate-自定义动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/050-jQuery动画-animate-自定义动画-按顺序依次执行.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
-          <caret line="26" column="9" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/051-jQuery动画-stop-停止动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/052-jQuery动画-判断元素是否处于动画状态.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/053-jQuery动画-通过链接写法-延迟动画.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
           <folding />
         </state>
       </provider>

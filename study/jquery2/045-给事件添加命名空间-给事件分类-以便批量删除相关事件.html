@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<span>你好</span>
+<button>批量删除，命名空间为wlc的事件</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    /*
+    * 事件的命名空间
+    * 直接在事件后以点连接，便可以取个名字，比如，click.wlc,mouseover.wlc，事件的类型不变，但这些命名过的事件，都可以归类到wlc事件，
+    * 删除事件时可以使用unbind(".wlc")
+    * 这样做的好处在于，对事件进行分类管理，对事件进行批量操作
+    *
+    * 可以针对性删除事件，比如span绑定了10个click事件，如果直接移除click事件，会把移除所有的click事件。如果只想移除6号click事件，其他事件保留
+    * 就可以使用事件命名空间方法，给6号的click事件命名一个six的名字，然后指定移除他就可以了
+    * */
+    $("span").bind("click",function (event) {
+        $(this).append("<strong>1</strong>");
+    });
+
+    $("span").bind("mouseover.wlc",function (event) {
+        $(this).append("<strong>2</strong>");
+    });
+
+    $("span").bind("mouseout.wlc",function (event) {
+        $(this).append("<strong>3</strong>");
+    });
+
+
+    //批量删除，命名空间为wlc的事件，click事件不在该wlc空间内，所以正常运行
+    $("button").click(function () {
+        $("span").unbind(".wlc");
+    });
+
+    //例如同一个元素绑定多个click事件，指定移除2号click事件时，可以给2号click事件命名，然后指定移除
+    $("div").unbind("click.second");//移除2号click事件
+
+    //事件模拟针对事件命名空间的特殊用法
+    $("div").trigger("click!");//模拟执行无命名空间的所有click事件，
+    $("div").trigger("click.second");//模拟执行2号命名空间的click事件，
+
+
+
+
+
+
+
+</script>
+</html>

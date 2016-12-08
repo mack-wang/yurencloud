@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<div>
+    hello world
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //事件冒泡，传递event参数
+    $("li").bind("click",function (event) {
+        //阻止默认行为
+        event.preventDefault();
+
+        alert($(this).html());
+        //停止事件冒泡
+        event.stopPropagation();
+
+        //获取事件对象的属性（查看事件类型）
+        alert(event.type);
+
+        //获取事件对象的目标
+        console.log(event.target);
+
+        //获取鼠标相对窗口的位置，如果有滚动条，要加上滚动条的距离
+        console.log(event.pageX,event.pageY);
+
+        //获取鼠标按键：左中右（返回1为左键，2为中键，3为右键），或者键盘按键
+        console.log(event.which);
+
+        //获取事件中的快捷辅助键的使用情况
+        console.log(event.metaKey);
+    })
+
+
+</script>
+</html>

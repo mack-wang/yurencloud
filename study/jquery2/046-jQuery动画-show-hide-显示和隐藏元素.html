@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<span>你好</span>
+<button>显示</button>
+<button>隐藏</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    /*
+    * 1、hide（）方法，就是把元素的display变为none,并且会记录下来元素之前的display值是block，inlineblock等
+    * 2、show（）方法会根据hide()记录下来的display值，显示出来。
+    * 3、如果有动画抖动或者异常，则要添加头部声明DTD，
+    * 4、如果想让元素动起来，而不是直接显示或者隐藏，要有个过渡动画，则要添加参数
+    * */
+
+    //显示
+    $("button:eq(0)").click(function () {
+        $("span").show();
+    });
+
+    //隐藏
+    $("button:eq(1)").click(function () {
+        $("span").hide();
+    });
+
+    //慢慢显示或慢慢隐藏
+
+    $("button:eq(2)").click(function () {
+        $("span").show(slow);
+    });
+
+    $("button:eq(3)").click(function () {
+        $("span").hide(slow);
+    });
+
+    //动画时间设置，单位毫秒
+    $("button:eq(4)").click(function () {
+        $("span").show(600);
+    });
+
+    $("button:eq(5)").click(function () {
+        $("span").hide(1000);
+    });
+
+
+
+
+
+
+
+
+</script>
+</html>

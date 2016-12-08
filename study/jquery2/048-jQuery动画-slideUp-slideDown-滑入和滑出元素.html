@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<span>你好</span>
+<button>滑入</button>
+<button>滑出</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //通过改变元素的高度来使元素产生滑动效果，通过display：none来使元素滑出隐藏
+
+    //滑入
+    $("button:eq(0)").click(function () {
+        $("span").slideDown();
+    });
+
+    //滑出
+    $("button:eq(1)").click(function () {
+        $("span").slideUp();
+    });
+
+    //慢慢
+
+    $("button:eq(2)").click(function () {
+        $("span").slideDonw(slow);
+    });
+
+    $("button:eq(3)").click(function () {
+        $("span").slideUp(slow);
+    });
+
+    //动画时间设置，单位毫秒
+    $("button:eq(4)").click(function () {
+        $("span").slideDown(600);
+    });
+
+    $("button:eq(5)").click(function () {
+        $("span").slideUp(1000);
+    });
+
+
+
+
+
+
+
+
+</script>
+</html>

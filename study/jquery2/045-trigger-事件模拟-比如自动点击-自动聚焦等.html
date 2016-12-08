@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<span>你好</span>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //one（），使用方法同bind，但one是一次性事件，使用过一次之后，就失效了。
+    $("span").bind("click",function (event) {
+        $(this).append("<strong>1</strong>");
+    });
+
+    //trigger可以模拟浏览器所有的事件，比如click,blur,dbclick,focus等所有事件。还能模拟自定义的事件
+    //什么叫模拟事件？比如模拟点击事件，就相当于电脑代替你点击了一下
+    $("span").trigger("click");
+
+    //当然浏览支持的事件，可以直接简化成下面的写法，也同样是模拟事件
+    $("span").click();
+
+    $("span").bind("wlc",function () {
+        $(this).append("我是自定义事件")
+    });
+
+    //trigger还可以模拟自定义的事件
+    $("span").trigger("wlc");
+
+    //trigger还可以携带多个参数，提供给模拟事件使用(由于trigger只能传递两个参数，所有第二个数据的参数如果有多个的话，需要用数组的形式来写)
+
+    $("span").bind("wlc2",function (text1,text2) {
+        console.log(text1+text2)
+    });
+
+    $("span").trigger("wlc2",["苹果","桃子"]);
+
+
+
+
+
+</script>
+</html>

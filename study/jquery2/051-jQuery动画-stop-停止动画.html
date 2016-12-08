@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body style="position: relative">
+<div style="width: 100px;height: 100px; border: 1px solid black; background-color: red; position: absolute;color:red;">你好</div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //animate(param,speed,callback);
+    /*
+    * param:动画要达到的状态，一个包含样式属性及值的映射，比如{height:"300px",left:"500px"}，高度从100px变到300px，位置要从0变到500【我实践时，不支持颜色变化】
+    * speed:速度参数，可选
+    * callback:动画完成时执行的函数，可选。
+    *
+    * */
+
+    $(function () {
+        //鼠标滑过时移动图像
+        $("div").mouseover(function () {
+            $(this).animate({left:"500px"},3000);
+        });
+
+        //鼠标移出时，暂停动画，等滑动时，又继续动画
+        $("div").mouseout(function () {
+            $(this).stop();
+        })
+    });
+
+    //当一个元素有多个动画时，stop()只能停止第一个动画，要传递参数true，stop(true)能停止第一个动画，并清空动画队列中的其他动画。
+    $("mydiv").stop(true);//暂停第一动画，清空其他动画队列
+
+    //当希望动画直接以末状态结束时，可以添加第二个参数为true，
+    $("mydiv").stop(false,true);//动画直接以末状态结束
+
+
+
+
+
+
+</script>
+</html>

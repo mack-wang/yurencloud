@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<body>
+<span>你好</span>
+<button>移除事件</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //span的点击事件，同时绑定了三个事件
+
+    //绑定了2个点击事件和1个鼠标滑过事件
+    $("span").bind("click",function (event) {
+        $(this).append("<strong>1</strong>");
+    }).bind("mouseover",function (event) {
+        $(this).append("<strong>2</strong>");
+    }).bind("click",function (event) {
+        $(this).append("<strong>3</strong>");
+    });
+
+
+    //点击按钮，就移除了鼠标滑过事件，其他事件还在
+    $("button").click(function () {
+        $("span").unbind("mouseover");
+    });
+
+    /*
+    * unbind()移除事件
+    *1、若没参数，则移除所有事件
+    *2、参数一：事件类型，参数二：要移除的函数
+    *
+    *
+    *
+    * */
+
+
+
+
+
+</script>
+</html>
