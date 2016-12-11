@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    ul {
+        list-style: none
+    }
+
+    .bar li {
+        float: left;
+
+    }
+
+    .bar {
+        width: 1000px;
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    .head {
+        width: 1000px;
+        height: 50px;
+        border: 1px solid black;
+    }
+
+    .bar li:last-child {
+        float: right;
+        padding-right: 50px;
+    }
+    .video {
+        position: absolute;
+    }
+    .video li{
+        float: left;
+        margin: 20px;
+    }
+
+    .video li img{
+        width: 200px;
+    }
+
+    .video li p{
+        font-family: "Microsoft YaHei";
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .list{
+        width: 1000px;
+        height: 240px;
+        overflow: hidden;
+        position: relative;
+        margin-left: 50px;
+    }
+</style>
+<body>
+<ul class="bar">
+    <li>卡通动漫</li>
+    <li>
+        <ul class="page">
+        </ul>
+    </li>
+    <li>
+        <button id="prev"> <</button>
+        <button id="next"> ></button>
+    </li>
+    <li>
+        <a href="">更多>></a>
+    </li>
+</ul>
+<div class="list">
+<ul class="video">
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女1</p>
+        <p>播放数：1000</p>
+    </li>
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女2</p>
+        <p>播放数：1000</p>
+    </li>
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女3</p>
+        <p>播放数：1000</p>
+    </li>
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女4</p>
+        <p>播放数：1000</p>
+    </li>
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女5</p>
+        <p>播放数：1000</p>
+    </li>
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女6</p>
+        <p>播放数：1000</p>
+    </li>
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女7</p>
+        <p>播放数：1000</p>
+    </li>
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女8</p>
+        <p>播放数：1000</p>
+    </li>
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女9</p>
+        <p>播放数：1000</p>
+    </li>
+    <li>
+        <img src="img/girl.png" alt="">
+        <p>美女10</p>
+        <p>播放数：1000</p>
+    </li>
+</ul>
+</div>
+
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    var page = 1;
+    var i = 4;
+    var contentWidth = $(".list").width();
+    var len = $(".video").find("li").length;
+    var page_count = Math.ceil(len/i);
+    for (var j=0;j<page_count;j++){
+        var li = "<li class='page"+(j+1)+"'>*</li>";
+        $(".page").append(li);
+    }
+    $("#next").click(function () {
+
+        if (!$(".video").is(":animated")){
+            if (page == page_count){
+                $(".video").animate({left:"0px"},"slow");
+                page=1;
+            }else{
+                $(".video").animate({left:'-='+contentWidth},"slow");
+                page++;
+            }
+        }
+        $(".page"+page).siblings().css("color","black");
+        $(".page"+page).css("color","red");
+
+    })
+
+
+
+
+
+
+</script>
+</html>
