@@ -12,7 +12,7 @@
     }
 </style>
 <body>
-<input type="text" name="username" />
+<input type="text" name="username"/>
 <div class="mydiv" id="box">我</div>
 <ul class="myul">
     <li class="new" id="llll">1</li>
@@ -45,7 +45,7 @@
     alert($(".mydiv").attr("id"));
 
     //设置指定属性名的属性值
-    $(".mydiv").attr("title","我是新增加的属性值哦");
+    $(".mydiv").attr("title", "我是新增加的属性值哦");
 
     //删除属性
     $(".mydiv").removeAttr("id");
@@ -56,21 +56,29 @@
     console.log($(".myul li").prop("class"));
 
     //选中多个元素，设置第一个元素的属性
-    $(".myul li").prop("title","是我");
+    $(".myul li").prop("title", "是我");
 
     //选中多个元素，删除第一个元素的属性
     $(".myul li").removeProp("id");
 
 
+    /*
+     *
+     * jquery中attr和prop的区别
 
+     在高版本的jquery引入prop方法后，什么时候该用prop？什么时候用attr？它们两个之间有什么区别？这些问题就出现了。
 
+     关于它们两个的区别，网上的答案很多。这里谈谈我的心得，我的心得很简单：
 
-
-
-
-
-
-
+     对于HTML元素本身就带有的固有属性，在处理时，使用prop方法。
+     对于HTML元素我们自己自定义的DOM属性，在处理时，使用attr方法。
+     *
+     *
+     * attr返回的属性值有多种
+     * prop返回的属性值只有true/false
+     *
+     *
+     * */
 
 
 </script>

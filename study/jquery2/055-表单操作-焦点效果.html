@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .focus {
+        background-color: aqua;
+    }
+</style>
+
+<body>
+<form action="">
+    <div>
+        <label for="username">名称：</label>
+        <input type="text">
+    </div>
+    <div>
+        <label for="password">密码：</label>
+        <input type="password">
+    </div>
+    <div>
+        <label for="msg">详细信息:</label>
+        <textarea name="" id="msg" cols="30" rows="10"></textarea>
+    </div>
+
+
+</form>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+$(function () {
+    $("input").focus(function () {
+        $(this).addClass("focus");
+    }).blur(function () {
+        $(this).removeClass("focus");
+    })
+})
+
+
+</script>
+</html>

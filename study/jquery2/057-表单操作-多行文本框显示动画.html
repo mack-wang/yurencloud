@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .focus {
+        background-color: aqua;
+    }
+</style>
+
+<body>
+<form action="">
+    <div>
+        <label for="username">名称：</label>
+        <input type="text">
+    </div>
+    <div>
+        <label for="password">密码：</label>
+        <input type="password">
+    </div>
+    <div>
+        <label for="msg">详细信息:</label>
+        <textarea name="" id="msg" rows="8" cols="20">我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人我们都是中国人</textarea>
+        <button id="add"> +</button>
+        <button id="minus"> -</button>
+    </div>
+
+
+</form>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    //点击滚动条的向上或者向下箭头，让文字以50px的距离向下滚动
+    //我只写了实现的关键方法
+
+    $("comment").animate({scrollTop:"+=50"},400);
+
+
+</script>
+</html>

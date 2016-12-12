@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .focus {
+        background-color: aqua;
+    }
+</style>
+
+<body>
+<form action="">
+    <input type="checkbox" name="items" value="足球">足球
+    <input type="checkbox" name="items" value="羽毛球">羽毛球
+    <input type="checkbox" name="items" value="篮球">篮球
+    <input type="checkbox" name="items" value="乒乓球">乒乓球
+
+    <input type="button" id="selectAll" value="全选">
+    <input type="button" id="selectNone" value="全不选">
+    <input type="button" id="revSelect" value="反选">
+    <input type="button" id="submit" value="提交">
+</form>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+    $("#selectAll").click(function () {
+        $("input:checkbox").prop("checked",true);
+    });
+
+    $("#selectNone").click(function () {
+        $("input:checkbox").prop("checked",false);
+    });
+
+    $("#revSelect").click(function () {//获取其原来的checked值，取反
+        $("input:checkbox").each(function(){
+            $(this).prop('checked',!$(this).prop('checked'));
+        });
+    });
+
+    $("#submit").click(function () {
+        var str="你选中的是：";
+        $("input:checkbox:checked").each(function () {
+            str += $(this).val()+","
+        });
+        alert(str);
+    });
+
+    /*
+    *
+
+     像checkbox，radio和select这样的元素，选中属性对应“checked”和“selected”，这些也属于固有属性，因此需要使用prop方法去操作才能获得正确的结果。
+
+     $("#chk1").prop("checked") == false
+     $("#chk2").prop("checked") == true
+
+     如果上面使用attr方法，则会出现：
+     $("#chk1").attr("checked") == undefined
+     $("#chk2").attr("checked") == "checked"
+
+    *
+    *
+    * */
+
+</script>
+</html>

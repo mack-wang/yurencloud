@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .focus {
+        background-color: aqua;
+    }
+</style>
+
+<body>
+<form action="">
+    <select id="select1" multiple style="height: 80px;width: 50px">
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+        <option value="hangzhou">杭州</option>
+        <option value="chongqing">重庆</option>
+    </select>
+    <select name="" id="select2" multiple style="width: 50px;height: 80px">
+
+    </select>
+
+    <button>选中的移到右边</button>
+    <button>全部移到右边</button>
+    <button>选中的移到左边</button>
+    <button>全部移到左边</button>
+
+</form>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    $(function () {
+        $("button:eq(0)").click(function (event) {
+            event.preventDefault();
+            $remove = $("#select1 option:selected").remove();
+            $remove.appendTo("#select2");
+        });
+
+        $("button:eq(1)").click(function (event) {
+            event.preventDefault();
+            $remove = $("#select1 option").remove();
+            $remove.appendTo("#select2");
+
+        });
+
+        $("button:eq(2)").click(function (event) {
+            event.preventDefault();
+            $remove = $("#select2 option:selected").remove();
+            $remove.appendTo("#select1");
+        });
+
+        $("button:eq(3)").click(function (event) {
+            event.preventDefault();
+            $remove = $("#select2 option").remove();
+            $remove.appendTo("#select1");
+        });
+    });
+
+
+
+</script>
+</html>

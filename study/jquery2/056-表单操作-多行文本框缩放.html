@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .focus {
+        background-color: aqua;
+    }
+</style>
+
+<body>
+<form action="">
+    <div>
+        <label for="username">名称：</label>
+        <input type="text">
+    </div>
+    <div>
+        <label for="password">密码：</label>
+        <input type="password">
+    </div>
+    <div>
+        <label for="msg">详细信息:</label>
+        <textarea name="" id="msg" rows="8" cols="20" style="height: 90px;" contenteditable="true">我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人</textarea>
+        <button id="add"> +</button>
+        <button id="minus"> -</button>
+    </div>
+
+
+</form>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/EventUtil.js"></script>
+<script>
+
+    //这里有问题，文本框变大之后，总是自动会恢复回去！？
+    /*
+    * 最后查明了原因：原生没有把button的默认事件给取消，以至于产生了问题
+    *
+    * */
+
+    $(function () {
+        //点击+号，如果小于50px则加50px,点击-号如果大于50px则减50px
+        $("#add").click(function (event) {
+            event.preventDefault();
+            if ($("textarea").height() < 150) {
+                $("textarea").height($("textarea").height() + 50);
+            }
+        });
+
+        $("#minus").click(function () {
+            event.preventDefault();
+            if ($("textarea").height() > 130) {
+                $("textarea").height($("textarea").height() - 50);
+            }
+        })
+    });
+
+
+    //原生js的写法
+    /*    var add = document.getElementById("add");
+     var minus = document.getElementById("minus");
+     var text = document.getElementById("msg");
+
+
+     EventUtil.addHandler(add, "click", function (event) {
+     var textheight = text.style.height;
+     event.preventDefault();
+     if (parseInt(textheight) < 100) {
+     text.style.height = (parseInt(textheight) + 500) + "px";
+     }
+     });
+
+
+     EventUtil.addHandler(minus, "click", function (event) {
+     var textheight = text.style.height;
+     event.preventDefault();
+     if (parseInt(textheight) > 100) {
+     text.style.height = (parseInt(textheight) - 500) + "px";
+     }
+     });*/
+
+
+</script>
+</html>
