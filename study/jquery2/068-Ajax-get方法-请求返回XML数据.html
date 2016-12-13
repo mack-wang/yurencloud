@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div style="width: 500px;height: 500px;border: 1px solid black;">
+    我现在内容为空
+</div>
+<button>GET传递参数给服务器，并把服务器返回数据显示在div中</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    $("button:eq(0)").click(function () {
+        /*
+         http://wthrcdn.etouch.cn/WeatherApi?citykey=101010100
+         通过城市id获得天气数据，xml文件数据,
+         当错误时会有<error>节点
+         http://wthrcdn.etouch.cn/WeatherApi?city=北京
+         通过城市名字获得天气数据，xml文件数据
+
+         返回的xml数据在最下面
+         */
+
+        //data一定要包在$()中，转成jQuery对象
+
+        $.get("http://wthrcdn.etouch.cn/WeatherApi?city=杭州", function (data, textStatus) {
+            //返回的json数据不用我再转换了，jQuery已经提前将其转换好，我们可以用data对象来调用就可以了
+            $("div").html("这是本次请求，从中国天气网对外提供的json中，提取的杭州天气信息，城市：" + $(data).find("city").html() + ",天气：" + $(data).find("type").html() + ",最低温：" + $(data).find("low").html());
+            alert(textStatus);
+        }, "xml")
+    });
+
+    //股票信息相同，找到提供相关数据的网站，抓紧json或者xml的数据即可
+
+    /*下面是天气返回的xml数据
+     <resp>
+     <city>杭州</city>
+     <updatetime>21:10</updatetime>
+     <wendu>10</wendu>
+     <fengli>1级</fengli>
+     <shidu>88%</shidu>
+     <fengxiang>北风</fengxiang>
+     <sunrise_1>06:47</sunrise_1>
+     <sunset_1>17:00</sunset_1>
+     <sunrise_2/>
+     <sunset_2/>
+     <environment>
+     <aqi>39</aqi>
+     <pm25>23</pm25>
+     <suggest>各类人群可自由活动</suggest>
+     <quality>优</quality>
+     <MajorPollutants/>
+     <o3>27</o3>
+     <co>1</co>
+     <pm10>38</pm10>
+     <so2>8</so2>
+     <no2>41</no2>
+     <time>21:00:00</time>
+     </environment>
+     <yesterday>
+     <date_1>12日星期一</date_1>
+     <high_1>高温 18℃</high_1>
+     <low_1>低温 10℃</low_1>
+     <day_1>
+     <type_1>阴</type_1>
+     <fx_1>东风</fx_1>
+     <fl_1>3-4级</fl_1>
+     </day_1>
+     <night_1>
+     <type_1>小雨</type_1>
+     <fx_1>北风</fx_1>
+     <fl_1>4-5级</fl_1>
+     </night_1>
+     </yesterday>
+     <forecast>
+     <weather>
+     <date>13日星期二</date>
+     <high>高温 14℃</high>
+     <low>低温 7℃</low>
+     <day>
+     <type>小雨</type>
+     <fengxiang>北风</fengxiang>
+     <fengli>4-5级</fengli>
+     </day>
+     <night>
+     <type>小雨</type>
+     <fengxiang>无持续风向</fengxiang>
+     <fengli>4-5级</fengli>
+     </night>
+     </weather>
+     <weather>
+     <date>14日星期三</date>
+     <high>高温 7℃</high>
+     <low>低温 1℃</low>
+     <day>
+     <type>多云</type>
+     <fengxiang>无持续风向</fengxiang>
+     <fengli>4-5级</fengli>
+     </day>
+     <night>
+     <type>晴</type>
+     <fengxiang>东北风</fengxiang>
+     <fengli>3-4级</fengli>
+     </night>
+     </weather>
+     <weather>
+     <date>15日星期四</date>
+     <high>高温 7℃</high>
+     <low>低温 0℃</low>
+     <day>
+     <type>晴</type>
+     <fengxiang>东北风</fengxiang>
+     <fengli>微风级</fengli>
+     </day>
+     <night>
+     <type>晴</type>
+     <fengxiang>东北风</fengxiang>
+     <fengli>微风级</fengli>
+     </night>
+     </weather>
+     <weather>
+     <date>16日星期五</date>
+     <high>高温 8℃</high>
+     <low>低温 0℃</low>
+     <day>
+     <type>晴</type>
+     <fengxiang>东风</fengxiang>
+     <fengli>微风级</fengli>
+     </day>
+     <night>
+     <type>晴</type>
+     <fengxiang>东南风</fengxiang>
+     <fengli>微风级</fengli>
+     </night>
+     </weather>
+     <weather>
+     <date>17日星期六</date>
+     <high>高温 12℃</high>
+     <low>低温 5℃</low>
+     <day>
+     <type>多云</type>
+     <fengxiang>东南风</fengxiang>
+     <fengli>微风级</fengli>
+     </day>
+     <night>
+     <type>多云</type>
+     <fengxiang>东北风</fengxiang>
+     <fengli>微风级</fengli>
+     </night>
+     </weather>
+     </forecast>
+     <zhishus>
+     <zhishu>
+     <name>晨练指数</name>
+     <value>较不宜</value>
+     <detail>风力稍大，较不宜晨练，室外锻炼请注意选择避风的地点，避免迎风锻炼。</detail>
+     </zhishu>
+     <zhishu>
+     <name>舒适度</name>
+     <value>较舒适</value>
+     <detail>白天天气晴好、但风力较强，早晚会感觉偏凉，午后舒适、宜人。</detail>
+     </zhishu>
+     <zhishu>
+     <name>穿衣指数</name>
+     <value>较冷</value>
+     <detail>建议着厚外套加毛衣等服装。年老体弱者宜着大衣、呢外套加羊毛衫。</detail>
+     </zhishu>
+     <zhishu>
+     <name>感冒指数</name>
+     <value>易发</value>
+     <detail>昼夜温差大，风力较强，易发生感冒，请注意适当增减衣服，加强自我防护避免感冒。</detail>
+     </zhishu>
+     <zhishu>
+     <name>晾晒指数</name>
+     <value>基本适宜</value>
+     <detail>天气不错，午后温暖的阳光仍能满足你驱潮消霉杀菌的晾晒需求。</detail>
+     </zhishu>
+     <zhishu>
+     <name>旅游指数</name>
+     <value>适宜</value>
+     <detail>天气较好，温度适宜，但风稍微有点大。这样的天气适宜旅游，您可以尽情地享受大自然的无限风光。</detail>
+     </zhishu>
+     <zhishu>
+     <name>紫外线强度</name>
+     <value>弱</value>
+     <detail>紫外线强度较弱，建议出门前涂擦SPF在12-15之间、PA+的防晒护肤品。</detail>
+     </zhishu>
+     <zhishu>
+     <name>洗车指数</name>
+     <value>不宜</value>
+     <detail>不宜洗车，未来24小时内有雨，如果在此期间洗车，雨水和路上的泥水可能会再次弄脏您的爱车。</detail>
+     </zhishu>
+     <zhishu>
+     <name>运动指数</name>
+     <value>较适宜</value>
+     <detail>天气较好，但天气凉，且风力较大，推荐您进行室内运动，若在户外运动请注意避风保暖。</detail>
+     </zhishu>
+     <zhishu>
+     <name>约会指数</name>
+     <value>较不适宜</value>
+     <detail>风力较大，建议尽量不要去室外约会，如果外出，请您挑选避风的地点。</detail>
+     </zhishu>
+     <zhishu>
+     <name>雨伞指数</name>
+     <value>不带伞</value>
+     <detail>天气较好，不会降水，因此您可放心出门，无须带雨伞。</detail>
+     </zhishu>
+     </zhishus>
+     </resp>
+     <!--
+     10.10.156.163(10.10.156.163):52417 ; 10.10.162.42:8080
+     -->
+     */
+
+
+</script>
+</html>

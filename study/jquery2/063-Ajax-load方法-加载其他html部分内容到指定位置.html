@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div style="width: 500px;height: 500px;border: 1px solid black;">
+    我现在内容为空
+</div>
+<button>点击加载ajax-test.hmtl这个页面的.mydiv内容</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+$("button").click(function () {
+    //$("div")为指定加载页面的位置，load的的第一个参数为url，要访问或者加载的页面的url
+
+    //要第一个参数中，空格，然后接着写selector选择器名，就可以把选择器的选中的元素加载出来
+    /*
+    * 注意事项：因为加载的选择器内容如果是引用外部样式，或者内部style样式，则样式会丢失。如果是引用行间样式，样式应该会包留
+    * 原因：实际上，load就是把相应的代码抓取并插入到当前页面，所以没抓过来的内容当然不显示。
+    * */
+    $("div").load("ajax-test.html .mydiv");
+})
+
+</script>
+</html>

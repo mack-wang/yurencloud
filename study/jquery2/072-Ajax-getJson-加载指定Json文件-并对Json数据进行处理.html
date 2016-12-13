@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div style="width: 500px;height: 500px;border: 1px solid black;">
+    我现在内容为空
+</div>
+<button>POST传递参数给服务器，并把服务器返回数据显示在div中</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    $("button:eq(0)").click(function () {
+        //会立即执行该javascript文件，url可以是相对路径，也可以是远程的绝对路径
+
+        //在点击后，加载ajax-text.json文件，但这个和$.post不一样，jQuery没有为我们解析好json对象，所以我们得先把data解析成js对象
+        $.getScript('ajax-text.json',function (data) {
+            var pdata = JSON.parse(data);
+            alert(pdata.name)
+        })
+    });
+</script>
+</html>

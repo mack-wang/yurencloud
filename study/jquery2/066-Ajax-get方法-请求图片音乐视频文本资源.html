@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div style="width: 500px;height: 500px;border: 1px solid black;">
+    我现在内容为空
+</div>
+<button>GET传递参数给服务器，并把服务器返回数据显示在div中</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+$("button:eq(0)").click(function () {
+
+    //千万别这么干，因为返回的数据无法处理
+    $.get("img/girl.png",function (data,textStatus) {
+        $("div").append(data);
+        alert(textStatus);
+    })
+});
+</script>
+</html>

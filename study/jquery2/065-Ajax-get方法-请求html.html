@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div style="width: 500px;height: 500px;border: 1px solid black;">
+    我现在内容为空
+</div>
+<button>GET传递参数给服务器，并把服务器返回数据显示在div中</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+$("button:eq(0)").click(function () {
+
+    /*
+    * $.get(url,data,callback,type)
+    * 一共四个参数：要请求的url，要传递的参数（可选），传递成功后的回调函数（可选），传递回来的数据类型（可选）
+    * 1、参数用对象的写法，会跟着url后以键值对的方式进行请求
+    * 2、回调函数会返回data,textStatus，即服务器返回的数据和请求的状态
+    * 3、传递回来的数据类型可以为xml,html,script,json,text,_default
+    *
+    * */
+
+    //url请求的资源为html文件，并把该文件插入到div内
+    $.get("ajax-test.html",function (data,textStatus) {
+        $("div").append(data);
+        alert(textStatus);
+    },"html")
+});
+</script>
+</html>

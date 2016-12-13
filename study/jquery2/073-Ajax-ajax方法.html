@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div style="width: 500px;height: 500px;border: 1px solid black;">
+    我现在内容为空
+</div>
+<button>ajax</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    /*
+     $.ajax()是jQuery最底层的Ajax实现的
+     而前面提到的$.load(),$.get(),$.post(),$.getScript(),$.getJson()都是基于$.ajax()来构建的，所以，$.ajax更底层。
+
+
+
+     1、只接受一个对象{}参数，但这个对象中有多个参数，参数以键值对的形式存在，所有参数都是可选的
+
+     2、
+
+     $.ajax({
+     url:    //String,请求地址，绝对或者相对地址url
+     type:   //String,请求类型，POST或GET，不填就默认为get
+     timeout:   //Number，请求超时时间，毫秒
+     data:    //Object或String 传递的数据{name:"wlc",age:"23"...}
+     dataType:   //预期服务器会返回的参数，xml，html,script,json,jsonp,如果不填，则会返回responseXML,或者responseText
+     beforeSend:    //Function,function(XMLHttpRequest){}    唯一的参数是XMLHttpRequest对象，this指向ajax的参数对象，可以用来添加自定义的HTTP头部
+     complete:     //Function,请求完成后的回调函数（无论成功还是失败都会调用），function(XMLHttpRequest,textStatus){}，数据为XMLHttpRequest对象和textStatus请求状态，this指向ajax的参数对象，即url,type,timeout...等这些
+     success:    //Function,请求成功后的回调函数（仅在请求成功后返回），由服务器返回，并且是由dataType参数处理后，比如json，就是已经转好的数据
+     //function(data,textStatus){}  data可能是xmlDoc，json转成js后的对象，html,text等，this指向ajax的参数对象
+     error:      //Function,请求失败时的回调函数（仅在请求失败后调用），function(XMLHttpRequest,textStatus,errorThrown){}
+     global:      //布尔值，默认为true，控制Ajax事件是否允许发生。
+     还有其他参数
+     })
+
+     * */
+
+    //下面这个ajax会在页面加载完成后自动调用
+
+
+    //使用方法，也可以参考$.get(),包括对XML,JSON等对象的处理，对html文件的加载等
+
+    $.ajax({
+        url: "form2.php",
+        type: "POST",
+        timeout: 3000,
+        data: {name: "王乐城", age: "23"},
+        success: function (data, textStatus) {
+            alert(data + textStatus)
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest, textStatus, errorThrown)
+        },
+        global: true
+    })
+
+
+</script>
+</html>

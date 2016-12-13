@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .focus {
+        background-color: aqua;
+    }
+</style>
+
+<body>
+<form action="">
+    <div>
+        <label for="username">用户名：</label>
+        <input type="text" id="username" class="required"/>
+    </div>
+
+    <div>
+        <label for="mail">邮箱：</label>
+        <input type="text" id="mail" class="required"/>
+    </div>
+
+    <div>
+        <label for="personinfo">个人资料：</label>
+        <input type="text" id="personinfo"/>
+    </div>
+
+</form>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    //在必填事项后加红色*号
+    $(".required").parent().append("<strong style='color: red;'>*</strong>");
+    //用户名必须为6位以上字符
+    $("#username").blur(function () {
+        var val = $(this).val();
+        if (val==""||val.length <6 || val.length>20){
+            alert("用户名为6-20个字符")
+            $(this).next().html("*");
+            $(this).next().css("color","red");
+        }else{
+            $(this).next().html("填写正确");
+            $(this).next().css("color","green");
+        }
+    })
+
+
+
+</script>
+</html>

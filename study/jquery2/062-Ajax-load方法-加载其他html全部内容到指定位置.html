@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div style="width: 500px;height: 500px;border: 1px solid black;">
+    我现在内容为空
+</div>
+<button>点击加载ajax-test.hmtl这个页面的内容</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+$("button").click(function () {
+    //$("div")为指定加载页面的位置，load的的第一个参数为url，要访问或者加载的页面的url
+
+    //load方法通常都是用来从服务器获取静态文件的
+    $("div").load("ajax-test.html");
+})
+
+</script>
+</html>

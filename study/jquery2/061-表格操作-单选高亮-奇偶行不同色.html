@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    .focus {
+        background-color: aqua;
+    }
+
+    thead tr {
+        border-bottom: 1px solid black;
+    }
+</style>
+
+<body>
+<table width="400px" align="center" style="text-align: center; border: 1px solid black;border-collapse: collapse;">
+    <thead>
+    <tr>
+        <th></th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>地址</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="radio"></td>
+        <td>Tom</td>
+        <td>男</td>
+        <td>北京</td>
+    </tr>
+    <tr>
+        <td><input type="radio"></td>
+        <td>Cindy</td>
+        <td>女</td>
+        <td>上海</td>
+    </tr>
+    <tr>
+        <td><input type="radio"></td>
+        <td>Bob</td>
+        <td>男</td>
+        <td>杭州</td>
+    </tr>
+    <tr>
+        <td><input type="radio"></td>
+        <td>Joe</td>
+        <td>男</td>
+        <td>南京</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    //给偶数行添加灰色，从0数起
+    //radio由于点选之后，默认是不能取消的，所以导致要设置其他标签来控制checked
+    //所以不建议用radio，可以用checkbox来替代radio
+    $("tbody tr:even").css("background", "lightgray");
+    $("tbody tr").one("load", function () {
+        $(this).attr("tag", "");
+    });
+    $("input:radio").click(function () {
+        if ($(this).attr("tag") == "1") {
+            $(this).prop("checked", false)
+            $("this").parents("tr").css("background", "")
+        }
+        $("tbody tr:even").css("background", "lightgray");
+        $("tbody tr:odd").css("background", "white");
+        if ($(this).attr("tag") == "") {
+            $(this).attr("tag", "1");
+        } else {
+            $(this).attr("tag", "");
+        }
+        $("input:radio:checked").parents("tr").css("background", "red")
+    })
+
+</script>
+</html>

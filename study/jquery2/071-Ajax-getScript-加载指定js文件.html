@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div style="width: 500px;height: 500px;border: 1px solid black;">
+    我现在内容为空
+</div>
+<button>POST传递参数给服务器，并把服务器返回数据显示在div中</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    $("button:eq(0)").click(function () {
+        //会立即执行该javascript文件，url可以是相对路径，也可以是远程的绝对路径
+
+        //在点击后，加载EventUtil.js文件，并给div用他的addHandler方法添加事件
+        $.getScript('js/EventUtil.js',function () {
+            EventUtil.addHandler($("div").get(0),"click",function () {
+                $("div").css("color","red")
+            });
+        })
+    });
+</script>
+</html>

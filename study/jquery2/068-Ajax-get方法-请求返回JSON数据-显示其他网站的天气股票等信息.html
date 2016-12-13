@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div style="width: 500px;height: 500px;border: 1px solid black;">
+    我现在内容为空
+</div>
+<button>GET传递参数给服务器，并把服务器返回数据显示在div中</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+    $("button:eq(0)").click(function () {
+        /*
+         http://wthrcdn.etouch.cn/weather_mini?city=北京
+         通过城市名字获得天气数据，json数据
+         http://wthrcdn.etouch.cn/weather_mini?citykey=101010100
+         通过城市id获得天气数据，json数据
+
+         返回的JSON数据：
+         {"desc":"OK","status":1000,"data":{"wendu":"10","ganmao":"昼夜温差大，风力较强，易发生感冒，请注意适当增减衣服，加强自我防护避免感冒。","forecast":[{"fengxiang":"北风","fengli":"4-5级","high":"高温 14℃","type":"小雨","low":"低温 7℃","date":"13日星期二"},{"fengxiang":"无持续风向","fengli":"4-5级","high":"高温 7℃","type":"多云","low":"低温 1℃","date":"14日星期三"},{"fengxiang":"东北风","fengli":"微风级","high":"高温 7℃","type":"晴","low":"低温 0℃","date":"15日星期四"},{"fengxiang":"东风","fengli":"微风级","high":"高温 8℃","type":"晴","low":"低温 0℃","date":"16日星期五"},{"fengxiang":"东南风","fengli":"微风级","high":"高温 12℃","type":"多云","low":"低温 5℃","date":"17日星期六"}],"yesterday":{"fl":"3-4级","fx":"东风","high":"高温 18℃","type":"阴","low":"低温 10℃","date":"12日星期一"},"aqi":"39","city":"杭州"}}
+         */
+
+
+        $.get("http://wthrcdn.etouch.cn/weather_mini?city=杭州", function (data, textStatus) {
+            //返回的json数据不用我再转换了，jQuery已经提前将其转换好，我们可以用data对象来调用就可以了
+            $("div").html("这是本次请求，从中国天气网对外提供的json中，提取的杭州天气信息，城市：" + data.data.city + ",天气：" + data.data.forecast[0].type + ",最低温：" + data.data.forecast[0].low);
+            alert(textStatus);
+        }, "json")
+    });
+
+    //股票信息相同，找到提供相关数据的网站，抓紧json或者xml的数据即可
+
+</script>
+</html>
