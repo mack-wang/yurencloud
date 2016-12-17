@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+<form action="">
+    <input type="text" minlength="2" name="name" placeholder="请输入名字">
+    <input type="text" name="email" placeholder="请输入邮箱">
+    <input type="text" name="url" placeholder="请输入网址">
+    <input type="textarea" name="comment" placeholder="请输入评论">
+    <input type="submit" value="提交">
+</form>
+
+
+
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/messages_zh.js"></script>
+<!--message_zh.js是在validata的github的location文件夹中找到的，从中也可以看到validata支持哪些验证规则-->
+<script>
+    /*
+     *  只要引入message_zh.js就可以将提示信息显示成中文
+     *  并且想要修改提示信息，只要去修改message_zh.js就可以了
+     * */
+
+    $("form").validate({
+        rules:{
+            name:{
+                required:true,
+                minlength:2
+            },
+            email:{
+                required:true,
+                email:true
+            },
+            url:"url",
+            comment:"required"
+        }
+    });
+
+
+
+</script>
+</html>

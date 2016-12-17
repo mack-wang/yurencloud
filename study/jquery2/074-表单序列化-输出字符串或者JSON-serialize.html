@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<form action="">
+    <div>
+        <label for="username">名称：</label>
+        <input id="username" type="text" name="name">
+    </div>
+    <div>
+        <label for="age">年龄：</label>
+        <input id="age" type="text" name="age">
+    </div>
+    <div>
+        <label for="msg">详细信息:</label>
+        <textarea name="" id="msg" cols="30" rows="10"></textarea>
+    </div>
+    <button>提交</button>
+</form>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //一、表单使用序列化
+    //会自动对非标准字符进行编译，比如中文
+    $("button").click(function () {
+
+        //serialize()方法会自动将表单中的数据序列化成 name1=value1&name2=value2
+        console.log($("form").serialize());
+
+
+        $.ajax({
+            url: "form2.php",
+            type: "POST",
+            timeout: 3000,
+
+
+            //serialize()在ajax中的应用就是像下面这样。
+
+            //同时也说明，data除了接受对象一样的写法，还接收字符串数据，必须是序列化后的字符串数据 name1=value1&name2=value2
+            data: $("form").serialize(),
+            success: function (data, textStatus) {
+                alert(data + textStatus)
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                console.log(XMLHttpRequest, textStatus, errorThrown)
+            },
+            global: true
+        })
+    });
+
+    //二、其他元素使用序列化，应该只要有有name,有value属性，就可以使用，
+    //我觉得serialize的的作用就是获取name和value的值
+
+    //获取所有复选框和单选框的name和value，并序列化输出字符串
+    $(":checkbox,:radio").serialize();
+
+
+    //三、将序列化后的字符串直接变成JSON格式的数据输出
+    //serializeArray()
+    $("input[name=age]").blur(function () {
+        console.log($("form").serializeArray());
+    })
+
+
+
+
+
+</script>
+</html>

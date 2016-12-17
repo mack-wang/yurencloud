@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+<form action="">
+    <input type="text" minlength="2" name="name" placeholder="请输入名字">
+    <input type="text" name="email" placeholder="请输入邮箱">
+    <input type="text" name="url" placeholder="请输入网址">
+    <input type="textarea" name="comment" placeholder="请输入评论">
+    <input type="submit" value="提交">
+</form>
+
+
+
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script>
+    /*
+     * 通过Validation对表单进行验证，可以大大简化我们的表单验证编写
+     * 1、引入表单验证jquery的validate插件jquery.validate.min.js
+     * 2、通过input中的class及其他属性配合一起验证，class写主要的验证规则比如email,url,required等，其他属性，minlength，长度，等其他要求
+     * 3、或者通过直接在validate()的参数中对规则进行描述，取代上面的形式。
+     * 4、无论选择2或者3，都要在script中写中要绑定的表单对象，$("form").validate();才能在该对象上生效！
+     *
+     *
+     * */
+
+    $("form").validate({
+
+        //rules代表要定义规则
+        rules:{
+            name:{//这里的name,eamil,url,comment都是表单中input的name属性值
+                required:true,//这里写具体要定义的规则
+                minlength:2
+            },
+            email:{
+                required:true,
+                email:true
+            },
+            url:"url",
+            comment:"required"
+        }
+    });
+
+    /*
+    * 总结：我觉得，看情况吧，用class来写，更简洁，但会占用class，可能会产生冲突，比如已经有其他css对该class做了定义，且无法修改。
+    *
+    * 而用rules写，则可以规避上面的风险，只是要多写一点。
+    *
+    * 我建议还是用rules写更好，集中在一块，条理更清晰，更好维护修改。
+    * */
+
+</script>
+</html>

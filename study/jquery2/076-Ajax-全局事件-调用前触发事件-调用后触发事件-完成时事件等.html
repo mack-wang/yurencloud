@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div></div>
+<p></p>
+<button>提交表单</button>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script>
+
+
+    //应用场景：当用户点击按钮，加载大量图片时，如果由于网速慢或者服务器响应慢，页面没有反应，则会让用户失去耐心
+    //解决办法: 当用户点击按钮后，立即显示提示信息，图片正在加载中...，ajax请求结束后，把图片显示出来，并把提示信息隐藏
+
+    $("button").click(function () {
+
+        $("p").ajaxStart(function () {
+            $(this).append("<strong>表单正在提交中...</strong>");
+        });
+
+
+
+        $.get("form.php",{name:"wlc",age:"23"},function (data) {
+            $("div").append(data);
+        });
+
+        $("p").ajaxStop(function () {
+            $(this).append("<strong>表单提交完毕</strong>");
+        });
+    })
+
+    //上面没试成功
+
+    /*以下就是ajax的全局事件
+    * ajaxComplete(callback)   //请求完成时执行的函数
+    * ajaxError(callback)   //请求发生错误时执行的函数，并捕捉到错误作为最后一个参数传递
+    * ajaxSend(callback)   //请求发送前执行的函数
+    * ajaxSuccess(callback)   //请求成功后执行的函数
+    * ajaxStart(callback)   //请求发送前执行的函数
+    * ajaxStop(callback)   //请求发送后执行的函数
+    * */
+
+    //如果不想受到ajax的全局事件的影响，让全局事件失效，可以$.ajax({   global:false  })，给global传递一个false，就可以禁止ajax全局事件
+
+
+
+
+
+
+
+</script>
+</html>

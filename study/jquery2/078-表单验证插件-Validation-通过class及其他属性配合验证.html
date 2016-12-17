@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+<form action="">
+    <input type="text" class="required" minlength="2" name="name" placeholder="请输入名字">
+    <input type="text" class="required email" name="email" placeholder="请输入邮箱">
+    <input type="text" class="url" name="url" placeholder="请输入网址">
+    <input type="textarea" class="required" name="comment" placeholder="请输入评论">
+    <input type="submit" value="提交">
+</form>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script>
+    /*
+    * 通过Validation对表单进行验证，可以大大简化我们的表单验证编写
+    * 1、引入表单验证jquery的validate插件jquery.validate.min.js
+    * 2、通过input中的class及其他属性配合一起验证，class写主要的验证规则比如email,url,required等，其他属性，minlength，长度，等其他要求
+    * 3、或者通过直接在validate()的参数中对规则进行描述，取代上面的形式。
+    * 4、无论选择2或者3，都要在script中写中要绑定的表单对象，$("form").validate();才能在该对象上生效！
+    *
+    *
+    * */
+
+    $("form").validate();
+
+    /*
+    *
+    * 如果你的input当中，id值和name值相等，可能会在一些浏览器中出现错误，所以，建议把id和name值区分开来，id值前统一加个c
+    *
+    * id="cname" name="name"   因为name值更重要一些，name值还是提交给服务器验证时的键名，而id仅用来选择器的
+    *
+    * */
+
+</script>
+</html>
