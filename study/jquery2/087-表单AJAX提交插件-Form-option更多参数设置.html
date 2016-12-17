@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    #output{
+        border: 1px solid red;
+        display: none;
+    }
+</style>
+
+<body>
+
+<form action="form.php" method="get">
+    <input type="text" class="required" minlength="2" name="name" placeholder="请输入名字">
+    <input type="text" class="required email" name="age" placeholder="请输入年龄">
+    <input type="submit" value="提交">
+</form>
+<div id="output"></div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.form.min.js"></script>
+<script>
+    /*
+    * ajaxForm(),ajaxSubmit()这两个方法，接受0个或者1个参数
+    * 0个参数时，就是把表单以ajax方式提交了，不做额外的响应
+    * 1个参数时，参数可以是函数，也可以是对象，函数响应已经在085，086上面演示过了，非常简洁，但是不能设置自定义的一些要求
+    * 对象响应的话，可以更加多样化，设置各种规则
+    * */
+
+    $("form").ajaxForm({
+        target:'#output',   //把服务器返回的内容放到id为output的元素当中
+        beforeSubmit: showRequest(),  //提交前的回调函数
+        success:    showResponse(),   //提交后的回调函数
+        url: url,   //默认是form的action，如果此处有申明，则会覆盖
+        type:type,  //默认是form的method，如果此处有申明，则会覆盖
+        dataType: null, //可以填写"xml""json""script"等，效果和$.get()一样，定义从服务器返回的数据格式，并做一定处理
+        clearForm: true,    //成功提交后，清除所有的表单元素
+        resetForm:true,     //成功提交后，重置所有的表单元素
+        timeout:3000    //限制请求时间，大于3秒就跳出请求
+    });
+
+    //一、我们可以用option来定义对象，定义好后，传递给ajaxForm(option)
+    //二、上述的showRequest(formData,jqForm,option)有三个参数
+    /*
+    * formData是数组对象，$.param()方法是将其转成字符串 name=wlc&age=23
+    * jqForm是一个jQuery对象，他封装了表单的对象
+    * option是前面ajaxForm()中的option参数
+    * */
+    function showRequest(formdata,jqForm,option){
+        var queryString = $.param(formData);
+        return ture;
+    }
+
+    //success提交成功后的回调函数showResponse(responseText,statusText,xhr,$form)四个参数
+    /*
+    * responseText是服务器返回的数据，可以由dataType定义数据格式，可以为字符串，xml,json等
+    * statusText,只是返回一个状态，success,error
+    *
+    * */
+    function showResponse(responseText,statusText,xhr,$form){
+        alert('状态'+statusText+"返回的内容是"+responseText)
+    }
+
+</script>
+</html>

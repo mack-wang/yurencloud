@@ -5,6 +5,21 @@
     <title>jQuery study</title>
 </head>
 <style>
+    em.error{
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-image: url("img/error.png");
+        padding-left: 16px;
+    }
+
+    em.success{
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-image: url("img/success.png");
+        padding-left: 16px;
+    }
 
 </style>
 
@@ -69,6 +84,22 @@
             comment:{
                 required:'请输入评论呀'
             }
+        },
+
+        //创建错误提示标签
+
+        /*
+        * 实现介绍：每个验证都有一个错误和成功状态，
+        * 可以创建一个错误发生的，提示标签，会自动被添加到元素后面，比如下面会<i id="name-error" class="error">
+        * 其中，id是由input的name值加error生成的，class为errorClass来控制，但是errorClass会在input和i标签上生成
+        * 但至少，我们已经可以给i标签定义我们要的class，这样就能显示iconfont来显示图标了
+        * 更多的方法，可以参考下面网站
+        *   https://jqueryvalidation.org/category/plugin/
+        * */
+        errorClass: "yu-close",
+        errorElement:"i",
+        success: function (i) {
+            i.addClass("yu-check")
         }
     });
 

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    em.error{
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-image: url("img/error.png");
+        padding-left: 16px;
+    }
+
+    em.success{
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-image: url("img/success.png");
+        padding-left: 16px;
+    }
+
+</style>
+
+<body>
+
+<form action="">
+    <input type="text" name="math" placeholder="请输入后面的计算结果"> 7*9-1=
+    <input type="submit" value="提交">
+</form>
+
+
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script>
+
+    /*
+    * $.validator.addMethod(自定义验证的名字，自定义验证的规则函数，自定义验证的提示信息)
+    * 在自定义验证的规则函数中：有三个参数是可以获得的：input的value值，所绑定的input的jquery对象，所传递的额外参数数据，比如下面
+    * 我其实可以直接把eval(param)写成53，
+    *
+    *
+    * */
+
+    $.validator.addMethod("mathcheck",function (value,element,param) {
+        return value == param;
+    },"请输入正确的结果");
+
+    $("form").validate({
+        rules:{
+            math:{
+                mathcheck:53//mathcheck是我自定义的规则函数，53就是上面的param，整个验证的结果就是返回上面验证的布尔值
+            }
+        }
+    })
+
+
+
+</script>
+</html>

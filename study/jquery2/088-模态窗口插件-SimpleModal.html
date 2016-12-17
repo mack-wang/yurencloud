@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    body{
+        position: relative;
+    }
+    #output{
+        border: 1px solid red;
+        position: absolute;
+    }
+
+</style>
+
+<body>
+
+<form action="form.php" method="get">
+    <input type="text" class="required" minlength="2" name="name" placeholder="请输入名字">
+    <input type="text" class="required email" name="age" placeholder="请输入年龄">
+    <input type="submit" value="提交">
+</form>
+<div id="output">你好，我是模态窗口上的内容</div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.simplemodal.1.4.4.min.js"></script>
+<script>
+    $("#output").modal();
+    $.modal("<div>hello moda</div>");
+
+    /*
+    *
+    * 不清楚怎么用
+    *
+    * */
+
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+    #output{
+        border: 1px solid red;
+        display: none;
+    }
+</style>
+
+<body>
+
+<form action="form.php">
+    <input type="text" class="required" minlength="2" name="name" placeholder="请输入名字">
+    <input type="text" class="required email" name="age" placeholder="请输入年龄">
+    <input type="submit" value="提交">
+</form>
+<div id="output"></div>
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.form.min.js"></script>
+<script>
+    /* 表单被提交的时候，会以无刷新的方式提交用户填写的数据到服务器的form.php文件处，如果服务器返回一个成功状态，那么用户就会看到成功提示信息
+     *
+     * 只要引入jquery.form.min.js插件就可以了
+     *
+     * */
+
+    $("form").ajaxForm(function () {
+        $("#output").html("提交成功！欢迎再来！").show();
+    });
+
+
+</script>
+</html>
