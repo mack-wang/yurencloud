@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+</style>
+
+<body>
+
+<div style="color:red">hello world</div>
+<div style="color:green">hello world</div>
+<div style="color:blue">hello world</div>
+<div style="color:pink">hello world</div>
+
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.color.js"></script>
+<!--引入自己写的jquery颜色获取和设置插件-->
+<script>
+
+    ;//这里的分号是为了防止别人写的插件不标准
+    (function ($) {
+        $.fn.extend({
+            //编写第一个插件，color
+            "color": function (value) {
+                //插件内容
+            },
+
+            //编写第二个插件，border
+            "border": function (value) {
+                //插件内容
+            },
+            //编写第三个插件，background
+            "background": function (value) {
+                //插件内容
+            }
+        })
+    })(jQuery)
+
+</script>
+</html>

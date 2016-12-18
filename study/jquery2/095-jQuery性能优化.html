@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+</style>
+
+<body>
+
+<div style="color:red">hello world</div>
+<div style="color:green">hello world</div>
+<div style="color:blue">hello world</div>
+<div style="color:pink">hello world</div>
+
+</body>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+
+    /*
+     1、优先使用最新版本的jQuery，因为最新版本的jQuery一般都会去除上一版的bug，并优化性能
+     2、使用合适的选择器，优先级为 id>tagName>class>属性选择>冒号开头的属性选择
+     尽量使用ID选择器，尽量给选择器指定上下文，不指定的话，选择器会从全文开始遍历
+
+     3、优先使用缓存变量
+     未使用例子：
+     $("#form input:eq(1)").bind("click",function(){});
+     $("#form input:eq(1)").css("color","red");
+     $("#form input:eq(1)").fadeIn("slow");
+     缺点：每次执行一行代码是，都要创建一次jQuery对象，创建的过程可能每次都要遍历一遍DOM树，很耗性能
+
+     使用缓存变量的例子
+     var $input1 = $("#form input:eq(1)");
+     $input1.bind("click",function(){});
+     $input1.css("color","red");
+     $input1.fadeIn("slow");
+     优点：仅在声明变量时创建jQuery对象，之后的每次引用，都是使用缓存变量，无需重复创建
+     总结：如果一个jQuery对象要重复使用时，最好先将其声明好，再引用。
+
+     4、优先使用链式操作
+     未使用例子：
+     $("#form input:eq(1)").bind("click",function(){});
+     $("#form input:eq(1)").css("color","red");
+     $("#form input:eq(1)").fadeIn("slow");
+     缺点：每次执行一行代码是，都要创建一次jQuery对象，创建的过程可能每次都要遍历一遍DOM树，很耗性能
+
+     使用链式操作的例子
+     $("#form input:eq(1)").bind("click",function(){})
+                           .css("color","red")
+                           .fadeIn("slow")；
+     总结：记住，永远不要让相同的选择器在你的代码里出现多次，要么用缓存变量的方式要么用链式操作的方式。
+
+     5、循环DOM操作性能优化
+     未优化性能时：
+     for(i=0;i<10000;i++){
+     var $myList = $('#myList');
+     $myList.append("this is list item"+i);
+     }
+     缺点：上面这个循环操作，每次循环都要创建一次jQuery元素！！假设每次创建要1秒，则要10000秒了！
+     优化性能之后：
+     var $myList = $('#myList');
+     for(i=0;i<10000;i++){
+     $myList.append("this is list item"+i);
+     }
+     优点：仅在外部声明创建了一次jQuery元素对象！在循环中，仅进行append操作，节省了9999秒！！
+     总结：循环操作时，把和循环操作无关的创建，获取DOM元素等操作全部在循环外完成，循环内部只进行关键性的操作！！！
+
+     6、优先使用for或者while来循环，而不是$.each()。
+     7、优先使用冒泡事件的优点来绑定大量的事件，减少事件绑定。
+     8、把你经常使用的函数，方法等写成jQuery插件，以遍更好的重复使用！！
+     9、优先使用join()来替代+号，拼接字符串时
+     10、有些时候，使用原生js性能更优
+     11、项目上线时，压缩js文件
+
+
+
+     */
+
+
+</script>
+</html>

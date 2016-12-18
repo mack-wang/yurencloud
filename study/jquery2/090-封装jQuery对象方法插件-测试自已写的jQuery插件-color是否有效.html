@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+</style>
+
+<body>
+
+<div style="color:red">hello world</div>
+<div style="color:green">hello world</div>
+<div style="color:blue">hello world</div>
+<div style="color:pink">hello world</div>
+
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.color.js"></script>
+<!--引入自己写的jquery颜色获取和设置插件-->
+<script>
+
+    //获取颜色
+    console.log(
+            $("div:eq(0)").color(),//显示第一个div的颜色值
+            $("div:eq(1)").color(),//显示第二个div的颜色值
+
+            $("div:eq(2)").color("black"),//设置第三个div的颜色值
+            $("div:eq(3)").color("yellow")//设置第四个div的颜色值
+    )
+    //测试成功
+
+</script>
+</html>

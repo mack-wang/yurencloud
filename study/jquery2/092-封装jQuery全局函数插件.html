@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+</style>
+
+<body>
+
+<div style="color:red">hello world</div>
+<div style="color:green">hello world</div>
+<div style="color:blue">hello world</div>
+<div style="color:pink">hello world</div>
+
+</body>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.color.js"></script>
+<!--引入自己写的jquery颜色获取和设置插件-->
+<script>
+
+    /*
+    * 封装jQuery对象方法插件和全局函数插件有什么不一样呢？
+    * 前者是对象方法，后者仅为函数。所以前者更大，后者更小一些
+    * jQuery对象方法是用$.fn.extend({  内容  })来封装的，jQuery全局函数是用$.extend({ 内容 })
+    *
+    * */
+
+
+
+    ;//这里的分号是为了防止别人写的插件不标准
+    (function ($) {
+        $.extend({
+            //去除字符串左边的空格
+            ltrim: function (text) {
+                return (text || "").replace( /^\s+/g, "");
+            },
+
+            //去除字符串右边的空格
+            rtrim: function (text) {
+                return (text || "").replace( /^\s+$/g, "");
+            }
+
+        });
+    })(jQuery)
+
+</script>
+</html>

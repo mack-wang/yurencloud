@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+</style>
+
+<body>
+
+<div style="color:red">hello world</div>
+<div style="color:green">hello world</div>
+<div style="color:blue">hello world</div>
+<div style="color:pink">hello world</div>
+
+</body>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+
+    /*
+    jQuery选择器，原码案例解析：
+    $("div:gt(1)") 获取所有的div元素，被返回索引值大于1的div元素，索引值从0开始
+
+    原码：
+    gt: function(a,i,m){
+        return i>m[3]-0
+    }
+
+    第一个参数为a,指向的是当前遍历到的DOM元素。即例子中的div元素集。
+    第二个参数为i，指的是当前遍历到的DOM元素的索引值，从0开始。
+    第三个参数m是最为特别的，它是用jQuery正规解析引擎进一步解析后的产物，是一个数组
+        m[0]：以上面$("div:gt(1)")为例，他的意思是:gt(1)这部分，它是jQuery选择器要进一步匹配的内容
+        m[1]: 选择器的引导符，即例子中的：冒号，当然我们可以自定义其他符号
+        m[2]: 调用的选择器函数，即例子中的gt
+        m[3]: 用户输入的参数，即例子中括号里的数字"1"，它非常有用，是编写选择器函数中最重要的一个参数
+        m[4]: 比较少用到，具体参考书里的p246页
+
+
+    * */
+
+    //jQuery没有between选择器，比如$("div:between(2,5)")可以选中索引值为3和4的的元素的功能，下面经编写between为例
+
+
+    ;//这里的分号是为了防止别人写的插件不标准
+    (function ($) {
+        $.extend(jQuery.expr[":"],{//这里比092中的前面多了一个参数jQuery.expr[":"]对象,因为我们是要把选择器插到该对象的最后一个，作为新增的选择器
+            between: function (a,i,m) {
+                var tmp=m[3].split(",");//以逗号为分隔符，将用户输入的参数组成一个数组
+                return tmp[0]-0<i&&i<tmp[1]-0;//为什么要tmp[0]代表了用户输入的第一个参数，但这是一个字符串，通过减零进行运算，转成数字，当然也可
+                // 以用Number,parseInt这些原生的函数对字符串转成数值，我觉得可能是性能问题吧，直接运算转成数值，性能更优
+            }
+        });
+    })(jQuery);
+
+    //这里就来测试一个上面新增的选择器有没有用
+    $(function () {
+        $("div:between(0,3)").css("background","green");
+    });
+
+    /*测试第一次时是失败的，因为jQuery的版本问题，作者用的是1.7.1版本，如今已经是3.1.1版本了，从原理上可能有所变化
+    *
+    * 所以我换成了作者使用的1.7.1版本，就能实现效果了
+    *
+    * 所以，如果想在3.1.1版本上新增自定义的选择器，那就得先了解jQuery3.1.1版本的选择器编写原理
+    * */
+
+
+</script>
+</html>
