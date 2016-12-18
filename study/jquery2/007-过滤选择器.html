@@ -10,6 +10,10 @@
         height: 100px;
         background-color: red;
     }
+
+    .myul > li:last {
+        color: red;
+    }
 </style>
 <body>
 
@@ -17,30 +21,76 @@
 <ul class="myul">
     <li>1</li>
     <li>2</li>
-    <li>3</li>
-    <li>5</li>
+    <li id="#three">3 <h2>你好</h2></li>
+    <li>5 <h3>你好</h3></li>
     <li>4</li>
 </ul>
 </body>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script>
 
-    $("div:first");//单个元素，选取第一个元素，选取所有div中的第一个div元素
-    $("div:last");//单个元素，选取最后一个元素，选取所有div中的最后一个div元素
-    $("input:not(.myinput)");//集合元素，选取除了not中的元素外的所有元素，选取除了class是myinput的元素外的所有input元素
-    $("div:even");//集合元素，选取偶数索引的元素，选取所有div中的索引是偶数的元素（索引从0开始）
-    $("div:odd");//集合元素，选取奇数索引的元素，选取所有div中的索引是奇数的元素（索引从0开始）
-    $("div:eq(2)");//单个元素，选取指定索引的元素，选取所有div中索引为2的div元素（索引从0开始）
-    $("div:gt(2)");//集合元素，选取大于指定索引的所有元素，选取所有div中索引大于2的div元素（索引从0开始）
-    $("div:lt(2)");//集合元素，选取小于指定索引的所有元素，选取所有div中索引小于2的div元素（索引从0开始）
-    $(".div1:header");//集合元素，选取所有的标题元素，例如h1,h2,h3,h4...，选取div1中所有的标题元素
-    $("div:header");//集合元素，选取正在执行动画的元素，选取正在执行动画的div元素
-    $("div:focus");//集合元素，选取当前获取焦点的元素，选取当前获取焦点的div元素
+     $("div:first");//单个元素，选取第一个元素，选取所有div中的第一个div元素
+     $("div:last");//单个元素，选取最后一个元素，选取所有div中的最后一个div元素
+     $("input:not(.myinput)");//集合元素，选取除了not中的元素外的所有元素，选取除了class是myinput的元素外的所有input元素
+     $("div:even");//集合元素，选取偶数索引的元素，选取所有div中的索引是偶数的元素（索引从0开始）
+     $("div:odd");//集合元素，选取奇数索引的元素，选取所有div中的索引是奇数的元素（索引从0开始）
+     $("div:eq(2)");//单个元素，选取指定索引的元素，选取所有div中索引为2的div元素（索引从0开始）
+     $("div:gt(2)");//集合元素，选取大于指定索引的所有元素，选取所有div中索引大于2的div元素（索引从0开始）
+     $("div:lt(2)");//集合元素，选取小于指定索引的所有元素，选取所有div中索引小于2的div元素（索引从0开始）
+     $(".div1:header");//集合元素，选取所有的标题元素，例如h1,h2,h3,h4...，选取div1中所有的标题元素
+     $("div:animated");//集合元素，选取正在执行动画的元素，选取正在执行动画的div元素
+     $("div:focus");//集合元素，选取当前获取焦点的元素，选取当前获取焦点的div元素
+
+    //原生js实现
+
+     var li1 = document.querySelector("li:first-child");
+     var li2 = document.querySelector("li:last-child");
+
+     var li3 = document.querySelectorAll("li:not(#three)");//li3是一个元素集，所以要遍历设置css样式，该选择方法不支持
+     var li33 = document.getElementsByTagName("li");
+     for (var i = 0; i < li33.length; i++) {
+     var not = 2;
+     if (i == not) continue;
+     li33[i].style.color = "red";
+     }
+
+     var li4 = document.querySelectorAll("li:even");//不支持
+     var li44 = document.getElementsByTagName("li");
+
+     //选取偶数元素
+     for (var i = 0; i < li44.length; i++) {
+     var even = i % 2;
+     if (even == 1) {
+     li44[i].style.color = "red";
+     }
+     }
+     //选取奇数元素
+     for (var i = 0; i < li44.length; i++) {
+     var odd = i % 2;
+     if (odd == 0) {
+     li44[i].style.color = "red";
+     }
+     }
+
+     //选取索引大于2的元素
+     for (var i = 0; i < li44.length; i++) {
+     var gt = 2;
+     if (i > gt) {
+     li44[i].style.color = "red";
+     }
+     }
+
+     //选取索引小于2的元素
+     for (var i = 0; i < li44.length; i++) {
+     var lt = 2;
+     if (i < lt) {
+     li44[i].style.color = "red";
+     }
+     }
 
 
-
-
-
+     var li5 = document.querySelector("li:nth-child(2)");//有效，但索引是从1开始的
+     var li6 = document.querySelectorAll("li>h3,li>h2");//选取指定元素下面的标题元素
 
 
 </script>

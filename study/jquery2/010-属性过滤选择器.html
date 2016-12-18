@@ -5,15 +5,12 @@
     <title>jQuery study</title>
 </head>
 <style>
-    .mydiv {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-    }
 </style>
 <body>
-<input type="text" name="username">
+<input type="text" name="username" value="名字">
+<input type="text" name="age" value="年龄">
 <div class="mydiv" id="box">我</div>
+<div >你</div>
 <ul class="myul">
     <li>1</li>
     <li>2</li>
@@ -21,6 +18,7 @@
     <li>4</li>
     <li>5</li>
 </ul>
+
 </body>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script>
@@ -36,6 +34,49 @@
     $("input[attribute|=value]");//选取属性的值为value或者value-的元素（主要用于选取有统一前缀的元素），选取name属性中以user-为前缀的input元素
     $("input[attribute~=value]");//选取属性用空格分隔的值中包含一个给定值的元素，$("div[title~='uk']"）选取属性title用空格分隔的值中包含字符uk的div
     $("input[name=username][id=box]");//同时使用多个属性过滤选择器，返回一个或者多个都符号的元素，选取name=username,id=box的input元素
+
+/*
+    //原生js实现
+    //返回拥有某属性的元素
+    var div = document.getElementsByTagName("div");
+    for (var i=0;i<div.length;i++){
+        var attr1 = "id";
+        var attr2 = div[i].getAttribute(attr1);
+        if (attr2){
+            div[i].style.color="red";
+        }
+    }
+
+    var input1 = document.querySelector("input[name=username]");//有效
+    var input2 = document.querySelectorAll("input[name!=username]");//无效，没有这种选择器
+    //实现[attribute!=value]
+    var input22 = document.querySelectorAll("input");
+    for (var i=0;i<input22.length;i++){
+        var attr = "name";
+        var value1 = "age";
+        var value =input22[i].getAttribute(attr);
+        if (value != value1) {
+            input22[i].style.backgroundColor = "red";
+        }
+    }
+    var input3 = document.querySelectorAll("input[name^=user]");//有效
+    var input3 = document.querySelectorAll("input[name$=name]");//有效
+    var input3 = document.querySelectorAll("input[name*=name]");//有效
+    var input3 = document.querySelector("input[name~=erna]");//无效
+
+    //返回value值中包含某个字符串的元素
+    var input22 = document.querySelectorAll("input");
+        for (var i=0;i<input22.length;i++){
+            var attr = "name";
+            var value1 = "erna";
+            var value =input22[i].getAttribute(attr);
+            if (value.indexOf(value1)>=0) {
+                input22[i].style.backgroundColor = "red";
+            }
+        }
+*/
+
+
 
 
 

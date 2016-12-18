@@ -18,7 +18,7 @@
     <li>1</li>
     <li>2</li>
     <li>3</li>
-    <li>4</li>
+    <li id="four">4</li>
     <li>5</li>
 </ul>
 </body>
@@ -30,7 +30,11 @@
     $("prev + next");//集合元素，返回prev元素同辈的，在其后面的下一个元素
     $("prev~siblings");//集合元素，返回prev元素同辈的，在其后面的下面所有的siblings元素
 
-
+    //原生js实现，测试没问题
+    var li = document.querySelectorAll("ul li");
+    var childli = document.querySelectorAll("ul > li");
+    var next = document.querySelectorAll("div + p");//这个为div后面的所有同辈的p元素
+    var prev = document.querySelectorAll("div ~ p");//这个为div后面的第一个p元素
 
 
 

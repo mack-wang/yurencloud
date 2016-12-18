@@ -31,7 +31,17 @@
     $("*");//选择页面上所有的元素
     $("div,span,p.myclass,.mydiv")//同时选择多个元素，每个选择器用逗号分隔开来
 
+    //原生js实现
+    var box = document.getElementById("box");
+    var boxes = document.getElementsByClassName("boxes");
+    var p = document.getElementsByTagName("p");
+    var all = document.getElementsByTagName("*");
 
+    //在js中使用css选择器querySelector()只返回第一个元素;querySelectorAll()返回符合的所有元素;
+    var box1 = document.querySelector("#box");
+    var boxes1 = document.querySelectorAll(".boxes");
+    var p1 = document.querySelector("p");
+    var all1 = document.querySelectorAll("*");
 
 
 

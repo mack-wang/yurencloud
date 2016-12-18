@@ -5,15 +5,13 @@
     <title>jQuery study</title>
 </head>
 <style>
-    .mydiv {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-    }
 </style>
 <body>
 
 <div class="mydiv" id="box">我</div>
+<div>你</div>
+<div>你</div>
+<div></div>
 <ul class="myul">
     <li>1</li>
     <li>2</li>
@@ -30,12 +28,48 @@
     $("div:has(.mydiv)");//选取含有指定选择器的元素，选取包含有.mydiv的类的div
     $("div:parent");//选取含有子元素或者文本的元素，选取含有子元素或者文本的div，和empty相对
 
+    //原生js实现
 
+    //返回div中内容包含有"你"的元素
+/*
+    var div = document.getElementsByTagName("div");
+    for (var i = 0; i < div.length; i++) {
+        var text = div[i].innerHTML;
+        console.log(text.indexOf("你"));
+        if (text.indexOf("你") >= 0) {
+            div[i].style.color = "red";
+        }
+    }
 
+    //返回div中内容为空的元素
+    for (var i = 0; i < div.length; i++) {
+        var text = div[i].innerHTML;
 
+        if (text == "") {
+            div[i].style.height = "10px";
+            div[i].style.width = "10px";
+            div[i].style.backgroundColor = "red";
+        }
+    }
+    //返回div中包含有.mydiv选择器的元素
+    for (var i = 0; i < div.length; i++) {
+        var has = div[i].className;
+        if (has == "mydiv") {
+            div[i].style.color = "red";
+        }
+    }
 
+    //返回div中内容不为空的元素
+    for (var i = 0; i < div.length; i++) {
+        var text = div[i].innerHTML;
 
-
+        if (text != "") {
+            div[i].style.height = "100px";
+            div[i].style.width = "100px";
+            div[i].style.backgroundColor = "red";
+        }
+    }
+*/
 
 
 </script>

@@ -17,8 +17,8 @@
 <ul class="myul">
     <li>1</li>
     <li>2</li>
-    <li>3</li>
-    <li>4</li>
+    <li style="display:none;">3</li>
+    <li style="visibility: hidden">4</li>
     <li>5</li>
 </ul>
 </body>
@@ -29,13 +29,27 @@
     $("div:visible");//选取可见的元素，除去上面不可见元素则都为可见元素，哪怕该元素为空，但他应该也是可见的。
 
 
-
-
-
-
-
-
-
+/*
+    //原生js实现
+    //返回隐藏元素
+    var li = document.getElementsByTagName("li");
+    for (var i = 0; i < li.length; i++) {
+        var display = li[i].style.display;
+        var visibility = li[i].style.visibility;
+        if (display == "none" || visibility == "hidden") {
+            console.log(li[i].innerHTML)
+        }
+    }
+    //返回可见元素
+    for (var i = 0; i < li.length; i++) {
+        var display = li[i].style.display;
+        var visibility = li[i].style.visibility;
+        if (display == "none" || visibility == "hidden") {
+            continue;
+        }
+        console.log(li[i].innerHTML);
+    }
+*/
 
 
 </script>
