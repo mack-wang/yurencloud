@@ -21,11 +21,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="093-封装jQuery自定义的选择器.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="093-封装jQuery自定义的选择器.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/093-封装jQuery自定义的选择器.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="662">
               <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="094-用jQuery打造个性网站-重点笔记内容.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/094-用jQuery打造个性网站-重点笔记内容.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="095-jQuery性能优化.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/095-jQuery性能优化.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="852">
+              <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="096-jQuery技巧.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/096-jQuery技巧.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="719">
+              <caret line="160" column="41" selection-start-line="160" selection-start-column="41" selection-end-line="160" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="097-关于$(document).ready()函数-为什么要使用.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/097-关于$(document).ready()函数-为什么要使用.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="098-XML文档学习.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/098-XML文档学习.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="814">
+              <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -54,11 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/021-attr-获取-设置-删除属性.html" />
-        <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/056-表单操作-多行文本框缩放.html" />
-        <option value="$PROJECT_DIR$/059-表单操作-下拉框应用-左框选项移动到右框中.html" />
-        <option value="$PROJECT_DIR$/060-表单操作-表单验证.html" />
         <option value="$PROJECT_DIR$/061-表格操作-单选高亮-奇偶行不同色.html" />
         <option value="$PROJECT_DIR$/ajax-test.html" />
         <option value="$PROJECT_DIR$/062-Ajax-load方法-加载其他html页面到指定位置.html" />
@@ -105,6 +150,11 @@
         <option value="$PROJECT_DIR$/091-同时编写多个jQuery插件到一个js文件中.html" />
         <option value="$PROJECT_DIR$/092-封装jQuery全局函数插件-同时编写多个jQuery插件到一个js文件中.html" />
         <option value="$PROJECT_DIR$/093-封装jQuery自定义的选择器.html" />
+        <option value="$PROJECT_DIR$/094-用jQuery打造个性网站-重点笔记内容.html" />
+        <option value="$PROJECT_DIR$/095-jQuery性能优化.html" />
+        <option value="$PROJECT_DIR$/096-jQuery技巧.html" />
+        <option value="$PROJECT_DIR$/097-关于$(document).ready()函数-为什么要使用.html" />
+        <option value="$PROJECT_DIR$/098-XML文档学习.html" />
       </list>
     </option>
   </component>
@@ -205,8 +255,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/img" />
     </key>
   </component>
@@ -281,15 +331,15 @@
       <workItem from="1481890893965" duration="4388000" />
       <workItem from="1481941172291" duration="6008000" />
       <workItem from="1481976636904" duration="8654000" />
-      <workItem from="1482028305032" duration="5484000" />
+      <workItem from="1482028305032" duration="12612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90916000" />
+    <option name="totallyTimeSpent" value="98044000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1010" extended-state="6" />
+    <frame x="0" y="23" width="1920" height="1010" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28434506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -327,41 +377,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ajax-text.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/067-Ajax-get方法-请求返回JSON数据.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/069-对XML数据的理解.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="209" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/068-Ajax-get方法-请求返回XML数据.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/068-Ajax-get方法-请求返回JSON数据-显示其他网站的天气股票等信息.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/070-Ajax-post方法-使用和get一样.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -704,6 +719,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="662">
           <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/094-用jQuery打造个性网站-重点笔记内容.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/095-jQuery性能优化.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="852">
+          <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/096-jQuery技巧.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="719">
+          <caret line="160" column="41" selection-start-line="160" selection-start-column="41" selection-end-line="160" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/097-关于$(document).ready()函数-为什么要使用.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/098-XML文档学习.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="64" column="50" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="50" />
           <folding />
         </state>
       </provider>

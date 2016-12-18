@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+</style>
+
+<body>
+
+<div style="color:red">hello world</div>
+<div style="color:green">hello world</div>
+<div style="color:blue">hello world</div>
+<div style="color:pink">hello world</div>
+
+</body>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+
+    //禁止页面的右键菜单
+    $(document).ready(function () {
+        $(document).bind("contextmenu",function () {
+            return false;
+        })
+    });
+
+    //新窗口打开页面
+    $(document).ready(function () {
+        //例子一：href="http://",以http://开头的url将会在新窗口打开
+        $('a[href^="http://"]').attr("target","_blank");
+
+        //例子二：rel="external"，以externaml结尾的url将会在新窗口打开
+        $("a[rel$='external']").click(function () {
+            this.target = "_blank"
+        })
+    });
+
+    //判断浏览器的类型
+    $(document).ready(function () {
+        //Firefox2 以及更高
+        if ($.browser.mozilla && $.browser.version >="1.8"){
+            //内容
+        }
+
+        //safari
+        if ($.browser.safari){
+            //内容
+        }
+
+        //chrome
+        if ($.browser.chrome){
+            //内容
+        }
+
+        //opera
+        if ($.browser.opera){
+            //内容
+        }
+
+        //IE6 以及更低版本
+        if($.browser.msie && $.browser.version <= 6){
+
+        }
+
+        //IE6 以上的所有IE版本
+        if($.browser.msie && $.browser.version > 6){
+
+        }
+
+    });
+
+
+    //获取鼠位置坐标
+    $(document).ready(function () {
+        $(document).mousemove(function (event) {
+            $("div").html("X:"+event.pageX+"|Y:"+event.pageY);
+        })
+    });
+
+    //判断元素是否存在
+    $(document).ready(function () {
+        if ($("div").length){
+            //内容
+        }
+    });
+
+    //点击任意元素均可以实现跳转
+    $("div").click(function () {
+        window.location=$(this).find("a").attr("href");//实现原理是，点击父元素div，获取其子元素中的a元素的href属性值，并跳转
+        return false;
+    });
+
+    //根据浏览器窗口大小的不同，添加不同的样式
+    $(document).ready(function () {
+        function checkWindowSize() {
+            if ($(window).width()>1200){
+                $('body').addClass("large");
+            }else{
+                $('body').removeClass("large");
+            }
+        }
+        $(window).resize(checkWindowSize());
+    });
+
+    //让div在屏幕的中央
+    $(document).ready(function () {
+        jQuery.fn.center = function () {
+            this.css("position","absolute");
+            this.css("top",($(window).height()-this.height())/2+$(window).scrollTop()+"px");
+            this.css("left",($(window).width()-this.width())/2+$(window).scrollLeft()+"px");
+            return this;
+        };
+        /*
+        使用方法：
+        $("div").center();
+        * */
+    });
+
+    //创建自己的选择器
+    $(document).ready(function () {
+        $.extend($.expr[":"],{
+            morThen500px:function (a) {
+                return $(a).width()>500;
+            }
+        })
+    });
+
+    //关闭所有的动画效果
+    $(document).ready(function () {
+        jQuery.fx.off=true;
+    });
+
+    //检测鼠标的左键和右键
+    $(document).ready(function () {
+        $("div").mousedown(function (event) {
+            alert(event.which)//1为左键，2为中键，3为右键
+        })
+    });
+
+    //回车键提交表单
+    $(document).ready(function () {
+        $("input").keyup(function (event) {
+            if(event.which == "13"){
+                alert("回车提交成功")
+            }
+        })
+    });
+
+    //切换复选框
+    var tog=false;
+    $("button").clcik(function () {
+        $("input[type=checkbox]").attr("checked",!tog);
+        tog=!tog;
+    });
+
+    //为不同的链接添加不同的效果，比如以pdf结尾，zip结尾，psd结尾的链接
+
+    $(document).ready(function () {
+        $("a[href$='pdf']").addClass("paf");
+        $("a[href$='zip']").addClass("zip");
+    });
+</script>
+</html>

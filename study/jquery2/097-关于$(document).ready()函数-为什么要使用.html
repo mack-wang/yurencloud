@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+</style>
+
+<body>
+
+<div style="color:red">hello world</div>
+<div style="color:green">hello world</div>
+<div style="color:blue">hello world</div>
+<div style="color:pink">hello world</div>
+
+</body>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+
+    //禁止页面的右键菜单
+    $(document).ready(function () {
+        $(document).bind("contextmenu",function () {
+            return false;
+        })
+    });
+
+    $(function () {
+        //和上面的$(document).ready(...）等效
+    });
+
+    /*
+    * 正如上面看到的那样，我们经常会在一个函数外包裹一个$(document).ready(...）
+    * 当然，不包裹也照样可以正常执行，那为什么要写呢？
+    * 原因：正常情况下，所有的javascript是在页面全部加载完成后，才进行执行的。
+    * 而包裹了$(document).ready(...）的函数体，会在DOM加载完毕，但页面全部内容（文字，图片，媒体）完全加载完成之前执行
+    *
+    * 所以$(document).ready(...）这样加载js代码更科学，
+    * 并且，每个$(document).ready(...）片段都可以单独的分离出来，成为一个独立的js文件，更容易维护
+    *
+    * */
+
+
+</script>
+</html>

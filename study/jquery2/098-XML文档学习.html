@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery study</title>
+</head>
+<style>
+</style>
+
+<body>
+
+<div style="color:red">hello world</div>
+<div style="color:green">hello world</div>
+<div style="color:blue">hello world</div>
+<div style="color:pink">hello world</div>
+
+</body>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script>
+
+    /*
+    一、
+    XML（eXtensible Markup Language）即可扩展标记语言
+    1、任何起始标签都要有必须要有一个结束标签
+    2、可以简化语法例如 <tag/>该标签会被解析成<tag></tag>
+    3、标签必须按照合理的顺序进行嵌套，像数学运算中的括号那样。
+    4、所有的属性都需要有值，并需要在值的上加双引号
+
+    二、
+    Content-Type
+    如果XML文件不能被正常解析，基本上都是Content-Type没有并设置好
+    如果本身就是xxxx.xml文件，则不需要设置。如果是由php或者其他语言动态生成的，则要设置Content-Type
+    header("Content-Type:text/xml");    //PHP
+    response.ContentType="text/xml";    //ASP
+    response.setContentType("text/xml");    //JSP
+
+    三、
+    XML文档只能有一个顶层元素
+    错误例子：
+    <?xml version="1.0" encoding="UTF-8"?>
+    <name>wlc</name>
+    <name>bob</name>
+    正确例子：
+     <?xml version="1.0" encoding="UTF-8"?>
+    <person>
+        <name1>wlc</name1>
+        <name2>bob</name2>
+    </person>
+
+    四、
+    获取XML
+    和获取HTML，JSON，文件一样
+
+    五、
+    解析XML
+    和解析HTML文件一样（并非完全一样，只是大部分能用的选择器，each(),attr(),text()等都可以用）
+
+    六、
+    禁用缓存
+    经常会出现刷新后，xml的内容还是老的内容，原因是浏览器将内容缓存了下来，没有去服务器更新最新内容
+    （1）禁用缓存的方法一，可以通过设置时间戳来避免缓存，可以在URL的后面加上+(+new Date),来表示每次获取的url都不一样，浏览器就不会引用缓存
+    $.get('ajax.xml?'+(+new Date),function(xml){
+           //...
+    })
+    (2)禁用缓存的方法二，如果使用$.ajax()方法来获取数据的话，只需设置option参数cache:false
+
+
+    */
+
+
+</script>
+</html>
