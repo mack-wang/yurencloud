@@ -26,7 +26,7 @@
     <li>a</li>
     <li>b</li>
     <li>c</li>
-    <li>d</li>
+    <li id="f">d</li>
 </ul>
 
 </body>
@@ -41,7 +41,11 @@
     //将新的元素替换到选择的元素中，将B元素去替换A元素（效果同上，但使用方式相反）
     $("<li>我是替换内容2</li>").replaceAll(".myul2 li");
 
-
+    //原生js实现
+    var li1 = document.createElement("li");
+    li1.innerHTML="我是替换的内容";
+    //替换、删除、插入都一样，要从目标节点的父节点来调用，f.父节点.替换（li1,f）
+    document.getElementById("f").parentNode.replaceChild(li1,document.getElementById("f"));
 
 
 

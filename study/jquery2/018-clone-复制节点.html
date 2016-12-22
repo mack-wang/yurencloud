@@ -14,7 +14,7 @@
 <body>
 <input type="text" name="username" />
 <div class="mydiv" id="box">我</div>
-<ul class="myul">
+<ul class="myul" id="ul1">
     <li>1</li>
     <li>2</li>
     <li>3</li>
@@ -31,6 +31,7 @@
 
 </body>
 <script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/EventUtil.js"></script>
 <script>
 
 
@@ -38,6 +39,15 @@
     $(".myul2 li").click(function () {
         $(this).clone().appendTo(".myul2");
     });
+
+    //原生js实现
+    //复制点击的节点，并追加到末尾
+    var ul1 = document.getElementById("ul1");
+    EventUtil.addHandler(ul1,"click",function (event) {
+        var target = EventUtil.getTarget(event);
+        var clone = target.cloneNode(true);
+        ul1.appendChild(clone);
+    })
 
 
 

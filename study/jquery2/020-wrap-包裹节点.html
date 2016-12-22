@@ -30,7 +30,7 @@
 </ul>
 
 
-<ul class="myul3">
+<ul class="myul3" id="ul3">
     <li>a</li>
     <li>b</li>
     <li>c</li>
@@ -53,6 +53,13 @@
     //在每个li内套一层strong元素(有多个strong)
     $(".myul3 li").wrapInner("<strong style='color:red'></strong>");
 
+    //原生js实现
+    //先创建wrap元素，再把wrap元素插入到ul3之前，再把ul3插入到wrap之中
+    var ul3 = document.getElementById("ul3");
+    var wrap = document.createElement("strong");
+    wrap.style.color="red";
+    ul3.parentNode.insertBefore(wrap, ul3);
+    wrap.appendChild(ul3);
 
 
 

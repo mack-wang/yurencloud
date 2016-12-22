@@ -22,11 +22,11 @@
     <li>5</li>
 </ul>
 
-<ul class="myul2">
+<ul class="myul2" id="ul2">
     <li>a</li>
     <li>b</li>
     <li>c</li>
-    <li>d</li>
+    <li id="f">d</li>
 </ul>
 
 </body>
@@ -54,6 +54,10 @@
     //第四种方法，使用empty()清空节点内容，包括后代节点
     $(".myul2 li:eq(1)").empty();
 
+    //原生js实现
+    var f = document.getElementById("f");
+    //删除节点要在父节点上使用，f.父节点.删除（f）
+    var remove_li = f.parentNode.removeChild(f);
 
 
 

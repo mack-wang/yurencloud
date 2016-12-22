@@ -1,0 +1,925 @@
+ /*
+ *  Font Yuren 1.10 by @mackwang - http://www.yurencloud.com - @font-yuren
+ *  License - http://www.yurencloud.com/license (Font: SIL OFL 1.1, CSS: MIT License)
+ *
+ *  愚人云端图标字体 1.10 作者：王乐城 - http://www.yurencloud.com - @font-yuren
+ *  版本许可 - http://www.yurencloud.com/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: "font-yuren";
+  src: url("../fonts/font-yuren.eot");
+  src: url("../fonts/font-yuren.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/font-yuren.woff") format("woff"),
+       url("../fonts/font-yuren.ttf") format("truetype"),
+       url("../fonts/font-yuren.svg#font-yuren") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "font-yuren";
+    src: url("../fonts/font-yuren.svg#font-yuren") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.yu-16-9:before,
+.yu-4-3:before,
+.yu-accessory:before,
+.yu-add:before,
+.yu-add-circle:before,
+.yu-add-circle-o:before,
+.yu-address-book:before,
+.yu-address-book-o:before,
+.yu-adjust-circle:before,
+.yu-airplane:before,
+.yu-align-center:before,
+.yu-align-justify:before,
+.yu-align-left:before,
+.yu-align-right:before,
+.yu-alipay:before,
+.yu-aliwanwan:before,
+.yu-amazon:before,
+.yu-android:before,
+.yu-angle-double-down:before,
+.yu-angle-double-left:before,
+.yu-angle-double-right:before,
+.yu-angle-double-up:before,
+.yu-angle-down:before,
+.yu-angle-down-o:before,
+.yu-angle-left:before,
+.yu-angle-left-o:before,
+.yu-angle-right:before,
+.yu-angle-right-o:before,
+.yu-angle-up:before,
+.yu-angle-up-o:before,
+.yu-apple:before,
+.yu-apple2:before,
+.yu-application:before,
+.yu-arrow-down-circle:before,
+.yu-arrow-down-circle-o:before,
+.yu-arrow-left-circle:before,
+.yu-arrow-left-circle-o:before,
+.yu-arrow-right-circle:before,
+.yu-arrow-right-circle-o:before,
+.yu-arrow-up-circle:before,
+.yu-arrow-up-circle-o:before,
+.yu-arrows:before,
+.yu-arrows-alt:before,
+.yu-arrows-h:before,
+.yu-arrows-v:before,
+.yu-at:before,
+.yu-baby:before,
+.yu-backward:before,
+.yu-bad:before,
+.yu-bad-o:before,
+.yu-bar-code:before,
+.yu-bar-h:before,
+.yu-bar-v:before,
+.yu-bars:before,
+.yu-battery-1:before,
+.yu-battery-2:before,
+.yu-battery-3:before,
+.yu-battery-charging:before,
+.yu-battery-empty:before,
+.yu-battery-full:before,
+.yu-battery-one:before,
+.yu-battery-three:before,
+.yu-battery-two:before,
+.yu-bell:before,
+.yu-bell-close:before,
+.yu-bicycle:before,
+.yu-big-rain:before,
+.yu-birthday-cake:before,
+.yu-bluetooth:before,
+.yu-bluetooth-o:before,
+.yu-bomb:before,
+.yu-brush:before,
+.yu-bug:before,
+.yu-bulb:before,
+.yu-bus:before,
+.yu-calculator:before,
+.yu-calender:before,
+.yu-camera:before,
+.yu-car:before,
+.yu-caret-down:before,
+.yu-caret-left:before,
+.yu-caret-right:before,
+.yu-caret-up:before,
+.yu-cart:before,
+.yu-champion:before,
+.yu-chart:before,
+.yu-check:before,
+.yu-check-circle:before,
+.yu-check-square:before,
+.yu-check-square-o:before,
+.yu-check2:before,
+.yu-chrome:before,
+.yu-circle:before,
+.yu-circle-o:before,
+.yu-clock:before,
+.yu-close:before,
+.yu-close-circle:before,
+.yu-close-rectangle:before,
+.yu-close-rectangle-o:before,
+.yu-close-square:before,
+.yu-close-square-o:before,
+.yu-cloud:before,
+.yu-cloud-lighting:before,
+.yu-cloud-sun:before,
+.yu-clouds:before,
+.yu-code:before,
+.yu-coffee:before,
+.yu-cog:before,
+.yu-cog-o:before,
+.yu-cog2-o:before,
+.yu-coin-bag:before,
+.yu-command:before,
+.yu-comment:before,
+.yu-comment-o:before,
+.yu-commenting:before,
+.yu-commenting-o:before,
+.yu-comments:before,
+.yu-compass:before,
+.yu-compress:before,
+.yu-compress2:before,
+.yu-computer:before,
+.yu-computer-o:before,
+.yu-copy-file:before,
+.yu-copyright:before,
+.yu-cpu:before,
+.yu-credit-card:before,
+.yu-credit-card-o:before,
+.yu-cube:before,
+.yu-cube-o:before,
+.yu-cube2:before,
+.yu-cubes:before,
+.yu-cubes2:before,
+.yu-cut:before,
+.yu-cut-file:before,
+.yu-database:before,
+.yu-database-add:before,
+.yu-database-close:before,
+.yu-database-delete:before,
+.yu-database-o:before,
+.yu-delete:before,
+.yu-delete-o:before,
+.yu-diamond:before,
+.yu-dollar:before,
+.yu-douban:before,
+.yu-down-chart:before,
+.yu-down-circle:before,
+.yu-download:before,
+.yu-download2:before,
+.yu-drawing-board:before,
+.yu-edge:before,
+.yu-edit:before,
+.yu-eject:before,
+.yu-email:before,
+.yu-email-open:before,
+.yu-euro:before,
+.yu-exchange:before,
+.yu-exit-full-screen:before,
+.yu-expand2:before,
+.yu-expend:before,
+.yu-eye:before,
+.yu-eye-close:before,
+.yu-facebook:before,
+.yu-feather:before,
+.yu-feed:before,
+.yu-female:before,
+.yu-file:before,
+.yu-file-add:before,
+.yu-file-ai:before,
+.yu-file-check:before,
+.yu-file-close:before,
+.yu-file-css:before,
+.yu-file-delete:before,
+.yu-file-doc:before,
+.yu-file-edit:before,
+.yu-file-html:before,
+.yu-file-other:before,
+.yu-file-ps:before,
+.yu-file-search:before,
+.yu-file-txt:before,
+.yu-file-wait:before,
+.yu-file-xls:before,
+.yu-filter:before,
+.yu-finger-click:before,
+.yu-finger-down:before,
+.yu-finger-left:before,
+.yu-finger-right:before,
+.yu-finger-up:before,
+.yu-fire:before,
+.yu-firefox:before,
+.yu-flag:before,
+.yu-flag-o:before,
+.yu-flag2:before,
+.yu-flag2-o:before,
+.yu-flash:before,
+.yu-folder:before,
+.yu-folder-o:before,
+.yu-folder-open:before,
+.yu-folder-open-o:before,
+.yu-font:before,
+.yu-footprint:before,
+.yu-fork:before,
+.yu-forward:before,
+.yu-full-screen:before,
+.yu-game:before,
+.yu-game-ware:before,
+.yu-gift:before,
+.yu-git:before,
+.yu-github:before,
+.yu-github-circle:before,
+.yu-global:before,
+.yu-gly:before,
+.yu-good:before,
+.yu-good-o:before,
+.yu-google:before,
+.yu-hammer:before,
+.yu-handbag:before,
+.yu-handbag-o:before,
+.yu-handshake:before,
+.yu-headphone:before,
+.yu-heart:before,
+.yu-heart-o:before,
+.yu-home:before,
+.yu-home-o:before,
+.yu-hourglass:before,
+.yu-html5:before,
+.yu-id-card:before,
+.yu-id-card-o:before,
+.yu-ie:before,
+.yu-information:before,
+.yu-information-o:before,
+.yu-key:before,
+.yu-keyboard:before,
+.yu-lantern:before,
+.yu-lantern-o:before,
+.yu-laptop:before,
+.yu-laptop-o:before,
+.yu-leaf:before,
+.yu-left-bottom-triangle:before,
+.yu-left-circle:before,
+.yu-left-top-triangle:before,
+.yu-library:before,
+.yu-lightning:before,
+.yu-link:before,
+.yu-link2:before,
+.yu-linked:before,
+.yu-linux:before,
+.yu-list:before,
+.yu-location:before,
+.yu-location-arrow:before,
+.yu-location-arrow-o:before,
+.yu-lock:before,
+.yu-log-in:before,
+.yu-log-out:before,
+.yu-long-arrow-down:before,
+.yu-long-arrow-left:before,
+.yu-long-arrow-right:before,
+.yu-long-arrow-up:before,
+.yu-magnet:before,
+.yu-male:before,
+.yu-man:before,
+.yu-map:before,
+.yu-mark:before,
+.yu-mark-o:before,
+.yu-medical-kit:before,
+.yu-medicine:before,
+.yu-message:before,
+.yu-message-o:before,
+.yu-messaging:before,
+.yu-messaging-o:before,
+.yu-microphone:before,
+.yu-microphone-close:before,
+.yu-minus:before,
+.yu-minus-circle:before,
+.yu-minus-circle-o:before,
+.yu-mobile:before,
+.yu-mobile-link-computer:before,
+.yu-mobile-link-laptop:before,
+.yu-mobile-link-mobile:before,
+.yu-mobile-o:before,
+.yu-moment:before,
+.yu-more-function:before,
+.yu-mouse:before,
+.yu-movie:before,
+.yu-music:before,
+.yu-music-note:before,
+.yu-new-window:before,
+.yu-notice:before,
+.yu-option:before,
+.yu-order-list:before,
+.yu-pad:before,
+.yu-pad-o:before,
+.yu-pause:before,
+.yu-paypal:before,
+.yu-pen:before,
+.yu-pencil:before,
+.yu-persent:before,
+.yu-phone:before,
+.yu-phone-circle:before,
+.yu-phone-close:before,
+.yu-phone-close-circle:before,
+.yu-phone-close-square:before,
+.yu-phone-square:before,
+.yu-picture:before,
+.yu-picture-add:before,
+.yu-picture-close:before,
+.yu-picture-delete:before,
+.yu-pin:before,
+.yu-pin-o:before,
+.yu-play:before,
+.yu-podcast:before,
+.yu-printer:before,
+.yu-qq:before,
+.yu-qrcode:before,
+.yu-question:before,
+.yu-question-o:before,
+.yu-quote:before,
+.yu-quote-left:before,
+.yu-quote-right:before,
+.yu-random:before,
+.yu-rank:before,
+.yu-red-pocket:before,
+.yu-redo:before,
+.yu-refresh:before,
+.yu-refresh2:before,
+.yu-refresh3:before,
+.yu-right-bottom-triangle:before,
+.yu-right-circle:before,
+.yu-right-top-triangle:before,
+.yu-rocket:before,
+.yu-sad:before,
+.yu-sad-o:before,
+.yu-safari:before,
+.yu-save:before,
+.yu-save-o:before,
+.yu-scissor:before,
+.yu-scissor-cut:before,
+.yu-scope:before,
+.yu-search:before,
+.yu-search-minus:before,
+.yu-search-o:before,
+.yu-search-plus:before,
+.yu-share-alt:before,
+.yu-share-square:before,
+.yu-share-square-o:before,
+.yu-shopping-cart-full:before,
+.yu-shopping-cart-o:before,
+.yu-shutdown:before,
+.yu-signal:before,
+.yu-signal-1:before,
+.yu-signal-2:before,
+.yu-signal-3:before,
+.yu-signal-4:before,
+.yu-slidebar:before,
+.yu-small-rain:before,
+.yu-smile:before,
+.yu-smile-o:before,
+.yu-snow:before,
+.yu-sofa:before,
+.yu-spinner:before,
+.yu-square:before,
+.yu-stack-overflow:before,
+.yu-star:before,
+.yu-star-o:before,
+.yu-step-backward:before,
+.yu-step-forward:before,
+.yu-stop:before,
+.yu-sun:before,
+.yu-system:before,
+.yu-table:before,
+.yu-tag:before,
+.yu-tags:before,
+.yu-taobao:before,
+.yu-taxi:before,
+.yu-temperature-1:before,
+.yu-temperature-2:before,
+.yu-temperature-3:before,
+.yu-temperature-empty:before,
+.yu-temperature-full:before,
+.yu-tencent-weibo:before,
+.yu-thinking:before,
+.yu-tmall:before,
+.yu-touchmeter:before,
+.yu-train:before,
+.yu-trash:before,
+.yu-tree:before,
+.yu-triangle-square-o:before,
+.yu-tv:before,
+.yu-twitter:before,
+.yu-twitter2:before,
+.yu-umberlla:before,
+.yu-undo:before,
+.yu-unlock:before,
+.yu-up-chart:before,
+.yu-up-circle:before,
+.yu-update:before,
+.yu-upload:before,
+.yu-usb:before,
+.yu-user:before,
+.yu-user-add:before,
+.yu-user-check:before,
+.yu-user-close:before,
+.yu-user-delete:before,
+.yu-user-o:before,
+.yu-user-round:before,
+.yu-user-round-add:before,
+.yu-user-round-check:before,
+.yu-user-round-circle:before,
+.yu-user-round-circle-o:before,
+.yu-user-round-close:before,
+.yu-user-round-delete:before,
+.yu-user-round-o:before,
+.yu-user-round-wait:before,
+.yu-user-search:before,
+.yu-user-wait:before,
+.yu-users:before,
+.yu-users-o:before,
+.yu-video:before,
+.yu-vip:before,
+.yu-visa:before,
+.yu-voice:before,
+.yu-voice-close:before,
+.yu-wallet:before,
+.yu-warning-circle:before,
+.yu-warning-circle-o:before,
+.yu-warning-triangel:before,
+.yu-wechat:before,
+.yu-weibo:before,
+.yu-whatsapp:before,
+.yu-wifi:before,
+.yu-wind:before,
+.yu-window:before,
+.yu-window-add:before,
+.yu-windows:before,
+.yu-woman:before,
+.yu-wordress:before,
+.yu-wrench:before,
+.yu-yahoo:before,
+.yu-yuan:before,
+.yu-yuren:before,
+.yu-yutube:before {
+  display: inline-block;
+  font-family: "font-yuren";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.yu-16-9:before { content: "\f100"; }
+.yu-4-3:before { content: "\f101"; }
+.yu-accessory:before { content: "\f102"; }
+.yu-add:before { content: "\f103"; }
+.yu-add-circle:before { content: "\f104"; }
+.yu-add-circle-o:before { content: "\f105"; }
+.yu-address-book:before { content: "\f106"; }
+.yu-address-book-o:before { content: "\f107"; }
+.yu-adjust-circle:before { content: "\f108"; }
+.yu-airplane:before { content: "\f109"; }
+.yu-align-center:before { content: "\f10a"; }
+.yu-align-justify:before { content: "\f10b"; }
+.yu-align-left:before { content: "\f10c"; }
+.yu-align-right:before { content: "\f10d"; }
+.yu-alipay:before { content: "\f10e"; }
+.yu-aliwanwan:before { content: "\f10f"; }
+.yu-amazon:before { content: "\f110"; }
+.yu-android:before { content: "\f111"; }
+.yu-angle-double-down:before { content: "\f112"; }
+.yu-angle-double-left:before { content: "\f113"; }
+.yu-angle-double-right:before { content: "\f114"; }
+.yu-angle-double-up:before { content: "\f115"; }
+.yu-angle-down:before { content: "\f116"; }
+.yu-angle-down-o:before { content: "\f117"; }
+.yu-angle-left:before { content: "\f118"; }
+.yu-angle-left-o:before { content: "\f119"; }
+.yu-angle-right:before { content: "\f11a"; }
+.yu-angle-right-o:before { content: "\f11b"; }
+.yu-angle-up:before { content: "\f11c"; }
+.yu-angle-up-o:before { content: "\f11d"; }
+.yu-apple:before { content: "\f11e"; }
+.yu-apple2:before { content: "\f11f"; }
+.yu-application:before { content: "\f120"; }
+.yu-arrow-down-circle:before { content: "\f121"; }
+.yu-arrow-down-circle-o:before { content: "\f122"; }
+.yu-arrow-left-circle:before { content: "\f123"; }
+.yu-arrow-left-circle-o:before { content: "\f124"; }
+.yu-arrow-right-circle:before { content: "\f125"; }
+.yu-arrow-right-circle-o:before { content: "\f126"; }
+.yu-arrow-up-circle:before { content: "\f127"; }
+.yu-arrow-up-circle-o:before { content: "\f128"; }
+.yu-arrows:before { content: "\f129"; }
+.yu-arrows-alt:before { content: "\f12a"; }
+.yu-arrows-h:before { content: "\f12b"; }
+.yu-arrows-v:before { content: "\f12c"; }
+.yu-at:before { content: "\f12d"; }
+.yu-baby:before { content: "\f12e"; }
+.yu-backward:before { content: "\f12f"; }
+.yu-bad:before { content: "\f130"; }
+.yu-bad-o:before { content: "\f131"; }
+.yu-bar-code:before { content: "\f132"; }
+.yu-bar-h:before { content: "\f133"; }
+.yu-bar-v:before { content: "\f134"; }
+.yu-bars:before { content: "\f135"; }
+.yu-battery-1:before { content: "\f136"; }
+.yu-battery-2:before { content: "\f137"; }
+.yu-battery-3:before { content: "\f138"; }
+.yu-battery-charging:before { content: "\f139"; }
+.yu-battery-empty:before { content: "\f13a"; }
+.yu-battery-full:before { content: "\f13b"; }
+.yu-battery-one:before { content: "\f13c"; }
+.yu-battery-three:before { content: "\f13d"; }
+.yu-battery-two:before { content: "\f13e"; }
+.yu-bell:before { content: "\f13f"; }
+.yu-bell-close:before { content: "\f140"; }
+.yu-bicycle:before { content: "\f141"; }
+.yu-big-rain:before { content: "\f142"; }
+.yu-birthday-cake:before { content: "\f143"; }
+.yu-bluetooth:before { content: "\f144"; }
+.yu-bluetooth-o:before { content: "\f145"; }
+.yu-bomb:before { content: "\f146"; }
+.yu-brush:before { content: "\f147"; }
+.yu-bug:before { content: "\f148"; }
+.yu-bulb:before { content: "\f149"; }
+.yu-bus:before { content: "\f14a"; }
+.yu-calculator:before { content: "\f14b"; }
+.yu-calender:before { content: "\f14c"; }
+.yu-camera:before { content: "\f14d"; }
+.yu-car:before { content: "\f14e"; }
+.yu-caret-down:before { content: "\f14f"; }
+.yu-caret-left:before { content: "\f150"; }
+.yu-caret-right:before { content: "\f151"; }
+.yu-caret-up:before { content: "\f152"; }
+.yu-cart:before { content: "\f153"; }
+.yu-champion:before { content: "\f154"; }
+.yu-chart:before { content: "\f155"; }
+.yu-check:before { content: "\f156"; }
+.yu-check-circle:before { content: "\f157"; }
+.yu-check-square:before { content: "\f158"; }
+.yu-check-square-o:before { content: "\f159"; }
+.yu-check2:before { content: "\f15a"; }
+.yu-chrome:before { content: "\f15b"; }
+.yu-circle:before { content: "\f15c"; }
+.yu-circle-o:before { content: "\f15d"; }
+.yu-clock:before { content: "\f15e"; }
+.yu-close:before { content: "\f15f"; }
+.yu-close-circle:before { content: "\f160"; }
+.yu-close-rectangle:before { content: "\f161"; }
+.yu-close-rectangle-o:before { content: "\f162"; }
+.yu-close-square:before { content: "\f163"; }
+.yu-close-square-o:before { content: "\f164"; }
+.yu-cloud:before { content: "\f165"; }
+.yu-cloud-lighting:before { content: "\f166"; }
+.yu-cloud-sun:before { content: "\f167"; }
+.yu-clouds:before { content: "\f168"; }
+.yu-code:before { content: "\f169"; }
+.yu-coffee:before { content: "\f16a"; }
+.yu-cog:before { content: "\f16b"; }
+.yu-cog-o:before { content: "\f16c"; }
+.yu-cog2-o:before { content: "\f16d"; }
+.yu-coin-bag:before { content: "\f16e"; }
+.yu-command:before { content: "\f16f"; }
+.yu-comment:before { content: "\f170"; }
+.yu-comment-o:before { content: "\f171"; }
+.yu-commenting:before { content: "\f172"; }
+.yu-commenting-o:before { content: "\f173"; }
+.yu-comments:before { content: "\f174"; }
+.yu-compass:before { content: "\f175"; }
+.yu-compress:before { content: "\f176"; }
+.yu-compress2:before { content: "\f177"; }
+.yu-computer:before { content: "\f178"; }
+.yu-computer-o:before { content: "\f179"; }
+.yu-copy-file:before { content: "\f17a"; }
+.yu-copyright:before { content: "\f17b"; }
+.yu-cpu:before { content: "\f17c"; }
+.yu-credit-card:before { content: "\f17d"; }
+.yu-credit-card-o:before { content: "\f17e"; }
+.yu-cube:before { content: "\f17f"; }
+.yu-cube-o:before { content: "\f180"; }
+.yu-cube2:before { content: "\f181"; }
+.yu-cubes:before { content: "\f182"; }
+.yu-cubes2:before { content: "\f183"; }
+.yu-cut:before { content: "\f184"; }
+.yu-cut-file:before { content: "\f185"; }
+.yu-database:before { content: "\f186"; }
+.yu-database-add:before { content: "\f187"; }
+.yu-database-close:before { content: "\f188"; }
+.yu-database-delete:before { content: "\f189"; }
+.yu-database-o:before { content: "\f18a"; }
+.yu-delete:before { content: "\f18b"; }
+.yu-delete-o:before { content: "\f18c"; }
+.yu-diamond:before { content: "\f18d"; }
+.yu-dollar:before { content: "\f18e"; }
+.yu-douban:before { content: "\f18f"; }
+.yu-down-chart:before { content: "\f190"; }
+.yu-down-circle:before { content: "\f191"; }
+.yu-download:before { content: "\f192"; }
+.yu-download2:before { content: "\f193"; }
+.yu-drawing-board:before { content: "\f194"; }
+.yu-edge:before { content: "\f195"; }
+.yu-edit:before { content: "\f196"; }
+.yu-eject:before { content: "\f197"; }
+.yu-email:before { content: "\f198"; }
+.yu-email-open:before { content: "\f199"; }
+.yu-euro:before { content: "\f19a"; }
+.yu-exchange:before { content: "\f19b"; }
+.yu-exit-full-screen:before { content: "\f19c"; }
+.yu-expand2:before { content: "\f19d"; }
+.yu-expend:before { content: "\f19e"; }
+.yu-eye:before { content: "\f19f"; }
+.yu-eye-close:before { content: "\f1a0"; }
+.yu-facebook:before { content: "\f1a1"; }
+.yu-feather:before { content: "\f1a2"; }
+.yu-feed:before { content: "\f1a3"; }
+.yu-female:before { content: "\f1a4"; }
+.yu-file:before { content: "\f1a5"; }
+.yu-file-add:before { content: "\f1a6"; }
+.yu-file-ai:before { content: "\f1a7"; }
+.yu-file-check:before { content: "\f1a8"; }
+.yu-file-close:before { content: "\f1a9"; }
+.yu-file-css:before { content: "\f1aa"; }
+.yu-file-delete:before { content: "\f1ab"; }
+.yu-file-doc:before { content: "\f1ac"; }
+.yu-file-edit:before { content: "\f1ad"; }
+.yu-file-html:before { content: "\f1ae"; }
+.yu-file-other:before { content: "\f1af"; }
+.yu-file-ps:before { content: "\f1b0"; }
+.yu-file-search:before { content: "\f1b1"; }
+.yu-file-txt:before { content: "\f1b2"; }
+.yu-file-wait:before { content: "\f1b3"; }
+.yu-file-xls:before { content: "\f1b4"; }
+.yu-filter:before { content: "\f1b5"; }
+.yu-finger-click:before { content: "\f1b6"; }
+.yu-finger-down:before { content: "\f1b7"; }
+.yu-finger-left:before { content: "\f1b8"; }
+.yu-finger-right:before { content: "\f1b9"; }
+.yu-finger-up:before { content: "\f1ba"; }
+.yu-fire:before { content: "\f1bb"; }
+.yu-firefox:before { content: "\f1bc"; }
+.yu-flag:before { content: "\f1bd"; }
+.yu-flag-o:before { content: "\f1be"; }
+.yu-flag2:before { content: "\f1bf"; }
+.yu-flag2-o:before { content: "\f1c0"; }
+.yu-flash:before { content: "\f1c1"; }
+.yu-folder:before { content: "\f1c2"; }
+.yu-folder-o:before { content: "\f1c3"; }
+.yu-folder-open:before { content: "\f1c4"; }
+.yu-folder-open-o:before { content: "\f1c5"; }
+.yu-font:before { content: "\f1c6"; }
+.yu-footprint:before { content: "\f1c7"; }
+.yu-fork:before { content: "\f1c8"; }
+.yu-forward:before { content: "\f1c9"; }
+.yu-full-screen:before { content: "\f1ca"; }
+.yu-game:before { content: "\f1cb"; }
+.yu-game-ware:before { content: "\f1cc"; }
+.yu-gift:before { content: "\f1cd"; }
+.yu-git:before { content: "\f1ce"; }
+.yu-github:before { content: "\f1cf"; }
+.yu-github-circle:before { content: "\f1d0"; }
+.yu-global:before { content: "\f1d1"; }
+.yu-gly:before { content: "\f1d2"; }
+.yu-good:before { content: "\f1d3"; }
+.yu-good-o:before { content: "\f1d4"; }
+.yu-google:before { content: "\f1d5"; }
+.yu-hammer:before { content: "\f1d6"; }
+.yu-handbag:before { content: "\f1d7"; }
+.yu-handbag-o:before { content: "\f1d8"; }
+.yu-handshake:before { content: "\f1d9"; }
+.yu-headphone:before { content: "\f1da"; }
+.yu-heart:before { content: "\f1db"; }
+.yu-heart-o:before { content: "\f1dc"; }
+.yu-home:before { content: "\f1dd"; }
+.yu-home-o:before { content: "\f1de"; }
+.yu-hourglass:before { content: "\f1df"; }
+.yu-html5:before { content: "\f1e0"; }
+.yu-id-card:before { content: "\f1e1"; }
+.yu-id-card-o:before { content: "\f1e2"; }
+.yu-ie:before { content: "\f1e3"; }
+.yu-information:before { content: "\f1e4"; }
+.yu-information-o:before { content: "\f1e5"; }
+.yu-key:before { content: "\f1e6"; }
+.yu-keyboard:before { content: "\f1e7"; }
+.yu-lantern:before { content: "\f1e8"; }
+.yu-lantern-o:before { content: "\f1e9"; }
+.yu-laptop:before { content: "\f1ea"; }
+.yu-laptop-o:before { content: "\f1eb"; }
+.yu-leaf:before { content: "\f1ec"; }
+.yu-left-bottom-triangle:before { content: "\f1ed"; }
+.yu-left-circle:before { content: "\f1ee"; }
+.yu-left-top-triangle:before { content: "\f1ef"; }
+.yu-library:before { content: "\f1f0"; }
+.yu-lightning:before { content: "\f1f1"; }
+.yu-link:before { content: "\f1f2"; }
+.yu-link2:before { content: "\f1f3"; }
+.yu-linked:before { content: "\f1f4"; }
+.yu-linux:before { content: "\f1f5"; }
+.yu-list:before { content: "\f1f6"; }
+.yu-location:before { content: "\f1f7"; }
+.yu-location-arrow:before { content: "\f1f8"; }
+.yu-location-arrow-o:before { content: "\f1f9"; }
+.yu-lock:before { content: "\f1fa"; }
+.yu-log-in:before { content: "\f1fb"; }
+.yu-log-out:before { content: "\f1fc"; }
+.yu-long-arrow-down:before { content: "\f1fd"; }
+.yu-long-arrow-left:before { content: "\f1fe"; }
+.yu-long-arrow-right:before { content: "\f1ff"; }
+.yu-long-arrow-up:before { content: "\f200"; }
+.yu-magnet:before { content: "\f201"; }
+.yu-male:before { content: "\f202"; }
+.yu-man:before { content: "\f203"; }
+.yu-map:before { content: "\f204"; }
+.yu-mark:before { content: "\f205"; }
+.yu-mark-o:before { content: "\f206"; }
+.yu-medical-kit:before { content: "\f207"; }
+.yu-medicine:before { content: "\f208"; }
+.yu-message:before { content: "\f209"; }
+.yu-message-o:before { content: "\f20a"; }
+.yu-messaging:before { content: "\f20b"; }
+.yu-messaging-o:before { content: "\f20c"; }
+.yu-microphone:before { content: "\f20d"; }
+.yu-microphone-close:before { content: "\f20e"; }
+.yu-minus:before { content: "\f20f"; }
+.yu-minus-circle:before { content: "\f210"; }
+.yu-minus-circle-o:before { content: "\f211"; }
+.yu-mobile:before { content: "\f212"; }
+.yu-mobile-link-computer:before { content: "\f213"; }
+.yu-mobile-link-laptop:before { content: "\f214"; }
+.yu-mobile-link-mobile:before { content: "\f215"; }
+.yu-mobile-o:before { content: "\f216"; }
+.yu-moment:before { content: "\f217"; }
+.yu-more-function:before { content: "\f218"; }
+.yu-mouse:before { content: "\f219"; }
+.yu-movie:before { content: "\f21a"; }
+.yu-music:before { content: "\f21b"; }
+.yu-music-note:before { content: "\f21c"; }
+.yu-new-window:before { content: "\f21d"; }
+.yu-notice:before { content: "\f21e"; }
+.yu-option:before { content: "\f21f"; }
+.yu-order-list:before { content: "\f220"; }
+.yu-pad:before { content: "\f221"; }
+.yu-pad-o:before { content: "\f222"; }
+.yu-pause:before { content: "\f223"; }
+.yu-paypal:before { content: "\f224"; }
+.yu-pen:before { content: "\f225"; }
+.yu-pencil:before { content: "\f226"; }
+.yu-persent:before { content: "\f227"; }
+.yu-phone:before { content: "\f228"; }
+.yu-phone-circle:before { content: "\f229"; }
+.yu-phone-close:before { content: "\f22a"; }
+.yu-phone-close-circle:before { content: "\f22b"; }
+.yu-phone-close-square:before { content: "\f22c"; }
+.yu-phone-square:before { content: "\f22d"; }
+.yu-picture:before { content: "\f22e"; }
+.yu-picture-add:before { content: "\f22f"; }
+.yu-picture-close:before { content: "\f230"; }
+.yu-picture-delete:before { content: "\f231"; }
+.yu-pin:before { content: "\f232"; }
+.yu-pin-o:before { content: "\f233"; }
+.yu-play:before { content: "\f234"; }
+.yu-podcast:before { content: "\f235"; }
+.yu-printer:before { content: "\f236"; }
+.yu-qq:before { content: "\f237"; }
+.yu-qrcode:before { content: "\f238"; }
+.yu-question:before { content: "\f239"; }
+.yu-question-o:before { content: "\f23a"; }
+.yu-quote:before { content: "\f23b"; }
+.yu-quote-left:before { content: "\f23c"; }
+.yu-quote-right:before { content: "\f23d"; }
+.yu-random:before { content: "\f23e"; }
+.yu-rank:before { content: "\f23f"; }
+.yu-red-pocket:before { content: "\f240"; }
+.yu-redo:before { content: "\f241"; }
+.yu-refresh:before { content: "\f242"; }
+.yu-refresh2:before { content: "\f243"; }
+.yu-refresh3:before { content: "\f244"; }
+.yu-right-bottom-triangle:before { content: "\f245"; }
+.yu-right-circle:before { content: "\f246"; }
+.yu-right-top-triangle:before { content: "\f247"; }
+.yu-rocket:before { content: "\f248"; }
+.yu-sad:before { content: "\f249"; }
+.yu-sad-o:before { content: "\f24a"; }
+.yu-safari:before { content: "\f24b"; }
+.yu-save:before { content: "\f24c"; }
+.yu-save-o:before { content: "\f24d"; }
+.yu-scissor:before { content: "\f24e"; }
+.yu-scissor-cut:before { content: "\f24f"; }
+.yu-scope:before { content: "\f250"; }
+.yu-search:before { content: "\f251"; }
+.yu-search-minus:before { content: "\f252"; }
+.yu-search-o:before { content: "\f253"; }
+.yu-search-plus:before { content: "\f254"; }
+.yu-share-alt:before { content: "\f255"; }
+.yu-share-square:before { content: "\f256"; }
+.yu-share-square-o:before { content: "\f257"; }
+.yu-shopping-cart-full:before { content: "\f258"; }
+.yu-shopping-cart-o:before { content: "\f259"; }
+.yu-shutdown:before { content: "\f25a"; }
+.yu-signal:before { content: "\f25b"; }
+.yu-signal-1:before { content: "\f25c"; }
+.yu-signal-2:before { content: "\f25d"; }
+.yu-signal-3:before { content: "\f25e"; }
+.yu-signal-4:before { content: "\f25f"; }
+.yu-slidebar:before { content: "\f260"; }
+.yu-small-rain:before { content: "\f261"; }
+.yu-smile:before { content: "\f262"; }
+.yu-smile-o:before { content: "\f263"; }
+.yu-snow:before { content: "\f264"; }
+.yu-sofa:before { content: "\f265"; }
+.yu-spinner:before { content: "\f266"; }
+.yu-square:before { content: "\f267"; }
+.yu-stack-overflow:before { content: "\f268"; }
+.yu-star:before { content: "\f269"; }
+.yu-star-o:before { content: "\f26a"; }
+.yu-step-backward:before { content: "\f26b"; }
+.yu-step-forward:before { content: "\f26c"; }
+.yu-stop:before { content: "\f26d"; }
+.yu-sun:before { content: "\f26e"; }
+.yu-system:before { content: "\f26f"; }
+.yu-table:before { content: "\f270"; }
+.yu-tag:before { content: "\f271"; }
+.yu-tags:before { content: "\f272"; }
+.yu-taobao:before { content: "\f273"; }
+.yu-taxi:before { content: "\f274"; }
+.yu-temperature-1:before { content: "\f275"; }
+.yu-temperature-2:before { content: "\f276"; }
+.yu-temperature-3:before { content: "\f277"; }
+.yu-temperature-empty:before { content: "\f278"; }
+.yu-temperature-full:before { content: "\f279"; }
+.yu-tencent-weibo:before { content: "\f27a"; }
+.yu-thinking:before { content: "\f27b"; }
+.yu-tmall:before { content: "\f27c"; }
+.yu-touchmeter:before { content: "\f27d"; }
+.yu-train:before { content: "\f27e"; }
+.yu-trash:before { content: "\f27f"; }
+.yu-tree:before { content: "\f280"; }
+.yu-triangle-square-o:before { content: "\f281"; }
+.yu-tv:before { content: "\f282"; }
+.yu-twitter:before { content: "\f283"; }
+.yu-twitter2:before { content: "\f284"; }
+.yu-umberlla:before { content: "\f285"; }
+.yu-undo:before { content: "\f286"; }
+.yu-unlock:before { content: "\f287"; }
+.yu-up-chart:before { content: "\f288"; }
+.yu-up-circle:before { content: "\f289"; }
+.yu-update:before { content: "\f28a"; }
+.yu-upload:before { content: "\f28b"; }
+.yu-usb:before { content: "\f28c"; }
+.yu-user:before { content: "\f28d"; }
+.yu-user-add:before { content: "\f28e"; }
+.yu-user-check:before { content: "\f28f"; }
+.yu-user-close:before { content: "\f290"; }
+.yu-user-delete:before { content: "\f291"; }
+.yu-user-o:before { content: "\f292"; }
+.yu-user-round:before { content: "\f293"; }
+.yu-user-round-add:before { content: "\f294"; }
+.yu-user-round-check:before { content: "\f295"; }
+.yu-user-round-circle:before { content: "\f296"; }
+.yu-user-round-circle-o:before { content: "\f297"; }
+.yu-user-round-close:before { content: "\f298"; }
+.yu-user-round-delete:before { content: "\f299"; }
+.yu-user-round-o:before { content: "\f29a"; }
+.yu-user-round-wait:before { content: "\f29b"; }
+.yu-user-search:before { content: "\f29c"; }
+.yu-user-wait:before { content: "\f29d"; }
+.yu-users:before { content: "\f29e"; }
+.yu-users-o:before { content: "\f29f"; }
+.yu-video:before { content: "\f2a0"; }
+.yu-vip:before { content: "\f2a1"; }
+.yu-visa:before { content: "\f2a2"; }
+.yu-voice:before { content: "\f2a3"; }
+.yu-voice-close:before { content: "\f2a4"; }
+.yu-wallet:before { content: "\f2a5"; }
+.yu-warning-circle:before { content: "\f2a6"; }
+.yu-warning-circle-o:before { content: "\f2a7"; }
+.yu-warning-triangel:before { content: "\f2a8"; }
+.yu-wechat:before { content: "\f2a9"; }
+.yu-weibo:before { content: "\f2aa"; }
+.yu-whatsapp:before { content: "\f2ab"; }
+.yu-wifi:before { content: "\f2ac"; }
+.yu-wind:before { content: "\f2ad"; }
+.yu-window:before { content: "\f2ae"; }
+.yu-window-add:before { content: "\f2af"; }
+.yu-windows:before { content: "\f2b0"; }
+.yu-woman:before { content: "\f2b1"; }
+.yu-wordress:before { content: "\f2b2"; }
+.yu-wrench:before { content: "\f2b3"; }
+.yu-yahoo:before { content: "\f2b4"; }
+.yu-yuan:before { content: "\f2b5"; }
+.yu-yuren:before { content: "\f2b6"; }
+.yu-yutube:before { content: "\f2b7"; }

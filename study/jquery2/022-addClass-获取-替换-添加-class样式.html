@@ -23,7 +23,7 @@
 <body>
 <input type="text" name="username" />
 <div class="mydiv test" id="box">我</div>
-<ul class="myul">
+<ul class="myul" id="ul1">
     <li class="new" id="llll">1</li>
     <li class="old">2</li>
     <li>3</li>
@@ -39,7 +39,7 @@
 </ul>
 
 
-<ul class="myul3">
+<ul class="linda2 bob cindy linda1" id="ul3">
     <li>a</li>
     <li>b</li>
     <li>c</li>
@@ -50,20 +50,40 @@
 <script>
 
 
-    //获取class名
-    alert($(".myul2").attr("class"));
+//    //获取class名
+//    alert($(".myul2").attr("class"));
+//
+//    //替换class
+//    $(".myul3").attr("class","color");
+//
+//    //追加class
+//    $(".mydiv").addClass("back");
+//
+//    //删除指定class
+//    $(".mydiv").removeClass("test");
+//
+//    //重复切换class，如果某元素的class中有指定元素，则删除该元素，如果没有，则添加。toggle切换效果
+//    $(".mydiv").toggleClass("on");
 
-    //替换class
-    $(".myul3").attr("class","color");
+    //原生js实现
+    var ul1 = document.getElementById("ul1");
+    var ul3 = document.getElementById("ul3");
+    ul1.getAttribute("class");
+    ul1.setAttribute("class","color");
+    ul1.setAttribute("class",ul1.getAttribute("class")+" 2color");
+    ul3.removeClass("bob");
+    if (ul3.getAttribute("class").indexOf("linda ")=="0"){
+        var newclass = ul3.getAttribute("class").replace(/linda /g, " ");
+        ul3.setAttribute("class",newclass);
+    }else{
+        var newclass = ul3.getAttribute("class").replace(/ linda/g, " ");
+        ul3.setAttribute("class",newclass);
+    }
 
-    //追回class
-    $(".mydiv").addClass("back");
 
-    //删除指定class
-    $(".mydiv").removeClass("test");
 
-    //重复切换class，如果某元素的class中有指定元素，则删除该元素，如果没有，则添加。toggle切换效果
-    $(".mydiv").toggleClass("on");
+
+
 
 
 

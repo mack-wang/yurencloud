@@ -14,7 +14,7 @@
 <body>
 <input type="text" name="username"/>
 <div class="mydiv" id="box">我</div>
-<ul class="myul">
+<ul class="myul" id="ul1">
     <li class="new" id="llll">1</li>
     <li class="old">2</li>
     <li>3</li>
@@ -41,25 +41,25 @@
 <script>
 
 
-    //获取指定属性名的属性值
-    alert($(".mydiv").attr("id"));
-
-    //设置指定属性名的属性值
-    $(".mydiv").attr("title", "我是新增加的属性值哦");
-
-    //删除属性
-    $(".mydiv").removeAttr("id");
-
-
-    //以下是针对元素集中的第一个元素的属性操作
-    //选中多个元素，获取第一个元素的属性
-    console.log($(".myul li").prop("class"));
-
-    //选中多个元素，设置第一个元素的属性
-    $(".myul li").prop("title", "是我");
-
-    //选中多个元素，删除第一个元素的属性
-    $(".myul li").removeProp("id");
+//    //获取指定属性名的属性值
+//    alert($(".mydiv").attr("id"));
+//
+//    //设置指定属性名的属性值
+//    $(".mydiv").attr("title", "我是新增加的属性值哦");
+//
+//    //删除属性
+//    $(".mydiv").removeAttr("id");
+//
+//
+//    //以下是针对元素集中的第一个元素的属性操作
+//    //选中多个元素，获取第一个元素的属性
+//    console.log($(".myul li").prop("class"));
+//
+//    //选中多个元素，设置第一个元素的属性
+//    $(".myul li").prop("title", "是我");
+//
+//    //选中多个元素，删除第一个元素的属性
+//    $(".myul li").removeProp("id");
 
 
     /*
@@ -79,6 +79,12 @@
      *
      *
      * */
+
+    //原生js实现
+    var ul1 = document.getElementById("ul1");
+    ul1.getAttribute("id");
+    ul1.setAttribute("title","我是新的");
+    ul1.removeAttribute("class");
 
 
 </script>
