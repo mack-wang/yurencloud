@@ -38,16 +38,18 @@
     $("ul:nth-child(3n)");//选取ul元素下，索引值为3的倍数的li元素，返回元素集合（n从1开始）
     $("ul:nth-child(3n+1)");//选取ul元素下，索引值为（3n+1）的li元素，返回元素集合（n从1开始）
 
-
-
-
-
-
-
-
-
-
-
+    //原生js实现
+    var li1 = document.querySelector("li:nth-child(1)");
+    var li2 = document.querySelector("li:first-child");
+    var li3 = document.querySelector("li:last-child");
+    var li4 = document.getElementsByTagName("li");
+    //选取偶数元素
+    for (var i = 0; i < li44.length; i++) {
+        var even = i % 2;
+        if (even == 1) {
+            li44[i].style.color = "red";
+        }
+    }
 
 
 </script>

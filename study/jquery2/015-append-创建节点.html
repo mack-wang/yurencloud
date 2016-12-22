@@ -32,7 +32,14 @@
 
     $(".myul").append($li1);
     $(".myul").append($li2);
-    //$(".myul").append($li1).append($li2)可以采取链式写法
+    $(".myul").append($li1).append($li2)//可以采取链式写法
+
+    //原生js实现
+    //要通过以下方式，才能新建一个元素节点li!!!!
+    var newli = document.createElement("li");
+    var ul = document.getElementsByClassName("myul");
+    newli.innerHTML="6";
+    ul[0].append(newli);
 
 
 

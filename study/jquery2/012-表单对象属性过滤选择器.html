@@ -5,22 +5,24 @@
     <title>jQuery study</title>
 </head>
 <style>
-    .mydiv {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-    }
 </style>
 <body>
-<input type="text" name="username">
-<div class="mydiv" id="box">我</div>
-<ul class="myul">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-    <li>4</li>
-    <li>5</li>
-</ul>
+<form action="">
+    <input type="text" name="name" placeholder="用户名">
+    <input type="password" name="password" placeholder="密码">
+    <input type="checkbox" name="game" checked>游戏
+    <input type="checkbox" name="game2" checked>游戏2
+    <input type="text" name="email" placeholder="邮箱">
+    <select name="select" id="">
+        <option value="beijing">北京</option>
+        <option value="shanghai" selected>上海</option>
+        <option value="shanghai2">上海2</option>
+    </select>
+    <p>你好</p>
+    <span>大家好</span>
+
+
+</form>
 </body>
 <script src="js/jquery-3.1.1.min.js"></script>
 <script>
@@ -32,7 +34,22 @@
     $("select option:selected");//选取所有被选中的元素（下拉列表），选取select下拉列表中被选中的option元素
 
 
+    //原生js实现
+    //$("form:enabled");
+    var form1 = document.querySelectorAll("form input,form select");
+    //$("form:disabled");
+    var form2 = document.querySelectorAll("form *");
+    for(var i=0;i<form2.length;i++){
+        var tagname = form2[i].tagName;
+        if (tagname !="INPUT"&&tagname!="SELECT"&&tagname!="OPTION"){
+            console.log(tagname);
+            console.log(form2[i]);
+        }
+    }
 
+    //$("input:checked");
+    var form3 = document.querySelectorAll("input:checked");
+    var form4 = document.querySelectorAll("option:selected");//这个无效
 
 
 
