@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+一、后代：>
+ul>li>a
+<ul>
+    <li><a href=""></a></li>
+</ul>
+
+二、兄弟：+
+div+span+p+ul
+<div></div>
+<span></span>
+<p></p>
+<ul></ul>
+
+三、上一级：^
+连用可表示上上级，上上上级...
+
+div>ul>li^ul
+<div>
+    <ul>
+        <li></li>
+    </ul>
+    <ul></ul>
+</div>
+
+div>ul>li^^ul
+<div>
+    <ul>
+        <li></li>
+    </ul>
+</div>
+<ul></ul>
+
+
+
+四、分组：（）
+div>(header>ul>li*2>a)+footer>p
+浏览器从左往右读取并执行，括号和数学中的作用差不多
+>相当于乘号，+相当于加号，（）相当于括号，执行的顺序也按这种顺序
+<div>
+    <header>
+        <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </header>
+    <footer>
+        <p></p>
+    </footer>
+</div>
+
+五、乘号：*
+用于批量复制
+ul>li*5
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+
+六、自增符号：$
+$代表1，2，3，4...
+$$表示01，02，03..
+$$$表示001，002，003...
+可以用在任何地方
+要配合*号使用，否则表示0
+
+ul>li.item$*5
+<ul>
+    <li class="item1"></li>
+    <li class="item2"></li>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+</ul>
+
+h$.item$$[name=title$]{我是中国第$$$$名}*5
+<h1 class="item01" name="title1">我是中国第0001名</h1>
+<h2 class="item02" name="title2">我是中国第0002名</h2>
+<h3 class="item03" name="title3">我是中国第0003名</h3>
+<h4 class="item04" name="title4">我是中国第0004名</h4>
+<h5 class="item05" name="title5">我是中国第0005名</h5>
+
+
+七、自增顺序：@
+$@-：表示倒序
+$@数字：表示从指定数字开始计算，默认为1
+
+ul>li.item$@-*5
+<ul>
+    <li class="item5"></li>
+    <li class="item4"></li>
+    <li class="item3"></li>
+    <li class="item2"></li>
+    <li class="item1"></li>
+</ul>
+
+ul>li.item$@3*5
+<ul>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+    <li class="item6"></li>
+    <li class="item7"></li>
+</ul>
+
+
+八、ID和类属性:# .
+
+#box
+如果不写元素，则默认为div元素
+<div id="box"></div>
+.box
+<div class="box"></div>
+
+支持无限连写，只要符合语法规则
+#box.box.box2.box3.box4
+<div id="box" class="box box2 box3 box4"></div>
+
+span#box.box1.box2.box3.box4
+<span id="box" class="box1 box2 box3 box4"></span>
+
+
+九、其他标准属性和自定义的属性：[]
+
+标准属性
+div[title=hello]
+<div title="hello"></div>
+自定义属性
+div[wlc=mackwang]
+<div wlc="mackwang"></div>
+
+十、文本:{}
+
+div{hello world}
+<div>hello world</div>
+
+div>ul>li{i am $}*5
+<div>
+    <ul>
+        <li>i am 1</li>
+        <li>i am 2</li>
+        <li>i am 3</li>
+        <li>i am 4</li>
+        <li>i am 5</li>
+    </ul>
+</div>
+
+十二、如果创建元素时，不指定标签，一般默认为div
+#box
+<div id="box"></div>
+.box
+<div class="box"></div>
+[name=box]
+<div name="box"></div>
+[value=box]
+<div value="box"></div>
+
+=========================
+
+以下为特殊情况
+
+em>.item
+若em的子元素的class没指定标签，则默认为span
+<em><span class="item"></span></em>
+
+ul>.item
+子元素默认为li
+<ul>
+    <li class="item"></li>
+</ul>
+
+table>.row>.col
+子元素默认为row,孙元素默认为col
+<table>
+    <tr class="row">
+        <td class="col"></td>
+    </tr>
+</table>
+
+
+十三、未知标签
+wlc
+<wlc></wlc>
+
+
+
+十四、html声明：!
+
+!
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+十五、a链接
+
+a
+<a href=""></a>
+a:link
+<a href="http://"></a>
+a:mail
+<a href="mailto:"></a>
+
+十六、标准标签会自带标准格式
+br
+<br>
+col
+<col>
+hr
+<hr>
+div
+<div></div>
+
+十七、link标签
+link
+<link rel="stylesheet" href="">
+link:css
+<link rel="stylesheet" href="style.css">
+link:print
+<link rel="stylesheet" href="print.css" media="print">
+link:favicon
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+link:touch
+<link rel="apple-touch-icon" href="favicon.png">
+link:rss
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+
+十八、meta标签
+meta
+<meta>
+
+meta:utf
+生成html4标准字符编码声明
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+meta:vp
+生成移动端内容自适应宽高的声明
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+
+
+十九、input标签
+
+input:type
+可以生成对应的input类型
+常用的那几个可以用单个字母表示
+input
+<input type="text">
+inp
+一般input都要name值和id值，所以给了个简写
+<input type="text" name="" id="">
+input:hidden
+<input type="hidden" name="">
+input:h
+<input type="hidden" name="">
+input:text
+<input type="text" name="" id="">
+input:t
+<input type="text" name="" id="">
+input:search
+<input type="search" name="" id="">
+input:email
+<input type="email" name="" id="">
+input:url
+<input type="url" name="" id="">
+input:password
+<input type="password" name="" id="">
+input:p
+<input type="password" name="" id="">
+input:datetime
+<input type="datetime" name="" id="">
+input:date
+<input type="date" name="" id="">
+input:number
+<input type="number" name="" id="">
+input:checkbox
+<input type="checkbox" name="" id="">
+input:c
+<input type="checkbox" name="" id="">
+
+
+二十：部分名字比较长的标签，单词可以缩写
+bq
+<blockquote></blockquote>
+fig
+<figure></figure>
+figc
+<figcaption></figcaption>
+ifr
+<iframe src="" frameborder="0"></iframe>
+emb
+<embed src="" type="">
+obj
+<object data="" type=""></object>
+cap
+<caption></caption>
+fst
+<fieldset></fieldset>
+btn
+    <button></button>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+
+    <!--全局属性，所有元素都支持-->
+
+    <!--contenEditable可以编辑元素文本-->
+    <div contentEditable="true">我也是</div>
+    <ul contentEditable="true">
+        <li>我是可以编辑的元素</li>
+        <li>我是可以编辑的元素</li>
+        <li>我是可以编辑的元素</li>
+        <li>我是可以编辑的元素</li>
+        <li>我是可以编辑的元素</li>
+    </ul>
+    <p contentEditable="true">我也是</p>
+
+
+    <!--designMode页面上所有的文本都可以编辑，该属性只能在js中添加，document.designMode="on"或"off"-->
+    <script>document.designMode="off";</script><!--我试试了一下，所有浏览器都有效-->
+    <ul>
+        <li>我是可以编辑的元素</li>
+        <li>我是可以编辑的元素</li>
+        <li>我是可以编辑的元素</li>
+        <li>我是可以编辑的元素</li>
+        <li>我是可以编辑的元素</li>
+    </ul>
+
+    <!--hidden隐藏元素-->
+    <div hidden="true">hello</div>
+    <p hidden="true">hello</p>
+    <p >helloc</p>
+
+    <!--spellcheck属性,这个仅针对input,textarea-->
+    <input type="text" spellcheck="true">
+    <input type="text" spellcheck="false">
+    <textarea name="" id="" cols="30" rows="10" spellcheck="true"></textarea>
+
+    <!--tabindex 把下键盘的tab键时，设置访问顺序-->
+    <!--设置过tabindex的元素优先访问，设置为-1时，该元素无法通过tab访问-->
+    <input type="text" tabindex="5">
+    <input type="text" tabindex="2">
+    <input type="text" tabindex="3">
+    <input type="text" tabindex="4">
+    <input type="text" tabindex="1">
+    <input type="text" tabindex="6">
+    <input type="text" tabindex="-1">
+    <input type="text" tabindex="7">
+</form>
+</body>
+
+</html>
