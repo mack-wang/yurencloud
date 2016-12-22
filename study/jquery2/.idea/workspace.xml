@@ -97,8 +97,8 @@
       <file leaf-file-name="011-子元素过滤选择器.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/011-子元素过滤选择器.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="646">
+              <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -367,12 +367,12 @@
       <workItem from="1481890893965" duration="4388000" />
       <workItem from="1481941172291" duration="6008000" />
       <workItem from="1481976636904" duration="8654000" />
-      <workItem from="1482028305032" duration="22015000" />
+      <workItem from="1482028305032" duration="22102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107447000" />
+    <option name="totallyTimeSpent" value="107534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1010" extended-state="0" />
@@ -814,8 +814,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/011-子元素过滤选择器.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="646">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
           <folding />
         </state>
       </provider>
