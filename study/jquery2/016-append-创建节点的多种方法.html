@@ -12,7 +12,7 @@
     }
 </style>
 <body>
-<input type="text" name="username" />
+<input type="text" name="username"/>
 <div class="mydiv" id="box">我</div>
 <ul class="myul">
     <li>1</li>
@@ -46,19 +46,19 @@
 
     $ul.insertBefore($(".myul"));//插入同辈元素到指定元素前，把ul元素插入到myul前（把A2元素添加到A1前）
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //原生js实现
+    var li1 = document.createElement("li");
+    var p1 = document.createElement("p");
+    var ul1 = document.getElementsByClassName("myul");
+    li1.innerHTML = "6";
+    p1.innerHTML = "wlc";
+    ul1[0].append(li1);
+    //    li1.appendTo(ul1[0]);//不支持
+    ul1[0].prepend(li1);
+    //    li1.prependTo(ul1[0]);//不支持
+    //p1.after(ul1[0]);//不支持
+    var insertli = ul1[0].parentNode.insertBefore(p1, ul1[0].parentNode.childNodes.item(4));
+    //p1.before(ul1[0]);//不支持
 
 
 </script>
