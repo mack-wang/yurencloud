@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--  article:代表文档，内容，帖子，评论，文章。每个article通常都有自己的标题，放在header元素里（有时还有footer脚注）      -->
+<!--结构-->
+article>(header>h1)+p+(footer>p)
+<article>
+    <header>
+        <h1>中国发表言论</h1>
+    </header>
+    <p>我是中国人</p>
+    <footer>
+        <p>@我是脚注</p>
+    </footer>
+</article>
+
+<!--article可以嵌套，但子article元素应该都和父article元素有关，这些嵌套的article应该放到section块中。子article也要拥有完整语义结构-->
+
+<!--结构-->
+article>(header>h1)+(section>(article>header>h2+p)*3)
+<article>
+    <header>
+        <h1>下面我们来好好讨论一下苹果手机</h1>
+    </header>
+    <section>
+        <article>
+            <header>
+                <h2>文章一：苹果手机不好</h2>
+                <p>1</p>
+            </header>
+        </article>
+        <article>
+            <header>
+                <h2>文章二：苹果手机还可以</h2>
+                <p>2</p>
+            </header>
+        </article>
+        <article>
+            <header>
+                <h2>文章三：哈哈</h2>
+                <p>3</p>
+            </header>
+        </article>
+    </section>
+</article>
+
+
+<!--article也可以用来表示插件,内嵌页面，像frame。当然也是要有标题的-->
+<!--结构-->
+article>h1+object>param+embed
+<article>
+    <h1></h1>
+    <object data="" type="">
+        <param name="allowFullScreen" value="true">
+        <embed src="#" type="" width="600" height="400">
+    </object>
+</article>
+
+</body>
+
+</html>

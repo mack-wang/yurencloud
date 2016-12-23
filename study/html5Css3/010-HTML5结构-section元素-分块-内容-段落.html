@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- section表示块，语义上和div有点像，表示内容区域。但section最好用来容纳内容，不涉及js。而div可以用来配合js 。该元素最好要有标题。-->
+<!--格式-->
+section>h1+p
+<section>
+    <h1>标题</h1>
+    <p>内容</p>
+</section>
+
+
+<!-- section表示分区，段落，分块。而article则是代表一个独立的，完整的内容。  -->
+<!--格式-->
+article>(header>h1)+(section>h2+p)*3
+<!--这里article为一篇文章，section分段-->
+<article>
+    <header>
+        <h1>苹果</h1>
+    </header>
+    <section>
+        <h2>苹果的大小</h2>
+        <p>1</p>
+    </section>
+    <section>
+        <h2>苹果的营养</h2>
+        <p>2</p>
+    </section>
+    <section>
+        <h2>苹果的价格</h2>
+        <p>3</p>
+    </section>
+</article>
+
+section>h1+(article>h2+p)*3
+<!--这里的section还是段落的意思-->
+<section>
+    <h1>水果一级段落</h1>
+    <article>
+        <h2>苹果二级段落</h2>
+        <p>1</p>
+    </article>
+    <article>
+        <h2>梨二级段落</h2>
+        <p>2</p>
+    </article>
+    <article>
+        <h2>桃子二级段落</h2>
+        <p>3</p>
+    </article>
+</section>
+
+
+</body>
+
+</html>

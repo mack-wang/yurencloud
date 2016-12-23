@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--time不知道用来干嘛-->
+<!--time日期和时间之间要用T来分开，末尾加Z表示UTC标准时间，+09:00表示加9个小时的时差-->
+time[datetime=]
+<time datetime="2010-11-13">2010年11月13日</time>
+<time datetime="2010-11-13">11月13日</time>
+<time datetime="2010-11-13">我的生日</time>
+<time datetime="2010-11-13T20:00">我的生日的晚上8点</time>
+<time datetime="2010-11-13T20:00Z">我的生日的晚上8点</time>
+<time datetime="2010-11-13T20:00+09:00">我的生日的晚上8点(美国时间)</time>
+
+<!--pubdate属性：表示文章发布时间。是为了和普通的time区别开来-->
+<time datetime="2010-11-11" pubdate="true"></time>
+
+
+</body>
+
+</html>
