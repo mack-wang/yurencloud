@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+
+value属性为实际值
+min属性为允许的最小值
+max属性为允许的最大值
+low属性为范围的下限，必须小于或者等于high属性值。如果low小于min，则min值自动变为low
+high属性为范围的上限，如果high小于low，则low为high，如果hith大于max，则max为high
+optimum属性为最佳值
+
+以上不同的属性可以搭配出不同的显示效果
+
+
+-->
+
+<p>磁盘使用量：<meter value="30" min="0" max="100"></meter>当前磁盘使用了30GB</p>
+<p>电量剩余量：<meter value="30" low="40" max="100"></meter>当前电量只剩下30%，低于下限40%了，警告</p>
+<p>温度量：<meter value="90" high="80" max="100"></meter>当前温度为90度，高于上限80%了，警告</p>
+
+</body>
+</html>

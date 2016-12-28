@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--1、HTML4的表单内元素必须写在form元素内，而HTML5的表单内元素可以写在form元素外，只要该元素的form属性指定为form元素的id值，例子如下：-->
+
+form#testform>input[type=text][name=name]^input[type=text][name=phone][form=testform]
+<form action="" id="testform">
+    <input type="text" name="name">
+</form>
+<input type="text" name="phone" form="testform">
+
+
+<!--2、formation这个属性，让表单元素提交到form的action之外的页面-->
+<form action="serve.php" id="testform2">
+    <input type="submit" value="s1" name="s1" formaction="s1.php">提交到s1.php
+    <input type="submit" value="s2" name="s2" formaction="s2.php">提交到s2.php
+    <input type="submit" value="s3" name="s3">提交到serve.php
+    <input type="submit" value="">
+</form>
+
+<!--3、HTML5可以通过formmethod属性，让表单元素使用不同的方法来提交数据-->
+form#testform3[action=server.php]>input:submit[value=1][formmethod=post]+input:submit[value=2][formmethod=get]
+<form action="server.php" id="testform3">
+    <input type="submit" value="1" formmethod="post">
+    <input type="submit" value="2" formmethod="get">
+</form>
+
+<!--4、HTML5的表单元素可以通过formenctype属性来指定不同的编码方式-->
+<form action="server.php" method="post">
+    <input type="text" name="name" id="" value="test"><br>
+    文件：<input type="file" name="files">
+    <input type="submit" value="上传" formaction="uploadFile.php" formenctype="multipart/form-data">
+    <input type="submit" value="提交">
+</form>
+
+<!--5、HTML5的表单元素可以通过formtarget属性来指定，在何处打开表单提交后需要加载的页面-->
+
+<form action="">
+    <input type="submit" value="v1" name="s1" formaction="s1.php" formtarget="_self">提交到s1并在当前窗口打开提交后需要加载的页面（或者当前frame框架中）
+    <input type="submit" value="v2" name="s2" formaction="s2.php" formtarget="_blank">提交到s2并在新建窗口打开提交后需要加载的页面
+
+    <!--
+
+    还有_parent要当前框架frame的父框架中打开，
+    _top在当前的浏览器窗口
+    framename在指定的框架frame中打开
+    -->
+</form>
+
+<!--autofocus属性，使当前的文本框，选择框，或者按钮控件上自动获得焦点.【建议一个页面上最多只有一个自动聚焦，比如搜索框，第一条表单输入框】-->
+    <input type="text" autofocus>
+
+<!--required属性，必填。如果提交的内容为空，浏览器则会提示用户-->
+    <input type="text" required>
+
+<!--labels属性，是可以用一个label和input等一些表单元素绑定，可以输出相关提示信息。要和js配合使用-->
+<form action="">
+    <label for="txt_name">姓名：</label>
+    <input type="text" id="txt_name">
+    <input type="button" id="btn" value="验证" onclick="validate()">
+</form>
+<script>
+    function validate() {
+        var txtName = document.getElementById("txt_name");
+        var button = document.getElementById("btn");
+        var form = document.getElementById("textform");
+        if (txtName.value.trim()==""){
+            if(txtName.label.length==1)
+            {
+                var label=document.createElement("label");
+                label.setAttribute("for","txt_name");
+                txtName.label[1].innerHTML="请输入姓名"
+                txtName.label[1].setAttribute("style","font-size:9px;color:red;");
+            }
+        }else if(txtName.labels.length>1){
+            form.removeChild(txtName.labels[1]);
+        }
+    }
+
+</script>
+
+<!--control属性略-->
+
+<!--placeholder指当前文本框处于未输入状态时显示的提示信息-->
+<input type="text" name="" id="" placeholder="你好，请输入你的名字">
+
+<!--
+
+定义placeholder样式
+input:-moz-placeholder{
+    color:red;
+    }
+    或
+input:-webkit-input-placeholder{
+    color:red;
+    }
+-->
+
+<!--list属性：让单选文本框可以出现选择列表-->
+<input type="text" name="greeting" list="greetings">
+<!--注意要设置为display:none让datalist元素设定为不显示-->
+<!--一般最新版的浏览器才支持-->
+<datalist id="greetings" style="display: none;">
+    <option value="good morning">good morning</option>
+    <option value="hello">hello</option>
+    <option value="good night">good night</option>
+</datalist>
+
+
+<!--autocomplete属性：辅助自动完成功能，会自动弹出候选提示，和list的用法有点像-->
+
+<!--pattern属性：用来辅助验证表单数据格式-->
+
+<!-- datatime-local是提交日期的表单，可以使用浏览器提供的日历选择和时间选择，而不用专门去添加日历插件-->
+<input type="datetime-local">
+
+</body>
+</html>

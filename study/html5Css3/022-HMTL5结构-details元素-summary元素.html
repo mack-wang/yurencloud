@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--details元素是用来标识该元素具有内部子元素可以展开和收缩的元素，就是折叠列表。它自带一个open属性，为true时，内部元素为展开状态.-->
+<!--summary从属于details元素，要写在details的内部，summary相当于一个标题，点击他，即可展架和收缩details-->
+<script>
+    function toggle(detail) {
+        var p=document.getElementById("p");
+        if(detail.open){
+            p.style.visibility="visible";
+        }else{
+            p.style.visibility="hidden";
+        }
+    }
+
+</script>
+<details id="detaill" ontoggle="toggle(this)" style="cursor:pointer">
+    <summary>西游记</summary>
+    <p id="p" style="visibility: hidden">是讲述唐僧师徒四人西天取经的故事</p>
+
+</details>
+
+
+
+</body>
+</html>

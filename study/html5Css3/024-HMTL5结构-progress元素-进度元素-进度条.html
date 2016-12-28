@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>我已经下载完成的百分比为: <span id="persent"></span><span>%</span></p>
+
+<!--其中，max为总量，value为已经完成的量，进度条会自动显示value/max比例的颜色-->
+<progress id="progress" max="100" value=""></progress>
+<progress id="progress2" max="100" value=""><span id="persent2"></span><span>%</span></progress>
+<button onclick="mytime()"></button>
+
+
+
+</body>
+<script>
+    var persent = document.getElementById("persent");
+    var persent2 = document.getElementById("persent2");
+    var progress = document.getElementById("progress");
+    var progress2 = document.getElementById("progress2");
+    var num = 0;
+    function mytime() {
+        setTimeout(function () {
+            if (num < 100) {
+                progress.value = num++;
+                progress2.value = num++;
+                persent.innerHTML=num;
+                persent2.innerHTML=num;
+                mytime();
+            }
+        }, 100)
+    }
+
+</script>
+</html>

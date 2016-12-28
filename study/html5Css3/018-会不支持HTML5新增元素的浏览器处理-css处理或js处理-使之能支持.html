@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*给HTML5新增的元素增加block声明,这样能使一些不支持HTML5的新增元素的浏览器可以用css来支持*/
+    article,aside,dialog,figure,footer,header,legend,nav,section,main{
+        display: block;}
+    /*当然IE9以下版本不支持css的这样声明，也不支持HTML5的新增元素，我们可以通过js来实现支持*/
+</style>
+<body>
+
+<!--main元素表示主要内容，及除了导航，网站logo，公共搜索，脚部，头部这些之外的内容。可以作为内容的主要外框。-->
+header+(main>ul>li*5)+footer
+<header>title</header>
+<main>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</main>
+<footer>footer</footer>
+
+
+</body>
+<script>
+    /*当然IE9以下版本不支持css的这样声明，也不支持HTML5的新增元素，我们可以通过js来实现支持。这样写，即使是那些支持HTML5的浏览器执行到，也不会产生不良影响*/
+    document.createElement("header");
+    document.createElement("nav");
+    document.createElement("article");
+    document.createElement("footer");
+    document.createElement("main");
+</script>
+</html>
