@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--sandbox属性(安全沙箱模式)：如果添加该属性则意味着你要限制该iframe的权限，该页面插件禁用，表单禁止提交，js禁运行，禁超链接，禁用cookie等。-->
+<iframe src="http://www.yurencloud.com" frameborder="0" width="1024" height="768" sandbox></iframe>
+<iframe src="http://www.baidu.com" frameborder="0" width="1024" height="768" sandbox=""></iframe>
+<!--
+只有比较新的浏览器才支持
+js来判断浏览器是否支持sandbox
+if("sandbox" in document.createElement("iframe")){
+//该浏览器支持sandbox
+}sele{
+//该浏览器不支持sandbox
+}
+-->
+
+
+<!--
+
+sandbox的属性值可以为以下：
+allow-froms：允许iframe的表单提交。
+allow-scripts：允许iframe的js运行
+allow-same-origin：允许同一个服务器端的内容加载（可能是不同的源）
+allow-top-navigation:允许iframe中的超链接
+
+
+
+-->
+
+
+</body>
+</html>

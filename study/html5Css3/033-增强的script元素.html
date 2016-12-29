@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--async属性：浏览器原本是先下载js文件，再加载页面，添加了async可以让页面先加载，加载完之后再下载js。加载完js之后，还会触发onload事件-->
+<script async src="xxxx.js" onload="myonload()"></script>
+
+<!--defer属性：先下载js文件，再加载页面，等页面加载完之后，再执行onload事件（原本下载完js之后就会执行onload事件）。-->
+<script defer src="xxxx.js" onload="myonload()"></script>
+</body>
+</html>
