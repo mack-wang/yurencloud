@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>贪吃蛇</title>
+</head>
+<style type="text/css">
+    table {
+        border: 1px solid #eee;
+    }
+
+    td {
+        border: 1px solid #eee;
+        width: 10px;
+        height: 10px;
+    }
+
+    #btn {
+        margin: 20px;
+    }
+</style>
+
+<body>
+<table id="table" cellspacing="0"></table>
+<button onclick="playgame()" id="btn">开始游戏</button>
+</body>
+<script type="text/javascript" src="EventUtil.js"></script>
+<script type="text/javascript">
+
+    var table = document.getElementById("table"),
+            snake,
+            carrier,
+            m,
+            n,
+            directkey, //right,
+            headX,
+            headY,
+            len,
+            timeout;
+
+    function createTable() {
+        for (var i = 1; i <= 50; i++) {
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (var j = 1; j <= 50; j++) {
+                var td = document.createElement("td");
+                tr.appendChild(td);
+            }
+        }
+    }
+
+    createTable();
+
+    function playgame() {
+        snake = [
+            [25, 25],
+            [25, 24],
+            [25, 23]
+        ];
+        carrier = multiArray();
+        directkey = 39; //right,
+        headX = 25;
+        headY = 25;
+        len = 3;
+        initSnake();
+        newFood();
+        timeout = false;
+        step();
+    }
+
+    function multiArray() {
+        var arr = [];
+        for (var i = 0; i < 50; i++) {
+            arr[i] = [];
+        }
+        return arr;
+    }
+
+    function createPointer(x, y) {
+        table.childNodes[x].childNodes[y].style.background = "red";
+    }
+
+    function initSnake() {
+        for (var i = 0; i < snake.length; i++) {
+            var x = snake[i][0],
+                    y = snake[i][1];
+            createPointer(x, y);
+            carrier[x][y] = "snake";
+        }
+    }
+
+    function newFood() {
+        m = Math.floor(Math.random() * 50);
+        n = Math.floor(Math.random() * 50);
+        console.log(m,n,carrier[m][n]);
+        if (carrier[m][n]) {
+            newFood();
+            return;
+        }
+
+        table.childNodes[m].childNodes[n].style.background = "";
+        carrier[m][n] = "food";
+        table.childNodes[m].childNodes[n].style.background = "green";
+    }
+
+    function snakeAdd(x, y) {
+        snake.unshift([x, y]);
+        initSnake();
+    }
+
+    function step() {
+        if (timeout) return;
+        setTimeout(function () {
+            judge();
+            step();
+        }, 100);
+    }
+
+    function judge() {
+        switch (directkey) {
+            case 37:
+                headY -= 1;
+                break; //left
+            case 38:
+                headX -= 1;
+                break; //up
+            case 39:
+                headY += 1;
+                break; //right
+            case 40:
+                headX += 1;
+                break; //down
+        }
+
+
+        //碰到边界(block),或头碰到身体(cover)，则结束游戏
+        if (headX >= 50 || headX < 0 || headY >= 50 || headY < 0 || carrier[headX][headY] == "snake") {
+            timeout = true;
+            alert("game over");
+            btn.removeAttribute("disabled");
+            btn.innerHTML = "重新游戏";
+            for (var i = 0; i < snake.length; i++) {
+                var x = snake[i][0],
+                        y = snake[i][1];
+                table.childNodes[x].childNodes[y].style.background = "";
+                carrier[x][y] = false;
+            }
+            table.childNodes[m].childNodes[n].style.background = "";
+            carrier[m][n] = false;
+            return;
+        }
+
+        //如果头元素的carrier不是食物，则让snake的尾巴删除出来
+        if (carrier[headX][headY] != "food") {
+            var lastX = snake[snake.length - 1][0],
+                    lastY = snake[snake.length - 1][1];
+            carrier[lastX][lastY] = false;
+            table.childNodes[lastX].childNodes[lastY].style.background = "";
+            snake.pop();
+        }
+        else {
+            carrier[headX][headY] = false;
+            newFood(); //吃掉食物，然后调用addObject("food")，重新生成食物
+        }
+
+
+        //向数组的开头添加一个元素-->从而实现了“视觉上”的snake移动（或吃食物body增长)的效果
+        snakeAdd(headX, headY);
+        len = snake.length;
+
+
+    }
+
+    EventUtil.addHandler(document, "keydown", function (event) {
+        if (event.keyCode > 36 && event.keyCode < 41){
+            directkey = event.keyCode;
+        }
+        return false;
+    });
+
+    var btn = document.getElementById("btn");
+    EventUtil.addHandler(btn, "click", function (event) {
+        btn.setAttribute("disabled", "true");
+
+    })
+</script>
+
+</html>
