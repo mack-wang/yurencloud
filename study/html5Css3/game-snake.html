@@ -23,11 +23,13 @@
 <body>
 <table id="table" cellspacing="0"></table>
 <button onclick="playgame()" id="btn">开始游戏</button>
+<button id="output">分数:0</button>
 </body>
-<script type="text/javascript" src="EventUtil.js"></script>
+<script type="text/javascript" src="js/EventUtil.js"></script>
 <script type="text/javascript">
 
     var table = document.getElementById("table"),
+            output = document.getElementById("output"),
             snake,
             carrier,
             m,
@@ -136,7 +138,7 @@
         //碰到边界(block),或头碰到身体(cover)，则结束游戏
         if (headX >= 50 || headX < 0 || headY >= 50 || headY < 0 || carrier[headX][headY] == "snake") {
             timeout = true;
-            alert("game over");
+            alert("game over 你的最终分数为"+(len-3));
             btn.removeAttribute("disabled");
             btn.innerHTML = "重新游戏";
             for (var i = 0; i < snake.length; i++) {
@@ -167,8 +169,7 @@
         //向数组的开头添加一个元素-->从而实现了“视觉上”的snake移动（或吃食物body增长)的效果
         snakeAdd(headX, headY);
         len = snake.length;
-
-
+        output.innerHTML="分数:"+(len-3);
     }
 
     EventUtil.addHandler(document, "keydown", function (event) {
@@ -181,7 +182,6 @@
     var btn = document.getElementById("btn");
     EventUtil.addHandler(btn, "click", function (event) {
         btn.setAttribute("disabled", "true");
-
     })
 </script>
 

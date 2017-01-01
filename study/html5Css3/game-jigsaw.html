@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>拼图游戏</title>
+</head>
+<style type="text/css">
+    .wrap {
+        width: 602px;
+        height: 602px;
+        border: 1px solid black;
+        position: relative;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        border: 1px solid white;
+        position: absolute;
+    }
+</style>
+<body>
+<div id="wrap" class="wrap">
+    <img src="img/jigsaw/img_01.gif">
+    <img src="img/jigsaw/img_02.gif">
+    <img src="img/jigsaw/img_03.gif">
+    <img src="img/jigsaw/img_04.gif">
+    <img src="img/jigsaw/img_05.gif">
+    <img src="img/jigsaw/img_06.gif">
+    <img src="img/jigsaw/img_07.gif">
+    <img src="img/jigsaw/img_08.gif">
+    <img src="" id="img9">
+</div>
+<div id="picture" class="wrap" style="display:none;">
+    <img src="img/jigsaw/img_01.gif">
+    <img src="img/jigsaw/img_02.gif">
+    <img src="img/jigsaw/img_03.gif">
+    <img src="img/jigsaw/img_04.gif">
+    <img src="img/jigsaw/img_05.gif">
+    <img src="img/jigsaw/img_06.gif">
+    <img src="img/jigsaw/img_07.gif">
+    <img src="img/jigsaw/img_08.gif">
+    <img src="">
+</div>
+<button onclick="playgame()" id="btn">打乱图片</button>
+<button onclick="showPicture()" id="btn2">暂停查看原图</button>
+<button onclick="showPicture()" id="btn3">你当前的步数是：0</button>
+</body>
+<script type="text/javascript" src="js/EventUtil.js"></script>
+<script type="text/javascript">
+    var wrap = document.getElementById("wrap");
+    var picture = document.getElementById("picture");
+    var btn2 = document.getElementById("btn2");
+    var btn3 = document.getElementById("btn3");
+    var img9 = document.getElementById("img9");
+    var topCheck = "000200200200400400400";
+    var leftCheck= "020040002004000200400";
+    var getTop="",getLeft="";
+    var btn = document.getElementById("btn");
+    var arr = [
+        ["0px", "0px"],
+        ["0px", "200px"],
+        ["0px", "400px"],
+        ["200px", "0px"],
+        ["200px", "200px"],
+        ["200px", "400px"],
+        ["400px", "0px"],
+        ["400px", "200px"],
+        ["400px", "400px"]];
+    var scores = 0;
+
+
+    function originalPicture() {
+        for (var i = 0; i < 9; i++) {
+            wrap.children[i].style.top = arr[i][0];
+            wrap.children[i].style.left = arr[i][1];
+        }
+    }
+    originalPicture();
+
+
+
+    function playgame() {
+        randomPosition();
+    }
+
+
+    function showPicture() {
+        if (picture.style.display!="block"){
+            wrap.style.display="none";
+            picture.style.display="block";
+            btn2.innerHTML="返回游戏";
+        for (var i = 0; i < 9; i++) {
+            picture.children[i].style.top = arr[i][0];
+            picture.children[i].style.left = arr[i][1];
+        }}else {
+            picture.style.display="none";
+            wrap.style.display="block";
+            btn2.innerHTML="暂停查看原图";
+        }
+    }
+
+
+
+    function randomPosition() {
+        var randArr = arr.slice(0);//通过slice(0)复制一个数组
+        randArr.sort(function () {
+                return 0.5 - Math.random()
+            });
+        console.log(randArr[5],randArr);
+        for (var i = 0; i < 9; i++) {
+            wrap.children[i].style.top = randArr[i][0];
+            wrap.children[i].style.left = randArr[i][1];
+        }
+    }
+
+
+    EventUtil.addHandler(wrap, "click", function (event) {
+        var tar = EventUtil.getTarget(event);
+        var leftDiffO = parseInt(tar.style.left) - parseInt(img9.style.left);
+        var leftDiff = Math.abs(leftDiffO);
+        var topDiffO = parseInt(tar.style.top) - parseInt(img9.style.top);
+        var topDiff = Math.abs(topDiffO);
+        var sum = leftDiff + topDiff;
+//        console.log(topDiff, leftDiff, sum, tar.style.left, tar.style);
+        if (sum == 200) {
+            if (leftDiffO > 0) {
+                tar.style.left = (parseInt(tar.style.left) - 200) + "px";
+                img9.style.left = (parseInt(tar.style.left) + 200) + "px";
+            } else if (leftDiffO < 0) {
+                tar.style.left = (parseInt(tar.style.left) + 200) + "px";
+                img9.style.left = (parseInt(tar.style.left) - 200) + "px";
+            }
+
+            if (topDiffO > 0) {
+                tar.style.top = (parseInt(tar.style.top) - 200) + "px";
+                img9.style.top = (parseInt(tar.style.top) + 200) + "px";
+            } else if (topDiffO < 0) {
+                tar.style.top = (parseInt(tar.style.top) + 200) + "px";
+                img9.style.top = (parseInt(tar.style.top) - 200) + "px";
+            }
+        }
+        check();
+        scores++;
+        btn3.innerHTML="你当前的步数是："+scores;
+    });
+
+    function check() {
+        for(var i =0;i<9;i++){
+            getTop += String(parseInt(wrap.children[i].style.top));
+            getLeft += String(parseInt(wrap.children[i].style.left));
+        }
+        if (getTop == topCheck && getLeft == leftCheck){
+            alert("恭喜你拼图成功！你的步数是："+scores);
+            btn.innerHTML="再玩一次";
+            scores--;
+        }
+        getTop = "";
+        getLeft = "";
+    }
+
+
+</script>
+
+</html>
