@@ -35,6 +35,7 @@
 <script>
     var table = document.getElementById("table");
     var carrier = multiArray();
+    var carrier2 = multiArray();
     var timeout = false;
     var directkey;
     var posX, posY;
@@ -42,26 +43,27 @@
     var speed = 300;
     var socres = 0;
     var rand15;
+    var m,n;
     var btn = document.getElementById("btn");
-    var tetrisArr =[
-             [[0, 4, 0, 0, 2, 0], [0, [1]], [1, [1]], [2, [1, 2]]],//L1
-             [[0, 4, 0, 1, 2, 1], [1, [1, 2, 3]], [2, [1]]],//L2
-             [[0, 4, 1, 0, 2, 2], [0, [2]], [1, [2]], [2, [1, 2]]],//LR1
-             [[0, 4, 1, 1, 2, 3], [1, [1]], [2, [1, 2, 3]]],//LR2
-             [[0, 4, 2, 0, 4, 4], [1, [1]], [2, [0, 1, 2]]],//T1
-             [[0, 4, 2, 1, 4, 5], [1, [1]], [2, [1, 2]], [3, [1]]],//T2
-             [[0, 4, 2, 2, 4, 6], [2, [0, 1, 2]], [3, [1]]],//T3
-             [[0, 4, 2, 3, 4, 7], [1, [1]], [2, [0, 1]], [3, [1]]],//T4
-             [[0, 4, 3, 0, 1, 8], [1, [1, 2]], [2, [1, 2]]],//O1
-             [[0, 4, 4, 0, 2, 9], [2, [0, 1, 2, 3]]],//I1
-             [[0, 4, 4, 1, 2, 10], [0, [1]], [1, [1]], [2, [1]], [3, [1]]],//I2
-             [[0, 4, 5, 0, 2, 11], [0, [1]], [1, [1, 2]], [2, [2]]],//Z1
-             [[0, 4, 5, 1, 2, 12], [1, [1, 2]], [2, [0, 1]]],//Z2
-             [[0, 4, 6, 0, 2, 13], [0, [2]], [1, [1, 2]], [2, [1]]],//ZR1
-             [[0, 4, 6, 1, 2, 14], [1, [1, 2]], [2, [2, 3]]]//ZR2
+    var tetrisArr = [
+        [[0, 4, 0, 0, 2, 0], [0, [1]], [1, [1]], [2, [1, 2]]],//L1
+        [[0, 4, 0, 1, 2, 1], [1, [1, 2, 3]], [2, [1]]],//L2
+        [[0, 4, 1, 0, 2, 2], [0, [2]], [1, [2]], [2, [1, 2]]],//LR1
+        [[0, 4, 1, 1, 2, 3], [1, [1]], [2, [1, 2, 3]]],//LR2
+        [[0, 4, 2, 0, 4, 4], [1, [1]], [2, [0, 1, 2]]],//T1
+        [[0, 4, 2, 1, 4, 5], [1, [1]], [2, [1, 2]], [3, [1]]],//T2
+        [[0, 4, 2, 2, 4, 6], [2, [0, 1, 2]], [3, [1]]],//T3
+        [[0, 4, 2, 3, 4, 7], [1, [1]], [2, [0, 1]], [3, [1]]],//T4
+        [[0, 4, 3, 0, 1, 8], [1, [1, 2]], [2, [1, 2]]],//O1
+        [[0, 4, 4, 0, 2, 9], [2, [0, 1, 2, 3]]],//I1
+        [[0, 4, 4, 1, 2, 10], [0, [1]], [1, [1]], [2, [1]], [3, [1]]],//I2
+        [[0, 4, 5, 0, 2, 11], [0, [1]], [1, [1, 2]], [2, [2]]],//Z1
+        [[0, 4, 5, 1, 2, 12], [1, [1, 2]], [2, [0, 1]]],//Z2
+        [[0, 4, 6, 0, 2, 13], [0, [2]], [1, [1, 2]], [2, [1]]],//ZR1
+        [[0, 4, 6, 1, 2, 14], [1, [1, 2]], [2, [2, 3]]]//ZR2
     ];
 
-    function playgame(){
+    function playgame() {
         randTetris();
         initTetris();
         step();
@@ -73,7 +75,6 @@
 //        var tetrisLen = tetrisArr[rand7][0][4];
 //        var rand = Math.floor(Math.random() * tetrisLen);
         Tetris = tetrisArr[rand15].slice(0);
-
     }
 
 
@@ -94,10 +95,11 @@
             posX = Tetris[0][0];
             posY = Tetris[0][1];
             for (var j = 0; j < Tetris[i + 1][1].length; j++) {
-                var m = posX + Tetris[i + 1][0];
-                var n = posY + Tetris[i + 1][1][j];
+                m = posX + Tetris[i + 1][0];
+                n = posY + Tetris[i + 1][1][j];
                 table.children[m].children[n].style.background = "red";
                 carrier[m][n] = "tetris";
+                carrier2[m][n] = "now";
                 check();
             }
         }
@@ -136,14 +138,9 @@
     EventUtil.addHandler(document, "keydown", function (event) {
         if (event.keyCode > 36 && event.keyCode < 41) {
             directkey = event.keyCode;
-        }
-        return false;
-    });
-
-    EventUtil.addHandler(document, "keypress", function (event) {
-        if (event.keyCode == 40) {
-            directkey = event.keyCode;
-            speed = 100;
+            if (event.keyCode == 40) {
+                speed = 30;
+            }
         }
         return false;
     });
@@ -159,59 +156,96 @@
         if (timeout == true) return;
         setTimeout(function () {
             operate();
+            check();
             step();
         }, speed);
     }
 
     function operate() {
+
+//        //检测下方是否是红色或者底部
+//
+//        if (m == 12 || n = 0 || )
+//
+//        var downBlock = table.children[m + 1].children[n].style.background;
+//        var rightBlock = table.children[m].children[n + 1].style.background;
+//        var leftBlock = table.children[m].children[n - 1].style.background;
+//
+//        if (( m == 21 || downBlock == "red") && carrier2[m + 1][n] != "now") {
+//            initTetris();
+//            step();
+//            console.log("haha");
+//            carrier2[m][n] = false;
+//            return;
+//        }
+//
+//        if (( n == 0 || n == 12 || rightBlock == "red" || leftBlock == "red" ) && carrier2[m][n + 1] != "now" && carrier2[m][n - 1] != "now") {
+//            directkey = "";
+//        }
+
+
+
+
+
+
+
+
+        clear();
         switch (directkey) {
             case 37:
-                clear();
                 posY -= 1;
                 directkey = "";
                 break; //left
             case 38:
-                //[[0, 4, 0, 0, 2], [0, [1]], [1, [1]], [2, [1, 2]]],//L1
-                clear();
-                if (Tetris[0][3] == (Tetris[0][4]-1)){
-                    rand15 = rand15-Tetris[0][4];
-                    Tetris = tetrisArr[rand15].slice(0);
-                    console.log(rand15);
-                }else {
-                    Tetris = tetrisArr[rand15++].slice(0);
-                    if(rand15 == Tetris[0][5]){
-                        rand15--;
-                    }
-                    console.log("我是"+rand15);
+                var mynum = Tetris[0][5] + 1;
+                switch (Tetris[0][5]) {
+                    case 1:
+                        mynum = 0;
+                        break;
+                    case 3:
+                        mynum = 2;
+                        break;
+                    case 7:
+                        mynum = 4;
+                        break;
+                    case 8:
+                        mynum = 8;
+                        break;
+                    case 10:
+                        mynum = 9;
+                        break;
+                    case 12:
+                        mynum = 11;
+                        break;
+                    case 14:
+                        mynum = 13;
+                        break;
                 }
-
+                Tetris = tetrisArr[mynum].slice(0);
                 directkey = "";
                 break; //up
             case 39:
-                clear();
                 posY += 1;
                 directkey = "";
                 break; //right
             case 40:
-                clear();
                 posX += 1;
                 break; //down
             default:
-                clear();
-                posX ++;
+                posX++;
                 break;
         }
         move();
-
     }
 
     function clear() {
         for (var i = 0; i < Tetris.length - 1; i++) {
             for (var j = 0; j < Tetris[i + 1][1].length; j++) {
-                var m = posX + Tetris[i + 1][0];
-                var n = posY + Tetris[i + 1][1][j];
+                m = posX + Tetris[i + 1][0];
+                n = posY + Tetris[i + 1][1][j];
                 table.children[m].children[n].style.background = "";
                 carrier[m][n] = false;
+                carrier2[m][n] = false;
             }
         }
     }
@@ -219,10 +253,11 @@
     function move() {
         for (var i = 0; i < Tetris.length - 1; i++) {
             for (var j = 0; j < Tetris[i + 1][1].length; j++) {
-                var m = posX + Tetris[i + 1][0];
-                var n = posY + Tetris[i + 1][1][j];
+                m = posX + Tetris[i + 1][0];
+                n = posY + Tetris[i + 1][1][j];
                 table.children[m].children[n].style.background = "red";
                 carrier[m][n] = "tetris";
+                carrier2[m][n] = "now";
                 check();
             }
         }
