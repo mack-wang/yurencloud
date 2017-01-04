@@ -35,16 +35,16 @@
 <script>
     var table = document.getElementById("table");
     var carrier = multiArray();
-    var carrier2 = multiArray();
-    var timeout = false;
+    var timeout;
     var directkey;
     var posX, posY;
     var Tetris;
-    var speed = 300;
     var scores = 0;
     var rand15;
-    var m,n;
-    var stopLeft = false,stopRight =false;
+    var m, n;
+    var lll;
+    var too = false;
+    var stopLeft = false, stopRight = false;
     var btn = document.getElementById("btn");
     var tetrisArr = [
         [[0, 4, 0, 0, 2, 0], [0, [1]], [1, [1]], [2, [1, 2]]],//L1
@@ -68,14 +68,11 @@
         randTetris();
         initTetris();
         step();
-        timeout = false;
     }
 
 
     function randTetris() {
         rand15 = Math.floor(Math.random() * 15);
-//        var tetrisLen = tetrisArr[rand7][0][4];
-//        var rand = Math.floor(Math.random() * tetrisLen);
         Tetris = tetrisArr[rand15].slice(0);
     }
 
@@ -110,8 +107,8 @@
         var arr = [];
         for (var i = 0; i < 21; i++) {
             arr[i] = [];
-            for (var j = 0;j<12;j++){
-                arr[i][j]="block";
+            for (var j = 0; j < 12; j++) {
+                arr[i][j] = "block";
             }
         }
         return arr;
@@ -121,18 +118,22 @@
         var count = 0;
         for (var i = 0; i < carrier.length; i++) {
             for (var j = 0; j < carrier[i].length; j++) {
-                if (carrier[i][j] == "tetris") {
+                if (carrier[i][j] == "fixed") {
                     count++;
                 }
             }
             if (count == 12) {
                 table.removeChild(table.children[i]);
+                carrier.splice(i, 1);
                 var newTr = document.createElement("tr");
                 for (var l = 0; l < 12; l++) {
                     var newTd = document.createElement("td");
+                    var newArr = [];
                     newTr.appendChild(newTd);
+                    newArr[l] = "block";
                 }
                 table.insertBefore(newTr, table.firstChild);
+                carrier.unshift(newArr);
                 scores++;
             }
             count = 0;
@@ -140,63 +141,13 @@
     }
 
     EventUtil.addHandler(document, "keydown", function (event) {
-
-
         if (event.keyCode > 36 && event.keyCode < 41) {
             directkey = event.keyCode;
-            if (event.keyCode == 40) {
-                speed = 300;
-            }
-
-            if (stopLeft == true && directkey == 37){
-                directkey = "";
-            }
-
-            if (stopRight == true && directkey == 39){
-                directkey = "";
-            }
         }
-        return false;
     });
 
-    EventUtil.addHandler(document, "keyup", function (event) {
-        if (event.keyCode == 40) {
-            speed = 300;
-        }
-        return false;
-    });
-
-    function step() {
-        if (timeout == true) return;
-        setTimeout(function () {
-            operate();
-            check();
-            step();
-        }, 300);
-    }
 
     function operate() {
-
-//        //检测下方是否是红色或者底部
-//
-//        if (m == 12 || n = 0 || )
-//
-//        var downBlock = table.children[m + 1].children[n].style.background;
-//        var rightBlock = table.children[m].children[n + 1].style.background;
-//        var leftBlock = table.children[m].children[n - 1].style.background;
-//
-//        if (( m == 21 || downBlock == "red") && carrier2[m + 1][n] != "now") {
-//            initTetris();
-//            step();
-//            console.log("haha");
-//            carrier2[m][n] = false;
-//            return;
-//        }
-//
-//        if (( n == 0 || n == 12 || rightBlock == "red" || leftBlock == "red" ) && carrier2[m][n + 1] != "now" && carrier2[m][n - 1] != "now") {
-//            directkey = "";
-//        }
-
         clear();
         switch (directkey) {
             case 37:
@@ -250,11 +201,26 @@
             for (var j = 0; j < Tetris[i + 1][1].length; j++) {
                 m = posX + Tetris[i + 1][0];
                 n = posY + Tetris[i + 1][1][j];
+                if (n < 0 || n > 11) return;
                 table.children[m].children[n].style.background = "";
                 carrier[m][n] = "block";
             }
         }
     }
+
+    function stop() {
+        too = true;
+        for (var l = 0; l < 21; l++) {
+            for (var o = 0; o < 12; o++) {
+                if (carrier[l][o] == "tetris") {
+                    carrier[l][o] = "fixed";
+                }
+            }
+        }
+        check();
+        playgame();
+    }
+
 
     function move() {
         for (var i = 0; i < Tetris.length - 1; i++) {
@@ -262,55 +228,50 @@
                 m = posX + Tetris[i + 1][0];
                 n = posY + Tetris[i + 1][1][j];
 
-                if (m==21 || n == 0 || n==13) return;
+                if (n < 0 || n > 11) return;
 
                 table.children[m].children[n].style.background = "red";
                 carrier[m][n] = "tetris";
-//                var downBlock = table.children[m + 1].children[n].style.background;
-//                var rightBlock = table.children[m].children[n + 1].style.background;
-//                var leftBlock = table.children[m].children[n - 1].style.background;
-                if (m==20 || carrier[m][n] == "fixed"){
-                    fixed();
+                if (m < 20 && carrier[m + 1][n] == "fixed") {
+                    lll = true;
+                }
+                if ((m == 20 && n == posY + Tetris[i + 1][1][Tetris[i + 1][1].length - 1])) {
+                    stop();
                 }
 
-                stopLeft = ( n==1 || carrier[m][n-1]=="fixed");
+                if (posY + Tetris[i + 1][1][Tetris[i + 1][1].length - 1] == 11) {
+                    stopRight = true;
+                } else {
+                    stopRight = false;
+                }
 
-                stopRight = ( n==11 || carrier[m][n+1]=="fixed");
-            }
-        }
-
-        console.log(carrier);
-    }
-
-    function fixed() {
-        for (var i = 0; i < Tetris.length - 1; i++) {
-            for (var j = 0; j < Tetris[i + 1][1].length; j++) {
-                m = posX + Tetris[i + 1][0];
-                n = posY + Tetris[i + 1][1][j];
-                table.children[m].children[n].style.background = "green";
-                carrier[m][n] = "fixed";
-                check();
-                timeout = true;
-                randTetris();
-                initTetris();
-                timeout = false;
-                step();
+                if (j != 0 && n > posY + Tetris[i + 1][1][j - 1]) {
+                    minN = posY + Tetris[i + 1][1][j - 1];
+                } else {
+                    minN = n;
+                }
 
             }
         }
+
+        if (minN == 0) {
+            stopLeft = true;
+        } else {
+            stopLeft = false;
+        }
+
+        if (lll == true) {
+            stop();
+            lll = false;
+        }
     }
 
-//    function checkLeftBorder() {
-//        for (var i = 0; i < activeBlock.length; i++) {
-//            if (activeBlock[i].y == 0) {
-//                return false;
-//            }
-//            if (!isCellValid(activeBlock[i].x, activeBlock[i].y - 1)) {
-//                return false;
-//            }
-//        }
-//        return true;
-//    }
+    function step() {
+        var timeout = setInterval(function () {
+            operate();
+        }, 200);
+        if (too == true) clearInterval(timeout);
+    }
 
 </script>
 </html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>俄罗斯方块</title>
+</head>
+<style>
+    body {
+        margin: 0 auto;
+    }
+
+    table {
+        border: 1px solid #999;
+        margin: 50px auto;
+    }
+
+    td {
+        border: 1px solid #eee;
+        width: 20px;
+        height: 20px;
+    }
+
+    #btn {
+        display: block;
+        margin: 50px auto;
+    }
+</style>
+<body>
+
+<table id="table" cellspacing="0">
+
+</table>
+<button id="btn" onclick="playgame()">开始游戏</button>
+</body>
+<script src="js/EventUtil.js"></script>
+<script>
+
+    var table = document.getElementById("table");
+    var btn = document.getElementById("btn");
+    var tetris = [    //全部俄罗斯方块的定义数组，由方块坐标x,y引申出的
+        [[1, 0], [1, 0], [1, 1]],//L
+        [[0, 1], [0, 1], [1, 1]],//LR
+        [[1, 1], [1, 1]],//O
+        [[1], [1], [1], [1]],//I
+        [[0, 1, 0], [1, 1, 1]],//T
+        [[1, 1, 0], [0, 1, 1]],//Z
+        [[0, 1, 1], [1, 1, 0]]//ZR
+    ];
+    var cell,   //保存每个格子状态的数组，0 正常，1 移动方块，2 固定方块
+            right = false,  //右边界判断
+            left = false,   //左边界判断
+            t = false,
+            scores = 0, //分数
+            time,   //定时器
+            key,    //方向键37左，39右，40下，38上
+            x,  //方块坐标（行，0起始）
+            y,  //方块坐标（列，0起始）
+            m,  //cell的行
+            n,  //cell的列
+            r, //随机数
+            tmp,
+            on=false; //开关
+
+    //创建宽12格，高21格的游戏窗口
+    function createTable() {
+        for (var i = 0; i < 21; i++) {
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (var j = 0; j < 12; j++) {
+                var td = document.createElement("td");
+                tr.appendChild(td);
+            }
+        }
+    }
+    createTable();
+
+    //开始游戏，游戏初始化
+    function playgame() {
+        x = 0;
+        y = 4;
+        on = false;
+        cell = multiArray();
+        initTetris();
+        step();
+    }
+
+    //生成随机方块
+    function initTetris() {
+        r = Math.floor(Math.random() * 7);
+        for (var i = 0; i < tetris[r].length; i++) {
+            for (var j = 0; j < tetris[r][i].length; j++) {
+                m = x + i;
+                n = y + j;
+                if (tetris[r][i][j] == 1) {
+                    fillRed(m, n);
+                    cell[m][n] = 1;
+                }
+            }
+        }
+    }
+
+    //将方块填充为红色
+    function fillRed(m, n) {
+        table.children[m].children[n].style.background = "red";
+    }
+
+    //将方块填充为无背景色
+    function fillBlank(m, n) {
+        table.children[m].children[n].style.background = "";
+    }
+
+    //生成二维数组
+    function multiArray() {
+        var arr = [];
+        for (var i = 0; i < 21; i++) {
+            arr[i] = [];
+            for (var j = 0; j < 12; j++) {
+                arr[i][j] = 0;
+            }
+        }
+        return arr;
+    }
+
+    //同一行中，如果方块数量为12，则消掉该行和该记录数组。同时新增一行和一个记录数组。
+    function deleteLine() {
+        var count = 0;
+        for (var i = 0; i < cell.length; i++) {
+            for (var j = 0; j < cell[i].length; j++) {
+                if (cell[i][j] == 2) {
+                    count++;
+                }
+            }
+            if (count == 12) {
+                table.removeChild(table.children[i]);
+                cell.splice(i, 1);
+                var newTr = document.createElement("tr");
+                for (var l = 0; l < 12; l++) {
+                    var newTd = document.createElement("td");
+                    var newArr = [];
+                    newTr.appendChild(newTd);
+                    newArr[l] = 0;
+                }
+                table.insertBefore(newTr, table.firstChild);
+                cell.unshift(newArr);
+                scores++;
+            }
+            count = 0;
+        }
+    }
+
+    //监听键盘事件，获取方向键值
+    EventUtil.addHandler(document, "keydown", function (event) {
+        if (event.keyCode > 36 && event.keyCode < 41) {
+            key = event.keyCode;
+        }
+    });
+
+
+    function operate() {
+        clear();
+        switch (key) {
+            case 37:
+                if (left==true) {x++; break;}
+                y--;
+                key = "";
+                break; //left
+            case 38:
+                //旋转方块
+                key = "";
+                break; //up
+            case 39:
+                if (right==true) {x++; break;}
+                y++;
+                key = "";
+                break; //right
+            case 40:
+                x++;
+                break; //down
+            default:
+                x++;
+                break;
+        }
+        next();
+    }
+
+    function clear() {
+        for (var i = 0; i < tetris[r].length; i++) {
+            for (var j = 0; j < tetris[r][i].length; j++) {
+                m = x + i;
+                n = y + j;
+                if (tetris[r][i][j] == 1) {
+                    fillBlank(m, n);
+                    cell[m][n] = 0;
+                }
+            }
+        }
+    }
+
+    function stop() {
+        on = true;
+        for (var i = 0; i < 21; i++) {
+            for (var j = 0; j < 12; j++) {
+                if (cell[i][j] == 1) {
+                    cell[i][j] = 2;
+                }
+            }
+        }
+        deleteLine();
+        playgame();
+    }
+
+
+    function next() {
+
+        for (var i = 0; i < tetris[r].length; i++) {
+            for (var j = 0; j < tetris[r][i].length; j++) {
+                m = x + i;
+                n = y + j;
+                if (tetris[r][i][j] == 1) {
+                    fillRed(m, n);
+                    cell[m][n] = 1;
+                }
+                //检查是否触底,触底则停止。
+                if (m == 20 && n == y + tetris[r][i].length - 1) {
+                    stop();
+                }
+
+                //如果没触底，则检查是否触到固定的方块
+                if (m < 20 && cell[m + 1][n] == 2) {
+                    tmp = true;
+                }
+
+                //检查左边界
+                (y == 0) ? left = true : left = false;
+
+                //检查右边界
+                ((y + tetris[r].length) == 11) ? right = true : right = false;
+
+                //检查左边是否有固定的方块
+                if (left == false && cell[m][n-1]==2 ) left = true;
+
+                //检查右边是否有固定的方块
+                if (left == false && cell[m][n+1]==2 ) right = true;
+
+            }
+        }
+
+        if (tmp == true) {
+            stop();
+            tmp = false;
+        }
+    }
+
+    function step() {
+        var timeout = setInterval(function () {
+            operate();
+        }, 200);
+        if (on == true) clearInterval(timeout);
+    }
+
+</script>
+</html>
