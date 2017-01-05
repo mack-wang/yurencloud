@@ -4,39 +4,48 @@
     <title>俄罗斯方块</title>
 </head>
 <style>
-    body {
-        margin: 0 auto;
-    }
 
     table {
         border: 1px solid #999;
-        margin: 50px auto;
+        margin: 10px auto;
+        background: black;
+        display: inline-block;
     }
 
     td {
-        border: 1px solid #eee;
+        border: 2px gray outset;
         width: 20px;
         height: 20px;
+        background: black;
     }
 
     #btn {
         display: block;
-        margin: 50px auto;
+        margin: 100px;
+    }
+
+    #preview{
     }
 </style>
 <body>
 
-<table id="table" cellspacing="0">
+<table id="table" cellspacing="0" cellpadding="0">
 </table>
 
-
-<button id="btn" onclick="playgame()">开始游戏</button>
+<table id="preview" cellspacing="0" cellpadding="0">
+</table>
+<div>
+    <p>你当前分数：</p><output id="output"></output>
+</div>
+<button id="btn" onclick="reload()">重新再来</button>
 </body>
 <script src="js/EventUtil.js"></script>
 <script>
 
     var table = document.getElementById("table");
+    var preview = document.getElementById("preview");
     var btn = document.getElementById("btn");
+    var output = document.getElementById("output");
     var tetris = [    //全部俄罗斯方块的定义数组，由方块坐标x,y,作为起始点
         [[1, 0], [1, 0], [1, 1]],//L1
         [[1, 1, 1], [1, 0, 0]],//L2
@@ -79,10 +88,18 @@
             y,  //方块坐标（列，0起始）
             m,  //cell的行
             n,  //cell的列
+            mm,
+            nn,
             r, //随机数
+            r2 = Math.floor(Math.random() * 28),
+            r3,
             tmp,
+            speedTmp,
             gameover,
-            on; //开关
+            timeout,
+            speed=300,
+            on=false,
+            on2=false; //开关
 
     //创建宽12格，高21格的游戏窗口
     function createTable() {
@@ -97,26 +114,73 @@
     }
     createTable();
 
+    //创建宽6格，高6格的下一个方块预览窗口
+    function createPreview() {
+        for (var i = 0; i < 5; i++) {
+            var tr = document.createElement("tr");
+            preview.appendChild(tr);
+            for (var j = 0; j < 5; j++) {
+                var td = document.createElement("td");
+                tr.appendChild(td);
+            }
+        }
+    }
+    createPreview();
+
     //开始游戏，游戏初始化
     function playgame() {
         x = -2;
         y = 4;
         gameover = false;
-//        on = false;//这个不能加，一加了，速度就会每次创建新方块时就加倍
+        on = false;//这个不能加，一加了，速度就会每次创建新方块时就加倍
+        r=r2;
+        r3=r;
+        changeSpeed();
         initTetris();
-        step();
+        nextPreview();
     }
+
+    playgame();
 
     //生成随机方块
     function initTetris() {
-        r = Math.floor(Math.random() * 28);
         for (var i = 0; i < tetris[r].length; i++) {
-            for (var j = 0; j < tetris[r][i].length; j++) {
+            for (var j = 0; j < tetris[r][0].length; j++) {
                 m = x + i;
                 n = y + j;
                 if (tetris[r][i][j] == 1 && m>-1 && n>-1) {
                     fillRed(m, n);
                     cell[m][n] = 1;
+                }
+            }
+        }
+        output.innerHTML=scores*100;
+    }
+
+
+
+    function nextPreview() {
+        r2 = Math.floor(Math.random() * 28);
+        clearPreview();
+        r3=r2;
+        initPreview();
+    }
+
+    function initPreview() {
+        for (var i = 0; i < tetris[r2].length; i++) {
+            for (var j = 0; j < tetris[r2][0].length; j++) {
+                if (tetris[r2][i][j] == 1) {
+                    fillRed2(i+1, j+1);
+                }
+            }
+        }
+    }
+
+    function clearPreview() {
+        for (var i = 0; i < tetris[r3].length; i++) {
+            for (var j = 0; j < tetris[r3][0].length; j++) {
+                if (tetris[r3][i][j] == 1) {
+                    fillBlank2(i+1, j+1);
                 }
             }
         }
@@ -129,7 +193,17 @@
 
     //将方块填充为无背景色
     function fillBlank(m, n) {
-        table.children[m].children[n].style.background = "";
+        table.children[m].children[n].style.background = "black";
+    }
+
+    //将方块填充为红色
+    function fillRed2(m, n) {
+        preview.children[m].children[n].style.background = color[Math.floor(r2/4)];
+    }
+
+    //将方块填充为无背景色
+    function fillBlank2(m, n) {
+        preview.children[m].children[n].style.background = "black";
     }
 
     //生成二维数组
@@ -147,21 +221,23 @@
     //同一行中，如果方块数量为12，则消掉该行和该记录数组。同时新增一行和一个记录数组。
     function deleteLine() {
         var count = 0;
-        for (var i = 0; i < cell.length; i++) {
-            for (var j = 0; j < cell[i].length; j++) {
+        for (var i = 0; i < 21; i++) {
+            for (var j = 0; j < 12; j++) {
                 if (cell[i][j] == 2) {
                     count++;
                 }
             }
             if (count == 12) {
                 table.removeChild(table.children[i]);
+
                 cell.splice(i, 1);
+
                 var newTr = document.createElement("tr");
                 var newArr = [];
                 for (var l = 0; l < 12; l++) {
                     var newTd = document.createElement("td");
                     newTr.appendChild(newTd);
-                    newArr[l] = 0;
+                    newArr.push(0);
                 }
                 table.insertBefore(newTr, table.firstChild);
                 cell.unshift(newArr);
@@ -175,9 +251,24 @@
     EventUtil.addHandler(document, "keydown", function (event) {
         if (event.keyCode > 36 && event.keyCode < 41) {
             key = event.keyCode;
+            if (key == 40){
+            speedTmp = speed;
+                speed = 100;
+            }
         }
     });
 
+    EventUtil.addHandler(document, "keyup", function (event) {
+        if (event.keyCode == 40 ) {
+            speed = 100;
+        }
+    });
+
+
+    function changeSpeed() {
+        if(speed==100) return;
+        speed = speed-(50*(Math.floor(scores/20)))
+    }
 
     function operate() {
         clear();
@@ -189,6 +280,8 @@
                 break; //left
             case 38:
                 //旋转方块
+                var r1;
+
                     if(tetris[r][0].length==2 && y == 10){
                         x++;
                         break;
@@ -199,9 +292,16 @@
                     }
 
                     if ( ((r+1)%4) != 0){
-                        r++;
+                        r1 = r+1;
                     }else{
-                        r=r-3;
+                        r1= r - 3;
+                    }
+                    check(r1);
+                    if(on2==false){
+                        r=r1;
+                    }else{
+                        x++;
+                        on2=false;
                     }
                 key = "";
                 break; //up
@@ -220,9 +320,25 @@
         next();
     }
 
+
+    function check(rr) {
+        for (var i = 0; i < tetris[rr].length; i++) {
+            for (var j = 0; j < tetris[rr][0].length; j++) {
+                mm = x + i;
+                nn = y + j;
+                if (tetris[rr][i][j] == 1 && m>-1 && n>-1) {
+                    if (cell[mm][nn] == 2){
+                        on2=true;
+                    }
+                }
+                }
+            }
+    }
+
+
     function clear() {
         for (var i = 0; i < tetris[r].length; i++) {
-            for (var j = 0; j < tetris[r][i].length; j++) {
+            for (var j = 0; j < tetris[r][0].length; j++) {
                 m = x + i;
                 n = y + j;
                 if (tetris[r][i][j] == 1 && m>-1 && n>-1) {
@@ -234,43 +350,45 @@
     }
 
     function stop() {
-        on=true;
+        var count2=0;
+        var ii = -1;
         for (var i = 0; i < 21; i++) {
             for (var j = 0; j < 12; j++) {
                 if (cell[i][j] == 1) {
                     cell[i][j] = 2;
                 }
 
-
+                if(cell[i][j]==2 && i != ii){
+                    count2++;
+                    ii = i;
+                }
             }
+        }
+
+        if(count2==21)
+        {
+            alert("game over 你的分数是："+scores);
+            gameover=true;
+            return;
         }
         deleteLine();
         playgame();
     }
 
 
-
     function next() {
 
         for (var i = 0; i < tetris[r].length; i++) {
-            for (var j = 0; j < tetris[r][i].length; j++) {
+            for (var j = 0; j < tetris[r][0].length; j++) {
                 m = x + i;
                 n = y + j;
 
-                //检查上边界
-                if(cell[0][n]==2){
-                    alert("game over 你的分数是："+scores);
-                    gameover = true;
-                    console.log(cell[0][n]);
-                    return;
-                }
-
-                if (tetris[r][i][j] == 1 && m>-1 && n>-1) {
+                if (tetris[r][i][j] == 1 && m>-1 && n>-1 ) {
                     fillRed(m, n);
                     cell[m][n] = 1;
                 }
                 //检查是否触底,触底则停止。
-                if (m == 20 && n == y + tetris[r][i].length - 1) {
+                if (m == 20 && n == y + tetris[r][0].length - 1) {
                     stop();
                 }
 
@@ -283,7 +401,7 @@
                 (y == 0) ? left = true : left = false;
 
                 //检查右边界
-                ((y + tetris[r][i].length) == 12) ? right = true : right = false;
+                ((y + tetris[r][0].length) == 12) ? right = true : right = false;
 
                 //检查左边是否有固定的方块
                 if (left == false  && m>-1 && n>-1 && cell[m][n-1]==2) left = true;
@@ -299,13 +417,22 @@
         }
     }
 
+
     function step() {
-        var timeout = setInterval(function () {
-            if (gameover == true) clearInterval(timeout);
+        var timeout = setTimeout(function () {
             operate();
-        }, 300);
-        if (on == true) clearInterval(timeout);
+            step();
+            console.log(speedTmp);
+        }, speed);
+        if(gameover==true) clearTimeout(timeout);
     }
+    step();
+
+    function reload() {
+        location.href=location.href;
+    }
+
+
 
 </script>
 </html>
