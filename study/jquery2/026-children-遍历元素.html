@@ -31,7 +31,7 @@
     <li>5</li>
 </ul>
 
-<ul class="myul2">
+<ul class="myul2" id="myul2">
     <li>a <div>A</div></li>
     <li>b</li>
     <li>c</li>
@@ -56,7 +56,9 @@
     var $ul = $(".myul2").children();
     alert($ul.length);
 
-
+    //原生js实现
+    var myul2 = document.getElementById("myul2");
+    console.log(window.navigator);
 
 
 

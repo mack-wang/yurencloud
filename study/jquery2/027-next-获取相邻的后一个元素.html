@@ -39,7 +39,7 @@
 </ul>
 
 
-<ul class="myul3">
+<ul class="myul3" id="myul4">
     <li>a</li>
     <li>b</li>
     <li>c</li>
@@ -54,9 +54,15 @@
 
     //获取相邻的后一个元素
     var $secondli = $(".myul3 li:first").next();
-    alert($secondli.html());
+//    alert($secondli.html());
 
+    //原生js实现
 
+    //下面这个的nextSibling是childNodes下的方法，不能在children中使用，但nextSibling会受到文本节点的影响，不大好用
+//    console.log(secondli.childNodes[2].nextSibling.innerHTML);
+
+    var secondli = document.getElementById("myul4").children[1];
+    console.log(secondli.nextElementSibling.innerHTML);
 
 
 

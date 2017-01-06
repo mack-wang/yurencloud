@@ -52,7 +52,7 @@
 <script>
 
 
-    //获取HTML元素，若含有子元素则会显示子元素的标签和内容，若只有内容，则只显示内容
+/*    //获取HTML元素，若含有子元素则会显示子元素的标签和内容，若只有内容，则只显示内容
     alert($(".myul2").html());
     alert($("#box").html());
 
@@ -63,9 +63,18 @@
     alert($(".myul2").text());
 
     //设置元素的文本内容
-    $("#box2").text("测试");
+    $("#box2").text("测试");*/
 
+    //原生js实现
 
+    var box = document.getElementById("box");
+    console.log(box.innerHTML);
+
+    box.innerHTML="<strong>hello wlc</strong>";
+    //textContent只含文字，若含有子元素则会显示子元素的标签和内容，若只有内容，则只显示内容
+    console.log(box.textContent,box.innerHTML);
+
+    box.textContent="haha";
 
 
 

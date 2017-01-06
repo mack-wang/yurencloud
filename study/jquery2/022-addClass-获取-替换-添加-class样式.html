@@ -45,8 +45,10 @@
     <li>c</li>
     <li>d</li>
 </ul>
+
 </body>
 <script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/EventUtil.js"></script>
 <script>
 
 
@@ -72,14 +74,22 @@
     ul1.setAttribute("class","color");
     ul1.setAttribute("class",ul1.getAttribute("class")+" 2color");
     ul3.removeClass("bob");
-    if (ul3.getAttribute("class").indexOf("linda ")=="0"){
-        var newclass = ul3.getAttribute("class").replace(/linda /g, " ");
-        ul3.setAttribute("class",newclass);
-    }else{
-        var newclass = ul3.getAttribute("class").replace(/ linda/g, " ");
-        ul3.setAttribute("class",newclass);
-    }
 
+    EventUtil.addHandler(ul3,"click",function (event) {
+        var ulclassList = ul3.classList;
+        //增加class
+        ulclassList.add("newred");
+        //判断是否包含某个class
+        if(ulclassList.contains("green")){
+            console.log("true")
+        }else {
+            console.log("false")
+        }
+        //删除某个class
+        ulclassList.remove("danger");
+        //toggle某个class，如果已经存在就删除，如果不存在则添加
+        ulclassList.toggle("music");
+    })
 
 
 

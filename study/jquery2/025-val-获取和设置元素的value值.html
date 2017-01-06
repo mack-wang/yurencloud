@@ -21,7 +21,7 @@
     }
 </style>
 <body>
-<input type="text" name="username" value="wlc"/>
+<input type="text" name="username" value="wlc" id="name"/>
 <div class="mydiv test" id="box">我</div>
 <ul class="myul">
     <li class="new" id="llll">1</li>
@@ -58,6 +58,10 @@
     $("input[name=username]").val("wlc2");
     alert($("input[name=username]").val());
 
+    //原生js实现
+    var input = document.getElementById("name");
+    console.log(input.getAttribute("value"));
+    input.setAttribute("value","haha");
 
 
 
