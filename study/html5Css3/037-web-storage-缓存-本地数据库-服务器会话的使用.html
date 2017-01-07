@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+
+</style>
+<body>
+<h1>web storage 示例</h1>
+<p id="msg"></p>
+<input type="text" id="input">
+<input type="button" value="保存数据" onclick="saveStorage('input');">
+<input type="button" value="读取数据" onclick="loadStorage('msg');">
+
+</body>
+<script>
+    // web storage分为两种
+    // sessionStorage会话缓存数据，保存到用户离开网站，临时保存。localStorage保存到硬盘，永远保存。
+
+    //sessionStorage的使用
+    /*
+     保存数据的方法
+     sessionStorage.setItem('key','value');
+     sessionStorage.key='value';
+
+     读取数据的方法：
+     变量 = sessiongStorage.getItem('key');
+     变量 = sessionStorage.key;
+
+     清除数据的方法：
+     sessionStorage.clear();
+     */
+
+
+    //sessionStorage的使用
+    /*
+     保存数据的方法
+     localStorage.setItem('key','value');
+     localStorage.key='value';
+
+     读取数据的方法：
+     变量 = localgStorage.getItem('key');
+     变量 = localStorage.key;
+
+     清除数据的方法：
+     localStorage.clear();
+     */
+
+//    function saveStorage(id) {
+//        var target = document.getElementById(id);
+//        var str = target.value;
+//        sessionStorage.setItem("message", str);
+//        //或者sessionStorage.message=str;上面的规范，下面的这个简便
+//    }
+//
+//    function loadStorage(id) {
+//        var target = document.getElementById(id);
+//        var msg = sessionStorage.getItem("message");
+//        target.innerHTML = msg;
+//    }
+
+    //我感觉sessionStorage和localStorage都是保存在本地，只不过sessionStorage保存的数据在关闭页面后就删除，而localStorage则一直保存着，直到被人为覆盖和清理。
+    function saveStorage(id) {
+        var target = document.getElementById(id);
+        var str = target.value;
+        localStorage.setItem("message", str);
+    }
+
+    function loadStorage(id) {
+        var target = document.getElementById(id);
+        var msg = localStorage.getItem("message");
+        target.innerHTML = msg;
+    }
+
+
+
+    //如何把web storage当作用户客户端上的本地数据库
+    /*
+    *
+    * 1 获取输入
+    * 2 将获取的数据作为对象的属性进行保存
+    * 3 将对象转成JSON格式的文本数据
+    * 4 将文本数据保存到localStorage中
+    *
+    *
+    * */
+
+
+    window.addEventListener('storage',function (event) {
+        //无论是sessionStorage还是localStorage值产生变化都会触发该事件
+        /*
+        event.key属性：被修改的数据的键值
+        event.oldValue属性：被修改前的键值
+        event.newValue属性：被修改后的键值
+        enent.url属性：修改storage的页面的URL
+        event.storageArea属性：是sessionStorage,还是localStorage变化了
+
+
+        * */
+    },false)
+</script>
+
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+
+</style>
+<body>
+
+</body>
+<script>
+    //在window.navigator中增加了一个geolocation属性，可以使用Geolocation API来对该属性进行访问
+
+    //取得当前地理位置
+    navigator.geolocation.getCurrentPosition(function (position) {
+                //获取成功时的处理
+                var coords = position.coords;
+                showMap(coords.latitude, coords.longitude, coords.accuracy);
+            },
+            function (error) {
+                var errorTypes = {
+                    1: "位置服务被拒绝",
+                    2: "获取不到位置信息",
+                    3: "获取信息超时"
+                };
+                alert(errorTypes[error.code] + ":,不能确定你当前的地理位置");
+            },
+            {
+                //该参数可选
+                //设置缓存有效时间为2分钟
+                maxmumAge:60*1000*2,
+                //设置5秒钟内未获取地理位置则返回错误信息
+                timeout:5000
+                /*
+                enableHighAccuracy，是否要求高精度的地理位置信息
+                timeout，超时设置
+                maximumAge，获取的地理位置信息有效期，过期失效
+
+                */
+            }
+    )
+
+    /*
+    持续监视当前地理位置的信息
+    watchPosition方法可以持续获取用户的当前地理位置信息，它会定期自动获取
+    可以用clearWatch(watchId);来取消监视
+
+
+    */
+
+
+
+
+
+</script>
+</html>

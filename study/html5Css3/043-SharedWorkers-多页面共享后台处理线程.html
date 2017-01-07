@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+
+</style>
+<body>
+<h1>计算从1到输入数值的所有数值之和: <output id="output"></output></h1>
+<input type="text" id="input">
+<button onclick="sum()">计算</button>
+</body>
+<script>
+
+    //以下两个shareworker对象共享一个后台线程
+    var worker1 = new SharedWorker("js/sum.js");
+    var worker2 = new SharedWorker("js/sum.js");
+
+    //为以下两个ShareWorker对象创建两个不同的后台线程
+    var worker1 = new SharedWorker('js/sum1.js');
+    var worker2 = new SharedWorker('js/sum2.js');
+
+
+    //给线程命名，如果名字不同则创建不同的线程
+    //以下两个shareworker对象共享一个后台线程
+    var worker1 = new SharedWorker("js/sum.js","name1");
+    var worker2 = new SharedWorker("js/sum.js","name1");
+
+    //为以下两个ShareWorker对象创建两个不同的后台线程
+    var worker1 = new SharedWorker('js/sum.js',"name1");
+    var worker2 = new SharedWorker('js/sum.js',"name2");
+
+    /*
+    由于web worker 属于一种被后台执行的线程，所以只能使用js部分的对象和方法
+    self:表示本线程范围内的作用域
+    postMessage（message）:用于向创建线程的源窗口发送消息
+    onmessage:获取接收消息的事件句柄
+    importScripts(urls):导入其他js脚本文件，可以用逗号隔开，导入多个
+    navigator对象
+    sessionStorage/localStorage
+    XMLHttpRequest:可以在线程中进行Ajax请求
+    Web Workers：可以在线程中嵌套线程
+    setTimeout()/setInterval()
+    close()：用于结束本线程
+    eval(),isNaN(),escape()
+    object
+    WebSockets
+    FileSystem
+
+    适用场景：
+    预先抓取并缓存一些数据供后期使用。
+    代码高亮和页面文字上的一些处理（可能运算较长时间的）
+    拼写检查
+    分析视频/音频数据
+    后台I/O处理
+    大数据量分析或计算处理
+    canvas元素中的图像数据和运算的处理
+    本地数据库中的数据存取及计算处理
+
+    */
+
+</script>
+</html>

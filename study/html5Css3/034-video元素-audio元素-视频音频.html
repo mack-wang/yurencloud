@@ -7,7 +7,7 @@
 <body>
 
 <!--浏览器将直接播放src地址中的视频-->
-<video src=""></video>
+<video src="media/video.mp4" id="video"></video>
 <!--浏览器会从上到下读取视频，直到读取到直接的视频格式-->
 <video>
     <source src="1.mp4">
@@ -16,6 +16,9 @@
 </video>
 <!--播放音频-->
 <audio src=""></audio>
+
+<button onclick="play()">播放</button>
+<button onclick="pause()">停止</button>
 
 <!--属性-->
 <!--
@@ -33,22 +36,113 @@
 
 <video src="" width="500" height="500"></video>设置宽高
 
-<video src="" ></video> error属性，networkState属性，可以用js读取，p154
+<video src="" ></video> error属性，networkState属性，可以用js读取，p154  会触发error事件
 
+buffered属性：返回一个对象，确认浏览器是否缓存数据，只读。
 
+readyState属性：返回媒体当前播放位置的就绪状态，只读
 
+seeking属性和seekable属性：返回浏览器是否在正某个位置请求播放数据，返回布尔值，只读。
 
+currenTime属性：当前播放位置，也可以通过修改currenTime来改变播放位置，
 
+startTime属性：读取媒体播放的开始时间，通常为0，只读。
 
+duration属性：读取媒体播放的总时长，只读。
 
+played属性：返回已经播放的时间长度。
 
+paused属性：表示是否处于暂停状态，暂停时，返回true。播放时返回false。
 
+ended属性：表示媒体是否已经播放到最后，是则返回true，否则返回false。会触发ended事件
 
+defaultPlaybackRate属性：获得媒体默认的播放速率。
+
+playbackRate属性：获得媒体当前的播放速率。
+
+volume属性：读取或者修改音量。范围是0-1，0为静音，1为最大值。
+
+muted属性：读取或者修改静音状态。true为静音，false为非静音。
 
 -->
 
-
-
-
 </body>
+<script>
+    var video;
+    video = document.getElementById("video");
+    function videoLinster() {
+        video.addEventListener("ended", function () {
+            alert("播放结束")
+        }, true);
+        video.addEventListener("error", function () {
+            switch (video.error.code) {
+                case MediaError.MEDIA_ERR_ABORTED:
+                    alert("视频下载过程中被中止");
+                    break;
+                case MediaError.MEDIA_ERR_NETWORK:
+                    alert("网络发生故障，视频下载中止");
+                    break;
+                case MediaError.MEDIA_ERR_DECODE:
+                    alert("解码失败");
+                    break;
+                case MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED:
+                    alert("不支持播放的视频格式");
+                    break;
+                default:
+                    alert("发生未知错误");
+            }
+
+        }, false);
+    }
+
+    videoLinster();
+
+    function play() {
+        video.play();
+    }
+
+    function pause() {
+        video.pause();
+    }
+
+    function load() {
+        video.load();//重新加载视频重新播放
+    }
+
+    var support = video.canPlayType("mp4"); //返回空字符串为不支持，返回maybe可能支持，返回probably表示确定支持
+
+    /*
+    * video和audio事件
+    * 视频或者音频一旦开始播放，就会触发下列一系列事件
+    * 都可以绑定事件监听    video.addEventListener(type,listener,useCapture);
+    *
+    * loadstart 浏览器开始在网上寻找媒体资源
+    * progress 正在获取资源
+    * suspend 暂停获取媒体数据，但下载过程并没有正常结束
+    * abort 在完全下载完媒体数据之前中止下载，主动中止
+    * error 获取媒体播放过程中的错误信息
+    * emptied 网络突然掉线
+    * stalled 尝试获取媒体数据失败
+    * play 执行play方法时触发
+    * pause 执行pause方法时触发
+    * loadedmetadata 浏览器获取完媒体的时长和字节数时触发
+    * loadeddata 浏览器已经加载完毕当前播放位置的媒体数据，准备播放
+    * waiting 等待加载下一帧时触发
+    * playing 正在播放时持续触发
+    * canplay 能够正常播放时，需要缓冲
+    * canplaythrough 能播放，且不需要缓冲
+    * seeking 浏览器正在请求数据时触发
+    * seeked 浏览器停止请示数据时触发
+    * timeupdate 当前播放位置被改变时触发
+    * ended 播放结束后停止播放
+    * ratechange 当播放速度被改变时触发
+    * durationchange 播放时长被改变时触发，比如进度条开发
+    * volumechange 音量被改变时触发
+    *
+    * */
+
+
+</script>
+
+
 </html>

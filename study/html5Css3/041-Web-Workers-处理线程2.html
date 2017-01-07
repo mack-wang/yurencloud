@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+
+</style>
+<body>
+<h1>计算从1到输入数值的所有数值之和: <output id="output"></output></h1>
+<input type="text" id="input">
+<button onclick="sum()">计算</button>
+</body>
+<script>
+
+    var input = document.getElementById("input");
+    var output = document.getElementById("output");
+
+    //浏览器都是单线程执行的，所以当脚本运行时间过长时，会弹出提示框，让用户终止脚本
+    //Html5增加了web workers来实现多线程执行，后台执行
+
+    //1，创建Worker实例对象(注意后台线程中不能访问页面和窗口对象 ，所以如果脚本中用到了windows对象或者document对象，会引发错误)
+    var worker = new Worker("js/sum.js");
+
+    //可以发送和接收消息来与后台互相传递数据
+    //向正在后台执行的脚本发送数据
+
+    worker.onmessage=function (event) {
+        output.innerHTML=event.data;
+    };
+
+    function sum() {
+        var num = parseInt(input.value,10);
+        worker.postMessage(num);
+    }
+
+</script>
+</html>

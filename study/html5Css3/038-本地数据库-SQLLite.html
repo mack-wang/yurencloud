@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+
+</style>
+<body>
+
+
+</body>
+<script>
+    //创建数据库对象，参数：数据库名，版本，描述，大小，还可以回调函数
+    var db = openDatabase('mydb','1.0','Text DB',2*1024*1024);
+
+    //在实际访问数据库时还要调用transaction方法，防止进行数据库操作时被外界中断打扰
+    db.transaction(function (tx) {
+        tx.executeSql("CREATE TABLE IF NOT EXISTS LOGS (id unique, log)");
+    })
+
+
+
+
+
+</script>
+</html>

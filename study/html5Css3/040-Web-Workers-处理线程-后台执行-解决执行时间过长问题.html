@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+
+</style>
+<body>
+
+</body>
+<script>
+    //浏览器都是单线程执行的，所以当脚本运行时间过长时，会弹出提示框，让用户终止脚本
+    //Html5增加了web workers来实现多线程执行，后台执行
+
+    //1，创建Worker实例对象(注意后台线程中不能访问页面和窗口对象 ，所以如果脚本中用到了windows对象或者document对象，会引发错误)
+    var worker = new Worker("js/worker.js");
+
+    //可以发送和接收消息来与后台互相传递数据
+    var message = "xxx";
+    //向正在后台执行的脚本发送数据
+    worker.postMessage(message);
+
+    worker.onmessage=function (event) {
+        alert(message);
+        //worker在后台处理接收过来的消息
+    }
+
+</script>
+</html>

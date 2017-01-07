@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+    .colorRed{
+        color:red;
+        background: green;
+    }
+    video::cue(v[voice="wlc"]){color:red;background: green;}
+</style>
+<body>
+
+<!--浏览器将直接播放src地址中的视频-->
+<video src="media/video.mp4" id="video" controls loop>
+    <!--track轨道，vtt文件是字幕文件（还有其他可用的字幕文件）
+        如果在source下添加字幕，要把track标签写在source后面，
+        HTML5要以线上模式打开track才能使用，以文件模式打开不能用
+        要在HTML5视频控制中点击CC按钮手动打开字幕，不然字幕不显示！！！
+    -->
+    <track src="track.vtt" srclang="zh-cn" label="简体中文" kind="subtitles">
+    你的浏览器不支持video元素
+</video>
+
+<!--
+track元素的属性
+
+default属性：用户没有指定其自己的字幕文件时，使用默认的track指定的字幕文件
+src属性：指定字幕文件
+srclang属性：指定字幕文件的语言
+kind属性：指定字幕文件的种类说明，subtitles是翻译或者解释，captions是提示音，descriptions是提供旁白字幕音，chapters为字幕章节或者标题，metadata媒体元数据
+
+-->
+
+
+<!--
+关于字幕文件vtt
+
+WebVTT文件格式
+
+WEBVTT
+
+name //可选，标签名，可用来获取元素
+00:00:15.000 - -> 00:00:17.000  //小时可选，秒和毫秒用点来分隔 ，为了避免和影响注释，我在箭头中空了一格
+你好，我是字幕第一行
+你好，我是字幕第二行
+
+00:00:18.000 - -> 00:00:19.000  //从下到下读取字幕，每个时间行作为字幕的区分，可以写多行字幕
+你好，我是字幕
+
+00:00:20.000 - -> 00:00:23.000  //可以添加html标签,但我试了一下，不能显示样式
+<p style="color:red;" > 你好，我是字幕</p>
+<p style="color:green;" > 你好，我是字幕</p>
+
+00:00:25.000 - -> 00:00:26.000  //可以使用json更好的配合js使用字幕，我试一下，无效，直接当字幕显示了
+{
+    "title":"标题1",
+    "description":"我是字幕1",
+    "src":"test1.jpg",
+    "href":"http://abc.com"
+}
+
+
+字幕样式设置
+vertical:rl/lr 竖向文字的左对齐 右对齐
+line:number 指定从上下下第几行开始显示文字，行高度为字高，负数为从下到上
+line:百分比 相对于顶部的距离
+position:百分比 相对于边沿的的百分比，一般为左边缘
+size:百分比 文字框和视频框的比例
+align:start/middle/end 文字对齐方式
+
+
+00:00:15.000 - -> 00:00:17.000 align:start size:15%  //小时可选，秒和毫秒用点来分隔 ，为了避免和影响注释，我在箭头中空了一格
+你好，我是字幕第一行
+你好，我是字幕第二行
+
+00:00:15.000 - -> 00:00:17.000 align:end line:10%//小时可选，秒和毫秒用点来分隔 ，为了避免和影响注释，我在箭头中空了一格
+你好，我是字幕第一行
+你好，我是字幕第二行
+
+
+字幕组件
+c:指定样式class
+
+00:00:15.000 - -> 00:00:17.000  //给文字加上c标签，并指定样式为colorRed,尝试失败，下面均有效
+<c.colorRed>你好，我是字幕第一行</c>
+<i>你好，我是字幕第一行</i>   //斜体
+<b>你好，我是字幕第一行</b>   //粗体
+<u>你好，我是字幕第一行</u>   //下划线
+<ruby>你好，我是字幕第一行</ruby>   //指定更多rt元素
+<v wlc>你好，我是字幕第一行</v>   //指定讲话者标签，可以使用css伪类选择器定义样式
+
+一些浏览器支持同时间段字幕下，再区分不同时间
+Cue-1
+00:00:52.00 - -> 00:00:54.000
+<c>忘了是怎么开始</c><00:00:53.000><c>也许就是对你</c>
+
+video::cue<c:past){color:yellow} //时间过去了就把字体颜色改为黄色，类似KTV效果，c:future表示将来显示的字幕的颜色
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--浏览器会从上到下读取视频，直到读取到直接的视频格式-->
+<video>
+    <source src="1.mp4">
+    <source src="1.ogg">
+    <source src="1.mov">
+</video>
+<!--播放音频-->
+<audio src=""></audio>
+
+<button onclick="play()">播放</button>
+<button onclick="pause()">停止</button>
+<button onclick="load()">重新加载视频</button>
+
+
+</body>
+<script>
+    var video = document.getElementById("video");
+
+    videoLinster();
+
+    function play() {
+        video.play();
+    }
+
+    function pause() {
+        video.pause();
+    }
+
+    function load() {
+        video.load();//重新加载视频重新播放
+    }
+
+
+    /*
+     * video和audio事件
+     * 视频或者音频一旦开始播放，就会触发下列一系列事件
+     * 都可以绑定事件监听    video.addEventListener(type,listener,useCapture);
+     *
+     * loadstart 浏览器开始在网上寻找媒体资源
+     * progress 正在获取资源
+     * suspend 暂停获取媒体数据，但下载过程并没有正常结束
+     * abort 在完全下载完媒体数据之前中止下载，主动中止
+     * error 获取媒体播放过程中的错误信息
+     * emptied 网络突然掉线
+     * stalled 尝试获取媒体数据失败
+     * play 执行play方法时触发
+     * pause 执行pause方法时触发
+     * loadedmetadata 浏览器获取完媒体的时长和字节数时触发
+     * loadeddata 浏览器已经加载完毕当前播放位置的媒体数据，准备播放
+     * waiting 等待加载下一帧时触发
+     * playing 正在播放时持续触发
+     * canplay 能够正常播放时，需要缓冲
+     * canplaythrough 能播放，且不需要缓冲
+     * seeking 浏览器正在请求数据时触发
+     * seeked 浏览器停止请示数据时触发
+     * timeupdate 当前播放位置被改变时触发
+     * ended 播放结束后停止播放
+     * ratechange 当播放速度被改变时触发
+     * durationchange 播放时长被改变时触发，比如进度条开发
+     * volumechange 音量被改变时触发
+     *
+     * */
+
+
+</script>
+
+
+</html>

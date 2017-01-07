@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+
+</style>
+<body>
+<h1>计算从1到输入数值的所有数值之和: <output id="output"></output></h1>
+<input type="text" id="input">
+<button onclick="sum()">计算</button>
+</body>
+<script>
+
+    var input = document.getElementById("input");
+    var output = document.getElementById("output");
+
+    //浏览器都是单线程执行的，所以当脚本运行时间过长时，会弹出提示框，让用户终止脚本
+    //Html5增加了web workers来实现多线程执行，后台执行
+
+    //1，创建Worker实例对象(注意后台线程中不能访问页面和窗口对象 ，所以如果脚本中用到了windows对象或者document对象，会引发错误)
+    var worker = new Worker("js/sum.js");
+
+    //可以发送和接收消息来与后台互相传递数据
+    //向正在后台执行的脚本发送数据
+
+    worker.onmessage=function (event) {
+        output.innerHTML=event.data;
+    };
+
+    function sum() {
+        var num = parseInt(input.value,10);
+        worker.postMessage(num);
+    }
+
+    /*
+    由于web worker 属于一种被后台执行的线程，所以只能使用js部分的对象和方法
+    self:表示本线程范围内的作用域
+    postMessage（message）:用于向创建线程的源窗口发送消息
+    onmessage:获取接收消息的事件句柄
+    importScripts(urls):导入其他js脚本文件，可以用逗号隔开，导入多个
+    navigator对象
+    sessionStorage/localStorage
+    XMLHttpRequest:可以在线程中进行Ajax请求
+    Web Workers：可以在线程中嵌套线程
+    setTimeout()/setInterval()
+    close()：用于结束本线程
+    eval(),isNaN(),escape()
+    object
+    WebSockets
+    FileSystem
+
+    适用场景：
+    预先抓取并缓存一些数据供后期使用。
+    代码高亮和页面文字上的一些处理（可能运算较长时间的）
+    拼写检查
+    分析视频/音频数据
+    后台I/O处理
+    大数据量分析或计算处理
+    canvas元素中的图像数据和运算的处理
+    本地数据库中的数据存取及计算处理
+
+    */
+
+</script>
+</html>

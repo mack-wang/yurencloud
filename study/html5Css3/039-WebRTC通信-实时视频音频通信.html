@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+
+</style>
+<body>
+
+<video id="myvideo" width="400" height="300" autoplay></video>
+<canvas id="canvas"></canvas>
+<img src="" alt="" id="img" width="400" height="300">
+</body>
+<script>
+    //检测浏览器是否支持getUserMedia，访问客户端本地的摄像头设备
+    function hasGetUserMedia() {
+        return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
+    }
+
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+    window.URL = window.URL || window.webkitURL;
+
+    var video = document.getElementById("myvideo");
+    video.addEventListener('click',snapshot,false);
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext('2d');
+    var localMediaStream = null;
+
+
+
+    //    if (hasGetUserMedia()){
+    //        alert('您的浏览器支持getUserMediay方法');
+    //    }else{
+    //        alert('您的浏览器不支持getUserMediay方法');
+    //    }
+
+    navigator.getUserMedia({
+                video: true,
+                audio: false
+            },
+            function (stream) {
+                video.src = window.URL.createObjectURL(stream);
+                localMediaStream = stream;
+            },
+            function (err) {
+                console.log(err);
+            }
+    );
+    function snapshot() {//点击视频，截图显示到img中
+        if (localMediaStream){
+            ctx.drawImage(video,0,0);
+            document.getElementById('img').src = canvas.toDataURL('image/png')
+        }
+    }
+
+
+</script>
+</html>

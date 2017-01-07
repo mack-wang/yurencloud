@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+    #canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: block;
+    }
+</style>
+<body>
+<canvas id="canvas" width="400" height="300"></canvas>
+<img id="image" src="img/brush.png" style="display: none;">
+
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var img = document.getElementById("image");
+    var context = canvas.getContext("2d");
+    var isDrawing = false;
+    var state = context.getImageData(0,0,canvas.width,canvas.height);//记录画面状态
+    history.pushState(state,null);//先在一开始前就把画面状态为空白记录到历史记录中
+    canvas.addEventListener("pointerdown",function (e) {
+        e.preventManipulation()
+    },false);
+    canvas.addEventListener("mousedown",startDrawing,false);
+    canvas.addEventListener("mousemove",draw,false);
+    canvas.addEventListener("mouseup",stopDrawing,false);
+    window.addEventListener("popstate",loadState,false);
+
+    function startDrawing() {
+        isDrawing = true;
+    }
+
+    function draw(event) {
+        if (isDrawing){
+            var sx = canvas.width / canvas.offsetWidth;
+            var sy = canvas.height / canvas.offsetHeight;
+            var x = sx * event.clientX - img.naturalWidth/2;
+            var y = sy*event.clientY - img.naturalHeight/2;
+            context.drawImage(img,x,y);
+        }
+    }
+
+    function stopDrawing() {
+        isDrawing = false;
+        var state = context.getImageData(0,0,canvas.width,canvas.height);//记录当前的画面状态
+        history.pushState(state,null);//把当前的记录状态写到历史记录中
+    }
+
+    var state = context.getImageData(0,0,canvas.width,canvas.height);
+    history.pushState(state,null);
+    function loadState(e) {
+        context.clearRect(0,0,canvas.width,canvas.height);//清除画布
+        if (e.state){
+            context.putImageData(e.state,0,0);//把历史记录中的画面状态画到画布上
+        }
+    }
+
+
+
+
+</script>
+
+
+</html>
