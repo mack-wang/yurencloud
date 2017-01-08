@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hello, World</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            height: 100%
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="container"></div>
+
+
+</body>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=Mc7hulMdcTljumQQzBtFpjwGz7SM6sad" type="text/javascript"></script>
+<!--https://api.map.baidu.com/api?v=2.0&ak=你的密钥&s=1 这是https的引用链接-->
+<script type="text/javascript">
+    var map = new BMap.Map("container");
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+    var opts = {offset: new BMap.Size(150, 5)};//直接当参数可以修改控件的位置
+    var anchor = {anchor: BMAP_ANCHOR_TOP_LEFT};//直接当参数可以修改的控件的四个位置
+    /*
+     BMAP_ANCHOR_TOP_LEFT 表示控件定位于地图的左上角。
+     BMAP_ANCHOR_TOP_RIGHT 表示控件定位于地图的右上角。
+     BMAP_ANCHOR_BOTTOM_LEFT 表示控件定位于地图的左下角。
+     BMAP_ANCHOR_BOTTOM_RIGHT 表示控件定位于地图的右下角。
+     */
+    map.addControl(new BMap.NavigationControl(opts));//使左上角出来：导航控件（移动和缩放控件），默认左上角
+    map.addControl(new BMap.ScaleControl());//显示当前的缩放级别，用公里表示，默认左下角
+    map.addControl(new BMap.OverviewMapControl(anchor));//显示当前的位置的城市级别的预览，默认右下角
+    map.addControl(new BMap.MapTypeControl());//地图/卫星/三维控件，默认右上角
+    map.setCurrentCity("北京"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用
+
+    /*
+     修改NavigationControl导航控件的样式，
+     BMAP_NAVIGATION_CONTROL_LARGE 表示显示完整的平移缩放控件。
+     BMAP_NAVIGATION_CONTROL_SMALL 表示显示小型的平移缩放控件。
+     BMAP_NAVIGATION_CONTROL_PAN 表示只显示控件的平移部分功能。
+     BMAP_NAVIGATION_CONTROL_ZOOM 表示只显示控件的缩放部分功能。
+     使用方式：以参数形式传入实例，同上
+     var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL}
+     */
+
+
+
+    /*
+     自定义控件的话：比较长，参考下面网址
+     http://lbsyun.baidu.com/index.php?title=jspopular/guide/widget
+
+
+     */
+
+
+</script>
+</html>

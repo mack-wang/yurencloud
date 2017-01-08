@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hello, World</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            height: 100%
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="container"></div>
+
+
+</body>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=Mc7hulMdcTljumQQzBtFpjwGz7SM6sad" type="text/javascript"></script>
+<!--https://api.map.baidu.com/api?v=2.0&ak=你的密钥&s=1 这是https的引用链接-->
+<script type="text/javascript">
+    //    var map = new BMap.Map("container");
+    //    var point = new BMap.Point(116.404, 39.915);
+    //    map.centerAndZoom(point, 15);
+    //    var marker = new BMap.Marker(point);        // 创建标注(添加一个红色的location图标，我们也可以换成自定义的)
+    //    map.addOverlay(marker);                     // 将标注添加到地图中
+
+    //上面是使用默认的location图标，下面是使用自定义的location图标
+
+    var map = new BMap.Map("container");
+    var point = new BMap.Point(116.404, 39.915);
+    map.centerAndZoom(point, 15);  // 编写自定义函数，创建标注
+    function addMarker(point, index) {  // 创建图标对象
+        var myIcon = new BMap.Icon("location.png", new BMap.Size(1000, 1000), {//这里的Size指的是自定义图标的大小
+            // 指定定位位置。
+            // 当标注显示在地图上时，其所指向的地理位置距离图标左上
+            // 角各偏移10像素和25像素。您可以看到在本例中该位置即是
+            // 图标中央下端的尖角位置。
+            offset: new BMap.Size(10, 25)
+            // 设置图片偏移。
+            // 当您需要从一幅较大的图片中截取某部分作为标注图标时，您
+            // 需要指定大图的偏移位置，此做法与css sprites技术类似。
+            //imageOffset: new BMap.Size(0, 0 - index * 25)   // 设置图片偏移(可以只显示图片的一部分)
+        });
+        // 创建标注对象并添加到地图
+        var marker = new BMap.Marker(point, {icon: myIcon});
+        map.addOverlay(marker);
+
+        //可以添加图标监听事件（可选）
+        marker.addEventListener("click", function(){
+            alert("您点击了标注,并把图标移除，释放内存");
+            //下面这个方法可以清除当前图标，并释放内存。如果您的标注在移除后不再使用，可调用Overlay.dispose()方法来释放内存
+            map.removeOverlay(marker);
+        });
+
+        //可以添加图标拖拽事件（可选）
+        marker.enableDragging();
+        //下面是监听拖拽，并弹出拖拽后的坐标
+        marker.addEventListener("dragend", function(e){
+            alert("当前位置：" + e.point.lng + ", " + e.point.lat);
+        });
+    }
+    // 向地图当前位置添加自定义图标标注
+    addMarker(point);
+
+
+    //向当前坐标添加自定义信息（通过查看infoWindow的控制台信息，可以知道他有哪些属性可以设置）
+    var opts = {
+        width : 250,     // 信息窗口宽度
+        height: 200,     // 信息窗口高度
+        title : "<p style='color:red'>我是窗口标题</p>"  // 信息窗口标题，可以写html内容
+    };
+    var infoWindow = new BMap.InfoWindow("" +
+            "<p style='color:green'>我是窗口内容</p> " +
+            "<img src='location.png' width='50' alt=''>", opts);  // 创建信息窗口对象，可以写html内容
+    map.openInfoWindow(infoWindow, map.getCenter());      // 打开信息窗口
+    console.log(infoWindow);
+
+
+    //添加拆线
+    var polyline = new BMap.Polyline([
+                new BMap.Point(116.399, 39.910),//经纬坐标，起点
+                new BMap.Point(116.405, 39.920)//经纬坐标，终点，两点形成一条直线
+            ],
+            {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}//第二个参数是直线的样式，颜色，宽，透明度
+    );
+    map.addOverlay(polyline);//添加覆盖物，折线
+    console.log(polyline);//查看属性，看看有哪些可用的属性
+
+    //TODO：百度地图学习，自定义覆盖物，http://lbsyun.baidu.com/index.php?title=jspopular/guide/cover
+
+
+
+</script>
+</html>

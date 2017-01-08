@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<style>
+
+</style>
+<body onload="init()">
+
+<div id="map" style="width: 400px; height: 400px"></div>
+
+</body>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyB13hpssZGM-pi5TkyW0cvEedTnBjNCbK8&sensor=SET_TO_TRUE_OR_FALSE"></script>
+<script>
+    function init() {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var coords = position.coords;
+            //设定地图参数，将用户的当前位置的纬度、经度设定为地图的中心点
+            var latlng = new google.maps.LatLng(coords.latitude,coords.longitude);
+            var myOptions = {
+                zoom:14,
+                center:latlng,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+
+            //创建地图并在map div 中显示
+            var map1;
+            map1 = new google.maps.Map(document.getElementById("map"),myOptions);
+            //在地图上创建标记
+            var marker = new google.maps.Marker({
+                position:latlng,
+                map:map1
+            });
+
+            //设定标注窗口，并指定该窗口中的注释文字
+            var infowindow = new google.maps.InfoWindow({
+                content:"当前位置！"
+            });
+
+            //打开标注的窗口
+            infowindow.open(map1,marker);
+        })
+    }
+
+    /*
+    * 提醒
+    * 在引入google地图的脚本时，要在google开发者网页上注册api，并获取一个key，并用key=xxxxxx在url后添加参数即可使用地图服务
+    * https://console.developers.google.com
+    *
+    *
+    * */
+
+
+</script>
+</html>
