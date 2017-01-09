@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body onload="init()">
+
+<h1>简单的拖放示例</h1>
+<div id="dragme" draggable="true" style="width:200px;border:1px solid gray;">请拖放</div>
+<div id="text" style="width: 200px; height: 200px; border: 1px solid gray;"></div>
+
+</body>
+
+<script>
+
+
+
+
+    function init() {
+        var source = document.getElementById("dragme");
+        var dest = document.getElementById("text");
+        //开始拖放
+        source.addEventListener("dragstart",function (ev) {
+            var dt = ev.dataTransfer;
+            dt.effectAllowed = "all";
+            dt.setData("text/plain","你好");
+        },false);
+
+        //拖放结束
+        dest.addEventListener("dragend",function (ev) {
+            ev.preventDefault();
+        },false);
+
+        dest.addEventListener("drop",function (ev) {
+            var dt = ev.dataTransfer;
+            var text = dt.getData("text/plain");
+            dest.tetContent += text;
+            ev.preventDefault();
+            ev.stopPropagation();
+            alert(text)
+        },false);
+
+    }
+
+    document.ondragover = function (e) {
+        e.preventDefault();
+    };
+    document.ondrop = function (e) {
+        e.preventDefault();
+    };
+
+</script>
+</html>

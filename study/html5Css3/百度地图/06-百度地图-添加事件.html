@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hello, World</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            height: 100%
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="container"></div>
+
+
+</body>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=Mc7hulMdcTljumQQzBtFpjwGz7SM6sad" type="text/javascript"></script>
+<!--https://api.map.baidu.com/api?v=2.0&ak=你的密钥&s=1 这是https的引用链接-->
+<script type="text/javascript">
+
+    var map = new BMap.Map("container");
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+    map.addControl(new BMap.NavigationControl());//使左上角出来：导航控件（移动和缩放控件），默认左上角
+
+
+    map.addEventListener("dragend", function(){
+        //获取中心点对象信息
+        var center = map.getCenter();
+        //读取中心点对象信息，center.lng为经度，center.lat为纬度
+        alert("地图中心点变更为：" + center.lng + ", " + center.lat);
+    });
+
+
+    map.addEventListener("click",function (e) {
+        console.log(e,e.point.lng,e.point.lat,e.type);
+        /*
+        通过控制台可以查看事件对象e的所有属性
+        虽然有很多，但基本上有用的，就下面这几个
+         clientX:984
+         clientY:307
+         currentTarget:Ka
+         domEvent:MouseEvent
+         point : H
+         type : "onclick"
+        */
+    });
+
+    //API还保证函数内的this指向触发（同时也是绑定）事件的API对象。
+    map.addEventListener("zoomend", function(){
+        alert("地图缩放至：" + this.getZoom() + "级");
+    });
+
+
+
+
+
+
+</script>
+</html>

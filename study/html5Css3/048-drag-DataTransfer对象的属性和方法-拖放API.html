@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body onload="init()">
+
+<h1>简单的拖放示例</h1>
+<div id="dragme" draggable="true" style="width:200px;border:1px solid gray;">请拖放</div>
+<div id="text" style="width: 200px; height: 200px; border: 1px solid gray;"></div>
+
+</body>
+
+<script>
+    /*
+    DataTransfer对象的属性与方法
+    这个是拖放事件用来传递数据的对象，如果用好了，可以实现更复杂的拖放
+
+    dropEffect 表示拖放操作的视觉效果 none/copy/link/move
+    effectAllowed 表示元素拖放时所允许的视觉效果none/copy/copyLink/copyMove/link/linkMove/move/all/unintialize
+                    copy 允许拖动元素复制到目标元素
+                    link 被拖动的元素会链接到拖动的目标元素上
+                    copyLink 根据被拖动元素的类型来自动执行copy或者link
+                    copyMove 根据被拖动元素的类型来自动执行copy或者move
+                    linkMove 根据被拖动元素的类型来自动执行link或者move
+                    all 允许执行所有操作
+                    none 不允许所有拖动操作
+                    unintialize 不指定effectAllowed属性值，就是默认允许拖动。但你无法获得拖动的类型是什么。
+    types 存入数据的种类，为MIME类型
+    clearData(MIME) 清除传递进去的参数所携带的数据，如果不传递参数，则清除所有传递数据
+    setData(MIME,DATA)向DataTransfer对象内存入相应类型的数据
+    getData(MINE) 读取相应类型的数据
+    setDragImage(IMG,X,Y) 用img元素来设置拖放图标（就是跟随着鼠标下方的小图标），部分浏览器可以设置为canvas等元素。X，Y为偏离鼠标的距离
+    */
+
+
+
+    function init() {
+        var source = document.getElementById("dragme");
+        var dest = document.getElementById("text");
+        //开始拖放
+        source.addEventListener("dragstart",function (ev) {
+            var dt = ev.dataTransfer;
+            dt.effectAllowed = "all";
+            dt.setData("text/plain","你好");
+        },false);
+
+        //拖放结束
+        dest.addEventListener("dragend",function (ev) {
+            ev.preventDefault();
+        },false);
+
+        dest.addEventListener("drop",function (ev) {
+            var dt = ev.dataTransfer;
+            var text = dt.getData("text/plain");
+            dest.tetContent += text;
+            ev.preventDefault();
+            ev.stopPropagation();
+            alert(text)
+        },false);
+
+    }
+
+    document.ondragover = function (e) {
+        e.preventDefault();
+    };
+    document.ondrop = function (e) {
+        e.preventDefault();
+    };
+
+    /*
+
+    //创建img元素
+     var dragIcon = document.createElement('img');
+     //设置img图标的地址
+     dragIcon.src="http://twivatar.org/twitter/mini";
+
+
+
+     source.addEventListener("dragstart",function(ev){
+        //声明一个dataTransfer
+        var dt = ev.dataTransfer;
+        //设置自定义图标
+        dt.setDragImage(dragIcon,-10,-10);
+        dt.setData("text/plain","aaa");
+      },false);
+
+
+
+
+
+
+
+    */
+
+
+
+</script>
+</html>

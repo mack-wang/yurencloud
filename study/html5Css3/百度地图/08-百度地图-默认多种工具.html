@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hello, World</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            height: 100%
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="container"></div>
+<input type="button" value="开启" onclick="myDis.open()" />
+<input type="button" value="关闭" onclick="myDis.close()" />
+
+</body>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=Mc7hulMdcTljumQQzBtFpjwGz7SM6sad" type="text/javascript"></script>
+<!--https://api.map.baidu.com/api?v=2.0&ak=你的密钥&s=1 这是https的引用链接-->
+<script type="text/javascript">
+
+    //估计下面这个功能下线了，所以不能实现
+//    var map = new BMap.Map("container");
+//    map.centerAndZoom(new BMap.Point(116.404, 39.915), 15);
+//    var myPushpin = new BMap.PushpinTool(map);         // 创建标注工具实例
+//    myPushpin.addEventListener("markend", function(e){  // 监听事件，提示标注点坐标信息
+//        alert("您标注的位置：" +
+//                e.marker.getPoint().lng + ", " +
+//                e.marker.getPoint().lat);
+//    });
+//    myPushpin.open();                                  // 开启标注工具
+
+//
+//    var map = new BMap.Map("container");
+//    map.centerAndZoom(new BMap.Point(116.404, 39.915), 15);
+//    var myDis = new BMapLib.DistanceTool(map);
+//    //接着我们创建两个按钮元素并为其添加点击事件。
+
+
+//    var map = new BMap.Map("container");
+//    map.centerAndZoom(new BMap.Point(116.404, 39.915), 15);
+//    var myDrag = new BMapLib.DragAndZoomTool(map, {
+//        followText : "拖拽鼠标进行操作"
+//    });
+
+</script>
+</html>
