@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+
+</body>
+
+<script>
+    /*
+     1、当在自动播放轮播图时，用户切换了浏览器标签或者最小化，页面不可见，暂停播放
+     2、用户在持续向服务器请示某数据资源时，切换标签或者最小化，页面不可见时，暂停获取
+     3、播放视频时，用户切换了浏览器标签或者最小化，页面不可见，暂停播放
+     当用户回到页面时，页面可见时，继续
+
+     */
+    //支持page visibility api检测
+    //firefox
+    if (typeof document.mozHidden !== "undefined") {
+        //IE
+    } else if (typeof document.msHidden !== "undefined") {
+        //chrome
+    } else if (typeof document.webkitHidden !== "undefined") {
+
+    } else if (typeof document.hidden !== "undefined") {
+
+    }
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+
+</body>
+
+<script>
+    /*
+     1、当在自动播放轮播图时，用户切换了浏览器标签或者最小化，页面不可见，暂停播放
+     2、用户在持续向服务器请示某数据资源时，切换标签或者最小化，页面不可见时，暂停获取
+     3、播放视频时，用户切换了浏览器标签或者最小化，页面不可见，暂停播放
+     当用户回到页面时，页面可见时，继续
+
+     */
+    //支持page visibility api检测
+
+    var hidden, visibilityChange, videoElement;
+
+
+    if (typeof document.mozHidden !== "undefined") {//firefox
+        hidden = "mozhidden";
+        visibilityChange = "mozvisibilitychange"
+    } else if (typeof document.msHidden !== "undefined") {//IE
+        hidden = "mshidden";
+        visibilityChange = "msvisibilitychange"
+    } else if (typeof document.webkitHidden !== "undefined") {//chrome
+        hidden = "webkithidden";
+        visibilityChange = "webkitvisibilitychange"
+    } else if (typeof document.hidden !== "undefined") {//其他
+        hidden = "hidden";
+        visibilityChange = "visibilitychage";
+    }
+
+    document.addEventListener(visibilityChange,handleVisibilityChange,false);
+
+    //可以根据document对象的visibilityState属性来判断页面的可见状态
+    //visible 页面可见，hidden页面不可见，prerender页面已经预渲染，但对用户不可见
+
+
+</script>
+</html>

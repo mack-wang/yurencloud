@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+
+</body>
+<button onclick="createNotification()">允许使用通知API</button>
+<button onclick="closeNotification()">关闭通知API</button>
+<script>
+    var NotificationTest;
+    function createNotification() {
+
+        if (window.Notification.permission=="granted"){
+
+            //用构造函数创建一个通知实例，两个参数：标题、内容
+            //其中内容是一个对象，拥有icon通知显示的图标，body通知显示的正文，(如何指定tag:'MyID',则可以避免消息夫堆叠，只显示最后一条消息)
+            NotificationTest  = new Notification("我是通知的标题",{icon:'img/brush.png',body:'我是通知的内容'});
+            //当通知显示时触发
+            NotificationTest.onshow = function () {
+                alert('通知被显示');
+            };
+
+            //当通知被用户关闭时触发
+            NotificationTest.onclose = function () {
+                alert('通知被关闭');
+            }
+        }else if(window.NotificationTest.permission=='default'){
+            window.Notification.requestPermission();
+        }
+
+
+    }
+
+    //关闭通知（不是取消允许，而是关闭已经显示的通知而已）
+    function closeNotification() {
+        NotificationTest.close();
+    }
+
+
+
+
+
+</script>
+</html>

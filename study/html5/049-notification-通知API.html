@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+</style>
+<body>
+
+</body>
+<button id="show_button">允许使用通知API</button>
+<script>
+    //检测浏览器是否支持通知API
+//    if (window.Notification) {
+//        alert("您的浏览器支持通知API");
+//    } else {
+//        alert("您的浏览器不支持通知API")
+//    }
+
+    //向用户请求允许使用通知API，只能是按钮类的主动触发，不能是自动触发
+    document.getElementById("show_button").addEventListener("click",function () {
+        window.Notification.requestPermission();
+    });
+
+    //permission属性：是否获得通知允许 granted 获得，default未获得，denied拒绝
+    if(window.Notification.permission=="granted"){
+        alert("我已经允许你使用通知API了");
+    }
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    html:-moz-full-screen{
+        background: red;
+    }
+    html:-webkit-full-screen{
+        background: red;
+    }
+    html:fullscreen{
+        background: red;
+    }
+</style>
+<body>
+<input type="button" id="btnFullScreen" value="页面全屏显示" onclick="toggleFullScreen();">
+<div style="width: 100%;" id="fullscreenState">非全屏显示</div>
+</body>
+
+<script>
+    var docElm = document.documentElement;
+    var fullscreenState = document.getElementById("fullcreenState");
+    var btnFullScreen = document.getElementById("btnFullScreen");
+    fullscreenState.style.height=docElm.clientHeight+"px";
+
+    document.addEventListener("fullcreenchange",function () {
+        fullscreenState.innerHTML = (document.fullscreen)?"全屏显示":"非全屏显示";
+        btnFullScreen.value = (document.fulllscreen)?"页面非全屏显示":"页面全屏显示";
+    },false);
+
+    document.addEventListener("mozfullcreenchange",function () {
+        fullscreenState.innerHTML = (document.mozFullScreen)?"全屏显示":"非全屏显示";
+        btnFullScreen.value = (document.mozFulllScreen)?"页面非全屏显示":"页面全屏显示";
+    },false);
+
+    document.addEventListener("webkitfullcreenchange",function () {
+        fullscreenState.innerHTML = (document.webkitIsFullScreen)?"全屏显示":"非全屏显示";
+        btnFullScreen.value = (document.webkitIsFullScreen)?"页面非全屏显示":"页面全屏显示";
+    },false);
+
+    function toggleFullScreen(){
+        if (btnFullScreen.value=="页面全屏显示"){
+            if(docElm.requestFullscreen){
+                docElm.requestFullscreen();
+            }else if(docElm.mozRequestFullScreen){
+                docElm.mozRequestFullScreen();
+            }else if (docElm.webkitRequestFullScreen){
+                docElm.webkitRequestFullScreen();
+            }
+        }else{
+            if (document.exitFullscreen){
+                document.exitFullscreen();
+            }else if(document.mozCancelFullScreen){
+                document.mozCancelFullScreen();
+            }else if(document.webkitCancelFullScreen){
+                document.webkitCancelFullScreen();
+            }
+        }
+    }
+
+
+</script>
+</html>
