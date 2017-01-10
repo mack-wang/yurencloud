@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    li {
+        list-style: none;
+    }
+
+    /* content:counter(计数器) 在元素内容前后添加项目编号 计数器可以任意命名，就是一个绑定计数器，默认是从1开始的1++计数*/
+    /* 可以任意在计数器前后添加其他文字 */
+    #ul1 > li:before {
+        content: '第' counter(mycounter) '章';
+    }
+
+    /* 使用计数器 */
+    #ul1 > li {
+        counter-increment: mycounter;
+    }
+
+    #ul2 > li:before {
+        content: counter(my2counter) '.';
+        color: red;
+        font-size: 42px;
+    }
+
+    #ul2 > li {
+        counter-increment: my2counter;
+    }
+
+    /*指定编号的种类，比如大小写字母 upper-alpha lower-alpha*/
+    #ul3 > li:before {
+        content: counter(my3counter, lower-alpha) '.';
+    }
+
+    #ul3 > li {
+        counter-increment: my3counter;
+    }
+
+    /* 编号嵌套显示 */
+    /* 定义计数器 */
+    h1:before {
+        content: counter(h1counter);
+    }
+
+    h2:before {
+        content: counter(h1counter) '-' counter(h2counter);
+    }
+
+    h3:before {
+        content: counter(h1counter) '-' counter(h2counter) '-' counter(h3counter);
+    }
+
+    /* 使用计数器 */
+    h1 {
+        counter-increment: h1counter;
+    }
+
+    h2 {
+        counter-increment: h2counter;
+    }
+
+    h3 {
+        counter-increment: h3counter;
+    }
+
+</style>
+<body>
+<ul id="ul1">
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+</ul>
+
+<ul id="ul2">
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+</ul>
+
+<ul id="ul3">
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+</ul>
+
+<h1>大标题</h1>
+<h2>小标题</h2>
+<h3>小小标题</h3>
+<h1>大标题</h1>
+<h2>小标题</h2>
+<h3>小小标题</h3>
+<h1>大标题</h1>
+<h2>小标题</h2>
+<h3>小小标题</h3>
+</body>
+</html>

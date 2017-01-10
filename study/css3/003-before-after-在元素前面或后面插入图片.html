@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    /* content:url() 在元素内容前添加图片 */
+    /* 这样做的好处是，当我们表示一个文章更新了，那么我们可以给update这个类选择器的内容后，添加一个new.gif的小图标，表示更新。 */
+    li:nth-child(3):before{
+        content: url("img/girl.png");
+    }
+
+
+    /*也可以实现添加图片效果,但背景图片是作为添加内容的背景出现的，如果添加内容为空，则背景图片不显示*/
+    li:nth-child(4):before{
+        content: 'hello';
+        background-image: url("img/girl.png");
+    }
+
+    /* 将图片的alt设置为图片的名字，并插入到图片的后面，不过我试过不行 */
+    img:after{
+        content:attr(alt);
+        display: block;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+
+
+</style>
+<body>
+<ul>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li></li>
+</ul>
+<p><img src="img/girl.png" alt="美女"></p>
+</body>
+</html>

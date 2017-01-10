@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*使用before在元素内前面添加内容，在before中定义的样式均为添加的内容的样式，与元素样式无关*/
+    /*fonticon就是用这种方法实现i元素添加图标的*/
+    li:before{
+        content: '我是before添加的内容';
+        color:white;
+        background: green;
+        padding: 10px;
+        font-size: 12px;
+    }
+    /*after在元素后添加内容*/
+    li:after{
+        content: '我是after添加的内容';
+        color:white;
+        background: blue;
+        padding: 10px;
+        font-size: 12px;
+    }
+    /* 实现个别元素前面不添加内容，只要对该元素的content:none；就可以了 */
+    /* 第三个li取消before添加内容 */
+    li:nth-child(2):before{
+        content: none;
+    }
+
+</style>
+<body>
+<ul>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+    <li>hello world</li>
+</ul>
+</body>
+</html>

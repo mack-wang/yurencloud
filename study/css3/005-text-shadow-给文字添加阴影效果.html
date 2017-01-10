@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .p1{
+        text-shadow: 5px 5px 5px gray;/* text-shadow:向右距离 向下距离 模糊半径 阴影颜色  */
+    }
+
+    .p2{
+        text-shadow: -5px -5px 5px gray;/* 负值反向  */
+    }
+
+    .p3{
+        text-shadow: 5px 5px gray;/* 模糊半径不填，或者填为0，则不模糊  */
+    }
+
+    .p4{
+        text-shadow: 5px 5px gray,/* 可以对同一个对象指定多个阴影，应该可以做出一些特别的效果 */
+                      10px 10px red,
+                     15px 15px green;
+    }
+
+
+</style>
+<body>
+
+<p class="p1">我是中国人</p>
+<p class="p2">我是中国人</p>
+<p class="p3">我是中国人</p>
+<p class="p4">我是中国人</p>
+
+
+</body>
+</html>
