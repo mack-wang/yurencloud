@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    /*  css2.1之前要想让多个block在同一行显示，需要使用float,position，在css2.1之后，专门添加了inline-block实现这种效果！！  */
+
+    div{
+        width: 50px;
+        height: 50px;
+        background: red;
+    }
+
+    .box1{
+        width: 50px;
+        height: 50px;
+        background: red;
+        display: inline;/*  不可设置宽高内边距外边距  */
+    }
+    .box2{
+        width: 50px;
+        height: 50px;
+        background: red;
+        display: inline-block;/*  拥有block的所有特性，同时还可以让block并排显示  */
+    }
+    .box3{
+        width: 50px;
+        height: 50px;
+        background: green;
+        float: left;/* 可以让block并排显示，同时也拥有block的所有特性，但是，会脱离文档流，直接把其他元素挤到右边，若要大家按顺序并排，则要把
+                        其他的元素也浮动起来，所以有时，用inline-block更好*/
+    }
+
+
+
+
+</style>
+<body>
+<div >div元素</div>
+<div >div元素</div>
+<div >div元素</div>
+<div class="box1">div元素</div>
+<div class="box1">div元素</div>
+<div class="box1">div元素</div>
+<div class="box2">div元素</div>
+<div class="box2">div元素</div>
+<div class="box2">div元素</div>
+
+<div class="box3">div元素</div>
+<div class="box3">div元素</div>
+<div class="box3">div元素</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /* 试了，无论是中文还是英文都没有效果，放弃 */
+    div#div1{
+        font-size: 16px;
+        font-family: 'Arial';
+        font-size-adjust: 0.40;/* 0.50的意思当该字体为100px是他的字实际显示宽为58px。微调字体大小*/
+    }
+
+    div#div2{
+        font-size: 16px;
+        font-family: 'Times New Roman';
+        font-size-adjust: 0.8;/* 0.50的意思当该字体为100px是他的字实际显示宽为42px。微调字体大小*/
+    }
+
+</style>
+<body>
+
+<div id="div1">this is a china</div>
+<div id="div2">this is a china</div>
+
+
+
+</body>
+</html>

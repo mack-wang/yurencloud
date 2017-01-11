@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    div{
+        font-family: "Microsoft YaHei";
+    }
+    #div1{
+        font-size: 16px;/* 固定大小，手机，PC一样大 */
+    }
+    #div2{
+        font-size: 1rem;/* 根据根元素html字体大小计算出相对字体大小，chrome测试默认为20px,firefox默认16px,safari默认为16px */
+                        /* rem和em应该就差别了一个r字，我猜应该是root的意思 */
+    }
+    #div3{
+        font-size: 1em;/* 根据父元素字体大小计算出相对字体大小，如果没对其父元素进行font-size的设置，则和rem相同。 */
+    }
+    /*
+    低版本浏览器不兼容rem单位的使用
+    可以用下面来修正
+
+    修正没法用，chrome正常，其他又不正常了
+    html{ font-size:62.5%}
+    small{font-size:1.1rem;}
+    strong{font-size:1.8rem;}
+
+    */
+
+
+</style>
+<body>
+
+<div id="div1">当该字体为100px是他的字实际显示宽为58px。微调字体大小1</div>
+<div id="div2">当该字体为100px是他的字实际显示宽为58px。微调字体大小2</div>
+<div id="div3">当该字体为100px是他的字实际显示宽为58px。微调字体大小3</div>
+
+
+
+
+
+</body>
+</html>

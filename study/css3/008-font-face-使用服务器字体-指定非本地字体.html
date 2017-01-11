@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*定义服务器字体，非本地字体*/
+    @font-face {
+        font-family: 'youyuan';/*可以自己随便取名*/
+        src: url('fonts/youyuan.TTF') format('truetype');
+        font-weight: normal;
+    }
+
+
+    /*优先使用客户端本地字体，如果本地没该字体，则使用服务器的该字体*/
+    @font-face {
+        font-family: 'youyuan';/*可以自己随便取名*/
+        src: local('youyuan'),url('fonts/youyuan.TTF') format('truetype');
+        font-weight: normal;
+    }
+
+
+    /*使用服务器字体，非本地字体*/
+    p{
+        font-family: 'youyuan';/*幼圆*/
+    }
+
+    /*
+    目前支持opentype（.otf）,truetype(.ttf)两种格式字体，
+    微软自带的opentype(.eot)
+    在IE浏览器中，只能使用.eot字体，且不需要指定format
+    */
+
+    /*
+    如果同一个字体提供多个版本的粗细和斜体的话，只要都定义好即可
+    @font-face {
+        font-family: 'youyuan';
+        src: url('fonts/youyuan-normal.TTF') format('truetype');
+        font-weight: normal;
+    }
+    @font-face {
+        font-family: 'youyuan';
+        src: url('fonts/youyuan-italic.TTF') format('truetype');
+        font-weight: italic;
+    }
+    @font-face {
+        font-family: 'youyuan';
+        src: url('fonts/youyuan-blod.TTF') format('truetype');
+        font-weight: blod;
+    }
+    */
+
+</style>
+<body>
+
+<!--
+浏览器自动换行原则：
+1 以整个单词进行换行，不会从单词内断开换行
+2 结尾是中文标点的，会带着一个中文字和标点一起换行，不会让标点在开头
+-->
+
+<p class="p1">浏览器自动换行原则：1 以整个单词进行换行，不会从单词内断开换行2 结尾是中文标点的，会带着一个中文字和标点一起换行，不会让标点在开头
+hellow worldsfkjd</p>
+
+
+
+</body>
+</html>
