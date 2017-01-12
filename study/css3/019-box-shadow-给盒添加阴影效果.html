@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{
+        width: 90px;
+        height: 90px;
+        margin: 90px;
+        background: red;
+    }
+    .div1{
+        box-shadow: 5px 5px 50px gray;/* box-shadow:向右距离 向下距离 模糊半径 阴影颜色  */
+    }
+
+    .div2{
+        box-shadow: -5px -5px 5px gray;/* 负值反向  */
+    }
+
+    .div3{
+        box-shadow: 5px 5px gray;/* 模糊半径不填，或者填为0，则不模糊  */
+    }
+
+    .div4{
+        box-shadow: 5px 5px gray,/* 可以对同一个对象指定多个阴影，应该可以做出一些特别的效果 */
+                      10px 10px red,
+                     15px 15px green;
+    }
+
+    /* ========================================== */
+
+    /* 添加盒内阴影 */
+    .div5{
+        box-shadow: inset 5px 5px 5px gray;/* 盒内阴影是从上边界，左边界产生阴影的。和外阴影相反 */
+    }
+
+
+    /* 子元素会自动继承父元素的阴影效果 */
+    .div-small{
+        width: 50px;
+        height: 50px;
+        background: blue;
+    }
+
+    /* 让段落中的第一个字添加盒阴影，该字继承父背景色和阴影 */
+    .div2:first-letter{
+        box-shadow: 5px 5px 5px gray;
+    }
+
+    /* 让段落中的第一个字添加文字阴影 */
+    .div3:first-letter{
+        text-shadow: 5px 5px 5px gray;
+    }
+
+</style>
+<body>
+
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div2">我们都是中国人我们</div>
+<div class="div3">我们都是中国人我们</div>
+<div class="div3"><div class="div3 div-small"></div></div>
+<div class="div3"><span class="div3 div-small">你好吗</span></div>
+<div class="div4"></div>
+
+<div class="div5"></div>
+
+
+</body>
+</html>

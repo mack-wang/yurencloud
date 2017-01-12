@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /* 从我的理解是，通过css3对相应的表格类用display进行定义，然后在div等元素中，用class把非表格元素转变成对应的表格元素，其实长得和表格很像  */
+    /*
+    元素      display对应类型
+    table    table/inline-table  整个表格
+    tr       table-row  行
+    td       table-cell 单元格
+    th       table-cell 列标题
+    tbody    table-row-group   所有行
+    thead    table-header-group 表头部分
+    tfood    table-footer-group 脚注部分
+    col      table-column   列
+    colgroup table-column-group 所有列
+    caption  table-caption 表格标题
+    */
+    .table{
+        display: table;
+        border: 3px solid black;
+        text-align: center;
+    }
+    .caption{
+        display: table-caption;
+        text-align: center;
+    }
+    .tr{
+        display: table-row;
+    }
+    .td{
+        width: 30px;
+        height: 20px;
+        display: table-cell;
+        border:2px solid black;
+    }
+    .thead{
+        display: table-header-group;
+    }
+
+
+</style>
+<body>
+<div class="table">
+    <div class="caption">数字表</div>
+    <div class="thead">
+        <div class="tr">
+            <div class="td">1</div>
+            <div class="td">2</div>
+            <div class="td">3</div>
+        </div>
+        <div class="tr">
+            <div class="td">1</div>
+            <div class="td">2</div>
+            <div class="td">3</div>
+        </div>
+        <div class="tr">
+            <div class="td">1</div>
+            <div class="td">2</div>
+            <div class="td">3</div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
