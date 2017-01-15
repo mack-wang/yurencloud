@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*
+    box-sizing:设置宽高对应的盒类型
+        content-box:内容盒（默认）
+        padding-box:内边距盒，宽高包含内边距
+        border-box:边框盒，宽高包含内边距，边框
+
+    */
+    div{
+        width: 300px;
+        border: 30px solid red;
+        padding: 30px;
+        background: green;
+        margin: 20px;
+    }
+
+    /* 默认 */
+    .div1{
+        box-sizing: content-box;
+    }
+
+    /* 宽高中包含了padding,border，所以padding，border不会让元素变大，因为都包含在了宽高值中了 */
+    .div2{
+        box-sizing: border-box;
+    }
+
+    /* 宽高中包含了padding,不包含border。我测试时无效 */
+    .div3{
+        box-sizing: padding-box;
+    }
+
+    /*
+
+
+    当我们要控制一个元素，他的padding，border很可能会变化，但我们又不想他变大或者变小，所以可以用box-sizing:border-box;来把宽高定义为包含了padding,border，元素就不会因为padding，border的变化而变化了，但padding,boreder的效果依然在。只是content内容会自己根据需要变化
+
+
+    */
+</style>
+<body>
+<div class="div1">
+选“格式/项目符号和编号”,弹出“项目符号和编号”对话框,在“项目符号”选项卡中选择想要在段前添加的符号,如没有想要的符号,点“自定义”,在“自定义项目符号列表”中选“图片”或“字符”,选择需要的符号,确定就行了.
+</div>
+
+<div class="div2">
+    选“格式/项目符号和编号”,弹出“项目符号和编号”对话框,在“项目符号”选项卡中选择想要在段前添加的符号,如没有想要的符号,点“自定义”,在“自定义项目符号列表”中选“图片”或“字符”,选择需要的符号,确定就行了.
+</div>
+
+<div class="div3">
+    选“格式/项目符号和编号”,弹出“项目符号和编号”对话框,在“项目符号”选项卡中选择想要在段前添加的符号,如没有想要的符号,点“自定义”,在“自定义项目符号列表”中选“图片”或“字符”,选择需要的符号,确定就行了.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    /*
+    background-repeat: 背景图平铺设置
+            no-repeat 不平铺
+            repeat 平铺（默认）
+            repeat-x 只在水平方向上平铺
+            repeat-y 只在垂直方向上平铺
+            round 平铺后，背景图溢出部分不裁剪，而是以最小的图片变形代价，使所有平铺背景图都完整显示
+            space 平铺后，背景图溢出部分不裁剪，而是以最优的背景色填充间隙代价，使所有平铺背景图都完整显示
+
+    */
+
+    div {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: green;
+        margin: 20px;
+        color: white;
+    }
+
+    .div2 {
+        background-image: url("img/flower.png");
+        background-size: 70px 70px;
+        background-repeat: round;
+
+    }
+
+    .div3 {
+        background-image: url("img/flower.png");
+        background-size: 70px 70px;
+        background-repeat: space;
+    }
+
+    .div4 {
+        background-image: url("img/flower.png");
+        background-size: 70px 70px;
+        background-repeat: no-repeat;
+    }
+
+    .div5 {
+        background-image: url("img/flower.png");
+        background-size: 70px 70px;
+        background-repeat: repeat;
+    }
+
+    .div6 {
+        background-image: url("img/flower.png");
+        background-size: 70px 70px;
+        background-repeat: repeat-x;
+    }
+
+    .div7 {
+        background-image: url("img/flower.png");
+        background-size: 70px 70px;
+        background-repeat: repeat-y;
+    }
+
+
+</style>
+<body>
+
+<div class="div2">
+    我是内容我是内容我是内容我是内容我是内容
+</div>
+
+<div class="div3">
+    我是内容我是内容我是内容我是内容我是内容
+</div>
+
+<div class="div4">
+    我是内容我是内容我是内容我是内容我是内容
+</div>
+
+<div class="div5">
+    我是内容我是内容我是内容我是内容我是内容
+</div>
+
+<div class="div6">
+    我是内容我是内容我是内容我是内容我是内容
+</div>
+
+<div class="div7">
+    我是内容我是内容我是内容我是内容我是内容
+</div>
+
+
+</body>
+</html>

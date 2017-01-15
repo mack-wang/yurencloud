@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    /*
+        background-origin: 背景图绘制起点
+                content-box 从内容盒左上角开始绘制
+                padding-box 从内边距盒左上角绘制（默认）
+                border-box 从边框盒左上角绘制
+    */
+
+    div{
+        width: 300px;
+        border: 30px dotted red;
+        padding: 30px;
+        background: green;
+        margin: 20px;
+    }
+
+    /* 默认图片填充起点为padding-box */
+    .div2{
+        background-image: url("img/girl.png");
+    }
+
+    .div3{
+        background-image: url("img/girl.png");
+        background-origin: content-box;/* 将图片填充起点改为content-box */
+    }
+
+    .div4{
+        background-image: url("img/girl.png");
+        background-origin: padding-box;/* 将图片填充起点改为padding-box(默认值) */
+    }
+
+    .div5{
+        background-image: url("img/girl.png");
+        background-origin: border-box;/* 将图片填充起点改为border-box */
+    }
+
+
+    .div6{
+        background-image: url("img/girl.png");
+        background-clip: padding-box;
+        background-origin: padding-box;/* 将图片填充起点改为border-box */
+    }
+
+
+</style>
+<body>
+
+<div class="div2">
+    选“格式/项目符号和编号”,弹出“项目符号和编号”对话框,在“项目符号”选项卡中选择想要在段前添加的符号,如没有想要的符号,点“自定义”,在“自定义项目符号列表”中选“图片”或“字符”,选择需要的符号,确定就行了.
+</div>
+
+<div class="div3">
+    选“格式/项目符号和编号”,弹出“项目符号和编号”对话框,在“项目符号”选项卡中选择想要在段前添加的符号,如没有想要的符号,点“自定义”,在“自定义项目符号列表”中选“图片”或“字符”,选择需要的符号,确定就行了.
+</div>
+
+<div class="div4">
+    选“格式/项目符号和编号”,弹出“项目符号和编号”对话框,在“项目符号”选项卡中选择想要在段前添加的符号,如没有想要的符号,点“自定义”,在“自定义项目符号列表”中选“图片”或“字符”,选择需要的符号,确定就行了.
+</div>
+
+<div class="div5">
+    选“格式/项目符号和编号”,弹出“项目符号和编号”对话框,在“项目符号”选项卡中选择想要在段前添加的符号,如没有想要的符号,点“自定义”,在“自定义项目符号列表”中选“图片”或“字符”,选择需要的符号,确定就行了.
+</div>
+
+<div class="div6">
+    选“格式/项目符号和编号”,弹出“项目符号和编号”对话框,在“项目符号”选项卡中选择想要在段前添加的符号,如没有想要的符号,点“自定义”,在“自定义项目符号列表”中选“图片”或“字符”,选择需要的符号,确定就行了.
+</div>
+
+
+</body>
+</html>

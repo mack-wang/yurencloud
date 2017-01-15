@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    /*
+
+    */
+
+    div{
+        width: 300px;
+        border: 30px dotted red;
+        padding: 30px;
+        background: green;
+        margin: 20px;
+        color: white;
+    }
+
+
+    .div2{
+        background-image: url("img/flower.png");/*默认是从内边距盒左上角原图尺寸填充*/
+        
+    }
+
+    .div3{
+        background-image: url("img/flower.png");
+        background-size: 20px 20px;/*从内边距盒左上角按宽20px,高20px来填充*/
+    }
+
+    .div4{
+        background-image: url("img/flower.png");
+        background-size: auto 80px;/*宽自动，高定为80px*/
+    }
+
+    .div5{
+        background-image: url("img/flower.png");
+        background-size: 20px;/*只有一个值时，为宽20px，高自动*/
+    }
+
+    .div6{
+        background-image: url("img/flower.png");
+        background-size: contain;/*自动调整宽高，匹配当前的盒类型，以达到完整显示背景图片。会以多张图来填充。*/
+                                    /* contain 包含的意思，就是元素包含背景图 */
+    }
+
+    .div7{
+        background-image: url("img/flower.png");
+        background-size: cover;/*在图片比例不变的前提下，自动以单张图片填充满当前盒子*/
+                                /* cover 覆盖的意思，就是元素被背景图覆盖*/
+    }
+
+
+</style>
+<body>
+
+<div class="div2">
+    选“格式/项目符号和编号”
+</div>
+
+<div class="div3">
+    选“格式/项目符号和编号”
+</div>
+
+<div class="div4">
+    选“格式/项目符号和编号”
+</div>
+
+<div class="div5">
+    选“格式/项目符号和编号”
+</div>
+
+<div class="div6">
+    选“格式/项目符号和编号”
+</div>
+
+<div class="div7">
+    选“格式/项目符号和编号”
+</div>
+
+
+</body>
+</html>
