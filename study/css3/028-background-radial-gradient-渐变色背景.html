@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*
+    background: radial-gradient(circle,orange,red)
+        参数一：(可以添加closet-side 或距离数值等 等表示终点边，可以添加at表示起点位置，at前不加形状，则默认椭圆形，)
+
+        公式：[形状 终点位置 at 起点位置]
+
+        circle 圆形
+        ellipse 椭圆形（默认承椭圆）
+        at left top 椭圆形左上角
+        circle at center top 圆形中间上方
+        circle closest-side at center top 圆形-终点为最近的一条边-起点为圆形中间上方
+        （closest-side终点为最近的一条边，farthest-side终点为最远的一条边，closest-corner终点为最近的一个角，farthest-corner终点为最远的一个角）
+        等等
+        参数二：
+        起始颜色
+
+        参数中间点：
+        中间点颜色，可以设置多个中间色，以逗号分隔就可以
+
+        参数三：
+        终点颜色
+    */
+    .div2 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background:radial-gradient(orange,black);/*默认椭圆*/
+    }
+
+    .div3 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background:radial-gradient(circle,orange,black);
+    }
+
+    .div4 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background:radial-gradient(ellipse,orange,black);/*默认椭圆*/
+    }
+
+    .div5 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: radial-gradient(circle at center top,orange,black);/* 起点位置为中上方 */
+    }
+
+    .div6 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: radial-gradient(circle at 75px 75px,orange,black);/* 起点位置为75px,75px */
+    }
+
+    .div7 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: radial-gradient(circle closest-side at 75px 75px,orange,black);/* closest-side 终点位置为最近的一条边 */
+    }
+
+    .div8 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: radial-gradient(circle farthest-side at 75px 75px,orange,black);/* farthest-side 终点位置为最远的一条边 */
+    }
+
+    .div9 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: radial-gradient(circle 200px at 75px 75px,orange,black);/* 200px是圆形半径 */
+    }
+
+    .div10 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: radial-gradient(ellipse 200px 100px at 75px 75px,orange,black);/* 200px 100px为椭圆垂直半径和水平半径 */
+    }
+
+    .div11 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: radial-gradient(circle 200px at 75px 75px,orange 20%,red 50%,black);/* 仍然可以设置颜色的偏离 */
+    }
+    
+
+
+
+
+</style>
+<body>
+
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<div class="div5"></div>
+<div class="div6"></div>
+<div class="div7"></div>
+<div class="div8"></div>
+<div class="div9"></div>
+<div class="div10"></div>
+<div class="div11"></div>
+
+
+
+
+</body>
+</html>

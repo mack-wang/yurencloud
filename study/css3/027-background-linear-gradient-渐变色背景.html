@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*
+    background: linear-gradient(to bottom,orange,red)
+        参数一：
+        to bottom 向下渐变
+        to bottom right 向右下渐变
+        to right 向右渐变
+        to up right 向右上渐变//实践时，不允许向上渐变
+        ...
+        参数二：
+        起始颜色
+
+        参数中间点：
+        中间点颜色，可以设置多个中间色，以逗号分隔就可以
+
+        参数三：
+        终点颜色
+
+    */
+    .div2 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: linear-gradient(to bottom,orange,red);
+    }
+
+    .div3 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: linear-gradient(to bottom right,orange 100px,black 70%);/* 参数二空格后跟尺寸或百分比 代表起始点的偏离 终点的偏离距离 */
+    }
+
+    .div4 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: linear-gradient(to bottom right,orange,black);
+    }
+
+    .div5 {
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        background: linear-gradient(to bottom right,orange,red,green,blue,black);/* 设置多个中间过渡色 */
+    }
+
+    
+
+
+
+
+</style>
+<body>
+
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<div class="div5"></div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*
+    把图片切下来
+    border-image:url() a b c d; a上边距，b右边距,c下边距，d左边距，ab为右上小方块，。。共5个参数，把图片切成9块，中间那块为空，边框为8块。
+    切下来后的宽度为A，B，C，D，如果不设置的话，为默认切下来时的宽度。
+    border-image:url() a b c d/A B C D repeat stretch; repeat 为平铺，stretch为拉伸
+
+    可以简便：
+    border-image:url() a/A;
+
+    注：如果想在设置边框图片时，显示背景图片，那么边框图片的中间部分要为透明的，不然会遮住背景图片
+    */
+    .div2 {
+        margin: 30px;
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        border: 30px solid black;
+        border-image: url("img/flower.png") 20 10 20 20 / 20px 10px 5px 20px;/* 先把图片变形成300px*200px,再按20，10，20，20切下来，切下来后，再按20px,10px,5px,20px压缩对应的边 */
+    }
+
+    .div3 {
+        margin: 30px;
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        border: 30px solid black;
+        border-image: url("img/flower.png") 20;/* 浏览器会首先将图片变形成当前的宽高，再取边框 */
+    }
+
+    .div4 {
+        margin: 30px;
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        border: 30px solid black;
+        border-image: url("img/flower.png") 20/5px;/* 浏览器会首先将图片变形成当前的宽高，再取边框 */
+    }
+
+    .div5 {
+        margin: 30px;
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        border: 30px solid black;
+        border-image: url("img/flower.png");/* 后面啥也不写时，就是在四个角显示border宽度的图片背景 */
+    }
+
+    .div6 {
+        margin: 30px;
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        border: 20px solid black;
+        border-image: url("img/ai.png") 10/40px repeat repeat;/* 平铺 */
+    }
+
+    .div7 {
+        margin: 30px;
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        border: 20px solid black;
+        border-image: url("img/ai.png") 10/40px stretch stretch;/* 拉伸 */
+    }
+
+    .div8 {
+        margin: 30px;
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        border: 20px solid black;
+        border-image: url("img/ai.png") 10/40px repeat stretch;/* 左右拉伸，上下平铺 */
+    }
+
+    .div9 {
+        margin: 30px;
+        width: 300px;
+        height: 200px;
+        padding: 30px;
+        border: 20px solid black;
+        border-image: url("img/ai.png") 10/40px stretch repeat;/* 左右平铺，上下拉伸 */
+    }
+
+    
+
+
+    
+
+
+
+
+</style>
+<body>
+
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<div class="div5"></div>
+<div class="div6"></div>
+<div class="div7"></div>
+<div class="div8"></div>
+<div class="div9"></div>
+<div class="div10"></div>
+<div class="div11"></div>
+
+
+
+
+</body>
+</html>
