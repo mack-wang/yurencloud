@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    img{
+        width: 100px;
+        height: 100px;
+        margin: 50px;
+    }
+    img:nth-child(1){
+        transform: rotate(45deg);/*旋转45度角*/
+    }
+    img:nth-child(2){
+        transform: scale(0.5);/*缩小为0.5倍*/
+    }
+    img:nth-child(3){
+        transform: scale(2);/*放大到2倍*/
+    }
+    img:nth-child(4){
+        transform: scale(0.5,2);/*宽为0.5倍，高为2倍*/
+    }
+    img:nth-child(5){
+        transform: skew(30deg,40deg);/*水平倾斜30度，垂直倾斜40度，实现平行四边形效果*/
+    }
+    img:nth-child(6){
+        transform: translate(50px,50px);/*向左移50px,向下移50px*/
+    }
+    img:nth-child(7){
+        transform: scale(0.5) rotate(45deg) translate(50px,50px);/*先缩小0.5倍，再旋转45度，再向左向下移动50度*/
+    }
+    img:nth-child(8){
+        transform-origin: 5px 10px;/*变形默认都是从正中间为基准点，transform-origin可以改变基准点位置*/
+                                    /*可以是left,right,top,bottom,center，单位距离，百分比任意组合*/
+        transform:rotate(45deg);
+    }
+
+</style>
+<body>
+<img src="img/flower.png" alt="">
+<img src="img/flower.png" alt="">
+<img src="img/flower.png" alt="">
+<img src="img/flower.png" alt="">
+<img src="img/flower.png" alt="">
+<img src="img/flower.png" alt="">
+<img src="img/flower.png" alt="">
+<img src="img/flower.png" alt="">
+
+</body>
+</html>
