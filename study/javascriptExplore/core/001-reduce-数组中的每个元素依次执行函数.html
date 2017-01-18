@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    语法：arr.reduce(callback[, initialValue]) {}
+    语法解释：callback是一个函数，[]代表可选，逗号代表如果要添加可选参数，要用逗号分隔开来，initialValue代表初始值
+    回调函数可以传递四个参数previousValue, currentValue, index, array（上一次值，当前值，当前值的索引，数组）
+    例子：
+     [0, 1, 2, 3, 4].reduce((previousValue, currentValue, index, array) => previousValue + currentValue, 10);
+     执行命令：previousValue, currentValue, index, array
+     第一次：       10             0          0    [0, 1, 2, 3, 4]
+     第二次：       10             1          1    [0, 1, 2, 3, 4]
+     第三次：       10             2          2    [0, 1, 2, 3, 4]
+     第四次：       10             3          3    [0, 1, 2, 3, 4]
+     第五次：       10             4          4    [0, 1, 2, 3, 4]
+    */
+
+    /*所有数组项相加*/
+    function foo(){
+        return [1,2,3,4,5].reduce((x, y)=>x + y); //15
+    }
+
+    /*扁平化二维数组*/
+    function foo2(){
+        return [[1,2],[3,4],[5,6]].reduce((x, y)=>x.concat(y), []); //15
+    }
+
+    console.log(foo2());
+
+
+</script>
+</html>
