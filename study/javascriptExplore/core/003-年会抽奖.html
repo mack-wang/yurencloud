@@ -132,13 +132,13 @@
         target=event.target;
         id=target.value.substr(0,2);
         boxWidth=parseInt(target.value.substr(2,5));
-        randomMaker();
+        leftList=shuffleArray(leftList);
         draw();
     });
 
     function start() {
         time = setInterval(function () {
-            randomMaker();
+            leftList=shuffleArray(leftList);
             draw();
         },100);
     }
@@ -150,7 +150,7 @@
         giftName.innerHTML=target.innerHTML;
         for (var i=0;i<id;i++){
             var li = document.createElement("li");
-            var name = leftList[randomNumArr[i]];
+            var name = leftList[i];
             li.innerHTML=name;
             randomList.push(name);
             ul2.appendChild(li);
@@ -160,33 +160,35 @@
     }
 
 
-    function randomMaker(){
-        randomNumArr = [];
-        var num = leftList.length;
-        for (;randomNumArr.length<id;){
-            var rand = Math.floor(Math.random()*num);
-            for(var j=0;j<randomNumArr.length;j++){
-                if(randomNumArr[j]==rand){
-                    rand = "";
-                }
-            }
-            if(rand=="") continue;
-            randomNumArr.push(rand);
-        }
-        return randomNumArr;
-    }
-
     function draw() {
         ul1.innerHTML="";
         for (var i=0;i<id;i++){
             var li = document.createElement("li");
-            li.innerHTML=leftList[randomNumArr[i]];
+            li.innerHTML=leftList[i];
             li.style.width=boxWidth+"px";
             li.style.height=boxWidth+"px";
             li.style.lineHeight=boxWidth+"px";
             ul1.appendChild(li);
         }
     }
+
+
+
+
+
+
+//    ============================================================================
+    //打乱数组
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+    }
+
 
     ///集合取交集
     Array.intersect = function () {
