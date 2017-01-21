@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    /*media queries可以识别宽、高、设备分辨率宽、设备分辨率高、浏览器当前窗口是横向/纵向、窗口宽高比、设备颜色位数、色彩数、分辨率、是否为逐行扫描、是栅格还是位图*/
+
+    /*
+
+    @media (min-width: 768px){ //>=768的设备 }
+    @media (min-width: 992px){ //>=992的设备 }
+    @media (min-width: 1200){ //>=1200的设备 }
+    注意下顺序，min-width值大的写在最下面，否则会被覆盖，
+
+    @media (max-width: 1199){ //<=1199的设备 }
+    @media (max-width: 991px){ //<=991的设备 }
+    @media (max-width: 767px){ //<=768的设备 }
+    注意下顺序，max-width值小的写在最下面，否则会被覆盖，
+
+    @media适配不同尺寸的手机
+    当下，不同分辨率，不同尺寸的移动设备越来越多，自适应也成了最热门的话题，下面就是图趣网整理到的一些主流手机的匹配尺寸：
+    @media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){兼容iphone5}
+    @media only screen and (max-device-width :480px){ }
+    @media only screen and (min-device-width :481px){ }
+
+    6
+    @media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){ }
+
+    6+
+    @media (min-device-width : 414px) and (max-device-width : 736px) and (-webkit-min-device-pixel-ratio : 3){ }
+
+    魅族
+    @media only screen and (min-device-width :1080px) and (-webkit-min-device-pixel-ratio : 2.5){ }
+
+    mate7
+    @media only screen and (min-device-width :1080px) and (-webkit-min-device-pixel-ratio : 3){ }
+
+    4 4s
+    @media only screen and (device-height :480px) and (-webkit-device-pixel-ratio:2){ }
+
+
+    ======================================
+
+    语法
+    and 用来限定多个条件
+        例如：@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){ }
+    not 取反，排除
+        例如：@media not handheld {} 除便携设备外的其他所有设备，就是排除便携设备
+    only 对于不支持media queries的设备来说，优先读取该样式
+
+
+
+    */
+
+    /*当窗口尺寸改变时，换不同的css样式*/
+
+    @media screen and (min-width:300px) {
+        div{
+            width: 50px;
+            height: 200px;
+            background: blue;
+            float: left;
+            border: 1px solid black;
+        }
+    }
+
+
+    @media screen and (min-width:600px) {
+        div{
+            width: 200px;
+            height: 200px;
+            background: green;
+            float: left;
+            border: 1px solid black;
+        }
+    }
+
+    @media screen and (min-width:1000px) {
+        div{
+            width: 300px;
+            height: 200px;
+            background: orange;
+            float: left;
+            border: 1px solid black;
+        }
+    }
+
+
+
+
+</style>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+
+
+
+
+
+
+
+</body>
+<script>
+
+</script>
+</html>

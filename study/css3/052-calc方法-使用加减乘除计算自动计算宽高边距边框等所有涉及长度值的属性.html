@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .container{
+        width: 300px;
+        height: 200px;
+        background: orange;
+        font-size: 20px;
+        padding: 50px;
+        margin: 100px;
+        border: 10px solid black;
+    }
+
+    .children{
+        width: calc(50% - 50px);/* 可以实现 获取父元素的宽度300px然后*50%-50px 得到100px */
+        border: 1px solid black;
+    }
+    .children2{
+        width: calc(50%*2 - 50px);/* 可以实现 获取父元素的宽度300px然后*50%*2-50px 得到250px */
+        border: 1px solid black;
+    }
+
+    .children3{
+        width: calc(50%*2/4 + 50px);/* 可以实现 获取父元素的宽度300px然后*50%*2/4+50px 得到125px */
+        border: 1px solid black;
+    }
+
+    .children4{
+        width: calc(50px * 3 - 30px + 10px);/* 可以实现 50*3-30+10=130px */
+        border: 1px solid black;
+    }
+
+    .children5{
+        width: calc( 3rem + 5em + 10px);/* 可以实现 3*20+5*20+10=170 *//* 因为rem默认为根字体大小20px ,em为父字体大小20px */
+        border: 1px solid black;
+    }
+
+    .children6{
+        padding: calc( 10% + 10px + 5px + 4);/* 可以实现 300*10%+10+5+4=49px 的padding值 百分比的对象是父元素的宽度！！！ */
+        border: calc(1rem - 4px) solid black;/* 可以实现1*20-4=16px的宽度 */
+    }
+
+</style>
+<body>
+<div class="container">
+    我是中国人我是中国人
+    <div class="children">我是中国人我是中国人</div>
+    <div class="children2">我是中国人我是中国人</div>
+    <div class="children3">我是中国人我是中国人</div>
+    <div class="children4">我是中国人我是中国人</div>
+    <div class="children5">我是中国人我是中国人</div>
+    <div class="children6">我是中国人我是中国人</div>
+</div>
+
+
+</body>
+<script>
+
+</script>
+</html>

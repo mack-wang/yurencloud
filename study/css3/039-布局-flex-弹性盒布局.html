@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*
+    flex
+
+    以下6个属性设置在容器上。
+    flex-direction:row | row-reverse | column | column-reverse;  盒的显示顺序
+    flex-wrap: nowrap | wrap | wrap-reverse; 盒是否换行排列
+    flex-flow: direction wrap;flex-direction和flex-wrap的简写
+    justify-content:flex-start | flex-end | center | space-between | space-around; 盒左对齐，右对齐，居中对齐，两端对齐，等间距对齐
+    align-items:flex-start | flex-end | center | baseline | stretch; 盒顶部-底部-中心对齐，顶部对齐，底部对齐，中心对齐，首行文字基线对齐，拉伸等高对齐（默认）。
+    align-content:flex-start | flex-end | center | space-between | space-around | stretch; 多行盒对齐
+
+    以下6个属性设置在盒上。
+    order:<integer> 定义盒的排列顺序。数值越小，排列越靠前，默认为0。
+    flex-grow:<number>; 定义盒的放大比例，默认为0，即如果存在剩余空间，也不放大。
+    flex-shrink:<number>;定义了盒的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+    flex-basis:<length> | auto;定义了在分配多余空间之前，盒占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+    flex:none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ] 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+    align-self:auto | flex-start | flex-end | center | baseline | stretch;属性允许单个盒有与其他盒不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。
+
+
+
+
+    */
+
+    header{
+        display: flex;/* 步骤一：让最外层容器盒子，display属性设置为flex。效果：让盒内的所有子元素并排 */
+    }
+
+    #left{
+        width: 200px;
+        padding: 20px;
+        background: orange;
+    }
+
+    #center{
+        flex:1;/* 指定此元素的flex属性为1，自适应宽度 */
+        /*width: 300px;*/
+        padding: 20px;
+        background: yellow;
+    }
+
+    #right{
+        width: 200px;
+        padding: 20px;
+        background: green;
+    }
+
+    #left,#center,#right{
+        box-sizing: border-box;
+    }
+</style>
+<body>
+<header>
+    <section id="left">
+        <h4>左侧边栏</h4>
+        <ul>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+        </ul>
+    </section>
+    <section id="center">
+        <h3>内容</h3>
+        <div>我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</div>
+    </section>
+    <section id="right">
+        <h4>左侧边栏</h4>
+        <ul>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+        </ul>
+    </section>
+</header>
+
+
+
+</body>
+<script>
+
+</script>
+</html>

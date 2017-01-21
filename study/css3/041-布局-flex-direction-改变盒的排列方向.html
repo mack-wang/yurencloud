@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    header{
+        display: flex;/* 步骤一：让最外层容器盒子，display属性设置为flex。效果：让盒内的所有子元素并排 */
+        flex-direction: column-reverse;
+        /*
+        改变元素的排列方向
+        row 横向
+        row-reverse 横向反向
+        column 纵向
+        cloumn-reverse 纵向反向
+        */
+    }
+
+    #left{
+        order: 2;/* 在同级的子元素中都加上order属性，并指定其排列顺序，可以任意排列元素，且不用改变html中元素的书写顺序，很方便 */
+        width: 200px;
+        padding: 20px;
+        background: orange;
+    }
+
+    #center{
+        order: 1;
+        flex:1;/* 指定此元素的flex属性为1，自适应宽度 */
+        /*width: 300px;*/
+        padding: 20px;
+        background: yellow;
+    }
+
+    #right{
+        order: 3;
+        width: 200px;
+        padding: 20px;
+        background: green;
+    }
+
+    #left,#center,#right{
+        box-sizing: border-box;
+    }
+</style>
+<body>
+<header>
+    <section id="left">
+        <h4>左侧边栏</h4>
+        <ul>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+        </ul>
+    </section>
+    <section id="center">
+        <h3>内容</h3>
+        <div>我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</div>
+    </section>
+    <section id="right">
+        <h4>左侧边栏</h4>
+        <ul>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+        </ul>
+    </section>
+</header>
+
+
+
+</body>
+<script>
+
+</script>
+</html>

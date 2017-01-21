@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    header{
+        display: flex;/* 步骤一：让最外层容器盒子，display属性设置为flex。效果：让盒内的所有子元素并排 */
+    }
+
+    #left{
+        width: 200px;
+        padding: 20px;
+        background: orange;
+    }
+
+    #center{
+        flex:1;/* 指定多个元素为flex属性，其值1，2，3的意思是比例的意思，比如现在就是总比例为1+1+2，共同按比例平分自适应的宽度， */
+        padding: 20px;
+        background: yellow;
+    }
+
+    #center2{
+        flex:1;
+        padding: 20px;
+        background: yellow;
+    }
+    #center3{
+        flex:2;
+        padding: 20px;
+        background: yellow;
+    }
+
+    #right{
+        width: 200px;
+        padding: 20px;
+        background: green;
+    }
+
+    #left,#center,#right{
+        box-sizing: border-box;
+    }
+</style>
+<body>
+<header>
+    <section id="left">
+        <h4>左侧边栏</h4>
+        <ul>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+        </ul>
+    </section>
+    <section id="center">
+        <h3>内容</h3>
+        <div>我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</div>
+    </section>
+    <section id="center2">
+        <h3>内容</h3>
+        <div>我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</div>
+    </section>
+    <section id="center3">
+        <h3>内容</h3>
+        <div>我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</div>
+    </section>
+    <section id="right">
+        <h4>左侧边栏</h4>
+        <ul>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+            <li>超链接</li>
+        </ul>
+    </section>
+</header>
+
+
+
+</body>
+<script>
+
+</script>
+</html>

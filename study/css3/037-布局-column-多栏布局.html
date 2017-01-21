@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        /*width: 800px;*/
+        /*height: 300px;*/
+        padding: 20px;
+        border: 1px solid black;
+        margin: 20px;
+        background: yellow;
+    }
+
+    #box2{
+        column-count: 2;
+        -moz-column-count: 2;/* chrome把文字对半分两栏，firefox是文字满了才溢到第二栏 */
+        -webkit-column-count: 2;
+
+        column-width: 100px;
+        -moz-column-width: 100px;/* 无效，设置每栏的宽度 */
+        -webkit-column-width: 100px;
+
+        column-gap: 100px;
+        -moz-column-gap: 100px;/* 有效，设置栏与栏之间的距离 */
+        -webkit-column-gap: 100px;
+
+        column-rule: 1px solid black;
+        -moz-column-rule: 1px solid black;/* 有效，设置栏与栏之间的分隔线，居中的 */
+        -webkit-column-rule: 1px solid black;
+    }
+
+</style>
+<body>
+<div id="box1" class="box">姓名：宫崎骏
+    生日：1941年1月5日职业：动画导演、编剧作家
+    简介：宫崎骏，1941年1月5日出生于东京都文京区，日本动画师、动画制作人、漫画家、动画导演、动画编剧。毕业于日本东京学习院大学政治经济部。1963年进入东映动画公司，从事动画师工...</div>
+
+<div id="box2" class="box">姓名：宫崎骏
+    生日：1941年1月5日职业：动画导演、编剧作家
+    简介：宫崎骏，1941年1月5日出生于东京都文京区，日本动画师、动画制作人、漫画家、动画导演、动画编剧。毕业于日本东京学习院大学政治经济部。1963年进入东映动画公司，从事动画师工...姓名：宫崎骏
+    生日：1941年1月5日职业：动画导演、编剧作家
+    简介：宫崎骏，1941年1月5日出生于东京都文京区，日本动画师、动画制作人、漫画家、动画导演、动画编剧。毕业于日本东京学习院大学政治经济部。1963年进入东映动画公司，从事动画师工...姓名：宫崎骏
+    生日：1941年1月5日职业：动画导演、编剧作家
+    简介：宫崎骏，1941年1月5日出生于东京都文京区，日本动画师、动画制作人、漫画家、动画导演、动画编剧。毕业于日本东京学习院大学政治经济部。1963年进入东映动画公司，从事动画师工...姓名：宫崎骏
+    生日：1941年1月5日职业：动画导演、编剧作家
+    简介：宫崎骏，1941年1月5日出生于东京都文京区，日本动画师、动画制作人、漫画家、动画导演、动画编剧。毕业于日本东京学习院大学政治经济部。1963年进入东映动画公司，从事动画师工...</div>
+
+
+</body>
+<script>
+
+</script>
+</html>

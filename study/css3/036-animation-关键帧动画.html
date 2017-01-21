@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*
+     animation:name duration timing-function delay iteration-count direction;
+     animation:绑定的关键帧动画名字（自定义） 动画时长 动画过渡效果 延迟 动画播放次数 是否轮流反向播放动画
+
+     timin-funtion:动画过渡效
+        inear	动画从头到尾的速度是相同的
+        ease	默认。动画以低速开始，然后加快，在结束前变慢
+        ease-in	动画以低速开始
+        ease-out	动画以低速结束
+        ease-in-out	动画以低速开始和结束
+        cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。
+
+     iteration-count: n(指定次数)|infinite（无限次数）;
+
+     direction
+         normal	默认值。动画应该正常播放。	测试
+         alternate	动画应该轮流反向播放。
+    */
+
+
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        color:yellow;
+    }
+    /* 正向动画 */
+    #box{
+        animation: changeColor 2s ease 0.5s infinite normal;
+    }
+
+    @keyframes changeColor {
+        0% {background-color: red}
+        100% {background-color: green}
+    }
+
+    /* 轮流反向动画，多数时，反向会更自然 */
+    #box2{
+        animation: changeColor 2s ease 0.5s infinite alternate;
+    }
+
+    @keyframes changeColor {
+        0% {background-color: red}
+        100% {background-color: green}
+    }
+
+
+
+
+
+</style>
+<body>
+<div id="box" class="box">我是中国人</div>
+<div id="box2" class="box">我是中国人</div>
+
+</body>
+<script>
+
+</script>
+</html>

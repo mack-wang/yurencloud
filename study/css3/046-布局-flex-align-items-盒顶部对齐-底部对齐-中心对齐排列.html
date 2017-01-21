@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    header{
+        display: flex;/* 步骤一：让最外层容器盒子，display属性设置为flex。效果：让盒内的所有子元素并排 */
+        align-items: stretch;/*align-items: flex-start | flex-end | center | baseline | stretch;*/
+
+        /*
+        align-items: 元素的顶部，中部，底部对齐方式
+                    flex-start 顶部对齐。
+                    flex-end 底部对齐。
+                    center 中心对齐。
+                    baseline 项目的第一行文字的基线对齐。
+                    stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+        */
+    }
+
+    .left{
+        /*width: 100px;*/
+        padding: 20px;
+        background: orange;
+        border: 1px solid black;
+        margin: 10px;
+    }
+
+
+</style>
+<body>
+<header>
+    <section class="left" style="height: 100px">01盒子</section>
+    <section class="left" style="height: 50px">02盒子</section>
+    <section class="left" style="height: 200px">03盒子</section>
+    <section class="left" style="height: 200px">04盒子</section>
+    <section class="left" style="height: 100px">05盒子</section>
+    <section class="left" style="height: 100px">06盒子</section>
+    <section class="left" style="height: 300px">07盒子</section>
+    <section class="left">08盒子</section>
+    <section class="left">09盒子</section>
+    <section class="left">10盒子</section>
+
+
+
+</header>
+
+
+
+</body>
+<script>
+
+</script>
+</html>

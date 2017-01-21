@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    header{
+        display: flex;/* 步骤一：让最外层容器盒子，display属性设置为flex。效果：让盒内的所有子元素并排 */
+        flex-flow:nowrap;
+    }
+
+    .left{
+        width: 300px;
+        height: 50px;
+        padding: 20px;
+        background: orange;
+        border: 1px solid black;
+        margin: 10px;
+    }
+
+    section:nth-child(3){
+        flex:0 1 auto;/* grow shrink basis | 0 1 auto 为默认值*/
+    }
+
+    section:nth-child(4){
+        flex:1 0.5 500px;/* grow shrink basis | 剩余空间被分成1份，被该盒占用；空间不足时，该盒优先保留原始宽度0.5倍；在空间有剩余时，该盒以500px宽度显示，当空间不足时，该盒以500px/300px的比例优先占用宽度。*/
+    }
+
+
+
+</style>
+<body>
+<header>
+    <section class="left" >01盒子</section>
+    <section class="left" >02盒子</section>
+    <section class="left" >03盒子</section>
+    <section class="left" >04盒子</section>
+    <section class="left" >05盒子</section>
+    <section class="left" >06盒子</section>
+    <section class="left" >07盒子</section>
+    <section class="left">08盒子</section>
+    <section class="left">09盒子</section>
+    <section class="left">10盒子</section>
+
+
+
+
+
+
+</header>
+
+
+
+</body>
+<script>
+
+</script>
+</html>

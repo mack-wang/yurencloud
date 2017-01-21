@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*
+     transition：property duration timing-function transition-delay
+     transition：属性 动画时间 动画过渡效果（linear,easy） 延迟时间
+     也可以分开写：
+     transition-property:
+     transition-duration:
+     transition-timing-function:
+     transition-delay
+
+    */
+    #box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        color:green;
+        transition:width 1s linear,background-color 1s linear,color 1s linear;
+    }
+
+    #box:hover{
+        width: 200px;
+        background-color: blue;
+        color:yellow;
+    }
+
+</style>
+<body>
+<div id="box">我是中国人</div>
+
+</body>
+<script>
+
+</script>
+</html>
