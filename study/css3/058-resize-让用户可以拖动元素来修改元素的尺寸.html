@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    .box1{
+        resize: both;
+        overflow: auto;
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+    .box2{
+        resize: horizontal;
+        overflow: auto;
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+    .box3{
+        resize: vertical;
+        overflow: auto;
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+    .box4{
+        resize: inherit;
+        overflow: auto;
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+
+    /*
+    从目前来看，使用resize要配合着overflow一起用
+
+    resize:
+            none 用户不能修改尺寸
+            both 用户能修改尺寸
+            horizontal 只能修改宽度
+            vertical 只能修改高度
+            inherit 继承父元素的属性值
+    */
+
+
+
+
+</style>
+<body>
+<div class="box1">我是中国人</div>
+<div class="box2">我是中国人</div>
+<div class="box3">我是中国人</div>
+<div class="box4">我是中国人</div>
+
+
+</body>
+<script>
+
+</script>
+</html>

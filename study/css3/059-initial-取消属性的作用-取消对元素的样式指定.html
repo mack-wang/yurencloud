@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+    .box1{
+        resize: both;
+        overflow: auto;
+        width: 100px;
+        height: 100px;
+        background: red;
+        color: green;
+    }
+    .box2{
+        resize: horizontal;
+        overflow: auto;
+        width: 100px;
+        height: 100px;
+        background: red;
+        color:yellow;
+    }
+    .box2{
+        color: initial;/*取消了对box2的文字颜色的设置，恢复了文字默认的颜色*/
+    }
+    .box1{
+        width: initial;/*取消了对box2的宽度的设置，使其继承body的宽度*/
+    }
+
+
+    /*
+    intial可以使任何属性失效，使其恢复为默认样式
+    */
+
+
+
+
+</style>
+<body>
+<div class="box1">我是中国人</div>
+<div class="box2">我是中国人</div>
+
+
+
+</body>
+<script>
+
+</script>
+</html>

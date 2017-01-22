@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+
+
+    div{
+        width: 100px;
+        height: 100px;
+    }
+
+    div{
+        outline: 4px solid red;
+    }
+    p{
+        border: 4px solid red;
+        outline: 4px solid green;
+    }
+    span{
+        border: 4px solid red;
+        outline: 4px solid green;
+        outline-offset: 4px;/* 让轮廓线和边框相距4px */
+    }
+    h1{
+        border: 4px solid red;
+        outline: 4px solid green;
+        outline-offset: -4px;/* 让轮廓线和边框相距-4px,即轮廓线在边框内部，无效！ */
+
+    }
+    input{
+        border: 4px solid red;
+        outline: 4px solid green;
+    }
+
+
+</style>
+<body>
+<div class="box1">我是中国人</div>
+<span class="box2">我是中国人</span>
+<p>我是中国人</p>
+<h1>你好吗？</h1>
+<form action="">
+    <input type="text">
+</form>
+
+</body>
+<script>
+
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box1{
+        width: 100px;
+        height: 100px;
+        background: rgb(255,0,0);
+        color:blue;
+        opacity: 0.5;
+    }
+    .box2{
+        width: 100px;
+        height: 100px;
+        color:blue;
+        background: rgba(255,0,0,0.5);/*rgba最后一个a代表alpha通道，0-1表示透明度*/
+    }
+    /*
+    opacity是作用于整个元素，所以box1中的文字透明度也变成了0.5
+    alpha是作用于当前颜色的属性，所以box2中的文字透明度没变。
+
+    所以可以说opacity是针对元素的全局作用，而alpha是针对单个属性值颜色的透明度作用。
+
+    */
+
+</style>
+<body>
+<div class="box1">我是中国人，你呢？</div>
+<div class="box2">我是中国人，你呢？</div>
+
+
+
+
+
+
+
+
+</body>
+<script>
+
+</script>
+</html>

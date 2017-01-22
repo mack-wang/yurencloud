@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    /*filter代表滤镜的意思*/
+
+    div{
+        display: inline-block;
+        width: 107px;
+        height: 108px;
+        background: red;
+        color: blue;
+    }
+
+    .box2 {
+        filter: grayscale(100%);/*grayscale代表灰度，0-100% */
+    }
+
+    .box3 {
+        filter: sepia(100%);/* sepia代表棕褐色色调，呈现老照片的效果，0-100% */
+    }
+
+    .box4 {
+        filter: saturate(200%);/* saturate代表色彩饱合度，0-100% 削弱饱合度，100%以上提高饱合度 */
+    }
+    .box5 {
+        filter: hue-rotate(90deg);/* hue-rotate代表红-紫色环滤镜，0-360deg,将当前色值绕色环旋转，类似杀马特效果 */
+    }
+    .box6 {
+        filter: invert(100%);/* invert代表反相，0-100%，类似相片底片效果  */
+    }
+    .box7 {
+        filter: opacity(50%);/* 透明度 0-100%;滤镜的opacity和属性的opacity的区别：部分浏览器中会为滤镜的opacity进入硬件加速，性能更高  */
+    }
+    .box8 {
+        filter: contrast(200%);/* 对比度 0-100%削弱对比度，大于100%为提高对比度;*/
+    }
+    .box9 {
+        filter: blur(2px);/* 模糊滤镜，模糊像素值*/
+    }
+    .box10 {
+        filter: drop-shadow(4px 4px 6px purple);/* 阴影滤镜，为原图像产生一个快照，然后以单一颜色进行模糊处理，形成一个阴影*/
+    }
+
+    .img2 {
+        filter: grayscale(100%);
+    }
+
+    .img3 {
+        filter: sepia(100%);
+    }
+
+    .img4 {
+        filter: saturate(200%);
+    }
+    .img5 {
+        filter: hue-rotate(90deg);
+    }
+    .img6 {
+        filter: invert(100%);
+    }
+    .img7 {
+        filter: opacity(50%);
+    }
+    .img8 {
+        filter: contrast(200%);
+    }
+    .img9 {
+        filter: blur(2px);
+    }
+    .img10 {
+        filter: drop-shadow(4px 4px 6px purple);
+    }
+
+</style>
+<body>
+<div class="box1">我是中国人</div>
+<div class="box2">我是中国人</div>
+<div class="box3">我是中国人</div>
+<div class="box4">我是中国人</div>
+<div class="box5">我是中国人</div>
+<div class="box6">我是中国人</div>
+<div class="box7">我是中国人</div>
+<div class="box8">我是中国人</div>
+<div class="box9">我是中国人</div>
+<div class="box10">我是中国人</div>
+<div class="box11">我是中国人</div>
+<div class="box12">我是中国人</div>
+<div class="box13">我是中国人</div>
+<br>
+<img src="img/girl.png" alt="">
+<img class="img2" src="img/girl.png" alt="">
+<img class="img3" src="img/girl.png" alt="">
+<img class="img4" src="img/girl.png" alt="">
+<img class="img5" src="img/girl.png" alt="">
+<img class="img6" src="img/girl.png" alt="">
+<img class="img7" src="img/girl.png" alt="">
+<img class="img8" src="img/girl.png" alt="">
+<img class="img9" src="img/girl.png" alt="">
+<img class="img10" src="img/girl.png" alt="">
+<img class="img11" src="img/girl.png" alt="">
+<img class="img12" src="img/girl.png" alt="">
+<img class="img13" src="img/girl.png" alt="">
+
+
+</body>
+<script>
+
+</script>
+</html>
