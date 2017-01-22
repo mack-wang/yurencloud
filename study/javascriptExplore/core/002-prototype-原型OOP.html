@@ -11,8 +11,103 @@
     function test() {}
     console.log(test);
     console.log(typeof test);//是一个函数
-    console.log(typeof test.prototype); //
+    console.log(typeof test.prototype); //是一个对象
+    /*
+     百度百科中，这样描述了property:在JavaScript中，prototype对象是实现面向对象的一个重要机制。每个函数就是一个对象（Function），函数对象都有一个子      对象 prototype对象，类是以函数的形式来定义的。prototype表示该函数的原型，也表示一个类的成员的集合。
 
+     我的理解是：
+     function test(){} 这里定义了一名叫test的函数
+     test() 的类型是一个函数
+     test.prototype 的类型是一个对象
+     但test()又是一个prototype对象，prototype是test()函数对象的一个子对象，类是以函数的形式定义的，test.prototype就是该函数的原型，可以使用test.prototype来操作test()函数对象。
+     test.prototype的作用是什么呢？答：让函数具有对象的特点，可以操作对象一样操作函数。
+
+    */
+
+    //实践
+    //****面向对象来操作函数****
+
+    //创建一个car汽车函数（car.prototype是一个对象）
+    function Car(carBrand, model) {
+        this.carBrand = carBrand;
+        this.model = model;
+    }
+
+    //创建一个car.prototype对象的方法Acceleration，汽车加速方法
+    //（其实就是为car()函数添加方法,函数原本是不能像对象一样添加方法的，但有了prototype，我们就可以可以操作对象一样操作函数）
+    Car.prototype.Acceleration = function () {
+        console.log("this is " + this.carBrand + '--' + this.model);
+    };
+
+    //创建一个car.prototype对象的方法Hoot, 喇叭叫方法
+    Car.prototype.Hoot = function () {
+        console.log("嘀嘀嘀");
+    };
+
+    //创建一个car.prototype对象的属性Wheel，汽车有4个轮子属性
+    Car.prototype.Wheel=4;
+
+    //========以上已经创建了一个Car的对象
+    //========接下来我们创建一个具体的品牌的车，比如Benz奔弛，去继承Car对象
+
+    //创建一个Benz奔弛函数，（Benz.prototype是一个对象）
+    function Benz(carBrand,model,power) {
+        Car.call(this,carBrand,model);
+        this.power = power;
+    }
+
+
+    Benz.prototype = Object.create(Car.prototype);
+//    Tesla.prototype.constructor = Tesla;
+    var BenzCar = new Benz("奔弛车","Version2.0","汽油提供能源");
+    console.log(BenzCar);
+    BenzCar.Acceleration();
+
+    //让Benz.prototype对象继承Car.prototype对象的方法和属性
+//    Benz.prototype = Object.create(Car.prototype);
+
+
+
+
+
+
+/*
+
+    //特斯拉>>来三个参数>>品牌,型号,动力
+    function Tesla(carBrand, model ,power) {
+        Car.call(this, carBrand, model);
+        this.power = power;
+    }
+
+    //创造一个空对象，并且使其原型指向参数，也就是Car.prototype.
+    Tesla.prototype = Object.create(Car.prototype);
+    //取消不影响整体流程，但为了保持一致特斯拉构造，如果没有此行代码，则constructor为Car
+    Tesla.prototype.constructor = Tesla;
+    Tesla.prototype.Acceleration = function () {
+        console.log("this is " + this.carBrand + '--' +
+                this.model+" And Drive by "+this.power);
+    };
+
+    //特斯拉独有的  GetGirl你懂的方法
+    Tesla.prototype.GetGirl = function () {
+        console.log('yes,fucking car...');
+    };
+    //特斯拉 modelX 电动
+    var modelX = new Tesla("Tesla", "ModelX", "electric power");
+    console.log(typeof modelX);
+    modelX.Acceleration();
+    console.log(modelX.Wheel);
+    modelX.GetGirl();
+    modelX.Hoot();
+    console.log(Tesla.prototype.constructor);*/
+
+    /*
+     特斯拉的prototype原型指向的是一个Car原型，为什么不直接赋值呢 ？原因就是直接赋值原型时，子类原型对象的附加属性和方法，会被带到父类。
+
+     而后将Tesla的原型构造指向其本身，如果不指向本身，那么其原型构造就是Car，虽不会影响整体流程，但为了保证一致性，还是将其原型构造保持在Tesla.下面特斯拉拥有和父类同名的加速方法。也拥有了你懂的GetGirl的自身方法，你可以自己手动调用并看到父类原型对象上并没有子类的方法。
+
+     在子类调用父类同名方法时，则会选择子类的调用。而子类Tesla不拥有鸣笛方法，prototype沿着原型链向父亲查找，则可以调用父类的按喇叭方法。
+    */
 
 </script>
 </html>
