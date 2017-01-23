@@ -9,13 +9,110 @@
 </body>
 <script>
     /*
-    * 在JavaScript中一共有4种调用模式：
+     * 在JavaScript中一共有4种调用模式：
      (1)函数调用模式
      (2)方法调用模式
      (3)构造器调用模式
      (4)间接调用模式，通过call()和apply()进行
-    * */
+     * */
+
+    //一、函数调用模式
+    function fun(o) {
+
+    }
+    fun({x: 1});
+
+    /*在一个调用中，
+     （1）每个参数表达式计算的结果作为实参传递给声明函数时定义的形参；
+     （2）this被绑定到全局变量*/
+    var obj = {value: 1};
+    var value = 2;
+
+    obj.fun2 = function () {
+        var fun3 = function () {
+            console.log(this.value);//这里定义了一个函数，函数调用this时，绑定的是全局变量。
+        };
+        fun3();
+        console.log(this.value);//直接调用this时，绑定的是局部变量
+    };
+    obj.fun2();
+
+    /*
+     （3）返回值：函数的返回值成为调用表达式的值。
+     I. 如果函数返回是解释器到达结尾，也就是没有执行到return XXX的语句。返回值为undefined。
+     II. 如果函数返回是因为接受器执行到return xxx语句， 返回return之后的值。
+     III. 如果return语句后没有值，即return，则返回undefined。
+     */
+
+    function fun4() {
+
+    }
+    function fun5() {
+        return 5+1;
+    }
+    function fun6() {
+        return;
+    }
+    var num1 = fun4(),num2 = fun5(),num3= fun6();
+    console.log(num1,num2,num3);//undefined,6,undefined
 
 
+    //二、方法调用模式
+    /*
+     当一个函数被保存为对象的一个属性时，称为方法。
+     （1）参数和返回值的处理与函数调用一致；
+     （2）调用上下文this为该对象
+    */
+
+    function fun7() {
+        console.log(this.value);
+    }
+    var obj2 = {value:1};
+    obj2.method=fun7;
+    fun7();//2 this指向的是全局对象
+    obj2.method();//1 this指向的是局部对象
+
+
+    //三、构造器调用模式
+    //如果函数或方法调用之前带有new关键字，它就构成构造函数调用。如：
+    function F(){ }
+    var o = new F();
+
+    /*（1）参数处理：一般情况构造器参数处理和函数调用模式一致。但如果构造函数没用形参，
+    JavaScript构造函数调用语法是允许省略实参列表和圆括号的。
+
+    如：下面两行代码是等价的。*/
+    var o1 = new Object();
+    var o2 = new Object;
+
+    //（2）函数的调用上下文为新创建的对象。
+    function Base(value){
+        this.value =value;
+    }
+    var obj3 = new Base(1);
+    console.log(value);//2 value是全局变量
+    console.log(obj3.value);//1 value是局部变量
+    Base(3);
+    console.log(value);//3 value被
+    console.log(obj3.value);//1
+    /*
+     I. 第一次调用Base()函数是作为构造函数调用的，此时调用上下文this被绑定到新创建的对象，
+     即o。所以全局变量value值不变，而o新增一个属性value，值为1；
+
+     II. 第二次调用Base()函数是作为普通函数调用的，此时调用上下为this被绑定到全局对象，此时全局对象中的value值被赋值为3，所以输出为3
+     在浏览器中为window。所以全局对象的value值改变为3，而o的属性值不变。
+    */
+
+    /*（3）构造函数通常不使用return关键字，返回值就是新对象。而如果构造函数显示地使用return语句返回一个对象，
+    那么调用表达式值就为这个对象。如果构造函数使用return语句但没有指定返回值或者返回一个原始值，
+    则忽略返回值，同时使用新对象作为调用结果。*/
+
+
+    //四、间接调用模式
+    /*call()方法使用它自有的实参列表作为函数的实参
+     apply()方法要求以数组的形式传入参数
+
+     允许显示的指定调用所需的this值，为call()或apply()中的第一个参数
+     */
 </script>
 </html>

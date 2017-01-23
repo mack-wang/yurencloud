@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+     this存在两个地方：函数外面，函数里面
+     this在函数外面指的是window,this在函数里面指的是调用该函数的对象
+     */
+
+    console.log(this == window);//true,说明this就是window对象
+
+    var name = "sky";
+    var obj = {
+        name: "zt",
+        say: function () {
+            console.log("I am " + this.name);
+        }
+    };
+    obj.say();//I am zt 调用say方法的对象是obj，所以名字就是obj的name，zt
+    var fn = obj.say;
+    fn();//I am sky fun()其实是window.fn()，所以调用的对象是windows，所以为windows.name = "sky"
+    /*
+     判断函数里面的this指向谁就看函数调用的时"."符号左边是谁，
+     obj.say()"."左边是obj所以this就是obj,say函数里面的this.name就是obj.name=>zt。
+     fn()执行的时候没有"."那么fn函数里面的this就是window,window.name=>sky，
+     fn()其实就是window.fn(),只不过window可以省略，
+     *****判断this就是这么简单，就看函数调用的时候"."左边是哪个对象就可以。*****
+     */
+
+    //另外一点事件函数里面的this就是绑定事件的元素。
+
+    //this是灵活的当你用的不熟练的时候，他可能已经发生了改变，而我们却没有注意到：
+    var name1 = "sky1";
+    var obj2 = {
+        name1: "zt1",
+        say: function () {
+            setTimeout(function () {
+                console.log("I am " + this.name1);
+            }, 0);
+        }
+    };
+    obj2.say();//I am sky1
+
+    /*
+     你可能感觉say()的左边是obj，所以say()里面的this就是obj了，对啊say()里面的this就是obj！仔细看this.name的外面还有一个function(){},this在这个函数里面所以这个函数是由谁调用的this才指向谁。我们在仔细梳理过程，obj.say()的结果就是创建一个定时器，在JS代码执行完成之后定时器里面的函数执行，定时器里面的function(){}执行的时候没有"."所以里面的this是指向window。
+     函数里面的this指向谁，看函数执行的时候左边是谁，当函数嵌套的函数的我们要有一种本能的反应，就是要注意this的指向。
+     */
+
+    /*上面的这些多数的时候都是出现看面试题中，当然在开发中也要注意，this多用在构造函数中和new息息相关，我们先了解一下new的机制，new执行时会创建一个对象newObj，newObj的原型链指向构造函数的原型即newObj.__proto__ === 构造函数.prototype,并将构造函数里面的this指向新创建的对象，然后执行构造函数，最后返回newObj。所有如果需要暴露出去的一些属性或者方法我们在构造函数中一定要作为this的属性，这样new出来的对象才能够使用这些属性。*/
+    function Demo() {
+        this.des = "demo";
+        var life = "create";
+    }
+    var demo = new Demo();
+    console.log(demo.des);//demo
+    console.log(demo.life);//undefined
+
+
+
+
+    /* this指向是可以被改变的*/
+    /*我们可以通过call、apply、bind指定函数运行时this的指向。*/
+
+    var name3 = "sky3";
+    var obj3 = {
+        name: "wlc3",
+        say: function () {
+            function handler() {
+                console.log(this.name3);
+            }
+
+            handler();
+        }
+    };
+    obj3.say();//sky3
+
+    var name4 = "sky4";
+    var obj4 = {
+        name: "wlc4",
+        say: function () {
+            function handler() {
+                console.log(this.name4);
+            }
+            handler.call(this);
+        }
+    };
+    obj4.say();//wlc4  没试成功
+
+    var name5 = "sky5";
+    var obj5 = {
+        name: "wlc5",
+        say: function () {
+            function handler() {
+                console.log(this.name5);
+            }
+            handler.bind(this);
+        }
+    };
+    obj5.say();//wlc5  没试成功
+
+
+</script>
+</html>

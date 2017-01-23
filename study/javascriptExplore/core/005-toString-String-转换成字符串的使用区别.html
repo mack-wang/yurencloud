@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*1、.toString()可以将所有的的数据都转换为字符串，但是要排除null 和 undefined*/
+    var str1 = false.toString();
+//    var str2 = null.toString();
+//    var str3 = undefined.toString();
+    console.log(str1);
+//    console.log(str2);
+//    console.log(str3);
+
+    var num = 10;
+    var str4 = num.toString(2);//数值转成二进制字符串
+    var str5 = num.toString(8);//字符串只能转成相应的字符串，不能转成相应的进制的字符串。只有数值能进行进制转换
+    var str6 = num.toString(10);
+    var str7 = num.toString(16);
+    console.log( str4,str5,str6,str7,typeof str4);
+
+    /*2、Sring()可以将null和undefined转换为字符串，但是没法转进制字符串*/
+    var str8 = String(null);
+    var str9 = String(undefined);
+    console.log(str8,str9);
+
+</script>
+</html>

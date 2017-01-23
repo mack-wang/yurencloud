@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //1.使用Object创建对象
+    var person = new Object();
+    person.name = "Nicholas";
+    person.age = "29";
+    person.job = "Software Engineer";
+    person.sayName = function(){
+        alert(this.name);
+    };
+    //对象字面量写法
+    var person2 = {
+        name: "Nicholas",
+        age: "29",
+        job: "Software Engineer",
+        sayName: function(){
+            alert(this.name);
+        }
+    };
+    //缺点：使用同一个接口创建很多对象，会产生大量的重复代码。
+
+
+    //2.工厂模式
+    //该模式就是在函数内部创建对象，并返回该对象。函数像一个工厂一样，生产出对象，并返回。
+    function createPerson (name, age , job) {
+        var o = new Object();
+        o.name = name;
+        o.age = age;
+        o.job = job;
+        o.sayName = function(){
+            alert(this.name);
+        };
+        return o;
+    }
+
+    var person3 = createPerson("Nicholas", "29", "Software Engineer");
+    var person4 = createPerson("Greg", "27", "Doctor");
+    console.log(typeof person3);
+    //缺点：无法识别对象的类型。
+
+
+
+    //3.构造函数模式
+    //该模式就是在函数内部通过this来定义属性，方法。通过new PersonConstructor()来构造对象
+    function PersonConstructor(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.sayName = function(){
+            alert(this.name);
+        };
+    }
+
+    //构造函数使用new操作符来调用
+    var person5 = new PersonConstructor("Nicholas", "29", "Software Engineer");
+    var person6 = new PersonConstructor("Nicholas", "27", "Doctor");
+
+    //缺点：每个方法都要在实例上重新创建一遍
+    //不同实例上的同名函数是不相等的
+    console.log(person5.sayName == person6.sayName); //false,虽然两人都叫Nicholas，但不同实例上的同名函数是不相等的
+    console.log(person5.sayName.toString() == person6.sayName.toString()); //true,虽然两人都叫Nicholas，但不同实例上的同名函数是不相等的
+
+    //可以把函数定义转移到构造函数外来解决这个问题
+    function PersonConstructor2(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.sayName = sayName;
+    }
+    function sayName() {
+        alert(this.name);
+    }
+    var person7 = new PersonConstructor2("Nicholas", "29", "Software Engineer");
+    var person8 = new PersonConstructor2("Nicholas", "27", "Doctor");
+    console.log(person7.sayName == person8.sayName); //已经解决不同实例上的同名函数是不相等的，只要把内部方法在构造函数外定义就可以了
+
+
+
+    //4.原型模式
+    //我们创建的每个函数都有一个prototype（原型）属性，这个属性是一个指针，指向一个对象，这个对象的用途是包含可以有特定类型的所有实例共享的属性和方法。
+    function Person10() {
+    }
+    Person10.prototype.name = "Nicholas";
+    Person10.prototype.age = "29";
+    Person10.prototype.job = "Software Engineer";
+    Person10.prptptype.sayName = function(){
+        alert(this.name);
+    };
+
+    var person11 = new Person();
+    person1.sayName(); //"Nicholas"
+
+    var person12 = new Person();
+    person12.sayName(); //"Nicholas"
+
+    alert(person11.sayName == person2.sayName); //true
+
+    //更简单的原型语法
+    function Person13() {
+    }
+    Person13.prototype = {
+        constructor : Person111, //以对象字面量形式创建新对象，constructor不再指向Person，在此特意设置为Person
+        name : "Nicholas",
+        age : "29",
+        job : "Software Engineer",
+        sayName : function () {
+            alert(this.name);
+        }
+    };
+
+    /*原型和实例通过prototype和constructor属性相互关联
+    代码读取某个对象的属性时，是先检索实例，再检索实例的原型，所以实例的属性会覆盖原型的属性。
+    重新定义原型对象会切断原型与实例的联系，而修改原型对象不会。*/
+
+
+
+
+    //5.组合使用构造函数模式和原型模型
+    //构造函数模式用于定义实例属性
+    function Person14(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.friend = ["Shelby", "Court"];
+    }
+
+    //原型模式用于定义方法和共享属性!!!
+    Person14.prototype = {
+        constructor : Person111,
+        sayName : function() {
+        alert(this.name);
+    }
+    }
+
+
+
+</script>
+</html>
