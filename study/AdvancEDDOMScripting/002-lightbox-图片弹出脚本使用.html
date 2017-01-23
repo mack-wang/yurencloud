@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/lightbox.css">
+</head>
+<style>
+    img {
+        width: 200px;
+    }
+</style>
+<body>
+<!--data-lightbox如果是同名，则是一组图片，会显示图片在组中的序号-->
+<div>
+    <a href="img/girl/1.jpg" data-lightbox="girl1" data-title="beautiful girl"><img src="img/girl/1.jpg" alt=""></a>
+    <a href="img/girl/2.jpg" data-lightbox="girl1" data-title="beautiful girl"><img src="img/girl/2.jpg" alt=""></a>
+    <a href="img/girl/3.jpeg" data-lightbox="girl1" data-title="beautiful girl"><img src="img/girl/3.jpeg" alt=""></a>
+    <a href="img/girl/4.jpeg" data-lightbox="girl1" data-title="beautiful girl"><img src="img/girl/4.jpeg" alt=""></a>
+</div>
+<!--data-lightbox如果不同名，则每张图片是单独的个体，无序号-->
+<div>
+    <a href="img/girl/1.jpg" data-lightbox="girl2" data-title="beautiful girl"><img src="img/girl/1.jpg" alt=""></a>
+    <a href="img/girl/2.jpg" data-lightbox="girl3" data-title="beautiful girl"><img src="img/girl/2.jpg" alt=""></a>
+    <a href="img/girl/3.jpeg" data-lightbox="girl4" data-title="beautiful girl"><img src="img/girl/3.jpeg" alt=""></a>
+    <a href="img/girl/4.jpeg" data-lightbox="girl5" data-title="beautiful girl"><img src="img/girl/4.jpeg" alt=""></a>
+</div>
+</body>
+<script src="js/lightbox-plus-jquery.js"></script>
+<!--不想加jquery时，就添加上面这个js。如果本身就添加了jquery，则可以添加lightbox.js-->
+<!--更多设置查看地址：http://lokeshdhakar.com/projects/lightbox2/-->
+<script>
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+    })
+</script>
+</html>
