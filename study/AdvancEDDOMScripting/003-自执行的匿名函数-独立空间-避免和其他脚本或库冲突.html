@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="example" class="haha2">haha</div>
+</body>
+<script>
+    //*******使用匿名函数进行封装******
+
+
+    //伪命名空间思想
+    //下面就是一个自执行的匿名函数，拥有独立的空间，不会和其他的脚本或者库产生命名上的冲突，所以经常会看到
+    //理解：（function(){}）第一对括号中放了一个匿名函数，他会向脚本返回一个未命名的函数，随后的（）会立即执行这个未命名的函数,
+    //可以向第二对()括号中传递参数，因为这对括号就代码了返回的未命名的函数的括号
+    (function () {
+       //代码
+    })();
+    //示例
+//    (function (arg) {
+//        alert(arg);
+//    })("我是传递给匿名函数执行的参数");//传递匿名函数的参数
+
+    //通过稍有不同的对象语法来实现和上面相同的功能
+    (function () {
+        function $(id) {//为了避免$这个函数名和jquery,prototypejs等知名的库命名冲突，所以要放在自己独自拥有的空间中
+            return document.getElementById(id);
+        }
+
+        function alertNodeName(id) {
+            alert($(id).nodeName);
+        }
+        window['myNamespace']={};//在window对象下创建一个myNamespace新对象，该对象是全局对象
+        window['myNamespace']['showNodeName']= alertNodeName;//myNamespace对象下创建一个showNodeName方法
+    })();
+
+    myNamespace.showNodeName('example');//使用私有空间下的全局对象及其方法
+
+
+</script>
+</html>

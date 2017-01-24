@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box1" class="hello">1你好，世界！</div>
+<div id="box2" class="hello">2你好，世界！</div>
+<div id="box3" class="hello">3你好，世界！</div>
+</body>
+<script src="js/YU.js"></script>
+<script>
+    //测试YU.$(),获取单个DOM对象
+    console.log(YU.$('box1').innerHTML);
+
+    //测试YU.$(),获取并操作多个DOM对象
+    var elements = YU.$('box1','box2','box3');
+    for (e in elements){
+        console.log(elements[e].innerHTML);
+    }
+
+    //测试YU.addEvent事件绑定
+    YU.addEvent(YU.$('box1'),'click',function () {
+        console.log(this.className);
+    })
+
+
+
+</script>
+</html>
