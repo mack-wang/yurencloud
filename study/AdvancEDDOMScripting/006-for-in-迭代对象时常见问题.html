@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>hello1</div>
+<div>hello2</div>
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     在遍历数组时，经常会用到
+     var list = [1,2,3,4];
+     for (var i=0;i<list.length;i++){
+        altert(list[i]);
+     }
+
+     还有一种方法是for..in
+     for ( i in list){
+        altert(list[i]);
+     }
+
+     for..in也对遍历对象，但对象中除了我们添加的属性和方法，还有很多继承来的属性和方法，此时我们并不想遍历这些继承来的属性和方法
+
+     */
+    //针对迭代对象时出现的问题进行解决
+    var all = document.body.getElementsByTagName("*");
+    for (i in all){
+        if(!all.hasOwnProperty(i)){ continue;}//如果是继承来的属性和方法则跳过
+        //对all[i]进行操作
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

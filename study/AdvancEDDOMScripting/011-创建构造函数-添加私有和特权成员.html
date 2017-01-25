@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>hello1</div>
+<div>hello2</div>
+</body>
+<script src="js/YU.js"></script>
+<script>
+
+    function myConstructor(message) {
+        this.myMessage = message;
+
+        //公有属性，也是全局属性
+        name = 'Tom';
+
+        //公有方法,特权方法，可以访问私有成员和私有方法
+        this.addAge = function () {
+            console.log(++age)
+        };
+
+        this.alertMessage2 = function (string) {
+            this.myMessage += string;
+            alertMessage();
+        };
+
+        myConstructor.prototype.clearMessage = function (string) {
+            this.myMessage = '';
+        };
+
+        //静态属性
+        myConstructor.name = 'tom';
+        //静态方法
+        myConstructor.alertName = function () {
+            alert(this.name);
+        };
+
+//        myConstructor.alertName();
+
+        //私有属性，加上var就可以变成私有的
+        var age = 23;
+        var myOwner = this;
+
+        //私有方法
+        function alertMessage() {
+            console.log(myOwner.myMessage);
+        }
+
+
+        //实例化时显示信息
+        alertMessage();
+    }
+
+
+    var obj = new myConstructor("hello world");
+    console.log(obj.name);//但不知为何，函数成功执行，但出多出一个undefined;
+
+</script>
+</html>

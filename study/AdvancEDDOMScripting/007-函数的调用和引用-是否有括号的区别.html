@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>hello1</div>
+<div>hello2</div>
+</body>
+<script src="js/YU.js"></script>
+<script>
+    function example() {
+        return 5+3;
+    }
+    var foo = example();
+    var foo2 = example;
+    console.log(typeof foo,typeof foo2);//number,function
+
+    /*
+     var foo = example(); foo是函数的引用
+     var foo2 = example;  foo是函数的返回值
+    所以在对函数进行调用和引用时，是否带括号是很重要的，带括号的是函数的引用，不带括号，则是将函数的返回值赋值
+
+     */
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

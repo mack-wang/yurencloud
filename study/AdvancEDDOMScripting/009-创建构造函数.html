@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>hello1</div>
+<div>hello2</div>
+</body>
+<script src="js/YU.js"></script>
+<script>
+    //创建构造函数，任何函数都可以是构造函数
+    //我觉得构造函数的特点就是对this的应用
+    function myContructor(message) {
+        console.log(message);
+        this.myMessage = message;//myMessage只有在被实例化后才能使用，在构造函数内部是不能使用的。
+    }
+
+    //用构造函数，创建对象。创建的同时会执行一次构造函数中的代码
+    var myObject = new myContructor('初始化我的用构造函数创建的对象');
+
+</script>
+</html>

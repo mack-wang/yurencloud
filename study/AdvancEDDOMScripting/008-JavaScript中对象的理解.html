@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>hello1</div>
+<div>hello2</div>
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+
+    如果你的脚本中都是对象之间的交互操作，那么就可以称之为OO（Object Oriented,面向对象）的脚本。特别说明，javascript是一种原型式（prototype-style)的OO语言，没有类的概念，所有一切都派生自现有对象的一个副本。在javascript中，从函数到字符串实际上都是对象。
+
+    * */
+
+    //传统的javascript对象继承
+    var person = {};
+    person.name = 'wlc';
+    person.say = function () { console.log(this.name)};
+    person.say();//wlc
+
+    var xiaoming = {};
+    xiaoming.name = 'xiaoming';
+    xiaoming.say = person.say;//从person那继承了说话的方法
+    xiaoming.say();//xiaoming
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

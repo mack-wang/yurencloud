@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>hello1</div>
+<div>hello2</div>
+</body>
+<script src="js/YU.js"></script>
+<script>
+
+    //用Object创建对象
+    //使用点号操作符，添加新的属性和方法到对象中
+    var person = new Object();
+    person.name = 'wlc';
+    person.say = function () {
+        console.log(this.name)
+    };
+    person.say();//wlc
+
+    //用Function创建构造函数，并用构造函数创建对象
+    //使用点号操作符，添加新的属性和方法到对象中。代码能正常运行
+    var person1 = function () {
+    };
+
+    person1.name1 = 'wlc1';
+    person1.say = function () {
+        console.log(this.name1);//不能直接使用name，因为name属性已经被用于记录函数名
+    };
+    person1.say();
+    //使用构造函数创建对象person2,让person2继承person1
+    var person2 = new person1();
+    //继承失败，这就是构造函数直接使用点号操作符常犯的错误
+    //    person2.name = 'wlc2';
+    //    person2.say();
+
+    /*******************************************/
+    //使用构造函数的原型prototype，添加公有方法，改造上述的案例
+
+    var Person1 = function () {
+    };
+    Person1.prototype.name1 = 'wlc1';
+    Person1.prototype.say = function () {
+        console.log(this.name);
+    };
+    var Person2 = new Person1();
+    Person2.name = 'wlc2';
+    Person2.say();//继承成功，输出wlc2
+
+</script>
+</html>
