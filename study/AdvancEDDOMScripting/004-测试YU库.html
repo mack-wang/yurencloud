@@ -8,6 +8,22 @@
 <div id="box1" class="hello">1你好，世界！</div>
 <div id="box2" class="hello">2你好，世界！</div>
 <div id="box3" class="hello">3你好，世界！</div>
+<div id="box4" class="hello" style="display:none">4你好，世界！</div>
+<div id="box5" class="hello" style="display:none">5你好，世界！</div>
+<ul id="ul1">
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+</ul>
+<ul id="ul2">
+    <li>我们好</li>
+    <li>我们好</li>
+    <li>我们好</li>
+    <li>我们好</li>
+    <li>我们好</li>
+</ul>
 </body>
 <script src="js/YU.js"></script>
 <script>
@@ -23,8 +39,26 @@
     //测试YU.addEvent事件绑定
     YU.addEvent(YU.$('box1'),'click',function () {
         console.log(this.className);
-    })
+    });
 
+    //测试YU.getElementsByClassName
+    console.log(YU.getElementsByClassName('hello','div'));
+
+    //测试隐藏/显示元素YU.toggleDisplay();
+    YU.toggleDisplay(YU.$('box1'));
+    YU.toggleDisplay(YU.$('box4'),'inline-block');
+    YU.toggleDisplay(YU.$('box5'),'inline-block');
+
+    //原生js中没有insertAfter,只有insertBefore，所以在YU为库中去实现
+    YU.insertAfter(YU.$('box5'),YU.$('box2'));//把元素box5插入到元素box2后面去
+
+    //删除全部子节点
+    YU.removeChildren(YU.$('ul1'));
+
+    //在子节点之前插入一个新的子元素
+    var newChild = document.createElement('li');
+    newChild.innerHTML='大家好';
+    YU.prependChild(YU.$('ul2'),newChild);
 
 
 </script>

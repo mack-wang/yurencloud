@@ -121,31 +121,101 @@
 
     window['YU']['removerEvent'] = removeEvent;
 
+    //这个比较难用，竟然要至少传入className和tag参数才能获取到元素
     function getElementsByClassName(className, tag, parent) {
+        parent = parent || document;
+        if (!(parent = $(parent))) {
+            return false;
+        }
+
+        //查找所有匹配的标签
+        var allTags = (tag == "*" && parent.all) ? parent.all : parent.getElementsByTagName(tag);
+        var matchingElements = new Array();
+
+        //创建一个正则表达式。来判断className是否正确
+        className = className.replace(/\-/g, "\\-");
+        var regex = new RegExp("(^|\\s)" + className + "(\\s|$)");
+
+        var element;
+        //检查每个元素
+        for (var i = 0; i < allTags.length; i++) {
+            element = allTags[i];
+            if (regex.test(element.className)) {
+                matchingElements.push(element);
+            }
+        }
+        //返回任何匹配的元素
+        return matchingElements;
     }
 
     window['YU']['getElementsByClassName'] = getElementsByClassName;
 
+    //可以切换隐藏或者显示状态，也可以指定显示状态为，block,inline-block等类型
     function toggleDisplay(node, value) {
+        if (!(node = $(node))) {
+            return false;
+        }
 
+        if (node.style.display != 'none') {
+            node.style.display = 'none';
+        } else {
+            node.style.display = value || '';
+        }
+        return true;
     }
 
     window['YU']['toggleDisplay'] = toggleDisplay;
 
     function insertAfter(node, referenceNode) {
-
+        if (!(node = $(node))) {
+            return false;
+        }
+        if (!(referenceNode = $(referenceNode))) {
+            return false;
+        }
+        return referenceNode.parentNode.insertBefore(
+            node, referenceNode.nextSibling
+        );
     }
 
     window['YU']['insertAfter'] = insertAfter;
 
+    //删除全部子节点
     function removeChildren(parent) {
+        if (!(parent = $(parent))) {
+            return false;
+        }
 
+        //当存在子节点时册除该子节点
+        while (parent.firstChild) {
+            parent.firstChild.parentNode.removeChild(parent.firstChild);
+        }
+
+        //再返回父元素，以便实现方法连缀
+        return parent;
     }
 
     window['YU']['removeChildren'] = removeChildren;
 
-    function prependChild(parent, newChild) {
 
+    //添加新节点到子节点的最前面
+    function prependChild(parent, newChild) {
+        if (!(parent = $(parent))) {
+            return false;
+        }
+        if (!(newChild = $(newChild))) {
+            return false;
+        }
+
+        if (parent.firstChild) {
+            //如果存在一个子节点，则在这个子节点之前插入
+            parent.insertBefore(newChild, parent.firstChild);
+        } else {
+            //如果没有子节点，则直接添加
+            parent.appendChild(newChild);
+        }
+        //再返回父元素，以便实现方法的连缀
+        return parent;
     }
 
     window['YU']['prependChild'] = prependChild;
@@ -166,6 +236,37 @@
  //对每个元素elements[e]进行操作
  }
 
+ 3、测试YU.$(),获取单个DOM对象
+ console.log(YU.$('box1').innerHTML);
 
+ 4、测试YU.$(),获取并操作多个DOM对象
+ var elements = YU.$('box1','box2','box3');
+ for (e in elements){
+ console.log(elements[e].innerHTML);
+ }
+
+ 5、测试YU.addEvent事件绑定
+ YU.addEvent(YU.$('box1'),'click',function () {
+ console.log(this.className);
+ });
+
+ 6、测试YU.getElementsByClassName
+ console.log(YU.getElementsByClassName('hello','div'));
+
+ 7、测试隐藏/显示元素YU.toggleDisplay();
+ YU.toggleDisplay(YU.$('box1'));
+ YU.toggleDisplay(YU.$('box4'),'inline-block');
+ YU.toggleDisplay(YU.$('box5'),'inline-block');
+
+ 8、原生js中没有insertAfter,只有insertBefore，所以在YU为库中去实现
+ YU.insertAfter(YU.$('box5'),YU.$('box2'));//把元素box5插入到元素box2后面去
+
+ 9、删除全部子节点
+ YU.removeChildren(YU.$('ul1'));
+
+ 10、在子节点之前插入一个新的子元素
+ var newChild = document.createElement('li');
+ newChild.innerHTML='大家好';
+ YU.prependChild(YU.$('ul2'),newChild);
 
  * */
