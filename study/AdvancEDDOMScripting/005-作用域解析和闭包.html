@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     作用域：指对某一属性、变量、方法、函数具有访问权限的空间。在javascript中，作用域是在函数中进行维护的；
+     作用域链：是用来描述一种路径的术语，沿着该路径可以确定变量的值（或者当函数被调用时要使用的方法）
+
+     */
+
+    function fun() {
+        var variable = 'inside';
+    }
+    fun();
+    console.log(fun());//无法访问fun()作用域中的variable变量
+
+    function fun2() {
+        var variable2 = 'inside';
+    }
+    var variable2 = 'outside';
+    fun2();
+    console.log(variable2);//outside,因为fun()的作用域，因var的变量声明，限制在fun()内部，未影响到外部
+
+    function fun3() {
+        variable3 = 'inside';
+    }
+    var variable3 = 'outside';
+    fun3();
+    console.log(variable3);//inside,因为没有var，所以变量variable3作用域为全局global，所以影响到了fun()函数外的变量。var关键字决定了变量的作用域链的终点。
+    /*
+    流程：fun3()在其作用域中没有找到var关键字，就会赋值操作会沿着作用域链查到到window作用域中，即全局作用域，并修改其中用var声明的variable3。
+    */
+
+
+    function fun4(variable4) {
+        variable4 = 'inside';
+    }
+    var variable4 = 'outside';
+    fun4();
+    console.log(variable4);//outside,因为fun4中的形参定义了variable4，所以variable4即使缺少var，他的作用域依然被限制在了函数内部
+
+    /*
+     闭包：指的是对内部函数即使在外部函数执行完成并终止以后，仍然可以访问其外部函数的属性。
+    */
+
+
+
+
+
+
+
+
+</script>
+</html>
