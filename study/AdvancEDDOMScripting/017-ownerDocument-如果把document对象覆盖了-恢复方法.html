@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="mytitle">我是标题</h1>
+<div id="container">
+    <ul>
+        <li>上海</li>
+        <li>北京</li>
+        <li>深圳</li>
+        <li>杭州</li>
+    </ul>
+</div>
+</body>
+<script src="js/YU.js"></script>
+<script src="js/myLogger.js"></script>
+<script>
+    function fun(node) {
+        //覆盖document,把document对象变成了字符串
+        var document = 'hello';
+
+//        var mytitle = document.getElementById('mytitle');
+//        YU.log.write(mytitle);//显示错误，因为document被覆盖成字符串了
+
+        //node是一个已经获取的节点，节点的所属文档的其实代表了document，
+        var title2 = node.ownerDocument.getElementById('mytitle');
+        YU.log.write(title2);
+    }
+
+    fun(YU.$('container'));
+</script>
+</html>

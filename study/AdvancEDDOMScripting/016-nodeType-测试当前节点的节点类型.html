@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>我是标题</h1>
+<div id="container">
+    <ul>
+        <li>上海</li>
+        <li>北京</li>
+        <li>深圳</li>
+        <li>杭州</li>
+    </ul>
+</div>
+</body>
+<script src="js/YU.js"></script>
+<script src="js/myLogger.js"></script>
+<script>
+    YU.addEvent(YU.$('container'), 'click', function (e) {
+        //用YU库中的日志输出，点击对象是否等于YU库中定义的节点类型名字
+        YU.log.write(e.target.nodeType == YU.node.ELEMENT_NODE);
+        //下面这个也是所有浏览器都通用的，但因为1-12代表的节点类型比较难记忆，所以使用上面的自定义的名字更方便比较
+        YU.log.write(e.target.nodeType == 1);
+    })
+</script>
+</html>

@@ -22,10 +22,11 @@
     <li>我们好</li>
     <li>我们好</li>
     <li>我们好</li>
-    <li>我们好</li>
+    <li><a href="#">北京</a>我们好呀</li>
 </ul>
 </body>
 <script src="js/YU.js"></script>
+<script src="js/myLogger.js"></script>
 <script>
     //测试YU.$(),获取单个DOM对象
     console.log(YU.$('box1').innerHTML);
@@ -60,6 +61,24 @@
     newChild.innerHTML='大家好';
     YU.prependChild(YU.$('ul2'),newChild);
 
+    //绑定函数环境,不知道怎么用
+
+    //测试YU.log.write()
+    YU.log.write('this is raw');
+
+    //测试遍历所有元素,不带深度
+    YU.walkElementsLinear(function () {
+        YU.log.write(this.innerHTML);
+    },YU.$('ul2'));
+
+    //测试遍历所有元素，带深度
+//    YU.walkTheDOMRecursive(function () {
+//        YU.log.write(this.innerHTML);
+//    },YU.$('ul2'),1)
+    //遍历所有元素的属性，不会用
+//    YU.walkTheDOMWithAttributes(YU.$('ul2'),function (a,b,c) {
+//        YU.log.write(c);
+//    },2,c)
 
 </script>
 </html>

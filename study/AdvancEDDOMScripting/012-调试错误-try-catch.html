@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>hello1</div>
+<div>hello2</div>
+</body>
+<script src="js/YU.js"></script>
+<script>
+
+   try {
+       fun1();
+   }catch (theException){//theException是代表错误对象的一个形参
+       alert('你好，我们捕获了一个错误！错误名字叫：'
+       + theException.name
+       + '错误的信息是：'
+       + theException.message
+       );
+   }
+
+</script>
+</html>

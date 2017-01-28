@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="mytitle">我是标题</h1>
+<div id="container">
+    <ul id="ul">
+        <li>上海</li>
+        <li>北京</li>
+        <li>深圳</li>
+        <li>杭州</li>
+    </ul>
+</div>
+</body>
+<script src="js/YU.js"></script>
+<script src="js/myLogger.js"></script>
+<script>
+    var a = 'wlc2';
+    //如果a的字符串为wlc，则name就等于wlc,否则name为tom
+    var name = ( a =='wlc' ) ? 'wlc' : 'tom';
+    YU.log.write(name);
+
+</script>
+</html>

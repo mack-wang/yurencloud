@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="mytitle">我是标题</h1>
+<div id="container">
+    <ul id="ul">
+        <li>上海</li>
+        <li>北京</li>
+        <li>深圳</li>
+        <li>杭州</li>
+    </ul>
+</div>
+</body>
+<script src="js/YU.js"></script>
+<script src="js/myLogger.js"></script>
+<script>
+//    var a = 'wlc';
+    var a;
+    var b = 'Tom';
+    var c = a || b;//只要a不是null,undefined,false，就取a，否则取b
+    //原理是，逻辑符先对a进行了判断，如果a判断的结果为否，则去判断b。所以a不能是未声明，这样就没办法判断了
+    YU.log.write(c);
+</script>
+</html>

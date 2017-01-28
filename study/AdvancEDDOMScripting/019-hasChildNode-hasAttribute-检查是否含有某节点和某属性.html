@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="mytitle">我是标题</h1>
+<div id="container">
+    <ul id="ul">
+        <li>上海</li>
+        <li>北京</li>
+        <li>深圳</li>
+        <li>杭州</li>
+    </ul>
+</div>
+</body>
+<script src="js/YU.js"></script>
+<script src="js/myLogger.js"></script>
+<script>
+    var $container = YU.$('container');
+    var $ul = YU.$('ul');
+    YU.log.write($container.hasChildNodes($ul));
+    YU.log.write($container.hasAttribute('id'));//IE中没有这方法
+</script>
+</html>

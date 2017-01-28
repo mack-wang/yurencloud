@@ -97,6 +97,96 @@
 
     window['YU']['addEvent'] = addEvent;
 
+    //停止冒泡
+    function stopPropagation(eventObject) {
+        eventObject = eventObject || getEventObject(eventObject);
+        if (eventObject.stopPropagation) {
+            eventObject.stopPropagation();
+        } else {
+            eventObject.cancelBubble = true;
+        }
+    }
+
+    window['YU']['stopPropagation'] = stopPropagation;
+
+    //停止默认动作
+    function preventDefault(eventObject) {
+        eventObject = eventObject || getEventObject(eventObject);
+        if (eventObject.preventDefault) {
+            eventObject.preventDefault();
+        } else {
+            eventObject.returnValue = false;
+        }
+    }
+
+    window['YU']['preventDefault'] = preventDefault;
+
+    //在图片等资源加载完成前执行load（注意，事件不能涉及图片加载完成状态）
+    function addLoadEvent(loadEvent, waitForImages) {
+        if (!isCompatible()) {
+            return false;
+        }
+
+        //如果等待标记是true则使用常规的添加事件的方法
+        if (waitForImages) {
+            return addEvent(window, 'load', loadEvent);
+        }
+
+        //否则使用一些特别的方式来包装loadEvent()方法
+        var init = function () {
+            //如果这个函数已经被调用过了，则返回
+            if (arguments.callee.done) {
+                return;
+            }
+            //标记这个函数以便检验它是否运行过
+            arguments.callee.done = true;
+
+            //在document的环境中运行载入事件
+            loadEvent.apply(document.arguments);
+        };
+
+        //为DOMContentLoaded事件注册事件侦听器
+        if (document.addEventListener) {
+            document.addEventListener("DOMContentLoaded")
+        }
+
+        //针对safari使用setInterval()函数来检测
+        //document是否载入完成
+        if (/WebKit/i.test(navigator.userAgent)) {
+            var _timer = setInterval(function () {
+                if (/loaded|complete/.test(document.readyState)) {
+                    clearInterval(_timer);
+                    init();
+                }
+            }, 10)
+        }
+
+        //针对IE
+        //添加一个载入过程中最后执行的脚本
+        //并检测该脚本是否载入完成
+        document.write("<script id=__ie_onload defer src=javascript:void(0)><\/script>");
+        var script = document.getElementById("__ie_onload");
+        script.onreadystatechange = function () {
+            if (this.readyState == "complete") {
+                init();
+            }
+        };
+
+        return true;
+    }
+
+    window['YU']['addLoadEvent'] = addLoadEvent;
+
+    //获取事件对象
+    function getEventObject(W3CEvent) {
+        return W3CEvent || window.event;
+    }
+
+    window['YU']['getEventObject']=getEventObject;
+
+    //TODO：P117
+
+
     function removeEvent(node, type, listener) {
         //node只能是字符串
         if (!(node = $(node))) {
@@ -220,7 +310,94 @@
 
     window['YU']['prependChild'] = prependChild;
 
-})();
+    //绑定函数的环境
+    function bindFunction(obj, func) {
+        return function () {
+            func.apply(obj, arguments);
+        };
+    }
+
+    window['YU']['bindFunction'] = bindFunction;
+
+    //获取浏览器的宽度，高度
+    function getBrowserWindowSize() {
+        var de = document.documentElement;
+        return {
+            'width': (
+            window.innerWidth
+            || (de && de.clientWidth)
+            || document.body.clientWidth),
+            'height': (
+            window.innerHeight
+            || (de && de.clientHeight)
+            || document.body.clientHeight)
+        }
+    }
+
+    window['YU']['getBrowserWindowSize'] = getBrowserWindowSize;
+
+    //因为有些浏览器不会返回node核心对象的类型值，所以可以自定义，兼容所有浏览器
+    window['YU']['node'] = {
+        ELEMENT_NODE: 1,
+        ATTRIBUTE_NODE: 2,
+        TEXT_NODE: 3,
+        CDATA_SECTION_NODE: 4,
+        ENTITY_REFERENCE_NODE: 5,
+        ENTITY_NODE: 6,
+        PROCESSING_INSTRUCTION_NODE: 7,
+        COMMENT_NODE: 8,
+        DOCUMENT_NODE: 9,
+        DOCUMENT_TYPE_NODE: 10,
+        DOCUMENT_FRAGMENT_NODE: 11,
+        NOTATION_NODE: 12
+    };
+
+    //遍历所有节点，不关心DOM树的深度
+    function walkElementsLinear(func, node) {
+        var root = node || window.document;
+        var nodes = root.getElementsByTagName("*");
+        for (var i = 0; i < nodes.length; i++) {
+            func.call(nodes[i]);
+        }
+    }
+
+    window['YU']['walkElementsLinear'] = walkElementsLinear;
+
+    //在上面的基础上，可以跟踪节点深度，或者构建路径，递归遍历DOM树
+    function walkTheDOMRecursive(func, node, depth, returnedFormParent) {
+        var root = node || window.document;
+        var returnedFromParent = func.call(root, depth++, returnedFromParent);
+        var node = root.firstChild;
+        while (node) {
+            walkTheDOMRecursive(func, node, depth, returnedFormParent);
+            node = node.nextSibling;
+        }
+    }
+
+    window['YU']['walkTheDOMRecursive'] = walkTheDOMRecursive;
+
+    //查找每个节点的属性
+    function walkTheDOMWithAttributes(node, func, depth, returnedFromParent) {
+        var root = node || window.document;
+        returnedFromParent = func(root, depth++, returnedFromParent);
+        if (root.attributes) {
+            for (var i = 0; i < root.attributes.length; i++) {
+                walkTheDOMWithAttributes(root.attributes[i], func, depth - 1, returnedFromParent);
+            }
+        }
+
+        if (root.nodeType != YU.node.ATTRIBUTE_NODE) {
+            node = root.firstChild;
+            while (node) {
+                walkTheDOMWithAttributes(node, func, depth, returnedFromParent);
+                node = node.nextSibling;
+            }
+        }
+    }
+
+    window['YU']['walkTheDOMWithAttributes'] = walkTheDOMWithAttributes;
+})
+();
 
 /*
  1、确定浏览器是否能够使用库中所有的方法的能力检测
@@ -268,5 +445,7 @@
  var newChild = document.createElement('li');
  newChild.innerHTML='大家好';
  YU.prependChild(YU.$('ul2'),newChild);
+
+ 11、
 
  * */
