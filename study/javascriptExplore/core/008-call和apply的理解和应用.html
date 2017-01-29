@@ -19,14 +19,17 @@
         this.value = "this指向Obj的value";
     }
     var value = "this指向全局对象的value";
-    function Fun1() {
+    function Fun1(param1,param2) {
         console.log(this.value);
+        if(param1 != undefined){
+        console.log(param1,param2)}
     }
 
     window.Fun1();   //this指向全局对象的value
     Fun1.call(window);  //this指向全局对象的value
     Fun1.call(document.getElementById('myText'));  //this指向input对象的value,改变了this指向的对象
     Fun1.call(new Obj());   //this指向Obj的value,改变了this指向的对象
+    Fun1.call(new Obj(),'hello1','hello2');   //1个1个传递参数给Fun1()
     window.Fun1(); //this指向全局对象的value
 
     /*
@@ -37,6 +40,25 @@
      call和apply的区别：call传递进入的参数是1个1个传递的，而apply传递的参数是一个数组参数；
      如 func.call(func1,var1,var2,var3)  对应的apply写法为：func.apply(func1,[var1,var2,var3])，同时使用apply的好处是可以直接将当前函数的arguments对象作为apply的第二个参数传入。 　　
      */
+
+    console.log('接下来是apply的内容');
+
+    function Obj2() {
+        this.value2 = "this指向Obj的value2";
+    }
+    var value2 = "this指向全局对象的value2";
+    function Fun2(param1,param2) {
+        console.log(this.value2);
+        if(param1 != undefined){
+            console.log(param1,param2)}
+    }
+
+    window.Fun2();   //this指向全局对象的value
+    Fun2.apply(window);  //this指向全局对象的value
+    Fun2.apply(document.getElementById('myText'));  //这个无效
+    Fun2.apply(new Obj2());   //this指向Obj的value,改变了this指向的对象
+    Fun2.apply(new Obj2(),['hello1','hello2']);   //只接受1个参数，該参数为数组
+    window.Fun2(); //this指向全局对象的value
 
 
 

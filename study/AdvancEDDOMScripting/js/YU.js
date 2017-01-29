@@ -182,10 +182,104 @@
         return W3CEvent || window.event;
     }
 
-    window['YU']['getEventObject']=getEventObject;
+    window['YU']['getEventObject'] = getEventObject;
 
-    //TODO：P117
+    //访问事件的目标元素，兼容IE
+    function getTarget(eventObject) {
+        eventObject = eventObject || getEventObject(eventObject);
 
+        //如果是W3C或MSIE的模型
+        var target = eventObject.target || eventObject.srcElement;
+
+        //如果像Safari中一样是一个文本节点
+        //重新将目标对象指定为父元素
+        if (target.nodeType == YU.node.TEXT_NODE) {
+            target = node.parentNode;
+        }
+
+        return target;
+    }
+
+    window['YU']['getTarget'] = getTarget;
+
+    //获取事件中鼠标按键值
+    function getMouseButton(eventObject) {
+        eventObject = eventObject || getEventObject(eventObject);
+        var buttons = {
+            'left': false,
+            'middle': false,
+            'right': false
+        };
+
+        //检查eventObject对象的toString()方法的值
+        if (eventObject.toString && eventObject.toString().indexOf('MouseEvent') != -1) {
+            //W3C方法
+            switch (eventObject.button) {
+                case 0 :
+                    buttons.left = true;
+                    break;
+                case 1 :
+                    buttons.middle = true;
+                    break;
+                case 2 :
+                    button.right = true;
+                    break;
+                default :
+                    break;
+            }
+        } else if (eventObject.button) {
+            //MSIE方法
+            switch (eventObject.button) {
+                case 1:
+                    buttons.left = true;
+                    break;
+                case 2:
+                    buttons.right = true;
+                    break;
+                case 3:
+                    buttons.left = true;
+                    buttons.right = true;
+                    break;
+                case 4:
+                    buttons.middle = true;
+                    break;
+                case 5:
+                    buttons.left = true;
+                    buttons.middle = true;
+                    break;
+                case 6:
+                    buttons.middle = true;
+                    buttons.right = true;
+                    break;
+                case 7:
+                    buttons.left = true;
+                    buttons.middle = true;
+                    buttons.right = true;
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            return false;
+
+        }
+        return button;
+    }
+
+    window['YU']['getMouseButton'] = getMouseButton;
+
+    //获取鼠标相对文档的坐标（而非浏览器窗口）
+    function getPointerPositionInDocument(eventObject) {
+        eventObject = eventObject || getEventObject(eventObject);
+        var x = eventObject.pageX || (eventObject.clientX + (document.documentElement.scrollLeft
+            || document.body.scrollLeft));
+        var y = eventObject.pageY || (eventObject.clientY + (document.documentElement.scrollTop
+            || document.body.scrollTop));
+        //返回x,y
+        return {'x': x, 'y': y};
+    }
+
+    window['YU']['getPointerPositionInDocument'] = getPointerPositionInDocument;
 
     function removeEvent(node, type, listener) {
         //node只能是字符串
@@ -396,6 +490,268 @@
     }
 
     window['YU']['walkTheDOMWithAttributes'] = walkTheDOMWithAttributes;
+
+    //把命名变成驼峰式的
+    function camelize(s) {
+        return s.replace(/-(\w)/g, function (strMatch, p1) {
+            return p1.toUpperCase();
+        });
+    }
+
+    window['YU']['camelize'] = camelize;
+
+    //变成中横线式的,或者自选连接符
+    function uncamelize(s, sep) {
+        sep = sep || '-';
+        return s.replace(/([a-z])([A-Z])/g, function (strMatch, p1, p2) {
+            return p1 + sep + p2.toLowerCase();
+        });
+    }
+
+    window['YU']['uncamelize'] = uncamelize;
+
+    //添加新样式表
+    function addStyleSheet(url, media) {
+        media = media || 'screen';
+        var link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('type', 'text/css');
+        link.setAttribute('href', url);
+        link.setAttribute('media', media);
+        document.getElementsByTagName('head')[0].appendChild(link);
+    }
+
+    window['YU']['addStyleSheet'] = addStyleSheet;
+
+    //移除样式表
+    function removeStyleSheet(url, media) {
+        var styles = getStyleSheets(url, media);
+        for (var i = 0; i < styles.length; i++) {
+            var node = styles[i].ownerNode || styles[i].owningElement;
+            //禁用样式表
+            styles[i].disabled = true;
+            //移除节点
+            node.parentNode.removeChild(node);
+        }
+    }
+
+    window['YU']['removeStyleSheet'] = removeStyleSheet;
+
+    //通过URL取得包含所有样式表的数组
+    function getStyleSheets(url, media) {
+        var sheets = [];
+        for (var i = 0; i < document.styleSheets.length; i++) {
+            if (url && document.styleSheets[i].href.indexOf(url) == -1) {
+                continue;
+            }
+            if (media) {
+                //规范化media字符串
+                media = media.replace(/,\s*/, ',');
+                var sheetMedia;
+                if (document.styleSheets[i].media.mediaText) {
+                    //DOM方法
+                    sheetMedia = document.styleSheets[i].media.mediaText.replace(/,\s*/, ',');
+                    //Safari会添加额外的逗号和空格
+                    sheetMedia = sheetMedia.replace(/,\s*$/, '');
+                } else {
+                    //MSIE方法
+                    sheetMedia = document.styleSheets[i].media.replace(/,\s*/, ',');
+                }
+                //如果media不匹配则跳过
+                if (media != sheetMedia) {
+                    continue;
+                }
+
+            }
+            sheets.push(document.styleSheets[i]);
+        }
+        return sheets;
+    }
+
+    window['YU']['getStyleSheets'] = getStyleSheets;
+
+    //编辑一条样式规则
+    function editCSSRule(selector, styles, url, media) {
+        var styleSheets = (typeof url == 'array' ? url : getStyleSheets(url, media));
+
+        for (i = 0; i < styleSheets.length; i++) {
+
+            // Retrieve the list of rules
+            // The DOM2 Style method is styleSheets[i].cssRules
+            // The MSIE method is styleSheets[i].rules
+            var rules = styleSheets[i].cssRules || styleSheets[i].rules;
+            if (!rules) {
+                continue;
+            }
+
+            // Convert to uppercase as MSIIE defaults to UPPERCASE tags.
+            // this could cause conflicts if you're using case sensetive ids
+            selector = selector.toUpperCase();
+
+            for (var j = 0; j < rules.length; j++) {
+                // Check if it matches
+                if (rules[j].selectorText.toUpperCase() == selector) {
+                    for (property in styles) {
+                        if (!styles.hasOwnProperty(property)) {
+                            continue;
+                        }
+                        // Set the new style property
+                        rules[j].style[camelize(property)] = styles[property];
+                    }
+                }
+            }
+        }
+    }
+
+    window['YU']['editCSSRule'] = editCSSRule;
+
+    //添加一条样式规则
+    function addCSSRule(selector, styles, index, url, media) {
+        var declaration = '';
+
+        // Build the declaration string from the style object
+        for (property in styles) {
+            if (!styles.hasOwnProperty(property)) {
+                continue;
+            }
+            declaration += property + ':' + styles[property] + '; ';
+        }
+
+        var styleSheets = (typeof url == 'array' ? url : getStyleSheets(url, media));
+        var newIndex;
+        for (var i = 0; i < styleSheets.length; i++) {
+            // Add the rule
+            if (styleSheets[i].insertRule) {
+                // The DOM2 Style method
+                // index = length is the end of the list
+                newIndex = (index >= 0 ? index : styleSheets[i].cssRules.length);
+                styleSheets[i].insertRule(selector + ' { ' + declaration + ' } ',
+                    newIndex);
+            } else if (styleSheets[i].addRule) {
+                // The Microsoft method
+                // index = -1 is the end of the list
+                newIndex = (index >= 0 ? index : -1);
+                styleSheets[i].addRule(selector, declaration, newIndex);
+            }
+        }
+    }
+
+    window['YU']['addCSSRule'] = addCSSRule;
+
+    //通过ID修改单个元素的样式
+    function setStyleById(element, styles) {
+        //取得对象的引用
+        if (!(element = $(element))) {
+            return false;
+        }
+        //循环遍历style对象并应用每个属性
+        for (property in style) {
+            if (!styles.hasOwnProperty(property)) {
+                continue;
+            }
+
+            if (element.style.setProperty) {
+                //DOM2样式规范方法
+                element.style.setProperty(
+                    uncamelize(property, '-'), styles[property], null);
+            } else {
+                //备用方法
+                element.style[camelize(property)] = styles[property];
+            }
+        }
+        return true;
+    }
+
+    //注册两个名字，其中一个名字为简化名字
+    window['YU']['setStyle'] = setStyleById;
+    window['YU']['setStyleById'] = setStyleById;
+
+    //通过类名修改多个元素的样式
+    function setStylesByClassName(parent, tag, className, styles) {
+        if (!(parent = $(parent))) {
+            return false
+        }
+        ;
+        var elements = getElementsByClassName(className, tag, parent);
+        for (var e = 0; e < element.length; e++) {
+            setStyleById(elements[e], styles);
+        }
+        return true;
+    }
+
+    window['YU']['setStylesByClassName'] = setStylesByClassName;
+
+    //通过标签名修改多个元素的样式
+    function setStylesByTagName(tagname, styles, parent) {
+        parent = $(parent) || document;
+        var elements = parent.getElementsByClassName(tagname);
+        for (var e = 0; e < elements.length; e++) {
+            setStyleById(elements[e], styles);
+        }
+    }
+
+    window['YU']['setStyleByTagName'] = setStylesByTagName;
+
+    /**
+     * Retrieves the classes as an array
+     */
+    function getClassNames(element) {
+        if (!(element = $(element))) return false;
+        // Replace multiple spaces with one space and then
+        // split the classname on spaces
+        return element.className.replace(/\s+/, ' ').split(' ');
+    };
+    window['YU']['getClassNames'] = getClassNames;
+
+    /**
+     * Check if a class exists on an element
+     */
+    function hasClassName(element, className) {
+        if (!(element = $(element))) return false;
+        var classes = getClassNames(element);
+        for (var i = 0; i < classes.length; i++) {
+            // Check if the className matches and return true if it does
+            if (classes[i] === className) {
+                return true;
+            }
+        }
+        return false;
+    };
+    window['YU']['hasClassName'] = hasClassName;
+
+    /**
+     * Add a class to an element
+     */
+    function addClassName(element, className) {
+        if (!(element = $(element))) return false;
+        // Append the classname to the end of the current className
+        // If there is no className, don't include the space
+        element.className += (element.className ? ' ' : '') + className;
+        return true;
+    };
+    window['YU']['addClassName'] = addClassName;
+
+    /**
+     * remove a class from an element
+     */
+    function removeClassName(element, className) {
+        if (!(element = $(element))) return false;
+        var classes = getClassNames(element);
+        var length = classes.length
+        //loop through the array in reverse, deleting matching items
+        // You loop in reverse as you're deleting items from 
+        // the array which will shorten it.
+        for (var i = length - 1; i >= 0; i--) {
+            if (classes[i] === className) {
+                delete(classes[i]);
+            }
+        }
+        element.className = classes.join(' ');
+        return (length = classes.length ? false : true);
+    };
+    window['YU']['removeClassName'] = removeClassName;
+
+
 })
 ();
 
