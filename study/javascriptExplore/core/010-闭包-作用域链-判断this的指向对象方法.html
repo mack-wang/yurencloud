@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var name = "The Window";
+
+    var object = {
+        name : "My Object",
+
+        getNameFunc : function(){
+            return function(){
+                return this.name;//this是由匿名函数function{}调用的，所以没有绑定object环境，所以是全局环境
+            };
+
+        }
+
+    };
+
+    alert(object.getNameFunc()());
+
+    /******************************/
+
+    var name2 = "The Window";
+
+    var object2 = {
+        name2 : "My Object",
+
+        getNameFunc : function(){
+            var that = this;//这里的this是由getNameFunc()调用的，是绑定在object环境下的，所以this指的是局部环境
+            return function(){
+                return that.name2;
+            };
+
+        }
+
+    };
+
+    alert(object2.getNameFunc()());
+
+
+    //总结：我觉得判断this指向的方法
+    /*
+    1、常规的基本上是看"."连缀符，谁调用的就指向谁
+    2、如果this在一个匿名函数中,并且没有给其指定函数名字，它指向的是全局环境。
+    */
+
+
+
+
+
+</script>
+</html>
