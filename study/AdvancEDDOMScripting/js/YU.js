@@ -36,7 +36,7 @@
     /*
      * 作用：通过id值获取单个元素或多个元素
      * 参数：单个或多个id值
-     * 返回：元素数组
+     * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
      * */
     function $() {
         var elements = new Array();
@@ -62,75 +62,275 @@
     }
 
     window['YU']['$'] = $;
+    window['$'] = $;
+
+    /*
+     * 作用：解决YU库和其他库在$上的命名冲突
+     * 参数：name 取代$的新名字
+     * 返回：无，注意YU库的添加位置置在其他库之前，以便其他库的$覆盖YU库的$
+     * */
+    function noConflict(name) {
+        window[name] = $;
+    }
+
+    window['YU']['noConflict'] = noConflict;
+
+    /**************************************
+     *                                    *
+     *            事件方法                  *
+     *          EVENT METHODS             *
+     *                                    *
+     **************************************/
 
     /*
      * 作用：添加事件
-     * 参数：node 绑定事件的元素 | type 事件类型 不加on | listener 回调函数
-     * 返回：布尔值 表示事件是否添加成功
+     * 参数：element 绑定事件的元素 | type 事件类型 不加on | fn 回调函数
+     * 返回：无
      * */
-    function addEvent(node, type, listener) {
-        //检查兼容性以保证平稳退化
-        if (!isCompatible()) {
-            return false;
+    function addEvent(element, type, fn) {
+        if (element.addEventListener) {
+            element.addEventListener(type, fn, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + type, fn);
+        } else {
+            element["on" + type] = fn;
         }
-
-        //若传递的是id字符串，则获取该元素对象并赋给node
-        if (!(node = $(node))) {
-            return false;
-        }
-
-
-        if (node.addEventListener) {
-            //W3C的方法
-            node.addEventListener(type, listener, false);
-            return true;
-        } else if (node.attachEvent) {
-            //MSIE的方法
-            node['e' + type + listener] = listener;
-            node[type + listener] = function () {
-                node['e' + type + listener](window.event);
-            };
-            node.attachEvent('on' + type, node[type + listener]);
-            return true;
-        }
-
-        //若两种方法都不具备，返回false
-        return false;
     }
 
     window['YU']['addEvent'] = addEvent;
 
     /*
-     * 作用：停止事件冒泡
-     * 参数：eventObject 事件对象
+     * 作用：获取事件对象
+     * 参数：event 事件对象
+     * 返回：事件对象
+     * */
+    function getEvent(event) {
+        return event ? event : window.event;
+    }
+
+    window['YU']['getEvent'] = getEvent;
+
+    /*
+     * 作用：获取当前发生事件的目标元素（兼容IE）
+     * 参数：event 事件对象
+     * 返回：当前发生事件的目标元素
+     * */
+    function getTarget(event) {
+        return event.target || event.srcElement;
+    }
+
+    window['YU']['getTarget'] = getTarget;
+
+    function EventTarget() {
+        this.handlers = {};
+    }
+
+    EventTarget.prototype = {
+        constructor: EventTarget,
+        //注册
+        addHandler: function (type, handler) {
+            if (typeof this.handlers[type] == "undefined") {
+                this.handlers[type] = [];
+            }
+            this.handlers[type].push(handler);
+        },
+        //触发
+        fire: function (event) {
+            if (!event.target) {
+                event.target = this;
+            }
+            if (this.handlers[event.type] instanceof Array) {
+                var handlers = this.handlers[event.type];
+                for (var i = 0, len = handlers.length; i < len; i++) {
+                    handlers[i](event);
+                }
+            }
+        },
+        //注销
+        removeHandler: function (type, handler) {
+            if (this.handlers[type] instanceof Array) {
+                var handlers = this.handlers[type];
+                for (var i = 0, len = handlers.length; i < len; i++) {
+                    if (handlers[i] === handler) {
+                        break;
+                    }
+                }
+                handlers.splice(i, 1);
+            }
+        }
+    };
+
+    window['YU']['EventTarget'] = EventTarget;
+
+    /*
+     * 作用：取消默认事件
+     * 参数：event 事件对象
      * 返回：无
      * */
-    function stopPropagation(eventObject) {
-        eventObject = eventObject || getEventObject(eventObject);
-        if (eventObject.stopPropagation) {
-            eventObject.stopPropagation();
+    function preventDefault(event) {
+        if (event.preventDefault) {
+            event.preventDefault();
         } else {
-            eventObject.cancelBubble = true;
+            event.returnValue = false;
+        }
+    }
+
+    window['YU']['preventDefault'] = preventDefault;
+
+    /*
+     * 作用：移除事件
+     * 参数：element 要移除事件的元素 | type 要移除事件类型 不加on | fn 要移除的回调函数
+     * 返回：无
+     * */
+    function removeEvent(element, type, fn) {
+        if (element.removeEventListener) {
+            element.removeEventListener(type, fn, false);
+        } else if (element.detachEvent) {
+            element.detachEvent("on" + type, fn);
+        } else {
+            element["on" + type] = null;
+        }
+    }
+
+    window['YU']['removeEvent'] = removeEvent;
+
+    /*
+     * 作用：停止事件冒泡
+     * 参数：event 事件对象
+     * 返回：无
+     * */
+    function stopPropagation(event) {
+        if (event.stopPropagation) {
+            event.stopPropagation();
+        } else {
+            event.cancelBubble = true;
         }
     }
 
     window['YU']['stopPropagation'] = stopPropagation;
 
     /*
-     * 作用：停止默认事件
-     * 参数：eventObject 事件对象
-     * 返回：无
+     * 作用：获取上一级冒泡对象
+     * 参数：event 事件对象
+     * 返回：上一级冒泡对象
      * */
-    function preventDefault(eventObject) {
-        eventObject = eventObject || getEventObject(eventObject);
-        if (eventObject.preventDefault) {
-            eventObject.preventDefault();
+    function getRelatedTarget(event) {
+        if (event.relateTarget) {
+            return event.relatedTarget;
+        } else if (event.toElement) {
+            return event.toElement;
+        } else if (event.fromElement) {
+            return event.fromElement;
         } else {
-            eventObject.returnValue = false;
+            return null;
         }
     }
 
-    window['YU']['preventDefault'] = preventDefault;
+    window['YU']['getRelatedTarget'] = getRelatedTarget;
+
+    /*
+     * 作用：主要兼容IE对DOM的button属性的反馈，button属性是指鼠标按钮，左，中，右三个键的点击情况
+     * 参数：event 事件对象
+     * 返回：button对象，包含0，1，2三个属性，0左键，1中键，2右键
+     * */
+    function getMouseButton(event) {
+        if (document.implementation.hasFeature("MouseEvents", "2.0")) {
+            return event.button;
+        } else {
+            switch (event.button) {
+                case 0:
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                    return 0;
+                case 2:
+                case 6:
+                    return 2;
+                case 4:
+                    return 1;
+
+            }
+        }
+    }
+
+    window['YU']['getMouseButton'] = getMouseButton;
+
+    /*
+     * 作用：跨浏览器的鼠标滚轮事件
+     * 参数：event 事件对象
+     * 返回：wheelDelta对象，包含具体滚动数值
+     * */
+    function getWheelDelta(event) {
+        //主要判断是否支持wheelDelta,
+        //不支持就是firefox，要乘以40，支持就判断opera的版本，小于9.5的要正负颠倒一下
+        if (event.wheelDelta) {
+            return (client.engine.opera && client.engine.opera < 9.5 ? -event.wheelDelta : event.wheelDelta);
+        } else {
+            return -event.detail * 40;
+        }
+    }
+
+    window['YU']['getWheelDelta'] = getWheelDelta;
+
+    /*
+     * 作用：当发生keypress事件时，返回charCode的兼容用法
+     * 参数：event 事件对象
+     * 返回：返回charCode或者keyCode属性及值
+     * */
+    function getCharCode(event) {
+        if (typeof event.charCode == "number") {
+            return event.charCode;
+        } else {
+            return event.keyCode;
+        }
+    }
+
+    window['YU']['getCharCode'] = getCharCode;
+
+    /*
+     * 作用：获取剪贴板文字
+     * 参数：event 事件对象
+     * 返回：剪贴板文字
+     * */
+    function getClipboardText(event) {
+        var clipboardData = (event.clipboardData || window.clipboardData);
+        return clipboardData.getData("text");
+    }
+
+    window['YU']['getClipboardText'] = getClipboardText;
+
+    /*
+     * 作用：设置剪贴板文字（由我们写入剪贴板）
+     * 参数：event 事件对象
+     * 返回：设置后的剪贴板文字
+     * */
+    function setClipboardText(event, value) {
+        if (event.clipboardData) {
+            return event.clipboardData.setData("text/plain", value);
+        } else if (window.clipboardData) {
+            return window.clipboardData.setData("text", value);
+        }
+    }
+
+    window['YU']['setClipboardText'] = setClipboardText;
+
+    /*
+     * 作用：获取鼠标相对文档的坐标（而非浏览器窗口）
+     * 参数：event 事件对象
+     * 返回：坐标对象，包含x，y属性
+     * */
+    function getPointer(event) {
+        event = event || getEvent(event);
+        var x = event.pageX || (event.clientX + (document.documentElement.scrollLeft
+            || document.body.scrollLeft));
+        var y = event.pageY || (event.clientY + (document.documentElement.scrollTop
+            || document.body.scrollTop));
+        //返回x,y
+        return {'x': x, 'y': y};
+    }
+
+    window['YU']['getPointer'] = getPointer;
 
     /*
      * 作用：在图片等资源加载完成前执行load（注意，事件不能涉及图片加载完成状态）
@@ -193,153 +393,93 @@
     window['YU']['addLoadEvent'] = addLoadEvent;
 
     /*
-     * 作用：获取事件对象（主要为了兼容所有浏览器）
-     * 参数：W3CEvent 符合W3C事件对象规则的事件对象
-     * 返回：事件对象
+     * 作用：对目标元素实现拖放
+     * 参数：只要给指定元素添加draggable类即可使其被拖动，并注意，对象的position一定得是absolute
+     * 返回：拖放事件对象
      * */
-    function getEventObject(W3CEvent) {
-        return W3CEvent || window.event;
-    }
+    function dragDrop() {
 
-    window['YU']['getEventObject'] = getEventObject;
+        var dragdrop = new EventTarget();
+        var dragging = null;
+        var diffX = 0;
+        var diffY = 0;
 
-    /*
-     * 作用：访问事件的目标元素，兼容IE
-     * 参数：eventObject 事件对象
-     * 返回：事件作用的元素
-     * */
-    function getTarget(eventObject) {
-        eventObject = eventObject || getEventObject(eventObject);
+        function handleEvent(event) {
+            //获取事件和目标
+            event = getEvent(event);
+            var target = getTarget(event);
 
-        //如果是W3C或MSIE的模型
-        var target = eventObject.target || eventObject.srcElement;
+            //确定事件类型
+            switch (event.type) {
+                case "mousedown":
+                    if (target.className.indexOf("draggable") > -1) {
+                        dragging = target;
+                        //鼠标在element内的坐标
+                        diffX = event.clientX - target.offsetLeft;
+                        diffY = event.clientY - target.offsetTop;
+                        dragdrop.fire({
+                            type: "dragstart",
+                            target: dragging,
+                            x: event.clientX,
+                            y: event.clientY
+                        });
+                    }
+                    break;
 
-        //如果像Safari中一样是一个文本节点
-        //重新将目标对象指定为父元素
-        if (target.nodeType == YU.node.TEXT_NODE) {
-            target = node.parentNode;
+                case "mousemove":
+                    if (dragging !== null) {
+                        //获取事件
+                        event = getEvent(event);
+
+                        //指定位置
+                        dragging.style.left = (event.clientX - diffX) + "px";
+                        dragging.style.top = (event.clientY - diffY) + "px";
+
+                        //触发自定义事件
+                        dragdrop.fire({
+                            type: "drag",
+                            target: dragging,
+                            x: event.clientX,
+                            y: event.clientY
+                        });
+                    }
+                    break;
+
+                case "mouseup":
+                    dragdrop.fire({
+                        type: "dragend",
+                        target: dragging,
+                        x: event.clientX,
+                        y: event.clientY
+                    });
+                    dragging = null;
+                    break;
+            }
         }
 
-        return target;
-    }
-
-    window['YU']['getTarget'] = getTarget;
-
-    /*
-     * 作用：获取事件中鼠标按键值
-     * 参数：eventObject 事件对象
-     * 返回：buttons对象 包含left middle right三个属性
-     * */
-    function getMouseButton(eventObject) {
-        eventObject = eventObject || getEventObject(eventObject);
-        var buttons = {
-            'left': false,
-            'middle': false,
-            'right': false
+        //公共接口
+        dragdrop.enable = function () {
+            addEvent(document, "mousedown", handleEvent);
+            addEvent(document, "mousemove", handleEvent);
+            addEvent(document, "mouseup", handleEvent);
         };
-
-        //检查eventObject对象的toString()方法的值
-        if (eventObject.toString && eventObject.toString().indexOf('MouseEvent') != -1) {
-            //W3C方法
-            switch (eventObject.button) {
-                case 0 :
-                    buttons.left = true;
-                    break;
-                case 1 :
-                    buttons.middle = true;
-                    break;
-                case 2 :
-                    button.right = true;
-                    break;
-                default :
-                    break;
-            }
-        } else if (eventObject.button) {
-            //MSIE方法
-            switch (eventObject.button) {
-                case 1:
-                    buttons.left = true;
-                    break;
-                case 2:
-                    buttons.right = true;
-                    break;
-                case 3:
-                    buttons.left = true;
-                    buttons.right = true;
-                    break;
-                case 4:
-                    buttons.middle = true;
-                    break;
-                case 5:
-                    buttons.left = true;
-                    buttons.middle = true;
-                    break;
-                case 6:
-                    buttons.middle = true;
-                    buttons.right = true;
-                    break;
-                case 7:
-                    buttons.left = true;
-                    buttons.middle = true;
-                    buttons.right = true;
-                    break;
-                default:
-                    break;
-            }
-        } else {
-            return false;
-
-        }
-        return buttons;
+        dragdrop.disable = function () {
+            removeEvent(document, "mousedown", handleEvent);
+            removeEvent(document, "mousemove", handleEvent);
+            removeEvent(document, "mouseup", handleEvent);
+        };
+        return dragdrop;
     }
 
-    window['YU']['getMouseButton'] = getMouseButton;
+    window['YU']['dragDrop'] = dragDrop;
 
-    /*
-     * 作用：获取鼠标相对文档的坐标（而非浏览器窗口）
-     * 参数：eventObject 事件对象
-     * 返回：坐标对象，包含x，y属性
-     * */
-    function getPointerPositionInDocument(eventObject) {
-        eventObject = eventObject || getEventObject(eventObject);
-        var x = eventObject.pageX || (eventObject.clientX + (document.documentElement.scrollLeft
-            || document.body.scrollLeft));
-        var y = eventObject.pageY || (eventObject.clientY + (document.documentElement.scrollTop
-            || document.body.scrollTop));
-        //返回x,y
-        return {'x': x, 'y': y};
-    }
 
-    window['YU']['getPointerPositionInDocument'] = getPointerPositionInDocument;
-
-    /*
-     * 作用：移除绑定事件
-     * 参数：node 要移除事件的元素 | type 要移除的事件类型 不加on | listener 回调函数
-     * 返回：布尔值
-     * */
-    function removeEvent(node, type, listener) {
-        //node只能是字符串
-        if (!(node = $(node))) {
-            return false;
-        }
-
-        if (node.removeEventListener) {
-            //W3C的方法
-            node.removeEventListener(type, listener, false);
-            return true;
-        } else if (node.detachEvent) {
-            //MSIE的方法
-            node.detachEvent('on' + type, node[type + listener]);
-            node[type + listener] = null;
-            return true;
-        }
-
-        //若两种方法都不具备，返回false;
-        return false;
-
-    }
-
-    window['YU']['removeEvent'] = removeEvent;
+    /**************************************
+     *                                    *
+     *            样式方法                  *
+     *          STYLE METHODS             *
+     *                                    *
+     **************************************/
 
     /*
      * 作用：通过class值和标签名获取元素
@@ -393,213 +533,6 @@
     }
 
     window['YU']['toggleDisplay'] = toggleDisplay;
-
-    /*
-     * 作用：在指定元素后插入同辈元素
-     * 参数：node 要插入的元素 | referenceNode 指定的元素 参考位置
-     * 返回：无
-     * */
-    function insertAfter(node, referenceNode) {
-        if (!(node = $(node))) {
-            return false;
-        }
-        if (!(referenceNode = $(referenceNode))) {
-            return false;
-        }
-        return referenceNode.parentNode.insertBefore(
-            node, referenceNode.nextSibling
-        );
-    }
-
-    window['YU']['insertAfter'] = insertAfter;
-
-    /*
-     * 作用：移除所有子元素
-     * 参数：parent 要移除所有子元素的父元素
-     * 返回：返回移除子元素后的父元素
-     * */
-    function removeChildren(parent) {
-        if (!(parent = $(parent))) {
-            return false;
-        }
-
-        //当存在子节点时册除该子节点
-        while (parent.firstChild) {
-            parent.firstChild.parentNode.removeChild(parent.firstChild);
-        }
-
-        //再返回父元素，以便实现方法连缀
-        return parent;
-    }
-
-    window['YU']['removeChildren'] = removeChildren;
-
-
-    /*
-     * 作用：插入新元素到子元素的最前面
-     * 参数：parent 父元素 | newChild 要插入的新元素
-     * 返回：返回插入新子元素后的父元素
-     * */
-    function prependChild(parent, newChild) {
-        if (!(parent = $(parent))) {
-            return false;
-        }
-        if (!(newChild = $(newChild))) {
-            return false;
-        }
-
-        if (parent.firstChild) {
-            //如果存在一个子节点，则在这个子节点之前插入
-            parent.insertBefore(newChild, parent.firstChild);
-        } else {
-            //如果没有子节点，则直接添加
-            parent.appendChild(newChild);
-        }
-        //再返回父元素，以便实现方法的连缀
-        return parent;
-    }
-
-    window['YU']['prependChild'] = prependChild;
-
-    /*
-     * 作用：获取当前浏览器窗口的宽高
-     * 参数：无
-     * 返回：宽高对象，包含width,height属性
-     * */
-    function getBrowserWindowSize() {
-        var de = document.documentElement;
-        return {
-            'width': (
-            window.innerWidth
-            || (de && de.clientWidth)
-            || document.body.clientWidth),
-            'height': (
-            window.innerHeight
-            || (de && de.clientHeight)
-            || document.body.clientHeight)
-        }
-    }
-
-    window['YU']['getBrowserWindowSize'] = getBrowserWindowSize;
-
-    /*
-     * 作用：自定义node核心对象的类型数值对应的字符串值
-     * 参数：因为有些浏览器不会返回node核心对象的类型值，所以可以自定义，兼容所有浏览器
-     * 返回：无
-     * */
-    window['YU']['node'] = {
-        ELEMENT_NODE: 1,
-        ATTRIBUTE_NODE: 2,
-        TEXT_NODE: 3,
-        CDATA_SECTION_NODE: 4,
-        ENTITY_REFERENCE_NODE: 5,
-        ENTITY_NODE: 6,
-        PROCESSING_INSTRUCTION_NODE: 7,
-        COMMENT_NODE: 8,
-        DOCUMENT_NODE: 9,
-        DOCUMENT_TYPE_NODE: 10,
-        DOCUMENT_FRAGMENT_NODE: 11,
-        NOTATION_NODE: 12
-    };
-
-    /*
-     * 作用：遍历元素节点，不关心DOM树的深度，不包含父节点
-     * 参数：func 回调函数 this代表当前节点 作用于遍历后的每个节点 | node 遍历指定节点
-     * 返回：无
-     * */
-    function walkElementsLinear(func, node) {
-        var root = node || window.document;
-        var nodes = root.getElementsByTagName("*");
-        for (var i = 0; i < nodes.length; i++) {
-            func.call(nodes[i]);
-        }
-    }
-
-    window['YU']['walkElementsLinear'] = walkElementsLinear;
-
-    /*
-     * 作用：遍历元素节点，文本节点，含父节点
-     * 参数：func 回调函数 this代表当前节点 作用于遍历后的每个节点 | node 遍历指定节点 | depth 遍历深度 | returnedFromParent
-     * 返回：无
-     * */
-    function walkTheDOMRecursive(func, node, depth, returnedFromParent) {
-        var root = node || window.document;
-        returnedFromParent = func.call(root, depth++, returnedFromParent);
-        node = root.firstChild;
-        while (node) {
-            walkTheDOMRecursive(func, node, depth, returnedFromParent);
-            node = node.nextSibling;
-        }
-    }
-
-    window['YU']['walkTheDOMRecursive'] = walkTheDOMRecursive;
-
-    /*
-     * 作用：遍历元素节点，文本节点，属性节点，含父节点
-     * 参数：node 遍历指定节点 | func 回调函数 作用于遍历后的每个节点 | depth 遍历深度 | returnedFromParent 返回给func使用的对象 包含元素节点，文本节点，属性节点
-     * 返回：无
-     * */
-    function walkTheDOMWithAttributes(node, func, depth, returnedFromParent) {
-        var root = node || window.document;
-        returnedFromParent = func(root, depth++, returnedFromParent);
-        if (root.attributes) {
-            for (var i = 0; i < root.attributes.length; i++) {
-                walkTheDOMWithAttributes(root.attributes[i], func, depth - 1, returnedFromParent);
-            }
-        }
-        if (root.nodeType != YU.node.ATTRIBUTE_NODE) {
-            node = root.firstChild;
-            while (node) {
-                walkTheDOMWithAttributes(node, func, depth, returnedFromParent);
-                node = node.nextSibling;
-            }
-        }
-    }
-
-    window['YU']['walkTheDOMWithAttributes'] = walkTheDOMWithAttributes;
-
-    /*
-     * 作用：遍历元素节点，文本节点，含父节点（同walkTheDOMRecursive），实现方法不同而已
-     * 参数：node 遍历指定节点 | func 回调函数 作用于遍历后的每个节点 node代表当前节点
-     * 返回：无
-     * */
-    function walkTheDOM(node, func) {
-        func(node);
-        node = node.firstChild;
-        while (node) {
-            walkTheDOM(node, func);
-            node = node.nextSibling;
-        }
-    }
-
-    window['YU']['walkTheDOM'] = walkTheDOM;
-
-    /*
-     * 作用：把命名变成驼峰式的
-     * 参数：str 要转变成驼峰式的字符串
-     * 返回：驼峰式的字符串
-     * */
-    function camelize(str) {
-        return str.replace(/-(\w)/g, function (strMatch, p1) {
-            return p1.toUpperCase();
-        });
-    }
-
-    window['YU']['camelize'] = camelize;
-
-    /*
-     * 作用：把命名变成非驼峰式的
-     * 参数：str 驼峰式的字符串 | sep 连接符 可选 默认"-"
-     * 返回：非驼峰式的字符串
-     * */
-    function uncamelize(str, sep) {
-        sep = sep || '-';
-        return str.replace(/([a-z])([A-Z])/g, function (strMatch, p1, p2) {
-            return p1 + sep + p2.toLowerCase();
-        });
-    }
-
-    window['YU']['uncamelize'] = uncamelize;
 
     /*
      * 作用：添加样式表，添加link css标签
@@ -883,7 +816,8 @@
         // If there is no className, don't include the space
         element.className += (element.className ? ' ' : '') + className;
         return true;
-    };
+    }
+
     window['YU']['addClassName'] = addClassName;
 
     /*
@@ -896,7 +830,7 @@
         var classes = getClassNames(element);
         var length = classes.length;
         //loop through the array in reverse, deleting matching items
-        // You loop in reverse as you're deleting items from 
+        // You loop in reverse as you're deleting items from
         // the array which will shorten it.
         for (var i = length - 1; i >= 0; i--) {
             if (classes[i] === className) {
@@ -904,49 +838,204 @@
             }
         }
         element.className = classes.join(' ');
-        return (length == classes.length ? false : true);
+        return (length != classes.length);
     }
 
     window['YU']['removeClassName'] = removeClassName;
 
+    /**************************************
+     *                                    *
+     *            元素方法                  *
+     *          DOM METHODS               *
+     *                                    *
+     **************************************/
+
     /*
-     * 作用：JSON值转成js对象
-     * 参数：s JSON字符串 | filter 筛选
-     * 返回：转换后的字符串
+     * 作用：在指定元素后插入同辈元素
+     * 参数：node 要插入的元素 | referenceNode 指定的元素 参考位置
+     * 返回：无
      * */
-    function parseJSON(s, filter) {
-        var j;
-
-        function walk(k, v) {
-            var i;
-            if (v && typeof v === 'object') {
-                for (i in v) {
-                    if (v.hasOwnProperty(i)) {
-                        v[i] = walk(i, v[i]);
-                    }
-                }
-            }
-            return filter(k, v);
+    function insertAfter(node, referenceNode) {
+        if (!(node = $(node))) {
+            return false;
         }
-
-        if (/^("(\\.|[^"\\\n\r])*?"|[,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t])+?$/.test(s)) {
-            try {
-                j = eval('(' + s + ')');
-            } catch (e) {
-                throw new SyntaxError("parseJSON");
-            }
-        } else {
-            throw new SyntaxError("parseJSON");
+        if (!(referenceNode = $(referenceNode))) {
+            return false;
         }
-
-
-        if (typeof filter === 'function') {
-            j = walk('', j);
-        }
-        return j;
+        return referenceNode.parentNode.insertBefore(
+            node, referenceNode.nextSibling
+        );
     }
 
-    window['YU']['parseJSON'] = parseJSON;
+    window['YU']['insertAfter'] = insertAfter;
+
+    /*
+     * 作用：移除所有子元素
+     * 参数：parent 要移除所有子元素的父元素
+     * 返回：返回移除子元素后的父元素
+     * */
+    function removeChildren(parent) {
+        if (!(parent = $(parent))) {
+            return false;
+        }
+
+        //当存在子节点时册除该子节点
+        while (parent.firstChild) {
+            parent.firstChild.parentNode.removeChild(parent.firstChild);
+        }
+
+        //再返回父元素，以便实现方法连缀
+        return parent;
+    }
+
+    window['YU']['removeChildren'] = removeChildren;
+
+    /*
+     * 作用：插入新元素到子元素的最前面
+     * 参数：parent 父元素 | newChild 要插入的新元素
+     * 返回：返回插入新子元素后的父元素
+     * */
+    function prependChild(parent, newChild) {
+        if (!(parent = $(parent))) {
+            return false;
+        }
+        if (!(newChild = $(newChild))) {
+            return false;
+        }
+
+        if (parent.firstChild) {
+            //如果存在一个子节点，则在这个子节点之前插入
+            parent.insertBefore(newChild, parent.firstChild);
+        } else {
+            //如果没有子节点，则直接添加
+            parent.appendChild(newChild);
+        }
+        //再返回父元素，以便实现方法的连缀
+        return parent;
+    }
+
+    window['YU']['prependChild'] = prependChild;
+
+    /*
+     * 作用：获取当前浏览器窗口的宽高
+     * 参数：无
+     * 返回：宽高对象，包含width,height属性
+     * */
+    function getBrowserWindowSize() {
+        var de = document.documentElement;
+        return {
+            'width': (
+            window.innerWidth
+            || (de && de.clientWidth)
+            || document.body.clientWidth),
+            'height': (
+            window.innerHeight
+            || (de && de.clientHeight)
+            || document.body.clientHeight)
+        }
+    }
+
+    window['YU']['getBrowserWindowSize'] = getBrowserWindowSize;
+
+    /*
+     * 作用：自定义node核心对象的类型数值对应的字符串值
+     * 参数：因为有些浏览器不会返回node核心对象的类型值，所以可以自定义，兼容所有浏览器
+     * 返回：无
+     * */
+    window['YU']['node'] = {
+        ELEMENT_NODE: 1,
+        ATTRIBUTE_NODE: 2,
+        TEXT_NODE: 3,
+        CDATA_SECTION_NODE: 4,
+        ENTITY_REFERENCE_NODE: 5,
+        ENTITY_NODE: 6,
+        PROCESSING_INSTRUCTION_NODE: 7,
+        COMMENT_NODE: 8,
+        DOCUMENT_NODE: 9,
+        DOCUMENT_TYPE_NODE: 10,
+        DOCUMENT_FRAGMENT_NODE: 11,
+        NOTATION_NODE: 12
+    };
+
+    /*
+     * 作用：遍历元素节点，不关心DOM树的深度，不包含父节点
+     * 参数：fn 回调函数 this代表当前节点 作用于遍历后的每个节点 | node 遍历指定节点
+     * 返回：无
+     * */
+    function walkElementsLinear(fn, node) {
+        var root = node || window.document;
+        var nodes = root.getElementsByTagName("*");
+        for (var i = 0; i < nodes.length; i++) {
+            fn.call(nodes[i]);
+        }
+    }
+
+    window['YU']['walkElementsLinear'] = walkElementsLinear;
+
+    /*
+     * 作用：遍历元素节点，文本节点，含父节点
+     * 参数：fn 回调函数 this代表当前节点 作用于遍历后的每个节点 | node 遍历指定节点 | depth 遍历深度 | returnedFromParent
+     * 返回：无
+     * */
+    function walkTheDOMRecursive(fn, node, depth, returnedFromParent) {
+        var root = node || window.document;
+        returnedFromParent = fn.call(root, depth++, returnedFromParent);
+        node = root.firstChild;
+        while (node) {
+            walkTheDOMRecursive(fn, node, depth, returnedFromParent);
+            node = node.nextSibling;
+        }
+    }
+
+    window['YU']['walkTheDOMRecursive'] = walkTheDOMRecursive;
+
+    /*
+     * 作用：遍历元素节点，文本节点，属性节点，含父节点
+     * 参数：node 遍历指定节点 | fn 回调函数 作用于遍历后的每个节点 | depth 遍历深度 | returnedFromParent 返回给func使用的对象 包含元素节点，文本节点，属性节点
+     * 返回：无
+     * */
+    function walkTheDOMWithAttributes(node, fn, depth, returnedFromParent) {
+        var root = node || window.document;
+        returnedFromParent = fn(root, depth++, returnedFromParent);
+        if (root.attributes) {
+            for (var i = 0; i < root.attributes.length; i++) {
+                walkTheDOMWithAttributes(root.attributes[i], fn, depth - 1, returnedFromParent);
+            }
+        }
+        if (root.nodeType != YU.node.ATTRIBUTE_NODE) {
+            node = root.firstChild;
+            while (node) {
+                walkTheDOMWithAttributes(node, fn, depth, returnedFromParent);
+                node = node.nextSibling;
+            }
+        }
+    }
+
+    window['YU']['walkTheDOMWithAttributes'] = walkTheDOMWithAttributes;
+
+    /*
+     * 作用：遍历元素节点，文本节点，含父节点（同walkTheDOMRecursive），实现方法不同而已
+     * 参数：node 遍历指定节点 | fn 回调函数 作用于遍历后的每个节点 node代表当前节点
+     * 返回：无
+     * */
+    function walkTheDOM(node, fn) {
+        fn(node);
+        node = node.firstChild;
+        while (node) {
+            walkTheDOM(node, fn);
+            node = node.nextSibling;
+        }
+    }
+
+    window['YU']['walkTheDOM'] = walkTheDOM;
+
+
+    /**************************************
+     *                                    *
+     *            AJAX方法                 *
+     *          AJAX METHODS              *
+     *                                    *
+     **************************************/
 
     /*
      * 作用：创建ajax对象，兼容IE7+、Firefox、Opera、Chrome 和Safari
@@ -1041,19 +1130,178 @@
 
     window['YU']['params'] = params;
 
+    /*
+     * 作用：表单序列化 会自动获取当前表单元素内填写的值并进行序列化
+     * 参数：form 表单元素
+     * 返回：用&符号连接的序列化参数
+     * */
+    function serialize(form) {
+        var parts = [],
+            field = null,
+            i,
+            len,
+            j,
+            optLen,
+            option,
+            optValue;
+
+        for (i = 0, len = form.elements.length; i < len; i++) {
+            field = form.elements[i];
+
+            switch (field.type) {
+                case "select-one":
+                case "select-multiple":
+
+                    if (field.name.length) {
+                        for (j = 0, optLen = field.options.length; j < optLen; j++) {
+                            option = field.options[j];
+                            if (option.selected) {
+                                optValue = "";
+                                if (option.hasAttribute) {
+                                    optValue = (option.hasAttribute("value") ? option.value : option.text);
+                                } else {
+                                    optValue = (option.attributes["value"].specified ? option.value : option.text);
+                                }
+                                parts.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(optValue));
+                            }
+                        }
+                    }
+                    break;
+
+                case undefined:
+                //字段集
+                case "file":
+                //文件输入
+                case "submit":
+                //提交按钮
+                case "reset":
+                //重置按钮
+                case "button":
+                    //自定义按钮
+                    break;
+
+                case "radio":
+                //单选按钮
+                case "checkbox":
+                    //复选框
+                    if (!field.checked) {
+                        break;
+                    }
+                /* 执行默认曹旭哦 */
+
+                default:
+                    //不包含没有名字的表单字段
+                    if (field.name.length) {
+                        parts.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value));
+                    }
+            }
+        }
+        return parts.join("&");
+    }
+
+    window['YU']['serialize'] = serialize;
 
     /*
-     * 作用：改变函数环境
+     * 作用：辅助添加参数到URL末尾
+     * 参数：url 要添加参数的url | name 要添加的键名 | value 要添加的键值
+     * 返回：用&符号连接的序列化参数
+     * */
+    function addURLParam(url, name, value) {
+        url += (url.indexOf("?") == -1 ? "?" : "&");//如果url中已经包含?则以&继续添加参数
+        url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
+        return url;
+    }
+
+    window['YU']['addURLParam'] = addURLParam;
+
+
+    /**************************************
+     *                                    *
+     *            COOKIE方法               *
+     *          COOKIE METHODS            *
+     *                                    *
+     **************************************/
+
+    /*
+     * 作用：获取cookie的值
+     * 参数：name cookie的值的名字
+     * 返回：cookie的值
+     * */
+    function getCookie(name) {
+        var cookieName = encodeURIComponent(name) + "=",
+            cookieStart = document.cookie.indexOf(cookieName),
+            cookieValue = null;
+        if (cookieStart > -1) {
+            var cookieEnd = document.cookie.indexOf(";", cookieStart);
+            if (cookieEnd == -1) {
+                cookieEnd = document.cookie.length;
+            }
+            cookieValue = decodeURIComponent(document.cookie.substring(cookieStart + cookieName.length, cookieEnd));
+        }
+        return cookieValue;
+    }
+
+    window['YU']['getCookie'] = getCookie;
+
+    /*
+     * 作用：设置cookie的值
+     * 参数：name cookie名字 | value coookie值 | expires 有效期 | path 保存路径 | domain 网址主体 | secure 安全设置
+     * 返回：无
+     * */
+    function setCookie(name, value, expires, path, domain, secure) {
+        var cookieText = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+        if (expires instanceof Date) {
+            cookieText += ";expires=" + expires.toGMTString();
+        }
+
+        if (path) {
+            cookieText += "；path=" + path;
+        }
+
+        if (domain) {
+            cookieText += ";domain=" + domain;
+        }
+        if (secure) {
+            cookieText += ";secure";
+
+        }
+
+        document.cookie = cookieText;
+    }
+
+    window['YU']['setCookie'] = setCookie;
+
+    /*
+     * 作用: 移除cookie的值
+     * 参数：name cookie名字 | path 保存路径 | domain 网址主体 | secure 安全设置
+     * 返回：无
+     * */
+    function unsetCookie(name, path, domain, secure) {
+        this.setCookie(name, "", new Date(0), path, domain, secure);
+    }
+
+    window['YU']['unsetCookie'] = unsetCookie;
+
+    /**************************************
+     *                                    *
+     *            其他方法                  *
+     *          OTHER METHODS             *
+     *                                    *
+     **************************************/
+
+    /*
+     * 作用：绑定函数环境
      * 参数：method 回调函数 | target 目标对象
      * 返回：返回改变环境后的函数
      * */
-    function makeCallback(method, target) {
+    function bindContext(fn, context) {
         return function () {
-            method.apply(target, arguments);
+            return fn.apply(context, arguments);
         }
     }
 
-    window['YU']['makeCallback'] = makeCallback;
+    window['YU']['bindContext'] = bindContext;
 
     /*
      * 作用：克隆JavaScript对象
@@ -1061,8 +1309,12 @@
      * 返回：返回克隆后的新对象
      * */
     function clone(myObj) {
-        if (typeof(myObj) != 'object') return myObj;
-        if (myObj == null) return myObj;
+        if (typeof(myObj) != 'object') {
+            return myObj
+        }
+        if (myObj == null) {
+            return myObj
+        }
         var myNewObj = new Object();
         for (var i in myObj) {
             myNewObj[i] = clone(myObj[i]);
@@ -1072,5 +1324,207 @@
 
     window['YU']['clone'] = clone;
 
+    /*
+     * 作用：把命名变成驼峰式的
+     * 参数：str 要转变成驼峰式的字符串
+     * 返回：驼峰式的字符串
+     * */
+    function camelize(str) {
+        return str.replace(/-(\w)/g, function (strMatch, p1) {
+            return p1.toUpperCase();
+        });
+    }
+
+    window['YU']['camelize'] = camelize;
+
+    /*
+     * 作用：把命名变成非驼峰式的
+     * 参数：str 驼峰式的字符串 | sep 连接符 可选 默认"-"
+     * 返回：非驼峰式的字符串
+     * */
+    function uncamelize(str, sep) {
+        sep = sep || '-';
+        return str.replace(/([a-z])([A-Z])/g, function (strMatch, p1, p2) {
+            return p1 + sep + p2.toLowerCase();
+        });
+    }
+
+    window['YU']['uncamelize'] = uncamelize;
+
+
+    /*
+     * 作用：JSON值转成js对象，兼容低级浏览器
+     * 参数：s JSON字符串 | filter 筛选
+     * 返回：转换后的字符串
+     * */
+    function parseJSON(s, filter) {
+        var j;
+
+        function walk(k, v) {
+            var i;
+            if (v && typeof v === 'object') {
+                for (i in v) {
+                    if (v.hasOwnProperty(i)) {
+                        v[i] = walk(i, v[i]);
+                    }
+                }
+            }
+            return filter(k, v);
+        }
+
+        if (/^("(\\.|[^"\\\n\r])*?"|[,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t])+?$/.test(s)) {
+            try {
+                j = eval('(' + s + ')');
+            } catch (e) {
+                throw new SyntaxError("parseJSON");
+            }
+        } else {
+            throw new SyntaxError("parseJSON");
+        }
+
+
+        if (typeof filter === 'function') {
+            j = walk('', j);
+        }
+        return j;
+    }
+
+    window['YU']['parseJSON'] = parseJSON;
+
+    /*
+     * 作用：数组分块函数
+     * 参数：array 要分块的数组 | process 要使用到数组的函数 | context 要执行的环境（没有特殊要求，可不设置该项）
+     * 返回：无
+     * 备注：有种依次排队显示出来的感觉
+     * */
+    function chunk(array, process, context) {
+        setTimeout(function () {
+            //shift()删除数组中的第一项，并返回该项。
+            var item = array.shift();
+            //process指的是当前正在执行的函数,call是调用函数自己，这样可以传入一个函数环境
+            process.call(context, item);
+            //只要数组的长度大于0，这个函数就会每隔100毫秒调用一次父setTimeout(),创建一个新的计时器
+            if (array.length > 0) {//如果array被shift()删光了，就执行完毕了。
+                setTimeout(arguments.callee, 100)
+            }
+        }, 100);//为什么要设置100毫秒？当然你可以根据自己的需要设置，但推荐用100毫秒
+    }
+
+    window['YU']['chunk'] = chunk;
+
+    /*
+     * 作用：为函数设置默认的参数值，柯里化函数，（curry 携带的意思）
+     * 参数：第一个参数，传入要进行柯里化的函数，第二个及以后n个参数，都是设置函数的默认值。默认参数不能大于fn原来的参数个数
+     * 返回：携带默认值的函数
+     * */
+    function curry(fn) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        return function () {
+            var innerArgs = Array.prototype.slice.call(arguments);
+            var finalArgs = args.concat(innerArgs);
+            return fn.apply(null, finalArgs);
+        }
+    }
+
+    window['YU']['curry'] = curry;
+
 })
 ();
+
+//在命名空间外执行
+
+/**
+ * 作用：重复复制字符串
+ * 参数：l 复制次数
+ * 返回：重复后的字符串
+ * 如果原生String对象没有trim方法，则添加该方法
+ */
+if (!String.repeat) {
+    String.prototype.repeat = function (l) {
+        return new Array(l + 1).join(this);
+    }
+}
+
+/**
+ * 作用：删除字符串前后的空格
+ * 参数：无
+ * 返回：删除前后空格后的字符串
+ * 如果原生String对象没有trim方法，则添加该方法
+ */
+if (!String.trim) {
+    String.prototype.trim = function () {
+        return this.replace(/^\s+|\s+$/g, '');
+    }
+}
+
+/**
+ * 作用：多个数组取交集
+ * 参数：多个数组 以逗号分隔开来
+ * 返回：
+ * 如果原生String对象没有trim方法，则添加该方法
+ */
+
+Array.intersect = function () {
+    var result = new Array();
+    var obj = {};
+    for (var i = 0; i < arguments.length; i++) {
+        for (var j = 0; j < arguments[i].length; j++) {
+            var str = arguments[i][j];
+            if (!obj[str]) {
+                obj[str] = 1;
+            }
+            else {
+                obj[str]++;
+                if (obj[str] == arguments.length) {
+                    result.push(str);
+                }
+            }//end else
+        }//end for j
+    }//end for i
+    return result;
+};
+
+//集合去掉重复
+Array.prototype.unique = function () {
+    var tmp = {},
+        ret = [];
+    for (var i = 0, j = this.length; i < j; i++) {
+        if (!tmp[this[i]]) {
+            tmp[this[i]] = 1;
+            ret.push(this[i]);
+        }
+    }
+
+    return ret;
+};
+//并集
+Array.union = function () {
+    var arr = new Array();
+    var obj = {};
+    for (var i = 0; i < arguments.length; i++) {
+        for (var j = 0; j < arguments[i].length; j++) {
+            var str = arguments[i][j];
+            if (!obj[str]) {
+                obj[str] = 1;
+                arr.push(str);
+            }
+        }//end for j
+    }//end for i
+    return arr;
+};
+
+//2个集合的差集 在arr不存在
+Array.prototype.minus = function (arr) {
+    var result = new Array();
+    var obj = {};
+    for (var i = 0; i < arr.length; i++) {
+        obj[arr[i]] = 1;
+    }
+    for (var j = 0; j < this.length; j++) {
+        if (!obj[this[j]]) {
+            obj[this[j]] = 1;
+            result.push(this[j]);
+        }
+    }
+    return result;
+};

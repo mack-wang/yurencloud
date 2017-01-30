@@ -27,55 +27,122 @@
 
 
     //dragdrop有点问题
-    var DragDrop = function () {
-        var dragging = null,
-        dragdrop = EventTarget(),
-        diffX = 0,
-        diffY = 0;
+    function EventTarget() {
+        this.handlers = {};
+    }
+    EventTarget.prototype = {
+        constructor: EventTarget,
+        //注册
+        addHandler: function(type, handler) {
+            if (typeof this.handlers[type] == "undefined") {
+                this.handlers[type] = [];
+            }
+            this.handlers[type].push(handler);
+        },
+        //触发
+        fire: function(event) {
+            if (!event.target) {
+                event.target = this;
+            }
+            if (this.handlers[event.type] instanceof Array) {
+                var handlers = this.handlers[event.type];
+                for (var i = 0, len = handlers.length; i < len; i++) {
+                    handlers[i](event);
+                }
+            }
+        },
+        //注销
+        removeHandler: function(type, handler) {
+            if (this.handlers[type] instanceof Array) {
+                var handlers = this.handlers[type];
+                for (var i = 0, len = handlers.length; i < len; i++) {
+                    if (handlers[i] === handler) {
+                        break;
+                    }
+                }
+                handlers.splice(i, 1);
+            }
+        }
+    };
+
+    var DragDrop = function() {
+
+        var dragdrop = new EventTarget();
+        var dragging = null;
+        var diffX = 0;
+        var diffY = 0;
 
         function handleEvent(event) {
+            //获取事件和目标
             event = EventUtil.getEvent(event);
             var target = EventUtil.getTarget(event);
 
+            //确定事件类型
             switch (event.type) {
                 case "mousedown":
                     if (target.className.indexOf("draggable") > -1) {
                         dragging = target;
-                        diffX=event.clientX-target.offsetLeft;
-                        diffY=event.clientY-target.offsetTop;
-                        dragdrop.fire({type:"dragstart",target:dragging,X:event.clientX,y:event.clientY});
+                        //鼠标在element内的坐标
+                        diffX = event.clientX - target.offsetLeft;
+                        /*
+                         console.log("鼠标在元素内的坐标: " + diffX);
+                         console.log("鼠标坐标: " + event.clientX);
+                         console.log("element坐标: " + target.offsetLeft);
+                         console.log("------------------------------");
+                         */
+                        diffY = event.clientY - target.offsetTop;
+                        dragdrop.fire({
+                            type: "dragstart",
+                            target: dragging,
+                            x: event.clientX,
+                            y: event.clientY
+                        });
                     }
                     break;
 
                 case "mousemove":
                     if (dragging !== null) {
-                        dragging.style.left = (event.clientX-diffX) + "px";
-                        dragging.style.top = (event.clientY-diffY) + "px";
-                        dragdrop.fire({type:"drag",target:dragging,x:event.clientX,y:event.clientY});
+                        //获取事件
+                        event = EventUtil.getEvent(event);
 
+                        //指定位置
+                        dragging.style.left = (event.clientX - diffX) + "px";
+                        dragging.style.top = (event.clientY - diffY) + "px";
+
+                        //触发自定义事件
+                        dragdrop.fire({
+                            type: "drag",
+                            target: dragging,
+                            x: event.clientX,
+                            y: event.clientY
+                        });
                     }
                     break;
+
                 case "mouseup":
-                    dragdrop.fire({type:"dragend",target:dragging,x:event.clientX,y:event.clientY});
+                    dragdrop.fire({
+                        type: "dragend",
+                        target: dragging,
+                        x: event.clientX,
+                        y: event.clientY
+                    });
                     dragging = null;
                     break;
             }
         };
 
-
-            dragdrop.enable=function () {
-                EventUtil.addHandler(document, "mousedown", handleEvent);
-                EventUtil.addHandler(document, "mousemove", handleEvent);
-                EventUtil.addHandler(document, "mouseup", handleEvent);
-            };
-
-            dragdrop.disabled=function () {
-                EventUtil.removeHandler(document, "mousedown", handleEvent);
-                EventUtil.removeHandler(document, "mousemove", handleEvent);
-                EventUtil.removeHandler(document, "mouseup", handleEvent);
-            };
-
-            return dragdrop;
+        //公共接口
+        dragdrop.enable = function() {
+            EventUtil.addHandler(document, "mousedown", handleEvent);
+            EventUtil.addHandler(document, "mousemove", handleEvent);
+            EventUtil.addHandler(document, "mouseup", handleEvent);
+        };
+        dragdrop.disable = function() {
+            EventUtil.removeHandler(document, "mousedown", handleEvent);
+            EventUtil.removeHandler(document, "mousemove", handleEvent);
+            EventUtil.removeHandler(document, "mouseup", handleEvent);
+        };
+        return dragdrop;
     }();
 
 
@@ -88,15 +155,15 @@
 
     DragDrop.enable(box2);
 
-    DragDrop.addHandler("dragstart",function (event) {
+    EventUtil.addHandler("dragstart",function (event) {
         box3.innerHTML="拖拽刚开始时，被拖着的对象ID是："+event.target.id;
     });
 
-    DragDrop.addHandler("drag",function (event) {
+    EventUtil.addHandler("drag",function (event) {
         box4.innerHTML="拖拽进行中，被拖着的对象的ID是："+event.target.id+"他正在什么位置："+event.x+"----"+event.y;
     });
 
-    DragDrop.addHandler("dragend",function (event) {
+    EventUtil.addHandler("dragend",function (event) {
         box5.innerHTML="拖拽结束后，被拖着的对象的ID是："+event.target.id+"他正在什么位置："+event.x+"----"+event.y;
     });
 
