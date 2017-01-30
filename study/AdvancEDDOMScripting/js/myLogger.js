@@ -71,6 +71,7 @@ function myLogger(id) {
 }
 
 myLogger.prototype = {
+    //输出执行结果
     write: function (message) {
         //警告message为空值
         if (typeof message == 'string' && message.length == 0) {
@@ -99,7 +100,7 @@ myLogger.prototype = {
         return this.writeRaw(message);
     },
 
-
+    //输出自定义标题
     header: function (message) {
         message = '<span style = "color:white;background-color:black;font-weight:bold;padding:0px 5px;">' + message + '</span>';
         return this.writeRaw(message);
@@ -108,14 +109,8 @@ myLogger.prototype = {
 
 /*
 还有一个好处：不用打开控制台来查看日志，因为直接在页面正中间就显示日志了
-
 为了能够使用构造函数创建多个不同的日志记录对象
 同时为了展示构造函数使用过程中，综合使用私有属性，公有属性，私有方法，公有方法的应用。
-所以把myLogger.js单独写
-下面是创建实例到YU.log下
-
 */
-if (!window.YU) {//存在YU，则跳过。不存在则创建一个
-    window['YU'] = {};
-}
+
 window['YU']['log'] = new myLogger();//使用构造函数创建实例

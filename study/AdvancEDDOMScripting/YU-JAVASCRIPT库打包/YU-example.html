@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/test2.css">
-    <link rel="stylesheet" href="css/test.css">
+    <!--<link rel="stylesheet" href="css/test2.css">-->
+    <!--<link rel="stylesheet" href="css/test.css">-->
 </head>
 <style>
     .wlc {
@@ -46,8 +46,8 @@
 <div id="box3" class="draggable" style="width: 100px;height: 100px;background-color: blue; position: absolute;"></div>
 
 </body>
-<!--<script src="js/YU.js"></script>-->
-<script src="js/YU.min.js"></script>
+<script src="YU.js"></script>
+<!--<script src="YU.min.js"></script>-->
 <script>
     /*YU.js库使用测试*/
 
@@ -271,35 +271,35 @@
      * 参数：url css文件的资源位置 | media
      * 返回：无
      * */
-    YU.addStyleSheet('css/test.css');
+//    YU.addStyleSheet('css/test.css');
 
     /*
      * 作用：移除样式表，移除link css标签
      * 参数：url css文件的资源位置 | media
      * 返回：无
      * */
-    YU.removeStyleSheet('css/test2.css');
+//    YU.removeStyleSheet('css/test2.css');
 
     /*
      * 作用：通过URL取得包含所有样式表的数组
      * 参数：url css文件的资源位置 | media
      * 返回：样式表数组
      * */
-    console.log(YU.getStyleSheets('css/test.css'));//无效
+//    console.log(YU.getStyleSheets('css/test.css'));//无效
 
     /*
      * 作用：编辑修改一条样式规则
      * 参数：selector 选择器 | styles 样式对象 | url css文件的资源位置 | media
      * 返回：无
      * */
-    YU.editCSSRule('div', {color: "blue"}, 'css/test.css');
+//    YU.editCSSRule('div', {color: "blue"}, 'css/test.css');
 
     /*
      * 作用：添加一条样式规则
      * 参数：selector 选择器 | styles 样式对象 |index 索引 位置 | url css文件的资源位置 | media
      * 返回：无
      * */
-    YU.addCSSRule('.ulclass', {color: "green"}, 2, 'css/test.css');
+//    YU.addCSSRule('.ulclass', {color: "green"}, 2, 'css/test.css');
 
     /*
      * 作用：得到元素的样式属性值
