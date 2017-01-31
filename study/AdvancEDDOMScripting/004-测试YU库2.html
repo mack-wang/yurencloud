@@ -46,8 +46,8 @@
 <div id="box3" class="draggable" style="width: 100px;height: 100px;background-color: blue; position: absolute;"></div>
 
 </body>
-<!--<script src="js/YU.js"></script>-->
-<script src="js/YU.min.js"></script>
+<script src="js/YU.js"></script>
+<!--<script src="js/YU.min.js"></script>-->
 <script>
     /*YU.js库使用测试*/
 
@@ -364,21 +364,21 @@
      * 返回：转换后的字符串
      * */
     //因为IE7，IE8中没有JSON.stringify所以先注释掉
-    //    var book = {
-    //        title: "javascript",
-    //        authors: [
-    //            "tom",
-    //            "cindy2"
-    //        ],
-    //        edition: 3,
-    //        year: 2016
-    //    };
-    //    //把js对象转成JSON对象，使用JSON类下的stringify()方法
-    //    var jsonText = JSON.stringify(book);
-    //
-    //    //把JSON对象，转成js对象
-    //    var book2 = YU.parseJSON(jsonText);
-    //    console.log(book2);
+        var book = {
+            title: "javascript",
+            authors: [
+                "tom",
+                "cindy2"
+            ],
+            edition: 3,
+            year: 2016
+        };
+        //把js对象转成JSON对象，使用JSON类下的stringify()方法
+        var jsonText = JSON.stringify(book);
+
+        //把JSON对象，转成js对象
+        var book2 = YU.parseJSON(jsonText);
+        console.log(book2);
 
     /* 以下ajax测试成功，为了不打扰其他测试，故注释掉了，想测试ajax取消注释，并以http形式打开本页 */
 
@@ -561,7 +561,55 @@
      */
     log.header('我是执行结果的自定义标题');
     log.write('我是执行结果的返回 Message');
-    console.log(YU)
+    console.log(YU);
+
+    /*
+     * 作用：检测是否是数组,函数，正则，对象，JSON
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    var str9 = '5';
+    var arr5 = [];
+    var fun5 = function () {};
+    var RegExp = /\s+/;
+    var obj = {};
+    log.write(YU.isArray(arr5));
+    log.write(YU.isFunction(fun5));
+    log.write(YU.isRegExp(RegExp));
+    log.write(typeof obj === 'object');
+    log.header('测试YU.type');
+    log.write(YU.type(RegExp));
+    log.write(typeof fun5);
+    log.header('是否是数值');
+    log.write(YU.isNumeric(str9));
+    log.write(YU.isEmptyObject(obj));
+
+    /*
+     * 作用：对类数组对象中的每个项依次执行回调函数
+     * 参数：obj 类数组对象 | callback 回调函数
+     * 返回：执行函数后的类数组对象
+     * */
+    var arr6 = [11,12,13];
+    function addNum(index,item) {
+        log.write( item + 10);
+    }
+    YU.each(arr6,addNum);
+
+    //对象，类数组
+    var obj6 = {ding:'ding',hong:'hong',ming:'ming'};
+    function addString(index,item) {
+        log.write( item + 'haha');
+    }
+    YU.each(obj6,addString)
+
+
+
+
+
+
+
+
+
 
 
 </script>

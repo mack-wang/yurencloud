@@ -6,6 +6,8 @@
  */
 
 (function () {
+    var yuObj = {},
+        toString = yuObj.toString;
 
     //YU的命名空间
     if (!window.YU) {
@@ -1283,6 +1285,150 @@
 
     window['YU']['unsetCookie'] = unsetCookie;
 
+
+    /**************************************
+     *                                    *
+     *            安全检测                  *
+     *      SECURE TYPEOF METHODS         *
+     *                                    *
+     **************************************/
+
+    //由于用原生的类型检测方法typeof会出现一些奇怪的现象，所以才提出了更安全的类型检测
+    //原理：当使用Object原生的toString()方法时，返回的类中都有一个属性，是自己的类型
+    //意思是：创建一个函数，传入要检测的对象，然后通过Object返回他的构造函数名，
+    // 如果和要检测的类型相等，就返回true，就测出了类型。
+
+    /*
+     * 作用：检测是否是数组
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    function isArray(obj) {
+        return Object.prototype.toString.call(obj) == "[object Array]";
+    }
+
+    window['YU']['isArray'] = isArray;
+
+    /*
+     * 作用：检测是否是函数
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    function isFunction(obj) {
+        return Object.prototype.toString.call(obj) == "[object Function]";
+    }
+
+    window['YU']['isFunction'] = isFunction;
+
+    /*
+     * 作用：检测是否是正则式
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    function isRegExp(obj) {
+        return Object.prototype.toString.call(obj) == "[object RegExp]";
+    }
+
+    window['YU']['isRegExp'] = isRegExp;
+
+    /*
+     * 作用：检测是否是window对象
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    function isWindow(obj) {
+        return obj != null && obj === obj.window;
+    }
+
+    window['YU']['isWindow'] = isWindow;
+
+    /*
+     * 作用：检测对象类型，和typeof一样，但是兼容性更高，是安全检测
+     * 参数：obj 待检测的对象
+     * 返回：对象类型，英文小写
+     * */
+    function type(obj) {
+        if (obj == null) {
+            return obj + "";
+        }
+        // Support: Android <=2.3 only (functionish RegExp)
+        return typeof obj === "object" || typeof obj === "function" ?
+        yuObj[toString.call(obj)] || "object" :
+            typeof obj;
+    }
+
+    window['YU']['type'] = type;
+
+    //对上面type方法检测出来的object类型进行细分，补充
+    each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),
+        function (i, name) {
+            yuObj["[object " + name + "]"] = name.toLowerCase();
+        });
+
+    /*
+     * 作用：检测对象是否为数值(字符串若为纯数字也视为数值)
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    function isNumeric(obj) {
+        // As of jQuery 3.0, isNumeric is limited to
+        // strings and numbers (primitives or objects)
+        // that can be coerced to finite numbers (gh-2662)
+        var type = this.type(obj);
+        return ( type === "number" || type === "string" ) && !isNaN(obj - parseFloat(obj));
+    }
+
+    window['YU']['isNumeric'] = isNumeric;
+
+    /*
+     * 作用：判断是否为空对象
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    function isEmptyObject(obj) {
+        var name;//name未定义，所以是一个空对象
+        for (name in obj) {//如果obj中为空，则name in obj是true
+            return false;
+        }
+        return true;
+    }
+
+    window['YU']['isEmptyObject'] = isEmptyObject;
+
+
+    /*
+     * 作用：判断是否为类数组对象（拥有length的非函数非window对像）
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    function isArrayLike(obj) {
+        //双叹号，把一个对象转成布尔值
+        //检测对象中是否有length属性
+        var length = !!obj && "length" in obj && obj.length,
+            type = YU.type(obj);
+
+        if (type === "function" || isWindow(obj)) {
+            return false;
+        }
+
+        return type === "array" || length === 0 ||
+            typeof length === "number" && length > 0 && ( length - 1 ) in obj;
+    }
+
+    window['YU']['isArrayLike'] = isArrayLike;
+
+
+    /*
+     * 作用：检测是否是JSON对象
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    // function isNativeJSON(obj) {
+    //    return window.JSON && Object.prototype.toString.call(obj) == "[object JSON]";
+    // }
+    //
+    // window['YU']['isNativeJSON'] = isNativeJSON;
+
     /**************************************
      *                                    *
      *            其他方法                  *
@@ -1444,6 +1590,35 @@
     }
 
     window['YU']['shuffleArray'] = shuffleArray;
+
+    /*
+     * 作用：对类数组对象中的每个项依次执行回调函数
+     * 参数：obj 类数组对象 | callback 回调函数
+     * 返回：执行函数后的类数组对象
+     * */
+    function each(obj, callback) {
+        var length, i = 0;
+
+        if (isArrayLike(obj)) {//检测obj是否为类数组对象
+            length = obj.length;
+            for (; i < length; i++) {
+                //应用类数组第一项的环境，并传入两个参数，第一个是i当前索引，第二个是obj[i]当前项
+                if (callback.call(obj[i], i, obj[i]) === false) {
+                    break;
+                }
+            }
+        } else {
+            for (i in obj) {
+                if (callback.call(obj[i], i, obj[i]) === false) {
+                    break;
+                }
+            }
+        }
+
+        return obj;
+    }
+
+    window['YU']['each'] = each;
 
 })
 ();

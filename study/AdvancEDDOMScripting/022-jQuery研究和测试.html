@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="js/YU.js"></script>
+<script src="js/jquery-3.1.1-copy.js"></script>
+<!--<script src="js/jquery-3.1.1.js"></script>-->
+<script src="js/jquerytest.js"></script>
+<body>
+
+
+</body>
+<script>
+    //1
+    //在document中创建script对象，但并味插入文档中，只能说是待插入
+    var script = document.createElement('script');
+    script.id = 'hello';
+    //script.text = "alert('hello')";
+    //appendChild后会立即得到执行，同时插入后返回的是插入的script元素
+    //所以其父节点是head元素，执行完script立即删除
+    document.head.appendChild(script).parentNode.removeChild(script);
+
+    //2
+    log.write();
+
+</script>
+</html>
