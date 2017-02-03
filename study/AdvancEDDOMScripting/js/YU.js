@@ -501,6 +501,7 @@
      * 作用：通过class值和标签名获取元素
      * 参数：className 元素的class值 | tag 元素的标签名 必填 | parent 元素的父元素(用来缩小范围) 可选
      * 返回：匹配后的元素数组
+     * 这里是为了避免低级浏览器没有getElementsByClassName的方法，所以用TagName来变相实现效果，但导致要多写一个参数TagName
      * */
     function getElementsByClassName(className, tag, parent) {
         parent = parent || document;
@@ -529,6 +530,35 @@
     }
 
     window['YU']['getElementsByClassName'] = getElementsByClassName;
+
+
+    /*
+     * 作用：通过className获取元素集合
+     * 参数：className 元素的className
+     * 返回：匹配后的元素数组
+     * 当元素中不含有getElementsByClassName方法时，通过遍历所有元素，匹配出符合条件的元素。
+     * 注意：虽然参数可以用CSS3选择器，但为兼容低版本浏览器，参数应该为className
+     * */
+    function c(className) {
+
+        var elements;
+        //如果有getElementsByClassName方法，则优先使用该方法
+        if (document.getElementsByClassName) {
+            elements = document.getElementsByClassName(className);
+        } else {
+        elements = [];
+            //如果没有则采取遍历所有元素的className来匹配出符合条件的元素，兼容低版本的浏览器
+            walkElementsLinear(function () {
+                var classArr = this.className.replace(/\s+/, ' ').split(' ');
+                if (classArr.indexOf(className) > -1) {
+                    elements.push(this)
+                }
+            }, window.document);
+        }
+        return elements;
+    }
+
+    window['YU']['c'] = c;
 
     /*
      * 作用：可以切换隐藏或者显示状态，也可以设置显示状态
@@ -1638,40 +1668,6 @@
 ();
 
 //在命名空间外执行
-
-
-/*
- * 如果$()已经存在，则跳过（为了兼容jQuery）
- * 如果$()是个函数，则为选择器函数。如果$是window.$对象，则是YU库的实例
- * 作用：通过id值获取单个元素或多个元素
- * 参数：单个或多个id值
- * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
- * */
-
-if (typeof $ !== 'function') {
-    function $() {
-        var elements = new Array();
-
-        //查找作为参数提供的所有元素
-        for (var i = 0; i < arguments.length; i++) {
-            var element = arguments[i];
-
-            //如果该参数是一个字符串，那就假设它是一个id
-            if (typeof element == 'string') {
-                element = document.getElementById(element);
-            }
-
-            //如果只提供一个参数，则立即返回这个元素
-            if (arguments.length == 1) {
-                return element;
-            }
-
-            //否则，将它添加到数组中
-            elements.push(element);
-        }
-        return elements;
-    }
-}
 
 /**
  * 作用：重复复制字符串

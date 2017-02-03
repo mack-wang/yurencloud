@@ -46,7 +46,7 @@
 <div id="box3" class="draggable" style="width: 100px;height: 100px;background-color: blue; position: absolute;"></div>
 
 </body>
-<script src="js/jquery-3.1.1.min.js"></script>
+<!--<script src="js/jquery-3.1.1.min.js"></script>-->
 <script src="js/YU.js"></script>
 <!--<script src="js/YU.min.js"></script>-->
 <script>
@@ -158,6 +158,8 @@
      * 返回：匹配后的元素数组
      * */
     console.log(YU.getElementsByClassName('ulclass', 'ul', YU.$('container')));
+    log.header('class选择器');
+    log.write(YU.getElementsByClassName('ulclass'));
 
     /*
      * 作用：可以切换隐藏或者显示状态，也可以设置显示状态
@@ -620,7 +622,15 @@
     * 在YU的命名空间外添加$()选择器函数，作用域为全局，实现直接使用$(id)就能获取DOM元素
     * */
 
-    log.write($('#xiaohong')[0].innerHTML);
+//    log.write($('#xiaohong')[0].innerHTML);
+    log.write($.$('xiaohong').innerHTML);
+
+    console.log($.c('ulclass'));
+
+//    log.write($.getStyle('xiaoming','color'));
+    console.log($.getStyle('xiaoming','color'));//0，0，255 blue
+
+    $.setStyle('xiaoming',{color:'red'})
 
 
 
