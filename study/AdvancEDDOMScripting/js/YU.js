@@ -5,13 +5,27 @@
  * 兼容低版本的浏览器 IE6+，Firefox1.5+,Safari2.0+,Opera9+
  */
 
+/**
+ * 更新日志:
+ * 推出稳定版本：verstion 1.0.0 20170203
+ *
+ */
+
 (function () {
     var yuObj = {},
-        toString = yuObj.toString;
+        toString = yuObj.toString,
+        version = '1.0.0';
 
     //YU的命名空间
     if (!window.YU) {
         window['YU'] = {}
+    }
+    //如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
+    //如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
+    //例如引入其他库，如jQuery，如果jQuery先引用，则因$已经被先被jQuery占用，则YU放弃对$的占用
+    //如果jQuery后引用，则因为jQuery对$命名空间进行了覆盖性赋值，则YU被迫让出了对$的占用。
+    if (!window.$) {
+        window['$'] = window['YU'];
     }
 
     /*
@@ -34,8 +48,8 @@
 
     window['YU']['isCompatible'] = isCompatible;
 
-
     /*
+     * 仅YU库内部使用
      * 作用：通过id值获取单个元素或多个元素
      * 参数：单个或多个id值
      * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
@@ -64,7 +78,6 @@
     }
 
     window['YU']['$'] = $;
-    window['$'] = $;
 
     /*
      * 作用：解决YU库和其他库在$上的命名冲突
@@ -76,6 +89,7 @@
     }
 
     window['YU']['noConflict'] = noConflict;
+
 
     /**************************************
      *                                    *
@@ -1624,6 +1638,40 @@
 ();
 
 //在命名空间外执行
+
+
+/*
+ * 如果$()已经存在，则跳过（为了兼容jQuery）
+ * 如果$()是个函数，则为选择器函数。如果$是window.$对象，则是YU库的实例
+ * 作用：通过id值获取单个元素或多个元素
+ * 参数：单个或多个id值
+ * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
+ * */
+
+if (typeof $ !== 'function') {
+    function $() {
+        var elements = new Array();
+
+        //查找作为参数提供的所有元素
+        for (var i = 0; i < arguments.length; i++) {
+            var element = arguments[i];
+
+            //如果该参数是一个字符串，那就假设它是一个id
+            if (typeof element == 'string') {
+                element = document.getElementById(element);
+            }
+
+            //如果只提供一个参数，则立即返回这个元素
+            if (arguments.length == 1) {
+                return element;
+            }
+
+            //否则，将它添加到数组中
+            elements.push(element);
+        }
+        return elements;
+    }
+}
 
 /**
  * 作用：重复复制字符串

@@ -5,11 +5,10 @@
     <title>Title</title>
 </head>
 <script src="js/YU.js"></script>
-<script src="js/jquery-3.1.1-copy.js"></script>
-<!--<script src="js/jquery-3.1.1.js"></script>-->
-<script src="js/jquerytest.js"></script>
+<!--<script src="js/jquery-3.1.1-copy.js"></script>-->
+<script src="js/jquery-3.1.1.js"></script>
 <body>
-
+<div id="box1">hello1</div>
 
 </body>
 <script>
@@ -23,7 +22,34 @@
     document.head.appendChild(script).parentNode.removeChild(script);
 
     //2
-    log.write();
+    var arr = [];//创建数组对象，并赋值给arr
+    var arr1 = [1,2,3,4];
+
+    //3
+    //jQuery让出$的使用权，并用j来代替$
+    //方法一：直接让把window对象下的$用你想赋值的对象赋值
+//    window.$=window.YU;
+//    log.write($.$('box1').innerHTML);
+    //方法二：执行jQuery.noConflict方法，让出$的使用权
+//    jQuery.noConflict();
+//    log.write($.$('box1').innerHTML);
+
+    //4
+    var fn = function () {
+        console.log('1');
+    };
+    //如果为单叹号，则把对象转成布尔值，并取该布尔值的相反值。
+    log.write(!fn);//fn存在，所以为true，取反后最终为false
+    //如果为双叹号，则把对象转成布尔值。
+    log.write(!!fn);//fn存在，所以为true，
+
+
+
+
+
+
+
+
 
 </script>
 </html>

@@ -4085,6 +4085,7 @@ jQuery.event = {
 
 	global: {},
 
+	//jQuery的添加事件的方法 $.event.add(事件元素，事件类型，回调函数，附加参数，选择器)
 	add: function( elem, types, handler, data, selector ) {
 
 		var handleObjIn, eventHandle, tmp,
@@ -4808,6 +4809,9 @@ if ( !support.focusinBubbles ) {
 
 jQuery.fn.extend({
 
+	//jQuery拓展自定义函数
+	//on()方法
+	//types 定义函数接收的参数类型 selector 作用的jQuery元素对象， data 携带的数据参数 fn要添加的函数
 	on: function( types, selector, data, fn, /*INTERNAL*/ one ) {
 		var origFn, type;
 
@@ -4825,15 +4829,17 @@ jQuery.fn.extend({
 			return this;
 		}
 
+		//如果data为null，fn为null，则fn为selector选择器，data为未定义
 		if ( data == null && fn == null ) {
 			// ( types, fn )
 			fn = selector;
 			data = selector = undefined;
 		} else if ( fn == null ) {
+			//如果函数为null，选择器为为字符串（说明用户略过对象，直接使用了数据）
 			if ( typeof selector === "string" ) {
 				// ( types, selector, fn )
-				fn = data;
-				data = undefined;
+				fn = data;//则fn为的数据
+				data = undefined;//数据为undefined
 			} else {
 				// ( types, data, fn )
 				fn = data;
@@ -4841,9 +4847,9 @@ jQuery.fn.extend({
 				selector = undefined;
 			}
 		}
-		if ( fn === false ) {
+		if ( fn === false ) {//如果fn为false，则直接返回false
 			fn = returnFalse;
-		} else if ( !fn ) {
+		} else if ( !fn ) {//如果fn不存在，则返回这个这个不存在
 			return this;
 		}
 

@@ -95,7 +95,7 @@ var
 	version = "3.1.1",
 
 	// Define a local copy of jQuery
-	jQuery = function( selector, context ) {//jquery选择器，可绑定上下文环境
+	jQuery = function( selector, context ) {//jquery选择器，创建jQuery对象，并初始化
 
 		// The jQuery object is actually just the init constructor 'enhanced'
 		// Need init if jQuery is called (just allow error to be thrown if not included)
@@ -121,13 +121,13 @@ jQuery.fn = jQuery.prototype = {//jquery的函数对象，原型对象定义
 	// The current version of jQuery being used
 	jquery: version,//version已经在前面定义了
 
-	constructor: jQuery,//jQuery的构造器
+	constructor: jQuery,//jQuery的构造器，jQuery赋值给constructor
 
 	// The default length of a jQuery object is 0
 	length: 0,
 
 	toArray: function() {
-		return slice.call( this );//当前对象插入到数组中 等于 Array.slice.call(this)，前面已经定义了slice为Array
+		return slice.call( this );
 	},
 
 	// Get the Nth element in the matched element set OR
@@ -3167,6 +3167,7 @@ function sibling( cur, dir ) {
 }
 
 jQuery.each( {
+    //each对象下还有多个方法，可以实现在遍历时，操作前一项，后一项，某项之后所有的项，某项之前后面的项，指定某几项等快捷方法。
 	parent: function( elem ) {
 		var parent = elem.parentNode;
 		return parent && parent.nodeType !== 11 ? parent : null;
@@ -10146,7 +10147,8 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 
 
 jQuery.fn.extend( {
-
+    //在jQuery对象中注册自定义的方法
+    //bind绑定
 	bind: function( types, data, fn ) {
 		return this.on( types, null, data, fn );
 	},
@@ -10166,7 +10168,7 @@ jQuery.fn.extend( {
 	}
 } );
 
-jQuery.parseJSON = JSON.parse;
+jQuery.parseJSON = JSON.parse;//获取全局的JSON对象的parse方法，并赋值给jQuery的parseJSON方法
 
 
 
@@ -10196,6 +10198,7 @@ if ( typeof define === "function" && define.amd ) {
 var
 
 	// Map over jQuery in case of overwrite
+	// 覆盖jQuery设置句柄
 	_jQuery = window.jQuery,
 
 	// Map over the $ in case of overwrite
@@ -10203,11 +10206,11 @@ var
 
 jQuery.noConflict = function( deep ) {
 	if ( window.$ === jQuery ) {
-		window.$ = _$;
+		window.$ = _$;//如果$对象是jQuery对象，则让出来给_$自定义的对象
 	}
 
 	if ( deep && window.jQuery === jQuery ) {
-		window.jQuery = _jQuery;
+		window.jQuery = _jQuery;//如果希望把jQuery对象让出来给自定义对象，则deep得为true
 	}
 
 	return jQuery;
@@ -10216,7 +10219,7 @@ jQuery.noConflict = function( deep ) {
 // Expose jQuery and $ identifiers, even in AMD
 // (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
 // and CommonJS for browser emulators (#13566)
-if ( !noGlobal ) {
+if ( !noGlobal ) {//如果有全局对象，则在全局对象window下注册jQuery和$的命名空间都为jQuery对象
 	window.jQuery = window.$ = jQuery;
 }
 

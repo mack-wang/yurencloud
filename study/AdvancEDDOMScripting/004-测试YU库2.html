@@ -46,6 +46,7 @@
 <div id="box3" class="draggable" style="width: 100px;height: 100px;background-color: blue; position: absolute;"></div>
 
 </body>
+<script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/YU.js"></script>
 <!--<script src="js/YU.min.js"></script>-->
 <script>
@@ -600,7 +601,27 @@
     function addString(index,item) {
         log.write( item + 'haha');
     }
-    YU.each(obj6,addString)
+    YU.each(obj6,addString);
+
+    /*
+    //如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
+    //如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
+    if(!window.$){
+        window['$'] = window['YU'];
+    }
+    */
+
+//    log.write($('#xiaoming').get(0).innerHTML);
+//    console.log(window.$);
+    log.write(YU.$('xiaoming').innerHTML);
+//    log.write($('xiaoming').innerHTML);
+
+    /*
+    * 在YU的命名空间外添加$()选择器函数，作用域为全局，实现直接使用$(id)就能获取DOM元素
+    * */
+
+    log.write($('#xiaohong')[0].innerHTML);
+
 
 
 
