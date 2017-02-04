@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Revealing-Module 揭示模块模式
+
+     在私有范围内定义所有的函数和变量，然后返回一个匿名对象，它拥有指向私有函数和变量的指针。
+     在模块代码底部统一写公开的函数和变量，并可以给这些公开的函数和变量，重命名，更加清晰简洁。
+     缺点：同Module，同时可能更难维护。如果无需维护，到可以使用。
+
+     */
+
+    var myRevealingModule = function () {
+        var privateCounter = 0;
+
+        function privateFunction() {
+            privateCounter++;
+        }
+
+        function publicFunction() {
+            publicIncrement();
+        }
+
+        function publicIncrement() {
+            privateFunction();
+        }
+
+        function publicGetCount() {
+            return privateCounter;
+        }
+        //返回一个匿名对象，它拥有指向私有函数和变量的指针。
+        return {
+            start: publicFunction,
+            increment: publicIncrement,
+            count: publicGetCount
+        }
+    }();//这个括号是立即执行的意思
+
+    myRevealingModule.start();//1
+    myRevealingModule.start();//2
+    console.log(myRevealingModule.count());//2
+
+
+</script>
+</html>

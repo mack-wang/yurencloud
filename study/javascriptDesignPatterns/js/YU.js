@@ -540,17 +540,13 @@
      * 注意：虽然参数可以用CSS3选择器，但为兼容低版本浏览器，参数应该为className
      * */
     function c(className) {
-        //className只能是英文字母或和数字的组合,使用正则判断
-        var regex = /^[0-9a-zA-Z]*$/g;
-        if (!regex.test(className)) {
-            return new Error("className只能是英文字母或和数字的组合");
-        }
+
         var elements;
         //如果有getElementsByClassName方法，则优先使用该方法
         if (document.getElementsByClassName) {
             elements = document.getElementsByClassName(className);
         } else {
-            elements = [];
+        elements = [];
             //如果没有则采取遍历所有元素的className来匹配出符合条件的元素，兼容低版本的浏览器
             walkElementsLinear(function () {
                 var classArr = this.className.replace(/\s+/, ' ').split(' ');

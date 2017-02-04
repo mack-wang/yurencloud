@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Constructor 构造器模式
+
+     JavaScript不支持类的概念
+     但JavaScript支持与对象一起使用的特殊的Constructor（构造器）函数
+     在构造器函数前添加new关键字，告诉JavaScript像使用构造器一样实例化一个新对象，并且该对象成员由该函数定义
+     在构造器内，关键字this引用新创建的对象
+     */
+
+    /*
+     理解：调用JavaScript构造器创建一个对象后，新对象就会具有构造器原型prototype的所有属性方法。
+     以下面的例子来讲：
+     根据属性或方法是否是添加到构造器原型prototype对象中的，可以分为两类：
+     1、非prototype的属性和方法，用构造器创建的新对象将会根据参数重新定义或直接拥有该方法。
+     2、prototype的属性和方法，用构造器创建的新对象将会共享该方法。
+     */
+
+
+    //创建Constructor（构造器）函数
+    function MyConstructor(param1, param2 /*...*/) {//可以为构造函数定义多个初始化参数
+        //定义初始化变量
+        this.myParam1 = param1;
+
+        //定义构造函数的初始化方法
+        this.foo = function() {
+            console.log(param2);
+        };
+
+        //定义私有变量
+        var privateVar = 1;
+
+        //定义私有方法
+        var privateMethod = function () {
+            MyConstructor.myParam1 = param2;
+        };
+
+        //给构造器函数prototype原型对象添加变量，向所有基于些构造的函数继承该变量，共享该变量
+        MyConstructor.prototype.publicVar = 'hello1';
+        //给构造器函数prototype原型对象添加方法，向所有基于些构造的函数继承该方法，共享该方法
+        MyConstructor.prototype.bar = function () {
+            console.log(param2);
+        }
+
+    }
+
+    //使用构造函数，创建新函数
+    var func = new MyConstructor('param1','param2');
+    //使用公开的成员
+    console.log(func.myParam1);
+    func.foo();
+    console.log(func.publicVar);
+    func.bar();
+    //无法使用构造器私有的成员；
+    //console.log(privateVar);
+    //privateMethod();
+
+
+</script>
+</html>

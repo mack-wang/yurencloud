@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+    Constructor 构造器模式
+
+    JavaScript不支持类的概念
+    但JavaScript支持与对象一起使用的特殊的Constructor（构造器）函数
+    在构造器函数前添加new关键字，告诉JavaScript像使用构造器一样实例化一个新对象，并且该对象成员由该函数定义
+    在构造器内，关键字this引用新创建的对象
+    */
+
+    /*
+    理解：调用JavaScript构造器创建一个对象后，新对象就会具有构造器原型prototype的所有属性方法。
+    以下面的例子来讲：
+    根据属性或方法是否是添加到构造器原型prototype对象中的，可以分为两类：
+    1、非prototype的属性和方法，用构造器创建的新对象将会根据参数重新定义或直接拥有该方法。
+    2、prototype的属性和方法，用构造器创建的新对象将会共享该方法。
+    */
+
+
+    //创建Constructor（构造器）函数
+    function Car(carBrand, model) {
+        //为每个使用Car构造器创建的新对象分别重新定义的两个属性
+        this.carBrand = carBrand;
+        this.model = model;
+    }
+
+    //向Car的原型prototype对象添加Acceleration汽车加速方法
+    Car.prototype.Acceleration = function () {
+        console.log("this is " + this.carBrand + '--' + this.model);
+    };
+
+    //创建一个car.prototype对象的方法Hoot, 喇叭叫方法
+    Car.prototype.Hoot = function () {
+        console.log("嘀嘀嘀");
+    };
+
+    //创建一个car.prototype对象的属性Wheel，汽车有4个轮子属性
+    Car.prototype.Wheel=4;
+
+    //以上已经创建了一个Car的对象
+    //接下来我们创建一个具体的品牌的车，比如Benz奔弛，去继承Car对象
+
+    //创建一个Benz奔弛函数，（Benz.prototype是一个对象）
+    function Benz(carBrand,model,power) {
+        Car.call(this,carBrand,model);
+        this.power = power;
+    }
+
+    //让Benz.prototype对象继承Car.prototype对象的方法和属性
+    //创造一个空对象，并且使其原型指向参数，也就是Car.prototype.
+    Benz.prototype = Object.create(Car.prototype);
+    //取消不影响整体流程，但为了保持一致奔弛构造，如果没有此行代码，则constructor为Car
+    //没有这行我发现也没什么影响
+    Benz.prototype.constructor = Benz;
+
+    //Benz.prototype的特有方法
+    Benz.prototype.GetGirl = function () {
+        console.log('yes,fucking car...');
+    };
+
+    //Benz重写了父对象Car的Acceleration加速方法
+    Benz.prototype.Acceleration = function () {
+        console.log("this is " + this.carBrand + '--' +
+                this.model+" And Drive by "+this.power);
+    };
+
+    //上面是Car函数对象的创建，以及Benz继承Car对象的创建增加新方法，重写部分继承来的方法，下面是使用
+
+    var BenzCar = new Benz("奔弛车","Version2.0","汽油提供能源");
+    console.log(BenzCar);
+    BenzCar.Acceleration();
+    console.log(BenzCar.Wheel);
+    BenzCar.GetGirl();
+    BenzCar.Hoot();
+    console.log(Benz.prototype.constructor);
+    
+
+</script>
+</html>

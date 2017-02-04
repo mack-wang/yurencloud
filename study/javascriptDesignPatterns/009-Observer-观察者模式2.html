@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+<button id="addNewObserver">添加新的观察者的checkbox</button>
+<input type="checkbox" id="mainCheckbox"/>
+<div id="observersContainer"></div>
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Observer 观察者模式
+
+
+     */
+
+    // Observer pattern
+    function Observer() {
+        this.fns = [];
+    }
+    Observer.prototype = {
+        subscribe: function(fn) {
+            this.fns.push(fn);
+        },
+        unsubscribe: function(fn) {
+            this.fns = this.fns.filter(
+                    function(el) {
+                        if (el !== fn) {
+                            return el;
+                        }
+                    }
+            );
+        },
+        update: function(o, thisObj) {
+            var scope = thisObj || window;
+            this.fns.forEach(
+                    function(el) {
+                        el.call(scope, o);
+                    }
+            );
+        }
+    };
+
+    //测试
+    var o = new Observer;
+    var f1 = function(data) {
+        console.log('Robbin: ' + data + ', 赶紧干活了！');
+    };
+
+    var f2 = function(data) {
+        console.log('Randall: ' + data + ', 找他加点工资去！');
+    };
+
+    o.subscribe(f1);
+    o.subscribe(f2);
+
+    o.update("Tom回来了！")
+
+    //退订f1
+    o.unsubscribe(f1);
+    //再来验证
+    o.update("Tom回来了！");
+
+    /* // 如果提示找不到filter或者forEach函数，可能是因为你的浏览器还不够新，暂时不支持新标准的函数，你可以使用如下方式自己定义
+     if (!Array.prototype.forEach) {
+     Array.prototype.forEach = function (fn, thisObj) {
+     var scope = thisObj || window;
+     for (var i = 0, j = this.length; i < j; ++i) {
+     fn.call(scope, this[i], i, this);
+     }
+     };
+     }
+     if (!Array.prototype.filter) {
+     Array.prototype.filter = function (fn, thisObj) {
+     var scope = thisObj || window;
+     var a = [];
+     for (var i = 0, j = this.length; i < j; ++i) {
+     if (!fn.call(scope, this[i], i, this)) {
+     continue;
+     }
+     a.push(this[i]);
+     }
+     return a;
+     };
+     }
+     */
+
+
+</script>
+</html>

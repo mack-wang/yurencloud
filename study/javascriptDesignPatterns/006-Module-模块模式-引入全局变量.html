@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Module 模块化模式
+
+     在JavaScript中，Module模式用于进一步模拟类的概念，通过这种方式，能够使一个单独的对象拥有公有/私有方法和变量，以避免和其他脚本定义的函数产生冲突。
+     Module模式使用闭包封装"私有"状态和组合，返回一个公有的API，而其他的一切则都维持在私有闭包里。
+     由于闭包的存在，声明的变量和方法只在该模式内部可用。但在返回对象上定义的变量和方法，则对外部使用者可用。
+     */
+
+    /*
+     理解：Module模式我的理解就是使用闭包来形成一个私有的空间，使用return返回一个公有的API给外部使用。避免了他人的不规范的操作改变或破坏了封装的变量或者方法，导致出错。
+     */
+
+    //直接在命名空间全局传递参数，常用来做全局性的设置
+
+    //方法一：在匿名函数内传递参数
+    var myNamespace = (function (jQuery,data) {
+
+        //私有变量
+        var myPravateVar = 0;
+
+        //私有方法
+        var myPrivateMethod = function () {
+            console.log(jQuery);
+            console.log(data);
+        };
+
+        //返回给外部使用的
+        return {
+            //注意公有的变量和方法，就是不加var的变量和方法
+            //公有变量
+            myPublicVar: "foo",
+
+            //调用私有变量和私有方法的 公有函数
+            myPublicFunction: function () {
+                myPravateVar++;
+                myPrivateMethod();
+            },
+
+            //将私有方法公开
+            myPublicMethod:myPrivateMethod
+        }
+    })('我是jQuery参数','我是data参数');//在匿名函数的执行括号中传递参数
+
+
+    //你会发现就连IDE的提示中，也只包含公有的属性和方法，不含私有的属性和方法
+    //外部访问公有变量
+    console.log(myNamespace.myPublicVar);
+    //外部使用公有方法，间接使用私有变量或方法
+    myNamespace.myPublicFunction();
+    myNamespace.myPublicMethod();
+    //出错，myPrivateMethod未定义，实际是私有方法在外部是无法直接使用的
+    myNamespace.myPrivateMethod();
+
+
+
+</script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Singleton 单例模式
+
+     如果实例不存在，则创建一个新实例；如果实例已经存在，则返回该实例的一个引用。
+     Singleton不同于静态类或者对象，因为我们可以推迟它们的初始化。
+     在JavaScript中，Singleton充当共享资源命名空间，从全局命名空间中隔离出代码实现，从而为函数提供单一访问点。
+     */
+
+    var mySingleton = (function () {
+        //实例保持了Singleton的一个引用
+        var instance;
+
+        function init() {
+            //私有方法和变量
+            function privateMethod() {
+                console.log("I am private");
+            }
+
+            var privateVariable = "I am also private";
+            var privateRandomNumber = Math.random();
+            return {
+                //公有方法
+                publicMethod: function () {
+                    console.log("The public can see me!");
+                },
+                publicProperty: 'I am also public',
+                getRandomNumber: function () {
+                    return privateRandomNumber;
+                }
+            }
+        }
+
+        return {
+            //获取Singleton的实例，如果存在就返回，不存在就创建新实例
+            getInstance: function () {
+                if (!instance) {
+                    instance = init();
+                }
+                return instance;
+            }
+        };
+    })();
+
+    var normalInstance = (function () {
+        //实例保持了Singleton的一个引用
+        var instance;
+
+        function init() {
+            //私有方法和变量
+            function privateMethod() {
+                console.log("I am private");
+            }
+
+            var privateVariable = "I am also private";
+            var privateRandomNumber = Math.random();
+            return {
+                //公有方法
+                publicMethod: function () {
+                    console.log("The public can see me!");
+                },
+                publicProperty: 'I am also public',
+                getRandomNumber: function () {
+                    return privateRandomNumber;
+                }
+            }
+        }
+
+        return {
+            //获取Singleton的实例，如果存在就返回，不存在就创建新实例
+            getInstance: function () {
+                instance = init();
+                return instance;
+            }
+        };
+    })();
+
+    //mySingleton和normalInstance的区别是，前者只有第一次实例化时执行了init()，之后的实例化均为第一次实例的引用，所以所有的实例均为单一的引用。
+    //后者则是每次实例化时都要重新执行init()一次，所以每次实例化都是独立的个体。
+
+    //差别显示
+    var a1 = mySingleton.getInstance();
+    var a2 = mySingleton.getInstance();
+    var b1 = normalInstance.getInstance();
+    var b2 = normalInstance.getInstance();
+    //因为mySingleton是单一实例的引用，所以所有的随机数都是第一次实例化的那个随机数
+    console.log(a1.getRandomNumber()===a2.getRandomNumber());//true
+    //因为normalInstance每次实例化都会重新init（）,所以每个实例的随机数肯定不同
+    console.log(b1.getRandomNumber()===b2.getRandomNumber());//false
+
+
+
+</script>
+</html>

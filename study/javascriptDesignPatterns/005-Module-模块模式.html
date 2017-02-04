@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Module 模块化模式
+
+     在JavaScript中，Module模式用于进一步模拟类的概念，通过这种方式，能够使一个单独的对象拥有公有/私有方法和变量，以避免和其他脚本定义的函数产生冲突。
+     Module模式使用闭包封装"私有"状态和组合，返回一个公有的API，而其他的一切则都维持在私有闭包里。
+     由于闭包的存在，声明的变量和方法只在该模式内部可用。但在返回对象上定义的变量和方法，则对外部使用者可用。
+     缺点：由于我们访问公有和私有成员的方式不同，所以当我们想改变其可见性（即公有转成私有，或相反），我们需要修改所有使用过该成员的地方。同时也无法给私有成员打补丁。不利于维护。使得每个修复，都只能是覆盖性、重构性的修复
+     */
+
+    /*
+     理解：Module模式我的理解就是使用闭包来形成一个私有的空间，返回一个公有的API给外部使用或者直接声明公有的属性和方法。避免了他人的不规范的操作改变或破坏了封装的变量或者方法，导致出错。
+     */
+
+    //方法一：在函数内定义私有变量和方法，通过return来返回公有的API
+    var myNamespace = (function () {
+
+        //私有变量
+        var myPravateVar = 0;
+
+        //私有方法
+        var myPrivateMethod = function (foo) {
+            console.log(foo);
+        };
+
+        //返回给外部使用的
+        return {
+            //注意公有的变量和方法，就是不加var的变量和方法
+            //公有变量
+            myPublicVar: "foo",
+
+            //调用私有变量和私有方法的 公有函数
+            myPublicFunction: function (bar) {
+                myPravateVar++;
+                myPrivateMethod(bar);
+            },
+
+            //将私有方法公开
+            myPublicMethod:myPrivateMethod
+        }
+    })();
+
+    //你会发现就连IDE的提示中，也只包含公有的属性和方法，不含私有的属性和方法
+    //外部访问公有变量
+    console.log(myNamespace.myPublicVar);
+    //外部使用公有方法，间接使用私有变量或方法
+    myNamespace.myPublicFunction('hello');
+    myNamespace.myPublicMethod('hello2');
+    //出错，myPrivateMethod未定义，实际是私有方法在外部是无法直接使用的
+//    myNamespace.myPrivateMethod('hello3');
+
+
+    //*****************************************
+
+
+    //方法二：在函数内定义module模块对象，然后在module模块对象中声明公有的属性和方法，最后返回该module模块对象（相当于上面的return来返回公有的API）。
+    var myNamespace2 = (function () {
+
+
+        //私有变量
+        var myPravateVar = 0;
+
+        //私有方法
+        var myPrivateMethod = function (foo) {
+            console.log(foo);
+        };
+
+        //返回给外部使用的
+        var module =  {
+            //注意公有的变量和方法，就是不加var的变量和方法
+            //公有变量
+            myPublicVar: "foo",
+
+            //调用私有变量和私有方法的 公有函数
+            myPublicFunction: function (bar) {
+                myPravateVar++;
+                myPrivateMethod(bar);
+            },
+
+            //将私有方法公开
+            myPublicMethod:myPrivateMethod
+        };
+
+        return module;
+    })();
+
+    //你会发现就连IDE的提示中，也只包含公有的属性和方法，不含私有的属性和方法
+    //外部访问公有变量
+    console.log(myNamespace2.myPublicVar);
+    //外部使用公有方法，间接使用私有变量或方法
+    myNamespace2.myPublicFunction('hello');
+    myNamespace2.myPublicMethod('hello2');
+    //出错，myPrivateMethod未定义，实际是私有方法在外部是无法直接使用的
+//    myNamespace2.myPrivateMethod('hello3');
+
+
+
+
+</script>
+</html>
