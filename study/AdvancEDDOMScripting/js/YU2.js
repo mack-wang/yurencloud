@@ -7,30 +7,19 @@
 
 /**
  * 更新日志:
- * 推出稳定版本：verstion 1.0.0 20170203
+ * 推出稳定版本：version 1.0.0 20170203
+ * 将YU改为对象，原先的函数改为YU对象内的方法
+ * 推出稳定版本：version 2.0.0 20170205
  *
  */
 
 (function () {
     var yuObj = {},
         toString = yuObj.toString,
-        version = '1.0.0';
-
-    /*    //YU的命名空间
-     if (!window.YU) {
-     window['YU'] = YU;
-     }
-     //如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
-     //如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
-     //例如引入其他库，如jQuery，如果jQuery先引用，则因$已经被先被jQuery占用，则YU放弃对$的占用
-     //如果jQuery后引用，则因为jQuery对$命名空间进行了覆盖性赋值，则YU被迫让出了对$的占用。
-     if (!window.$) {
-     window['$'] = YU;
-     }*/
-
+        version = '2.0.0';
 
     /*
-     * 仅YU库内部使用
+     * 选择器
      * 作用：通过id值获取单个元素或多个元素
      * 参数：单个或多个id值
      * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
@@ -58,18 +47,17 @@
         return elements;
     }
 
+    var YU = {
+        /*
+         * 属性：YU.js库的当前版本
+         * */
+        version: version,
 
-    var YU = function (selector) {//jquery选择器，创建jQuery对象，并初始化
-        return new YU.fn.init(selector);
-    };
-
-
-    /*
-     * 作用：浏览器能力检测
-     * 参数：other 其他条件判断结果 可选
-     * 返回：布尔值
-     * */
-    YU.fn = YU.prototype = {
+        /*
+         * 作用：浏览器能力检测
+         * 参数：other 其他条件判断结果 可选
+         * 返回：布尔值
+         * */
         isCompatible: function (other) {
             //使用能力检测来检查必要条件,检测浏览器是否支持YU库
             if (other === false
@@ -89,28 +77,7 @@
          * 参数：单个或多个id值
          * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
          * */
-        $: function () {
-            var elements = new Array();
-
-            //查找作为参数提供的所有元素
-            for (var i = 0; i < arguments.length; i++) {
-                var element = arguments[i];
-
-                //如果该参数是一个字符串，那就假设它是一个id
-                if (typeof element == 'string') {
-                    element = document.getElementById(element);
-                }
-
-                //如果只提供一个参数，则立即返回这个元素
-                if (arguments.length == 1) {
-                    return element;
-                }
-
-                //否则，将它添加到数组中
-                elements.push(element);
-            }
-            return elements;
-        },
+        $: $,
 
         /*
          * 作用：解决YU库和其他库在$上的命名冲突
@@ -118,7 +85,7 @@
          * 返回：无，注意YU库的添加位置置在其他库之前，以便其他库的$覆盖YU库的$
          * */
         noConflict: function (name) {
-            window[name] = $;
+            window[name] = YU;
         },
 
 
@@ -160,10 +127,6 @@
          * */
         getTarget: function (event) {
             return event.target || event.srcElement;
-        },
-
-        EventTarget: function () {
-            this.handlers = {};
         },
 
         /*
@@ -383,15 +346,15 @@
          * */
         dragDrop: function () {
 
-            var dragdrop = new this.EventTarget();
+            var dragdrop = new EventTarget();
             var dragging = null;
             var diffX = 0;
             var diffY = 0;
 
             function handleEvent(event) {
                 //获取事件和目标
-                event = YU.fn.getEvent(event);
-                var target = YU.fn.getTarget(event);
+                event = YU.getEvent(event);
+                var target = YU.getTarget(event);
 
                 //确定事件类型
                 switch (event.type) {
@@ -413,7 +376,7 @@
                     case "mousemove":
                         if (dragging !== null) {
                             //获取事件
-                            event = YU.fn.getEvent(event);
+                            event = YU.getEvent(event);
 
                             //指定位置
                             dragging.style.left = (event.clientX - diffX) + "px";
@@ -443,14 +406,14 @@
 
             //公共接口
             dragdrop.enable = function () {
-                YU.fn.addEvent(document, "mousedown", handleEvent);
-                YU.fn.addEvent(document, "mousemove", handleEvent);
-                YU.fn.addEvent(document, "mouseup", handleEvent);
+                YU.addEvent(document, "mousedown", handleEvent);
+                YU.addEvent(document, "mousemove", handleEvent);
+                YU.addEvent(document, "mouseup", handleEvent);
             };
             dragdrop.disable = function () {
-                YU.fn.removeEvent(document, "mousedown", handleEvent);
-                YU.fn.removeEvent(document, "mousemove", handleEvent);
-                YU.fn.removeEvent(document, "mouseup", handleEvent);
+                YU.removeEvent(document, "mousedown", handleEvent);
+                YU.removeEvent(document, "mousemove", handleEvent);
+                YU.removeEvent(document, "mouseup", handleEvent);
             };
             return dragdrop;
         },
@@ -495,13 +458,12 @@
             return matchingElements;
         },
 
-
         /*
          * 作用：通过className获取元素集合
          * 参数：className 元素的className
          * 返回：匹配后的元素数组
          * 当元素中不含有getElementsByClassName方法时，通过遍历所有元素，匹配出符合条件的元素。
-         * 注意：虽然参数可以用CSS3选择器，但为兼容低版本浏览器，参数应该为className
+         * 注意：虽然参数可以用CSS3选择器，但为兼容低版本浏览器，参数应该为className只能是英文字母或和数字的组合
          * */
         c: function (className) {
             //className只能是英文字母或和数字的组合,使用正则判断
@@ -525,7 +487,6 @@
             }
             return elements;
         },
-
 
         /*
          * 作用：可以切换隐藏或者显示状态，也可以设置显示状态
@@ -581,7 +542,6 @@
          * 参数：url css文件的资源位置 | media
          * 返回：样式表数组
          * */
-
         getStyleSheets: function (url, media) {
             var sheets = [];
             for (var i = 0; i < document.styleSheets.length; i++) {
@@ -687,7 +647,6 @@
             }
         },
 
-
         /*
          * 作用：得到元素的样式属性值
          * 参数：element 目标元素 | property 要获取的属性
@@ -731,7 +690,7 @@
                         this.uncamelize(property, '-'), styles[property], null);
                 } else {
                     //Alternative method
-                    element.style[camelize(property)] = styles[property];
+                    element.style[this.camelize(property)] = styles[property];
                 }
             }
             return true;
@@ -752,7 +711,7 @@
         },
 
         /*
-         // * 作用：通过标签名修改多个元素的样式
+         * 作用：通过标签名修改多个元素的样式
          * 参数：tagname 标签名 | styles 样式对象 | parent 父元素
          * 返回：无
          * */
@@ -824,6 +783,7 @@
             element.className = classes.join(' ');
             return (length != classes.length);
         },
+
 
         /**************************************
          *                                    *
@@ -912,13 +872,6 @@
         },
 
         /*
-         * 作用：自定义node核心对象的类型数值对应的字符串值
-         * 参数：因为有些浏览器不会返回node核心对象的类型值，所以可以自定义，兼容所有浏览器
-         * 返回：无
-         * */
-
-
-        /*
          * 作用：遍历元素节点，不关心DOM树的深度，不包含父节点
          * 参数：fn 回调函数 this代表当前节点 作用于遍历后的每个节点 | node 遍历指定节点
          * 返回：无
@@ -959,7 +912,7 @@
                     this.walkTheDOMWithAttributes(root.attributes[i], fn, depth - 1, returnedFromParent);
                 }
             }
-            if (root.nodeType != YU.fn.node.ATTRIBUTE_NODE) {
+            if (root.nodeType != YU.node.ATTRIBUTE_NODE) {
                 node = root.firstChild;
                 while (node) {
                     this.walkTheDOMWithAttributes(node, fn, depth, returnedFromParent);
@@ -1024,10 +977,10 @@
          * 返回：无
          * */
         ajax: function (obj) {
-            var xhr = createXHR();	//创建XHR对象
+            var xhr = this.createXHR();	//创建XHR对象
             //通过使用JS随机字符串解决IE浏览器第二次默认获取缓存的问题
             obj.url = obj.url + '?rand=' + Math.random();
-            obj.data = params(obj.data);  //通过params()将名值对转换成字符串
+            obj.data = this.params(obj.data);  //通过params()将名值对转换成字符串
             //若是GET请求，则将数据加到url后面
             if (obj.method === 'get') {
                 obj.url += obj.url.indexOf('?') == -1 ? '?' + obj.data : '&' + obj.data;
@@ -1284,7 +1237,6 @@
                 typeof obj;
         },
 
-
         /*
          * 作用：检测对象是否为数值(字符串若为纯数字也视为数值)
          * 参数：obj 待检测的对象
@@ -1304,8 +1256,7 @@
          * 返回：布尔值 检测结果
          * */
         isEmptyObject: function (obj) {
-            var name;//name未定义，所以是一个空对象
-            for (name in obj) {//如果obj中为空，则name in obj是true
+            for (var name in obj) {//如果obj中为空，则name in obj是true
                 return false;
             }
             return true;
@@ -1331,17 +1282,14 @@
                 typeof length === "number" && length > 0 && ( length - 1 ) in obj;
         },
 
-
         /*
          * 作用：检测是否是JSON对象
          * 参数：obj 待检测的对象
          * 返回：布尔值 检测结果
          * */
-        // function isNativeJSON(obj) {
+        // isNativeJSON:function(obj) {
         //    return window.JSON && Object.prototype.toString.call(obj) == "[object JSON]";
         // }
-        //
-        // window['YU']['isNativeJSON'] = isNativeJSON;
 
         /**************************************
          *                                    *
@@ -1514,14 +1462,35 @@
             }
 
             return obj;
+        },
+
+        /*
+         * 作用：自定义node核心对象的类型数值对应的字符串值
+         * 参数：因为有些浏览器不会返回node核心对象的类型值，所以可以自定义，兼容所有浏览器
+         * 返回：无
+         * */
+        node: {
+            ELEMENT_NODE: 1,
+            ATTRIBUTE_NODE: 2,
+            TEXT_NODE: 3,
+            CDATA_SECTION_NODE: 4,
+            ENTITY_REFERENCE_NODE: 5,
+            ENTITY_NODE: 6,
+            PROCESSING_INSTRUCTION_NODE: 7,
+            COMMENT_NODE: 8,
+            DOCUMENT_NODE: 9,
+            DOCUMENT_TYPE_NODE: 10,
+            DOCUMENT_FRAGMENT_NODE: 11,
+            NOTATION_NODE: 12
         }
 
+    };
 
+    function EventTarget() {
+        this.handlers = {};
     }
-    ;
 
-
-    this.EventTarget.prototype = {
+    EventTarget.prototype = {
         constructor: EventTarget,
         //注册
         addHandler: function (type, handler) {
@@ -1555,41 +1524,32 @@
             }
         }
     };
+
     //对上面type方法检测出来的object类型进行细分，补充
-    YU.prototype.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),
+    YU.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),
         function (i, name) {
             yuObj["[object " + name + "]"] = name.toLowerCase();
         });
 
-    YU.fn.node = {
-        ELEMENT_NODE: 1,
-        ATTRIBUTE_NODE: 2,
-        TEXT_NODE: 3,
-        CDATA_SECTION_NODE: 4,
-        ENTITY_REFERENCE_NODE: 5,
-        ENTITY_NODE: 6,
-        PROCESSING_INSTRUCTION_NODE: 7,
-        COMMENT_NODE: 8,
-        DOCUMENT_NODE: 9,
-        DOCUMENT_TYPE_NODE: 10,
-        DOCUMENT_FRAGMENT_NODE: 11,
-        NOTATION_NODE: 12
-    };
-
-    YU.fn.init = function (selector) {
-        if (!selector) {
-            return this;
-        }
-
-        if (typeof selector === "string") {
-            return YU.$(selector)
-        }
-
-        return false;
-
-    };
-
-    window['YU'] = YU.fn;
+    //YU的命名空间
+    if (!window.YU) {
+        window['YU'] = YU;
+    }
+    //如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
+    //如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
+    //例如引入其他库，如jQuery，如果jQuery先引用，则因$已经被先被jQuery占用，则YU放弃对$的占用
+    //如果jQuery后引用，则因为jQuery对$命名空间进行了覆盖性赋值，则YU被迫让出了对$的占用。
+    if (!window.$) {
+        window['$'] = YU;
+    }
+    //为getElementById()方法创建简便方法d()
+    if (!window.d) {
+        window['d'] = $;
+    }
+    //为getElementsByClassName()方法创建简便方法c()
+    if (!window.c) {
+        window['c'] = YU.c;
+    }
 
 })
 ();
@@ -1784,30 +1744,59 @@ function Logger(id) {
 
 Logger.prototype = {
     //输出执行结果
-    write: function (message) {
-        //警告message为空值
-        if (typeof message == 'string' && message.length == 0) {
-            return this.writeRaw("► " + 'YU.log: 未定义任何消息');
-        }
+    write: function () {
 
-        //如果message不是字符串，则尝试调用toString()方法，如果不存在，则访问该记录对象的类型
-        if (typeof message != 'string') {
-            if (message.toString) {
-                return this.writeRaw("► " + message.toString())
-            } else {
-                return this.writeRaw("► " + typeof message);
+        if (arguments.length > 0) {
+            for (var i = 0; i < arguments.length; i++) {
+                oneWrite.call(this, arguments[i]);
             }
+        } else {
+            return this.writeRaw("► " + 'Error: undefined');
+        }
+        function oneWrite(message) {
+
+            //如果message不是字符串，则尝试调用toString()方法，如果不存在，则访问该记录对象的类型
+            if (typeof message != 'string') {
+                if (message.toString) {
+                    return this.writeRaw("► " + message.toString())
+                } else {
+                    return this.writeRaw("► " + typeof message);
+                }
+            }
+
+            //转换<>，以便innerHTML不会将message作为HTML解析
+            message = message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            return this.writeRaw("► " + message);
         }
 
-        //转换<>，以便innerHTML不会将message作为HTML解析
-        message = message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        return this.writeRaw("► " + message);
     },
 
     //输出自定义标题
     header: function (message) {
+        if (!message) {
+            message = 'Error: undefined';
+        }
         message = '<span style = "color:#CB65D3;">' + message + '</span>';
         return this.writeRaw(message);
+    },
+
+    //输出带标题的执行结果集
+    section: function () {
+        //只有1个参数时，使用write，大于1个参数时，第一个参数为标题使用header，其余的使用write
+        if (arguments.length == 1) {
+            this.write(arguments[0]);
+            return;
+        }
+        if (arguments.length > 1) {
+            this.header(arguments[0]);
+            for (var i = 1; i < arguments.length; i++) {
+                this.write(arguments[i]);
+            }
+
+            return;
+        }
+
+        this.write('Error: undefined');
     }
 };
 /*
@@ -1822,5 +1811,3 @@ if (!console) {
     var console = log;
     console.log = console.write;
 }
-
-
