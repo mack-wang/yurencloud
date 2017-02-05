@@ -15,6 +15,13 @@
 <script>
     /*
      Observer 观察者模式
+
+
+     ObserverList 观察者列表 ： 就是用来储存观察者们的列表，由Subject管理员进行操作
+     Subject 管理员 ： 对观察者进行增删改查操作，通知观察者进行改变。
+     Observer 观察者 : 观察目标的变化，接收到通知后，更新自己的状态。更新的内容由观察者自己决定。
+     ConcreteSubject 目标 ： 目标发生变化时，向管理员报告，要求管理员发通知给观察者，同时存储自己的状态
+
      */
 
     //创建一个观察者列表，拥有增加、清空、计数、获取指定索引的项，插入，获取当前项在列表中的索引，删除指定索引的项，把观察者列表的所有方法添加到其他对象上
@@ -73,7 +80,7 @@
             this.observerList.pop();
         }
     };
-    //使用extension扩展对象，把观察者列表的所有方法添加到其他对象上
+    //使用extension扩展对象，就是让obj继承extension中的所有方法和属性
     function extend(obj, extension) {
         for (var key in obj) {
             extension[key] = obj[key];
@@ -96,15 +103,14 @@
         this.observers.RemoveIndexAt(this.observers.IndexOf(observer, 0));
     };
     //
-    Subject.prototype.Notify = function (context) {
+    Subject.prototype.Notify = function (context) {//这里context就是ConcreteSubject 目标
         var observerCount = this.observers.Count();
         for (var i = 0; i < observerCount; i++) {
             this.observers.Get(i).Update(context);
         }
     };
 
-    //创建新的Observer
-
+    //Observer 观察者 : 观察目标的变化，并实时根据目标的变化而更新自己的状态。
     function Observer() {
         this.Update = function () {
         };
@@ -117,19 +123,24 @@
             addBtn = document.getElementById('addNewObserver'),
             container = document.getElementById('observersContainer');
 
-    //具体目标 Concrete Subject
-    //利用Subject扩展controlCheckbox
 
-    //观察目标为controlCheckbox
+    /*
+    ObserverList 观察者列表 ： 就是用来储存观察者们的列表，由Subject管理员进行操作
+    Subject 管理员 ： 对观察者进行增删改查操作，通知观察者进行改变。
+    Observer 观察者 : 观察目标的变化，接收到通知后，更新自己的状态。更新的内容由观察者自己决定。
+    ConcreteSubject 目标 ： 目标发生变化时，向管理员报告，要求管理员发通知给观察者，同时存储自己的状态
+    */
+
+    //将controlCheckbox设置为管理员
     extend(new Subject(),controlCheckbox);
 
-    //点击checkbox会触发通知到观察者上
+    //onclick事件触发时，管理员通知所有观察者改变状态
     controlCheckbox['onclick'] = new Function("controlCheckbox.Notify(controlCheckbox.checked)");
 
     addBtn['onclick'] = AddNewObserver;
 
 
-    //具体观察者 Concrete Observer
+    //添加新的观察者
     function AddNewObserver() {
         //创建需要添加的新checkbox
         var check = document.createElement('input');

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Command 命令模式
+
+     该模式旨在将方法调用、请示或者操作封装到单一对象中。
+     */
+
+    //示例
+    (function () {
+        var Person = {
+
+            walk: function (step) {
+                step++;
+                return "我已经走了" + step + "步";
+            },
+
+            say: function (name) {
+                return name;
+            }
+
+        };
+
+        console.log(Person.walk(2));
+        console.log(Person.say('wlc'));
+
+    })();
+
+
+
+
+
+</script>
+</html>

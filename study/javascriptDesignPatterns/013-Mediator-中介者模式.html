@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Mediator 中介者模式
+
+     该模式允许我们公开一个统一的接口，系统的不同部分可以通过该接口进行通信
+     Mediator促进了松散耦合：确保组件的交互是通过统一的接口（中心点）来处理的，而不是显示的直接引用彼此，帮助我们解耦系统，并提高组件的可重用性。
+     */
+
+    /*
+    我的理解：中介者模式，其实就是发布订阅模式的揭示模式，就是将发布订阅模式的成员从原本的直接公开，改为成员私有化，然后通过统一的接口（中心点）来公开。
+    所以我觉得中介者模式本质上还是发布订阅模式。
+
+    */
+
+    var mediator = (function () {
+        //存在可以被广播或监听的topic
+        var topics = {};
+
+        //订阅一个topic，提供回调函数，一旦topic被广播就执行该回调函数
+        var subscribe = function (topic, fn) {
+            if (!topics[topic]) {
+                topics[topic] = [];
+            }
+
+            topics[topic].push({context: this, callback: fn});
+
+            return this;
+        };
+
+        //发布或广播事件到程序的剩余部分
+        var publish = function (topic) {
+            var args;
+
+            if (!topics[topic]) {
+                return false;
+            }
+
+            args = Array.prototype.slice.call(arguments, 1);
+            for (var i = 0, l = topics[topic].length; i < l; i++) {
+                var subscription = topics[topic][i];
+                subscription.callback.apply(subscription.context, args);
+            }
+            return this;
+        };
+
+        return {
+            Publish: publish,
+            Subscribe: subscribe,
+            installTo: function (obj) {
+                obj.subscribe = subscribe;
+                obj.publish = publish;
+            }
+        };
+    })();
+
+
+</script>
+</html>

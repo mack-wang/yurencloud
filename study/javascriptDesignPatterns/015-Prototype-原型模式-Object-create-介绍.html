@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Prototype 原型模式
+
+     该模式为一种基于现有对象模板，通过克隆方式创建对象的模式
+     优点：在一对象中定义一个函数，它们都是由引用创建的，所有子对象都指向相同的函数，而不是创建它们自己的拷贝
+     如同ECMAScript5标准中定义的，那些有趣的，真正的原型继承要求使用Object.create来创建一个对象，拥有指定原型和可选的属性
+     */
+
+    var o;
+
+    // 创建一个原型为null的空对象
+    o = Object.create(null);
+
+
+    o = {};
+    // 以字面量方式创建的空对象就相当于:
+    o = Object.create(Object.prototype);
+
+
+    o = Object.create(Object.prototype, {
+        // foo会成为所创建对象的数据属性
+        foo: { writable:true, configurable:true, value: "hello" },
+        // bar会成为所创建对象的访问器属性
+        bar: {
+            configurable: false,
+            get: function() { return 10 },
+            set: function(value) { console.log("Setting `o.bar` to", value) }
+        }});
+
+
+    function Constructor(){}
+    o = new Constructor();
+    // 上面的一句就相当于:
+    o = Object.create(Constructor.prototype);
+    // 当然,如果在Constructor函数中有一些初始化代码,Object.create不能执行那些代码
+
+
+    // 创建一个以另一个空对象为原型,且拥有一个属性p的对象
+    o = Object.create({}, { p: { value: 42 } });
+
+    // 省略了的属性特性默认为false,所以属性p是不可写,不可枚举,不可配置的:
+    o.p = 24;
+    console.log(o.p);//42
+
+    o.q = 12;
+    for (var prop in o) {
+        console.log(prop)
+    }//"q"
+
+    console.log(delete o.p);//false
+
+    //创建一个可写的,可枚举的,可配置的属性p.
+    o2 = Object.create({}, { p: { value: 42, writable: true, enumerable: true, configurable: true } });
+    /*
+    上面的o2其实只传递了一个属性p，p的值是由几项属性来定义的，定义的属性名，例如value,writable,enumerable,configurable都是规定好的，不能更改
+    value表示p的值
+    writable表示p是否可写
+    enumerable表示p是否可以枚举
+    configurable表示p是否可以配置
+    */
+
+
+
+
+
+
+
+
+</script>
+</html>

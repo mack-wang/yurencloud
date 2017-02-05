@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Prototype 原型模式
+
+     该模式为一种基于现有对象模板，通过克隆方式创建对象的模式
+     优点：在一对象中定义一个函数，它们都是由引用创建的，所有子对象都指向相同的函数，而不是创建它们自己的拷贝
+     如同ECMAScript5标准中定义的，那些有趣的，真正的原型继承要求使用Object.create来创建一个对象，拥有指定原型和可选的属性
+     */
+
+    //示例一：直接使用Object.create实例化一个新对象，使新对象继承原对象所有的成员
+    var myCar = {
+        name: "Ford",
+        drive: function () {
+            console.log("i am driving!");
+        },
+        panic: function () {
+            console.log("wait,how do you stop this thing?");
+        }
+    };
+
+    //使用Object.create实例化一个新Car
+    var yourCar = Object.create(myCar);
+
+    //查看到yourCar的原型是myCar的原型
+    console.log(yourCar.name);//Ford
+
+
+    //示例二：直接使用Object.create实例化一个新对象，使新对象继承原对象所有的成员
+    var myCar2 = {
+        name: "Ford",
+        drive: function () {
+            console.log("i am driving!");
+        },
+        panic: function () {
+            console.log("wait,how do you stop this thing?");
+        },
+        say: function () {
+            console.log(this.value);
+        }
+    };
+
+    //使用Object.create实例化一个新Car
+    var yourCar2 = Object.create(myCar2, {"value": {value: "我是value参数"}});
+
+    //查看到yourCar的原型是myCar的原型
+    yourCar2.say();//我是value参数"
+
+
+    //示例三：如果不想使用Object.create，又想要实现Prototype模式，则可以如下，来模拟示例二
+    var carPrototype = {
+        init: function (value) {
+            this.value = value;
+        },
+
+        getValue: function () {
+            console.log(this.value);
+        }
+    };
+
+    function car3(value) {
+        function F() {
+        }
+
+        F.prototype = carPrototype;
+
+        var f = new F();
+        f.init(value);
+        return f;
+    }
+
+    var yourCar3 = car3("我是value参数2");
+
+    //查看到yourCar的原型是myCar的原型
+    yourCar3.getValue();//我是value参数"
+
+
+</script>
+</html>

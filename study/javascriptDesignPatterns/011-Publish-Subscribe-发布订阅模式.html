@@ -14,33 +14,38 @@
 <script src="js/YU.js"></script>
 <script>
     /*
-     Observer 观察者模式
+     Publish/Subscribe 发布/订阅模式
 
-
+     该模式非常适用于JavaScript生态系统，并且在游行的js库中比如Dojo，jQuery，YUI中都有简易方法去实现Publish/Subscribe 发布/订阅系统。
      */
 
-    // Observer pattern
+    //创建订阅者列表
     function Observer() {
         this.fns = [];
     }
+
     Observer.prototype = {
-        subscribe: function(fn) {
+        //订阅，即添加订阅者到订阅者列表
+        subscribe: function (fn) {
             this.fns.push(fn);
         },
-        unsubscribe: function(fn) {
+        //取消订阅，即将订阅者从订阅者列表删除
+        unsubscribe: function (fn) {
             this.fns = this.fns.filter(
-                    function(el) {
+                    function (el) {
                         if (el !== fn) {
                             return el;
                         }
                     }
             );
         },
-        update: function(o, thisObj) {
-            var scope = thisObj || window;
+        //发布更新推送订阅消息，即将更新的消息，推送到订阅者列表中的所有订阅者
+        //所以取名为Update,Post应该也是可以的
+        Publish: function (o, context) {
+            context = context || window;//如果没有上下文参数，则上下文为window全局
             this.fns.forEach(
-                    function(el) {
-                        el.call(scope, o);
+                    function (el) {
+                        el.call(context, o);//绑定环境，并传递参数
                     }
             );
         }
@@ -48,23 +53,23 @@
 
     //测试
     var o = new Observer;
-    var f1 = function(data) {
+    var f1 = function (data) {
         console.log('Robbin: ' + data + ', 赶紧干活了！');
     };
 
-    var f2 = function(data) {
+    var f2 = function (data) {
         console.log('Randall: ' + data + ', 找他加点工资去！');
     };
 
     o.subscribe(f1);
     o.subscribe(f2);
 
-    o.update("Tom回来了！")
+    o.Publish("Tom回来了！");
 
-    //退订f1
+    //退订f1（退订后，他就收不到更新的信息了）
     o.unsubscribe(f1);
     //再来验证
-    o.update("Tom回来了！");
+    o.Publish("Tom回来了！");
 
     /* // 如果提示找不到filter或者forEach函数，可能是因为你的浏览器还不够新，暂时不支持新标准的函数，你可以使用如下方式自己定义
      if (!Array.prototype.forEach) {
