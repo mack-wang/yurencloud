@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/test2.css">
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<style>
+    .wlc {
+        background: yellow;
+    }
+</style>
+<body>
+<div id="box4"></div>
+<div id="xiaoming">小明</div>
+<div id="xiaohong">小红</div>
+<div id="dingding">丁丁</div>
+<div id="xiaoming1">小明1</div>
+<div id="xiaohong1">小红1</div>
+<div id="dingding1">丁丁1</div>
+<div id="xiaoming2">小明2</div>
+<div id="xiaohong2">小红2</div>
+<div id="dingding2">丁丁2</div>
+<div id="container">
+    <ul id="ul1" class="ulclass">
+        <li>星期一</li>
+        <li>星期二</li>
+        <li>星期三</li>
+    </ul>
+</div>
+<ul class="ulclass haha xixi" id="ul2">
+    <li>上海</li>
+    <li>北京</li>
+</ul>
+<div id="container3">
+    <ul id="ul3" class="ulclass3">
+        <li>星期一</li>
+        <li>星期二</li>
+        <li>星期三</li>
+    </ul>
+</div>
+<a href="http://www.baidu.com" id="openbaidu">百度一下</a>
+<div id="mousepoint" style="width: 100px;height: 100px;border: 1px solid red;"></div>
+<div id="box2" class="draggable" style="width: 100px;height: 100px;background-color: red; position: absolute;"></div>
+<div id="box3" class="draggable" style="width: 100px;height: 100px;background-color: blue; position: absolute;"></div>
+
+</body>
+<!--<script src="js/jquery-3.1.1.min.js"></script>-->
+<script src="js/YU2.js"></script>
+<!--<script src="js/YU.min.js"></script>-->
+<script>
+    console.log(window.YU);
+    /*YU.js库使用测试*/
+
+    /*
+     * 作用：浏览器能力检测
+     * 参数：other 其他条件判断结果 可选
+     * 返回：布尔值
+     * */
+    console.log('浏览器能力检测1:' + YU.isCompatible());
+    console.log('浏览器能力检测2:' + YU.isCompatible(false));
+
+    /*
+     * 作用：通过id值获取单个元素或多个元素
+     * 参数：单个或多个id值
+     * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
+     * */
+    console.log('通过id值获取单个元素或多个元素1:' + YU.$('xiaoming').id);
+    console.log('通过id值获取单个元素或多个元素2:' + YU.$('xiaoming', 'xiaohong', 'dingding'));
+
+    /*
+     * 作用：添加事件
+     * 参数：element 绑定事件的元素 | type 事件类型 不加on | fn 回调函数
+     * 返回：无
+     * */
+    YU.addEvent(YU.$('xiaoming'), 'click', function () {
+        console.log('添加事件1:' + '成功')
+    });
+
+    /*
+     * 作用：停止事件冒泡
+     * 参数：event 事件对象
+     * 返回：无
+     * */
+    YU.addEvent(YU.$('container'), 'click', function (event) {
+        YU.stopPropagation(event);
+    });
+
+    /*
+     * 作用：取消默认事件
+     * 参数：event 事件对象
+     * 返回：无
+     * */
+    YU.addEvent(YU.$('openbaidu'), 'click', function (event) {
+        YU.preventDefault(event);
+        console.log('停止默认事件1:' + '成功')
+    });
+
+    /*
+     * 作用：获取事件对象（主要为了兼容所有浏览器）
+     * 参数：W3CEvent 符合W3C事件对象规则的事件对象
+     * 返回：事件对象
+     * */
+    YU.addEvent(YU.$('xiaohong'), 'click', function (event) {
+        var event = YU.getEvent(event);
+        console.log('获取事件对象（主要为了兼容所有浏览器）:');
+        console.log(event)
+    });
+
+    /*
+     * 作用：访问事件的目标元素，兼容IE
+     * 参数：event 事件对象
+     * 返回：事件作用的元素
+     * */
+    YU.addEvent(YU.$('dingding'), 'click', function (event) {
+        var target = YU.getTarget(event);
+        console.log('访问事件的目标元素，兼容IE:');
+        console.log(target);
+    });
+
+    /*
+     * 作用：主要兼容IE对DOM的button属性的反馈，button属性是指鼠标按钮，左，中，右三个键的点击情况
+     * 参数：event 事件对象
+     * 返回：button对象，包含0，1，2三个属性，0左键，1中键，2右键
+     * */
+    YU.addEvent(YU.$('xiaoming1'), 'click', function (event) {
+        var button = YU.getMouseButton(event);
+        console.log('获取事件中鼠标按键值');
+        console.log(button);
+    });
+
+    /*
+     * 作用：获取鼠标相对文档的坐标（而非浏览器窗口）
+     * 参数：event 事件对象
+     * 返回：坐标对象，包含x，y属性
+     * */
+    YU.addEvent(YU.$('mousepoint'), 'mouseover', function (event) {
+        var point = YU.getPointer(event);
+        console.log('获取鼠标相对文档的坐标（而非浏览器窗口）');
+        console.log(point);
+    });
+
+    /*
+     * 作用：移除事件
+     * 参数：element 要移除事件的元素 | type 要移除事件类型 不加on | fn 要移除的回调函数
+     * 返回：无
+     * */
+    YU.addEvent(YU.$('xiaohong1'), 'click', sayname);
+    function sayname(e) {
+        console.log(e.target.innerHTML)
+    }
+    YU.removeEvent(YU.$('xiaohong1'), 'click', sayname);//成功
+
+
+    /*
+     * 作用：通过class值和标签名获取元素
+     * 参数：className 元素的class值 | tag 元素的标签名 必填 | parent 元素的父元素 可选
+     * 返回：匹配后的元素数组
+     * */
+    console.log(YU.getElementsByClassName('ulclass', 'ul', YU.$('container')));
+    log.header('class选择器');
+    log.write(YU.getElementsByClassName('ulclass'));
+
+    /*
+     * 作用：可以切换隐藏或者显示状态，也可以设置显示状态
+     * 参数：node 要隐藏或者显示的元素 | value 显示时要设置的display值 可选
+     * 返回：布尔值
+     * */
+    YU.toggleDisplay(YU.$('xiaoming2'));
+
+
+    /*
+     * 作用：在指定元素后插入同辈元素
+     * 参数：node 要插入的元素 | referenceNode 指定的元素 参考位置
+     * 返回：无
+     * */
+    var newdiv = document.createElement('div');
+    newdiv.innerHTML = '小张2';
+    YU.insertAfter(newdiv, YU.$('xiaohong2'));
+
+    /*
+     * 作用：移除所有子元素
+     * 参数：parent 要移除所有子元素的父元素
+     * 返回：返回移除子元素后的父元素
+     * */
+    YU.removeChildren(YU.$('ul2'));
+
+    /*
+     * 作用：插入新元素到子元素的最前面
+     * 参数：parent 父元素 | newChild 要插入的新元素
+     * 返回：返回插入新子元素后的父元素
+     * */
+    var newChild = document.createElement('li');
+    newChild.innerHTML = '小张2';
+    YU.prependChild(YU.$('ul1'), newChild);
+
+    /*
+     * 作用：获取当前浏览器窗口的宽高
+     * 参数：无
+     * 返回：宽高对象，包含width,height属性
+     * */
+    console.log(YU.getBrowserWindowSize());
+    /*
+     * 作用：自定义node核心对象的类型数值对应的字符串值
+     * 参数：因为有些浏览器不会返回node核心对象的类型值，所以可以自定义，兼容所有浏览器
+     * 返回：无
+     * */
+    console.log(window['YU']['node']);
+
+    /*
+     * 作用：遍历元素节点，不关心DOM树的深度，不包含父节点
+     * 参数：fn 回调函数 作用于遍历后的每个节点 | node 遍历指定节点
+     * 返回：无
+     * */
+    console.log('遍历元素节点，不关心DOM树的深度，不包含父节点');
+    YU.walkElementsLinear(function () {
+        console.log(this.innerHTML);//因为是用call（）来改变对象环境，所以用this可以代表遍历的那个节点
+    }, YU.$('ul1'));
+
+    /*
+     * 作用：遍历元素节点，文本节点，含父节点
+     * 参数：fn 回调函数 作用于遍历后的每个节点 | node 遍历指定节点 | depth 遍历深度 | returnedFromParent 返回给func使用的对象 包含元素节点，文本节点
+     * 返回：无
+     * */
+    console.log('遍历元素节点，文本节点，含父节点');
+    YU.walkTheDOMRecursive(function (returnedFromParent) {
+        if (this.nodeType == YU.node.ELEMENT_NODE) {
+            console.log(this);//因为是用call（）来改变对象环境，所以用this可以代表遍历的那个节点
+        }
+    }, YU.$('ul1'));
+
+    /*
+     * 作用：遍历元素节点，文本节点，属性节点，含父节点
+     * 参数：node 遍历指定节点 | fn 回调函数 作用于遍历后的每个节点 | depth 遍历深度 | returnedFromParent 返回给func使用的对象 包含元素节点，文本节点，属性节点
+     * 返回：无
+     * */
+    console.log('遍历元素节点，文本节点，属性节点，含父节点');
+    YU.walkTheDOMWithAttributes(YU.$('ul1'), function (returnedFromParent) {
+        //因为没有用call()来改变环境，所以得用返回的returnedFromParent代表遍历的当前节点
+        if (returnedFromParent.nodeType == YU.node.ATTRIBUTE_NODE) {
+            var attr = returnedFromParent;
+            console.log(attr);
+        }
+    });
+
+    /*
+     * 作用：遍历元素节点，文本节点，含父节点（同walkTheDOMRecursive），实现方法不同而已
+     * 参数：node 遍历指定节点 | fn 回调函数 作用于遍历后的每个节点
+     * 返回：无
+     * */
+    console.log('遍历元素节点，文本节点，含父节点（同walkTheDOMRecursive）');
+    YU.walkTheDOM(YU.$('ul1'), function (node) {
+        console.log(node);
+    });
+
+    /*
+     * 作用：把命名变成驼峰式的
+     * 参数：str 要转变成驼峰式的字符串
+     * 返回：驼峰式的字符串
+     * */
+    var str = 'hello-world';
+    console.log(YU.camelize(str));
+
+    /*
+     * 作用：把命名变成非驼峰式的
+     * 参数：str 驼峰式的字符串 | sep 连接符 可选 默认"-"
+     * 返回：非驼峰式的字符串
+     * */
+    var str2 = 'helloWorldHowAreYou';
+    console.log(YU.uncamelize(str2, '-----'));
+
+    /*
+     * 作用：添加样式表，添加link css标签
+     * 参数：url css文件的资源位置 | media
+     * 返回：无
+     * */
+    YU.addStyleSheet('css/test.css');
+
+    /*
+     * 作用：移除样式表，移除link css标签
+     * 参数：url css文件的资源位置 | media
+     * 返回：无
+     * */
+    YU.removeStyleSheet('css/test2.css');
+
+    /*
+     * 作用：通过URL取得包含所有样式表的数组
+     * 参数：url css文件的资源位置 | media
+     * 返回：样式表数组
+     * */
+    console.log(YU.getStyleSheets('css/test.css'));//无效
+
+    /*
+     * 作用：编辑修改一条样式规则
+     * 参数：selector 选择器 | styles 样式对象 | url css文件的资源位置 | media
+     * 返回：无
+     * */
+    YU.editCSSRule('div', {color: "blue"}, 'css/test.css');
+
+    /*
+     * 作用：添加一条样式规则
+     * 参数：selector 选择器 | styles 样式对象 |index 索引 位置 | url css文件的资源位置 | media
+     * 返回：无
+     * */
+    YU.addCSSRule('.ulclass', {color: "green"}, 2, 'css/test.css');
+
+    /*
+     * 作用：得到元素的样式属性值
+     * 参数：element 目标元素 | property 要获取的属性
+     * 返回：无
+     * */
+    console.log(YU.getStyle(YU.$('ul1'), 'color'));
+
+
+    /*
+     * 作用：通过id修改单个元素的样式
+     * 参数：element 元素 | styles 样式对象
+     * 返回：布尔值
+     * */
+    YU.setStyleById(YU.$('xiaoming'), {background: 'yellow'});
+
+    /*
+     * 作用：通过类名修改多个元素的样式
+     * 参数：parent 父元素 必填 | tag 标签名 | className 要添加的类名 | styles 要添加的样式对象
+     * 返回：布尔值
+     * */
+    YU.setStylesByClassName(YU.$('container'), 'ul', 'ulclass', {background: 'blue'});
+
+    /*
+     * 作用：通过标签名修改多个元素的样式
+     * 参数：tagname 标签名 | styles 样式对象 | parent 父元素
+     * 返回：无
+     * */
+    YU.setStylesByTagName('ul', {color: "black"});
+
+    /*
+     * 作用：获取元素class值数组
+     * 参数：element 元素
+     * 返回：class数组
+     * */
+    console.log(YU.getClassNames(YU.$('ul2')));
+
+    /*
+     * 作用：检测元素是否包含某class
+     * 参数：element 元素 | className 类名
+     * 返回：布尔值
+     * */
+    console.log(YU.hasClassName(YU.$('ul2'), 'haha'));
+
+    /*
+     * 作用：添加class
+     * 参数：element 元素 | className 类名
+     * 返回：布尔值
+     * */
+    YU.addClassName(YU.$('ul3'), 'wlc')
+
+    /*
+     * 作用：移除class
+     * 参数：element 元素 | className 类名
+     * 返回：布尔值 成功删除返回false
+     * */
+    console.log(YU.removeClassName(YU.$('ul2'), 'xixi'));
+
+    /*
+     * 作用：JSON值转成js对象
+     * 参数：s JSON字符串 | filter 筛选
+     * 返回：转换后的字符串
+     * */
+    //因为IE7，IE8中没有JSON.stringify所以先注释掉
+        var book = {
+            title: "javascript",
+            authors: [
+                "tom",
+                "cindy2"
+            ],
+            edition: 3,
+            year: 2016
+        };
+        //把js对象转成JSON对象，使用JSON类下的stringify()方法
+        var jsonText = JSON.stringify(book);
+
+        //把JSON对象，转成js对象
+        var book2 = YU.parseJSON(jsonText);
+        console.log(book2);
+
+    /* 以下ajax测试成功，为了不打扰其他测试，故注释掉了，想测试ajax取消注释，并以http形式打开本页 */
+
+    /*
+     * 作用：创建ajax对象，兼容IE7+、Firefox、Opera、Chrome 和Safari
+     * 参数：无
+     * 返回：创建完成的ajax对象
+     * */
+    /*    var xhr = YU.createXHR();
+     xhr.onreadystatechange = function () {
+     if (xhr.readyState == 4) {
+     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+     var data = xhr.responseText;
+     console.log("服务器已经收到你的用户名：" + data);
+     } else {
+     alert("服务器没响应，错误状态为：" + xhr.status);
+     }
+     }
+     };
+     var URL = "form11.php?username=wlc";
+     xhr.open("get", URL, false);
+     xhr.send(null);*/
+
+
+    /*
+     * 作用：封装ajax
+     * 参数：obj 对象,需要传递method方式，url访问地址，data数据，success成功后回调函数，async是否异步
+     * 返回：无
+     *
+     PS: IE7+、Firefox、Opera、Chrome 和Safari 都支持原生的XHR 对象，在这些浏览器中创建XHR对象可以直接实例化XMLHttpRequest 即可,如果是IE6 及以下，那么我们必须还需要使用ActiveX 对象来实现。在低版本IE 浏览器可能会遇到不同版本的XHR 对象，所以将它们放到一个数组里，然后循环，尝试创建一个XHR对象，若成功，则终止循环。然后调用该函数即可创建一个XHR对象：
+     */
+    /*    YU.ajax({
+     method: 'get',
+     url: 'form11.php',
+     data: {
+     'username': 'JR',
+     'age': 22
+     },
+     success: function (message) {
+     console.log("服务器已经收到你的用户名2：" + message);
+     },
+     async: true
+     });*/
+
+
+    /*
+     * 作用：改变函数环境
+     * 参数：method 回调函数 | target 目标对象
+     * 返回：返回改变环境后的函数
+     * */
+
+    var student = 'ming';
+    function callStudent() {
+        console.log(this.student)
+    }
+    var objStudent = {student: 'hong'};
+    callStudent();//ming 原环境
+    var newCallStudent = YU.bindContext(callStudent, objStudent);//应用新环境
+    newCallStudent();//hong 新环境
+
+    /*
+     * 作用：克隆JavaScript对象
+     * 参数：myObj 需要克隆的对象
+     * 返回：返回克隆后的新对象
+     * */
+    var newObjStudent1 = objStudent;//直接引用，对引用对象操作，会影响原对象
+    newObjStudent1.student = 'zhang';
+    console.log(newObjStudent1, objStudent);
+
+    var newObjStudent2 = YU.clone(objStudent);//克隆使用，对克隆对象操作，不会影响原对象
+    newObjStudent2.student = 'ding';
+    console.log(newObjStudent2, objStudent);
+
+
+    /**
+     * 作用：删除字符串前后的空格
+     * 参数：无
+     * 返回：删除前后空格后的字符串
+     * 如果原生String对象没有trim方法，则添加该方法，兼容低级浏览器
+     */
+    var str5 = '     hello   world       ';
+    console.log('原先的str3:' + str5 + '。');
+    console.log('删除前后空格的str3:' + str5.trim() + '。');
+
+
+    /**
+     * 作用：重复复制字符串
+     * 参数：l 复制次数
+     * 返回：重复后的字符串
+     * 如果原生String对象没有trim方法，则添加该方法，兼容低级浏览器
+     */
+    var str6 = 'hello world';
+    console.log('复制字符串：' + str6.repeat(2));
+
+    //使用方法
+    //设置cookie
+    YU.setCookie("name", "wlc");
+    YU.setCookie("book", "javascript");
+
+    //读取cookie的值
+    console.log(YU.getCookie("name"));//wlc
+    console.log(YU.getCookie("book"));//javascript
+
+    //删除cookie
+    YU.unsetCookie("name");
+    YU.unsetCookie("book");
+
+    //设置更具体的cookie，包括路径，域，失效日期
+    YU.setCookie("name", "wlc", "/books", "www.yurencloud.com", new Date("January 1,2017"));
+
+    //删除刚刚设置的cookie
+    YU.unsetCookie("name", "/books", "www.yurencloud.com");
+
+    //设置安全的cookie
+    YU.setCookie("name", "wlc", null, null, null, true);
+
+
+    /*
+     * 作用：对目标元素实现拖放
+     * 参数：只要给指定元素添加draggable类即可使其被拖动，并注意，对象的position一定得是absolute
+     * 返回：拖放事件对象
+     * */
+    //通过mousedown mousemove mouseup可以获取到不同状态下的拖放的元素的状态
+
+    var dragdrop = YU.dragDrop();//创建拖放对象
+    dragdrop.enable();//开启拖放功能
+    //    dragdrop.disable();//关闭拖放功能
+
+
+    /*
+     * 作用：数组分块函数
+     * 参数：array 要分块的数组 | process 要使用到数组的函数 | context 要执行的环境（没有特殊要求，可不设置该项）
+     * 返回：无
+     * */
+
+    //使用了数组分块的时候：有种依次排队显示出来的感觉
+    var data = [12, 123, 123124, 1234124, 324, 234, 564, 7623, 3, 458, 7, 2];
+    function output(item) {
+        YU.$('box4').innerHTML += item + "<br>";
+    }
+    YU.chunk(data, output);
+
+    /*
+     * 作用：为函数设置默认的参数值，柯里化函数，（curry 携带的意思）
+     * 参数：第一个参数，传入要进行柯里化的函数，第二个及以后n个参数，都是设置函数的默认值。默认参数不能大于fn原来的参数个数
+     * 返回：携带默认值的函数
+     * */
+    function add(num1, num2) {
+        return num1 + num2;
+    }
+    var curriedAdd2 = YU.curry(add, 5);
+    console.log(curriedAdd2(3)); //5+3=8
+
+    var curriedAdd3 = YU.curry(add, 5, 7);
+    console.log(curriedAdd3()); //5+7=12  因为add的两个参数都被设置了，所以就无需再传入参数，同时，结果也永远等于12。
+
+
+    /*
+     * 作用：打乱数组内的所有的项，随机排序
+     * 参数：array 要打乱排序的数组
+     * 返回：打乱排序后的数组
+     * */
+    var arr = [1, 2, 3, 4, 5, 6, 7];
+    console.log(YU.shuffleArray(arr));
+
+    /**
+     * 作用：数组取交集，并集，差集，去重
+     * 在原生Array对象中添加方法
+     */
+    console.log(Array.intersect(["1", "2", "3"], ["2", "3", "4", "5", "6"]));//[2,3]
+    console.log([1, 2, 3, 2, 3, 4, 5, 6].unique());//[1,2,3,4,5,6]
+    console.log(Array.union(["1", "2", "3"], ["2", "3", "4", "5", "6"], ["5", "6", "7", "8", "9"]));
+    console.log(["2", "3", "4", "5", "6"].minus(["1", "2", "3"]));
+
+    /**
+     * 作用：构造函数，log执行结果输出，页面正中显示，无需打开控制台
+     * 参数：id 可自定义log窗口的id 默认YULogWindow
+     * 返回：构造后的函数
+     * 备注：因为常用，所以注册在了window.log(测试过，windows下暂时没有log对象)
+     */
+    log.header('我是执行结果的自定义标题');
+    log.write('我是执行结果的返回 Message');
+    console.log(YU);
+
+    /*
+     * 作用：检测是否是数组,函数，正则，对象，JSON
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    var str9 = '5';
+    var arr5 = [];
+    var fun5 = function () {};
+    var RegExp = /\s+/;
+    var obj = {};
+    log.write(YU.isArray(arr5));
+    log.write(YU.isFunction(fun5));
+    log.write(YU.isRegExp(RegExp));
+    log.write(typeof obj === 'object');
+    log.header('测试YU.type');
+    log.write(YU.type(RegExp));
+    log.write(typeof fun5);
+    log.header('是否是数值');
+    log.write(YU.isNumeric(str9));
+    log.write(YU.isEmptyObject(obj));
+
+    /*
+     * 作用：对类数组对象中的每个项依次执行回调函数
+     * 参数：obj 类数组对象 | callback 回调函数
+     * 返回：执行函数后的类数组对象
+     * */
+    var arr6 = [11,12,13];
+    function addNum(index,item) {
+        log.write( item + 10);
+    }
+    YU.each(arr6,addNum);
+
+    //对象，类数组
+    var obj6 = {ding:'ding',hong:'hong',ming:'ming'};
+    function addString(index,item) {
+        log.write( item + 'haha');
+    }
+    YU.each(obj6,addString);
+
+    /*
+    //如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
+    //如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
+    if(!window.$){
+        window['$'] = window['YU'];
+    }
+    */
+
+//    log.write($('#xiaoming').get(0).innerHTML);
+//    console.log(window.$);
+    log.write(YU.$('xiaoming').innerHTML);
+//    log.write($('xiaoming').innerHTML);
+
+    /*
+    * 在YU的命名空间外添加$()选择器函数，作用域为全局，实现直接使用$(id)就能获取DOM元素
+    * */
+
+//    log.write($('#xiaohong')[0].innerHTML);
+    log.write(YU.$('xiaohong').innerHTML);
+
+    console.log(YU.c('ulclass'));
+
+//    log.write($.getStyle('xiaoming','color'));
+    console.log(YU.getStyle('xiaoming','color'));//0，0，255 blue
+
+    YU.setStyleById('xiaoming',{color:'red'})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
