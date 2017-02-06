@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+<div id="box1">hello1</div>
+
+</body>
+<!--<script src="js/YU.js"></script>-->
+<script>
+    /*
+     Factory 工厂模式
+
+     该模式是一种创建型模式，它不显式的要求使用一个构造函数，Factory提供一个通用的接口来创建对象。
+     例如：假设我们有一个UI工厂，我们要创建一个UI组件的类型，不需要直接使用多个new来构造来UI，而直接通过Factory对象创建一个新的组件，参数不同，实例化出来的UI组件也不同
+     */
+
+    //定义car构造函数
+    function Car(options) {
+        //默认值
+        this.doors = options.doors || 4;
+        this.state = options.state || "brand new";
+    }
+
+    //定义truck构造函数
+    function Truck(option) {
+        this.state = options.state || "used";
+        this.wheelSize = option.wheelSize || "large";
+    }
+
+    //定义vehicle工厂的大体代码
+    function VehicleFactory() {
+    }
+
+    //定义该工厂factory的原型和试用工具，默认vehicleClass是Car
+    VehicleFactory.prototype.vehicleClass = Car;
+
+    //创建新Vehicle实例的工厂方法
+    VehicleFactory.prototype.createVehicle = function (options) {
+        if (options.vehicleType === "car") {
+            this.vehicleClass = Car;
+        } else {
+            this.vehicleClass = Truck;
+        }
+
+        return new this.vehicleClass(options);
+    };
+
+    //创建生成汽车工厂实例
+    var carFactory = new VehicleFactory();
+    var car = carFactory.createVehicle({
+        vehicleType: "car",
+        color: "yellow"
+    });
+
+    //测试汽车是由vehicleClass的原型prototype里的car创建的
+
+    console.log(car instanceof Car);//true
+
+    //输出car对象color："yellow",doors:6,state:"brand new"
+    console.log(car);
+
+
+</script>
+</html>

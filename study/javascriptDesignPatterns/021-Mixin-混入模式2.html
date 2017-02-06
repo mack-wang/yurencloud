@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+<div id="box1">hello1</div>
+
+</body>
+<!--<script src="js/YU.js"></script>-->
+<script src="js/underscore.js"></script>
+<script>
+    /*
+     Mixin 模式
+
+     在C++和Lisp等传统编程语言中，Mixin是一个可以轻松被一个子类，或者一组子类继承功能的类，目的是函数的复用。
+
+     */
+
+    /*
+     * 子类化：指一个新对象从一个基础或超类对象中继承相关的属性
+     * 超类(同父类)：类B如果是从另外一个类A扩展得来，我们认为A是B的超类，B是A的一个子类。
+     * 方法链： 类A中的一个方法，在类B中被重写，但类B还可以调用类A中该方法
+     * 构造函数链： 类B可以调用构造函数A
+     * */
+
+    //Mixin 混入示例一，使用了从underscore.js
+    //从underscore.js中_.extend便捷混入函数。就是把defaults默认函数，混入到keysFunc目标函数中，让目标函数能够继承默认函数的所有方法
+
+    //父类，默认对象，
+    var myMixins = {
+        moveUp: function () {
+            console.log("up");
+        },
+        moveDown: function () {
+            console.log("down");
+        },
+        stop: function () {
+            console.log("stop");
+        }
+    };
+
+    //Bob 构造函数
+    function Bob() {
+        this.moveLeft = function () {
+            console.log('left');
+        };
+    }
+
+    //Tom 构造函数
+    function Tom() {
+        this.moveRight = function () {
+            console.log('right');
+        };
+    }
+
+    //使用Mixi模式，即用createAssigner函数来帮助我们把myMixins混入到Tom的构造函数中
+    _.extend(Tom.prototype, myMixins);
+
+    //我们就取其中一个Tom的实例来看看，Tom有没有继承myMixins
+    var TomChild = new Tom();
+    TomChild.moveDown();//down
+    TomChild.moveUp();//up
+    //Tom自己的方法
+    TomChild.moveRight();//right
+
+
+    //Mixin 混入示例二，未使用任何库的辅助，可以继承父类指定的方法(不用全部继承)
+
+
+    var Mixins = function () {
+    };
+
+    Mixins.prototype = {
+        moveUp: function () {
+            console.log("up");
+        },
+        moveDown: function () {
+            console.log("down");
+        },
+        stop: function () {
+            console.log("stop");
+        }
+    };
+
+    //关键函数，通过一个方法将现有对象扩展到另外一个对象上
+    function augment(receivingClass, givingClass) {
+        //只提供特定的方法
+        //当arguments[2]存在时，就说明当前的参数大于2个
+        if (arguments[2]) {
+            for (var i = 2, len = arguments.length; i < len; i++) {
+                receivingClass.prototype[arguments[i]] = givingClass.prototype[arguments[i]];
+            }
+        } else {//提供所有方法
+            for (var methodName in givingClass.prototype) {
+                //确保接收类不包含所处理方法的同名方法
+                if (!Object.hasOwnProperty(receivingClass.prototype, methodName)) {
+                    receivingClass.prototype[methodName] = givingClass.prototype[methodName];
+                }
+
+                if (!receivingClass.prototype[methodName]) {
+                    receivingClass.prototype[methodName] = givingClass.prototype[methodName];
+                }
+            }
+        }
+    }
+
+    //给Bob,从Minxins中继承，并指定添加moveDown和stop的两个方法,如果只写前两个参数，则继承全部方法
+    augment(Bob, Mixins, 'moveDown', 'stop');
+
+    var BobChild = new Bob();
+
+    console.log(BobChild);
+    BobChild.moveDown();
+    BobChild.stop();
+
+
+    //  以下使用_.extend的方法也可以让Bob，继承Mixins的所有方法。但无法使用augment()来让Bob继承myMixins，因为myMixins是一个对象，没有prototype
+    console.log(myMixins.prototype);
+    console.log(Mixins.prototype);
+    /*
+     _.extend(Bob.prototype,Mixins.prototype);
+     var BobChild = new Bob();
+
+     console.log(BobChild);
+     BobChild.moveDown();
+     BobChild.stop();*/
+
+
+</script>
+</html>

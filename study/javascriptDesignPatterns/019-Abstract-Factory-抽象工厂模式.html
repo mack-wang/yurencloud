@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+<div id="box1">hello1</div>
+
+</body>
+<!--<script src="js/YU.js"></script>-->
+<script>
+    /*
+     Abstract Factory 抽象工厂模式
+
+     封装一组具有共同目标的单个工厂，它能够将一组对象的实现细节从一般用法中分享出来
+     我的理解是：
+     普通的工厂模式是用函数定义各种组件，然后通过统一的接口函数来接收参数，输出对应的组件
+     抽象工厂模式是用自执行的匿名函数返回一个匿名对象，匿名对象中已经定义了多个工厂方法，具体工厂用来定义具体的类，抽象工厂根据具体的类生产不同的组件。
+
+     例如：
+     车辆工厂的抽象模式：
+     具体的工厂负责定义车的类型。
+     抽象工具根据具体工厂定义好的车的类型，生产不同的车，同时给车定义不同的属性。
+
+     */
+
+    var AbstractVehicleFactory = (function () {
+        //存储车的类型，给具体工厂来使用的
+        var types = {};
+
+        //返回匿名对象，对象中定义了具体工厂和抽象工厂
+        return {
+            //抽象工厂，根据具体工厂定义好的车的类型，生产车，并可以定义不同类型的车的属性
+            getVehicle: function (type, customizations) {
+                var Vehicle = types[type];
+                return (Vehicle) ? new Vehicle(customizations) : null;
+            },
+
+            registerVehicle: function (type, Vehicle) {
+                var proto = Vehicle.prototype;
+
+                //定义要生产的车的类型
+                if (proto.drive && proto.breakDown) {
+                    types[type] = Vehicle;
+                }
+                return AbstractVehicleFactory;
+            }
+        };
+    })();
+
+    //用法
+    AbstractVehicleFactory.registerVehicle("car",Car);
+    AbstractVehicleFactory.registerVehicle("truck",Truck);
+
+    //基于抽象类型实例化一个新的car对象
+    var car = AbstractVehicleFactory.getVehicle("car",{color:"green",state:"new"});
+    var truck = AbstractVehicleFactory.getVehicle("truck",{color:"blue",state:"old"});
+
+
+
+</script>
+</html>

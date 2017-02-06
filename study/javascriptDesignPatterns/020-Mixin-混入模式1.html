@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+<div id="box1">hello1</div>
+
+</body>
+<!--<script src="js/YU.js"></script>-->
+<script>
+    /*
+     Mixin 模式
+
+     在C++和Lisp等传统编程语言中，Mixin是一个可以轻松被一个子类，或者一组子类继承功能的类，目的是函数的复用。
+
+     */
+
+    /*
+    * 子类化：指一个新对象从一个基础或超类对象中继承相关的属性
+    * 超类(同父类)：类B如果是从另外一个类A扩展得来，我们认为A是B的超类，B是A的一个子类。
+    * 方法链： 类A中的一个方法，在类B中被重写，但类B还可以调用类A中该方法
+    * 构造函数链： 类B可以调用构造函数A
+    * */
+
+    //示例
+
+    //人类,构造函数
+    var Person = function (firstName,lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = "male";
+    };
+    //普通人
+    var nomalPerson = new Person('mack','wang');
+
+    //高人,子类构造函数(继承了超类(父类))
+    var SuperPerson = function (firstName,lastName,powers) {
+        //调用超类，即父类。然后使用call()方法进行调用，从而进行初始化
+        Person.call(this,firstName,lastName);
+        //最后，保存自己的特殊属性powers
+        this.powers = powers;
+    };
+
+    //子类的原型也继承父类的原型
+    SuperPerson.prototype = Object.create(Person.prototype);
+
+    var superman = new SuperPerson("mack","wang",["fly","run"]);
+    console.log(superman);
+
+    /*
+    * 从下面可以看出SuperPerson继承的父类是Person，构造函数是Person，constructor : (firstName,lastName)
+    *
+     SuperPerson
+         firstName : "mack"
+         gender : "male"
+         lastName : "wang"
+         powers : Array[2]
+             0 : "fly"
+             1 : "run"
+             length : 2
+        __proto__ : Person
+        __proto__ : Object
+            constructor : (firstName,lastName)
+            __proto__ : Object
+    */
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+<div id="box1">hello1</div>
+
+</body>
+<script>
+    //查看console的所有方法
+    console.log(console);
+    /*
+     Objectassert: assert()
+     clear: clear()
+     count: count()
+     debug: debug()
+     dir: dir()
+     dirxml: dirxml()
+     error: error()
+     group: group()
+     groupCollapsed: groupCollapsed()
+     groupEnd: groupEnd()
+     info: info()
+     log: log()
+     markTimeline: markTimeline()
+     memory: (...)
+     get memory: ()
+     set memory: ()
+     profile: profile()
+     profileEnd: profileEnd()
+     table: table()time: time()
+     timeEnd: timeEnd()
+     timeStamp: timeStamp()
+     timeline: timeline()
+     timelineEnd: timelineEnd()
+     trace: trace()
+     warn: warn()
+     __proto__: Object
+     */
+
+    //一,参数1为false时，输出参数2
+    //console.assert(expression, object[, object...])
+    //接收至少两个参数，第一个参数的值或返回值为false的时候，将会在控制台上输出后续参数的值。例如：
+    console.assert(1 == 2, 'assert1'); // 输出 assert1
+    console.assert(1 == 1, 'assert2'); // 无输出，返回 undefined
+
+
+
+    //二，输出执行次数，并可为该次数命名
+    //console.count([label])
+    //输出执行到该行的次数，可选参数 label 可以输出在次数之前，例如：
+    (function() {
+        for (var i = 0; i < 5; i++) {
+            console.count('count');
+        }
+    })();
+    // count: 1
+    // count: 2
+    // count: 3
+    // count: 4
+    // count: 5
+
+
+    //三，输出对象，并折叠属性
+    //console.dir(object)
+    //将传入对象的属性，包括子对象的属性以列表形式输出，例如：
+    var obj = {
+        name: 'classicemi',
+        college: 'HUST',
+        major: 'ei'
+    };
+    console.dir(obj);//与log的区别，不显示预览
+    console.log(obj);//同dirxml，显示预览
+    console.dirxml(obj);//显示预览
+
+
+    //四，输出高亮的红色错误
+    //console.error(object[, object...])
+    //用于输出错误信息，用法和常见的console.log一样，不同点在于输出内容会标记为错误的样式(标红)，便于分辨。输出结果：
+    console.error('错误');
+
+
+
+    //五，对结果进行嵌套输出
+    //console.group
+    //这是个有趣的方法，它能够让控制台输出的语句产生不同的层级嵌套关系，每一个console.group()会增加一层嵌套，相反要减少一层嵌套可以使用console.groupEnd()方法。语言表述比较无力，看代码：
+    console.log('这是第一层');
+    console.group();
+    console.log('这是第二层');
+    console.log('依然第二层');
+    console.group();
+    console.log('第三层了');
+    console.groupEnd();
+    console.log('回到第二层');
+    console.groupEnd();
+    console.log('回到第一层');
+
+
+    //六，输出自定义信息
+    //console.info('info'); 没啥用处
+    console.info('info'); // 输出 info
+
+
+
+    //七，以表格的形式输出对象
+    //console.table()
+    //可将传入的对象，或数组以表格形式输出，相比传统树形输出，这种输出方案更适合内部元素排列整齐的对象或数组，不然可能会出现很多的 undefined。
+
+    var obj3 = {
+        foo: {
+            name: 'foo',
+            age: '33'
+        },
+        bar: {
+            name: 'bar',
+            age: '45'
+        }
+    };
+
+    var arr = [
+        ['foo', '33'],
+        ['bar', '45']
+    ];
+
+    //官方案例，可以输出构造函数的参数，以及由此构造函数创建的多个对象的传入的参数值。！！！
+    console.table(obj3);
+    console.table(arr);
+
+    function Person(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
+    var family = {};
+    family.mother = new Person("Susan", "Doyle", 32);
+    family.father = new Person("John", "Doyle", 33);
+    family.daughter = new Person("Lily", "Doyle", 5);
+    family.son = new Person("Mike", "Doyle", 8);
+
+    console.table(family, ["firstName", "lastName", "age"]);
+
+
+
+    //八，最常用的输出
+    //console.log()
+    console.log('log'); // 输出 log
+
+
+
+
+    //九，性能分析(代码段执行时间)，输出到profile性能分析窗口，重要
+    //console.profile([profileLabel])
+    //这是个挺高大上的东西，可用于性能分析。在 JS 开发中，我们常常要评估段代码或是某个函数的性能。在函数中手动打印时间固然可以，但显得不够灵活而且有误差。借助控制台以及console.profile()方法我们可以很方便地监控运行性能。
+    //注意：不在console控制台窗口查看，在profile性能分析窗口查看
+    //优点，会记录每次的性能测试。每次刷新将会增加记录，而不会清除前面的记录。并且提供保存到本地。
+    //点击摄像按钮，可以记录整个过程的执行情况，而不仅只有结果
+
+    function parent() {
+        for (var i = 0; i < 10000; i++) {
+            childA()
+        }
+    }
+
+    function childA(j) {
+        for (var i = 0; i < j; i++) {}
+    }
+//    console.profile('性能分析3');
+//    parent();//测试在profile和profileEnd();包裹着的这段代码的执行性能。
+//    console.profileEnd();
+
+
+    //十，执行时间输出到console控制台
+    //console.time(name)
+    //计时器，可以将成对的console.time()和console.timeEnd()之间代码的运行时间输出到控制台上，name参数可作为标签名。
+
+    console.time('计时器');
+    for (var i = 0; i < 1000; i++) {
+        for (var j = 0; j < 1000; j++) {}
+    }
+    console.timeEnd('计时器');
+
+
+    //十一，用来追踪函数的调用过程
+    //console.trace()
+    //console.trace()用来追踪函数的调用过程。在大型项目尤其是框架开发中，函数的调用轨迹可以十分复杂，console.trace()方法可以将函数的被调用过程清楚地输出到控制台上。
+
+    function tracer(a) {
+        console.trace();//假设有从外到内的共10层函数，10->9->8->...->1 把console.trace()放到1函数中，执行10函数时，就会显示10到1的所有函数名，追踪函数的调用过程
+        return a;
+    }
+
+    function foo(a) {
+        return bar(a);
+    }
+
+    function bar(a) {
+        return tracer(a);
+    }
+
+    var a = foo('tracer');
+
+
+
+    //十二，输出警告内容
+    //console.warn(object[, object...])
+    //输出参数的内容，作为警告提示。
+
+    console.warn('warn'); // 输出 warn
+
+
+
+    //十二，占位符
+    //console对象上的五个直接输出方法，console.log(),console.warn(),console.error(),console.exception()(等同于console.error())和console.info()，都可以使用占位符。支持的占位符有四种，分别是字符(%s)、整数(%d 或%i)、浮点数(%f)和对象(%o)。
+
+    console.log('%s是%d年%d月%d日', '今天', 2014, 4, 15);
+    console.log('圆周率是%f', 3.14159);
+
+    var obj2 = {
+        name: 'classicemi'
+    };
+    console.log('%o', obj2);
+
+
+
+
+    //十三，对输出结果设置样式,css样式
+    //还有一种特殊的标示符%c，对输出的文字可以附加特殊的样式，当进行大型项目开发的时候，代码中可能有很多其他开发者添加的控制台语句。开发者对自己的输出定制特别的样式就可以方便自己在眼花缭乱的输出结果中一眼看到自己需要的内容。想象力丰富的童鞋也可以做出有创意的输出信息，比如常见的招聘信息和个人介绍啥的。
+    //输出结果：
+    console.log('%cMy name is classicemi.', 'color: #fff; background: #f40; font-size: 24px;');
+    //%c标示符可以用各种 CSS 语句来为输出添加样式，再随便举个栗子，background属性的url()中添加图片路径就可以实现图片的输出了，各位前端童鞋快施展你们的 CSS 神技来把控制台玩坏吧~~
+
+
+
+    //十四，清空前面的console输出。
+//    console.clear();
+//    console.log('hello');
+
+
+
+    //十五，无特殊之处，就是显示为蓝色而已
+    console.debug("这是bug");
+
+
+    //十六，在timeline中插入一个时间点
+
+    console.timeStamp();
+    //console.markTimeline()已经弃用，请使用上面的timeStamp()
+
+
+
+    //十七，在控制台设置中，可以设置成显示每次输出的当前时间戳，显示到毫秒级
+
+
+
+    //十八，在console控制台，有个top按钮，可以设置执行其他标签或者当前页面的iframe中的console结果
+
+
+    //十九，在console控制台，有个筛选按钮，可以设置显示的结果类型，有all,warming,log, info,debug,handle
+
+
+    //二十，当前js使用的内存大小
+    /*
+    memory : MemoryInfo
+    jsHeapSizeLimit : 1530000000 // 内存大小限制
+    totalJSHeapSize : 13400000 // 可使用的内存
+    usedJSHeapSize : 11900000 // JS 对象（包括V8引擎内部对象）占用的内存，一定小于 totalJSHeapSize
+
+    */
+
+    console.log(console.memory.jsHeapSizeLimit);
+
+
+</script>
+</html>
