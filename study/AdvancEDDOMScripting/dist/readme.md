@@ -7,9 +7,9 @@
 
 ###前言：
 
-YU.js 完整版带中文注释 大小67kb
-YU.min.js 压缩版 大小14kb
-示例.html 大小23kb 使用示范及示例 
+YU.js 完整版带中文注释 大小67kb  
+YU.min.js 压缩版 大小14kb  
+示例.html 大小23kb 使用示范及示例   
 - [下载地址](https://github.com/mack-wang/yurencloud/blob/master/study/AdvancEDDOMScripting/dist/)  
 
 
