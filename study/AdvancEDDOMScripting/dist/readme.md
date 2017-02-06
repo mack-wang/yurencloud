@@ -68,16 +68,26 @@ addEvent:function (element, type, fn)   {
 }  
 `
 
-###三、YU.js的优点
+###三、YU.js的优点  
+
 1.最贴近原生操作的$()  ,d()  ,c()  
+
 2.最优秀的事件添加方法addEvent(element,type,fn)  
+
 3.最兼容的样式操作hasClassName(element,className)  
-4.最方便的拖放元素事件实现dragDrop()  
-5.最简洁的AJAX创建和使用ajax(obj)  
-6.最简便的cookie操作的封装
-7.最实用的数组交集，并集，差集，乱序方法
-8.最方便的console.log输出到页面 log.write(message)  
-9.最实用的高级方法的实现：数组分块函数，柯里化函数，表单序列化，遍历元素文本属性等节点树等
+
+4.最方便的拖放元素事件实现dragDrop()   
+
+5.最简洁的AJAX创建和使用ajax(obj)    
+
+6.最简便的cookie操作的封装  
+
+7.最实用的数组交集，并集，差集，乱序方法  
+
+8.最方便的console.log输出到页面 log.write(message)    
+
+9.最实用的高级方法的实现：数组分块函数，柯里化函数，表单序列化，遍历元素文本属性等节点树等  
+
 
 ###四、YU.js包含的方法列表
 备注：以下不含YU命名空间外的部分方法
