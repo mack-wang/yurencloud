@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <!--<link rel="stylesheet" href="css/test2.css">-->
-    <!--<link rel="stylesheet" href="css/test.css">-->
 </head>
 <style>
     .wlc {
         background: yellow;
+    }
+    div{
+        color:red;
     }
 </style>
 <body>
@@ -49,6 +50,8 @@
 <script src="YU.js"></script>
 <!--<script src="YU.min.js"></script>-->
 <script>
+    console.log(window.YU);
+    console.log(window.$);
     /*YU.js库使用测试*/
 
     /*
@@ -157,6 +160,8 @@
      * 返回：匹配后的元素数组
      * */
     console.log(YU.getElementsByClassName('ulclass', 'ul', YU.$('container')));
+    log.header('class选择器');
+    log.write(YU.getElementsByClassName('ulclass'));
 
     /*
      * 作用：可以切换隐藏或者显示状态，也可以设置显示状态
@@ -364,21 +369,21 @@
      * 返回：转换后的字符串
      * */
     //因为IE7，IE8中没有JSON.stringify所以先注释掉
-    //    var book = {
-    //        title: "javascript",
-    //        authors: [
-    //            "tom",
-    //            "cindy2"
-    //        ],
-    //        edition: 3,
-    //        year: 2016
-    //    };
-    //    //把js对象转成JSON对象，使用JSON类下的stringify()方法
-    //    var jsonText = JSON.stringify(book);
-    //
-    //    //把JSON对象，转成js对象
-    //    var book2 = YU.parseJSON(jsonText);
-    //    console.log(book2);
+//    var book = {
+//        title: "javascript",
+//        authors: [
+//            "tom",
+//            "cindy2"
+//        ],
+//        edition: 3,
+//        year: 2016
+//    };
+//    //把js对象转成JSON对象，使用JSON类下的stringify()方法
+//    var jsonText = JSON.stringify(book);
+//
+//    //把JSON对象，转成js对象
+//    var book2 = YU.parseJSON(jsonText);
+//    console.log(book2);
 
     /* 以下ajax测试成功，为了不打扰其他测试，故注释掉了，想测试ajax取消注释，并以http形式打开本页 */
 
@@ -410,18 +415,18 @@
      *
      PS: IE7+、Firefox、Opera、Chrome 和Safari 都支持原生的XHR 对象，在这些浏览器中创建XHR对象可以直接实例化XMLHttpRequest 即可,如果是IE6 及以下，那么我们必须还需要使用ActiveX 对象来实现。在低版本IE 浏览器可能会遇到不同版本的XHR 对象，所以将它们放到一个数组里，然后循环，尝试创建一个XHR对象，若成功，则终止循环。然后调用该函数即可创建一个XHR对象：
      */
-    /*    YU.ajax({
-     method: 'get',
-     url: 'form11.php',
-     data: {
-     'username': 'JR',
-     'age': 22
-     },
-     success: function (message) {
-     console.log("服务器已经收到你的用户名2：" + message);
-     },
-     async: true
-     });*/
+    /*YU.ajax({
+        method: 'get',
+        url: 'form11.php',
+        data: {
+            'username': 'JR',
+            'age': 22
+        },
+        success: function (message) {
+            console.log("服务器已经收到你的用户名2：" + message);
+        },
+        async: true
+    });*/
 
 
     /*
@@ -561,7 +566,80 @@
      */
     log.header('我是执行结果的自定义标题');
     log.write('我是执行结果的返回 Message');
-    console.log(YU)
+    log.section('我是标题，效果同header','我是内容，效果同write');
+    log.section('我是标题，效果同header','我是内容，效果同write','我是内容，效果同write1');
+    log.section('我是内容，效果同write2');
+    log.header();
+    log.write();
+    log.section();
+    console.log(YU);
+
+    /*
+     * 作用：检测是否是数组,函数，正则，对象，JSON
+     * 参数：obj 待检测的对象
+     * 返回：布尔值 检测结果
+     * */
+    var str9 = '5';
+    var arr5 = [];
+    var fun5 = function () {
+    };
+    var RegExp = /\s+/;
+    var obj = {};
+    log.write(YU.isArray(arr5));
+    log.write(YU.isFunction(fun5));
+    log.write(YU.isRegExp(RegExp));
+    log.write(typeof obj === 'object');
+    log.header('测试YU.type');
+    log.write(YU.type(RegExp));
+    log.write(typeof fun5);
+    log.header('是否是数值');
+    log.write(YU.isNumeric(str9));
+    log.write(YU.isEmptyObject(obj));
+    log.section('我是是否是数值的标题',YU.isNumeric(str9));
+    log.section('我是是否是数值的标题2');
+    log.write('haha','haha','haha');
+    log.write('haha'+'haha'+'haha');
+
+
+    /*
+     * 作用：对类数组对象中的每个项依次执行回调函数
+     * 参数：obj 类数组对象 | callback 回调函数
+     * 返回：执行函数后的类数组对象
+     * */
+    var arr6 = [11, 12, 13];
+    function addNum(index, item) {
+        log.write(item + 10);
+    }
+    YU.each(arr6, addNum);
+
+    //对象，类数组
+    var obj6 = {ding: 'ding', hong: 'hong', ming: 'ming'};
+    function addString(index, item) {
+        log.write(item + 'haha');
+    }
+    YU.each(obj6, addString);
+
+    /*
+     //如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
+     //如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
+     if(!window.$){
+     window['$'] = window['YU'];
+     }
+     */
+
+    console.log(YU.c('ulclass'));
+
+    console.log(YU.getStyle('xiaoming', 'color'));//0，0，255 blue
+
+    YU.setStyleById('xiaoming', {color: 'red'});
+
+
+    //为document.getElementById()方法创建简便方法d()
+    console.log(YU.$('xiaoming'));
+    console.log(d('xiaoming'));
+    //为document.getElementsByClassName()方法创建简便方法c()
+    console.log(YU.c('ulclass'));
+    console.log(c('ulclass'));
 
 
 </script>
