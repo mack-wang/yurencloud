@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+<div id="box1">hello1</div>
+
+</body>
+<!--<script src="js/YU.js"></script>-->
+<script src="js/underscore.js"></script>
+<script>
+    /*
+     Decorator 抽象装饰者模式
+
+     在022中，我们举了一个简单的装饰者使用的例子。
+     */
+
+    //示例
+    //超类（或者说是父类）
+    function MacBook() {
+    }
+
+    //多个子类，来增强超类的功能
+    function Memory(macbook) {
+    }
+    function Engraving(macbook) {
+    }
+    function Insurance(macbook) {
+    }
+    //...
+
+    var mb = new MacBook();
+    Memory(mb);//加内存，+75
+    Engraving(mb);//加刻录机，+200
+    Insurance(mb);//加保险，+250
+
+    //问题来了，当增加功能还较少的时候，可以把增加的功能1个1个写出来。但当有大量的子类需要创建，那应该如何使用装饰者呢？
+    //所以我们就有了抽象装饰者模式
+    var Macbook = new Interfack('Macbook',
+            [
+                'Memory',
+                'Engraving',
+                'Insurance',
+                'BiggerSize',
+                'With8GMemory'
+                //...
+            ]
+    );
+
+    //经过装饰者增加的电脑要这样定义
+    var MacbookPro = function () {
+        //继承Macbook
+    };
+
+    MackbookPro.prototype = {
+        Memory:function () {
+
+        },
+        Engraving:function () {
+
+        },
+        Insurance:function () {
+
+        },
+        BiggerSize:function () {
+
+        },
+        With8GMemory:function () {
+
+        }
+        //...
+
+    };
+
+    //代码太多，不写了，看书
+</script>
+</html>

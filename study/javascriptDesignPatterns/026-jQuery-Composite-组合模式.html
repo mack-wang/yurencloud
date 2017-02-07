@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<style>
+    .beRed{
+        color:red;
+    }
+</style>
+<body>
+<div id="box1">hello</div>
+<ul id="ul1">
+    <li class="li1">hello1</li>
+    <li class="li1">hello2</li>
+    <li class="li1">hello3</li>
+    <li class="li1">hello4</li>
+    <li class="li1">hello5</li>
+</ul>
+
+</body>
+<script src="js/YU.js"></script>
+<script>
+    /*
+     Composite  组合模式
+
+     Composite 组合模式：描述了一组对象，可以使用与处理对象的单个实例同样的方式来进行处理。
+     我的理解是：无论是针对单个对象，还是多个对象，都可以直接应用相同的处理方法。用for循环遍历就行。
+     */
+
+    //例如我们可以用YU.js中的addClassName,each,c,来实现jQuery中addClass的功能
+    //对单个或者一组元素添加class
+
+    var addClass = function (elements,className) {
+        YU.each(elements,function (index,item) {
+            YU.addClassName(item,className)
+        })
+    };
+
+    addClass(YU.$('box1'),'beRed');//为单个对象添加class
+    addClass(YU.c('li1'),'beRed');//为单个或者多个对象添加class
+
+
+
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<body>
+<div id="box1">hello1</div>
+
+</body>
+<!--<script src="js/YU.js"></script>-->
+<script src="js/underscore.js"></script>
+<script>
+    /*
+     Decorator 装饰者模式
+
+     装饰者模式和Mixin相类似，Decorator提供了将行为动态添加至系统的现有类的能力，装饰本身对类原有的基本功能来说可能并不是必要的，不然最初的时候就应该合并到父类中。装饰者主要用于修改现有的系统。希望在系统中为对象添加额外功能，而不需要大量修改使用它们的底层代码。
+    总结：装饰者不修改对象本身，也不在构造函数原型中添加新方法和属性。装饰者可以单独对创建出的子类对象添加功能，就像插件一样。
+     */
+
+    //示例
+    //被装饰的对象构造函数,买macbook原装的，最便宜要997美元，11.6寸
+    function MacBook(){
+        this.cost = function () {
+            return 997;
+        };
+        this.screenSize = function () {
+            return 11.6;
+        };
+    }
+
+    //装饰1，加内存的话，要加75美元，不是必要，可以不加，要加的话，传入macbook这个函数对象就可以
+    function Memory(macbook) {
+        var v  = macbook.cost();
+        macbook.cost = function () {
+            return v+75;
+        };
+    }
+
+    //装饰2，加该录机，要加200美元
+    function Engraving(macbook) {
+        var v = macbook.cost();
+        macbook.cost = function () {
+            return v + 200;
+        };
+    }
+
+    //装饰3，加保险，要加250美元
+    function Insurance(macbook) {
+        var v = macbook.cost();
+        macbook.cost = function () {
+            return v + 250;
+        };
+    }
+
+    var mb = new MacBook();
+    Memory(mb);//加内存，+75
+    Engraving(mb);//加刻录机，+200
+    Insurance(mb);//加保险，+250
+
+    console.log(mb.cost());//1522
+    console.log(mb.screenSize());//11.6不变
+
+
+</script>
+</html>
