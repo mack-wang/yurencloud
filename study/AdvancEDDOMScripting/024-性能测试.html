@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 1px solid gray;
+        text-align: center;
+    }
+</style>
+<script src="js/YU-2.0.0.js"></script>
+<script src="js/jquery-3.1.1.js"></script>
+<body>
+
+
+</body>
+<script>
+    var table = document.createElement('table');
+    document.body.appendChild(table);
+
+
+    for (var i = 0; i < 5000; i++) {
+        var tr = document.createElement('tr');
+        table.appendChild(tr);
+        for (var j = 0; j < 10; j++) {
+            var td = document.createElement('td');
+            td.innerHTML = (i + 1) + '行-' + (j + 1) + '列';
+            td.className = 'td' + i + '-' + j;
+            td.id = 'td' + (i + j * 10);
+            tr.appendChild(td);
+        }
+    }
+
+    //时间是从页面加载开始时开始计算，微秒级
+    // 开始时间
+//    var start = performance.now();
+
+    // 执行
+    //doTasks();
+
+    // 结束时间
+//    var end = performance.now();
+
+
+    var runTime = function (fn) {
+        var start = performance.now();
+        fn.call();
+        var end = performance.now();
+        console.log(end-start);
+    };
+
+    runTime(YU.c('td50-10'));
+
+//    console.time('YU');
+//    YU.c('td50-10');
+//    console.timeEnd('YU');
+//
+//    console.time('jquery');
+//    $('.td50-10');
+//    console.timeEnd('jquery');
+
+
+</script>
+</html>
