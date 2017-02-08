@@ -7,16 +7,19 @@
 
 /**
  * 更新日志:
- * 推出稳定版本：version 1.0.0 20170203
- * 将YU改为对象，原先的函数改为YU对象内的方法
- * 推出稳定版本：version 2.0.0 20170205
+ * 版本：version 1.0.0 20170203
  *
+ * 将YU改为对象，原先的函数改为YU对象内的方法
+ * 版本：version 2.0.0 20170205
+ *
+ * 修改：1、当$(),d(),c()没有获取到对象时返回null 2、添加性能测试run,runCompare方法 3、添加直接删除单个元素或多个元素remove方法
+ * 版本：version 2.0.1 20170209
  */
 
 (function () {
     var yuObj = {},
         toString = yuObj.toString,
-        version = '2.0.0';
+        version = '2.0.1';
 
     /*
      * 选择器
@@ -44,6 +47,7 @@
             //否则，将它添加到数组中
             elements.push(element);
         }
+
         return elements;
     }
 
@@ -467,14 +471,18 @@
          * */
         c: function (className) {
             //className只能是英文字母或和数字的组合,使用正则判断
-            var regex = /^[0-9a-zA-Z]*$/g;
-            if (!regex.test(className)) {
-                return new Error("className只能是英文字母或和数字的组合");
-            }
+            // var regex = /^[0-9a-zA-Z]*$/g;
+            // if (!regex.test(className)) {
+            //     return new Error("className只能是英文字母或和数字的组合");
+            // }
+            if(!className) return false;
             var elements;
             //如果有getElementsByClassName方法，则优先使用该方法
             if (document.getElementsByClassName) {
                 elements = document.getElementsByClassName(className);
+                if (elements.length === 0) {
+                    return null;
+                }
             } else {
                 elements = [];
                 //如果没有则采取遍历所有元素的className来匹配出符合条件的元素，兼容低版本的浏览器
@@ -484,6 +492,9 @@
                         elements.push(this)
                     }
                 }, window.document);
+                if (elements.length === 0) {
+                    return null;
+                }
             }
             return elements;
         },
@@ -827,6 +838,29 @@
             //再返回父元素，以便实现方法连缀
             return parent;
         },
+
+        /*
+         * 作用：移除指定单个元素或多个元素
+         * 参数：element 要移除的元素
+         * 返回：返回要移除的元素
+         * */
+        remove: function (elements) {
+            if (elements.nodeType == this.node.ELEMENT_NODE) {
+                elements.parentNode.removeChild(elements);
+            } else if (this.isArrayLike(elements)) {
+                var len = elements.length;
+                for (var i = 0; i < len; i++) {
+                    // if (elements[i] != null)
+                    // console.log(elements.length);
+                    elements[len - i - 1].parentNode.removeChild(elements[len - i - 1]);
+                }
+            } else {
+                return new Error('undefined');
+            }
+            //再返回父元素，以便实现方法连缀
+            return elements;
+        },
+
 
         /*
          * 作用：插入新元素到子元素的最前面
@@ -1490,13 +1524,13 @@
          * 返回：四舍五入后的运行时间，微秒
          * */
 
-        run : function (fn) {
+        run: function (fn) {
             var test = fn;
             var start = performance.now();
             test();
             var end = performance.now();
-            var time = Math.round((end-start)*1000);
-            var timeStr = Math.round((end-start)*1000)+'微秒';
+            var time = Math.round((end - start) * 1000);
+            var timeStr = Math.round((end - start) * 1000) + '微秒';
             log.write(timeStr);
             return time;
         },
@@ -1506,12 +1540,12 @@
          * 参数：orignalFunc 原函数，compareFunc 比较函数
          * 返回：二者的运行时间和比较的倍数
          * */
-        runCompare : function (orignalFunc,compareFunc) {
+        runCompare: function (orignalFunc, compareFunc) {
             var a = this.run(orignalFunc);
             var b = this.run(compareFunc);
-            var times =  (a/b).toFixed(1);
+            var times = (a / b).toFixed(1);
             log.header('性能比较结果：');
-            log.write('前者是后者的:'+times+'倍');
+            log.write('前者是后者的:' + times + '倍');
         }
 
     };

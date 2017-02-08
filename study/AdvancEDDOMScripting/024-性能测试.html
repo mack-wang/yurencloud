@@ -21,9 +21,9 @@
 
 </body>
 <script>
+
     var table = document.createElement('table');
     document.body.appendChild(table);
-
 
     for (var i = 0; i < 5000; i++) {
         var tr = document.createElement('tr');
@@ -37,33 +37,35 @@
         }
     }
 
-    //时间是从页面加载开始时开始计算，微秒级
-    // 开始时间
-//    var start = performance.now();
 
-    // 执行
-    //doTasks();
-
-    // 结束时间
-//    var end = performance.now();
-
-
-    var runTime = function (fn) {
-        var start = performance.now();
-        fn.call();
-        var end = performance.now();
-        console.log(end-start);
+    var YUfn = function () {
+        YU.removeChildren(YU.$('td5000'));
     };
 
-    runTime(YU.c('td50-10'));
+    var jQueryfn = function () {
+        $('#td5001').remove()
+    };
 
-//    console.time('YU');
-//    YU.c('td50-10');
-//    console.timeEnd('YU');
-//
-//    console.time('jquery');
-//    $('.td50-10');
-//    console.timeEnd('jquery');
+//    YU.run(YUfn);
+//    YU.run(jQueryfn);
+
+    YU.runCompare(YUfn,jQueryfn);
+//    YU.runCompare(jQueryfn,YUfn);
+
+    /*
+    * YU : jQuery
+    *
+    * $() 1
+    * c() 0.1 jQuery明显慢
+    * addEvent 0.7-0.9
+    * hide 0.3-0.5  元素靠后时0.7-0.9
+    * insertAfter 0.1-0.2
+    * remove 1
+    *
+    *
+    *
+    * */
+
 
 
 </script>
