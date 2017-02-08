@@ -7,14 +7,14 @@
 
 ###前言：
 
-YU.js 完整版带中文注释 大小67kb  
+YU-1.0.0.js 完整版带中文注释 大小67kb  
 YU.min.js 压缩版 大小14kb  
 示例.html 大小23kb 使用示范及示例   
 - [下载地址](https://github.com/mack-wang/yurencloud/blob/master/study/AdvancEDDOMScripting/dist/)  
 
 
 ###一、JavaScript库名
-YU.js，取自个人博客愚人云端yurencloud第一个字，“愚 yu”。
+YU-1.0.0.js，取自个人博客愚人云端yurencloud第一个字，“愚 yu”。
 
 ###二、 YU.js的特点
 1.轻量封装：YU.js是对js原生的轻量封装，方法偏向原生操作。   
