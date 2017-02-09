@@ -12,7 +12,7 @@
  * 将YU改为对象，原先的函数改为YU对象内的方法
  * 版本：version 2.0.0 20170205
  *
- * 修改：1、当$(),d(),c()没有获取到对象时返回null 2、添加性能测试run,runCompare方法
+ * 修改：1、当$(),d(),c()没有获取到对象时返回null 2、添加性能测试run,runCompare方法 3、添加直接删除单个元素或多个元素remove方法
  * 版本：version 2.0.1 20170209
  */
 
@@ -475,7 +475,7 @@
             // if (!regex.test(className)) {
             //     return new Error("className只能是英文字母或和数字的组合");
             // }
-            if(!className) return false;
+            if (!className) return false;
             var elements;
             //如果有getElementsByClassName方法，则优先使用该方法
             if (document.getElementsByClassName) {
@@ -843,6 +843,7 @@
          * 作用：移除指定单个元素或多个元素
          * 参数：element 要移除的元素
          * 返回：返回要移除的元素
+         * 考虑：因为传入字符串，无法判断是id还是class，并且也不想因此而让大家多加个#或.号，所以只能传入DOM元素。
          * */
         remove: function (elements) {
             if (elements.nodeType == this.node.ELEMENT_NODE) {
@@ -850,8 +851,6 @@
             } else if (this.isArrayLike(elements)) {
                 var len = elements.length;
                 for (var i = 0; i < len; i++) {
-                    // if (elements[i] != null)
-                    // console.log(elements.length);
                     elements[len - i - 1].parentNode.removeChild(elements[len - i - 1]);
                 }
             } else {

@@ -475,7 +475,7 @@
             // if (!regex.test(className)) {
             //     return new Error("className只能是英文字母或和数字的组合");
             // }
-            if(!className) return false;
+            if (!className) return false;
             var elements;
             //如果有getElementsByClassName方法，则优先使用该方法
             if (document.getElementsByClassName) {
@@ -843,6 +843,7 @@
          * 作用：移除指定单个元素或多个元素
          * 参数：element 要移除的元素
          * 返回：返回要移除的元素
+         * 考虑：因为传入字符串，无法判断是id还是class，并且也不想因此而让大家多加个#或.号，所以只能传入DOM元素。
          * */
         remove: function (elements) {
             if (elements.nodeType == this.node.ELEMENT_NODE) {
@@ -850,8 +851,6 @@
             } else if (this.isArrayLike(elements)) {
                 var len = elements.length;
                 for (var i = 0; i < len; i++) {
-                    // if (elements[i] != null)
-                    // console.log(elements.length);
                     elements[len - i - 1].parentNode.removeChild(elements[len - i - 1]);
                 }
             } else {
