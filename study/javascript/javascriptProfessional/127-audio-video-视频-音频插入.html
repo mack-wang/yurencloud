@@ -7,11 +7,11 @@
 </head>
 <body>
 
-<audio src="media/2.mov"  loop controls id="music"></audio>
+<audio src="media/2.mov" loop controls id="music"></audio>
 <!--autoplay增加了才会自动播放，loop增加了才会循环播放，controls加了才会有控制的按钮-->
-<video src="media/20.mp4"  loop controls id="video"></video>
+<video src="media/20.mp4" loop controls></video>
 
-<button onclick="myplay()"></button>
+<button onclick="stop()"></button>
 <!--
 以下是视频和音频的属性
 autoplay 布尔值 自动播放
@@ -35,13 +35,15 @@ waiting 下载暂停时的事件
 <script type="text/javascript">
 
 var music = document.getElementById("music");
-var video = document.getElementById("video");
 
-
-function myplay() {
-    //用Audio构造函数，创建一个audio实例，然后play()函数播放，注意：在ios中调用play()时会弹出一个对话框，用户同意后才能播放
-    var audio = new Audio("media/2.mov");
-    audio.play();
+//用自定义的按钮控制音乐的开启和关闭
+//还有更多控制视频和音乐的方法，可以研究他们的属性和方法
+function stop() {
+    if(music.paused){
+        music.play();
+    }else{
+    music.pause();
+    }
 }
 
 
