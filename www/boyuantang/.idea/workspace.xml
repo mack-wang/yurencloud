@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32506dc6-6bff-4859-ae12-908b8fca8a4b" name="Default" comment="use phpstorm git tool">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" />
-    </list>
+    <list default="true" id="32506dc6-6bff-4859-ae12-908b8fca8a4b" name="Default" comment="use phpstorm git tool" />
     <ignored path="boyuantang.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -41,60 +38,7 @@
     <favorites_list name="boyuantang" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/phone/login.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/phone/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShopController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ShopController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3040">
-              <caret line="160" column="14" selection-start-line="160" selection-start-column="14" selection-end-line="160" selection-end-column="14" />
-              <folding>
-                <element signature="e#46#71#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -104,7 +48,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -178,10 +122,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="97" />
-    <option name="y" value="23" />
-    <option name="width" value="1695" />
-    <option name="height" value="988" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -224,7 +168,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -236,6 +179,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,6 +315,7 @@
       <workItem from="1477810777092" duration="10762000" />
       <workItem from="1478174590365" duration="123000" />
       <workItem from="1478174747536" duration="216000" />
+      <workItem from="1486630663159" duration="239000" />
     </task>
     <task id="LOCAL-00001" summary="use phpstorm git tool">
       <created>1476517819528</created>
@@ -383,7 +328,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171678000" />
+    <option name="totallyTimeSpent" value="171917000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,15 +340,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="97" y="23" width="1695" height="988" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970357" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18814278" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19029851" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.49788263" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.50211734" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15789473" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15778251" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24984875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -486,414 +431,40 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/phone/haha.blade.php" />
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_scores">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_scores" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Phone/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -901,42 +472,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop_code" />
+    <entry file="dbDummy://dbtable:/e0b3397/ed59e29e-2673-4c59-8672-ba7e77f8e4b2/boyuantang.shop" />
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -966,37 +504,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/phone/login.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ShopController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        <state relative-caret-position="3542">
+          <caret line="160" column="14" selection-start-line="160" selection-start-column="14" selection-end-line="160" selection-end-column="14" />
+          <folding>
+            <element signature="e#46#71#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/phone/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="132">
           <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/phone/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+        <state relative-caret-position="22">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ShopController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3040">
-          <caret line="160" column="14" selection-start-line="160" selection-start-column="14" selection-end-line="160" selection-end-column="14" />
-          <folding>
-            <element signature="e#46#71#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,6 +555,6 @@
     </states>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAoJxMzJaX8kU83Oaqt+4YCsh0nU35XeNcYCE4IiLWfyKTDdBMeztnr+Ud9DgVSjyVE/QdTWcfIeC8rF5AShAPmz17piCAeoVubOqKLqnl39MSmzTu3U4yqnlzGEOOj9fd5Acgj/7LOI2S4c6Bi+vl3iLQr0Knmjp8mHNe9MMKBo3bHVZSIvAIJS1YZEaao6xXbRk7cHHp6uYOudISSzuo8WDpWSj61e8GnPDIEYUUt4Cn</data>
+    <data>AAAAsDHiFs6xfyVWla9/epUS3JLUGXAISxF/PzvoHvbA/yOq3UrwOkLKjzhGMcQ8fMw3+xMbchpPAGKqYKB8S0dIH5599QJ/pC9PUORg9jRjumMQEK+1HjGhwnTvBn6I3EKuaQ987EiN8JAW5q7ZfW1szBA/vqDQcGJU8QXpINFT0zprp4i3Vp9xJA3pM0ZLGtEbsKQSLlx5J15ZdUGLNlXb/cuFhsce33eegEpsImr06Uf49BKQiEKYucJn7eyn/FIbag==</data>
   </component>
 </project>

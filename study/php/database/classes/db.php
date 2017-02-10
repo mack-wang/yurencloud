@@ -523,4 +523,67 @@ class Database{
         echo '<script> try{console.log('. json_encode($debug[0]). ');}catch(e){}</script>';
     }
 
+    /*
+     * mySql聚合函数
+     * */
+
+    /*
+     * 计数
+     * @params String $select 要选择的字段名或者全部*,$table 要选择的表,[$where=null]可选参数，指定字段中的内容，比如name='linda'
+     * @return mixed 数据库删除信息
+     * */
+    function count($select,$table,$where=null){
+        if(!$where){
+            $query="SELECT COUNT(".$select.") FROM $table";
+        }else{
+            $query="SELECT COUNT(".$select.") FROM $table WHERE $where";
+        }
+
+        $result = self::sql($query);
+        $count = $result[0]['COUNT('.$select.')'];
+        return $count;
+    }
+
+    function count_distinct($select,$table,$where=null){
+        if(!$where){
+            $query="SELECT COUNT(DISTINCT ".$select.") FROM $table";
+        }else{
+            $query="SELECT COUNT(DISTINCT ".$select.") FROM $table WHERE $where";
+        }
+
+        $result = self::sql($query);
+        $count = $result[0]['COUNT(DISTINCT '.$select.')'];
+        return $count;
+    }
+
+    function figure($func,$select,$table,$where=null){
+        if(!$where){
+            $query="SELECT ".$func."(".$select.") FROM $table";
+        }else{
+            $query="SELECT ".$func."(".$select.") FROM $table WHERE $where";
+        }
+        $result = self::sql($query);
+        $count = $result[0][$func."($select)"];
+        return $count;
+    }
+
+    function figure_distinct($func,$select,$table,$where=null){
+        if(!$where){
+            $query="SELECT ".$func."(DISTINCT ".$select.") FROM $table";
+        }else{
+            $query="SELECT ".$func."(DISTINCT ".$select.") FROM $table WHERE $where";
+        }
+        $result = self::sql($query);
+        $countStr = "$func"."(DISTINCT ".$select.")";
+        $count = $result[0][$countStr];
+        return $count;
+    }
+
+    /*
+     * 取平均值
+     * @params String $select 要选择的字段名或者全部*,$table 要选择的表,[$where=null]可选参数，指定字段中的内容，比如name='linda',$distinct是否要去重
+     * @return mixed 数据库删除信息
+     * */
+
+
 }

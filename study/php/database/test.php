@@ -137,9 +137,142 @@ $db->log($arr4);
  * 统计函数
  * */
 
+//计数
+//原理
+$query_count = "SELECT COUNT(id) FROM user";
+$return1 = $db->sql($query_count);
+$db->log($return1[0]['COUNT(id)']);
+//封装1
+$return2 = $db->count('*','user');
+$db->log($return2);
+//封装2
+
+
+
+////原理
+//$query_count2 = "SELECT COUNT(DISTINCT name) FROM user";
+//$return3 = $db->sql($query_count2);
+//$db->log($return3[0]['COUNT(DISTINCT name)']);
+////封装
+$return4 = $db->count_distinct('name','user');
+$db->log($return4);
+
+
+
+/*
+ * 参数：聚合函数名，选择字段，表名，指定选择参数（where 可选）
+ * figure（）为包含重复，figure_distinct()为不含重复
+ *
+ * 聚合函数名有：avg 求平均值；count 计算非null值的个数；min 求最小值；max 求最大值；var_pop 方差；stddev_pop 标准差（var_pop平方根）; sum 求和；
+ * */
+//avg求平均值，要求值为数字
+$return5 = $db->figure('avg','age','user');
+$db->log($return5);
+//count计算非null的值的个数
+$return6 = $db->figure('count','*','user');
+$db->log($return6);
+//min 求最小值，要求值为数字
+$return7 = $db->figure('min','age','user');
+$db->log($return7);
+//var_pop 方差，要求值为数字
+$return8 = $db->figure('var_pop','age','user');
+$db->log($return8);
+//stddev_pop 方差平方根，要求值为数字
+$return9 = $db->figure('stddev_pop','age','user');
+$db->log($return9);
+//sum 求和，要求值为数字
+$return10 = $db->figure('sum','age','user');
+$db->log($return10);
+
+
+
+
+//$return100 = $db->figure_distinct('count','name','user');
+//$db->log($return100);
+
+/*
+a) 函数 AVG([DISTINCT] expr )
+函数使用说明：返回 expr 的平均值。 DISTINCT 选项可用于返回 expr 的不同值的平均值。
+b) 函数 BIT_AND(expr )
+函数使用说明：返回expr 中所有比特的 bitwise AND 。计算执行的精确度为64 比特(BIGINT) 。若找不到匹配的行，则这个函数返回1844 ( 这是无符号 BIGINT 值，所有比特被设置为 1 ）。
+c) 函数 BIT_OR(expr )
+函数使用说明：返回expr 中所有比特的bitwise OR 。计算执行的精确度为64 比特(BIGINT) 。若找不到匹配的行，则函数返回 0 。
+d) 函数BIT_XOR(expr )
+函数使用说明：返回expr 中所有比特的bitwise XOR 。计算执行的精确度为64 比特(BIGINT) 。若找不到匹配的行，则函数返回 0 。
+e) 函数 COUNT(expr )
+函数使用说明：返回SELECT 语句检索到的行中非NULL 值的数目。若找不到匹配的行，则COUNT() 返回 0
+f) 函数 COUNT(DISTINCT搜索 expr ,[expr ...])
+函数使用说明：返回不同的非NULL 值数目。若找不到匹配的项，则COUNT(DISTINCT) 返回 0
+g) 函数 GROUP_CONCAT(expr )
+函数使用说明：该函数返回带有来自一个组的连接的非NULL 值的字符串结果。其完整的语法如下所示：
+GROUP_CONCAT([DISTINCT] expr [,expr ...] [ORDER BY {unsigned_integer | col_name | expr }
+[ASC | DESC] [,col_name ...]]
+[SEPARATOR str_val ])
+h) 函数 MIN([DISTINCT] expr ), MAX([DISTINCT] expr )
+函数使用说明：返回 expr 的最小值和最大值。 MIN() 和 MAX() 的取值可以是一个字符串参数；在这些情况下， 它们返回最小或最大字符串值。
+i) 函数 STD(expr ) STDDEV(expr )
+函数使用说明：返回 expr 的总体标准偏差。这是标准 SQL 的延伸。这个函数的 STDDEV() 形式用来提供和 Oracle 的兼容性。可使用标准 SQL 函数 STDDEV_POP() 进行代替
+j) 函数 STDDEV_POP(expr )
+函数使用说明：返回expr 的总体标准偏差(VAR_POP() 的平方根) 。你也可以使用 STD() 或STDDEV(), 它们具有相同的意义，然而不是标准的 SQL 。若找不到匹配的行，则STDDEV_POP() 返回 NULL
+k) 函数 STDDEV_SAMP(expr )
+函数使用说明：返回expr 的样本标准差 ( VAR_SAMP() 的平方根) 。若找不到匹配的行，则STDDEV_SAMP() 返回 NULL
+l) 函数 SUM([DISTINCT] expr )
+函数使用说明：返回expr 的总数。 若返回集合中无任何行，则 SUM() 返回NULL 。DISTINCT 关键词可用于 MySQL 5.1 中，求得expr 不同值的总和。 若找不到匹配的行，则SUM() 返回 NULL
+m) 函数 VAR_POP(expr )
+函数使用说明：返回 expr 总体标准方差。它将行视为总体，而不是一个样本， 所以它将行数作为分母。你也可以使用 VARIANCE(), 它具有相同的意义然而不是 标准的 SQL
+n) 函数 VAR_SAMP(expr )
+函数使用说明：返回expr 的样本方差。更确切的说，分母的数字是行数减去1 。若找不到匹配的行，则VAR_SAMP() 返回NULL
+o) 函数VARIANCE(expr )
+函数使用说明：返回expr 的总体标准方差。这是标准SQL 的延伸。可使用标准SQL 函数 VAR_POP() 进行代替。若找不到匹配的项，则VARIANCE() 返回NULL
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //统计数组中项的总个数
-$all = $db->getField('name');
+/*$all = $db->getField('name');
 $db->log(count($all));
+var_dump($table_msg);
+echo '<br><br>';
+print_r($table_msg);*/
 
 
 //统计数组中不重复的个数
@@ -285,3 +418,5 @@ dump($res);*/
 //dump($table_msg);
 //$res = mysqli_close($dbObj);
 //dump($res);*/
+
+
