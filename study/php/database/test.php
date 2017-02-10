@@ -183,12 +183,9 @@ $db->log($return9);
 //sum 求和，要求值为数字
 $return10 = $db->figure('sum','age','user');
 $db->log($return10);
-
-
-
-
-//$return100 = $db->figure_distinct('count','name','user');
-//$db->log($return100);
+//以上均可使用figure_distinct()去重
+$return100 = $db->figure_distinct('count','name','user');
+$db->log($return100);
 
 /*
 a) 函数 AVG([DISTINCT] expr )
@@ -229,14 +226,28 @@ o) 函数VARIANCE(expr )
 */
 
 
+/*
+ * 联表查询
+ * */
+//内联接 只有一种情况
+//inner join，join(得到a,b的交集)
+//select a.*, b.* from tablea a inner join tableb b on a.id = b.id
+$query100 = "select  shop.shopname, user.name  from shop join user on shop.owner = user.id group by user.id ";
+$arr100 = $db->sql($query100);
+$db->log($arr100);
 
 
+//外连接 有六种情况
+//left join 或者left outer join(等同于left join)
+//select a.*, b.* from tablea a left join tableb b on a.id = b.id  (得到a,b的交集 + a的全集)
+//select a.id aid,a.age,b.id bid,b.name from tablea a left join tableb b on a.id = b.id Where b.id is null  (得到a的全集 - a,b的交集)
+//select a.id aid,a.age,b.id bid,b.name from tablea a right join tableb b on a.id = b.id  (得到a,b的交集 + b的全集)
+//select a.id aid,a.age,b.id bid,b.name from tablea a right join tableb b on a.id = b.id where a.id is null  (得到b的全集 - a,b的交集)
+//select a.id aid,a.age,b.id bid,b.name from tablea a left join tableb b on a.id = b.id union select a.id aid,a.age,b.id bid,b.name from tablea a right join tableb b on a.id = b.id  (a全集+a,b的交集+b全集)
+//select a.id aid,a.age,b.id bid,b.name from tablea a left join tableb b on a.id = b.id where b.id is null union select a.id aid,a.age,b.id bid,b.name from tablea a right join tableb b on a.id = b.id where a.id is null  (a全集+b全集-a,b的交集)
 
 
-
-
-
-
+//交叉连接 （cross join）不介绍了
 
 
 
