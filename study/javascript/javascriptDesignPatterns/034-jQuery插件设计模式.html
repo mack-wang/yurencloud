@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<style>
+    .beRed {
+        color: red;
+    }
+</style>
+<body>
+<div id="box1">hello</div>
+<ul id="ul1">
+    <li class="li1">hello1</li>
+    <li class="li1">hello2</li>
+    <li class="li1">hello3</li>
+    <li class="li1">hello4</li>
+    <li class="li1">hello5</li>
+</ul>
+
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+    /*
+    *
+    1、注意$变量可能会产生的冲突问题
+    例如我们原先可以简单的为jQuery.fn添加一个新函数属性来编写插件
+    $.fn.myPluginName = fuction(){};
+
+    但是，更好的做法是：可以保证不会和其他的js库在$的问题上产生冲突
+    （function ($){
+        $.fn.myPluginName = fuction(){};
+    }）(jQuery);
+    还有一种做法是，可以同时写多个函数：
+     （function ($){
+     $.extend($.fn,{
+        myPlugin1:function(){
+            ...
+        };
+        myPlugin2:function(){
+            ...
+        };
+     })
+     }）(jQuery);
+
+
+    2、分号放在函数调用之前
+
+    3、window,document和undefined作为参数传入
+
+    4、基本的默认对象
+
+    5、 简单的插件构造函数，用于与初始化创建相关的逻辑，以及用于所使用元素的赋值
+
+    6、扩展有默认值的选项
+
+    7、构造函数周围的lightweight包装器，帮助避免多实例等问题
+
+    以上的优化示例，如下所示：
+
+    * */
+
+    ;(function ($,window,document,undefined) {
+        //这里使用的undefined是ECMAScript 3里的全局变量undefined，是可以修改的，undefined没有真正传进来，以便可以确保该值是真正的undefined，当然，在ES5中，undefined是不可修改的。
+        //window和document传递进来作为局部变量存在，而非全局变量，因为这可以加快解析流程以及影响最小化（尤其是同时引用一个插件的时候）
+        //创建默认值
+        var pluginName = "defaultPluginName",
+                default ={
+            propertyName:"value"
+        };
+
+        or
+
+        //真正的插件构造函数
+        function Plugin(element,option) {
+            this.element = element;
+
+            //jQuery有个extend方法用于将两个或多个对象合并在一起，在第一个对象里进行排序，第一个对象通常为空，因为我们不想为插件的新实例影响默认的option选项。
+            this.options= $.extend({},defaults,options);
+
+            this._defaults = defaults;
+            this._name = pluginName;
+            this.init();
+        }
+
+        Plugin.prototype.init = function () {
+            //这里处理初始化逻辑
+            //已经可以访问DOM，并且通过实例访问options，例如this.element，this.options
+
+        };
+
+        //真正的插件包装，防止出现多实例
+        $.fn[pluginName]=function (options) {
+            return this.each(function(){
+                if(!$.data(this,"plugin_"+pluginName)){
+                    $.data(this,"plugin_"+pluginName,new Plugin(this,options));
+                }
+            });
+        }
+    })(jQuery,window,document);
+
+
+
+</script>
+</html>

@@ -423,6 +423,16 @@ address varchar(255),
 city varchar(255)
 )
 
+--zerofill 值默认为0
+create table persons
+(
+id_p int not null zerofill,
+lastname varchar(255) not null,
+firstname varchar(255),
+address varchar(255),
+city varchar(255)
+)
+
 --unique 值不允许重复
 create table persons
 (
@@ -591,3 +601,39 @@ o) 函数variance(expr )
 函数使用说明：返回expr 的总体标准方差。这是标准sql 的延伸。可使用标准sql 函数 var_pop() 进行代替。若找不到匹配的项，则variance() 返回null
 
 */
+
+
+/*
+msyql支持MyISAM,InnoDB等多种数据类型。
+在创建一个数据表时，可以为它设置一个类型。
+MyISAM优点：响应快，支持全文索引，空间占用量比InnoDB小，但功能，安全，备份比InnoDB差；
+InnoDB优点：提供提交，回滚，崩溃恢复，安全，支持外键，可与其他类型混合使用。
+使用方法：
+create table table_name (i int) engine = innodb;
+create table table_name (i int) engine = myisam;
+
+*/
+
+--修改字符集 在mysql的配置文件中，比如linux下  /etc/my.cnf
+-- character-set-server = gbk 字符集
+--collation-server = gbk_chinese_ci 排序方式
+--或命令的形式  create database if not exists mydb default character set utf8 collate utf8_general_ci;
+
+
+/*
+创建全文索引的使用
+select book_name,price from books where match(detail) against('hello'); 全文索引的使用
+select match(detail) against('hello') from books;
+
+*/
+
+--fulltext 创建全文索引
+create table persons
+(
+p_id int not null auto_increment,
+lastname varchar(255) not null,
+firstname varchar(255),
+address varchar(255),
+city varchar(255),
+fulltext (city) 创建全文索引
+)

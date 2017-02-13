@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<style>
+    .beRed {
+        color: red;
+    }
+</style>
+<body>
+<div id="box1">hello</div>
+<ul id="ul1">
+    <li class="li1">hello1</li>
+    <li class="li1">hello2</li>
+    <li class="li1">hello3</li>
+    <li class="li1">hello4</li>
+    <li class="li1">hello5</li>
+</ul>
+
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+
+    //1、单一全局变量
+    // 优点是比较简单好用，缺点是不能保证其他人不会用相同的名字
+    var myNamespace = (function () {
+        funciton()
+        {
+            //写属性和函数
+        }
+        return {
+            //返回属性和函数
+        }
+    })();
+
+    //2、命名空间前缀
+    //优点可以有效避免命名空间同名，缺点会在全局上注册大量的对象
+    var myNamespace_fn1 = function () {
+    };
+    var myNamespace_fn2 = function () {
+    };
+    var myNamespace_fn3 = function () {
+    };
+
+    //3、对象字面量表示法
+    //优点像键值对一样，写函数和属性，不会污染全局命名空间，也能有效有逻辑的组织代码和参数
+    var myNamespace = {
+        fn1: function () {
+        },
+        fn2: function () {
+        },
+        name: 'tom',
+        myobject: {}
+    };
+    // 或
+    myNamespace.fn3 = function () {
+    };
+    myNamespace.fn4 = function () {
+    };
+    myNamespace.name2 = 'bob';
+
+    //4、在使用对象字面量表示法时，要注意先检查全局变量上是否已经存在同名的命名空间了
+    if (myNamespace) {
+        var myNamespace = {
+            fn1: function () {
+            },
+            fn2: function () {
+            },
+            name: 'tom',
+            myobject: {}
+        }
+    } else {
+        return new Error('该命名空间已经被注册');
+    }
+
+    //或
+
+    var myNamespace = myNamespace || {};
+    // 5、嵌套命名空间
+    //就是创建一套有多层嵌套的命名空间，可以避免与他人冲突
+    myNamespace.util.Dom.getElementsByClassName("test");
+    // 这样多层的命名空间很少会冲突，还能有效的组织代码，在大型的应用程序中，也经常用到这种方法，同时也已经有人测试过，虽然经过了多层嵌套，在执行某个函数时，可能要经过多层是查找，但是，这点性能损失是微不足道的，可以忽略。
+
+
+    //6、立即调用的函数表达式 IIFE
+
+    //IIFE示例
+    //匿名的立即调用的函数表达式
+    (function () { ...
+    })();
+
+    //立即调用的有名的函数表达式
+    (function foobar() { ...
+    })();
+
+    //自执行的函数
+    function foobar() {
+        foobar();
+    }
+
+    //****应用示例
+
+    //原本我们在全局上创建命名空间
+    var myNamespace = myNamespace || {};
+    现在我们可以
+    (function (o) {
+        o.foo = "foo";
+        o.bar = function () {
+            return "bar";
+        };
+    })(myNamespace);  //优点：具有可读性，同时可以进行极大的扩展，以解决常见的开发问题，如定义私有级别，命名空间的扩展
+
+    ;
+    (function (namespace, undefined) {
+        //私有属性
+        var foo = "foo",
+                bar = "bar";
+
+        //公有方法和属性
+        namespace.foobar = "foobar";
+        namespace.sayHello = function () {
+            speak("hello world");
+        };
+
+        //私有方法
+        function speak(msg) {
+            console.log('you said:' + msg);
+
+        }
+
+    })(window.namespace = window.namespace || {});
+
+    //在全局命名空间内检测namespace是否存在，如果不存在，就在全局上注册
+
+
+    //7、命名空间注入
+    //命名空间注入是IIFEr另一个变体，我们从函数包装器内部为一个特定的命名空间"注入"方法和属性，使用this作为命名空间代理。这种械的好处是易于将功能行为应用到多个对象或命名空间。
+
+
+    //8、高级命名空间模式：自动嵌套的命名空间
+    //前面我们提过，嵌套的命名空间的方式，例如想要实现 application.utilities.drawing.canvas.line方法，我们可以使用对象字面量将它扩展：
+    var application = {
+        utilities: {
+            drawing: {
+                canvas: {
+                    line: function () {
+                        console.log('draw line');
+                    }
+                }
+            }
+        }
+    };
+    //这样做的好处很多，但是每次都要写这么多层很麻烦
+    //所以有人提炼出了一个自动创建多层嵌套的方法
+    var myApp = myApp || {};
+    //通用函数，解析命名空间字符串，并自动生成嵌套的命名空间
+    function extend(namespace,namespaceString){
+        var parts = namespaceString.split("."),
+                parent = namespace,
+                parentLen;
+        parentLen = parts.length;
+        for(var i =0;i<parentLen;i++){
+            //属性如果不存在，则创建它
+            if(typeof parent[parts[i]] === "undefined"){
+                parent[parts[i]]={};
+            }
+            parent = parent[parts[i]]
+        }
+
+        return parent;
+    }
+    //用法：
+    //给myApp扩展支持深度嵌套命名空间
+    var mod = extend(myApp,"modules.module2");
+    extend(myApp,"moduleA.moduleB.moduleC.moduleD");
+    extend(myApp,"longer.version.looks.like.this");
+
+
+    //9、 深度对象扩展，可以在同一个命名空间下，把新的对象添加进来，在相同的命名空间下，访问这些新对象的属性和函数。
+    //在jQuery中，有$.extend可以把外部对象，扩展到jQuery命名空间中
+    //如果使用原生的js扩展对象（命名空间），可以使用下面的这段代码
+    //extend.js
+    function extend(destination,source){
+        var toString = Object.prototype.toString,objTest = toString.call({});
+
+        for(var property in source){
+            if(source[property] && objTest === toString.call(source[property])){
+                destination[property]=destination[property]||{};
+                extend(destination[property],source[property]);
+            }else{
+                destination[property]=source[property];
+            }
+        }
+        return destination;
+    }
+
+
+
+
+</script>
+</html>

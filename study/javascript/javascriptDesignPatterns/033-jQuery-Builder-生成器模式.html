@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScriptDesignPatterns</title>
+</head>
+<style>
+    .beRed {
+        color: red;
+    }
+</style>
+<body>
+<div id="box1">hello</div>
+<ul id="ul1">
+    <li class="li1">hello1</li>
+    <li class="li1">hello2</li>
+    <li class="li1">hello3</li>
+    <li class="li1">hello4</li>
+    <li class="li1">hello5</li>
+</ul>
+
+</body>
+<script src="js/jquery-3.1.1.js"></script>
+<script>
+    /*
+    Builder 生成器模式
+
+     有时候我们需要动态的创建一些元素，让该元素具有一定的初始属性，标记，特性
+     */
+    $('<div class="foo">bar</div>').appendTo('body');
+
+
+
+</script>
+</html>

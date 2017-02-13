@@ -5,8 +5,8 @@
     <title>JavaScriptDesignPatterns</title>
 </head>
 <style>
-    .beRed{
-        color:red;
+    .beRed {
+        color: red;
     }
 </style>
 <body>
@@ -32,15 +32,26 @@
 
     //jQuery.on(type,selector,data,fn,[one]) 订阅，jQuery.trigger() 推送消息， jQuery.off() 取消订阅
 
+    /*    jQuery 1.7 新增该函数。其主要有以下两种形式的用法：
 
+     用法一：
 
+     jQueryObject.off( [ events [, selector ] [, handler ] ] )
+     用法二：
 
+     jQueryObject.off( eventsMap [, selector ] )*/
 
-
-
-
-    
-
+    //on是订阅的作用，用与给元素绑定事件，指定事件的内容
+//    $('.li1').on('click', function (data) {
+//        $(this).css('color', 'red');
+//    });
+//
+//    //off是专门用来取消事件的
+//    $('.li1:gt(2)').off('click');
+//
+//    //trigger是推送消息，即立即执行on的命令
+//    $('.li1').trigger('click');
+//
 
 
 
