@@ -47,8 +47,8 @@
 
 </body>
 <!--<script src="js/jquery-3.1.1.min.js"></script>-->
-<script src="js/YU-2.0.0.js"></script>
-<!--<script src="js/YU-2.0.1.min.js"></script>-->
+<script src="dist/YU-2.0.2.js"></script>
+<!--<script src="js/YU-2.0.2.min.js"></script>-->
 <script>
     console.log(window.YU);
     console.log(window.$);
@@ -369,21 +369,21 @@
      * 返回：转换后的字符串
      * */
     //因为IE7，IE8中没有JSON.stringify所以先注释掉
-//    var book = {
-//        title: "javascript",
-//        authors: [
-//            "tom",
-//            "cindy2"
-//        ],
-//        edition: 3,
-//        year: 2016
-//    };
-//    //把js对象转成JSON对象，使用JSON类下的stringify()方法
-//    var jsonText = JSON.stringify(book);
-//
-//    //把JSON对象，转成js对象
-//    var book2 = YU.parseJSON(jsonText);
-//    console.log(book2);
+    //    var book = {
+    //        title: "javascript",
+    //        authors: [
+    //            "tom",
+    //            "cindy2"
+    //        ],
+    //        edition: 3,
+    //        year: 2016
+    //    };
+    //    //把js对象转成JSON对象，使用JSON类下的stringify()方法
+    //    var jsonText = JSON.stringify(book);
+    //
+    //    //把JSON对象，转成js对象
+    //    var book2 = YU.parseJSON(jsonText);
+    //    console.log(book2);
 
     /* 以下ajax测试成功，为了不打扰其他测试，故注释掉了，想测试ajax取消注释，并以http形式打开本页 */
 
@@ -416,17 +416,17 @@
      PS: IE7+、Firefox、Opera、Chrome 和Safari 都支持原生的XHR 对象，在这些浏览器中创建XHR对象可以直接实例化XMLHttpRequest 即可,如果是IE6 及以下，那么我们必须还需要使用ActiveX 对象来实现。在低版本IE 浏览器可能会遇到不同版本的XHR 对象，所以将它们放到一个数组里，然后循环，尝试创建一个XHR对象，若成功，则终止循环。然后调用该函数即可创建一个XHR对象：
      */
     /*YU.ajax({
-        method: 'get',
-        url: 'form11.php',
-        data: {
-            'username': 'JR',
-            'age': 22
-        },
-        success: function (message) {
-            console.log("服务器已经收到你的用户名2：" + message);
-        },
-        async: true
-    });*/
+     method: 'get',
+     url: 'form11.php',
+     data: {
+     'username': 'JR',
+     'age': 22
+     },
+     success: function (message) {
+     console.log("服务器已经收到你的用户名2：" + message);
+     },
+     async: true
+     });*/
 
 
     /*
@@ -566,8 +566,8 @@
      */
     log.header('我是执行结果的自定义标题');
     log.write('我是执行结果的返回 Message');
-    log.section('我是标题，效果同header','我是内容，效果同write');
-    log.section('我是标题，效果同header','我是内容，效果同write','我是内容，效果同write1');
+    log.section('我是标题，效果同header', '我是内容，效果同write');
+    log.section('我是标题，效果同header', '我是内容，效果同write', '我是内容，效果同write1');
     log.section('我是内容，效果同write2');
     log.header();
     log.write();
@@ -595,10 +595,10 @@
     log.header('是否是数值');
     log.write(YU.isNumeric(str9));
     log.write(YU.isEmptyObject(obj));
-    log.section('我是是否是数值的标题',YU.isNumeric(str9));
+    log.section('我是是否是数值的标题', YU.isNumeric(str9));
     log.section('我是是否是数值的标题2');
-    log.write('haha','haha','haha');
-    log.write('haha'+'haha'+'haha');
+    log.write('haha', 'haha', 'haha');
+    log.write('haha' + 'haha' + 'haha');
 
 
     /*
@@ -640,6 +640,78 @@
     //为document.getElementsByClassName()方法创建简便方法c()
     console.log(YU.c('ulclass'));
     console.log(c('ulclass').nodeType);
+
+
+    /*
+     * 作用：计算函数运行时间
+     * 参数：fn 要计算运行时间的函数
+     * 返回：四舍五入后的运行时间，微秒
+     * */
+
+    function fun10() {
+        console.log('我正在运行1');
+    }
+
+    YU.run(fun10);//不仅会返回运行时间，还会用log.write()输出
+
+    /*
+     * 作用：比较两个函数的运行时间
+     * 参数：orignalFunc 原函数，compareFunc 比较函数
+     * 返回：二者的运行时间和比较的倍数
+     * */
+    function fun11() {
+        console.log('我正在运行2');
+    }
+
+    YU.runCompare(fun10, fun11);//不仅会返回比较的倍数，还会用log.write()输出
+
+
+    /*
+     * 作用：将对象转成数组
+     * 参数：obj 对象
+     * 返回：只保留对象的值的数组
+     * */
+
+    var obj10 = {
+        name: 'tom',
+        age: 23,
+        say: 'hello'
+    };
+
+    var obj10Arr = YU.objectToArray(obj10);
+    console.log(obj10Arr);
+
+
+    /*
+     * 作用：获取对象长度
+     * 参数：obj 对象
+     * 返回：对象的length
+     * */
+
+    console.log(YU.getLength(obj10));
+
+    /*
+     * 作用：创建多层嵌套的命名空间
+     * 参数：namespace 要扩展的命名空间对象，namespaceString 命名空间字符串，例如namespace.util.array.mypush;
+     * 返回：扩展后的命名空间
+     * */
+
+    var myNamespace = {};
+    YU.extendNamespace(myNamespace, 'util.canvas.draw.line');
+    myNamespace.util.canvas.draw.line = function () {
+        console.log('我画了一条直线')
+    };
+    myNamespace.util.canvas.draw.line();
+    console.log(myNamespace);//可以查看到多层嵌套
+
+    /*
+     * 作用：将其他对象扩展到命名空间中
+     * 参数：destination 要扩展的命名空间目标，source 对象来源
+     * 返回：增加了新对象的命名空间
+     * */
+
+    YU.extend(myNamespace,obj10);
+    console.log(myNamespace);
 
 
 </script>

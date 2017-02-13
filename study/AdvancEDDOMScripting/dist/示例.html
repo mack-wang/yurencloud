@@ -47,8 +47,8 @@
 <div id="box3" class="draggable" style="width: 100px;height: 100px;background-color: blue; position: absolute;"></div>
 
 </body>
-<script src="YU-2.0.1.js"></script>
-<!--<script src="YU-2.0.1.min.js"></script>-->
+<!--<script src="YU-2.0.2.js"></script>-->
+<script src="YU-2.0.2.min.js"></script>
 <script>
     console.log(window.YU);
     console.log(window.$);
@@ -640,6 +640,78 @@
     //为document.getElementsByClassName()方法创建简便方法c()
     console.log(YU.c('ulclass'));
     console.log(c('ulclass'));
+
+
+    /*
+     * 作用：计算函数运行时间
+     * 参数：fn 要计算运行时间的函数
+     * 返回：四舍五入后的运行时间，微秒
+     * */
+
+    function fun10() {
+        console.log('我正在运行1');
+    }
+
+    YU.run(fun10);//不仅会返回运行时间，还会用log.write()输出
+
+    /*
+     * 作用：比较两个函数的运行时间
+     * 参数：orignalFunc 原函数，compareFunc 比较函数
+     * 返回：二者的运行时间和比较的倍数
+     * */
+    function fun11() {
+        console.log('我正在运行2');
+    }
+
+    YU.runCompare(fun10, fun11);//不仅会返回比较的倍数，还会用log.write()输出
+
+
+    /*
+     * 作用：将对象转成数组
+     * 参数：obj 对象
+     * 返回：只保留对象的值的数组
+     * */
+
+    var obj10 = {
+        name: 'tom',
+        age: 23,
+        say: 'hello'
+    };
+
+    var obj10Arr = YU.objectToArray(obj10);
+    console.log(obj10Arr);
+
+
+    /*
+     * 作用：获取对象长度
+     * 参数：obj 对象
+     * 返回：对象的length
+     * */
+
+    console.log(YU.getLength(obj10));
+
+    /*
+     * 作用：创建多层嵌套的命名空间
+     * 参数：namespace 要扩展的命名空间对象，namespaceString 命名空间字符串，例如namespace.util.array.mypush;
+     * 返回：扩展后的命名空间
+     * */
+
+    var myNamespace = {};
+    YU.extendNamespace(myNamespace, 'util.canvas.draw.line');
+    myNamespace.util.canvas.draw.line = function () {
+        console.log('我画了一条直线')
+    };
+    myNamespace.util.canvas.draw.line();
+    console.log(myNamespace);//可以查看到多层嵌套
+
+    /*
+     * 作用：将其他对象扩展到命名空间中
+     * 参数：destination 要扩展的命名空间目标，source 对象来源
+     * 返回：增加了新对象的命名空间
+     * */
+
+    YU.extend(myNamespace,obj10);
+    console.log(myNamespace);
 
 
 </script>

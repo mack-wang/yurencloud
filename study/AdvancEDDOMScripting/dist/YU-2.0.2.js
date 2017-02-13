@@ -14,12 +14,15 @@
  *
  * 修改：1、当$(),d(),c()没有获取到对象时返回null 2、添加性能测试run,runCompare方法 3、添加直接删除单个元素或多个元素remove方法
  * 版本：version 2.0.1 20170209
+ *
+ * 修改：1、objectToArray()将对象转成数组，2、getLength()获取对象的长度，即拥有的属性方法的数量。3、extendNamespace()扩展嵌套命名空间。4、extend扩展新对象到命名空间中
+ * 版本：version 2.0.2 20170213
  */
 
 (function () {
     var yuObj = {},
         toString = yuObj.toString,
-        version = '2.0.1';
+        version = '2.0.2';
 
     /*
      * 选择器
@@ -1545,6 +1548,72 @@
             var times = (a / b).toFixed(1);
             log.header('性能比较结果：');
             log.write('前者是后者的:' + times + '倍');
+            return times;
+        },
+
+        /*
+         * 作用：将对象转成数组
+         * 参数：obj 对象
+         * 返回：只保留对象的值的数组
+         * */
+        objectToArray: function (obj) {
+            var arr = [];
+            for (var item in obj) {
+                arr.push(obj[item]);
+            }
+            return arr;
+        },
+
+        /*
+         * 作用：获取对象长度
+         * 参数：obj 对象
+         * 返回：对象的length
+         * */
+        getLength: function (obj) {
+            var length = 0;
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) length++;
+            }
+            return length;
+        },
+
+        /*
+         * 作用：创建多层嵌套的命名空间
+         * 参数：namespace 要扩展的命名空间对象，namespaceString 命名空间字符串，例如namespace.util.array.mypush;
+         * 返回：扩展后的命名空间
+         * */
+        extendNamespace: function (namespace, namespaceString) {
+            var parts = namespaceString.split("."),
+                parent = namespace,
+                parentLen;
+            parentLen = parts.length;
+            for (var i = 0; i < parentLen; i++) {
+                //属性如果不存在，则创建它
+                if (typeof parent[parts[i]] === "undefined") {
+                    parent[parts[i]] = {};
+                }
+                parent = parent[parts[i]]
+            }
+            return parent;
+        },
+
+        /*
+         * 作用：将其他对象扩展到命名空间中
+         * 参数：destination 要扩展的命名空间目标，source 对象来源
+         * 返回：增加了新对象的命名空间
+         * */
+        extend: function (destination, source) {
+            var toString = Object.prototype.toString, objTest = toString.call({});
+
+            for (var property in source) {
+                if (source[property] && objTest === toString.call(source[property])) {
+                    destination[property] = destination[property] || {};
+                    extend(destination[property], source[property]);
+                } else {
+                    destination[property] = source[property];
+                }
+            }
+            return destination;
         }
 
     };
