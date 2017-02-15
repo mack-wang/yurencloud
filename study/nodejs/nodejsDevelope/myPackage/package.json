@@ -1,0 +1,28 @@
+{
+  "main": "./lib/interface.js",
+  "name": "mypackage",
+  "version": "1.0.2",
+  "description": "alert your name",
+  "dependencies": {
+    "chart": "^0.1.2",
+    "install": "^0.8.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "hello function"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mack-wang/yurencloud.git"
+  },
+  "keywords": [
+    "hello",
+    "yurencloud.git"
+  ],
+  "author": "mack wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mack-wang/yurencloud/issues"
+  },
+  "homepage": "https://github.com/mack-wang/yurencloud#readme"
+}
