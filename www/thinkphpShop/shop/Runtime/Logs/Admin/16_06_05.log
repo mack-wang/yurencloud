@@ -1,6 +1,0 @@
-[ 2016-06-05T21:21:58+08:00 ] ::1 /tp/shop/index.php/Admin/Goods/showlist
-ERR: Syntax Error in template "E:/wamp/www/tp/shop/Admin/View\Goods\showlist.html"  on line 47 "{foreach $info $k as $v}"  - Unexpected " as ", expected one of: "}" , " "
-
-[ 2016-06-05T21:22:38+08:00 ] ::1 /tp/shop/index.php/Admin/Goods/showlist
-ERR: Syntax Error in template "E:/wamp/www/tp/shop/Admin/View\Goods\showlist.html"  on line 70 "&lt;/html&gt;" unclosed {foreach} tag
-
