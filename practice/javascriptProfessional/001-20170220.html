@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../study/AdvancEDDOMScripting/dist/YU-2.0.2.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+    "use strict";
+    var a = 12345;
+    var a1 = 'hello12345';
+    var a2 = '12345hello';
+    var a3 = '12.345hello';
+    var b = "hello";
+    var c = [1, 2, 3, 4, 5];
+    var d = {name: "tom", age: 23};
+    var e = function () {
+        console.log('e');
+    };
+    console.warn('typeof 检测数据类型');
+    console.log(typeof a, typeof b, typeof c, typeof d, typeof e);
+
+    console.warn('isNaN 是否为非数值');
+    console.log(isNaN(a), isNaN(b), isNaN(c), isNaN(d), isNaN(e));
+
+    console.warn('isFinite 数值是否有穷');
+    console.log(isFinite(a), isFinite(b), isFinite(c), isFinite(d), isFinite(e));
+    console.log(isFinite(4 / 2), isFinite(1 / 9));
+
+    console.warn('Number parseInt parseFloat 转成数值和浮点数');
+    console.log(Number(a1), Number(a2), parseInt(a1), parseInt(a2), parseFloat(a3));
+
+    console.warn('toString String 转成字符串');
+    console.log(a, a.toString(), String(a));
+
+    function hello() {
+        console.warn('arguments 保存参数的数组');
+        console.log(arguments);
+    }
+    hello(['tom', 'cindy', 'linda']);
+
+    console.warn('instanceof 对象 是否是某一种 类型');
+    console.log(b instanceof Object, c instanceof Array, e instanceof Function);
+
+
+</script>
+</html>
