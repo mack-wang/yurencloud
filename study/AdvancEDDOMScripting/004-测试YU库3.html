@@ -415,7 +415,7 @@
      *
      PS: IE7+、Firefox、Opera、Chrome 和Safari 都支持原生的XHR 对象，在这些浏览器中创建XHR对象可以直接实例化XMLHttpRequest 即可,如果是IE6 及以下，那么我们必须还需要使用ActiveX 对象来实现。在低版本IE 浏览器可能会遇到不同版本的XHR 对象，所以将它们放到一个数组里，然后循环，尝试创建一个XHR对象，若成功，则终止循环。然后调用该函数即可创建一个XHR对象：
      */
-    /*YU.ajax({
+    YU.ajax({
      method: 'get',
      url: 'form11.php',
      data: {
@@ -426,7 +426,7 @@
      console.log("服务器已经收到你的用户名2：" + message);
      },
      async: true
-     });*/
+     });
 
 
     /*

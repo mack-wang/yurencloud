@@ -47,9 +47,11 @@
 
 </body>
 <!--<script src="js/jquery-3.1.1.min.js"></script>-->
-<script src="js/YU-1.0.0.js"></script>
+<script src="js/YU-2.1.0.js"></script>
 <!--<script src="js/YU-2.0.2.min.js"></script>-->
 <script>
+    console.log(window.YU);
+    console.log(window.$);
     /*YU.js库使用测试*/
 
     /*
@@ -65,15 +67,15 @@
      * 参数：单个或多个id值
      * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
      * */
-    console.log('通过id值获取单个元素或多个元素1:' + YU.$('xiaoming').id);
-    console.log('通过id值获取单个元素或多个元素2:' + YU.$('xiaoming', 'xiaohong', 'dingding'));
+    console.log('通过id值获取单个元素或多个元素1:' + YU.d('xiaoming').id);
+    console.log('通过id值获取单个元素或多个元素2:' + YU.d('xiaoming', 'xiaohong', 'dingding'));
 
     /*
      * 作用：添加事件
      * 参数：element 绑定事件的元素 | type 事件类型 不加on | fn 回调函数
      * 返回：无
      * */
-    YU.addEvent(YU.$('xiaoming'), 'click', function () {
+    YU.addEvent(YU.d('xiaoming'), 'click', function () {
         console.log('添加事件1:' + '成功')
     });
 
@@ -82,7 +84,7 @@
      * 参数：event 事件对象
      * 返回：无
      * */
-    YU.addEvent(YU.$('container'), 'click', function (event) {
+    YU.addEvent(YU.d('container'), 'click', function (event) {
         YU.stopPropagation(event);
     });
 
@@ -91,7 +93,7 @@
      * 参数：event 事件对象
      * 返回：无
      * */
-    YU.addEvent(YU.$('openbaidu'), 'click', function (event) {
+    YU.addEvent(YU.d('openbaidu'), 'click', function (event) {
         YU.preventDefault(event);
         console.log('停止默认事件1:' + '成功')
     });
@@ -101,7 +103,7 @@
      * 参数：W3CEvent 符合W3C事件对象规则的事件对象
      * 返回：事件对象
      * */
-    YU.addEvent(YU.$('xiaohong'), 'click', function (event) {
+    YU.addEvent(YU.d('xiaohong'), 'click', function (event) {
         var event = YU.getEvent(event);
         console.log('获取事件对象（主要为了兼容所有浏览器）:');
         console.log(event)
@@ -112,7 +114,7 @@
      * 参数：event 事件对象
      * 返回：事件作用的元素
      * */
-    YU.addEvent(YU.$('dingding'), 'click', function (event) {
+    YU.addEvent(YU.d('dingding'), 'click', function (event) {
         var target = YU.getTarget(event);
         console.log('访问事件的目标元素，兼容IE:');
         console.log(target);
@@ -123,7 +125,7 @@
      * 参数：event 事件对象
      * 返回：button对象，包含0，1，2三个属性，0左键，1中键，2右键
      * */
-    YU.addEvent(YU.$('xiaoming1'), 'click', function (event) {
+    YU.addEvent(YU.d('xiaoming1'), 'click', function (event) {
         var button = YU.getMouseButton(event);
         console.log('获取事件中鼠标按键值');
         console.log(button);
@@ -134,7 +136,7 @@
      * 参数：event 事件对象
      * 返回：坐标对象，包含x，y属性
      * */
-    YU.addEvent(YU.$('mousepoint'), 'mouseover', function (event) {
+    YU.addEvent(YU.d('mousepoint'), 'mouseover', function (event) {
         var point = YU.getPointer(event);
         console.log('获取鼠标相对文档的坐标（而非浏览器窗口）');
         console.log(point);
@@ -145,11 +147,11 @@
      * 参数：element 要移除事件的元素 | type 要移除事件类型 不加on | fn 要移除的回调函数
      * 返回：无
      * */
-    YU.addEvent(YU.$('xiaohong1'), 'click', sayname);
+    YU.addEvent(YU.d('xiaohong1'), 'click', sayname);
     function sayname(e) {
         console.log(e.target.innerHTML)
     }
-    YU.removeEvent(YU.$('xiaohong1'), 'click', sayname);//成功
+    YU.removeEvent(YU.d('xiaohong1'), 'click', sayname);//成功
 
 
     /*
@@ -157,7 +159,7 @@
      * 参数：className 元素的class值 | tag 元素的标签名 必填 | parent 元素的父元素 可选
      * 返回：匹配后的元素数组
      * */
-    console.log(YU.getElementsByClassName('ulclass', 'ul', YU.$('container')));
+    console.log(YU.getElementsByClassName('ulclass', 'ul', YU.d('container')));
     log.header('class选择器');
     log.write(YU.getElementsByClassName('ulclass'));
 
@@ -166,7 +168,7 @@
      * 参数：node 要隐藏或者显示的元素 | value 显示时要设置的display值 可选
      * 返回：布尔值
      * */
-    YU.toggleDisplay(YU.$('xiaoming2'));
+    YU.toggleDisplay(YU.d('xiaoming2'));
 
 
     /*
@@ -176,14 +178,14 @@
      * */
     var newdiv = document.createElement('div');
     newdiv.innerHTML = '小张2';
-    YU.insertAfter(newdiv, YU.$('xiaohong2'));
+    YU.insertAfter(newdiv, YU.d('xiaohong2'));
 
     /*
      * 作用：移除所有子元素
      * 参数：parent 要移除所有子元素的父元素
      * 返回：返回移除子元素后的父元素
      * */
-    YU.removeChildren(YU.$('ul2'));
+    YU.removeChildren(YU.d('ul2'));
 
     /*
      * 作用：插入新元素到子元素的最前面
@@ -192,7 +194,7 @@
      * */
     var newChild = document.createElement('li');
     newChild.innerHTML = '小张2';
-    YU.prependChild(YU.$('ul1'), newChild);
+    YU.prependChild(YU.d('ul1'), newChild);
 
     /*
      * 作用：获取当前浏览器窗口的宽高
@@ -215,7 +217,7 @@
     console.log('遍历元素节点，不关心DOM树的深度，不包含父节点');
     YU.walkElementsLinear(function () {
         console.log(this.innerHTML);//因为是用call（）来改变对象环境，所以用this可以代表遍历的那个节点
-    }, YU.$('ul1'));
+    }, YU.d('ul1'));
 
     /*
      * 作用：遍历元素节点，文本节点，含父节点
@@ -227,7 +229,7 @@
         if (this.nodeType == YU.node.ELEMENT_NODE) {
             console.log(this);//因为是用call（）来改变对象环境，所以用this可以代表遍历的那个节点
         }
-    }, YU.$('ul1'));
+    }, YU.d('ul1'));
 
     /*
      * 作用：遍历元素节点，文本节点，属性节点，含父节点
@@ -235,7 +237,7 @@
      * 返回：无
      * */
     console.log('遍历元素节点，文本节点，属性节点，含父节点');
-    YU.walkTheDOMWithAttributes(YU.$('ul1'), function (returnedFromParent) {
+    YU.walkTheDOMWithAttributes(YU.d('ul1'), function (returnedFromParent) {
         //因为没有用call()来改变环境，所以得用返回的returnedFromParent代表遍历的当前节点
         if (returnedFromParent.nodeType == YU.node.ATTRIBUTE_NODE) {
             var attr = returnedFromParent;
@@ -249,7 +251,7 @@
      * 返回：无
      * */
     console.log('遍历元素节点，文本节点，含父节点（同walkTheDOMRecursive）');
-    YU.walkTheDOM(YU.$('ul1'), function (node) {
+    YU.walkTheDOM(YU.d('ul1'), function (node) {
         console.log(node);
     });
 
@@ -309,7 +311,7 @@
      * 参数：element 目标元素 | property 要获取的属性
      * 返回：无
      * */
-    console.log(YU.getStyle(YU.$('ul1'), 'color'));
+    console.log(YU.getStyle(YU.d('ul1'), 'color'));
 
 
     /*
@@ -317,14 +319,14 @@
      * 参数：element 元素 | styles 样式对象
      * 返回：布尔值
      * */
-    YU.setStyleById(YU.$('xiaoming'), {background: 'yellow'});
+    YU.setStyleById(YU.d('xiaoming'), {background: 'yellow'});
 
     /*
      * 作用：通过类名修改多个元素的样式
      * 参数：parent 父元素 必填 | tag 标签名 | className 要添加的类名 | styles 要添加的样式对象
      * 返回：布尔值
      * */
-    YU.setStylesByClassName(YU.$('container'), 'ul', 'ulclass', {background: 'blue'});
+    YU.setStylesByClassName(YU.d('container'), 'ul', 'ulclass', {background: 'blue'});
 
     /*
      * 作用：通过标签名修改多个元素的样式
@@ -338,28 +340,28 @@
      * 参数：element 元素
      * 返回：class数组
      * */
-    console.log(YU.getClassNames(YU.$('ul2')));
+    console.log(YU.getClassNames(YU.d('ul2')));
 
     /*
      * 作用：检测元素是否包含某class
      * 参数：element 元素 | className 类名
      * 返回：布尔值
      * */
-    console.log(YU.hasClassName(YU.$('ul2'), 'haha'));
+    console.log(YU.hasClassName(YU.d('ul2'), 'haha'));
 
     /*
      * 作用：添加class
      * 参数：element 元素 | className 类名
      * 返回：布尔值
      * */
-    YU.addClassName(YU.$('ul3'), 'wlc')
+    YU.addClassName(YU.d('ul3'), 'wlc')
 
     /*
      * 作用：移除class
      * 参数：element 元素 | className 类名
      * 返回：布尔值 成功删除返回false
      * */
-    console.log(YU.removeClassName(YU.$('ul2'), 'xixi'));
+    console.log(YU.removeClassName(YU.d('ul2'), 'xixi'));
 
     /*
      * 作用：JSON值转成js对象
@@ -367,21 +369,21 @@
      * 返回：转换后的字符串
      * */
     //因为IE7，IE8中没有JSON.stringify所以先注释掉
-        var book = {
-            title: "javascript",
-            authors: [
-                "tom",
-                "cindy2"
-            ],
-            edition: 3,
-            year: 2016
-        };
-        //把js对象转成JSON对象，使用JSON类下的stringify()方法
-        var jsonText = JSON.stringify(book);
-
-        //把JSON对象，转成js对象
-        var book2 = YU.parseJSON(jsonText);
-        console.log(book2);
+    //    var book = {
+    //        title: "javascript",
+    //        authors: [
+    //            "tom",
+    //            "cindy2"
+    //        ],
+    //        edition: 3,
+    //        year: 2016
+    //    };
+    //    //把js对象转成JSON对象，使用JSON类下的stringify()方法
+    //    var jsonText = JSON.stringify(book);
+    //
+    //    //把JSON对象，转成js对象
+    //    var book2 = YU.parseJSON(jsonText);
+    //    console.log(book2);
 
     /* 以下ajax测试成功，为了不打扰其他测试，故注释掉了，想测试ajax取消注释，并以http形式打开本页 */
 
@@ -413,18 +415,18 @@
      *
      PS: IE7+、Firefox、Opera、Chrome 和Safari 都支持原生的XHR 对象，在这些浏览器中创建XHR对象可以直接实例化XMLHttpRequest 即可,如果是IE6 及以下，那么我们必须还需要使用ActiveX 对象来实现。在低版本IE 浏览器可能会遇到不同版本的XHR 对象，所以将它们放到一个数组里，然后循环，尝试创建一个XHR对象，若成功，则终止循环。然后调用该函数即可创建一个XHR对象：
      */
-    /*    YU.ajax({
-     method: 'get',
-     url: 'form11.php',
-     data: {
-     'username': 'JR',
-     'age': 22
-     },
-     success: function (message) {
-     console.log("服务器已经收到你的用户名2：" + message);
-     },
-     async: true
-     });*/
+//    YU.ajax({
+//     method: 'get',
+//     url: 'form11.php',
+//     data: {
+//     'username': 'JR',
+//     'age': 22
+//     },
+//     success: function (message) {
+//     console.log("服务器已经收到你的用户名2：" + message);
+//     },
+//     async: true
+//     });
 
 
     /*
@@ -520,7 +522,7 @@
     //使用了数组分块的时候：有种依次排队显示出来的感觉
     var data = [12, 123, 123124, 1234124, 324, 234, 564, 7623, 3, 458, 7, 2];
     function output(item) {
-        YU.$('box4').innerHTML += item + "<br>";
+        YU.d('box4').innerHTML += item + "<br>";
     }
     YU.chunk(data, output);
 
@@ -564,6 +566,12 @@
      */
     log.header('我是执行结果的自定义标题');
     log.write('我是执行结果的返回 Message');
+    log.section('我是标题，效果同header', '我是内容，效果同write');
+    log.section('我是标题，效果同header', '我是内容，效果同write', '我是内容，效果同write1');
+    log.section('我是内容，效果同write2');
+    log.header();
+    log.write();
+    log.section();
     console.log(YU);
 
     /*
@@ -573,7 +581,8 @@
      * */
     var str9 = '5';
     var arr5 = [];
-    var fun5 = function () {};
+    var fun5 = function () {
+    };
     var RegExp = /\s+/;
     var obj = {};
     log.write(YU.isArray(arr5));
@@ -586,63 +595,104 @@
     log.header('是否是数值');
     log.write(YU.isNumeric(str9));
     log.write(YU.isEmptyObject(obj));
+    log.section('我是是否是数值的标题', YU.isNumeric(str9));
+    log.section('我是是否是数值的标题2');
+    log.write('haha', 'haha', 'haha');
+    log.write('haha' + 'haha' + 'haha');
+
 
     /*
      * 作用：对类数组对象中的每个项依次执行回调函数
      * 参数：obj 类数组对象 | callback 回调函数
      * 返回：执行函数后的类数组对象
      * */
-    var arr6 = [11,12,13];
-    function addNum(index,item) {
-        log.write( item + 10);
+    var arr6 = [11, 12, 13];
+    function addNum(index, item) {
+        log.write(item + 10);
     }
-    YU.each(arr6,addNum);
+    YU.each(arr6, addNum);
 
     //对象，类数组
-    var obj6 = {ding:'ding',hong:'hong',ming:'ming'};
-    function addString(index,item) {
-        log.write( item + 'haha');
+    var obj6 = {ding: 'ding', hong: 'hong', ming: 'ming'};
+    function addString(index, item) {
+        log.write(item + 'haha');
     }
-    YU.each(obj6,addString);
+    YU.each(obj6, addString);
+
 
     /*
-    //如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
-    //如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
-    if(!window.$){
-        window['$'] = window['YU'];
-    }
-    */
+     * 作用：计算函数运行时间
+     * 参数：fn 要计算运行时间的函数
+     * 返回：四舍五入后的运行时间，微秒
+     * */
 
-//    log.write($('#xiaoming').get(0).innerHTML);
-//    console.log(window.$);
-    log.write(YU.$('xiaoming').innerHTML);
-//    log.write($('xiaoming').innerHTML);
+    function fun10() {
+        console.log('我正在运行1');
+    }
+
+    YU.run(fun10);//不仅会返回运行时间，还会用log.write()输出
 
     /*
-    * 在YU的命名空间外添加$()选择器函数，作用域为全局，实现直接使用$(id)就能获取DOM元素
-    * */
+     * 作用：比较两个函数的运行时间
+     * 参数：orignalFunc 原函数，compareFunc 比较函数
+     * 返回：二者的运行时间和比较的倍数
+     * */
+    function fun11() {
+        console.log('我正在运行2');
+    }
 
-//    log.write($('#xiaohong')[0].innerHTML);
-    log.write($.$('xiaohong').innerHTML);
-
-    console.log($.c('ulclass'));
-
-//    log.write($.getStyle('xiaoming','color'));
-    console.log($.getStyle('xiaoming','color'));//0，0，255 blue
-
-    $.setStyle('xiaoming',{color:'red'})
+    YU.runCompare(fun10, fun11);//不仅会返回比较的倍数，还会用log.write()输出
 
 
+    /*
+     * 作用：将对象转成数组
+     * 参数：obj 对象
+     * 返回：只保留对象的值的数组
+     * */
+
+    var obj10 = {
+        name: 'tom',
+        age: 23,
+        say: 'hello'
+    };
+
+    var obj10Arr = YU.objectToArray(obj10);
+    console.log(obj10Arr);
 
 
+    /*
+     * 作用：获取对象长度
+     * 参数：obj 对象
+     * 返回：对象的length
+     * */
+
+    console.log(YU.getLength(obj10));
+
+    /*
+     * 作用：创建多层嵌套的命名空间
+     * 参数：namespace 要扩展的命名空间对象，namespaceString 命名空间字符串，例如namespace.util.array.mypush;
+     * 返回：扩展后的命名空间
+     * */
+
+    var myNamespace = {};
+    YU.extendNamespace(myNamespace, 'util.canvas.draw.line');
+    myNamespace.util.canvas.draw.line = function () {
+        console.log('我画了一条直线')
+    };
+    myNamespace.util.canvas.draw.line();
+    console.log(myNamespace);//可以查看到多层嵌套
+
+    /*
+     * 作用：将其他对象扩展到命名空间中
+     * 参数：destination 要扩展的命名空间目标，source 对象来源
+     * 返回：增加了新对象的命名空间
+     * */
+
+    YU.extend(myNamespace,obj10);
+    console.log(myNamespace);
 
 
-
-
-
-
-
-
+    console.log($('#xiaoming'));
 
 
 </script>

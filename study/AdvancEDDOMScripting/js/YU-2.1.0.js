@@ -7,16 +7,28 @@
 
 /**
  * 更新日志:
- * 推出稳定版本：version 1.0.0 20170203
+ * 版本：version 1.0.0 20170203
+ *
  * 将YU改为对象，原先的函数改为YU对象内的方法
- * 推出稳定版本：version 2.0.0 20170205
+ * 版本：version 2.0.0 20170205
+ *
+ * 修改：1、当$(),d(),c()没有获取到对象时返回null 2、添加性能测试run,runCompare方法 3、添加直接删除单个元素或多个元素remove方法
+ * 版本：version 2.0.1 20170209
+ *
+ * 修改：1、objectToArray()将对象转成数组，2、getLength()获取对象的长度，即拥有的属性方法的数量。3、extendNamespace()扩展嵌套命名空间。4、extend扩展新对象到命名空间中
+ * 版本：version 2.0.2 20170213
+ *
+ * 修改：改用'use strict' javascript严格模式，修改arguments.callee的调用，和部分未用var声明，就创建的全局变量。版本号不改。
+ *
+ * 修改：1、引入Sizzle选择器，移除d(),c()在全局的注册，仅内部使用。2、YU.$$()同jQuery中的$()，YU.$()返回YU.$$的第一个dom对象。Sizzle的方法，只能使用$$获取的元素
  *
  */
 
 (function () {
+    'use strict';
     var yuObj = {},
         toString = yuObj.toString,
-        version = '2.0.0';
+        version = '2.0.2';
 
     /*
      * 选择器
@@ -24,7 +36,7 @@
      * 参数：单个或多个id值
      * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
      * */
-    function $() {
+    function d() {
         var elements = new Array();
 
         //查找作为参数提供的所有元素
@@ -44,6 +56,7 @@
             //否则，将它添加到数组中
             elements.push(element);
         }
+
         return elements;
     }
 
@@ -77,7 +90,7 @@
          * 参数：单个或多个id值
          * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
          * */
-        $: $,
+        d: d,
 
         /*
          * 作用：解决YU库和其他库在$上的命名冲突
@@ -297,13 +310,13 @@
             }
 
             //否则使用一些特别的方式来包装loadEvent()方法
-            var init = function () {
+            var init = function() {
                 //如果这个函数已经被调用过了，则返回
-                if (arguments.callee.done) {
+                if (init.done) {
                     return;
                 }
                 //标记这个函数以便检验它是否运行过
-                arguments.callee.done = true;
+                init.done = true;
 
                 //在document的环境中运行载入事件
                 loadEvent.apply(document.arguments);
@@ -434,7 +447,7 @@
          * */
         getElementsByClassName: function (className, tag, parent) {
             parent = parent || document;
-            if (!(parent = $(parent))) {
+            if (!(parent = d(parent))) {
                 return false;
             }
 
@@ -467,14 +480,18 @@
          * */
         c: function (className) {
             //className只能是英文字母或和数字的组合,使用正则判断
-            var regex = /^[0-9a-zA-Z]*$/g;
-            if (!regex.test(className)) {
-                return new Error("className只能是英文字母或和数字的组合");
-            }
+            // var regex = /^[0-9a-zA-Z]*$/g;
+            // if (!regex.test(className)) {
+            //     return new Error("className只能是英文字母或和数字的组合");
+            // }
+            if (!className) return false;
             var elements;
             //如果有getElementsByClassName方法，则优先使用该方法
             if (document.getElementsByClassName) {
                 elements = document.getElementsByClassName(className);
+                if (elements.length === 0) {
+                    return null;
+                }
             } else {
                 elements = [];
                 //如果没有则采取遍历所有元素的className来匹配出符合条件的元素，兼容低版本的浏览器
@@ -484,6 +501,9 @@
                         elements.push(this)
                     }
                 }, window.document);
+                if (elements.length === 0) {
+                    return null;
+                }
             }
             return elements;
         },
@@ -494,7 +514,7 @@
          * 返回：布尔值
          * */
         toggleDisplay: function (node, value) {
-            if (!(node = $(node))) {
+            if (!(node = d(node))) {
                 return false;
             }
 
@@ -582,7 +602,7 @@
         editCSSRule: function (selector, styles, url, media) {
             var styleSheets = (typeof url == 'array' ? url : this.getStyleSheets(url, media));
 
-            for (i = 0; i < styleSheets.length; i++) {
+            for (var i = 0; i < styleSheets.length; i++) {
 
                 // Retrieve the list of rules
                 // The DOM2 Style method is styleSheets[i].cssRules
@@ -599,7 +619,7 @@
                 for (var j = 0; j < rules.length; j++) {
                     // Check if it matches
                     if (rules[j].selectorText.toUpperCase() == selector) {
-                        for (property in styles) {
+                        for (var property in styles) {
                             if (!styles.hasOwnProperty(property)) {
                                 continue;
                             }
@@ -620,7 +640,7 @@
             var declaration = '';
 
             // Build the declaration string from the style object
-            for (property in styles) {
+            for (var property in styles) {
                 if (!styles.hasOwnProperty(property)) {
                     continue;
                 }
@@ -653,7 +673,7 @@
          * 返回：无
          * */
         getStyle: function (element, property) {
-            if (!(element = $(element)) || !property) return false;
+            if (!(element = d(element)) || !property) return false;
             // Check for the value in the element's style property
             var value = element.style[this.camelize(property)];
             if (!value) {
@@ -679,9 +699,9 @@
          * */
         setStyleById: function (element, styles) {
             // Retrieve an object reference
-            if (!(element = $(element))) return false;
+            if (!(element = d(element))) return false;
             // Loop through  the styles object an apply each property
-            for (property in styles) {
+            for (var property in styles) {
                 if (!styles.hasOwnProperty(property)) continue;
 
                 if (element.style.setProperty) {
@@ -702,7 +722,7 @@
          * 返回：布尔值
          * */
         setStylesByClassName: function (parent, tag, className, styles) {
-            if (!(parent = $(parent))) return false;
+            if (!(parent = d(parent))) return false;
             var elements = this.getElementsByClassName(className, tag, parent);
             for (var e = 0; e < elements.length; e++) {
                 this.setStyleById(elements[e], styles);
@@ -716,7 +736,7 @@
          * 返回：无
          * */
         setStylesByTagName: function (tagname, styles, parent) {
-            parent = $(parent) || document;
+            parent = d(parent) || document;
             var elements = parent.getElementsByTagName(tagname);
             for (var e = 0; e < elements.length; e++) {
                 this.setStyleById(elements[e], styles);
@@ -729,7 +749,7 @@
          * 返回：class数组
          * */
         getClassNames: function (element) {
-            if (!(element = $(element))) return false;
+            if (!(element = d(element))) return false;
             return element.className.replace(/\s+/, ' ').split(' ');
         },
 
@@ -739,7 +759,7 @@
          * 返回：布尔值
          * */
         hasClassName: function (element, className) {
-            if (!(element = $(element))) return false;
+            if (!(element = d(element))) return false;
             var classes = this.getClassNames(element);
             for (var i = 0; i < classes.length; i++) {
                 // Check if the className matches and return true if it does
@@ -756,7 +776,7 @@
          * 返回：布尔值
          * */
         addClassName: function (element, className) {
-            if (!(element = $(element))) return false;
+            if (!(element = d(element))) return false;
             // Append the classname to the end of the current className
             // If there is no className, don't include the space
             element.className += (element.className ? ' ' : '') + className;
@@ -769,7 +789,7 @@
          * 返回：布尔值
          * */
         removeClassName: function (element, className) {
-            if (!(element = $(element))) return false;
+            if (!(element = d(element))) return false;
             var classes = this.getClassNames(element);
             var length = classes.length;
             //loop through the array in reverse, deleting matching items
@@ -798,10 +818,10 @@
          * 返回：无
          * */
         insertAfter: function (node, referenceNode) {
-            if (!(node = $(node))) {
+            if (!(node = d(node))) {
                 return false;
             }
-            if (!(referenceNode = $(referenceNode))) {
+            if (!(referenceNode = d(referenceNode))) {
                 return false;
             }
             return referenceNode.parentNode.insertBefore(
@@ -815,7 +835,7 @@
          * 返回：返回移除子元素后的父元素
          * */
         removeChildren: function (parent) {
-            if (!(parent = $(parent))) {
+            if (!(parent = d(parent))) {
                 return false;
             }
 
@@ -829,15 +849,37 @@
         },
 
         /*
+         * 作用：移除指定单个元素或多个元素
+         * 参数：element 要移除的元素
+         * 返回：返回要移除的元素
+         * 考虑：因为传入字符串，无法判断是id还是class，并且也不想因此而让大家多加个#或.号，所以只能传入DOM元素。
+         * */
+        remove: function (elements) {
+            if (elements.nodeType == this.node.ELEMENT_NODE) {
+                elements.parentNode.removeChild(elements);
+            } else if (this.isArrayLike(elements)) {
+                var len = elements.length;
+                for (var i = 0; i < len; i++) {
+                    elements[len - i - 1].parentNode.removeChild(elements[len - i - 1]);
+                }
+            } else {
+                return new Error('undefined');
+            }
+            //再返回父元素，以便实现方法连缀
+            return elements;
+        },
+
+
+        /*
          * 作用：插入新元素到子元素的最前面
          * 参数：parent 父元素 | newChild 要插入的新元素
          * 返回：返回插入新子元素后的父元素
          * */
         prependChild: function (parent, newChild) {
-            if (!(parent = $(parent))) {
+            if (!(parent = d(parent))) {
                 return false;
             }
-            if (!(newChild = $(newChild))) {
+            if (!(newChild = d(newChild))) {
                 return false;
             }
 
@@ -952,20 +994,20 @@
             if (typeof XMLHttpRequest != "undefined") {
                 return new XMLHttpRequest();
             } else if (typeof ActiveXObject != "undefined") {
-                if (typeof arguments.callee.activeXString != "string") {
+                if (typeof createXHR.activeXString != "string") {
                     var version = ["MSXML2.XMLHttp.6.0", "MSXML2.XMLHttp.3.0", "MSXML2.XMLHttp"],
                         i, len;
                     for (i = 0, len = versions.length; i < len; i++) {
                         try {
                             new ActiveXObject(versions[i]);
-                            arguments.callee.activeXString = versions[i];
+                            createXHR.activeXString = versions[i];
                             break;
                         } catch (ex) {
 
                         }
                     }
                 }
-                return new ActiveXObject(arguments.callee.activeXString);
+                return new ActiveXObject(createXHR.activeXString);
             } else {
                 throw new Error("No XHR object available.");
             }
@@ -1139,7 +1181,7 @@
 
         /*
          * 作用：设置cookie的值
-         * 参数：name cookie名字 | value coookie值 | expires 有效期 | path 保存路径 | domain 网址主体 | secure 安全设置
+         * 参数：name cookie名字 | value cookie值 | expires 有效期 | path 保存路径 | domain 网址主体 | secure 安全设置
          * 返回：无
          * */
         setCookie: function (name, value, expires, path, domain, secure) {
@@ -1231,7 +1273,7 @@
             if (obj == null) {
                 return obj + "";
             }
-            // Support: Android <=2.3 only (functionish RegExp)
+            // Support: Android <=2.3 only (function RegExp)
             return typeof obj === "object" || typeof obj === "function" ?
             yuObj[toString.call(obj)] || "object" :
                 typeof obj;
@@ -1396,14 +1438,14 @@
          * 备注：有种依次排队显示出来的感觉
          * */
         chunk: function (array, process, context) {
-            setTimeout(function () {
+            setTimeout(function self() {
                 //shift()删除数组中的第一项，并返回该项。
                 var item = array.shift();
                 //process指的是当前正在执行的函数,call是调用函数自己，这样可以传入一个函数环境
                 process.call(context, item);
                 //只要数组的长度大于0，这个函数就会每隔100毫秒调用一次父setTimeout(),创建一个新的计时器
                 if (array.length > 0) {//如果array被shift()删光了，就执行完毕了。
-                    setTimeout(arguments.callee, 100)
+                    setTimeout(self, 100)
                 }
             }, 100);//为什么要设置100毫秒？当然你可以根据自己的需要设置，但推荐用100毫秒
         },
@@ -1490,13 +1532,13 @@
          * 返回：四舍五入后的运行时间，微秒
          * */
 
-        run : function (fn) {
+        run: function (fn) {
             var test = fn;
             var start = performance.now();
             test();
             var end = performance.now();
-            var time = Math.round((end-start)*1000);
-            var timeStr = Math.round((end-start)*1000)+'微秒';
+            var time = Math.round((end - start) * 1000);
+            var timeStr = Math.round((end - start) * 1000) + '微秒';
             log.write(timeStr);
             return time;
         },
@@ -1506,12 +1548,78 @@
          * 参数：orignalFunc 原函数，compareFunc 比较函数
          * 返回：二者的运行时间和比较的倍数
          * */
-        runCompare : function (orignalFunc,compareFunc) {
+        runCompare: function (orignalFunc, compareFunc) {
             var a = this.run(orignalFunc);
             var b = this.run(compareFunc);
-            var times =  (a/b).toFixed(1);
+            var times = (a / b).toFixed(1);
             log.header('性能比较结果：');
-            log.write('前者是后者的:'+times+'倍');
+            log.write('前者是后者的:' + times + '倍');
+            return times;
+        },
+
+        /*
+         * 作用：将对象转成数组
+         * 参数：obj 对象
+         * 返回：只保留对象的值的数组
+         * */
+        objectToArray: function (obj) {
+            var arr = [];
+            for (var item in obj) {
+                arr.push(obj[item]);
+            }
+            return arr;
+        },
+
+        /*
+         * 作用：获取对象长度
+         * 参数：obj 对象
+         * 返回：对象的length
+         * */
+        getLength: function (obj) {
+            var length = 0;
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) length++;
+            }
+            return length;
+        },
+
+        /*
+         * 作用：创建多层嵌套的命名空间
+         * 参数：namespace 要扩展的命名空间对象，namespaceString 命名空间字符串，例如namespace.util.array.mypush;
+         * 返回：扩展后的命名空间
+         * */
+        extendNamespace: function (namespace, namespaceString) {
+            var parts = namespaceString.split("."),
+                parent = namespace,
+                parentLen;
+            parentLen = parts.length;
+            for (var i = 0; i < parentLen; i++) {
+                //属性如果不存在，则创建它
+                if (typeof parent[parts[i]] === "undefined") {
+                    parent[parts[i]] = {};
+                }
+                parent = parent[parts[i]]
+            }
+            return parent;
+        },
+
+        /*
+         * 作用：将其他对象扩展到命名空间中
+         * 参数：destination 要扩展的命名空间目标，source 对象来源
+         * 返回：增加了新对象的命名空间
+         * */
+        extend: function (destination, source) {
+            var toString = Object.prototype.toString, objTest = toString.call({});
+
+            for (var property in source) {
+                if (source[property] && objTest === toString.call(source[property])) {
+                    destination[property] = destination[property] || {};
+                    extend(destination[property], source[property]);
+                } else {
+                    destination[property] = source[property];
+                }
+            }
+            return destination;
         }
 
     };
@@ -1565,21 +1673,7 @@
     if (!window.YU) {
         window['YU'] = YU;
     }
-    //如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
-    //如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
-    //例如引入其他库，如jQuery，如果jQuery先引用，则因$已经被先被jQuery占用，则YU放弃对$的占用
-    //如果jQuery后引用，则因为jQuery对$命名空间进行了覆盖性赋值，则YU被迫让出了对$的占用。
-    if (!window.$) {
-        window['$'] = YU;
-    }
-    //为getElementById()方法创建简便方法d()
-    if (!window.d) {
-        window['d'] = $;
-    }
-    //为getElementsByClassName()方法创建简便方法c()
-    if (!window.c) {
-        window['c'] = YU.c;
-    }
+
 
 })
 ();
@@ -1840,4 +1934,30 @@ window['log'] = log;
 if (!console) {
     var console = log;
     console.log = console.write;
+}
+
+
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('v N=(o(2Z){v i,R,I,2Q,1Z,2v,31,26,2Y,23,2n,1O,F,1t,1u,19,2a,1g,1J,Q="6M"+1*Z 5M(),1r=2Z.F,1Q=0,4Q=0,4c=3I(),4D=3I(),33=3I(),3P=o(a,b){k(a===b){2n=P}l 0},4M=({}).5A,1F=[],2U=1F.2U,5b=1F.E,E=1F.E,S=1F.S,1q=o(42,c){v i=0,1m=42.u;1i(;i<1m;i++){k(42[i]===c){l i}}l-1},3q="37|2R|5W|5O|5J|5U|5Q|V|5h|5R|5S|5P|5V|5K|5N|5L",O="[\\\\6b\\\\t\\\\r\\\\n\\\\f]",2e="(?:\\\\\\\\.|[\\\\w-]|[^\\0-\\\\6j])+",2G="\\\\["+O+"*("+2e+")(?:"+O+"*([*^$|!~]?=)"+O+"*(?:\'((?:\\\\\\\\.|[^\\\\\\\\\'])*)\'|\\"((?:\\\\\\\\.|[^\\\\\\\\\\"])*)\\"|("+2e+"))|)"+O+"*\\\\]",1y=":("+2e+")(?:\\\\(("+"(\'((?:\\\\\\\\.|[^\\\\\\\\\'])*)\'|\\"((?:\\\\\\\\.|[^\\\\\\\\\\"])*)\\")|"+"((?:\\\\\\\\.|[^\\\\\\\\()[\\\\]]|"+2G+")*)|"+".*"+")\\\\)|)",5t=Z 15(O+"+","g"),36=Z 15("^"+O+"+|((?:^|[^\\\\\\\\])(?:\\\\\\\\.)*)"+O+"+$","g"),5y=Z 15("^"+O+"*,"+O+"*"),5D=Z 15("^"+O+"*([>+~]|"+O+")"+O+"*"),4R=Z 15("="+O+"*([^\\\\]\'\\"]*?)"+O+"*\\\\]","g"),5o=Z 15(1y),5x=Z 15("^"+2e+"$"),35={"2l":Z 15("^#("+2e+")"),"4i":Z 15("^\\\\.("+2e+")"),"3K":Z 15("^("+2e+"|[*])"),"49":Z 15("^"+2G),"44":Z 15("^"+1y),"3u":Z 15("^:(5k|1G|27|2H|2H-27)-(6l|5u-B)(?:\\\\("+O+"*(3k|2W|(([+-]|)(\\\\d*)n|)"+O+"*(?:([+-]|)"+O+"*(\\\\d+)|))"+O+"*\\\\)|)","i"),"6g":Z 15("^(?:"+3q+")$","i"),"4X":Z 15("^"+O+"*[>+~]|:(3k|2W|4v|5w|5q|2H|1G|27)(?:\\\\("+O+"*((?:-\\\\d)?\\\\d*)"+O+"*\\\\)|)(?=[^-]|$)","i")},5r=/^(?:1c|26|6i|3i)$/i,5s=/^h\\d$/i,2P=/^[^{]+\\{\\s*\\[61 \\w/,59=/^(?:#([\\w-]+)|(\\w+)|\\.([\\w-]+))$/,3R=/[+~]/,1P=Z 15("\\\\\\\\([\\\\62-f]{1,6}"+O+"?|("+O+")|.)","63"),1V=o(5Y,4k,5m){v 2z="5Z"+4k-5I;l 2z!==2z||5m?4k:2z<0?5F.5H(2z+5I):5F.5H(2z>>10|67,2z&68|64)},48=/([\\0-\\5C\\4I]|^-?\\d)|^-$|[^\\0-\\5C\\4I-\\66\\w-]/g,47=o(2N,4F){k(4F){k(2N==="\\0"){l"\\65"}l 2N.S(0,-1)+"\\\\"+2N.69(2N.u-1).60(16)+" "}l"\\\\"+2N},43=o(){1O()},51=3d(o(c){l c.V===P&&("54"25 c||"3T"25 c)},{17:"X",4L:"6c"});3Y{E.1X((1F=S.2w(1r.3l)),1r.3l);1F[1r.3l.u].H}3Z(e){E={1X:1F.u?o(2u,3F){5b.1X(2u,S.2w(3F))}:o(2u,3F){v j=2u.u,i=0;J((2u[j++]=3F[i++])){}2u.u=j-1}}}o N(A,p,y,G){v m,i,c,2q,q,1R,34,2J=p&&p.1B,H=p?p.H:9;y=y||[];k(1H A!=="4d"||!A||H!==1&&H!==9&&H!==11){l y}k(!G){k((p?p.1B||p:1r)!==F){1O(p)}p=p||F;k(1u){k(H!==11&&(q=59.3O(A))){k((m=q[1])){k(H===9){k((c=p.2K(m))){k(c.U===m){y.E(c);l y}}T{l y}}T{k(2J&&(c=2J.2K(m))&&1J(p,c)&&c.U===m){y.E(c);l y}}}T k(q[2]){E.1X(y,p.2i(A));l y;}T k((m=q[3])&&R.2k&&p.2k){E.1X(y,p.2k(m));l y}}k(R.4g&&!33[A+" "]&&(!19||!19.18(A))){k(H!==1){2J=p;34=A;}T k(p.14.Y()!=="6f"){k((2q=p.1s("U"))){2q=2q.1b(48,47)}T{p.3M("U",(2q=Q))}1R=2v(A);i=1R.u;J(i--){1R[i]="#"+2q+" "+30(1R[i])}34=1R.3D(",");2J=3R.18(A)&&3C(p.X)||p}k(34){3Y{E.1X(y,2J.1E(34));l y}3Z(6e){}5g{k(2q===Q){p.6d("U")}}}}}}l 26(A.1b(36,"$1"),p,y,G)}o 3I(){v 45=[];o 1v(2B,1h){k(45.E(2B+" ")>I.5G){5X 1v[45.3E()]}l(1v[2B+" "]=1h)}l 1v}o 1C(1a){1a[Q]=P;l 1a}o 1I(1a){v C=F.4y("57");3Y{l!!1a(C)}3Z(e){l 1d}5g{k(C.X){C.X.5T(C)}C=12}}o 3n(56,4U){v 1F=56.52("|"),i=1F.u;J(i--){I.3U[1F[i]]=4U}}o 40(a,b){v 1k=b&&a,1e=1k&&a.H===1&&b.H===1&&a.4V-b.4V;k(1e){l 1e}k(1k){J((1k=1k.3b)){k(1k===b){l-1}}}l a?1:-1}o 5j(B){l o(c){v M=c.14.Y();l M==="1c"&&c.B===B}}o 5l(B){l o(c){v M=c.14.Y();l(M==="1c"||M==="3i")&&c.B===B}}o 4p(V){l o(c){k("54"25 c){k(c.X&&c.V===1d){k("3T"25 c){k("3T"25 c.X){l c.X.V===V}T{l c.V===V}}l c.55===V||c.55!==!V&&51(c)===V}l c.V===V;}T k("3T"25 c){l c.V===V}l 1d}}o 2g(1a){l 1C(o(13){13=+13;l 1C(o(G,1g){v j,1f=1a([],G.u,13),i=1f.u;J(i--){k(G[(j=1f[i])]){G[j]=!(1g[j]=G[j])}}})})}o 3C(p){l p&&1H p.2i!=="21"&&p}R=N.R={};1Z=N.1Z=o(c){v 2A=c&&(c.1B||c).2A;l 2A?2A.14!=="6m":1d};1O=N.1O=o(z){v 3y,29,32=z?z.1B||z:1r;k(32===F||32.H!==9||!32.2A){l F}F=32;1t=F.2A;1u=!1Z(F);k(1r!==F&&(29=F.6Q)&&29.6P!==29){k(29.53){29.53("6R",43,1d);}T k(29.4Z){29.4Z("6T",43)}}R.2G=1I(o(C){C.1S="i";l!C.1s("1S")});R.2i=1I(o(C){C.3e(F.6S(""));l!C.2i("*").u});R.2k=2P.18(F.2k);R.4W=1I(o(C){1t.3e(C).U=Q;l!F.41||!F.41(Q).u});k(R.4W){I.2b["2l"]=o(U){v 3w=U.1b(1P,1V);l o(c){l c.1s("U")===3w}};I.1N["2l"]=o(U,p){k(1H p.2K!=="21"&&1u){v c=p.2K(U);l c?[c]:[]}}}T{I.2b["2l"]=o(U){v 3w=U.1b(1P,1V);l o(c){v z=1H c.2I!=="21"&&c.2I("U");l z&&z.1h===3w}};I.1N["2l"]=o(U,p){k(1H p.2K!=="21"&&1u){v z,i,22,c=p.2K(U);k(c){z=c.2I("U");k(z&&z.1h===U){l[c]}22=p.41(U);i=0;J((c=22[i++])){z=c.2I("U");k(z&&z.1h===U){l[c]}}}l[]}}}I.1N["3K"]=R.2i?o(2M,p){k(1H p.2i!=="21"){l p.2i(2M);}T k(R.4g){l p.1E(2M)}}:o(2M,p){v c,4h=[],i=0,y=p.2i(2M);k(2M==="*"){J((c=y[i++])){k(c.H===1){4h.E(c)}}l 4h}l y};I.1N["4i"]=R.2k&&o(1S,p){k(1H p.2k!=="21"&&1u){l p.2k(1S)}};2a=[];19=[];k((R.4g=2P.18(F.1E))){1I(o(C){1t.3e(C).3A="<a U=\'"+Q+"\'></a>"+"<26 U=\'"+Q+"-\\r\\\\\' 5f=\'\'>"+"<3t 2R=\'\'></3t></26>";k(C.1E("[5f^=\'\']").u){19.E("[*^$]="+O+"*(?:\'\'|\\"\\")")}k(!C.1E("[2R]").u){19.E("\\\\["+O+"*(?:1h|"+3q+")")}k(!C.1E("[U~="+Q+"-]").u){19.E("~=")}k(!C.1E(":37").u){19.E(":37")}k(!C.1E("a#"+Q+"+*").u){19.E(".#.+[+~]")}});1I(o(C){C.3A="<a 3g=\'\' V=\'V\'></a>"+"<26 V=\'V\'><3t/></26>";v 1c=F.4y("1c");1c.3M("B","5h");C.3e(1c).3M("M","D");k(C.1E("[M=d]").u){19.E("M"+O+"*[*^$|!~]?=")}k(C.1E(":3r").u!==2){19.E(":3r",":V")}1t.3e(C).V=P;k(C.1E(":V").u!==2){19.E(":3r",":V")}C.1E("*,:x");19.E(",.*:")})}k((R.4e=2P.18((1g=1t.1g||1t.6U||1t.73||1t.71||1t.72)))){1I(o(C){R.4N=1g.2w(C,"*");1g.2w(C,"[s!=\'\']:x");2a.E("!=",1y)})}19=19.u&&Z 15(19.3D("|"));2a=2a.u&&Z 15(2a.3D("|"));3y=2P.18(1t.2c);1J=3y||2P.18(1t.1J)?o(a,b){v 4f=a.H===9?a.2A:a,1Y=b&&b.X;l a===1Y||!!(1Y&&1Y.H===1&&(4f.1J?4f.1J(1Y):a.2c&&a.2c(1Y)&16))}:o(a,b){k(b){J((b=b.X)){k(b===a){l P}}}l 1d};3P=3y?o(a,b){k(a===b){2n=P;l 0}v 2o=!a.2c-!b.2c;k(2o){l 2o}2o=(a.1B||a)===(b.1B||b)?a.2c(b):1;k(2o&1||(!R.58&&b.2c(a)===2o)){k(a===F||a.1B===1r&&1J(1r,a)){l-1}k(b===F||b.1B===1r&&1J(1r,b)){l 1}l 23?(1q(23,a)-1q(23,b)):0}l 2o&4?-1:1}:o(a,b){k(a===b){2n=P;l 0}v 1k,i=0,3S=a.X,1Y=b.X,39=[a],38=[b];k(!3S||!1Y){l a===F?-1:b===F?1:3S?-1:1Y?1:23?(1q(23,a)-1q(23,b)):0;}T k(3S===1Y){l 40(a,b)}1k=a;J((1k=1k.X)){39.4J(1k)}1k=b;J((1k=1k.X)){38.4J(1k)}J(39[i]===38[i]){i++}l i?40(39[i],38[i]):39[i]===1r?-1:38[i]===1r?1:0};l F};N.1g=o(1W,4S){l N(1W,12,12,4S)};N.4e=o(c,1W){k((c.1B||c)!==F){1O(c)}1W=1W.1b(4R,"=\'$1\']");k(R.4e&&1u&&!33[1W+" "]&&(!2a||!2a.18(1W))&&(!19||!19.18(1W))){3Y{v 24=1g.2w(c,1W);k(24||R.4N||c.F&&c.F.H!==11){l 24}}3Z(e){}}l N(1W,F,12,[c]).u>0};N.1J=o(p,c){k((p.1B||p)!==F){1O(p)}l 1J(p,c)};N.3f=o(c,M){k((c.1B||c)!==F){1O(c)}v 1a=I.3U[M.Y()],20=1a&&4M.2w(I.3U,M.Y())?1a(c,M,!1u):21;l 20!==21?20:R.2G||!1u?c.1s(M):(20=c.2I(M))&&20.5E?20.1h:12};N.6x=o(4P){l(4P+"").1b(48,47)};N.2y=o(5B){6w Z 6s("6n 2y, 6p 6r: "+5B)};N.5d=o(y){v c,4a=[],j=0,i=0;2n=!R.5c;23=!R.4E&&y.S(0);y.4Y(3P);k(2n){J((c=y[i++])){k(c===y[i]){j=4a.E(i)}}J(j--){y.4A(4a[j],1)}}23=12;l y};2Q=N.2Q=o(c){v z,24="",i=0,H=c.H;k(!H){J((z=c[i++])){24+=2Q(z)}}T k(H===1||H===9||H===11){k(1H c.4B==="4d"){l c.4B}T{1i(c=c.2E;c;c=c.3b){24+=2Q(c)}}}T k(H===3||H===4){l c.6F}l 24};I=N.6E={5G:50,6H:1C,q:35,3U:{},1N:{},2t:{">":{17:"X",1G:P}," ":{17:"X"},"+":{17:"4j",1G:P},"~":{17:"4j"}},2r:{"49":o(q){q[1]=q[1].1b(1P,1V);q[3]=(q[3]||q[4]||q[5]||"").1b(1P,1V);k(q[2]==="~="){q[3]=" "+q[3]+" "}l q.S(0,4)},"3u":o(q){q[1]=q[1].Y();k(q[1].S(0,3)==="2H"){k(!q[3]){N.2y(q[0])}q[4]=+(q[4]?q[5]+(q[6]||1):2*(q[3]==="3k"||q[3]==="2W"));q[5]=+((q[7]+q[8])||q[3]==="2W");}T k(q[3]){N.2y(q[0])}l q},"44":o(q){v 2F,2h=!q[6]&&q[2];k(35["3u"].18(q[0])){l 12}k(q[3]){q[2]=q[4]||q[5]||"";}T k(2h&&5o.18(2h)&&(2F=2v(2h,P))&&(2F=2h.1q(")",2h.u-2F)-2h.u)){q[0]=q[0].S(0,2F);q[2]=2h.S(0,2F)}l q.S(0,3)}},2b:{"3K":o(4b){v 14=4b.1b(1P,1V).Y();l 4b==="*"?o(){l P}:o(c){l c.14&&c.14.Y()===14}},"4i":o(1S){v 3p=4c[1S+" "];l 3p||(3p=Z 15("(^|"+O+")"+1S+"("+O+"|$)"))&&4c(1S,o(c){l 3p.18(1H c.1S==="4d"&&c.1S||1H c.1s!=="21"&&c.1s("6q")||"")})},"49":o(M,1T,1p){l o(c){v 1L=N.3f(c,M);k(1L==12){l 1T==="!="}k(!1T){l P}1L+="";l 1T==="="?1L===1p:1T==="!="?1L!==1p:1T==="^="?1p&&1L.1q(1p)===0:1T==="*="?1p&&1L.1q(1p)>-1:1T==="$="?1p&&1L.S(-1p.u)===1p:1T==="~="?(" "+1L.1b(5t," ")+" ").1q(1p)>-1:1T==="|="?1L===1p||1L.S(0,1p.u+1)===1p+"-":1d}},"3u":o(B,5v,13,1G,27){v 4l=B.S(0,3)!=="2H",3m=B.S(-4)!=="27",2X=5v==="5u-B";l 1G===1&&27===0?o(c){l!!c.X}:o(c,p,K){v 1v,1x,1n,z,1A,2L,17=4l!==3m?"3b":"4j",2s=c.X,M=2X&&c.14.Y(),3s=!K&&!2X,1e=1d;k(2s){k(4l){J(17){z=c;J((z=z[17])){k(2X?z.14.Y()===M:z.H===1){l 1d}}2L=17=B==="5k"&&!2L&&"3b"}l P}2L=[3m?2s.2E:2s.6t];k(3m&&3s){z=2s;1n=z[Q]||(z[Q]={});1x=1n[z.2j]||(1n[z.2j]={});1v=1x[B]||[];1A=1v[0]===1Q&&1v[1];1e=1A&&1v[2];z=1A&&2s.3l[1A];J((z=++1A&&z&&z[17]||(1e=1A=0)||2L.2U())){k(z.H===1&&++1e&&z===c){1x[B]=[1Q,1A,1e];2p}}}T{k(3s){z=c;1n=z[Q]||(z[Q]={});1x=1n[z.2j]||(1n[z.2j]={});1v=1x[B]||[];1A=1v[0]===1Q&&1v[1];1e=1A}k(1e===1d){J((z=++1A&&z&&z[17]||(1e=1A=0)||2L.2U())){k((2X?z.14.Y()===M:z.H===1)&&++1e){k(3s){1n=z[Q]||(z[Q]={});1x=1n[z.2j]||(1n[z.2j]={});1x[B]=[1Q,1e]}k(z===c){2p}}}}}1e-=27;l 1e===1G||(1e%1G===0&&1e/1G>=0)}}},"44":o(2f,13){v 46,1a=I.1y[2f]||I.2D[2f.Y()]||N.2y("5z 2f: "+2f);k(1a[Q]){l 1a(13)}k(1a.u>1){46=[2f,2f,"",13];l I.2D.5A(2f.Y())?1C(o(G,1g){v 3o,1o=1a(G,13),i=1o.u;J(i--){3o=1q(G,1o[i]);G[3o]=!(1g[3o]=1o[i])}}):o(c){l 1a(c,0,46)}}l 1a}},1y:{"6O":1C(o(A){v 1c=[],y=[],W=31(A.1b(36,"$1"));l W[Q]?1C(o(G,1g,p,K){v c,1U=W(G,12,K,[]),i=G.u;J(i--){k((c=1U[i])){G[i]=!(1g[i]=c)}}}):o(c,p,K){1c[0]=c;W(1c,12,K,y);1c[0]=12;l!y.2U()}}),"6K":1C(o(A){l o(c){l N(A,c).u>0}}),"1J":1C(o(2x){2x=2x.1b(1P,1V);l o(c){l(c.4B||c.6J||2Q(c)).1q(2x)>-1}}),"1w":1C(o(1w){k(!5x.18(1w||"")){N.2y("5z 1w: "+1w)}1w=1w.1b(1P,1V).Y();l o(c){v 2T;6L{k((2T=1u?c.1w:c.1s("K:1w")||c.1s("1w"))){2T=2T.Y();l 2T===1w||2T.1q(1w+"-")===0}}J((c=c.X)&&c.H===1);l 1d}}),"2u":o(c){v 3v=2Z.5n&&2Z.5n.3v;l 3v&&3v.S(1)===c.U},"6N":o(c){l c===1t},"70":o(c){l c===F.6W&&(!F.5i||F.5i())&&!!(c.B||c.3g||~c.6V)},"3r":4p(1d),"V":4p(P),"37":o(c){v 14=c.14.Y();l(14==="1c"&&!!c.37)||(14==="3t"&&!!c.2R)},"2R":o(c){k(c.X){c.X.6X}l c.2R===P},"5p":o(c){1i(c=c.2E;c;c=c.3b){k(c.H<6){l 1d}}l P},"2s":o(c){l!I.1y["5p"](c)},"6o":o(c){l 5s.18(c.14)},"1c":o(c){l 5r.18(c.14)},"3i":o(c){v M=c.14.Y();l M==="1c"&&c.B==="3i"||M==="3i"},"2x":o(c){v 3f;l c.14.Y()==="1c"&&c.B==="2x"&&((3f=c.1s("B"))==12||3f.Y()==="2x")},"1G":2g(o(){l[0]}),"27":2g(o(1f,u){l[u-1]}),"4v":2g(o(1f,u,13){l[13<0?13+u:13]}),"3k":2g(o(1f,u){v i=0;1i(;i<u;i+=2){1f.E(i)}l 1f}),"2W":2g(o(1f,u){v i=1;1i(;i<u;i+=2){1f.E(i)}l 1f}),"5q":2g(o(1f,u,13){v i=13<0?13+u:13;1i(;--i>=0;){1f.E(i)}l 1f}),"5w":2g(o(1f,u,13){v i=13<0?13+u:13;1i(;++i<u;){1f.E(i)}l 1f})}};I.1y["2H"]=I.1y["4v"];1i(i 25{6G:P,6I:P,6z:P,6y:P,6A:P}){I.1y[i]=5j(i)}1i(i 25{6v:P,6B:P}){I.1y[i]=5l(i)}o 2D(){}2D.6C=I.6D=I.1y;I.2D=Z 2D();2v=N.2v=o(A,4C){v 1o,q,L,B,1l,1R,3N,1z=4D[A+" "];k(1z){l 4C?0:1z.S(0)}1l=A;1R=[];3N=I.2r;J(1l){k(!1o||(q=5y.3O(1l))){k(q){1l=1l.S(q[0].u)||1l}1R.E((L=[]))}1o=1d;k((q=5D.3O(1l))){1o=q.3E();L.E({1h:1o,B:q[0].1b(36," ")});1l=1l.S(1o.u)}1i(B 25 I.2b){k((q=35[B].3O(1l))&&(!3N[B]||(q=3N[B](q)))){1o=q.3E();L.E({1h:1o,B:B,1g:q});1l=1l.S(1o.u)}}k(!1o){2p}}l 4C?1l.u:1l?N.2y(A):4D(A,1R).S(0)};o 30(L){v i=0,1m=L.u,A="";1i(;i<1m;i++){A+=L[i].1h}l A}o 3d(W,3W,4O){v 17=3W.17,3V=3W.4L,2B=3V||17,3X=4O&&2B==="X",4z=4Q++;l 3W.1G?o(c,p,K){J((c=c[17])){k(c.H===1||3X){l W(c,p,K)}}l 1d}:o(c,p,K){v 3h,1x,1n,3B=[1Q,4z];k(K){J((c=c[17])){k(c.H===1||3X){k(W(c,p,K)){l P}}}}T{J((c=c[17])){k(c.H===1||3X){1n=c[Q]||(c[Q]={});1x=1n[c.2j]||(1n[c.2j]={});k(3V&&3V===c.14.Y()){c=c[17]||c}T k((3h=1x[2B])&&3h[0]===1Q&&3h[1]===4z){l(3B[2]=3h[2])}T{1x[2B]=3B;k((3B[2]=W(c,p,K))){l P}}}}}l 1d}}o 3L(1K){l 1K.u>1?o(c,p,K){v i=1K.u;J(i--){k(!1K[i](c,p,K)){l 1d}}l P}:1K[0]}o 4G(A,4q,y){v i=0,1m=4q.u;1i(;i<1m;i++){N(A,4q[i],y)}l y}o 3j(1U,4s,2b,p,K){v c,4w=[],i=0,1m=1U.u,4H=4s!=12;1i(;i<1m;i++){k((c=1U[i])){k(!2b||2b(c,p,K)){4w.E(c);k(4H){4s.E(i)}}}}l 4w}o 3J(2r,A,W,2d,1D,4K){k(2d&&!2d[Q]){2d=3J(2d)}k(1D&&!1D[Q]){1D=3J(1D,4K)}l 1C(o(G,y,p,K){v 1M,i,c,4t=[],3x=[],4u=y.u,22=G||4G(A||"*",p.H?[p]:p,[]),3c=2r&&(G||!A)?3j(22,4t,2r,p,K):22,1j=W?1D||(G?2r:4u||2d)?[]:y:3c;k(W){W(3c,1j,p,K)}k(2d){1M=3j(1j,3x);2d(1M,[],p,K);i=1M.u;J(i--){k((c=1M[i])){1j[3x[i]]=!(3c[3x[i]]=c)}}}k(G){k(1D||2r){k(1D){1M=[];i=1j.u;J(i--){k((c=1j[i])){1M.E((3c[i]=c))}}1D(12,(1j=[]),1M,K)}i=1j.u;J(i--){k((c=1j[i])&&(1M=1D?1q(G,c):4t[i])>-1){G[1M]=!(y[1M]=c)}}}}T{1j=3j(1j===y?1j.4A(4u,1j.u):1j);k(1D){1D(12,y,1j,K)}T{E.1X(y,1j)}}})}o 3G(L){v 3a,W,j,1m=L.u,3z=I.2t[L[0].B],4r=3z||I.2t[" "],i=3z?1:0,4T=3d(o(c){l c===3a},4r,P),5a=3d(o(c){l 1q(3a,c)>-1},4r,P),1K=[o(c,p,K){v 24=(!3z&&(K||p!==2Y))||((3a=p).H?4T(c,p,K):5a(c,p,K));3a=12;l 24}];1i(;i<1m;i++){k((W=I.2t[L[i].B])){1K=[3d(3L(1K),W)]}T{W=I.2b[L[i].B].1X(12,L[i].1g);k(W[Q]){j=++i;1i(;j<1m;j++){k(I.2t[L[j].B]){2p}}l 3J(i>1&&3L(1K),i>1&&30(L.S(0,i-1).6u({1h:L[i-2].B===" "?"*":""})).1b(36,"$1"),W,i<j&&3G(L.S(i,j)),j<1m&&3G((L=L.S(j))),j<1m&&30(L))}1K.E(W)}}l 3L(1K)}o 5e(2O,2m){v 3H=2m.u>0,4x=2O.u>0,4m=o(G,p,K,y,2C){v c,j,W,2S=0,i="0",1U=G&&[],28=[],4n=2Y,22=G||4x&&I.1N["3K"]("*",2C),4o=(1Q+=4n==12?1:6Y.6Z()||0.1),1m=22.u;k(2C){2Y=p===F||p||2C}1i(;i!==1m&&(c=22[i])!=12;i++){k(4x&&c){j=0;k(!p&&c.1B!==F){1O(c);K=!1u}J((W=2O[j++])){k(W(c,p||F,K)){y.E(c);2p}}k(2C){1Q=4o}}k(3H){k((c=!W&&c)){2S--}k(G){1U.E(c)}}}2S+=i;k(3H&&i!==2S){j=0;J((W=2m[j++])){W(1U,28,p,K)}k(G){k(2S>0){J(i--){k(!(1U[i]||28[i])){28[i]=2U.2w(y)}}}28=3j(28)}E.1X(y,28);k(2C&&!G&&28.u>0&&(2S+2m.u)>1){N.5d(y)}}k(2C){1Q=4o;2Y=4n}l 1U};l 3H?1C(4m):4m}31=N.31=o(A,q){v i,2m=[],2O=[],1z=33[A+" "];k(!1z){k(!q){q=2v(A)}i=q.u;J(i--){1z=3G(q[i]);k(1z[Q]){2m.E(1z)}T{2O.E(1z)}}1z=33(A,5e(2O,2m));1z.A=A}l 1z};26=N.26=o(A,p,y,G){v i,L,2V,B,1N,3Q=1H A==="o"&&A,q=!G&&2v((A=3Q.A||A));y=y||[];k(q.u===1){L=q[0]=q[0].S(0);k(L.u>2&&(2V=L[0]).B==="2l"&&p.H===9&&1u&&I.2t[L[1].B]){p=(I.1N["2l"](2V.1g[0].1b(1P,1V),p)||[])[0];k(!p){l y;}T k(3Q){p=p.X}A=A.S(L.3E().1h.u)}i=35["4X"].18(A)?0:L.u;J(i--){2V=L[i];k(I.2t[(B=2V.B)]){2p}k((1N=I.1N[B])){k((G=1N(2V.1g[0].1b(1P,1V),3R.18(L[0].B)&&3C(p.X)||p))){L.4A(i,1);A=G.u&&30(L);k(!A){E.1X(y,G);l y}2p}}}}(3Q||31(A,q))(G,p,!1u,y,!p||3R.18(A)&&3C(p.X)||p);l y};R.4E=Q.52("").4Y(3P).3D("")===Q;R.5c=!!2n;1O();R.58=1I(o(C){l C.2c(F.4y("57"))&1});k(!1I(o(C){C.3A="<a 3g=\'#\'></a>";l C.2E.1s("3g")==="#"})){3n("B|3g|6a|6h",o(c,M,1Z){k(!1Z){l c.1s(M,M.Y()==="B"?1:2)}})}k(!R.2G||!1I(o(C){C.3A="<1c/>";C.2E.3M("1h","");l C.2E.1s("1h")===""})){3n("1h",o(c,M,1Z){k(!1Z&&c.14.Y()==="1c"){l c.6k}})}k(!1I(o(C){l C.1s("V")==12})){3n(3q,o(c,M,1Z){v 20;k(!1Z){l c[M]===P?M.Y():(20=c.2I(M))&&20.5E?20.1h:12}})}l N})(2Z);',62,438,'||||||||||||elem||||||||if|return|||function|context|match||||length|var|||results|node|selector|type|el||push|document|seed|nodeType|Expr|while|xml|tokens|name|Sizzle|whitespace|true|expando|support|slice|else|id|disabled|matcher|parentNode|toLowerCase|new|||null|argument|nodeName|RegExp||dir|test|rbuggyQSA|fn|replace|input|false|diff|matchIndexes|matches|value|for|matcherOut|cur|soFar|len|outerCache|matched|check|indexOf|preferredDoc|getAttribute|docElem|documentIsHTML|cache|lang|uniqueCache|pseudos|cached|nodeIndex|ownerDocument|markFunction|postFinder|querySelectorAll|arr|first|typeof|assert|contains|matchers|result|temp|find|setDocument|runescape|dirruns|groups|className|operator|unmatched|funescape|expr|apply|bup|isXML|val|undefined|elems|sortInput|ret|in|select|last|setMatched|subWindow|rbuggyMatches|filter|compareDocumentPosition|postFilter|identifier|pseudo|createPositionalPseudo|unquoted|getElementsByTagName|uniqueID|getElementsByClassName|ID|setMatchers|hasDuplicate|compare|break|nid|preFilter|parent|relative|target|tokenize|call|text|error|high|documentElement|key|outermost|setFilters|firstChild|excess|attributes|nth|getAttributeNode|newContext|getElementById|start|tag|ch|elementMatchers|rnative|getText|selected|matchedCount|elemLang|pop|token|odd|ofType|outermostContext|window|toSelector|compile|doc|compilerCache|newSelector|matchExpr|rtrim|checked|bp|ap|checkContext|nextSibling|matcherIn|addCombinator|appendChild|attr|href|oldCache|button|condense|even|childNodes|forward|addHandle|idx|pattern|booleans|enabled|useCache|option|CHILD|hash|attrId|postMap|hasCompare|leadingRelative|innerHTML|newCache|testContext|join|shift|els|matcherFromTokens|bySet|createCache|setMatcher|TAG|elementMatcher|setAttribute|preFilters|exec|sortOrder|compiled|rsibling|aup|label|attrHandle|skip|combinator|checkNonElements|try|catch|siblingCheck|getElementsByName|list|unloadHandler|PSEUDO|keys|args|fcssescape|rcssescape|ATTR|duplicates|nodeNameSelector|classCache|string|matchesSelector|adown|qsa|tmp|CLASS|previousSibling|escaped|simple|superMatcher|contextBackup|dirrunsUnique|createDisabledPseudo|contexts|implicitRelative|map|preMap|preexisting|eq|newUnmatched|byElement|createElement|doneName|splice|textContent|parseOnly|tokenCache|sortStable|asCodePoint|multipleContexts|mapped|x7f|unshift|postSelector|next|hasOwn|disconnectedMatch|base|sel|done|rattributeQuotes|elements|matchContext|handler|sourceIndex|getById|needsContext|sort|attachEvent||disabledAncestor|split|addEventListener|form|isDisabled|attrs|fieldset|sortDetached|rquickExpr|matchAnyContext|push_native|detectDuplicates|uniqueSort|matcherFromGroupMatchers|msallowcapture|finally|hidden|hasFocus|createInputPseudo|only|createButtonPseudo|escapedWhitespace|location|rpseudo|empty|lt|rinputs|rheader|rwhitespace|of|what|gt|ridentifier|rcomma|unsupported|hasOwnProperty|msg|x1f|rcombinators|specified|String|cacheLength|fromCharCode|0x10000|autoplay|readonly|scoped|Date|required|autofocus|multiple|defer|ismap|loop|removeChild|controls|open|async|delete|_|0x|toString|native|da|ig|0xDC00|uFFFD|uFFFF|0xD800|0x3FF|charCodeAt|height|x20|legend|removeAttribute|qsaError|object|bool|width|textarea|xa0|defaultValue|child|HTML|Syntax|header|unrecognized|class|expression|Error|lastChild|concat|submit|throw|escape|password|file|image|reset|prototype|filters|selectors|nodeValue|radio|createPseudo|checkbox|innerText|has|do|sizzle|root|not|top|defaultView|unload|createComment|onunload|webkitMatchesSelector|tabIndex|activeElement|selectedIndex|Math|random|focus|oMatchesSelector|msMatchesSelector|mozMatchesSelector'.split('|'),0,{}));
+
+YU.$ = function (selector) {
+    return Sizzle(selector)[0];
+};
+YU.$$ = Sizzle;
+YU.attr=Sizzle.attr;
+YU.contains = Sizzle.contains;
+YU.escape = Sizzle.escape;
+YU.text = Sizzle.getText;
+YU.isXML = Sizzle.isXML;
+YU.matches = Sizzle.matches;
+YU.unique = Sizzle.uniqueSort;
+//如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
+//如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
+//例如引入其他库，如jQuery，如果jQuery先引用，则因$已经被先被jQuery占用，则YU放弃对$的占用
+//如果jQuery后引用，则因为jQuery对$命名空间进行了覆盖性赋值，则YU被迫让出了对$的占用。
+if (!window.$) {
+    window['$'] = YU.$;
+}
+
+if (!window.$$) {
+    window['$$'] = YU.$$;
 }
