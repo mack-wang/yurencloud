@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/test2.css">
-    <link rel="stylesheet" href="css/test.css">
 </head>
 <style>
     .wlc {
@@ -34,15 +32,11 @@
     <li>北京</li>
 </ul>
 <div id="container3">
-    <ul id="ul3" class="ulclass3">
-        <li>星期一</li>
-        <li>星期二</li>
-        <li>星期三</li>
-    </ul>
+    <ul id="ul3" class="ulclass3"><li class="myli">星期一</li><li class="myli">星期二</li><li class="myli">星期三</li></ul>
 </div>
 <a href="http://www.baidu.com" id="openbaidu">百度一下</a>
 <div id="mousepoint" style="width: 100px;height: 100px;border: 1px solid red;"></div>
-<div id="box2" class="draggable" style="width: 100px;height: 100px;background-color: red; position: absolute;"></div>
+<div id="box2" class="draggable" style="width: 100px;height: 100px;background-color: red; position: absolute;">1</div>
 <div id="box3" class="draggable" style="width: 100px;height: 100px;background-color: blue; position: absolute;"></div>
 
 </body>
@@ -51,7 +45,8 @@
 <!--<script src="js/YU-2.0.2.min.js"></script>-->
 <script>
 
-console.log(YU.tog())
+console.log(YU.toggle('#ul2'));
+console.log(YU.$('#xiaoming').paste('hello').parent());
 
 </script>
 </html>
