@@ -29,38 +29,7 @@
     var yuObj = {},
         toString = yuObj.toString,
         version = '2.1.1';
-
-    /*
-     * 选择器
-     * 作用：通过id值获取单个元素或多个元素
-     * 参数：单个或多个id值
-     * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
-     * */
-    function d() {
-        var elements = new Array();
-
-        //查找作为参数提供的所有元素
-        for (var i = 0; i < arguments.length; i++) {
-            var element = arguments[i];
-
-            //如果该参数是一个字符串，那就假设它是一个id
-            if (typeof element == 'string') {
-                element = document.getElementById(element);
-            }
-
-            //如果只提供一个参数，则立即返回这个元素
-            if (arguments.length == 1) {
-                return element;
-            }
-
-            //否则，将它添加到数组中
-            elements.push(element);
-        }
-
-        return elements;
-    }
-
-    var YU = {
+    var yu = {
         /*
          * 属性：YU.js库的当前版本
          * */
@@ -98,7 +67,7 @@
          * 返回：无，注意YU库的添加位置置在其他库之前，以便其他库的$覆盖YU库的$
          * */
         noConflict: function (name) {
-            window[name] = YU;
+            window[name] = yu;
         },
 
 
@@ -138,7 +107,7 @@
          * 参数：event 事件对象
          * 返回：当前发生事件的目标元素
          * */
-        target: function (event) {
+        getTarget: function (event) {
             return event.target || event.srcElement;
         },
 
@@ -147,7 +116,7 @@
          * 参数：event 事件对象
          * 返回：无
          * */
-        preventDefault: function (event) {
+        prevent: function (event) {
             if (event.preventDefault) {
                 event.preventDefault();
             } else {
@@ -175,7 +144,7 @@
          * 参数：event 事件对象
          * 返回：无
          * */
-        stopPropagation: function (event) {
+        stopEvent: function (event) {
             if (event.stopPropagation) {
                 event.stopPropagation();
             } else {
@@ -188,7 +157,7 @@
          * 参数：event 事件对象
          * 返回：上一级冒泡对象
          * */
-        relatedTarget: function (event) {
+        getRelate: function (event) {
             if (event.relateTarget) {
                 return event.relatedTarget;
             } else if (event.toElement) {
@@ -247,7 +216,7 @@
          * 参数：event 事件对象
          * 返回：返回charCode或者keyCode属性及值
          * */
-        charCode: function (event) {
+        code: function (event) {
             if (typeof event.charCode == "number") {
                 return event.charCode;
             } else {
@@ -260,22 +229,22 @@
          * 参数：event 事件对象
          * 返回：剪贴板文字
          * */
-        clipboard: function (event) {
-            var clipboardData = (event.clipboardData || window.clipboardData);
-            return clipboardData.getData("text");
-        },
 
         /*
          * 作用：设置剪贴板文字（由我们写入剪贴板）
          * 参数：event 事件对象
          * 返回：设置后的剪贴板文字
          * */
-        setClipboard: function (event, value) {
-            if (event.clipboardData) {
-                return event.clipboardData.setData("text/plain", value);
-            } else if (window.clipboardData) {
-                return window.clipboardData.setData("text", value);
+        clip: function (event,value) {
+            if (arguments.length === 2) {
+                if (event.clipboardData) {
+                    return event.clipboardData.setData("text/plain", value);
+                } else if (window.clipboardData) {
+                    return window.clipboardData.setData("text", value);
+                }
             }
+            var clipboardData = (event.clipboardData || window.clipboardData);
+            return clipboardData.getData("text");
         },
 
         /*
@@ -366,8 +335,8 @@
 
             function handleEvent(event) {
                 //获取事件和目标
-                event = YU.getEvent(event);
-                var target = YU.target(event);
+                event = yu.getEvent(event);
+                var target = yu.target(event);
 
                 //确定事件类型
                 switch (event.type) {
@@ -389,7 +358,7 @@
                     case "mousemove":
                         if (dragging !== null) {
                             //获取事件
-                            event = YU.getEvent(event);
+                            event = yu.getEvent(event);
 
                             //指定位置
                             dragging.style.left = (event.clientX - diffX) + "px";
@@ -419,14 +388,14 @@
 
             //公共接口
             dragdrop.enable = function () {
-                YU.event(document, "mousedown", handleEvent);
-                YU.event(document, "mousemove", handleEvent);
-                YU.event(document, "mouseup", handleEvent);
+                yu.event(document, "mousedown", handleEvent);
+                yu.event(document, "mousemove", handleEvent);
+                yu.event(document, "mouseup", handleEvent);
             };
             dragdrop.disable = function () {
-                YU.removeEvent(document, "mousedown", handleEvent);
-                YU.removeEvent(document, "mousemove", handleEvent);
-                YU.removeEvent(document, "mouseup", handleEvent);
+                yu.removeEvent(document, "mousedown", handleEvent);
+                yu.removeEvent(document, "mousemove", handleEvent);
+                yu.removeEvent(document, "mouseup", handleEvent);
             };
             return dragdrop;
         },
@@ -446,7 +415,7 @@
          * 返回：布尔值
          * */
         toggle: function (node, value) {
-            if (YU.isString(node)) {
+            if (yu.isString(node)) {
                 node = this.$(node)
             }
 
@@ -459,14 +428,14 @@
         },
 
         hide: function (node) {
-            if (YU.isString(node)) {
+            if (yu.isString(node)) {
                 node = this.$(node)
             }
             node.style.display = 'none';
         },
 
         show: function (node, value) {
-            if (YU.isString(node)) {
+            if (yu.isString(node)) {
                 node = this.$(node)
             }
             node.style.display = value || '';
@@ -490,7 +459,6 @@
                 element.style[this.camelize(property)] = styles[property];
             }
         },
-
 
 
         /*
@@ -556,7 +524,7 @@
          * 参数：element 元素 | className 类名
          * 返回：布尔值
          * */
-        addClass:function (element, className) {
+        addClass: function (element, className) {
             if (typeof element === "string") {
                 element = this.$(element)
             }
@@ -570,13 +538,12 @@
          * 参数：element 元素 | className 类名
          * 返回：布尔值
          * */
-        removeClassName: function (element, className) {
-            if (!(element = d(element))) return false;
-            var classes = this.getClassNames(element);
+        removeClass: function (element, className) {
+            if (typeof element === "string") {
+                element = this.$(element)
+            }
+            var classes = this.getClass(element);
             var length = classes.length;
-            //loop through the array in reverse, deleting matching items
-            // You loop in reverse as you're deleting items from
-            // the array which will shorten it.
             for (var i = length - 1; i >= 0; i--) {
                 if (classes[i] === className) {
                     delete(classes[i]);
@@ -599,15 +566,15 @@
          * 参数：node 要插入的元素 | referenceNode 指定的元素 参考位置
          * 返回：无
          * */
-        insertAfter: function (node, referenceNode) {
-            if (!(node = d(node))) {
-                return false;
+        after: function (element, referenceNode) {
+            if (typeof element === "string") {
+                element = this.$(element)
             }
             if (!(referenceNode = d(referenceNode))) {
                 return false;
             }
             return referenceNode.parentNode.insertBefore(
-                node, referenceNode.nextSibling
+                element, referenceNode.nextSibling
             );
         },
 
@@ -616,18 +583,18 @@
          * 参数：parent 要移除所有子元素的父元素
          * 返回：返回移除子元素后的父元素
          * */
-        removeChildren: function (parent) {
-            if (!(parent = d(parent))) {
-                return false;
+        removeChild: function (parentElement) {
+            if (typeof parentElement === "string") {
+                parentElement = this.$(parentElement)
             }
 
             //当存在子节点时册除该子节点
-            while (parent.firstChild) {
-                parent.firstChild.parentNode.removeChild(parent.firstChild);
+            while (parentElement.firstChild) {
+                parentElement.firstChild.parentNode.removeChild(parentElement.firstChild);
             }
 
             //再返回父元素，以便实现方法连缀
-            return parent;
+            return parentElement;
         },
 
         /*
@@ -636,19 +603,11 @@
          * 返回：返回要移除的元素
          * 考虑：因为传入字符串，无法判断是id还是class，并且也不想因此而让大家多加个#或.号，所以只能传入DOM元素。
          * */
-        remove: function (elements) {
-            if (elements.nodeType == this.node.ELEMENT_NODE) {
-                elements.parentNode.removeChild(elements);
-            } else if (this.isArrayLike(elements)) {
-                var len = elements.length;
-                for (var i = 0; i < len; i++) {
-                    elements[len - i - 1].parentNode.removeChild(elements[len - i - 1]);
-                }
-            } else {
-                return new Error('undefined');
+        remove: function (element) {
+            if (typeof element === "string") {
+                element = this.$(element)
             }
-            //再返回父元素，以便实现方法连缀
-            return elements;
+            element.parentNode.removeChild(element);
         },
 
 
@@ -657,12 +616,12 @@
          * 参数：parent 父元素 | newChild 要插入的新元素
          * 返回：返回插入新子元素后的父元素
          * */
-        prependChild: function (parent, newChild) {
-            if (!(parent = d(parent))) {
-                return false;
+        prepend: function (parent, newChild) {
+            if (typeof parent === "string") {
+                parent = this.$(parent)
             }
-            if (!(newChild = d(newChild))) {
-                return false;
+            if (typeof newChild === "string") {
+                newChild = this.$(newChild)
             }
 
             if (parent.firstChild) {
@@ -681,7 +640,7 @@
          * 参数：无
          * 返回：宽高对象，包含width,height属性
          * */
-        getBrowserWindowSize: function () {
+        windowSize: function () {
             var de = document.documentElement;
             return {
                 'width': (
@@ -700,7 +659,7 @@
          * 参数：fn 回调函数 this代表当前节点 作用于遍历后的每个节点 | node 遍历指定节点
          * 返回：无
          * */
-        walkElementsLinear: function (fn, node) {
+        eachElem: function (fn, node) {
             var root = node || window.document;
             var nodes = root.getElementsByTagName("*");
             for (var i = 0; i < nodes.length; i++) {
@@ -713,12 +672,26 @@
          * 参数：fn 回调函数 this代表当前节点 作用于遍历后的每个节点 | node 遍历指定节点 | depth 遍历深度 | returnedFromParent
          * 返回：无
          * */
-        walkTheDOMRecursive: function (fn, node, depth, returnedFromParent) {
+        eachNode: function (fn, node, depth, returnedFromParent) {
             var root = node || window.document;
             returnedFromParent = fn.call(root, depth++, returnedFromParent);
             node = root.firstChild;
             while (node) {
-                this.walkTheDOMRecursive(fn, node, depth, returnedFromParent);
+                this.eachNode(fn, node, depth, returnedFromParent);
+                node = node.nextSibling;
+            }
+        },
+
+        /*
+         * 作用：遍历元素节点，文本节点，含父节点（同eachNode），实现方法不同而已
+         * 参数：node 遍历指定节点 | fn 回调函数 作用于遍历后的每个节点 node代表当前节点
+         * 返回：无
+         * */
+        eachDom: function (node, fn) {
+            fn(node);
+            node = node.firstChild;
+            while (node) {
+                this.eachDom(node, fn);
                 node = node.nextSibling;
             }
         },
@@ -728,34 +701,20 @@
          * 参数：node 遍历指定节点 | fn 回调函数 作用于遍历后的每个节点 | depth 遍历深度 | returnedFromParent 返回给func使用的对象 包含元素节点，文本节点，属性节点
          * 返回：无
          * */
-        walkTheDOMWithAttributes: function (node, fn, depth, returnedFromParent) {
+        eachAttr: function (node, fn, depth, returnedFromParent) {
             var root = node || window.document;
             returnedFromParent = fn(root, depth++, returnedFromParent);
             if (root.attributes) {
                 for (var i = 0; i < root.attributes.length; i++) {
-                    this.walkTheDOMWithAttributes(root.attributes[i], fn, depth - 1, returnedFromParent);
+                    this.eachAll(root.attributes[i], fn, depth - 1, returnedFromParent);
                 }
             }
-            if (root.nodeType != YU.node.ATTRIBUTE_NODE) {
+            if (root.nodeType != yu.node.ATTRIBUTE_NODE) {
                 node = root.firstChild;
                 while (node) {
-                    this.walkTheDOMWithAttributes(node, fn, depth, returnedFromParent);
+                    this.eachAlls(node, fn, depth, returnedFromParent);
                     node = node.nextSibling;
                 }
-            }
-        },
-
-        /*
-         * 作用：遍历元素节点，文本节点，含父节点（同walkTheDOMRecursive），实现方法不同而已
-         * 参数：node 遍历指定节点 | fn 回调函数 作用于遍历后的每个节点 node代表当前节点
-         * 返回：无
-         * */
-        walkTheDOM: function (node, fn) {
-            fn(node);
-            node = node.firstChild;
-            while (node) {
-                this.walkTheDOM(node, fn);
-                node = node.nextSibling;
             }
         },
 
@@ -993,7 +952,7 @@
          * 参数：name cookie名字 | path 保存路径 | domain 网址主体 | secure 安全设置
          * 返回：无
          * */
-        unsetCookie: function (name, path, domain, secure) {
+        removeCookie: function (name, path, domain, secure) {
             this.setCookie(name, "", new Date(0), path, domain, secure);
         },
 
@@ -1348,7 +1307,7 @@
          * 参数：obj 对象
          * 返回：只保留对象的值的数组
          * */
-        objectToArray: function (obj) {
+        toArray: function (obj) {
             var arr = [];
             for (var item in obj) {
                 arr.push(obj[item]);
@@ -1361,7 +1320,7 @@
          * 参数：obj 对象
          * 返回：对象的length
          * */
-        getLength: function (obj) {
+        getLen: function (obj) {
             var length = 0;
             for (var key in obj) {
                 if (obj.hasOwnProperty(key)) length++;
@@ -1374,7 +1333,7 @@
          * 参数：namespace 要扩展的命名空间对象，namespaceString 命名空间字符串，例如namespace.util.array.mypush;
          * 返回：扩展后的命名空间
          * */
-        extendNamespace: function (namespace, namespaceString) {
+        namespace: function (namespace, namespaceString) {
             var parts = namespaceString.split("."),
                 parent = namespace,
                 parentLen;
@@ -1450,14 +1409,14 @@
     };
 
     //对上面type方法检测出来的object类型进行细分，补充
-    YU.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),
+    yu.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),
         function (i, name) {
             yuObj["[object " + name + "]"] = name.toLowerCase();
         });
 
     //YU的命名空间
-    if (!window.YU) {
-        window['YU'] = YU;
+    if (!window.yu) {
+        window['yu'] = yu;
     }
 
 
@@ -1588,7 +1547,7 @@ function Logger(id) {
     var createWindow = function () {
         //取得新窗口在浏览器中
         //居中放置时在左上角的位置
-        var browserWindowSize = YU.getBrowserWindowSize();
+        var browserWindowSize = yu.windowSize();
         var top = ((browserWindowSize.height - 200) / 2 || 0);
         var left = ((browserWindowSize.width - 200) / 2 || 0);
         //创建作为日志窗口的DOM节点
@@ -1745,44 +1704,44 @@ eval(function (p, a, c, k, e, d) {
 YU.$ = function (selector) {
     var element = (typeof selector === "string" ? Sizzle(selector)[0] : selector);
     element.text = function () {
-        return this.innerText ? this.innerText : this.innerHTML.replace(/<.+?>/gim,"");
+        return this.innerText ? this.innerText : this.innerHTML.replace(/<.+?>/gim, "");
     };
     element.html = function () {
         return this.innerHTML ? this.innerHTML : null;
     };
     element.first = function () {
-        if(this.firstChild.nodeName == "#text"){
+        if (this.firstChild.nodeName == "#text") {
             return YU.$(this.firstChild.nextSibling);
-        }else if(this.firstChild){
+        } else if (this.firstChild) {
             return YU.$(this.firstChild);
-        }else{
+        } else {
             return null;
         }
     };
     element.last = function () {
-        if(this.lastChild.nodeName == "#text"){
+        if (this.lastChild.nodeName == "#text") {
             return YU.$(this.lastChild.previousSibling);
-        }else if(this.lastChild){
+        } else if (this.lastChild) {
             return YU.$(this.lastChild);
-        }else{
+        } else {
             return null;
         }
     };
     element.pre = function () {
-        if(this.previousSibling.nodeName == "#text"){
+        if (this.previousSibling.nodeName == "#text") {
             return YU.$(this.previousSibling.previousSibling);
-        }else if(this.previousSibling){
+        } else if (this.previousSibling) {
             return YU.$(this.previousSibling);
-        }else{
+        } else {
             return null;
         }
     };
     element.next = function () {
-        if(this.nextSibling.nodeName == "#text"){
+        if (this.nextSibling.nodeName == "#text") {
             return YU.$(this.nextSibling.nextSibling);
-        }else if(this.nextSibling){
+        } else if (this.nextSibling) {
             return YU.$(this.nextSibling);
-        }else{
+        } else {
             return null;
         }
     };
@@ -1790,23 +1749,23 @@ YU.$ = function (selector) {
         return this.parentNode ? YU.$(this.parentNode) : null;
     };
     element.css = function (styles) {
-        YU.css(element,styles);
+        YU.css(element, styles);
         return element;
     };
     element.addClass = function (className) {
-        YU.addClass(element,className);
+        YU.addClass(element, className);
         return element;
     };
     element.getClass = function () {
         return YU.getClass(element);
     };
 
-    element.hasClass=function (className) {
+    element.hasClass = function (className) {
         return YU.hasClass(className);
     };
 
-    element.attr = function (attribute,value) {
-        if(arguments.length === 2){
+    element.attr = function (attribute, value) {
+        if (arguments.length === 2) {
             this.setAttribute(attribute, value);
             return element;
         }
