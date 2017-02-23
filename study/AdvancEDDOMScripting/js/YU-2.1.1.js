@@ -479,87 +479,19 @@
          * 返回：无
          * */
 
-        css: function (node, styles) {
-            if (YU.isString(node)) {
-                node = this.$(node)
+        css: function (element, styles) {
+            if (typeof element === "string") {
+                element = this.$(element)
             }
-
             for (var property in styles) {
                 if (!styles.hasOwnProperty(property)) {
                     continue;
                 }
-                node.style[this.camelize(property)] = styles[property];
+                element.style[this.camelize(property)] = styles[property];
             }
         },
 
 
-        editCSS: function (selector, styles, url, media) {
-            var styleSheets = (typeof url == 'array' ? url : this.getSheets(url, media));
-
-            for (var i = 0; i < styleSheets.length; i++) {
-
-                // Retrieve the list of rules
-                // The DOM2 Style method is styleSheets[i].cssRules
-                // The MSIE method is styleSheets[i].rules
-                var rules = styleSheets[i].cssRules || styleSheets[i].rules;
-                if (!rules) {
-                    continue;
-                }
-
-                // Convert to uppercase as MSIIE defaults to UPPERCASE tags.
-                // this could cause conflicts if you're using case sensetive ids
-                selector = selector.toUpperCase();
-
-                for (var j = 0; j < rules.length; j++) {
-                    // Check if it matches
-                    if (rules[j].selectorText.toUpperCase() == selector) {
-                        for (var property in styles) {
-                            if (!styles.hasOwnProperty(property)) {
-                                continue;
-                            }
-                            // Set the new style property
-                            rules[j].style[this.camelize(property)] = styles[property];
-                        }
-                    }
-                }
-            }
-        },
-
-        /*
-         * 作用：添加一条样式规则
-         * 参数：selector 选择器 | styles 样式对象 |index 索引 位置 | url css文件的资源位置 | media
-         * 返回：无
-         * */
-        addCSS: function (selector, styles, index, url, media) {
-            var declaration = '';
-
-            // Build the declaration string from the style object
-            for (var property in styles) {
-                if (!styles.hasOwnProperty(property)) {
-                    continue;
-                }
-                declaration += property + ':' + styles[property] + '; ';
-            }
-
-            var styleSheets = (typeof url == 'array' ? url : this.getSheets(url, media));
-            var newIndex;
-            for (var i = 0; i < styleSheets.length; i++) {
-                // Add the rule
-                if (styleSheets[i].insertRule) {
-                    // The DOM2 Style method
-                    // index = length is the end of the list
-                    //我这里做了修改：newIndex超过了原来的索引数
-                    newIndex = (index >= 0 ? index : styleSheets[i].cssRules.length) - 1;
-                    styleSheets[i].insertRule(selector + ' { ' + declaration + ' } ',
-                        newIndex);
-                } else if (styleSheets[i].addRule) {
-                    // The Microsoft method
-                    // index = -1 is the end of the list
-                    newIndex = (index >= 0 ? index : -1);
-                    styleSheets[i].addRule(selector, declaration, newIndex);
-                }
-            }
-        },
 
         /*
          * 作用：得到元素的样式属性值
@@ -567,7 +499,9 @@
          * 返回：无
          * */
         getStyle: function (element, property) {
-            if (!(element = d(element)) || !property) return false;
+            if (typeof element === "string") {
+                element = this.$(element)
+            }
             // Check for the value in the element's style property
             var value = element.style[this.camelize(property)];
             if (!value) {
@@ -586,64 +520,16 @@
             return value == 'auto' ? '' : value;
         },
 
-        /*
-         * 作用：通过id修改单个元素的样式
-         * 参数：element 元素 | styles 样式对象
-         * 返回：布尔值
-         * */
-        setStyleById: function (element, styles) {
-            // Retrieve an object reference
-            if (!(element = d(element))) return false;
-            // Loop through  the styles object an apply each property
-            for (var property in styles) {
-                if (!styles.hasOwnProperty(property)) continue;
-
-                if (element.style.setProperty) {
-                    //DOM2 Style method
-                    element.style.setProperty(
-                        this.uncamelize(property, '-'), styles[property], null);
-                } else {
-                    //Alternative method
-                    element.style[this.camelize(property)] = styles[property];
-                }
-            }
-            return true;
-        },
-
-        /*
-         * 作用：通过类名修改多个元素的样式
-         * 参数：parent 父元素 必填 | tag 标签名 | className 要添加的类名 | styles 要添加的样式对象
-         * 返回：布尔值
-         * */
-        setStylesByClassName: function (parent, tag, className, styles) {
-            if (!(parent = d(parent))) return false;
-            var elements = this.getByClass(className, tag, parent);
-            for (var e = 0; e < elements.length; e++) {
-                this.setStyleById(elements[e], styles);
-            }
-            return true;
-        },
-
-        /*
-         * 作用：通过标签名修改多个元素的样式
-         * 参数：tagname 标签名 | styles 样式对象 | parent 父元素
-         * 返回：无
-         * */
-        setStylesByTagName: function (tagname, styles, parent) {
-            parent = d(parent) || document;
-            var elements = parent.getElementsByTagName(tagname);
-            for (var e = 0; e < elements.length; e++) {
-                this.setStyleById(elements[e], styles);
-            }
-        },
 
         /*
          * 作用：获取元素class值数组
          * 参数：element 元素
          * 返回：class数组
          * */
-        getClassNames: function (element) {
-            if (!(element = d(element))) return false;
+        getClass: function (element) {
+            if (typeof element === "string") {
+                element = this.$(element)
+            }
             return element.className.replace(/\s+/, ' ').split(' ');
         },
 
@@ -652,11 +538,12 @@
          * 参数：element 元素 | className 类名
          * 返回：布尔值
          * */
-        hasClassName: function (element, className) {
-            if (!(element = d(element))) return false;
+        hasClass: function (element, className) {
+            if (typeof element === "string") {
+                element = this.$(element)
+            }
             var classes = this.getClassNames(element);
             for (var i = 0; i < classes.length; i++) {
-                // Check if the className matches and return true if it does
                 if (classes[i] === className) {
                     return true;
                 }
@@ -669,13 +556,14 @@
          * 参数：element 元素 | className 类名
          * 返回：布尔值
          * */
-        addClassName: function (element, className) {
-            if (!(element = d(element))) return false;
-            // Append the classname to the end of the current className
-            // If there is no className, don't include the space
+        addClass:function (element, className) {
+            if (typeof element === "string") {
+                element = this.$(element)
+            }
             element.className += (element.className ? ' ' : '') + className;
             return true;
         },
+
 
         /*
          * 作用：移除class
@@ -1902,19 +1790,21 @@ YU.$ = function (selector) {
         return this.parentNode ? YU.$(this.parentNode) : null;
     };
     element.css = function (styles) {
-        if(styles.indexOf(':') === -1) {
-            if (this.currentStyle) {
-                return this.currentStyle[styles];
-            } else {
-                return document.defaultView.getComputedStyle(this, null).getPropertyValue(styles);
-            }
-        }
-        styles = styles.split(";");
-        for (var i = 0; i < styles.length; i++) {
-            var style = styles[i].split(":");
-            this.style[YU.camelize(style[0])] = style[1];
-        }
+        YU.css(element,styles);
+        return element;
     };
+    element.addClass = function (className) {
+        YU.addClass(element,className);
+        return element;
+    };
+    element.getClass = function () {
+        return YU.getClass(element);
+    };
+
+    element.hasClass=function (className) {
+        return YU.hasClass(className);
+    };
+
     element.attr = function (attribute,value) {
         if(arguments.length === 2){
             this.setAttribute(attribute, value);
@@ -1922,6 +1812,7 @@ YU.$ = function (selector) {
         }
         return this.getAttribute(attribute);
     };
+
     element.paste = function (node) {
         var span = document.createElement("span");
         if (typeof(node) == "string") {
