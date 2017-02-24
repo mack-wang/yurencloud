@@ -54,14 +54,6 @@
         },
 
         /*
-         * 仅YU库内部使用
-         * 作用：通过id值获取单个元素或多个元素
-         * 参数：单个或多个id值
-         * 返回：元素数组，注意返回的是DOM元素数组，和jQuery不同
-         * */
-        d: d,
-
-        /*
          * 作用：解决YU库和其他库在$上的命名冲突
          * 参数：name 取代$的新名字
          * 返回：无，注意YU库的添加位置置在其他库之前，以便其他库的$覆盖YU库的$
@@ -84,6 +76,9 @@
          * 返回：无
          * */
         event: function (element, type, fn) {
+            if (typeof element === "string") {
+                element = this.$(element)
+            }
             if (element.addEventListener) {
                 element.addEventListener(type, fn, false);
             } else if (element.attachEvent) {
@@ -92,6 +87,8 @@
                 element["on" + type] = fn;
             }
         },
+
+        on:this.event,
 
         /*
          * 作用：获取事件对象
@@ -414,31 +411,30 @@
          * 参数：node 要隐藏或者显示的元素 | value 显示时要设置的display值 可选
          * 返回：布尔值
          * */
-        toggle: function (node, value) {
-            if (yu.isString(node)) {
-                node = this.$(node)
+        toggle: function (element, value) {
+            if (typeof element === "string") {
+                element = this.$(element)
             }
-
-            if (node.style.display != 'none') {
-                node.style.display = 'none';
+            if (element.style.display != 'none') {
+                element.style.display = 'none';
             } else {
-                node.style.display = value || '';
+                element.style.display = value || '';
             }
             return true;
         },
 
-        hide: function (node) {
-            if (yu.isString(node)) {
-                node = this.$(node)
+        hide: function (element) {
+            if (typeof element === "string") {
+                element = this.$(element)
             }
-            node.style.display = 'none';
+            element.style.display = 'none';
         },
 
-        show: function (node, value) {
-            if (yu.isString(node)) {
-                node = this.$(node)
+        show: function (element, value) {
+            if (typeof element === "string") {
+                element = this.$(element)
             }
-            node.style.display = value || '';
+            element.style.display = value || '';
         },
 
 
@@ -1293,7 +1289,7 @@
          * 参数：orignalFunc 原函数，compareFunc 比较函数
          * 返回：二者的运行时间和比较的倍数
          * */
-        runCompare: function (orignalFunc, compareFunc) {
+        compare: function (orignalFunc, compareFunc) {
             var a = this.run(orignalFunc);
             var b = this.run(compareFunc);
             var times = (a / b).toFixed(1);
@@ -1682,26 +1678,2285 @@ if (!console) {
 }
 
 
-eval(function (p, a, c, k, e, d) {
-    e = function (c) {
-        return (c < a ? "" : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
-    };
-    if (!''.replace(/^/, String)) {
-        while (c--)d[e(c)] = k[c] || e(c);
-        k = [function (e) {
-            return d[e]
-        }];
-        e = function () {
-            return '\\w+'
-        };
-        c = 1;
-    }
-    ;
-    while (c--)if (k[c])p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]);
-    return p;
-}('v N=(o(2Z){v i,R,I,2Q,1Z,2v,31,26,2Y,23,2n,1O,F,1t,1u,19,2a,1g,1J,Q="6M"+1*Z 5M(),1r=2Z.F,1Q=0,4Q=0,4c=3I(),4D=3I(),33=3I(),3P=o(a,b){k(a===b){2n=P}l 0},4M=({}).5A,1F=[],2U=1F.2U,5b=1F.E,E=1F.E,S=1F.S,1q=o(42,c){v i=0,1m=42.u;1i(;i<1m;i++){k(42[i]===c){l i}}l-1},3q="37|2R|5W|5O|5J|5U|5Q|V|5h|5R|5S|5P|5V|5K|5N|5L",O="[\\\\6b\\\\t\\\\r\\\\n\\\\f]",2e="(?:\\\\\\\\.|[\\\\w-]|[^\\0-\\\\6j])+",2G="\\\\["+O+"*("+2e+")(?:"+O+"*([*^$|!~]?=)"+O+"*(?:\'((?:\\\\\\\\.|[^\\\\\\\\\'])*)\'|\\"((?:\\\\\\\\.|[^\\\\\\\\\\"])*)\\"|("+2e+"))|)"+O+"*\\\\]",1y=":("+2e+")(?:\\\\(("+"(\'((?:\\\\\\\\.|[^\\\\\\\\\'])*)\'|\\"((?:\\\\\\\\.|[^\\\\\\\\\\"])*)\\")|"+"((?:\\\\\\\\.|[^\\\\\\\\()[\\\\]]|"+2G+")*)|"+".*"+")\\\\)|)",5t=Z 15(O+"+","g"),36=Z 15("^"+O+"+|((?:^|[^\\\\\\\\])(?:\\\\\\\\.)*)"+O+"+$","g"),5y=Z 15("^"+O+"*,"+O+"*"),5D=Z 15("^"+O+"*([>+~]|"+O+")"+O+"*"),4R=Z 15("="+O+"*([^\\\\]\'\\"]*?)"+O+"*\\\\]","g"),5o=Z 15(1y),5x=Z 15("^"+2e+"$"),35={"2l":Z 15("^#("+2e+")"),"4i":Z 15("^\\\\.("+2e+")"),"3K":Z 15("^("+2e+"|[*])"),"49":Z 15("^"+2G),"44":Z 15("^"+1y),"3u":Z 15("^:(5k|1G|27|2H|2H-27)-(6l|5u-B)(?:\\\\("+O+"*(3k|2W|(([+-]|)(\\\\d*)n|)"+O+"*(?:([+-]|)"+O+"*(\\\\d+)|))"+O+"*\\\\)|)","i"),"6g":Z 15("^(?:"+3q+")$","i"),"4X":Z 15("^"+O+"*[>+~]|:(3k|2W|4v|5w|5q|2H|1G|27)(?:\\\\("+O+"*((?:-\\\\d)?\\\\d*)"+O+"*\\\\)|)(?=[^-]|$)","i")},5r=/^(?:1c|26|6i|3i)$/i,5s=/^h\\d$/i,2P=/^[^{]+\\{\\s*\\[61 \\w/,59=/^(?:#([\\w-]+)|(\\w+)|\\.([\\w-]+))$/,3R=/[+~]/,1P=Z 15("\\\\\\\\([\\\\62-f]{1,6}"+O+"?|("+O+")|.)","63"),1V=o(5Y,4k,5m){v 2z="5Z"+4k-5I;l 2z!==2z||5m?4k:2z<0?5F.5H(2z+5I):5F.5H(2z>>10|67,2z&68|64)},48=/([\\0-\\5C\\4I]|^-?\\d)|^-$|[^\\0-\\5C\\4I-\\66\\w-]/g,47=o(2N,4F){k(4F){k(2N==="\\0"){l"\\65"}l 2N.S(0,-1)+"\\\\"+2N.69(2N.u-1).60(16)+" "}l"\\\\"+2N},43=o(){1O()},51=3d(o(c){l c.V===P&&("54"25 c||"3T"25 c)},{17:"X",4L:"6c"});3Y{E.1X((1F=S.2w(1r.3l)),1r.3l);1F[1r.3l.u].H}3Z(e){E={1X:1F.u?o(2u,3F){5b.1X(2u,S.2w(3F))}:o(2u,3F){v j=2u.u,i=0;J((2u[j++]=3F[i++])){}2u.u=j-1}}}o N(A,p,y,G){v m,i,c,2q,q,1R,34,2J=p&&p.1B,H=p?p.H:9;y=y||[];k(1H A!=="4d"||!A||H!==1&&H!==9&&H!==11){l y}k(!G){k((p?p.1B||p:1r)!==F){1O(p)}p=p||F;k(1u){k(H!==11&&(q=59.3O(A))){k((m=q[1])){k(H===9){k((c=p.2K(m))){k(c.U===m){y.E(c);l y}}T{l y}}T{k(2J&&(c=2J.2K(m))&&1J(p,c)&&c.U===m){y.E(c);l y}}}T k(q[2]){E.1X(y,p.2i(A));l y;}T k((m=q[3])&&R.2k&&p.2k){E.1X(y,p.2k(m));l y}}k(R.4g&&!33[A+" "]&&(!19||!19.18(A))){k(H!==1){2J=p;34=A;}T k(p.14.Y()!=="6f"){k((2q=p.1s("U"))){2q=2q.1b(48,47)}T{p.3M("U",(2q=Q))}1R=2v(A);i=1R.u;J(i--){1R[i]="#"+2q+" "+30(1R[i])}34=1R.3D(",");2J=3R.18(A)&&3C(p.X)||p}k(34){3Y{E.1X(y,2J.1E(34));l y}3Z(6e){}5g{k(2q===Q){p.6d("U")}}}}}}l 26(A.1b(36,"$1"),p,y,G)}o 3I(){v 45=[];o 1v(2B,1h){k(45.E(2B+" ")>I.5G){5X 1v[45.3E()]}l(1v[2B+" "]=1h)}l 1v}o 1C(1a){1a[Q]=P;l 1a}o 1I(1a){v C=F.4y("57");3Y{l!!1a(C)}3Z(e){l 1d}5g{k(C.X){C.X.5T(C)}C=12}}o 3n(56,4U){v 1F=56.52("|"),i=1F.u;J(i--){I.3U[1F[i]]=4U}}o 40(a,b){v 1k=b&&a,1e=1k&&a.H===1&&b.H===1&&a.4V-b.4V;k(1e){l 1e}k(1k){J((1k=1k.3b)){k(1k===b){l-1}}}l a?1:-1}o 5j(B){l o(c){v M=c.14.Y();l M==="1c"&&c.B===B}}o 5l(B){l o(c){v M=c.14.Y();l(M==="1c"||M==="3i")&&c.B===B}}o 4p(V){l o(c){k("54"25 c){k(c.X&&c.V===1d){k("3T"25 c){k("3T"25 c.X){l c.X.V===V}T{l c.V===V}}l c.55===V||c.55!==!V&&51(c)===V}l c.V===V;}T k("3T"25 c){l c.V===V}l 1d}}o 2g(1a){l 1C(o(13){13=+13;l 1C(o(G,1g){v j,1f=1a([],G.u,13),i=1f.u;J(i--){k(G[(j=1f[i])]){G[j]=!(1g[j]=G[j])}}})})}o 3C(p){l p&&1H p.2i!=="21"&&p}R=N.R={};1Z=N.1Z=o(c){v 2A=c&&(c.1B||c).2A;l 2A?2A.14!=="6m":1d};1O=N.1O=o(z){v 3y,29,32=z?z.1B||z:1r;k(32===F||32.H!==9||!32.2A){l F}F=32;1t=F.2A;1u=!1Z(F);k(1r!==F&&(29=F.6Q)&&29.6P!==29){k(29.53){29.53("6R",43,1d);}T k(29.4Z){29.4Z("6T",43)}}R.2G=1I(o(C){C.1S="i";l!C.1s("1S")});R.2i=1I(o(C){C.3e(F.6S(""));l!C.2i("*").u});R.2k=2P.18(F.2k);R.4W=1I(o(C){1t.3e(C).U=Q;l!F.41||!F.41(Q).u});k(R.4W){I.2b["2l"]=o(U){v 3w=U.1b(1P,1V);l o(c){l c.1s("U")===3w}};I.1N["2l"]=o(U,p){k(1H p.2K!=="21"&&1u){v c=p.2K(U);l c?[c]:[]}}}T{I.2b["2l"]=o(U){v 3w=U.1b(1P,1V);l o(c){v z=1H c.2I!=="21"&&c.2I("U");l z&&z.1h===3w}};I.1N["2l"]=o(U,p){k(1H p.2K!=="21"&&1u){v z,i,22,c=p.2K(U);k(c){z=c.2I("U");k(z&&z.1h===U){l[c]}22=p.41(U);i=0;J((c=22[i++])){z=c.2I("U");k(z&&z.1h===U){l[c]}}}l[]}}}I.1N["3K"]=R.2i?o(2M,p){k(1H p.2i!=="21"){l p.2i(2M);}T k(R.4g){l p.1E(2M)}}:o(2M,p){v c,4h=[],i=0,y=p.2i(2M);k(2M==="*"){J((c=y[i++])){k(c.H===1){4h.E(c)}}l 4h}l y};I.1N["4i"]=R.2k&&o(1S,p){k(1H p.2k!=="21"&&1u){l p.2k(1S)}};2a=[];19=[];k((R.4g=2P.18(F.1E))){1I(o(C){1t.3e(C).3A="<a U=\'"+Q+"\'></a>"+"<26 U=\'"+Q+"-\\r\\\\\' 5f=\'\'>"+"<3t 2R=\'\'></3t></26>";k(C.1E("[5f^=\'\']").u){19.E("[*^$]="+O+"*(?:\'\'|\\"\\")")}k(!C.1E("[2R]").u){19.E("\\\\["+O+"*(?:1h|"+3q+")")}k(!C.1E("[U~="+Q+"-]").u){19.E("~=")}k(!C.1E(":37").u){19.E(":37")}k(!C.1E("a#"+Q+"+*").u){19.E(".#.+[+~]")}});1I(o(C){C.3A="<a 3g=\'\' V=\'V\'></a>"+"<26 V=\'V\'><3t/></26>";v 1c=F.4y("1c");1c.3M("B","5h");C.3e(1c).3M("M","D");k(C.1E("[M=d]").u){19.E("M"+O+"*[*^$|!~]?=")}k(C.1E(":3r").u!==2){19.E(":3r",":V")}1t.3e(C).V=P;k(C.1E(":V").u!==2){19.E(":3r",":V")}C.1E("*,:x");19.E(",.*:")})}k((R.4e=2P.18((1g=1t.1g||1t.6U||1t.73||1t.71||1t.72)))){1I(o(C){R.4N=1g.2w(C,"*");1g.2w(C,"[s!=\'\']:x");2a.E("!=",1y)})}19=19.u&&Z 15(19.3D("|"));2a=2a.u&&Z 15(2a.3D("|"));3y=2P.18(1t.2c);1J=3y||2P.18(1t.1J)?o(a,b){v 4f=a.H===9?a.2A:a,1Y=b&&b.X;l a===1Y||!!(1Y&&1Y.H===1&&(4f.1J?4f.1J(1Y):a.2c&&a.2c(1Y)&16))}:o(a,b){k(b){J((b=b.X)){k(b===a){l P}}}l 1d};3P=3y?o(a,b){k(a===b){2n=P;l 0}v 2o=!a.2c-!b.2c;k(2o){l 2o}2o=(a.1B||a)===(b.1B||b)?a.2c(b):1;k(2o&1||(!R.58&&b.2c(a)===2o)){k(a===F||a.1B===1r&&1J(1r,a)){l-1}k(b===F||b.1B===1r&&1J(1r,b)){l 1}l 23?(1q(23,a)-1q(23,b)):0}l 2o&4?-1:1}:o(a,b){k(a===b){2n=P;l 0}v 1k,i=0,3S=a.X,1Y=b.X,39=[a],38=[b];k(!3S||!1Y){l a===F?-1:b===F?1:3S?-1:1Y?1:23?(1q(23,a)-1q(23,b)):0;}T k(3S===1Y){l 40(a,b)}1k=a;J((1k=1k.X)){39.4J(1k)}1k=b;J((1k=1k.X)){38.4J(1k)}J(39[i]===38[i]){i++}l i?40(39[i],38[i]):39[i]===1r?-1:38[i]===1r?1:0};l F};N.1g=o(1W,4S){l N(1W,12,12,4S)};N.4e=o(c,1W){k((c.1B||c)!==F){1O(c)}1W=1W.1b(4R,"=\'$1\']");k(R.4e&&1u&&!33[1W+" "]&&(!2a||!2a.18(1W))&&(!19||!19.18(1W))){3Y{v 24=1g.2w(c,1W);k(24||R.4N||c.F&&c.F.H!==11){l 24}}3Z(e){}}l N(1W,F,12,[c]).u>0};N.1J=o(p,c){k((p.1B||p)!==F){1O(p)}l 1J(p,c)};N.3f=o(c,M){k((c.1B||c)!==F){1O(c)}v 1a=I.3U[M.Y()],20=1a&&4M.2w(I.3U,M.Y())?1a(c,M,!1u):21;l 20!==21?20:R.2G||!1u?c.1s(M):(20=c.2I(M))&&20.5E?20.1h:12};N.6x=o(4P){l(4P+"").1b(48,47)};N.2y=o(5B){6w Z 6s("6n 2y, 6p 6r: "+5B)};N.5d=o(y){v c,4a=[],j=0,i=0;2n=!R.5c;23=!R.4E&&y.S(0);y.4Y(3P);k(2n){J((c=y[i++])){k(c===y[i]){j=4a.E(i)}}J(j--){y.4A(4a[j],1)}}23=12;l y};2Q=N.2Q=o(c){v z,24="",i=0,H=c.H;k(!H){J((z=c[i++])){24+=2Q(z)}}T k(H===1||H===9||H===11){k(1H c.4B==="4d"){l c.4B}T{1i(c=c.2E;c;c=c.3b){24+=2Q(c)}}}T k(H===3||H===4){l c.6F}l 24};I=N.6E={5G:50,6H:1C,q:35,3U:{},1N:{},2t:{">":{17:"X",1G:P}," ":{17:"X"},"+":{17:"4j",1G:P},"~":{17:"4j"}},2r:{"49":o(q){q[1]=q[1].1b(1P,1V);q[3]=(q[3]||q[4]||q[5]||"").1b(1P,1V);k(q[2]==="~="){q[3]=" "+q[3]+" "}l q.S(0,4)},"3u":o(q){q[1]=q[1].Y();k(q[1].S(0,3)==="2H"){k(!q[3]){N.2y(q[0])}q[4]=+(q[4]?q[5]+(q[6]||1):2*(q[3]==="3k"||q[3]==="2W"));q[5]=+((q[7]+q[8])||q[3]==="2W");}T k(q[3]){N.2y(q[0])}l q},"44":o(q){v 2F,2h=!q[6]&&q[2];k(35["3u"].18(q[0])){l 12}k(q[3]){q[2]=q[4]||q[5]||"";}T k(2h&&5o.18(2h)&&(2F=2v(2h,P))&&(2F=2h.1q(")",2h.u-2F)-2h.u)){q[0]=q[0].S(0,2F);q[2]=2h.S(0,2F)}l q.S(0,3)}},2b:{"3K":o(4b){v 14=4b.1b(1P,1V).Y();l 4b==="*"?o(){l P}:o(c){l c.14&&c.14.Y()===14}},"4i":o(1S){v 3p=4c[1S+" "];l 3p||(3p=Z 15("(^|"+O+")"+1S+"("+O+"|$)"))&&4c(1S,o(c){l 3p.18(1H c.1S==="4d"&&c.1S||1H c.1s!=="21"&&c.1s("6q")||"")})},"49":o(M,1T,1p){l o(c){v 1L=N.3f(c,M);k(1L==12){l 1T==="!="}k(!1T){l P}1L+="";l 1T==="="?1L===1p:1T==="!="?1L!==1p:1T==="^="?1p&&1L.1q(1p)===0:1T==="*="?1p&&1L.1q(1p)>-1:1T==="$="?1p&&1L.S(-1p.u)===1p:1T==="~="?(" "+1L.1b(5t," ")+" ").1q(1p)>-1:1T==="|="?1L===1p||1L.S(0,1p.u+1)===1p+"-":1d}},"3u":o(B,5v,13,1G,27){v 4l=B.S(0,3)!=="2H",3m=B.S(-4)!=="27",2X=5v==="5u-B";l 1G===1&&27===0?o(c){l!!c.X}:o(c,p,K){v 1v,1x,1n,z,1A,2L,17=4l!==3m?"3b":"4j",2s=c.X,M=2X&&c.14.Y(),3s=!K&&!2X,1e=1d;k(2s){k(4l){J(17){z=c;J((z=z[17])){k(2X?z.14.Y()===M:z.H===1){l 1d}}2L=17=B==="5k"&&!2L&&"3b"}l P}2L=[3m?2s.2E:2s.6t];k(3m&&3s){z=2s;1n=z[Q]||(z[Q]={});1x=1n[z.2j]||(1n[z.2j]={});1v=1x[B]||[];1A=1v[0]===1Q&&1v[1];1e=1A&&1v[2];z=1A&&2s.3l[1A];J((z=++1A&&z&&z[17]||(1e=1A=0)||2L.2U())){k(z.H===1&&++1e&&z===c){1x[B]=[1Q,1A,1e];2p}}}T{k(3s){z=c;1n=z[Q]||(z[Q]={});1x=1n[z.2j]||(1n[z.2j]={});1v=1x[B]||[];1A=1v[0]===1Q&&1v[1];1e=1A}k(1e===1d){J((z=++1A&&z&&z[17]||(1e=1A=0)||2L.2U())){k((2X?z.14.Y()===M:z.H===1)&&++1e){k(3s){1n=z[Q]||(z[Q]={});1x=1n[z.2j]||(1n[z.2j]={});1x[B]=[1Q,1e]}k(z===c){2p}}}}}1e-=27;l 1e===1G||(1e%1G===0&&1e/1G>=0)}}},"44":o(2f,13){v 46,1a=I.1y[2f]||I.2D[2f.Y()]||N.2y("5z 2f: "+2f);k(1a[Q]){l 1a(13)}k(1a.u>1){46=[2f,2f,"",13];l I.2D.5A(2f.Y())?1C(o(G,1g){v 3o,1o=1a(G,13),i=1o.u;J(i--){3o=1q(G,1o[i]);G[3o]=!(1g[3o]=1o[i])}}):o(c){l 1a(c,0,46)}}l 1a}},1y:{"6O":1C(o(A){v 1c=[],y=[],W=31(A.1b(36,"$1"));l W[Q]?1C(o(G,1g,p,K){v c,1U=W(G,12,K,[]),i=G.u;J(i--){k((c=1U[i])){G[i]=!(1g[i]=c)}}}):o(c,p,K){1c[0]=c;W(1c,12,K,y);1c[0]=12;l!y.2U()}}),"6K":1C(o(A){l o(c){l N(A,c).u>0}}),"1J":1C(o(2x){2x=2x.1b(1P,1V);l o(c){l(c.4B||c.6J||2Q(c)).1q(2x)>-1}}),"1w":1C(o(1w){k(!5x.18(1w||"")){N.2y("5z 1w: "+1w)}1w=1w.1b(1P,1V).Y();l o(c){v 2T;6L{k((2T=1u?c.1w:c.1s("K:1w")||c.1s("1w"))){2T=2T.Y();l 2T===1w||2T.1q(1w+"-")===0}}J((c=c.X)&&c.H===1);l 1d}}),"2u":o(c){v 3v=2Z.5n&&2Z.5n.3v;l 3v&&3v.S(1)===c.U},"6N":o(c){l c===1t},"70":o(c){l c===F.6W&&(!F.5i||F.5i())&&!!(c.B||c.3g||~c.6V)},"3r":4p(1d),"V":4p(P),"37":o(c){v 14=c.14.Y();l(14==="1c"&&!!c.37)||(14==="3t"&&!!c.2R)},"2R":o(c){k(c.X){c.X.6X}l c.2R===P},"5p":o(c){1i(c=c.2E;c;c=c.3b){k(c.H<6){l 1d}}l P},"2s":o(c){l!I.1y["5p"](c)},"6o":o(c){l 5s.18(c.14)},"1c":o(c){l 5r.18(c.14)},"3i":o(c){v M=c.14.Y();l M==="1c"&&c.B==="3i"||M==="3i"},"2x":o(c){v 3f;l c.14.Y()==="1c"&&c.B==="2x"&&((3f=c.1s("B"))==12||3f.Y()==="2x")},"1G":2g(o(){l[0]}),"27":2g(o(1f,u){l[u-1]}),"4v":2g(o(1f,u,13){l[13<0?13+u:13]}),"3k":2g(o(1f,u){v i=0;1i(;i<u;i+=2){1f.E(i)}l 1f}),"2W":2g(o(1f,u){v i=1;1i(;i<u;i+=2){1f.E(i)}l 1f}),"5q":2g(o(1f,u,13){v i=13<0?13+u:13;1i(;--i>=0;){1f.E(i)}l 1f}),"5w":2g(o(1f,u,13){v i=13<0?13+u:13;1i(;++i<u;){1f.E(i)}l 1f})}};I.1y["2H"]=I.1y["4v"];1i(i 25{6G:P,6I:P,6z:P,6y:P,6A:P}){I.1y[i]=5j(i)}1i(i 25{6v:P,6B:P}){I.1y[i]=5l(i)}o 2D(){}2D.6C=I.6D=I.1y;I.2D=Z 2D();2v=N.2v=o(A,4C){v 1o,q,L,B,1l,1R,3N,1z=4D[A+" "];k(1z){l 4C?0:1z.S(0)}1l=A;1R=[];3N=I.2r;J(1l){k(!1o||(q=5y.3O(1l))){k(q){1l=1l.S(q[0].u)||1l}1R.E((L=[]))}1o=1d;k((q=5D.3O(1l))){1o=q.3E();L.E({1h:1o,B:q[0].1b(36," ")});1l=1l.S(1o.u)}1i(B 25 I.2b){k((q=35[B].3O(1l))&&(!3N[B]||(q=3N[B](q)))){1o=q.3E();L.E({1h:1o,B:B,1g:q});1l=1l.S(1o.u)}}k(!1o){2p}}l 4C?1l.u:1l?N.2y(A):4D(A,1R).S(0)};o 30(L){v i=0,1m=L.u,A="";1i(;i<1m;i++){A+=L[i].1h}l A}o 3d(W,3W,4O){v 17=3W.17,3V=3W.4L,2B=3V||17,3X=4O&&2B==="X",4z=4Q++;l 3W.1G?o(c,p,K){J((c=c[17])){k(c.H===1||3X){l W(c,p,K)}}l 1d}:o(c,p,K){v 3h,1x,1n,3B=[1Q,4z];k(K){J((c=c[17])){k(c.H===1||3X){k(W(c,p,K)){l P}}}}T{J((c=c[17])){k(c.H===1||3X){1n=c[Q]||(c[Q]={});1x=1n[c.2j]||(1n[c.2j]={});k(3V&&3V===c.14.Y()){c=c[17]||c}T k((3h=1x[2B])&&3h[0]===1Q&&3h[1]===4z){l(3B[2]=3h[2])}T{1x[2B]=3B;k((3B[2]=W(c,p,K))){l P}}}}}l 1d}}o 3L(1K){l 1K.u>1?o(c,p,K){v i=1K.u;J(i--){k(!1K[i](c,p,K)){l 1d}}l P}:1K[0]}o 4G(A,4q,y){v i=0,1m=4q.u;1i(;i<1m;i++){N(A,4q[i],y)}l y}o 3j(1U,4s,2b,p,K){v c,4w=[],i=0,1m=1U.u,4H=4s!=12;1i(;i<1m;i++){k((c=1U[i])){k(!2b||2b(c,p,K)){4w.E(c);k(4H){4s.E(i)}}}}l 4w}o 3J(2r,A,W,2d,1D,4K){k(2d&&!2d[Q]){2d=3J(2d)}k(1D&&!1D[Q]){1D=3J(1D,4K)}l 1C(o(G,y,p,K){v 1M,i,c,4t=[],3x=[],4u=y.u,22=G||4G(A||"*",p.H?[p]:p,[]),3c=2r&&(G||!A)?3j(22,4t,2r,p,K):22,1j=W?1D||(G?2r:4u||2d)?[]:y:3c;k(W){W(3c,1j,p,K)}k(2d){1M=3j(1j,3x);2d(1M,[],p,K);i=1M.u;J(i--){k((c=1M[i])){1j[3x[i]]=!(3c[3x[i]]=c)}}}k(G){k(1D||2r){k(1D){1M=[];i=1j.u;J(i--){k((c=1j[i])){1M.E((3c[i]=c))}}1D(12,(1j=[]),1M,K)}i=1j.u;J(i--){k((c=1j[i])&&(1M=1D?1q(G,c):4t[i])>-1){G[1M]=!(y[1M]=c)}}}}T{1j=3j(1j===y?1j.4A(4u,1j.u):1j);k(1D){1D(12,y,1j,K)}T{E.1X(y,1j)}}})}o 3G(L){v 3a,W,j,1m=L.u,3z=I.2t[L[0].B],4r=3z||I.2t[" "],i=3z?1:0,4T=3d(o(c){l c===3a},4r,P),5a=3d(o(c){l 1q(3a,c)>-1},4r,P),1K=[o(c,p,K){v 24=(!3z&&(K||p!==2Y))||((3a=p).H?4T(c,p,K):5a(c,p,K));3a=12;l 24}];1i(;i<1m;i++){k((W=I.2t[L[i].B])){1K=[3d(3L(1K),W)]}T{W=I.2b[L[i].B].1X(12,L[i].1g);k(W[Q]){j=++i;1i(;j<1m;j++){k(I.2t[L[j].B]){2p}}l 3J(i>1&&3L(1K),i>1&&30(L.S(0,i-1).6u({1h:L[i-2].B===" "?"*":""})).1b(36,"$1"),W,i<j&&3G(L.S(i,j)),j<1m&&3G((L=L.S(j))),j<1m&&30(L))}1K.E(W)}}l 3L(1K)}o 5e(2O,2m){v 3H=2m.u>0,4x=2O.u>0,4m=o(G,p,K,y,2C){v c,j,W,2S=0,i="0",1U=G&&[],28=[],4n=2Y,22=G||4x&&I.1N["3K"]("*",2C),4o=(1Q+=4n==12?1:6Y.6Z()||0.1),1m=22.u;k(2C){2Y=p===F||p||2C}1i(;i!==1m&&(c=22[i])!=12;i++){k(4x&&c){j=0;k(!p&&c.1B!==F){1O(c);K=!1u}J((W=2O[j++])){k(W(c,p||F,K)){y.E(c);2p}}k(2C){1Q=4o}}k(3H){k((c=!W&&c)){2S--}k(G){1U.E(c)}}}2S+=i;k(3H&&i!==2S){j=0;J((W=2m[j++])){W(1U,28,p,K)}k(G){k(2S>0){J(i--){k(!(1U[i]||28[i])){28[i]=2U.2w(y)}}}28=3j(28)}E.1X(y,28);k(2C&&!G&&28.u>0&&(2S+2m.u)>1){N.5d(y)}}k(2C){1Q=4o;2Y=4n}l 1U};l 3H?1C(4m):4m}31=N.31=o(A,q){v i,2m=[],2O=[],1z=33[A+" "];k(!1z){k(!q){q=2v(A)}i=q.u;J(i--){1z=3G(q[i]);k(1z[Q]){2m.E(1z)}T{2O.E(1z)}}1z=33(A,5e(2O,2m));1z.A=A}l 1z};26=N.26=o(A,p,y,G){v i,L,2V,B,1N,3Q=1H A==="o"&&A,q=!G&&2v((A=3Q.A||A));y=y||[];k(q.u===1){L=q[0]=q[0].S(0);k(L.u>2&&(2V=L[0]).B==="2l"&&p.H===9&&1u&&I.2t[L[1].B]){p=(I.1N["2l"](2V.1g[0].1b(1P,1V),p)||[])[0];k(!p){l y;}T k(3Q){p=p.X}A=A.S(L.3E().1h.u)}i=35["4X"].18(A)?0:L.u;J(i--){2V=L[i];k(I.2t[(B=2V.B)]){2p}k((1N=I.1N[B])){k((G=1N(2V.1g[0].1b(1P,1V),3R.18(L[0].B)&&3C(p.X)||p))){L.4A(i,1);A=G.u&&30(L);k(!A){E.1X(y,G);l y}2p}}}}(3Q||31(A,q))(G,p,!1u,y,!p||3R.18(A)&&3C(p.X)||p);l y};R.4E=Q.52("").4Y(3P).3D("")===Q;R.5c=!!2n;1O();R.58=1I(o(C){l C.2c(F.4y("57"))&1});k(!1I(o(C){C.3A="<a 3g=\'#\'></a>";l C.2E.1s("3g")==="#"})){3n("B|3g|6a|6h",o(c,M,1Z){k(!1Z){l c.1s(M,M.Y()==="B"?1:2)}})}k(!R.2G||!1I(o(C){C.3A="<1c/>";C.2E.3M("1h","");l C.2E.1s("1h")===""})){3n("1h",o(c,M,1Z){k(!1Z&&c.14.Y()==="1c"){l c.6k}})}k(!1I(o(C){l C.1s("V")==12})){3n(3q,o(c,M,1Z){v 20;k(!1Z){l c[M]===P?M.Y():(20=c.2I(M))&&20.5E?20.1h:12}})}l N})(2Z);', 62, 438, '||||||||||||elem||||||||if|return|||function|context|match||||length|var|||results|node|selector|type|el||push|document|seed|nodeType|Expr|while|xml|tokens|name|Sizzle|whitespace|true|expando|support|slice|else|id|disabled|matcher|parentNode|toLowerCase|new|||null|argument|nodeName|RegExp||dir|test|rbuggyQSA|fn|replace|input|false|diff|matchIndexes|matches|value|for|matcherOut|cur|soFar|len|outerCache|matched|check|indexOf|preferredDoc|getAttribute|docElem|documentIsHTML|cache|lang|uniqueCache|pseudos|cached|nodeIndex|ownerDocument|markFunction|postFinder|querySelectorAll|arr|first|typeof|assert|contains|matchers|result|temp|find|setDocument|runescape|dirruns|groups|className|operator|unmatched|funescape|expr|apply|bup|isXML|val|undefined|elems|sortInput|ret|in|select|last|setMatched|subWindow|rbuggyMatches|filter|compareDocumentPosition|postFilter|identifier|pseudo|createPositionalPseudo|unquoted|getElementsByTagName|uniqueID|getElementsByClassName|ID|setMatchers|hasDuplicate|compare|break|nid|preFilter|parent|relative|target|tokenize|call|text|error|high|documentElement|key|outermost|setFilters|firstChild|excess|attributes|nth|getAttributeNode|newContext|getElementById|start|tag|ch|elementMatchers|rnative|getText|selected|matchedCount|elemLang|pop|token|odd|ofType|outermostContext|window|toSelector|compile|doc|compilerCache|newSelector|matchExpr|rtrim|checked|bp|ap|checkContext|nextSibling|matcherIn|addCombinator|appendChild|attr|href|oldCache|button|condense|even|childNodes|forward|addHandle|idx|pattern|booleans|enabled|useCache|option|CHILD|hash|attrId|postMap|hasCompare|leadingRelative|innerHTML|newCache|testContext|join|shift|els|matcherFromTokens|bySet|createCache|setMatcher|TAG|elementMatcher|setAttribute|preFilters|exec|sortOrder|compiled|rsibling|aup|label|attrHandle|skip|combinator|checkNonElements|try|catch|siblingCheck|getElementsByName|list|unloadHandler|PSEUDO|keys|args|fcssescape|rcssescape|ATTR|duplicates|nodeNameSelector|classCache|string|matchesSelector|adown|qsa|tmp|CLASS|previousSibling|escaped|simple|superMatcher|contextBackup|dirrunsUnique|createDisabledPseudo|contexts|implicitRelative|map|preMap|preexisting|eq|newUnmatched|byElement|createElement|doneName|splice|textContent|parseOnly|tokenCache|sortStable|asCodePoint|multipleContexts|mapped|x7f|unshift|postSelector|next|hasOwn|disconnectedMatch|base|sel|done|rattributeQuotes|elements|matchContext|handler|sourceIndex|getById|needsContext|sort|attachEvent||disabledAncestor|split|addEventListener|form|isDisabled|attrs|fieldset|sortDetached|rquickExpr|matchAnyContext|push_native|detectDuplicates|uniqueSort|matcherFromGroupMatchers|msallowcapture|finally|hidden|hasFocus|createInputPseudo|only|createButtonPseudo|escapedWhitespace|location|rpseudo|empty|lt|rinputs|rheader|rwhitespace|of|what|gt|ridentifier|rcomma|unsupported|hasOwnProperty|msg|x1f|rcombinators|specified|String|cacheLength|fromCharCode|0x10000|autoplay|readonly|scoped|Date|required|autofocus|multiple|defer|ismap|loop|removeChild|controls|open|async|delete|_|0x|toString|native|da|ig|0xDC00|uFFFD|uFFFF|0xD800|0x3FF|charCodeAt|height|x20|legend|removeAttribute|qsaError|object|bool|width|textarea|xa0|defaultValue|child|HTML|Syntax|header|unrecognized|class|expression|Error|lastChild|concat|submit|throw|escape|password|file|image|reset|prototype|filters|selectors|nodeValue|radio|createPseudo|checkbox|innerText|has|do|sizzle|root|not|top|defaultView|unload|createComment|onunload|webkitMatchesSelector|tabIndex|activeElement|selectedIndex|Math|random|focus|oMatchesSelector|msMatchesSelector|mozMatchesSelector'.split('|'), 0, {}));
+/*!
+ * Sizzle CSS Selector Engine v2.3.4-pre
+ * https://sizzlejs.com/
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://js.foundation/
+ *
+ * Date: 2016-12-02
+ */
+(function( window ) {
 
-YU.$ = function (selector) {
+    var i,
+        support,
+        Expr,
+        getText,
+        isXML,
+        tokenize,
+        compile,
+        select,
+        outermostContext,
+        sortInput,
+        hasDuplicate,
+
+        // Local document vars
+        setDocument,
+        document,
+        docElem,
+        documentIsHTML,
+        rbuggyQSA,
+        rbuggyMatches,
+        matches,
+        contains,
+
+        // Instance-specific data
+        expando = "sizzle" + 1 * new Date(),
+        preferredDoc = window.document,
+        dirruns = 0,
+        done = 0,
+        classCache = createCache(),
+        tokenCache = createCache(),
+        compilerCache = createCache(),
+        nonnativeSelectorCache = createCache(),
+        sortOrder = function( a, b ) {
+            if ( a === b ) {
+                hasDuplicate = true;
+            }
+            return 0;
+        },
+
+        // Instance methods
+        hasOwn = ({}).hasOwnProperty,
+        arr = [],
+        pop = arr.pop,
+        push_native = arr.push,
+        push = arr.push,
+        slice = arr.slice,
+        // Use a stripped-down indexOf as it's faster than native
+        // https://jsperf.com/thor-indexof-vs-for/5
+        indexOf = function( list, elem ) {
+            var i = 0,
+                len = list.length;
+            for ( ; i < len; i++ ) {
+                if ( list[i] === elem ) {
+                    return i;
+                }
+            }
+            return -1;
+        },
+
+        booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
+
+        // Regular expressions
+
+        // http://www.w3.org/TR/css3-selectors/#whitespace
+        whitespace = "[\\x20\\t\\r\\n\\f]",
+
+        // http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
+        identifier = "(?:\\\\.|[\\w-]|[^\0-\\xa0])+",
+
+        // Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
+        attributes = "\\[" + whitespace + "*(" + identifier + ")(?:" + whitespace +
+            // Operator (capture 2)
+            "*([*^$|!~]?=)" + whitespace +
+            // "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 4]"
+            "*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" + whitespace +
+            "*\\]",
+
+        pseudos = ":(" + identifier + ")(?:\\((" +
+            // To reduce the number of selectors needing tokenize in the preFilter, prefer arguments:
+            // 1. quoted (capture 3; capture 4 or capture 5)
+            "('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|" +
+            // 2. simple (capture 6)
+            "((?:\\\\.|[^\\\\()[\\]]|" + attributes + ")*)|" +
+            // 3. anything else (capture 2)
+            ".*" +
+            ")\\)|)",
+
+        // Leading and non-escaped trailing whitespace, capturing some non-whitespace characters preceding the latter
+        rwhitespace = new RegExp( whitespace + "+", "g" ),
+        rtrim = new RegExp( "^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" + whitespace + "+$", "g" ),
+
+        rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
+        rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace + "*" ),
+
+        rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]'\"]*?)" + whitespace + "*\\]", "g" ),
+
+        rpseudo = new RegExp( pseudos ),
+        ridentifier = new RegExp( "^" + identifier + "$" ),
+
+        matchExpr = {
+            "ID": new RegExp( "^#(" + identifier + ")" ),
+            "CLASS": new RegExp( "^\\.(" + identifier + ")" ),
+            "TAG": new RegExp( "^(" + identifier + "|[*])" ),
+            "ATTR": new RegExp( "^" + attributes ),
+            "PSEUDO": new RegExp( "^" + pseudos ),
+            "CHILD": new RegExp( "^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(" + whitespace +
+                "*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" + whitespace +
+                "*(\\d+)|))" + whitespace + "*\\)|)", "i" ),
+            "bool": new RegExp( "^(?:" + booleans + ")$", "i" ),
+            // For use in libraries implementing .is()
+            // We use this for POS matching in `select`
+            "needsContext": new RegExp( "^" + whitespace + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" +
+                whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
+        },
+
+        rinputs = /^(?:input|select|textarea|button)$/i,
+        rheader = /^h\d$/i,
+
+        rnative = /^[^{]+\{\s*\[native \w/,
+
+        // Easily-parseable/retrievable ID or TAG or CLASS selectors
+        rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
+
+        rsibling = /[+~]/,
+
+        // CSS escapes
+        // http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
+        runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
+        funescape = function( _, escaped, escapedWhitespace ) {
+            var high = "0x" + escaped - 0x10000;
+            // NaN means non-codepoint
+            // Support: Firefox<24
+            // Workaround erroneous numeric interpretation of +"0x"
+            return high !== high || escapedWhitespace ?
+                escaped :
+                high < 0 ?
+                    // BMP codepoint
+                    String.fromCharCode( high + 0x10000 ) :
+                    // Supplemental Plane codepoint (surrogate pair)
+                    String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
+        },
+
+        // CSS string/identifier serialization
+        // https://drafts.csswg.org/cssom/#common-serializing-idioms
+        rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\0-\x1f\x7f-\uFFFF\w-]/g,
+        fcssescape = function( ch, asCodePoint ) {
+            if ( asCodePoint ) {
+
+                // U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
+                if ( ch === "\0" ) {
+                    return "\uFFFD";
+                }
+
+                // Control characters and (dependent upon position) numbers get escaped as code points
+                return ch.slice( 0, -1 ) + "\\" + ch.charCodeAt( ch.length - 1 ).toString( 16 ) + " ";
+            }
+
+            // Other potentially-special ASCII characters get backslash-escaped
+            return "\\" + ch;
+        },
+
+        // Used for iframes
+        // See setDocument()
+        // Removing the function wrapper causes a "Permission Denied"
+        // error in IE
+        unloadHandler = function() {
+            setDocument();
+        },
+
+        inDisabledFieldset = addCombinator(
+            function( elem ) {
+                return elem.disabled === true && elem.nodeName.toLowerCase() === "fieldset";
+            },
+            { dir: "parentNode", next: "legend" }
+        );
+
+// Optimize for push.apply( _, NodeList )
+    try {
+        push.apply(
+            (arr = slice.call( preferredDoc.childNodes )),
+            preferredDoc.childNodes
+        );
+        // Support: Android<4.0
+        // Detect silently failing push.apply
+        arr[ preferredDoc.childNodes.length ].nodeType;
+    } catch ( e ) {
+        push = { apply: arr.length ?
+
+            // Leverage slice if possible
+            function( target, els ) {
+                push_native.apply( target, slice.call(els) );
+            } :
+
+            // Support: IE<9
+            // Otherwise append directly
+            function( target, els ) {
+                var j = target.length,
+                    i = 0;
+                // Can't trust NodeList.length
+                while ( (target[j++] = els[i++]) ) {}
+                target.length = j - 1;
+            }
+        };
+    }
+
+    function Sizzle( selector, context, results, seed ) {
+        var m, i, elem, nid, match, groups, newSelector,
+            newContext = context && context.ownerDocument,
+
+            // nodeType defaults to 9, since context defaults to document
+            nodeType = context ? context.nodeType : 9;
+
+        results = results || [];
+
+        // Return early from calls with invalid selector or context
+        if ( typeof selector !== "string" || !selector ||
+            nodeType !== 1 && nodeType !== 9 && nodeType !== 11 ) {
+
+            return results;
+        }
+
+        // Try to shortcut find operations (as opposed to filters) in HTML documents
+        if ( !seed ) {
+
+            if ( ( context ? context.ownerDocument || context : preferredDoc ) !== document ) {
+                setDocument( context );
+            }
+            context = context || document;
+
+            if ( documentIsHTML ) {
+
+                // If the selector is sufficiently simple, try using a "get*By*" DOM method
+                // (excepting DocumentFragment context, where the methods don't exist)
+                if ( nodeType !== 11 && (match = rquickExpr.exec( selector )) ) {
+
+                    // ID selector
+                    if ( (m = match[1]) ) {
+
+                        // Document context
+                        if ( nodeType === 9 ) {
+                            if ( (elem = context.getElementById( m )) ) {
+
+                                // Support: IE, Opera, Webkit
+                                // TODO: identify versions
+                                // getElementById can match elements by name instead of ID
+                                if ( elem.id === m ) {
+                                    results.push( elem );
+                                    return results;
+                                }
+                            } else {
+                                return results;
+                            }
+
+                            // Element context
+                        } else {
+
+                            // Support: IE, Opera, Webkit
+                            // TODO: identify versions
+                            // getElementById can match elements by name instead of ID
+                            if ( newContext && (elem = newContext.getElementById( m )) &&
+                                contains( context, elem ) &&
+                                elem.id === m ) {
+
+                                results.push( elem );
+                                return results;
+                            }
+                        }
+
+                        // Type selector
+                    } else if ( match[2] ) {
+                        push.apply( results, context.getElementsByTagName( selector ) );
+                        return results;
+
+                        // Class selector
+                    } else if ( (m = match[3]) && support.getElementsByClassName &&
+                        context.getElementsByClassName ) {
+
+                        push.apply( results, context.getElementsByClassName( m ) );
+                        return results;
+                    }
+                }
+
+                // Take advantage of querySelectorAll
+                if ( support.qsa &&
+                    !nonnativeSelectorCache[ selector + " " ] &&
+                    (!rbuggyQSA || !rbuggyQSA.test( selector )) ) {
+
+                    if ( nodeType !== 1 ) {
+                        newContext = context;
+                        newSelector = selector;
+
+                        // qSA looks outside Element context, which is not what we want
+                        // Thanks to Andrew Dupont for this workaround technique
+                        // Support: IE <=8
+                        // Exclude object elements
+                    } else if ( context.nodeName.toLowerCase() !== "object" ) {
+
+                        // Capture the context ID, setting it first if necessary
+                        if ( (nid = context.getAttribute( "id" )) ) {
+                            nid = nid.replace( rcssescape, fcssescape );
+                        } else {
+                            context.setAttribute( "id", (nid = expando) );
+                        }
+
+                        // Prefix every selector in the list
+                        groups = tokenize( selector );
+                        i = groups.length;
+                        while ( i-- ) {
+                            groups[i] = "#" + nid + " " + toSelector( groups[i] );
+                        }
+                        newSelector = groups.join( "," );
+
+                        // Expand context for sibling selectors
+                        newContext = rsibling.test( selector ) && testContext( context.parentNode ) ||
+                            context;
+                    }
+
+                    if ( newSelector ) {
+                        try {
+                            push.apply( results,
+                                newContext.querySelectorAll( newSelector )
+                            );
+                            return results;
+                        } catch ( qsaError ) {
+                            nonnativeSelectorCache( selector );
+                        } finally {
+                            if ( nid === expando ) {
+                                context.removeAttribute( "id" );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // All others
+        return select( selector.replace( rtrim, "$1" ), context, results, seed );
+    }
+
+    /**
+     * Create key-value caches of limited size
+     * @returns {function(string, object)} Returns the Object data after storing it on itself with
+     *	property name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)
+     *	deleting the oldest entry
+     */
+    function createCache() {
+        var keys = [];
+
+        function cache( key, value ) {
+            // Use (key + " ") to avoid collision with native prototype properties (see Issue #157)
+            if ( keys.push( key + " " ) > Expr.cacheLength ) {
+                // Only keep the most recent entries
+                delete cache[ keys.shift() ];
+            }
+            return (cache[ key + " " ] = value);
+        }
+        return cache;
+    }
+
+    /**
+     * Mark a function for special use by Sizzle
+     * @param {Function} fn The function to mark
+     */
+    function markFunction( fn ) {
+        fn[ expando ] = true;
+        return fn;
+    }
+
+    /**
+     * Support testing using an element
+     * @param {Function} fn Passed the created element and returns a boolean result
+     */
+    function assert( fn ) {
+        var el = document.createElement("fieldset");
+
+        try {
+            return !!fn( el );
+        } catch (e) {
+            return false;
+        } finally {
+            // Remove from its parent by default
+            if ( el.parentNode ) {
+                el.parentNode.removeChild( el );
+            }
+            // release memory in IE
+            el = null;
+        }
+    }
+
+    /**
+     * Adds the same handler for all of the specified attrs
+     * @param {String} attrs Pipe-separated list of attributes
+     * @param {Function} handler The method that will be applied
+     */
+    function addHandle( attrs, handler ) {
+        var arr = attrs.split("|"),
+            i = arr.length;
+
+        while ( i-- ) {
+            Expr.attrHandle[ arr[i] ] = handler;
+        }
+    }
+
+    /**
+     * Checks document order of two siblings
+     * @param {Element} a
+     * @param {Element} b
+     * @returns {Number} Returns less than 0 if a precedes b, greater than 0 if a follows b
+     */
+    function siblingCheck( a, b ) {
+        var cur = b && a,
+            diff = cur && a.nodeType === 1 && b.nodeType === 1 &&
+                a.sourceIndex - b.sourceIndex;
+
+        // Use IE sourceIndex if available on both nodes
+        if ( diff ) {
+            return diff;
+        }
+
+        // Check if b follows a
+        if ( cur ) {
+            while ( (cur = cur.nextSibling) ) {
+                if ( cur === b ) {
+                    return -1;
+                }
+            }
+        }
+
+        return a ? 1 : -1;
+    }
+
+    /**
+     * Returns a function to use in pseudos for input types
+     * @param {String} type
+     */
+    function createInputPseudo( type ) {
+        return function( elem ) {
+            var name = elem.nodeName.toLowerCase();
+            return name === "input" && elem.type === type;
+        };
+    }
+
+    /**
+     * Returns a function to use in pseudos for buttons
+     * @param {String} type
+     */
+    function createButtonPseudo( type ) {
+        return function( elem ) {
+            var name = elem.nodeName.toLowerCase();
+            return (name === "input" || name === "button") && elem.type === type;
+        };
+    }
+
+    /**
+     * Returns a function to use in pseudos for :enabled/:disabled
+     * @param {Boolean} disabled true for :disabled; false for :enabled
+     */
+    function createDisabledPseudo( disabled ) {
+
+        // Known :disabled false positives: fieldset[disabled] > legend:nth-of-type(n+2) :can-disable
+        return function( elem ) {
+
+            // Only certain elements can match :enabled or :disabled
+            // https://html.spec.whatwg.org/multipage/scripting.html#selector-enabled
+            // https://html.spec.whatwg.org/multipage/scripting.html#selector-disabled
+            if ( "form" in elem ) {
+
+                // Check for inherited disabledness on relevant non-disabled elements:
+                // * listed form-associated elements in a disabled fieldset
+                //   https://html.spec.whatwg.org/multipage/forms.html#category-listed
+                //   https://html.spec.whatwg.org/multipage/forms.html#concept-fe-disabled
+                // * option elements in a disabled optgroup
+                //   https://html.spec.whatwg.org/multipage/forms.html#concept-option-disabled
+                // All such elements have a "form" property.
+                if ( elem.parentNode && elem.disabled === false ) {
+
+                    // Option elements defer to a parent optgroup if present
+                    if ( "label" in elem ) {
+                        if ( "label" in elem.parentNode ) {
+                            return elem.parentNode.disabled === disabled;
+                        } else {
+                            return elem.disabled === disabled;
+                        }
+                    }
+
+                    // Support: IE 6 - 11
+                    // Use the isDisabled shortcut property to check for disabled fieldset ancestors
+                    return elem.isDisabled === disabled ||
+
+                        // Where there is no isDisabled, check manually
+                        /* jshint -W018 */
+                        elem.isDisabled !== !disabled &&
+                        inDisabledFieldset( elem ) === disabled;
+                }
+
+                return elem.disabled === disabled;
+
+                // Try to winnow out elements that can't be disabled before trusting the disabled property.
+                // Some victims get caught in our net (label, legend, menu, track), but it shouldn't
+                // even exist on them, let alone have a boolean value.
+            } else if ( "label" in elem ) {
+                return elem.disabled === disabled;
+            }
+
+            // Remaining elements are neither :enabled nor :disabled
+            return false;
+        };
+    }
+
+    /**
+     * Returns a function to use in pseudos for positionals
+     * @param {Function} fn
+     */
+    function createPositionalPseudo( fn ) {
+        return markFunction(function( argument ) {
+            argument = +argument;
+            return markFunction(function( seed, matches ) {
+                var j,
+                    matchIndexes = fn( [], seed.length, argument ),
+                    i = matchIndexes.length;
+
+                // Match elements found at the specified indexes
+                while ( i-- ) {
+                    if ( seed[ (j = matchIndexes[i]) ] ) {
+                        seed[j] = !(matches[j] = seed[j]);
+                    }
+                }
+            });
+        });
+    }
+
+    /**
+     * Checks a node for validity as a Sizzle context
+     * @param {Element|Object=} context
+     * @returns {Element|Object|Boolean} The input node if acceptable, otherwise a falsy value
+     */
+    function testContext( context ) {
+        return context && typeof context.getElementsByTagName !== "undefined" && context;
+    }
+
+// Expose support vars for convenience
+    support = Sizzle.support = {};
+
+    /**
+     * Detects XML nodes
+     * @param {Element|Object} elem An element or a document
+     * @returns {Boolean} True iff elem is a non-HTML XML node
+     */
+    isXML = Sizzle.isXML = function( elem ) {
+        // documentElement is verified for cases where it doesn't yet exist
+        // (such as loading iframes in IE - #4833)
+        var documentElement = elem && (elem.ownerDocument || elem).documentElement;
+        return documentElement ? documentElement.nodeName !== "HTML" : false;
+    };
+
+    /**
+     * Sets document-related variables once based on the current document
+     * @param {Element|Object} [doc] An element or document object to use to set the document
+     * @returns {Object} Returns the current document
+     */
+    setDocument = Sizzle.setDocument = function( node ) {
+        var hasCompare, subWindow,
+            doc = node ? node.ownerDocument || node : preferredDoc;
+
+        // Return early if doc is invalid or already selected
+        if ( doc === document || doc.nodeType !== 9 || !doc.documentElement ) {
+            return document;
+        }
+
+        // Update global variables
+        document = doc;
+        docElem = document.documentElement;
+        documentIsHTML = !isXML( document );
+
+        // Support: IE 9-11, Edge
+        // Accessing iframe documents after unload throws "permission denied" errors (jQuery #13936)
+        if ( preferredDoc !== document &&
+            (subWindow = document.defaultView) && subWindow.top !== subWindow ) {
+
+            // Support: IE 11, Edge
+            if ( subWindow.addEventListener ) {
+                subWindow.addEventListener( "unload", unloadHandler, false );
+
+                // Support: IE 9 - 10 only
+            } else if ( subWindow.attachEvent ) {
+                subWindow.attachEvent( "onunload", unloadHandler );
+            }
+        }
+
+        /* Attributes
+         ---------------------------------------------------------------------- */
+
+        // Support: IE<8
+        // Verify that getAttribute really returns attributes and not properties
+        // (excepting IE8 booleans)
+        support.attributes = assert(function( el ) {
+            el.className = "i";
+            return !el.getAttribute("className");
+        });
+
+        /* getElement(s)By*
+         ---------------------------------------------------------------------- */
+
+        // Check if getElementsByTagName("*") returns only elements
+        support.getElementsByTagName = assert(function( el ) {
+            el.appendChild( document.createComment("") );
+            return !el.getElementsByTagName("*").length;
+        });
+
+        // Support: IE<9
+        support.getElementsByClassName = rnative.test( document.getElementsByClassName );
+
+        // Support: IE<10
+        // Check if getElementById returns elements by name
+        // The broken getElementById methods don't pick up programmatically-set names,
+        // so use a roundabout getElementsByName test
+        support.getById = assert(function( el ) {
+            docElem.appendChild( el ).id = expando;
+            return !document.getElementsByName || !document.getElementsByName( expando ).length;
+        });
+
+        // ID filter and find
+        if ( support.getById ) {
+            Expr.filter["ID"] = function( id ) {
+                var attrId = id.replace( runescape, funescape );
+                return function( elem ) {
+                    return elem.getAttribute("id") === attrId;
+                };
+            };
+            Expr.find["ID"] = function( id, context ) {
+                if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
+                    var elem = context.getElementById( id );
+                    return elem ? [ elem ] : [];
+                }
+            };
+        } else {
+            Expr.filter["ID"] =  function( id ) {
+                var attrId = id.replace( runescape, funescape );
+                return function( elem ) {
+                    var node = typeof elem.getAttributeNode !== "undefined" &&
+                        elem.getAttributeNode("id");
+                    return node && node.value === attrId;
+                };
+            };
+
+            // Support: IE 6 - 7 only
+            // getElementById is not reliable as a find shortcut
+            Expr.find["ID"] = function( id, context ) {
+                if ( typeof context.getElementById !== "undefined" && documentIsHTML ) {
+                    var node, i, elems,
+                        elem = context.getElementById( id );
+
+                    if ( elem ) {
+
+                        // Verify the id attribute
+                        node = elem.getAttributeNode("id");
+                        if ( node && node.value === id ) {
+                            return [ elem ];
+                        }
+
+                        // Fall back on getElementsByName
+                        elems = context.getElementsByName( id );
+                        i = 0;
+                        while ( (elem = elems[i++]) ) {
+                            node = elem.getAttributeNode("id");
+                            if ( node && node.value === id ) {
+                                return [ elem ];
+                            }
+                        }
+                    }
+
+                    return [];
+                }
+            };
+        }
+
+        // Tag
+        Expr.find["TAG"] = support.getElementsByTagName ?
+            function( tag, context ) {
+                if ( typeof context.getElementsByTagName !== "undefined" ) {
+                    return context.getElementsByTagName( tag );
+
+                    // DocumentFragment nodes don't have gEBTN
+                } else if ( support.qsa ) {
+                    return context.querySelectorAll( tag );
+                }
+            } :
+
+            function( tag, context ) {
+                var elem,
+                    tmp = [],
+                    i = 0,
+                    // By happy coincidence, a (broken) gEBTN appears on DocumentFragment nodes too
+                    results = context.getElementsByTagName( tag );
+
+                // Filter out possible comments
+                if ( tag === "*" ) {
+                    while ( (elem = results[i++]) ) {
+                        if ( elem.nodeType === 1 ) {
+                            tmp.push( elem );
+                        }
+                    }
+
+                    return tmp;
+                }
+                return results;
+            };
+
+        // Class
+        Expr.find["CLASS"] = support.getElementsByClassName && function( className, context ) {
+                if ( typeof context.getElementsByClassName !== "undefined" && documentIsHTML ) {
+                    return context.getElementsByClassName( className );
+                }
+            };
+
+        /* QSA/matchesSelector
+         ---------------------------------------------------------------------- */
+
+        // QSA and matchesSelector support
+
+        // matchesSelector(:active) reports false when true (IE9/Opera 11.5)
+        rbuggyMatches = [];
+
+        // qSa(:focus) reports false when true (Chrome 21)
+        // We allow this because of a bug in IE8/9 that throws an error
+        // whenever `document.activeElement` is accessed on an iframe
+        // So, we allow :focus to pass through QSA all the time to avoid the IE error
+        // See https://bugs.jquery.com/ticket/13378
+        rbuggyQSA = [];
+
+        if ( (support.qsa = rnative.test( document.querySelectorAll )) ) {
+            // Build QSA regex
+            // Regex strategy adopted from Diego Perini
+            assert(function( el ) {
+                // Select is set to empty string on purpose
+                // This is to test IE's treatment of not explicitly
+                // setting a boolean content attribute,
+                // since its presence should be enough
+                // https://bugs.jquery.com/ticket/12359
+                docElem.appendChild( el ).innerHTML = "<a id='" + expando + "'></a>" +
+                    "<select id='" + expando + "-\r\\' msallowcapture=''>" +
+                    "<option selected=''></option></select>";
+
+                // Support: IE8, Opera 11-12.16
+                // Nothing should be selected when empty strings follow ^= or $= or *=
+                // The test attribute must be unknown in Opera but "safe" for WinRT
+                // https://msdn.microsoft.com/en-us/library/ie/hh465388.aspx#attribute_section
+                if ( el.querySelectorAll("[msallowcapture^='']").length ) {
+                    rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
+                }
+
+                // Support: IE8
+                // Boolean attributes and "value" are not treated correctly
+                if ( !el.querySelectorAll("[selected]").length ) {
+                    rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
+                }
+
+                // Support: Chrome<29, Android<4.4, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.8+
+                if ( !el.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
+                    rbuggyQSA.push("~=");
+                }
+
+                // Webkit/Opera - :checked should return selected option elements
+                // http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+                // IE8 throws error here and will not see later tests
+                if ( !el.querySelectorAll(":checked").length ) {
+                    rbuggyQSA.push(":checked");
+                }
+
+                // Support: Safari 8+, iOS 8+
+                // https://bugs.webkit.org/show_bug.cgi?id=136851
+                // In-page `selector#id sibling-combinator selector` fails
+                if ( !el.querySelectorAll( "a#" + expando + "+*" ).length ) {
+                    rbuggyQSA.push(".#.+[+~]");
+                }
+            });
+
+            assert(function( el ) {
+                el.innerHTML = "<a href='' disabled='disabled'></a>" +
+                    "<select disabled='disabled'><option/></select>";
+
+                // Support: Windows 8 Native Apps
+                // The type and name attributes are restricted during .innerHTML assignment
+                var input = document.createElement("input");
+                input.setAttribute( "type", "hidden" );
+                el.appendChild( input ).setAttribute( "name", "D" );
+
+                // Support: IE8
+                // Enforce case-sensitivity of name attribute
+                if ( el.querySelectorAll("[name=d]").length ) {
+                    rbuggyQSA.push( "name" + whitespace + "*[*^$|!~]?=" );
+                }
+
+                // FF 3.5 - :enabled/:disabled and hidden elements (hidden elements are still enabled)
+                // IE8 throws error here and will not see later tests
+                if ( el.querySelectorAll(":enabled").length !== 2 ) {
+                    rbuggyQSA.push( ":enabled", ":disabled" );
+                }
+
+                // Support: IE9-11+
+                // IE's :disabled selector does not pick up the children of disabled fieldsets
+                docElem.appendChild( el ).disabled = true;
+                if ( el.querySelectorAll(":disabled").length !== 2 ) {
+                    rbuggyQSA.push( ":enabled", ":disabled" );
+                }
+
+                // Opera 10-11 does not throw on post-comma invalid pseudos
+                el.querySelectorAll("*,:x");
+                rbuggyQSA.push(",.*:");
+            });
+        }
+
+        if ( (support.matchesSelector = rnative.test( (matches = docElem.matches ||
+                docElem.webkitMatchesSelector ||
+                docElem.mozMatchesSelector ||
+                docElem.oMatchesSelector ||
+                docElem.msMatchesSelector) )) ) {
+
+            assert(function( el ) {
+                // Check to see if it's possible to do matchesSelector
+                // on a disconnected node (IE 9)
+                support.disconnectedMatch = matches.call( el, "*" );
+
+                // This should fail with an exception
+                // Gecko does not error, returns false instead
+                matches.call( el, "[s!='']:x" );
+                rbuggyMatches.push( "!=", pseudos );
+            });
+        }
+
+        rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join("|") );
+        rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join("|") );
+
+        /* Contains
+         ---------------------------------------------------------------------- */
+        hasCompare = rnative.test( docElem.compareDocumentPosition );
+
+        // Element contains another
+        // Purposefully self-exclusive
+        // As in, an element does not contain itself
+        contains = hasCompare || rnative.test( docElem.contains ) ?
+            function( a, b ) {
+                var adown = a.nodeType === 9 ? a.documentElement : a,
+                    bup = b && b.parentNode;
+                return a === bup || !!( bup && bup.nodeType === 1 && (
+                        adown.contains ?
+                            adown.contains( bup ) :
+                        a.compareDocumentPosition && a.compareDocumentPosition( bup ) & 16
+                    ));
+            } :
+            function( a, b ) {
+                if ( b ) {
+                    while ( (b = b.parentNode) ) {
+                        if ( b === a ) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            };
+
+        /* Sorting
+         ---------------------------------------------------------------------- */
+
+        // Document order sorting
+        sortOrder = hasCompare ?
+            function( a, b ) {
+
+                // Flag for duplicate removal
+                if ( a === b ) {
+                    hasDuplicate = true;
+                    return 0;
+                }
+
+                // Sort on method existence if only one input has compareDocumentPosition
+                var compare = !a.compareDocumentPosition - !b.compareDocumentPosition;
+                if ( compare ) {
+                    return compare;
+                }
+
+                // Calculate position if both inputs belong to the same document
+                compare = ( a.ownerDocument || a ) === ( b.ownerDocument || b ) ?
+                    a.compareDocumentPosition( b ) :
+
+                    // Otherwise we know they are disconnected
+                    1;
+
+                // Disconnected nodes
+                if ( compare & 1 ||
+                    (!support.sortDetached && b.compareDocumentPosition( a ) === compare) ) {
+
+                    // Choose the first element that is related to our preferred document
+                    if ( a === document || a.ownerDocument === preferredDoc && contains(preferredDoc, a) ) {
+                        return -1;
+                    }
+                    if ( b === document || b.ownerDocument === preferredDoc && contains(preferredDoc, b) ) {
+                        return 1;
+                    }
+
+                    // Maintain original order
+                    return sortInput ?
+                        ( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
+                        0;
+                }
+
+                return compare & 4 ? -1 : 1;
+            } :
+            function( a, b ) {
+                // Exit early if the nodes are identical
+                if ( a === b ) {
+                    hasDuplicate = true;
+                    return 0;
+                }
+
+                var cur,
+                    i = 0,
+                    aup = a.parentNode,
+                    bup = b.parentNode,
+                    ap = [ a ],
+                    bp = [ b ];
+
+                // Parentless nodes are either documents or disconnected
+                if ( !aup || !bup ) {
+                    return a === document ? -1 :
+                        b === document ? 1 :
+                            aup ? -1 :
+                                bup ? 1 :
+                                    sortInput ?
+                                        ( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
+                                        0;
+
+                    // If the nodes are siblings, we can do a quick check
+                } else if ( aup === bup ) {
+                    return siblingCheck( a, b );
+                }
+
+                // Otherwise we need full lists of their ancestors for comparison
+                cur = a;
+                while ( (cur = cur.parentNode) ) {
+                    ap.unshift( cur );
+                }
+                cur = b;
+                while ( (cur = cur.parentNode) ) {
+                    bp.unshift( cur );
+                }
+
+                // Walk down the tree looking for a discrepancy
+                while ( ap[i] === bp[i] ) {
+                    i++;
+                }
+
+                return i ?
+                    // Do a sibling check if the nodes have a common ancestor
+                    siblingCheck( ap[i], bp[i] ) :
+
+                    // Otherwise nodes in our document sort first
+                    ap[i] === preferredDoc ? -1 :
+                        bp[i] === preferredDoc ? 1 :
+                            0;
+            };
+
+        return document;
+    };
+
+    Sizzle.matches = function( expr, elements ) {
+        return Sizzle( expr, null, null, elements );
+    };
+
+    Sizzle.matchesSelector = function( elem, expr ) {
+        // Set document vars if needed
+        if ( ( elem.ownerDocument || elem ) !== document ) {
+            setDocument( elem );
+        }
+
+        // Make sure that attribute selectors are quoted
+        expr = expr.replace( rattributeQuotes, "='$1']" );
+
+        if ( support.matchesSelector && documentIsHTML &&
+            !nonnativeSelectorCache[ expr + " " ] &&
+            ( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
+            ( !rbuggyQSA     || !rbuggyQSA.test( expr ) ) ) {
+
+            try {
+                var ret = matches.call( elem, expr );
+
+                // IE 9's matchesSelector returns false on disconnected nodes
+                if ( ret || support.disconnectedMatch ||
+                    // As well, disconnected nodes are said to be in a document
+                    // fragment in IE 9
+                    elem.document && elem.document.nodeType !== 11 ) {
+                    return ret;
+                }
+            } catch (e) {
+                nonnativeSelectorCache( expr );
+            }
+        }
+
+        return Sizzle( expr, document, null, [ elem ] ).length > 0;
+    };
+
+    Sizzle.contains = function( context, elem ) {
+        // Set document vars if needed
+        if ( ( context.ownerDocument || context ) !== document ) {
+            setDocument( context );
+        }
+        return contains( context, elem );
+    };
+
+    Sizzle.attr = function( elem, name ) {
+        // Set document vars if needed
+        if ( ( elem.ownerDocument || elem ) !== document ) {
+            setDocument( elem );
+        }
+
+        var fn = Expr.attrHandle[ name.toLowerCase() ],
+            // Don't get fooled by Object.prototype properties (jQuery #13807)
+            val = fn && hasOwn.call( Expr.attrHandle, name.toLowerCase() ) ?
+                fn( elem, name, !documentIsHTML ) :
+                undefined;
+
+        return val !== undefined ?
+            val :
+            support.attributes || !documentIsHTML ?
+                elem.getAttribute( name ) :
+                (val = elem.getAttributeNode(name)) && val.specified ?
+                    val.value :
+                    null;
+    };
+
+    Sizzle.escape = function( sel ) {
+        return (sel + "").replace( rcssescape, fcssescape );
+    };
+
+    Sizzle.error = function( msg ) {
+        throw new Error( "Syntax error, unrecognized expression: " + msg );
+    };
+
+    /**
+     * Document sorting and removing duplicates
+     * @param {ArrayLike} results
+     */
+    Sizzle.uniqueSort = function( results ) {
+        var elem,
+            duplicates = [],
+            j = 0,
+            i = 0;
+
+        // Unless we *know* we can detect duplicates, assume their presence
+        hasDuplicate = !support.detectDuplicates;
+        sortInput = !support.sortStable && results.slice( 0 );
+        results.sort( sortOrder );
+
+        if ( hasDuplicate ) {
+            while ( (elem = results[i++]) ) {
+                if ( elem === results[ i ] ) {
+                    j = duplicates.push( i );
+                }
+            }
+            while ( j-- ) {
+                results.splice( duplicates[ j ], 1 );
+            }
+        }
+
+        // Clear input after sorting to release objects
+        // See https://github.com/jquery/sizzle/pull/225
+        sortInput = null;
+
+        return results;
+    };
+
+    /**
+     * Utility function for retrieving the text value of an array of DOM nodes
+     * @param {Array|Element} elem
+     */
+    getText = Sizzle.getText = function( elem ) {
+        var node,
+            ret = "",
+            i = 0,
+            nodeType = elem.nodeType;
+
+        if ( !nodeType ) {
+            // If no nodeType, this is expected to be an array
+            while ( (node = elem[i++]) ) {
+                // Do not traverse comment nodes
+                ret += getText( node );
+            }
+        } else if ( nodeType === 1 || nodeType === 9 || nodeType === 11 ) {
+            // Use textContent for elements
+            // innerText usage removed for consistency of new lines (jQuery #11153)
+            if ( typeof elem.textContent === "string" ) {
+                return elem.textContent;
+            } else {
+                // Traverse its children
+                for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
+                    ret += getText( elem );
+                }
+            }
+        } else if ( nodeType === 3 || nodeType === 4 ) {
+            return elem.nodeValue;
+        }
+        // Do not include comment or processing instruction nodes
+
+        return ret;
+    };
+
+    Expr = Sizzle.selectors = {
+
+        // Can be adjusted by the user
+        cacheLength: 50,
+
+        createPseudo: markFunction,
+
+        match: matchExpr,
+
+        attrHandle: {},
+
+        find: {},
+
+        relative: {
+            ">": { dir: "parentNode", first: true },
+            " ": { dir: "parentNode" },
+            "+": { dir: "previousSibling", first: true },
+            "~": { dir: "previousSibling" }
+        },
+
+        preFilter: {
+            "ATTR": function( match ) {
+                match[1] = match[1].replace( runescape, funescape );
+
+                // Move the given value to match[3] whether quoted or unquoted
+                match[3] = ( match[3] || match[4] || match[5] || "" ).replace( runescape, funescape );
+
+                if ( match[2] === "~=" ) {
+                    match[3] = " " + match[3] + " ";
+                }
+
+                return match.slice( 0, 4 );
+            },
+
+            "CHILD": function( match ) {
+                /* matches from matchExpr["CHILD"]
+                 1 type (only|nth|...)
+                 2 what (child|of-type)
+                 3 argument (even|odd|\d*|\d*n([+-]\d+)?|...)
+                 4 xn-component of xn+y argument ([+-]?\d*n|)
+                 5 sign of xn-component
+                 6 x of xn-component
+                 7 sign of y-component
+                 8 y of y-component
+                 */
+                match[1] = match[1].toLowerCase();
+
+                if ( match[1].slice( 0, 3 ) === "nth" ) {
+                    // nth-* requires argument
+                    if ( !match[3] ) {
+                        Sizzle.error( match[0] );
+                    }
+
+                    // numeric x and y parameters for Expr.filter.CHILD
+                    // remember that false/true cast respectively to 0/1
+                    match[4] = +( match[4] ? match[5] + (match[6] || 1) : 2 * ( match[3] === "even" || match[3] === "odd" ) );
+                    match[5] = +( ( match[7] + match[8] ) || match[3] === "odd" );
+
+                    // other types prohibit arguments
+                } else if ( match[3] ) {
+                    Sizzle.error( match[0] );
+                }
+
+                return match;
+            },
+
+            "PSEUDO": function( match ) {
+                var excess,
+                    unquoted = !match[6] && match[2];
+
+                if ( matchExpr["CHILD"].test( match[0] ) ) {
+                    return null;
+                }
+
+                // Accept quoted arguments as-is
+                if ( match[3] ) {
+                    match[2] = match[4] || match[5] || "";
+
+                    // Strip excess characters from unquoted arguments
+                } else if ( unquoted && rpseudo.test( unquoted ) &&
+                    // Get excess from tokenize (recursively)
+                    (excess = tokenize( unquoted, true )) &&
+                    // advance to the next closing parenthesis
+                    (excess = unquoted.indexOf( ")", unquoted.length - excess ) - unquoted.length) ) {
+
+                    // excess is a negative index
+                    match[0] = match[0].slice( 0, excess );
+                    match[2] = unquoted.slice( 0, excess );
+                }
+
+                // Return only captures needed by the pseudo filter method (type and argument)
+                return match.slice( 0, 3 );
+            }
+        },
+
+        filter: {
+
+            "TAG": function( nodeNameSelector ) {
+                var nodeName = nodeNameSelector.replace( runescape, funescape ).toLowerCase();
+                return nodeNameSelector === "*" ?
+                    function() { return true; } :
+                    function( elem ) {
+                        return elem.nodeName && elem.nodeName.toLowerCase() === nodeName;
+                    };
+            },
+
+            "CLASS": function( className ) {
+                var pattern = classCache[ className + " " ];
+
+                return pattern ||
+                    (pattern = new RegExp( "(^|" + whitespace + ")" + className + "(" + whitespace + "|$)" )) &&
+                    classCache( className, function( elem ) {
+                        return pattern.test( typeof elem.className === "string" && elem.className || typeof elem.getAttribute !== "undefined" && elem.getAttribute("class") || "" );
+                    });
+            },
+
+            "ATTR": function( name, operator, check ) {
+                return function( elem ) {
+                    var result = Sizzle.attr( elem, name );
+
+                    if ( result == null ) {
+                        return operator === "!=";
+                    }
+                    if ( !operator ) {
+                        return true;
+                    }
+
+                    result += "";
+
+                    return operator === "=" ? result === check :
+                        operator === "!=" ? result !== check :
+                            operator === "^=" ? check && result.indexOf( check ) === 0 :
+                                operator === "*=" ? check && result.indexOf( check ) > -1 :
+                                    operator === "$=" ? check && result.slice( -check.length ) === check :
+                                        operator === "~=" ? ( " " + result.replace( rwhitespace, " " ) + " " ).indexOf( check ) > -1 :
+                                            operator === "|=" ? result === check || result.slice( 0, check.length + 1 ) === check + "-" :
+                                                false;
+                };
+            },
+
+            "CHILD": function( type, what, argument, first, last ) {
+                var simple = type.slice( 0, 3 ) !== "nth",
+                    forward = type.slice( -4 ) !== "last",
+                    ofType = what === "of-type";
+
+                return first === 1 && last === 0 ?
+
+                    // Shortcut for :nth-*(n)
+                    function( elem ) {
+                        return !!elem.parentNode;
+                    } :
+
+                    function( elem, context, xml ) {
+                        var cache, uniqueCache, outerCache, node, nodeIndex, start,
+                            dir = simple !== forward ? "nextSibling" : "previousSibling",
+                            parent = elem.parentNode,
+                            name = ofType && elem.nodeName.toLowerCase(),
+                            useCache = !xml && !ofType,
+                            diff = false;
+
+                        if ( parent ) {
+
+                            // :(first|last|only)-(child|of-type)
+                            if ( simple ) {
+                                while ( dir ) {
+                                    node = elem;
+                                    while ( (node = node[ dir ]) ) {
+                                        if ( ofType ?
+                                            node.nodeName.toLowerCase() === name :
+                                            node.nodeType === 1 ) {
+
+                                            return false;
+                                        }
+                                    }
+                                    // Reverse direction for :only-* (if we haven't yet done so)
+                                    start = dir = type === "only" && !start && "nextSibling";
+                                }
+                                return true;
+                            }
+
+                            start = [ forward ? parent.firstChild : parent.lastChild ];
+
+                            // non-xml :nth-child(...) stores cache data on `parent`
+                            if ( forward && useCache ) {
+
+                                // Seek `elem` from a previously-cached index
+
+                                // ...in a gzip-friendly way
+                                node = parent;
+                                outerCache = node[ expando ] || (node[ expando ] = {});
+
+                                // Support: IE <9 only
+                                // Defend against cloned attroperties (jQuery gh-1709)
+                                uniqueCache = outerCache[ node.uniqueID ] ||
+                                    (outerCache[ node.uniqueID ] = {});
+
+                                cache = uniqueCache[ type ] || [];
+                                nodeIndex = cache[ 0 ] === dirruns && cache[ 1 ];
+                                diff = nodeIndex && cache[ 2 ];
+                                node = nodeIndex && parent.childNodes[ nodeIndex ];
+
+                                while ( (node = ++nodeIndex && node && node[ dir ] ||
+
+                                    // Fallback to seeking `elem` from the start
+                                    (diff = nodeIndex = 0) || start.pop()) ) {
+
+                                    // When found, cache indexes on `parent` and break
+                                    if ( node.nodeType === 1 && ++diff && node === elem ) {
+                                        uniqueCache[ type ] = [ dirruns, nodeIndex, diff ];
+                                        break;
+                                    }
+                                }
+
+                            } else {
+                                // Use previously-cached element index if available
+                                if ( useCache ) {
+                                    // ...in a gzip-friendly way
+                                    node = elem;
+                                    outerCache = node[ expando ] || (node[ expando ] = {});
+
+                                    // Support: IE <9 only
+                                    // Defend against cloned attroperties (jQuery gh-1709)
+                                    uniqueCache = outerCache[ node.uniqueID ] ||
+                                        (outerCache[ node.uniqueID ] = {});
+
+                                    cache = uniqueCache[ type ] || [];
+                                    nodeIndex = cache[ 0 ] === dirruns && cache[ 1 ];
+                                    diff = nodeIndex;
+                                }
+
+                                // xml :nth-child(...)
+                                // or :nth-last-child(...) or :nth(-last)?-of-type(...)
+                                if ( diff === false ) {
+                                    // Use the same loop as above to seek `elem` from the start
+                                    while ( (node = ++nodeIndex && node && node[ dir ] ||
+                                        (diff = nodeIndex = 0) || start.pop()) ) {
+
+                                        if ( ( ofType ?
+                                            node.nodeName.toLowerCase() === name :
+                                            node.nodeType === 1 ) &&
+                                            ++diff ) {
+
+                                            // Cache the index of each encountered element
+                                            if ( useCache ) {
+                                                outerCache = node[ expando ] || (node[ expando ] = {});
+
+                                                // Support: IE <9 only
+                                                // Defend against cloned attroperties (jQuery gh-1709)
+                                                uniqueCache = outerCache[ node.uniqueID ] ||
+                                                    (outerCache[ node.uniqueID ] = {});
+
+                                                uniqueCache[ type ] = [ dirruns, diff ];
+                                            }
+
+                                            if ( node === elem ) {
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // Incorporate the offset, then check against cycle size
+                            diff -= last;
+                            return diff === first || ( diff % first === 0 && diff / first >= 0 );
+                        }
+                    };
+            },
+
+            "PSEUDO": function( pseudo, argument ) {
+                // pseudo-class names are case-insensitive
+                // http://www.w3.org/TR/selectors/#pseudo-classes
+                // Prioritize by case sensitivity in case custom pseudos are added with uppercase letters
+                // Remember that setFilters inherits from pseudos
+                var args,
+                    fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
+                        Sizzle.error( "unsupported pseudo: " + pseudo );
+
+                // The user may use createPseudo to indicate that
+                // arguments are needed to create the filter function
+                // just as Sizzle does
+                if ( fn[ expando ] ) {
+                    return fn( argument );
+                }
+
+                // But maintain support for old signatures
+                if ( fn.length > 1 ) {
+                    args = [ pseudo, pseudo, "", argument ];
+                    return Expr.setFilters.hasOwnProperty( pseudo.toLowerCase() ) ?
+                        markFunction(function( seed, matches ) {
+                            var idx,
+                                matched = fn( seed, argument ),
+                                i = matched.length;
+                            while ( i-- ) {
+                                idx = indexOf( seed, matched[i] );
+                                seed[ idx ] = !( matches[ idx ] = matched[i] );
+                            }
+                        }) :
+                        function( elem ) {
+                            return fn( elem, 0, args );
+                        };
+                }
+
+                return fn;
+            }
+        },
+
+        pseudos: {
+            // Potentially complex pseudos
+            "not": markFunction(function( selector ) {
+                // Trim the selector passed to compile
+                // to avoid treating leading and trailing
+                // spaces as combinators
+                var input = [],
+                    results = [],
+                    matcher = compile( selector.replace( rtrim, "$1" ) );
+
+                return matcher[ expando ] ?
+                    markFunction(function( seed, matches, context, xml ) {
+                        var elem,
+                            unmatched = matcher( seed, null, xml, [] ),
+                            i = seed.length;
+
+                        // Match elements unmatched by `matcher`
+                        while ( i-- ) {
+                            if ( (elem = unmatched[i]) ) {
+                                seed[i] = !(matches[i] = elem);
+                            }
+                        }
+                    }) :
+                    function( elem, context, xml ) {
+                        input[0] = elem;
+                        matcher( input, null, xml, results );
+                        // Don't keep the element (issue #299)
+                        input[0] = null;
+                        return !results.pop();
+                    };
+            }),
+
+            "has": markFunction(function( selector ) {
+                return function( elem ) {
+                    return Sizzle( selector, elem ).length > 0;
+                };
+            }),
+
+            "contains": markFunction(function( text ) {
+                text = text.replace( runescape, funescape );
+                return function( elem ) {
+                    return ( elem.textContent || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
+                };
+            }),
+
+            // "Whether an element is represented by a :lang() selector
+            // is based solely on the element's language value
+            // being equal to the identifier C,
+            // or beginning with the identifier C immediately followed by "-".
+            // The matching of C against the element's language value is performed case-insensitively.
+            // The identifier C does not have to be a valid language name."
+            // http://www.w3.org/TR/selectors/#lang-pseudo
+            "lang": markFunction( function( lang ) {
+                // lang value must be a valid identifier
+                if ( !ridentifier.test(lang || "") ) {
+                    Sizzle.error( "unsupported lang: " + lang );
+                }
+                lang = lang.replace( runescape, funescape ).toLowerCase();
+                return function( elem ) {
+                    var elemLang;
+                    do {
+                        if ( (elemLang = documentIsHTML ?
+                                elem.lang :
+                            elem.getAttribute("xml:lang") || elem.getAttribute("lang")) ) {
+
+                            elemLang = elemLang.toLowerCase();
+                            return elemLang === lang || elemLang.indexOf( lang + "-" ) === 0;
+                        }
+                    } while ( (elem = elem.parentNode) && elem.nodeType === 1 );
+                    return false;
+                };
+            }),
+
+            // Miscellaneous
+            "target": function( elem ) {
+                var hash = window.location && window.location.hash;
+                return hash && hash.slice( 1 ) === elem.id;
+            },
+
+            "root": function( elem ) {
+                return elem === docElem;
+            },
+
+            "focus": function( elem ) {
+                return elem === document.activeElement && (!document.hasFocus || document.hasFocus()) && !!(elem.type || elem.href || ~elem.tabIndex);
+            },
+
+            // Boolean properties
+            "enabled": createDisabledPseudo( false ),
+            "disabled": createDisabledPseudo( true ),
+
+            "checked": function( elem ) {
+                // In CSS3, :checked should return both checked and selected elements
+                // http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
+                var nodeName = elem.nodeName.toLowerCase();
+                return (nodeName === "input" && !!elem.checked) || (nodeName === "option" && !!elem.selected);
+            },
+
+            "selected": function( elem ) {
+                // Accessing this property makes selected-by-default
+                // options in Safari work properly
+                if ( elem.parentNode ) {
+                    elem.parentNode.selectedIndex;
+                }
+
+                return elem.selected === true;
+            },
+
+            // Contents
+            "empty": function( elem ) {
+                // http://www.w3.org/TR/selectors/#empty-pseudo
+                // :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
+                //   but not by others (comment: 8; processing instruction: 7; etc.)
+                // nodeType < 6 works because attributes (2) do not appear as children
+                for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
+                    if ( elem.nodeType < 6 ) {
+                        return false;
+                    }
+                }
+                return true;
+            },
+
+            "parent": function( elem ) {
+                return !Expr.pseudos["empty"]( elem );
+            },
+
+            // Element/input types
+            "header": function( elem ) {
+                return rheader.test( elem.nodeName );
+            },
+
+            "input": function( elem ) {
+                return rinputs.test( elem.nodeName );
+            },
+
+            "button": function( elem ) {
+                var name = elem.nodeName.toLowerCase();
+                return name === "input" && elem.type === "button" || name === "button";
+            },
+
+            "text": function( elem ) {
+                var attr;
+                return elem.nodeName.toLowerCase() === "input" &&
+                    elem.type === "text" &&
+
+                    // Support: IE<8
+                    // New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
+                    ( (attr = elem.getAttribute("type")) == null || attr.toLowerCase() === "text" );
+            },
+
+            // Position-in-collection
+            "first": createPositionalPseudo(function() {
+                return [ 0 ];
+            }),
+
+            "last": createPositionalPseudo(function( matchIndexes, length ) {
+                return [ length - 1 ];
+            }),
+
+            "eq": createPositionalPseudo(function( matchIndexes, length, argument ) {
+                return [ argument < 0 ? argument + length : argument ];
+            }),
+
+            "even": createPositionalPseudo(function( matchIndexes, length ) {
+                var i = 0;
+                for ( ; i < length; i += 2 ) {
+                    matchIndexes.push( i );
+                }
+                return matchIndexes;
+            }),
+
+            "odd": createPositionalPseudo(function( matchIndexes, length ) {
+                var i = 1;
+                for ( ; i < length; i += 2 ) {
+                    matchIndexes.push( i );
+                }
+                return matchIndexes;
+            }),
+
+            "lt": createPositionalPseudo(function( matchIndexes, length, argument ) {
+                var i = argument < 0 ? argument + length : argument;
+                for ( ; --i >= 0; ) {
+                    matchIndexes.push( i );
+                }
+                return matchIndexes;
+            }),
+
+            "gt": createPositionalPseudo(function( matchIndexes, length, argument ) {
+                var i = argument < 0 ? argument + length : argument;
+                for ( ; ++i < length; ) {
+                    matchIndexes.push( i );
+                }
+                return matchIndexes;
+            })
+        }
+    };
+
+    Expr.pseudos["nth"] = Expr.pseudos["eq"];
+
+// Add button/input type pseudos
+    for ( i in { radio: true, checkbox: true, file: true, password: true, image: true } ) {
+        Expr.pseudos[ i ] = createInputPseudo( i );
+    }
+    for ( i in { submit: true, reset: true } ) {
+        Expr.pseudos[ i ] = createButtonPseudo( i );
+    }
+
+// Easy API for creating new setFilters
+    function setFilters() {}
+    setFilters.prototype = Expr.filters = Expr.pseudos;
+    Expr.setFilters = new setFilters();
+
+    tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
+        var matched, match, tokens, type,
+            soFar, groups, preFilters,
+            cached = tokenCache[ selector + " " ];
+
+        if ( cached ) {
+            return parseOnly ? 0 : cached.slice( 0 );
+        }
+
+        soFar = selector;
+        groups = [];
+        preFilters = Expr.preFilter;
+
+        while ( soFar ) {
+
+            // Comma and first run
+            if ( !matched || (match = rcomma.exec( soFar )) ) {
+                if ( match ) {
+                    // Don't consume trailing commas as valid
+                    soFar = soFar.slice( match[0].length ) || soFar;
+                }
+                groups.push( (tokens = []) );
+            }
+
+            matched = false;
+
+            // Combinators
+            if ( (match = rcombinators.exec( soFar )) ) {
+                matched = match.shift();
+                tokens.push({
+                    value: matched,
+                    // Cast descendant combinators to space
+                    type: match[0].replace( rtrim, " " )
+                });
+                soFar = soFar.slice( matched.length );
+            }
+
+            // Filters
+            for ( type in Expr.filter ) {
+                if ( (match = matchExpr[ type ].exec( soFar )) && (!preFilters[ type ] ||
+                    (match = preFilters[ type ]( match ))) ) {
+                    matched = match.shift();
+                    tokens.push({
+                        value: matched,
+                        type: type,
+                        matches: match
+                    });
+                    soFar = soFar.slice( matched.length );
+                }
+            }
+
+            if ( !matched ) {
+                break;
+            }
+        }
+
+        // Return the length of the invalid excess
+        // if we're just parsing
+        // Otherwise, throw an error or return tokens
+        return parseOnly ?
+            soFar.length :
+            soFar ?
+                Sizzle.error( selector ) :
+                // Cache the tokens
+                tokenCache( selector, groups ).slice( 0 );
+    };
+
+    function toSelector( tokens ) {
+        var i = 0,
+            len = tokens.length,
+            selector = "";
+        for ( ; i < len; i++ ) {
+            selector += tokens[i].value;
+        }
+        return selector;
+    }
+
+    function addCombinator( matcher, combinator, base ) {
+        var dir = combinator.dir,
+            skip = combinator.next,
+            key = skip || dir,
+            checkNonElements = base && key === "parentNode",
+            doneName = done++;
+
+        return combinator.first ?
+            // Check against closest ancestor/preceding element
+            function( elem, context, xml ) {
+                while ( (elem = elem[ dir ]) ) {
+                    if ( elem.nodeType === 1 || checkNonElements ) {
+                        return matcher( elem, context, xml );
+                    }
+                }
+                return false;
+            } :
+
+            // Check against all ancestor/preceding elements
+            function( elem, context, xml ) {
+                var oldCache, uniqueCache, outerCache,
+                    newCache = [ dirruns, doneName ];
+
+                // We can't set arbitrary data on XML nodes, so they don't benefit from combinator caching
+                if ( xml ) {
+                    while ( (elem = elem[ dir ]) ) {
+                        if ( elem.nodeType === 1 || checkNonElements ) {
+                            if ( matcher( elem, context, xml ) ) {
+                                return true;
+                            }
+                        }
+                    }
+                } else {
+                    while ( (elem = elem[ dir ]) ) {
+                        if ( elem.nodeType === 1 || checkNonElements ) {
+                            outerCache = elem[ expando ] || (elem[ expando ] = {});
+
+                            // Support: IE <9 only
+                            // Defend against cloned attroperties (jQuery gh-1709)
+                            uniqueCache = outerCache[ elem.uniqueID ] || (outerCache[ elem.uniqueID ] = {});
+
+                            if ( skip && skip === elem.nodeName.toLowerCase() ) {
+                                elem = elem[ dir ] || elem;
+                            } else if ( (oldCache = uniqueCache[ key ]) &&
+                                oldCache[ 0 ] === dirruns && oldCache[ 1 ] === doneName ) {
+
+                                // Assign to newCache so results back-propagate to previous elements
+                                return (newCache[ 2 ] = oldCache[ 2 ]);
+                            } else {
+                                // Reuse newcache so results back-propagate to previous elements
+                                uniqueCache[ key ] = newCache;
+
+                                // A match means we're done; a fail means we have to keep checking
+                                if ( (newCache[ 2 ] = matcher( elem, context, xml )) ) {
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+                return false;
+            };
+    }
+
+    function elementMatcher( matchers ) {
+        return matchers.length > 1 ?
+            function( elem, context, xml ) {
+                var i = matchers.length;
+                while ( i-- ) {
+                    if ( !matchers[i]( elem, context, xml ) ) {
+                        return false;
+                    }
+                }
+                return true;
+            } :
+            matchers[0];
+    }
+
+    function multipleContexts( selector, contexts, results ) {
+        var i = 0,
+            len = contexts.length;
+        for ( ; i < len; i++ ) {
+            Sizzle( selector, contexts[i], results );
+        }
+        return results;
+    }
+
+    function condense( unmatched, map, filter, context, xml ) {
+        var elem,
+            newUnmatched = [],
+            i = 0,
+            len = unmatched.length,
+            mapped = map != null;
+
+        for ( ; i < len; i++ ) {
+            if ( (elem = unmatched[i]) ) {
+                if ( !filter || filter( elem, context, xml ) ) {
+                    newUnmatched.push( elem );
+                    if ( mapped ) {
+                        map.push( i );
+                    }
+                }
+            }
+        }
+
+        return newUnmatched;
+    }
+
+    function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postSelector ) {
+        if ( postFilter && !postFilter[ expando ] ) {
+            postFilter = setMatcher( postFilter );
+        }
+        if ( postFinder && !postFinder[ expando ] ) {
+            postFinder = setMatcher( postFinder, postSelector );
+        }
+        return markFunction(function( seed, results, context, xml ) {
+            var temp, i, elem,
+                preMap = [],
+                postMap = [],
+                preexisting = results.length,
+
+                // Get initial elements from seed or context
+                elems = seed || multipleContexts( selector || "*", context.nodeType ? [ context ] : context, [] ),
+
+                // Prefilter to get matcher input, preserving a map for seed-results synchronization
+                matcherIn = preFilter && ( seed || !selector ) ?
+                    condense( elems, preMap, preFilter, context, xml ) :
+                    elems,
+
+                matcherOut = matcher ?
+                    // If we have a postFinder, or filtered seed, or non-seed postFilter or preexisting results,
+                    postFinder || ( seed ? preFilter : preexisting || postFilter ) ?
+
+                        // ...intermediate processing is necessary
+                        [] :
+
+                        // ...otherwise use results directly
+                        results :
+                    matcherIn;
+
+            // Find primary matches
+            if ( matcher ) {
+                matcher( matcherIn, matcherOut, context, xml );
+            }
+
+            // Apply postFilter
+            if ( postFilter ) {
+                temp = condense( matcherOut, postMap );
+                postFilter( temp, [], context, xml );
+
+                // Un-match failing elements by moving them back to matcherIn
+                i = temp.length;
+                while ( i-- ) {
+                    if ( (elem = temp[i]) ) {
+                        matcherOut[ postMap[i] ] = !(matcherIn[ postMap[i] ] = elem);
+                    }
+                }
+            }
+
+            if ( seed ) {
+                if ( postFinder || preFilter ) {
+                    if ( postFinder ) {
+                        // Get the final matcherOut by condensing this intermediate into postFinder contexts
+                        temp = [];
+                        i = matcherOut.length;
+                        while ( i-- ) {
+                            if ( (elem = matcherOut[i]) ) {
+                                // Restore matcherIn since elem is not yet a final match
+                                temp.push( (matcherIn[i] = elem) );
+                            }
+                        }
+                        postFinder( null, (matcherOut = []), temp, xml );
+                    }
+
+                    // Move matched elements from seed to results to keep them synchronized
+                    i = matcherOut.length;
+                    while ( i-- ) {
+                        if ( (elem = matcherOut[i]) &&
+                            (temp = postFinder ? indexOf( seed, elem ) : preMap[i]) > -1 ) {
+
+                            seed[temp] = !(results[temp] = elem);
+                        }
+                    }
+                }
+
+                // Add elements to results, through postFinder if defined
+            } else {
+                matcherOut = condense(
+                    matcherOut === results ?
+                        matcherOut.splice( preexisting, matcherOut.length ) :
+                        matcherOut
+                );
+                if ( postFinder ) {
+                    postFinder( null, results, matcherOut, xml );
+                } else {
+                    push.apply( results, matcherOut );
+                }
+            }
+        });
+    }
+
+    function matcherFromTokens( tokens ) {
+        var checkContext, matcher, j,
+            len = tokens.length,
+            leadingRelative = Expr.relative[ tokens[0].type ],
+            implicitRelative = leadingRelative || Expr.relative[" "],
+            i = leadingRelative ? 1 : 0,
+
+            // The foundational matcher ensures that elements are reachable from top-level context(s)
+            matchContext = addCombinator( function( elem ) {
+                return elem === checkContext;
+            }, implicitRelative, true ),
+            matchAnyContext = addCombinator( function( elem ) {
+                return indexOf( checkContext, elem ) > -1;
+            }, implicitRelative, true ),
+            matchers = [ function( elem, context, xml ) {
+                var ret = ( !leadingRelative && ( xml || context !== outermostContext ) ) || (
+                        (checkContext = context).nodeType ?
+                            matchContext( elem, context, xml ) :
+                            matchAnyContext( elem, context, xml ) );
+                // Avoid hanging onto element (issue #299)
+                checkContext = null;
+                return ret;
+            } ];
+
+        for ( ; i < len; i++ ) {
+            if ( (matcher = Expr.relative[ tokens[i].type ]) ) {
+                matchers = [ addCombinator(elementMatcher( matchers ), matcher) ];
+            } else {
+                matcher = Expr.filter[ tokens[i].type ].apply( null, tokens[i].matches );
+
+                // Return special upon seeing a positional matcher
+                if ( matcher[ expando ] ) {
+                    // Find the next relative operator (if any) for proper handling
+                    j = ++i;
+                    for ( ; j < len; j++ ) {
+                        if ( Expr.relative[ tokens[j].type ] ) {
+                            break;
+                        }
+                    }
+                    return setMatcher(
+                        i > 1 && elementMatcher( matchers ),
+                        i > 1 && toSelector(
+                            // If the preceding token was a descendant combinator, insert an implicit any-element `*`
+                            tokens.slice( 0, i - 1 ).concat({ value: tokens[ i - 2 ].type === " " ? "*" : "" })
+                        ).replace( rtrim, "$1" ),
+                        matcher,
+                        i < j && matcherFromTokens( tokens.slice( i, j ) ),
+                        j < len && matcherFromTokens( (tokens = tokens.slice( j )) ),
+                        j < len && toSelector( tokens )
+                    );
+                }
+                matchers.push( matcher );
+            }
+        }
+
+        return elementMatcher( matchers );
+    }
+
+    function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
+        var bySet = setMatchers.length > 0,
+            byElement = elementMatchers.length > 0,
+            superMatcher = function( seed, context, xml, results, outermost ) {
+                var elem, j, matcher,
+                    matchedCount = 0,
+                    i = "0",
+                    unmatched = seed && [],
+                    setMatched = [],
+                    contextBackup = outermostContext,
+                    // We must always have either seed elements or outermost context
+                    elems = seed || byElement && Expr.find["TAG"]( "*", outermost ),
+                    // Use integer dirruns iff this is the outermost matcher
+                    dirrunsUnique = (dirruns += contextBackup == null ? 1 : Math.random() || 0.1),
+                    len = elems.length;
+
+                if ( outermost ) {
+                    outermostContext = context === document || context || outermost;
+                }
+
+                // Add elements passing elementMatchers directly to results
+                // Support: IE<9, Safari
+                // Tolerate NodeList properties (IE: "length"; Safari: <number>) matching elements by id
+                for ( ; i !== len && (elem = elems[i]) != null; i++ ) {
+                    if ( byElement && elem ) {
+                        j = 0;
+                        if ( !context && elem.ownerDocument !== document ) {
+                            setDocument( elem );
+                            xml = !documentIsHTML;
+                        }
+                        while ( (matcher = elementMatchers[j++]) ) {
+                            if ( matcher( elem, context || document, xml) ) {
+                                results.push( elem );
+                                break;
+                            }
+                        }
+                        if ( outermost ) {
+                            dirruns = dirrunsUnique;
+                        }
+                    }
+
+                    // Track unmatched elements for set filters
+                    if ( bySet ) {
+                        // They will have gone through all possible matchers
+                        if ( (elem = !matcher && elem) ) {
+                            matchedCount--;
+                        }
+
+                        // Lengthen the array for every element, matched or not
+                        if ( seed ) {
+                            unmatched.push( elem );
+                        }
+                    }
+                }
+
+                // `i` is now the count of elements visited above, and adding it to `matchedCount`
+                // makes the latter nonnegative.
+                matchedCount += i;
+
+                // Apply set filters to unmatched elements
+                // NOTE: This can be skipped if there are no unmatched elements (i.e., `matchedCount`
+                // equals `i`), unless we didn't visit _any_ elements in the above loop because we have
+                // no element matchers and no seed.
+                // Incrementing an initially-string "0" `i` allows `i` to remain a string only in that
+                // case, which will result in a "00" `matchedCount` that differs from `i` but is also
+                // numerically zero.
+                if ( bySet && i !== matchedCount ) {
+                    j = 0;
+                    while ( (matcher = setMatchers[j++]) ) {
+                        matcher( unmatched, setMatched, context, xml );
+                    }
+
+                    if ( seed ) {
+                        // Reintegrate element matches to eliminate the need for sorting
+                        if ( matchedCount > 0 ) {
+                            while ( i-- ) {
+                                if ( !(unmatched[i] || setMatched[i]) ) {
+                                    setMatched[i] = pop.call( results );
+                                }
+                            }
+                        }
+
+                        // Discard index placeholder values to get only actual matches
+                        setMatched = condense( setMatched );
+                    }
+
+                    // Add matches to results
+                    push.apply( results, setMatched );
+
+                    // Seedless set matches succeeding multiple successful matchers stipulate sorting
+                    if ( outermost && !seed && setMatched.length > 0 &&
+                        ( matchedCount + setMatchers.length ) > 1 ) {
+
+                        Sizzle.uniqueSort( results );
+                    }
+                }
+
+                // Override manipulation of globals by nested matchers
+                if ( outermost ) {
+                    dirruns = dirrunsUnique;
+                    outermostContext = contextBackup;
+                }
+
+                return unmatched;
+            };
+
+        return bySet ?
+            markFunction( superMatcher ) :
+            superMatcher;
+    }
+
+    compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
+        var i,
+            setMatchers = [],
+            elementMatchers = [],
+            cached = compilerCache[ selector + " " ];
+
+        if ( !cached ) {
+            // Generate a function of recursive functions that can be used to check each element
+            if ( !match ) {
+                match = tokenize( selector );
+            }
+            i = match.length;
+            while ( i-- ) {
+                cached = matcherFromTokens( match[i] );
+                if ( cached[ expando ] ) {
+                    setMatchers.push( cached );
+                } else {
+                    elementMatchers.push( cached );
+                }
+            }
+
+            // Cache the compiled function
+            cached = compilerCache( selector, matcherFromGroupMatchers( elementMatchers, setMatchers ) );
+
+            // Save selector and tokenization
+            cached.selector = selector;
+        }
+        return cached;
+    };
+
+    /**
+     * A low-level selection function that works with Sizzle's compiled
+     *  selector functions
+     * @param {String|Function} selector A selector or a pre-compiled
+     *  selector function built with Sizzle.compile
+     * @param {Element} context
+     * @param {Array} [results]
+     * @param {Array} [seed] A set of elements to match against
+     */
+    select = Sizzle.select = function( selector, context, results, seed ) {
+        var i, tokens, token, type, find,
+            compiled = typeof selector === "function" && selector,
+            match = !seed && tokenize( (selector = compiled.selector || selector) );
+
+        results = results || [];
+
+        // Try to minimize operations if there is only one selector in the list and no seed
+        // (the latter of which guarantees us context)
+        if ( match.length === 1 ) {
+
+            // Reduce context if the leading compound selector is an ID
+            tokens = match[0] = match[0].slice( 0 );
+            if ( tokens.length > 2 && (token = tokens[0]).type === "ID" &&
+                context.nodeType === 9 && documentIsHTML && Expr.relative[ tokens[1].type ] ) {
+
+                context = ( Expr.find["ID"]( token.matches[0].replace(runescape, funescape), context ) || [] )[0];
+                if ( !context ) {
+                    return results;
+
+                    // Precompiled matchers will still verify ancestry, so step up a level
+                } else if ( compiled ) {
+                    context = context.parentNode;
+                }
+
+                selector = selector.slice( tokens.shift().value.length );
+            }
+
+            // Fetch a seed set for right-to-left matching
+            i = matchExpr["needsContext"].test( selector ) ? 0 : tokens.length;
+            while ( i-- ) {
+                token = tokens[i];
+
+                // Abort if we hit a combinator
+                if ( Expr.relative[ (type = token.type) ] ) {
+                    break;
+                }
+                if ( (find = Expr.find[ type ]) ) {
+                    // Search, expanding context for leading sibling combinators
+                    if ( (seed = find(
+                            token.matches[0].replace( runescape, funescape ),
+                            rsibling.test( tokens[0].type ) && testContext( context.parentNode ) || context
+                        )) ) {
+
+                        // If seed is empty or no tokens remain, we can return early
+                        tokens.splice( i, 1 );
+                        selector = seed.length && toSelector( tokens );
+                        if ( !selector ) {
+                            push.apply( results, seed );
+                            return results;
+                        }
+
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Compile and execute a filtering function if one is not provided
+        // Provide `match` to avoid retokenization if we modified the selector above
+        ( compiled || compile( selector, match ) )(
+            seed,
+            context,
+            !documentIsHTML,
+            results,
+            !context || rsibling.test( selector ) && testContext( context.parentNode ) || context
+        );
+        return results;
+    };
+
+// One-time assignments
+
+// Sort stability
+    support.sortStable = expando.split("").sort( sortOrder ).join("") === expando;
+
+// Support: Chrome 14-35+
+// Always assume duplicates if they aren't passed to the comparison function
+    support.detectDuplicates = !!hasDuplicate;
+
+// Initialize against the default document
+    setDocument();
+
+// Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
+// Detached nodes confoundingly follow *each other*
+    support.sortDetached = assert(function( el ) {
+        // Should return 1, but returns 4 (following)
+        return el.compareDocumentPosition( document.createElement("fieldset") ) & 1;
+    });
+
+// Support: IE<8
+// Prevent attribute/property "interpolation"
+// https://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
+    if ( !assert(function( el ) {
+            el.innerHTML = "<a href='#'></a>";
+            return el.firstChild.getAttribute("href") === "#" ;
+        }) ) {
+        addHandle( "type|href|height|width", function( elem, name, isXML ) {
+            if ( !isXML ) {
+                return elem.getAttribute( name, name.toLowerCase() === "type" ? 1 : 2 );
+            }
+        });
+    }
+
+// Support: IE<9
+// Use defaultValue in place of getAttribute("value")
+    if ( !support.attributes || !assert(function( el ) {
+            el.innerHTML = "<input/>";
+            el.firstChild.setAttribute( "value", "" );
+            return el.firstChild.getAttribute( "value" ) === "";
+        }) ) {
+        addHandle( "value", function( elem, name, isXML ) {
+            if ( !isXML && elem.nodeName.toLowerCase() === "input" ) {
+                return elem.defaultValue;
+            }
+        });
+    }
+
+// Support: IE<9
+// Use getAttributeNode to fetch booleans when getAttribute lies
+    if ( !assert(function( el ) {
+            return el.getAttribute("disabled") == null;
+        }) ) {
+        addHandle( booleans, function( elem, name, isXML ) {
+            var val;
+            if ( !isXML ) {
+                return elem[ name ] === true ? name.toLowerCase() :
+                    (val = elem.getAttributeNode( name )) && val.specified ?
+                        val.value :
+                        null;
+            }
+        });
+    }
+
+// EXPOSE
+    var _sizzle = window.Sizzle;
+
+    Sizzle.noConflict = function() {
+        if ( window.Sizzle === Sizzle ) {
+            window.Sizzle = _sizzle;
+        }
+
+        return Sizzle;
+    };
+
+    if ( typeof define === "function" && define.amd ) {
+        define(function() { return Sizzle; });
+// Sizzle requires that there be a global window in Common-JS like environments
+    } else if ( typeof module !== "undefined" && module.exports ) {
+        module.exports = Sizzle;
+    } else {
+        window.Sizzle = Sizzle;
+    }
+// EXPOSE
+
+})( window );
+
+
+yu.$ = function (selector) {
     var element = (typeof selector === "string" ? Sizzle(selector)[0] : selector);
     element.text = function () {
         return this.innerText ? this.innerText : this.innerHTML.replace(/<.+?>/gim, "");
@@ -1711,57 +3966,57 @@ YU.$ = function (selector) {
     };
     element.first = function () {
         if (this.firstChild.nodeName == "#text") {
-            return YU.$(this.firstChild.nextSibling);
+            return yu.$(this.firstChild.nextSibling);
         } else if (this.firstChild) {
-            return YU.$(this.firstChild);
+            return yu.$(this.firstChild);
         } else {
             return null;
         }
     };
     element.last = function () {
         if (this.lastChild.nodeName == "#text") {
-            return YU.$(this.lastChild.previousSibling);
+            return yu.$(this.lastChild.previousSibling);
         } else if (this.lastChild) {
-            return YU.$(this.lastChild);
+            return yu.$(this.lastChild);
         } else {
             return null;
         }
     };
     element.pre = function () {
         if (this.previousSibling.nodeName == "#text") {
-            return YU.$(this.previousSibling.previousSibling);
+            return yu.$(this.previousSibling.previousSibling);
         } else if (this.previousSibling) {
-            return YU.$(this.previousSibling);
+            return yu.$(this.previousSibling);
         } else {
             return null;
         }
     };
     element.next = function () {
         if (this.nextSibling.nodeName == "#text") {
-            return YU.$(this.nextSibling.nextSibling);
+            return yu.$(this.nextSibling.nextSibling);
         } else if (this.nextSibling) {
-            return YU.$(this.nextSibling);
+            return yu.$(this.nextSibling);
         } else {
             return null;
         }
     };
     element.parent = function () {
-        return this.parentNode ? YU.$(this.parentNode) : null;
+        return this.parentNode ? yu.$(this.parentNode) : null;
     };
     element.css = function (styles) {
-        YU.css(element, styles);
+        yu.css(element, styles);
         return element;
     };
     element.addClass = function (className) {
-        YU.addClass(element, className);
+        yu.addClass(element, className);
         return element;
     };
     element.getClass = function () {
-        return YU.getClass(element);
+        return yu.getClass(element);
     };
 
     element.hasClass = function (className) {
-        return YU.hasClass(className);
+        return yu.hasClass(className);
     };
 
     element.attr = function (attribute, value) {
@@ -1786,24 +4041,33 @@ YU.$ = function (selector) {
         this.appendChild(span);
         return element;
     };
+
+    element.on = function (type,fn) {
+        yu.event(element,type,fn);
+        return element;
+    };
+
+    element.event = element.on;
+
     return element;
 };
-YU.$$ = Sizzle;
-YU.attr = Sizzle.attr;
-YU.contains = Sizzle.contains;
-YU.escape = Sizzle.escape;
-YU.text = Sizzle.getText;
-YU.isXML = Sizzle.isXML;
-YU.matches = Sizzle.matches;
-YU.unique = Sizzle.uniqueSort;
+// yu.on = yu.event;
+yu.$$ = Sizzle;
+yu.attr = Sizzle.attr;
+yu.contains = Sizzle.contains;
+yu.escape = Sizzle.escape;
+yu.text = Sizzle.getText;
+yu.isXML = Sizzle.isXML;
+yu.matches = Sizzle.matches;
+yu.unique = Sizzle.uniqueSort;
 //如果window对象中$命名空间未被占用，则用YU对象占用$命名空间
 //如果window对象中$命名空间已经被占用，则放弃对$命名空间的占用
 //例如引入其他库，如jQuery，如果jQuery先引用，则因$已经被先被jQuery占用，则YU放弃对$的占用
 //如果jQuery后引用，则因为jQuery对$命名空间进行了覆盖性赋值，则YU被迫让出了对$的占用。
 if (!window.$) {
-    window['$'] = YU.$;
+    window['$'] = yu.$;
 }
 
 if (!window.$$) {
-    window['$$'] = YU.$$;
+    window['$$'] = yu.$$;
 }
