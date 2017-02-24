@@ -567,7 +567,7 @@
          * 参数：node 要插入的元素 | referenceNode 指定的元素 参考位置
          * 返回：无
          * */
-        after: function (element, referenceNode) {
+        insertAfter: function (element, referenceNode) {
             if (typeof element === "string") {
                 element = this.$(element)
             }
@@ -617,7 +617,7 @@
          * 参数：parent 父元素 | newChild 要插入的新元素
          * 返回：返回插入新子元素后的父元素
          * */
-        prepend: function (element, newChild) {
+        insertPre: function (element, newChild) {
             if (typeof element === "string") {
                 element = this.$(element)
             }
@@ -4082,20 +4082,18 @@ yu.$ = function (selector) {
         return yu.show(this, value);
     };
 
-    element.after = function (referenceNode) {
-        return yu.after(this, referenceNode);
+    element.insertAfter = function (referenceNode) {
+        return yu.insertAfter(this, referenceNode);
     };
-
     element.removeChild = function () {
         return yu.removeChild(this);
     };
-
     element.remove = function () {
         return yu.remove(this);
     };
 
-    element.prepend = function () {
-        return yu.prevent(this);
+    element.insertPre = function () {
+        return yu.insertPre(this);
     };
     element.windowSize = function () {
         return yu.windowSize();
