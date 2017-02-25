@@ -14,104 +14,7 @@
     $.extend({
         yu: {
             version: '2.1.1',
-            /**************************************
-             *                                    *
-             *            事件方法                  *
-             *          EVENT METHODS             *
-             *                                    *
-             **************************************/
 
-            /*
-             * 作用：添加事件
-             * 参数：element 绑定事件的元素 | type 事件类型 不加on | fn 回调函数
-             * 返回：无
-             * */
-            event: function (element, type, fn) {
-                if (element.addEventListener) {
-                    element.addEventListener(type, fn, false);
-                } else if (element.attachEvent) {
-                    element.attachEvent("on" + type, fn);
-                } else {
-                    element["on" + type] = fn;
-                }
-                return element;
-            },
-
-            /*
-             * 作用：获取事件对象
-             * 参数：event 事件对象
-             * 返回：事件对象
-             * */
-            getEvent: function (event) {
-                return event ? event : window.event;
-            },
-
-            /*
-             * 作用：获取当前发生事件的目标元素（兼容IE）
-             * 参数：event 事件对象
-             * 返回：当前发生事件的目标元素
-             * */
-            target: function (event) {
-                return event.target || event.srcElement;
-            },
-
-            /*
-             * 作用：取消默认事件
-             * 参数：event 事件对象
-             * 返回：无
-             * */
-            prevent: function (event) {
-                if (event.preventDefault) {
-                    event.preventDefault();
-                } else {
-                    event.returnValue = false;
-                }
-            },
-
-            /*
-             * 作用：移除事件
-             * 参数：element 要移除事件的元素 | type 要移除事件类型 不加on | fn 要移除的回调函数
-             * 返回：无
-             * */
-            removeEvent: function (element, type, fn) {
-                if (element.removeEventListener) {
-                    element.removeEventListener(type, fn, false);
-                } else if (element.detachEvent) {
-                    element.detachEvent("on" + type, fn);
-                } else {
-                    element["on" + type] = null;
-                }
-            },
-
-            /*
-             * 作用：停止事件冒泡
-             * 参数：event 事件对象
-             * 返回：无
-             * */
-            stopEvent: function (event) {
-                if (event.stopPropagation) {
-                    event.stopPropagation();
-                } else {
-                    event.cancelBubble = true;
-                }
-            },
-
-            /*
-             * 作用：获取上一级冒泡对象
-             * 参数：event 事件对象
-             * 返回：上一级冒泡对象
-             * */
-            getRelate: function (event) {
-                if (event.relateTarget) {
-                    return event.relatedTarget;
-                } else if (event.toElement) {
-                    return event.toElement;
-                } else if (event.fromElement) {
-                    return event.fromElement;
-                } else {
-                    return null;
-                }
-            },
 
             /*
              * 作用：主要兼容IE对DOM的button属性的反馈，button属性是指鼠标按钮，左，中，右三个键的点击情况
@@ -206,63 +109,7 @@
                 return {'x': x, 'y': y};
             },
 
-            /*
-             * 作用：在图片等资源加载完成前执行load（注意，事件不能涉及图片加载完成状态）
-             * 参数：loadEvent 回调函数 要执行的载入事件 | waitForImages 等待标记 为true则使用常规事件
-             * 返回：布尔值
-             * */
-            loadEvent: function (loadEvent, waitForImages) {
-                if (!isCompatible()) {
-                    return false;
-                }
 
-                //如果等待标记是true则使用常规的添加事件的方法
-                if (waitForImages) {
-                    return event(window, 'load', loadEvent);
-                }
-
-                //否则使用一些特别的方式来包装loadEvent()方法
-                var init = function () {
-                    //如果这个函数已经被调用过了，则返回
-                    if (init.done) {
-                        return;
-                    }
-                    //标记这个函数以便检验它是否运行过
-                    init.done = true;
-
-                    //在document的环境中运行载入事件
-                    loadEvent.apply(document.arguments);
-                };
-
-                //为DOMContentLoaded事件注册事件侦听器
-                if (document.addEventListener) {
-                    document.addEventListener("DOMContentLoaded")
-                }
-
-                //针对safari使用setInterval()函数来检测
-                //document是否载入完成
-                if (/WebKit/i.test(navigator.userAgent)) {
-                    var _timer = setInterval(function () {
-                        if (/loaded|complete/.test(document.readyState)) {
-                            clearInterval(_timer);
-                            init();
-                        }
-                    }, 10)
-                }
-
-                //针对IE
-                //添加一个载入过程中最后执行的脚本
-                //并检测该脚本是否载入完成
-                document.write("<script id=__ie_onload defer src=javascript:void(0)><\/script>");
-                var script = document.getElementById("__ie_onload");
-                script.onreadystatechange = function () {
-                    if (this.readyState == "complete") {
-                        init();
-                    }
-                };
-
-                return true;
-            },
             /*
              * 作用：获取当前浏览器窗口的宽高
              * 参数：无
@@ -739,6 +586,7 @@
                 return destination;
             }
         }
+
     })
 })(jQuery, window, document);
 
