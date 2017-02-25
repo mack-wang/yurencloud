@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div id="box">
+    hello
+</div>
+</body>
+<script src="dist/YU-2.0.2.js"></script>
+<script>
+    YU.addEvent(YU.$('box'),'click',function () {
+        YU.$('box').style.color = "red";
+        YU.$('box').innerHTML = "HELLO";
+        YU.$('box').className = "myred";
+        var len = 4;
+        for (var i=0;i<len;i++){
+            console.log(i);
+        }
+    });
+    /*
+    1、开启断点调试
+
+    2、设置断点位置（比如我们设置了16行，20行，21行为断点）
+
+    3、刷新网页
+
+    4、上面是添加了事件，所以要触发事件，断点才会起作用
+
+    5、页面正中上方会出现断点的控制器，点击resume 继续下一个断点  点击step 执行下一行
+
+    6、此时可以看到执行到每一个断点或每一行时，当前所有的变量的值，以及所有的异步、DOM元素等等的变化信息
+
+    7、如果不想使用断点，记得关闭断点调试，不会每次激活断点的话，都会弹出断点控制器
+    */
+</script>
+
+</html>

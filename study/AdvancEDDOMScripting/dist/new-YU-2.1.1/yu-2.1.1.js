@@ -22,6 +22,10 @@
  *
  * 修改：1、引入Sizzle选择器，移除d(),c()在全局的注册，仅内部使用。2、YU.$$()同jQuery中的$()，YU.$()返回YU.$$的第一个dom对象。Sizzle的方法，只能使用$$获取的元素
  *
+ * 修改：大量简化方法的命名
+ *
+ * 总结：我发现精简到最后，和jQuery越来越像，所以索性就把一些独有的方法做成jQuery插件，把一些重复的方法都删除了。插件名为：jquery.yu-2.1.1.js
+ *
  */
 
 (function () {
@@ -173,7 +177,6 @@
          * 参数：event 事件对象
          * 返回：button对象，包含0，1，2三个属性，0左键，1中键，2右键
          * */
-
         mouse: function (event) {
             if (document.implementation.hasFeature("MouseEvents", "2.0")) {
                 return event.button;
@@ -511,7 +514,7 @@
             if (typeof element === "string") {
                 element = this.$(element)
             }
-            var classes = this.getClassNames(element);
+            var classes = this.getClass(element);
             for (var i = 0; i < classes.length; i++) {
                 if (classes[i] === className) {
                     return true;
@@ -554,6 +557,17 @@
             return (length != classes.length);
         },
 
+        toggleClass: function (element, className) {
+            if (typeof element === "string") {
+                element = this.$(element)
+            }
+            if (this.hasClass(element, className)) {
+                this.removeClass(element, className)
+            } else {
+                this.addClass(element, className)
+            }
+        },
+
 
         /**************************************
          *                                    *
@@ -567,16 +581,36 @@
          * 参数：node 要插入的元素 | referenceNode 指定的元素 参考位置
          * 返回：无
          * */
-        insertAfter: function (element, referenceNode) {
+        after: function (element, referenceNode) {
             if (typeof element === "string") {
                 element = this.$(element)
             }
-            if (!(referenceNode = d(referenceNode))) {
-                return false;
+            if (typeof referenceNode === "string") {
+                referenceNode = this.$(referenceNode)
             }
             return referenceNode.parentNode.insertBefore(
                 element, referenceNode.nextSibling
             );
+        },
+
+        append: function (element, referenceNode) {
+            if (typeof element === "string") {
+                element = this.$(element)
+            }
+            if (typeof referenceNode === "string") {
+                referenceNode = this.$(referenceNode)
+            }
+            return referenceNode.appendChild(element);
+        },
+
+        prepend: function (element, referenceNode) {
+            if (typeof element === "string") {
+                element = this.$(element)
+            }
+            if (typeof referenceNode === "string") {
+                referenceNode = this.$(referenceNode)
+            }
+            return referenceNode.insertBefore(element, referenceNode.firstChild);
         },
 
         /*
@@ -584,7 +618,7 @@
          * 参数：parent 要移除所有子元素的父元素
          * 返回：返回移除子元素后的父元素
          * */
-        removeChild: function (parentElement) {
+        empty: function (parentElement) {
             if (typeof parentElement === "string") {
                 parentElement = this.$(parentElement)
             }
@@ -617,7 +651,7 @@
          * 参数：parent 父元素 | newChild 要插入的新元素
          * 返回：返回插入新子元素后的父元素
          * */
-        insertPre: function (element, newChild) {
+        before: function (element, newChild) {
             if (typeof element === "string") {
                 element = this.$(element)
             }
@@ -823,7 +857,7 @@
             if (typeof form === "string") {
                 form = this.$(form)
             }
-            if (form.nodeName !== "FORM" ){
+            if (form.nodeName !== "FORM") {
                 return new Error('element must be FORM!');
             }
             var parts = [],
@@ -4082,44 +4116,62 @@ yu.$ = function (selector) {
         return yu.show(this, value);
     };
 
-    element.insertAfter = function (referenceNode) {
-        return yu.insertAfter(this, referenceNode);
+    element.after = function (referenceNode) {
+        return yu.after(this, referenceNode);
     };
-    element.removeChild = function () {
-        return yu.removeChild(this);
+    element.before = function () {
+        return yu.before(this);
+    };
+    element.append = function (element) {
+        return yu.append(element, this);
+    };
+    element.prepend = function (element) {
+        return yu.prepend(element, this);
+    };
+    element.empty = function () {
+        return yu.empty(this);
     };
     element.remove = function () {
         return yu.remove(this);
     };
 
-    element.insertPre = function () {
-        return yu.insertPre(this);
-    };
     element.windowSize = function () {
         return yu.windowSize();
     };
     element.eachElem = function (fn) {
-        yu.eachElem(fn,this);
+        yu.eachElem(fn, this);
         return element;
     };
     element.eachDom = function (fn) {
-        yu.eachDom(this,fn);
+        yu.eachDom(this, fn);
         return element;
     };
-    element.eachNode = function (fn,depth,returnFormParent) {
-        yu.eachNode(fn,this,depth,returnFormParent);
+    element.eachNode = function (fn, depth, returnFormParent) {
+        yu.eachNode(fn, this, depth, returnFormParent);
         return element;
     };
-    element.eachAttr = function (fn,depth,returnFormParent) {
-        yu.eachAttr(fn,this,depth,returnFormParent);
+    element.eachAttr = function (fn, depth, returnFormParent) {
+        yu.eachAttr(fn, this, depth, returnFormParent);
         return element;
     };
     element.serialize = function () {
-          return yu.serialize(this);
+        return yu.serialize(this);
+    };
+    element.click = function (fn) {
+        yu.event(this, 'click', fn);
+    };
+    element.click = function (fn) {
+        yu.event(this, 'click', fn);
+    };
+    element.val = function () {
+        return element.value;
     };
     return element;
 };
+
+
 yu.on = yu.event;
+yu.setStyle = yu.css;
 yu.$$ = Sizzle;
 yu.attr = Sizzle.attr;
 yu.contains = Sizzle.contains;

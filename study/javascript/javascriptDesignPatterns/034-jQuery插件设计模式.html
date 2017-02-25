@@ -87,11 +87,11 @@
         Plugin.prototype.init = function () {
             //这里处理初始化逻辑
             //已经可以访问DOM，并且通过实例访问options，例如this.element，this.options
-
+            console.log('hello')
         };
 
         //真正的插件包装，防止出现多实例
-        $.fn[pluginName]=function (options) {
+        $.yu=function (options) {
             return this.each(function(){
                 if(!$.data(this,"plugin_"+pluginName)){
                     $.data(this,"plugin_"+pluginName,new Plugin(this,options));
