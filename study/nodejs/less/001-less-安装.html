@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    /*
+    1、npm快速全局安装less
+    # npm install -g less
+
+    2、将.less文件编译成.css样式文件(注意命令是lessc 意思应该是less compile)
+    # lessc first.less > first.css
+
+    3、如果想输出压缩过的min.css文件，只要加-x就可以(他会推荐你使用 less-plugin-clean-css来压缩css文件)
+    # lessc first.less > first.min.css -x
+
+    4、在js代码中调用less来编译css文件（需要在node平台下才有用）
+     var less = require('less');
+
+     less.render('.class { width: (1 + 1) }', function (e, css) {
+     console.log(css);
+     });
+
+     或者手动调用分析器paser和编译器
+     var parser = new(less.Parser);
+
+     parser.parse('.class { width: (1 + 1) }', function (err, tree) {
+     if (err) {
+     return console.error(err)
+     }
+     console.log(tree.toCSS());
+     });
+
+     可以给编译器传递多个参数
+     var parser = new(less.Parser)({
+     paths: ['.', './lib'], // Specify search paths for @import directives
+     filename: 'style.less' // Specify a filename, for better error messages
+     });
+
+     parser.parse('.class { width: (1 + 1) }', function (e, tree) {
+     tree.toCSS({
+     // Minify CSS output
+     compress: true
+     });
+     });
+
+
+     5、在浏览器上跑 less.js 非常方便开发，但是不推荐用于生产环境
+     在客户端使用 Less.js 是最容易的方式，并且在开发阶段很方便，但是，在生产环境中，性能和可靠性非常重要，我们建议最好使用 node.js 或其它第三方工具进行预编译。
+
+
+
+     6、直接在html文件中使用less，只要确保styles.less在less.js之前加载就可以了
+     <link rel="stylesheet/less" type="text/css" href="styles.less" />
+     <script src="less.js" type="text/javascript"><\/script>
+
+
+     7、为less设置全局参数
+     在 <script src="less.js"><\/script> 之前 定义全局的 less 对象就可以为 Less.js 设置参数：
+
+        less = {
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: ":/a.com/"
+        };
+
+
+    8、less CDN加速
+     <script src="http://cdn.bootcss.com/less.js/1.7.0/less.min.js"><\/script>
+
+
+    9、phpstorm可以时时编译less
+
+
+
+*/
+</script>
+</html>

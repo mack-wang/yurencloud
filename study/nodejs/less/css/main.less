@@ -1,0 +1,404 @@
+/*
+一、变量：注意，由于变量只能定义一次，其本质就是“常量”。
+
+@变量名：变量值;
+
+*/
+@tomColor:red;
+@tomHeight:30px;
+
+.tom{
+  width: 50px;
+  height: @tomHeight + 20px;
+  color:@tomColor;
+  background-color: #aaa;
+}
+
+
+/*
+
+二、混合Mixin，样式之间可以互相继承
+
+.child{
+  .father;//继承.father所有的样式
+  color:green;//自己私有的样式
+}
+
+*/
+.bob{
+  .tom;
+  color:green;
+}
+
+/*
+
+三、嵌套规则
+原先的写法：
+.father{
+  color:blue;
+}
+
+.father .child1{
+  font-size:20px;
+}
+
+.father .child2{
+  font-size:24px;
+}
+
+嵌套的写法：
+.father{
+  color:blue;
+
+  .child1{
+    font-size:20px;
+  }
+
+  .child2{
+    font-size:24px;
+  }
+}
+
+
+使用&来表示父元素(注意，这里的父元素其实就是自己)
+（所以我觉得应该称作调用自己）
+以下为清浮动的hack写法
+.clearfix {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+
+*/
+
+.father{
+  color:red;
+  .child2{
+    background: yellow;
+  }
+}
+
+.child3{
+  background: blue;
+  &{
+    border: 1px solid @tomColor;
+  }
+}
+
+
+/*
+四、任何数字、颜色或者变量都可以参与运算
+
+@base: 5%;
+@filler: @base * 2;
+@other: @base + @filler;
+
+color: #888 / 4;
+background-color: @base-color + #111;
+height: 100% / 2 + @filler;
+
+
+*/
+
+
+/*
+
+五、函数
+
+Less 内置了多种函数用于转换颜色、处理字符串、算术运算等。这些函数在函数手册中有详细介绍。
+
+函数的用法非常简单。下面这个例子将介绍如何将 0.5 转换为 50%，将颜色饱和度增加 5%，以及颜色亮度降低 25% 并且色相值增加 8 等用法：
+
+@base: #f04615;
+@width: 0.5;
+
+.class {
+  width: percentage(@width); // returns `50%`
+  color: saturate(@base, 5%);
+  background-color: spin(lighten(@base, 25%), 8);
+}
+
+
+*/
+
+
+/*
+六、less的命名空间
+
+可以直接使用id选择器来当命名空间，这个id选择器可以没在html当中出现，仅专门用来区分less当中变量或者类的命名空间
+
+#bundle {
+  .button {
+    display: block;
+    border: 1px solid black;
+    background-color: grey;
+    &:hover {
+      background-color: white
+    }
+  }
+  .tab { ... }
+  .citation { ... }
+}
+
+#header a {
+  color: orange;
+  #bundle > .button;
+}
+
+
+*/
+
+
+/*
+七、作用域
+
+作用域的理解同JavaScript 如果在当前作用域下没有找到相应的变量，就会向父级作用域寻找对应变量，层层沿着作用域链向上寻找
+
+
+@var: red;
+
+#page {
+  @var: white;
+  #header {
+    color: @var; // white
+  }
+}
+*/
+
+
+/*
+八、导入
+
+和你预期的工作方式一样。你可以导入一个 .less 文件，此文件中的所有变量就可以全部使用了。如果导入的文件是 .less 扩展名，则可以将扩展名省略掉：
+
+@import "library"; // library.less
+@import "typo.css";
+
+
+*/
+
+/*
+九、选择器变量
+
+选择在以前都是固定的，比如#box,.class,ul>li等
+现在选择器可以用变量定义，以方便维护
+在我的理解来说，其实就是把变量以字符串的形式输出，可以用在任何你想输出的地方。
+比如：可以当选择器名，属性名，属性值，URL，等等所有地方
+
+@className : tom;
+
+.@{className}{
+  color:red;
+}
+等效于：
+.tom{
+  color:red;
+}
+
+*/
+
+/*
+十、Lazy Loading 变量定义先后顺序对编译无影响
+
+这点和JavaScript中的函数定义很像，无论你在哪里定义了函数，只要作用域相同，你都可以直接使用这个函数
+
+.lazy-eval-scope {
+  width: @var;
+  @a: 9%;//使用在前，变量的定义在后
+}
+@var: @a;
+@a: 100%;
+
+
+*/
+
+
+/*
+十一、在相同的作用域中，多次定义变量，将以最后一次定义变量值为准
+理解：就是说同名变量，后者覆盖前者
+@var: 0;
+.class1 {
+  @var: 1;
+  .class {
+    @var: 2;
+    three: @var;
+    @var: 3;
+  }
+  one: @var;
+}
+编译后：
+.class1 .class {
+  three: 3;
+}
+.class {
+  one: 1;
+}
+*/
+
+
+/*
+十二、设置默认变量
+可以把一些默认变量集中到一个文件中，方便维护
+//变量库
+@base-color: green;
+@dark-color: darken(@base-color, 10%);
+
+//使用库
+@import "library.less";
+@base-color: red;
+*/
+
+/*
+十三、拓展到已有的选择器后面，并列
+nav ul {
+  &:extend(.inline);
+  background: blue;
+}
+.inline {
+  color: red;
+}
+等效于：
+nav ul {
+  background: blue;
+}
+
+.inline, nav ul {
+  color: red;
+}
+*/
+
+/*
+十三、设置选择器仅用来继承，不直接输出（直接在选择器后面添加一对括号就可以了）
+.my-mixin {
+  color: black;
+}
+.my-other-mixin() {     //这个选择器就只会被继承，但不会输出
+  background: white;
+}
+.class {
+  .my-mixin;
+  .my-other-mixin;
+}
+输出后：
+.my-mixin {
+  color: black;
+}
+.class {
+  color: black;
+  background: white;
+}
+*/
+
+/*
+十四、提升变量，!important
+.foo (@bg: #f5f5f5, @color: #900) {
+  background: @bg;
+  color: @color;
+}
+.unimportant {
+  .foo(1);
+}
+.important {
+  .foo(2) !important;
+}
+输出：
+.unimportant {
+  background: #f5f5f5;
+  color: #900;
+}
+.important {
+  background: #f5f5f5 !important;
+  color: #900 !important;
+}
+*/
+
+/*
+十五、带参数的混合Mixin
+理解：和函数的使用方式很像！
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+#header {
+  .border-radius(4px);
+}
+.button {
+  .border-radius(6px);
+}
+
+//还可以设置默认参数
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+//更多的参数设置方法
+.mixin(@color) {
+  color-1: @color;
+}
+.mixin(@color; @padding:2) {
+  color-2: @color;
+  padding-2: @padding;
+}
+.mixin(@color; @padding; @margin: 2) {
+  color-3: @color;
+  padding-3: @padding;
+  margin: @margin @margin @margin @margin;
+}
+.some .selector div {
+  .mixin(#008000);
+}
+
+//参数命名
+.mixin(@color: black; @margin: 10px; @padding: 20px) {
+  color: @color;
+  margin: @margin;
+  padding: @padding;
+}
+.class1 {
+  .mixin(@margin: 20px; @color: #33acfe);
+}
+.class2 {
+  .mixin(#efca44; @padding: 40px);
+}
+
+//@arguments代表当前作用域内的所有参数（以避免重复写参数）
+.box-shadow(@x: 0; @y: 0; @blur: 1px; @color: #000) {
+  -webkit-box-shadow: @arguments;
+     -moz-box-shadow: @arguments;
+          box-shadow: @arguments;
+}
+.big-block {
+  .box-shadow(2px; 5px);
+}
+
+
+//更多参数
+.mixin(...) {        // matches 0-N arguments
+.mixin() {           // matches exactly 0 arguments
+.mixin(@a: 1) {      // matches 0-1 arguments
+.mixin(@a: 1; ...) { // matches 0-N arguments
+.mixin(@a; ...) {    // matches 1-N arguments
+
+.mixin(@a; @rest...) {
+   // @rest is bound to arguments after @a
+   // @arguments is bound to all arguments
+}
+
+
+
+*/
+
+
