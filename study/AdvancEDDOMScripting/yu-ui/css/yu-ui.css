@@ -1,0 +1,390 @@
+/*css reset*/
+body, ul, li, p, h1, h2, h3, h4, h5, h6, img, br, hr, table, tr, td, dl, dt, dd, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, "Microsoft YaHei", "微软雅黑";
+    font-size: 14px;
+    color: #434343;
+}
+
+.clear {
+    clear: both;
+    font-size: 0px;
+}
+
+ul, li {
+    list-style: none;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(180,180,180);
+}
+
+a:hover {
+    color: white;
+}
+
+/*main css*/
+/*标题h1~h6*/
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h6 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/*着重标记*/
+mark, .mark {
+    padding: .2em;
+    background-color: #fcf8e3;
+}
+
+/*文本对齐*/
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/*文本大小写首字母大写转换*/
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+/*将列表并排显示*/
+.list-inline > li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/*表格样式1*/
+.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+    border-top: 0;
+}
+
+.table > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+th {
+    text-align: left;
+}
+/*按钮样式*/
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.btn-default:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #3071a9;
+    border-color: #285e8e;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #36b0de;
+    border-color: #2aadda;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.btn-warning:hover {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #d93a3f;
+    border-color: #d42a2d;
+}
+
+.btn-link:hover {
+    color: #2a6496;
+    text-decoration: underline;
+}
+
+.btn-link {
+    color: #36b0de;
+    background-color: transparent;
+}
+/*图片样式*/
+.img-rounded {
+    border-radius: 6px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+.img-thumbnail {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+/*浮动*/
+.float-left {
+    float: left !important;
+}
+
+.float-right {
+    float: right !important;
+}
+/*让块居中*/
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*灰阶颜色*/
+/*字体颜色*/
+.gray-darker {
+    color: #222;
+}
+
+.gray-dark {
+    color: #333
+}
+
+.gray {
+    color: #555;
+}
+
+.gray-light {
+    color: #777;
+}
+
+.gray-lighter {
+    color: #eee;
+}
+
+/*背景颜色*/
+.bg-gray-darker {
+    background-color: #222;
+}
+
+.bg-gray-dark {
+    background-color: #333
+}
+
+.bg-gray {
+    background-color: #555;
+}
+
+.bg-gray-light {
+    background-color: #777;
+}
+
+.bg-gray-lighter {
+    background-color: #eee;
+}
+
+/*主要、成功、信息、警告、危险 五种颜色*/
+/*字体颜色*/
+.primary {
+    color: #428bca;
+}
+
+.success {
+    color: #5cb85c
+}
+
+.info {
+    color: #5bc0de;
+}
+
+.warning {
+    color: #f0ad4e;
+}
+
+.danger {
+    color: #d9534f;
+}
+
+/*浅背景颜色*/
+.bg-primary {
+    color: #fff;
+    background-color: #428bca;
+}
+
+.bg-success {
+    background-color: #dff0d8;
+}
+
+.bg-info {
+    background-color: #d9edf7;
+}
+
+.bg-warning {
+    background-color: #fcf8e3;
+}
+
+.bg-danger {
+    background-color: #f2dede;
+}
+
+/*深背景颜色*/
+.dbg-primary {
+    background-color: #428bca;
+}
+
+.dbg-success {
+    background-color: #5cb85c
+}
+
+.dbg-info {
+    background-color: #5bc0de;
+}
+
+.dbg-warning {
+    background-color: #f0ad4e;
+}
+
+.dbg-danger {
+    background-color: #d9534f;
+}

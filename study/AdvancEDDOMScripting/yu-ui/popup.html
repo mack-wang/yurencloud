@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body, ul, li, p, h1, h2, h3, h4, h5, h6, img, br, hr, table, tr, td, dl, dt, dd, form {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, "Microsoft YaHei", "微软雅黑";
+        font-size: 14px;
+        color: #434343;
+    }
+
+    .clear {
+        clear: both;
+        font-size: 0px;
+    }
+
+    ul, li {
+        list-style: none;
+    }
+
+    img {
+        border: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(99, 99, 99);
+    }
+
+    a:hover {
+        color: #303030;
+    }
+
+    .yu-dialog {
+        border: 1px solid gray;
+        border-radius: 4px;
+        background: white;
+    }
+
+
+</style>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/jquery.yu-2.1.1.js"></script>
+<script src="js/yu-popup.js"></script>
+<body>
+<button id="btn1">确认弹窗</button>
+<!--<div class="yu-dialog1">12</div>-->
+<!--<div class="yu-dialog1">12</div>-->
+<!--<div class="yu-dialog1">12</div>-->
+<!--<div class="yu-dialog1">12</div>-->
+<!--<div class="yu-dialog1">12</div>-->
+<!--<div class="yu-dialog1">12</div>-->
+<!--<div class="yu-dialog1">12</div>-->
+</body>
+<script>
+    (function ($) {
+        'use strict';
+
+        var popup = {
+            showDialog: function () {
+                $('body').css('position', 'relative');
+                var _w = 200, _h = 200;
+                var win = $.yu.windowSize();
+                var _t = ((win.height - _h) / 2 || 0);
+                var _l = ((win.width - _w) / 2 || 0);
+                var layer = document.createElement('div');
+                layer.id = 'yu-dialog';
+                $(layer).addClass('yu-dialog');
+                $(layer).css({
+                    width: _w + 'px',
+                    height: _h + 'px',
+                    position: 'absolute',
+                    top: _t + 'px',
+                    left: _l + 'px'
+                });
+                $('body').append(layer);
+            }
+        };
+
+        $(window).bind('resize', function () {
+            if ($("#yu-dialog").length > 0) {
+                $('#yu-dialog').remove();
+                popup.showDialog();
+            }
+        });
+        window.popup = popup;
+    })(jQuery);
+
+
+    //以下为使用
+    $("#btn1").click(function (event) {
+        popup.showDialog();
+    })
+
+</script>
+</html>
