@@ -1,0 +1,1 @@
+function say(){console.log(name)}var name="tom";

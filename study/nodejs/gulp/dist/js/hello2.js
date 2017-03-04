@@ -1,0 +1,1 @@
+function sayAge(){console.log(age)}var age=23;
