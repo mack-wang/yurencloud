@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test', function () {
+    dd(\Illuminate\Support\Facades\DB::table('article')->find(1));
+});
+
+Route::resource('books','BookController');
