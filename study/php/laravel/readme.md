@@ -174,7 +174,76 @@ RouteServiceProvider 类的 boot方法中定义约束模式
 `php artisan make:controller BookController --resource --model=Books`
 (注意model文件直接在app目录下生成，所以我建议还是手动生成model比较好，可以整理到我们指定的model目录下)
 
-      
+## 15.请求对象$request Request
+只要是http访问，就会为每个访问创建$request对象  
+- 获取请求路径  
+`$request -> path();  `
+- 获取完整请求路径
+`$request -> url();不包含查询字符`
+`$request -> fullUrl();包含查询字符`
+- 获取请求方法
+`$request -> method();`
+- 判断请求方法
+`$request -> isMethod('post');`
+- 获取所有的输入值
+`$request -> all()`
+- 获取指定的输入值
+`$request -> input('name')`
+- 获取指定的输入值，若没有，则设置默认输入值
+`$request -> input('name','tom')`
+- 获取输入值json内值
+`$name = $request->input('user.name');`
+- 获取输入值的子集
+`$input = $request->only(['username', 'password']);
+ $input = $request->only('username', 'password');
+ $input = $request->except(['credit_card']);
+ $input = $request->except('credit_card');`
+- 判断请求的输入值中是否包含某值
+- 将输入值存储到一次性的session中
+- 获取上一次的输入值
+- 从请求中获取cookie
+- 在响应中添加cookie设置
+- 文件上传
+- 判断上传中某文件是否存在
+- 验证上传是否成功
+- 获取文件的拓展名
+- 保存上传的文件
 
+## 16.响应对象 return Response
+- 可以直接返回字符串
+php是不能直接返回字符串的，但在laravel可以直接返回字符串
+`return 'hello world';`
+
+- 可以直接返回数组（会自动转成json,所以没必要写成Response::json([])）
+return [1,2,3,4];
+- 设置响应头
+- 添加 Cookie 到响应
+- Cookie & 加密
+- 重定向
+`return redirect('home/dashboard');`
+- 重定向到上一次的请求路由
+`return back()->withInput();`
+- 重定向到路由名
+`return redirect()->route('login');`
+- 重定向到控制器动作
+`return redirect()->action('HomeController@index');`  
+`return redirect()->action('UserController@profile', ['id'=>1]);`
+- 强制用户下载
+`return response()->file($pathToFile);
+ return response()->file($pathToFile, $headers);`
+
+
+## 17.视图 view
+- 判断视图是否存在
+`if (view()->exists('emails.customer')) {
+     //
+ }`
+- 在所有视图中共享同一数据
+在服务器提供者的boot方法中AppServiceProvider  
+` public function boot()
+    {
+        view()->share('key', 'value');
+    }`
+- 
 
 
