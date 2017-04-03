@@ -12,16 +12,19 @@
 
 ## 2.更快速的创建laravel应用  
 - 全局安装laravel安装器    
-`composer global require "laravel/installer"`
-- 将laravel的安装命令添加到bash全局   
-`export PATH="~/.composer/vendor/bin:$PATH" `  
-`source .bash_profile`   
-`laravel -help`  //测试是否安装成功  
-`laravel new blog`  //使用new命令就可以立即在当前目录下创建laravel应用（首次安装需要下载，之后安装都直接读取缓存，具说比composer create-project要快）实测确实快很多，而且命令更短  
+`composer global require "laravel/installer"`  
+- 将laravel的安装命令添加到bash全局     
+`export PATH="~/.composer/vendor/bin:$PATH" `    
+`source .bash_profile`  
+测试是否安装成功    
+`laravel -help`    
+ 使用new命令就可以立即在当前目录下创建laravel应用（首次安装需要下载，之后安装都直接读取缓存，具说比composer create-project要快）实测确实快很多，而且命令更短     
+`laravel new blog` 
 
 ## 3.直接使用php创建本地服务器
-【临时最推荐】`nohup php artisan serve &`
-【长期最推荐】screen
+【临时最推荐】    
+`nohup php artisan serve &`  
+【长期最推荐】screen    
 
 - 【推荐】在原来的窗口执行服务器运行，新建新窗口来执行其他命令
 php artisan serve 就会直接创建localhost:8000服务器  
@@ -29,33 +32,45 @@ php artisan serve 就会直接创建localhost:8000服务器
 因为服务器会一直运行，所以新建一个命令窗口就好
 
 - 【推荐】使用screen  
-`screen -S NAME ` 
-`ctrl a d` 返回原来窗口  
-`screen -r` NAME 回到之前新建的窗口
-`ctrl shift d` 关闭当前窗口
+`screen -S NAME `  
+返回原来窗口     
+`ctrl a d`    
+NAME 回到之前新建的窗口   
+`screen -r`   
+关闭当前窗口    
+`ctrl shift d`   
 
 - 【不推荐，因为后台执行的】直接将服务器命令放到后台执行，在当前窗口执行其他命令
-`php artisan serve &`
-`jobs -l`
-`kill %jobs`的序号 或者kill 进程的pid号  
-`fg %jobs`的序号 从后台将命令调回来  
-ctrl z 将当前命令暂停，并放到后台
-`bg %jobs`的序号 让后台暂停的命令继续执行  
-`nohup php artisan serve & `让命令后台执行，会自动创建nohup.out，输出内容到该文件，也可以指定输出文件。
+放到后台执行   
+`php artisan serve &`   
+显示后台工作序号  
+`jobs -l`    
+关闭后台工作序号或关闭进程号    
+`kill %jobs`     
+从后台将命令调回来    
+`fg %jobs`    
+将当前命令暂停，并放到后台   
+ctrl z   
+让后台暂停的命令继续执行   
+`bg %jobs`    
+让命令后台执行，会自动创建nohup.out，输出内容到该文件，也可以指定输出文件。    
+`nohup php artisan serve & `   
 
-如果切换了窗口，找不到该jobs了，可以查找进程号，再杀掉pid号
-`sudo lsof -i :8000`
-`sudo kill -9` 你的pid号
+如果切换了窗口，找不到该jobs了，可以查找进程号，再杀掉pid号    
+`sudo lsof -i :8000`   
+`sudo kill -9 你的pid号`   
 
 
 ## 4.记得在.env.example中写好注释，以便在不同的地方能随时提醒你如何配置环境
 
 ## 5.应用上线后，优化性能  
-执行一次php artisan config:cache将配置缓存成文件
+执行一次php artisan config:cache将配置缓存成文件  
 
 ## 6.应用上线后，如果需要进行维护
-`php artisan down` 暂时关闭站点，并给出提示页面  
-`php artisan up` 恢复站点，继续提供服务  
+暂时关闭站点，并给出提示页面  
+`php artisan down`  
+ 恢复站点，继续提供服务  
+`php artisan up`    
 我的理解是：下线时对站点的所有访问路由将全部引导到提示页面，上线时恢复正常路由。提示页面模板为：
   resources/views/errors/503.blade.php  
 
@@ -63,7 +78,7 @@ ctrl z 将当前命令暂停，并放到后台
   创建.env.testing,那么在执行phpunit测试时，.env.testing将会覆盖.env
 
 ## 8.查看artisan可以自动创建的app下目录和文件
-`php artisan list mak`e
+`php artisan list make`
 
 ## 9.app目录下的子目录作用
 默认子目录
@@ -107,32 +122,32 @@ vi box.ovf`
 - 克隆homestead配置文件，可以放到全局，也可以放到当前项目下,可以放任何地方
 `cd ~  
 git clone https://github.com/laravel/homestead.git Homestead  `
-- 同步本地和homestead的项目文件夹，这样我们就可以在本地phpstorm写代码，同步到homestead  
-修改Homestead.yaml文件中的,map是本地的Code，指向服务器的/home/vagrant/Code
+- 同步本地和homestead的项目文件夹，这样我们就可以在本地phpstorm写代码，同步到homestead
+修改Homestead.yaml文件中的,map是本地的Code，指向服务器的/home/vagrant/Code  
 `folders:  
     map: ~/Code  
     to: /home/vagrant/Code `   
 - 配置服务器的nginx
-如何你已经启动了vagrant，则要vagrant reload --provision注销重启一下才生效
+如何你已经启动了vagrant，则要vagrant reload --provision注销重启一下才生效  
 `sites:
     map: homestead.app
     to: /home/vagrant/Code/Laravel/public`
-- 配置一下本地hosts  
+- 配置一下本地hosts    
 `192.168.10.10 homestead.app ` 
-- 启动vagrant  
-在homestead目录下执行命令vagrant up  
+- 启动vagrant    
+在homestead目录下执行命令vagrant up    
 - 销毁homestead服务器  
 `vagrant destroy ` 
 - homestead全局安装后，所有的项目都将在该盒子中运行，也可以为指定项目单独创建homestead，这样就会在指定项目下生成homestead文件夹，该文件夹就是服务器整个系统  
 composer require laravel/homestead --dev  
 使用 make 命令生成 Vagrantfile 和 Homestead.yaml 文件，make 命令将会自动配置 Homestead.yaml 中的 sites 和 folders 属性。  
-Mac/Linux：  
+Mac/Linux：    
 `php vendor/bin/homestead make ` 
-Windows:  
+Windows:    
 `vendor\bin\homestead make`  
 
 ## 12.路由正则约束
-- 针对指定路由的正则约束
+- 针对指定路由的正则约束  
 `Route::get('user/{name}', function ($name) {
     //
 })->where('name', '[A-Za-z]+');`
