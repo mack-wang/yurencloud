@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Model\Books;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BooksController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -246,4 +246,58 @@ return [1,2,3,4];
     }`
 - 
 
+## 18.当创建数据表时出现updated_at默认时间的问题解决办法
+- 因为最新版的mysql默认模式中，禁止默认时间为0或null，查看模式
+`show variables like 'sql_mode';`
+- 如果结果中含有NO_ZERO_IN_DATE, NO_ZERO_DATE则执行下面的命令：
+`set session sql_mode='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'`
+- sql设置
+`  created_at timestamp NOT NULL ,
+  updated_at timestamp NOT NULL default CURRENT_TIMESTAMP()`
+  
+  
+## 19.创建中间件
+- 创建中间件
+`php artisan make:middleware CheckAge`
+- 编辑中间件要执行的动作
+`if ($request->input('age') >= 30) {
+            return redirect('age');
+        }
+return $next($request);`
+- 注册中间件
+修改APP/Http/Kernel.php中的$routeMiddleware，添加  
+'checkage' => \App\Http\Middleware\CheckAge::class,  
+- 在路由中使用中间件
+`Route::group(['middleware' => 'checkage'], function () {
+    Route::get('/pass', function () {
+        return view('pass');
+    });
+});`
+- 另一种使用方法
+`Route::get('/pass', function () {
+        return view('pass');
+    })->middleware('auth','checkage');
+    或者->middleware(CheckAge::class);`
+
+## 20.创建路由文件
+默认是有两个路由文件web.php,api.php，我们可以创建其他路由文件，以便在大型项目中，更好的维护路由
+- 在RouteServiceProvider.php中注册新路由文件
+`protected function mapAdminRoutes()
+    {
+        Route::middleware('admin')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/admin.php'));
+    }`  
+    并在map中添加 $this->mapAdminRoutes();  
+`public function map()
+    {
+        $this->mapAdminRoutes();
+    }`
+- 在Http/Kernel.php中添加admin路由组,添加一些默认的中间件，也可以添加自己的中间件
+`'admin' => [
+            \App\Http\Middleware\EncryptCookies::class,
+        ],`
+- 在routes文件夹下创建admin.php文件
+
+
 
