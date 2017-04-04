@@ -2,18 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Books;
+use App\Http\Requests;
+use App\Model\Photo;
 use Illuminate\Http\Request;
 
-class BooksController extends Controller
+class PhotoController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//        $this->middleware('log')->only('index');
-//        $this->middleware('subscribed')->except('store');
-//    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +16,7 @@ class BooksController extends Controller
     public function index()
     {
         //
+        return view('photo');
     }
 
     /**
@@ -37,32 +32,46 @@ class BooksController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        //判断上传过程中是否出错
+        if (!$request->file('photo')->isValid()) {
+            return '上传出错';
+        }
+        //判断上传文件中是否包含photo
+        if ($request->hasFile('photo')) {
+            //保存图片到 storage/app/storage目录下，名字会自动生成32位字符串
+            $path = $request->photo->store('storage');
+            $photo = new Photo;
+            $photo->url = $path;
+            $photo->save();
+            return '上传成功';
+        } else {
+            return '没收到照片';
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Books  $books
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return 'show';
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Books  $books
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Books $books)
+    public function edit($id)
     {
         //
     }
@@ -70,11 +79,11 @@ class BooksController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Books  $books
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Books $books)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -82,10 +91,10 @@ class BooksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Books  $books
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Books $books)
+    public function destroy($id)
     {
         //
     }

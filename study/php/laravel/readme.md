@@ -300,4 +300,175 @@ return $next($request);`
 - 在routes文件夹下创建admin.php文件
 
 
+## 21.对指定路由取消csrf保护
+- 在VerifyCsrfToken中间件中添加
+`protected $except = [
+        'wechat/*',
+    ];`
 
+## 22.写自定义的辅助函数
+- 创建自定义的辅助函数文件
+在App/help.php写一些自己经常用的函数
+- 修改根目录下的composer.json，在files中添加app/help.php
+`"autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/help.php"
+        ]
+    },`
+- 运行composer dumpauto立即生效
+
+## 23.上传文件
+- 创建文件上传的表单，切记要添加enctype="multipart/form-data"，不然仍然是上传普通表单，而非文件表单
+`<form action="{{url('photo')}}" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <input type="file" accept="image/jpg,image/png" name="photo">
+    <input type="submit">
+</form>`
+
+- 在控制器中判断文件上传过程是否出错,可省略
+`$request->file('photo')->isValid()`
+
+- 在控制器中判断上传文件中是否包含photo
+`$request->hasFile('photo')`
+
+- 将上传文件储存到指定位置，并返回相对路径
+`$path = $request->photo->store('storage');`
+
+- 将路径储存到数据库，略
+
+- 其他
+文件上传路径设置在 config/filesystems.php
+
+## 24.路由参数和依赖参数的顺序
+如果我们使用了Request依赖，并引入参数Request $request,则路由原来的参数放到最后
+public function update(Request $request, $id)
+
+
+## 25.表单验证
+- 需要在控制器中验证，controller默认继承了验证类
+- $this可以直接调用validate方法,参数一：验证的请求，参数二：验证的提交的参数名，和验证规则
+`$this->validate($request, [
+            'user' => 'required|max:6',
+]);`
+- 默认是验证所有规则，若希望验证出错立即停止验证剩下的规则的话，可以添加bail规则
+`'title' => 'bail|required|unique:posts|max:255',`
+- 验证错误信息保存在全局的$errors数组中，不能直接输出，需要遍历输出
+`@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif`
+
+- 可选字段注意事项，因为laravel默认将所有的请求空字符串都变为null，若希望null也接受的话，需要添加nullable规则
+`'publish_at' => 'nullable|date',`
+
+
+## 26.安装laravel语言包
+- 网址https://github.com/overtrue/laravel-lang/blob/master/README_CN.md
+- 1.composer require "overtrue/laravel-lang:~3.0"
+- 2.完成上面的操作后，将项目文件 config/app.php 中的下一行
+`Illuminate\Translation\TranslationServiceProvider::class,`  
+替换为  
+`Overtrue\LaravelLang\TranslationServiceProvider::class,`
+- 3.修改项目语言 config/app.php：
+`'locale' => 'zh-CN',`
+- 4.在 .env 文件中修改语言：
+`APP_LOCALE=zh-CN`
+- 5.要想覆盖翻译文件，只要在resources/lang/zh-CN目录下，创建相同的文件就可以覆盖默认语言
+
+
+
+## 27.创建可重复使用的表单验证
+- 创建request类  
+会在app/http/下生成request文件夹，并在該文件夹下生成StoreArticle.php文件  
+`php artisan make:request StoreArticle`
+- 定义规则
+authorize规则，是确认用户是否有权限提交表单，若返回false则不允许提交，适合从数据库中获取用户信息，然后根据情况返回布尔值
+  `public function authorize() `
+rules定义表单验证规则
+   `public function rules()`
+messages定义表单验证的提示信息，针对上一步的rules  
+   `public function messages()`
+   
+   
+## 28.【我认为优先使用这个】针对用户的验证提示
+- 修改resources/lang/zh-CN
+`'custom' => [
+        'user' => [
+            'max' => '我是语言文件中的custom设置的错误提示，亲爱的用户，你字数超了 :max 个',
+        ],
+    ],`
+- 可以针对表单提交的参数名，进行提示，但这就要求你的参数名要有区别，比如id可能在很多表单中都有重复
+
+## 29.Blade中的组件和插槽slot的使用
+- 新建任意blade文件
+其中{{ $slot }}这个变量名不能变，代表要插入的地方，{{ $title2 }}是slot中的变量，可以换成任意变量名
+`<div class="red">
+<div class="blue">{{ $title2 }}</div>
+{{ $slot }}
+</div>`
+
+- 在其他blade中引用
+`@component('layout.component')
+@slot('title')
+我是插曹的标题
+@endslot
+我是 slot插曹的正文
+@endcomponent`
+
+- 给组件传递变量
+所有数据都会在组件模板中以变量方式生效  
+`@component('layout.component', ['foo' => 'bar'])
+    ...
+@endcomponent`
+
+
+## 30.在Blade中使用循环时，使用$loop变量，获取循环中可以使用的其他变量
+`$loop->index	当前循环迭代索引 (从0开始)
+$loop->iteration	当前循环迭代 (从1开始)
+$loop->remaining	当前循环剩余的迭代
+$loop->count	迭代数组元素的总数量
+$loop->first	是否是当前循环的第一个迭代
+$loop->last	是否是当前循环的最后一个迭代
+$loop->depth	当前循环的嵌套层级
+$loop->parent	嵌套循环中的父级循环变量`
+
+## 31.可以写blade注释，不会输出到html中
+`{{-- This comment will not be present in the rendered HTML --}}`
+
+## 32.在Blade中写大段php代码
+`@php
+    //
+@endphp`
+
+## 33.渲染集合视图
+- 可以创建原本只有foreach才能创建的视图,而且更方便，更简单
+`<ul class="red">
+{{--渲染集合视图--}}
+@each('layout.jobs', ['老师','医生','javascript','php'], 'job')
+</ul>`  
+
+- 可以指定若没有数组参数传入时的视图
+`@each('view.name', $jobs, 'job', 'view.empty')`
+
+## 35.翻译语言，比如英译中，或者中译英
+- 原本我们是在/resources/lang/zh-CN/对应的php文件中使用键值对的方式来翻译的，但为每个键取名，太麻烦了
+- 在/resources/lang/目录下直接创建zh-CN.json文件
+`{
+  "i love you": "我爱你"
+}`
+- 在任意地方使用翻译辅助函数__()就可以直接翻译
+例如我在welcome.blade.php中使用了翻译  
+`@php
+echo __('i love you');
+@endphp`
