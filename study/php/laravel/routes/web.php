@@ -484,3 +484,6 @@ Route::get('/auth4', function() {
     return '你有权访问auth4';
 })->middleware('auth');
 
+Route::get('/myauth/callback', function() {
+    return view('callback');
+});

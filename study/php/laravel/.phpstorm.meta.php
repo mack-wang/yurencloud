@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2017-04-04.
+    * Generated on 2017-04-06.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -16,6 +16,8 @@ namespace PHPSTORM_META {
             'router' instanceof \Illuminate\Routing\Router,
             'url' instanceof \Illuminate\Routing\UrlGenerator,
             'redirect' instanceof \Illuminate\Routing\Redirector,
+            'Psr\Http\Message\ServerRequestInterface' instanceof \Zend\Diactoros\ServerRequest,
+            'Psr\Http\Message\ResponseInterface' instanceof \Zend\Diactoros\Response,
             'Illuminate\Contracts\Routing\ResponseFactory' instanceof \Illuminate\Routing\ResponseFactory,
             'Illuminate\Contracts\Http\Kernel' instanceof \App\Http\Kernel,
             'Illuminate\Contracts\Console\Kernel' instanceof \App\Console\Kernel,
@@ -121,7 +123,7 @@ namespace PHPSTORM_META {
             'redis' instanceof \Illuminate\Redis\RedisManager,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBrokerManager,
             'auth.password.broker' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translation.loader' instanceof \Overtrue\LaravelLang\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'command.tinker' instanceof \Laravel\Tinker\Console\TinkerCommand,
@@ -136,6 +138,8 @@ namespace PHPSTORM_META {
             'router' instanceof \Illuminate\Routing\Router,
             'url' instanceof \Illuminate\Routing\UrlGenerator,
             'redirect' instanceof \Illuminate\Routing\Redirector,
+            'Psr\Http\Message\ServerRequestInterface' instanceof \Zend\Diactoros\ServerRequest,
+            'Psr\Http\Message\ResponseInterface' instanceof \Zend\Diactoros\Response,
             'Illuminate\Contracts\Routing\ResponseFactory' instanceof \Illuminate\Routing\ResponseFactory,
             'Illuminate\Contracts\Http\Kernel' instanceof \App\Http\Kernel,
             'Illuminate\Contracts\Console\Kernel' instanceof \App\Console\Kernel,
@@ -241,7 +245,7 @@ namespace PHPSTORM_META {
             'redis' instanceof \Illuminate\Redis\RedisManager,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBrokerManager,
             'auth.password.broker' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translation.loader' instanceof \Overtrue\LaravelLang\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'command.tinker' instanceof \Laravel\Tinker\Console\TinkerCommand,
@@ -256,6 +260,8 @@ namespace PHPSTORM_META {
             'router' instanceof \Illuminate\Routing\Router,
             'url' instanceof \Illuminate\Routing\UrlGenerator,
             'redirect' instanceof \Illuminate\Routing\Redirector,
+            'Psr\Http\Message\ServerRequestInterface' instanceof \Zend\Diactoros\ServerRequest,
+            'Psr\Http\Message\ResponseInterface' instanceof \Zend\Diactoros\Response,
             'Illuminate\Contracts\Routing\ResponseFactory' instanceof \Illuminate\Routing\ResponseFactory,
             'Illuminate\Contracts\Http\Kernel' instanceof \App\Http\Kernel,
             'Illuminate\Contracts\Console\Kernel' instanceof \App\Console\Kernel,
@@ -361,7 +367,7 @@ namespace PHPSTORM_META {
             'redis' instanceof \Illuminate\Redis\RedisManager,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBrokerManager,
             'auth.password.broker' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translation.loader' instanceof \Overtrue\LaravelLang\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'command.tinker' instanceof \Laravel\Tinker\Console\TinkerCommand,
@@ -376,6 +382,8 @@ namespace PHPSTORM_META {
             'router' instanceof \Illuminate\Routing\Router,
             'url' instanceof \Illuminate\Routing\UrlGenerator,
             'redirect' instanceof \Illuminate\Routing\Redirector,
+            'Psr\Http\Message\ServerRequestInterface' instanceof \Zend\Diactoros\ServerRequest,
+            'Psr\Http\Message\ResponseInterface' instanceof \Zend\Diactoros\Response,
             'Illuminate\Contracts\Routing\ResponseFactory' instanceof \Illuminate\Routing\ResponseFactory,
             'Illuminate\Contracts\Http\Kernel' instanceof \App\Http\Kernel,
             'Illuminate\Contracts\Console\Kernel' instanceof \App\Console\Kernel,
@@ -481,7 +489,7 @@ namespace PHPSTORM_META {
             'redis' instanceof \Illuminate\Redis\RedisManager,
             'auth.password' instanceof \Illuminate\Auth\Passwords\PasswordBrokerManager,
             'auth.password.broker' instanceof \Illuminate\Auth\Passwords\PasswordBroker,
-            'translation.loader' instanceof \Illuminate\Translation\FileLoader,
+            'translation.loader' instanceof \Overtrue\LaravelLang\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
             'validation.presence' instanceof \Illuminate\Validation\DatabasePresenceVerifier,
             'command.tinker' instanceof \Laravel\Tinker\Console\TinkerCommand,
