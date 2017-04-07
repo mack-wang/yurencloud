@@ -487,3 +487,33 @@ Route::get('/auth4', function() {
 Route::get('/myauth/callback', function() {
     return view('callback');
 });
+
+
+//加秘和解秘
+Route::get('/encrypt', function() {
+    $en = encrypt('helloworld');//生成216位的加密码，每次加密都是不同的
+    return decrypt($en);
+});
+
+//哈希加密
+Route::get('/bcrypt', function() {
+    $en = Hash::make('helloworld');//生成60位的哈希加密码，每次加密都是不同的，并且会根据硬件的变化，而提升加密难度
+    echo Hash::check('helloworld',$en)? 'true' : 'false';//检查哈希码和原码是否相同
+});
+
+Route::get('/bcrypt/rehash', function() {
+    $en = Hash::make('helloworld');
+    if (Hash::needsRehash($en)) {//检查哈希计算所用的哈希因子是否变化，如果变化了，则重新哈希
+        $hashed = Hash::make('helloworld');
+    }
+});
+
+//文件储存
+Route::get('/storage', function() {
+    Storage::disk('local')->put('file.txt', 'hello wlc');//会在storage/app/下创建file.txt文件，内容为hello wlc
+});
+
+//异常输出
+Route::get('/401', function() {
+    abort(401, 'Unauthorized.');
+});
