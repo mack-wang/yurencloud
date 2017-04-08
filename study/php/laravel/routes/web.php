@@ -517,3 +517,12 @@ Route::get('/storage', function() {
 Route::get('/401', function() {
     abort(401, 'Unauthorized.');
 });
+
+//单元测试
+Route::get('/unit',function (Request $request){
+   if($request->input('name')=='wlc' && $request->input('age') == 23){
+      return response()->json(['state'=>'success']);
+   }
+
+    return response()->json(['state'=>'error']);
+});
