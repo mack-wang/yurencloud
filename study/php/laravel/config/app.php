@@ -179,6 +179,7 @@ return [
         App\Providers\ResponeMacroServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
 
     ],
 

@@ -15,6 +15,7 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+        $this->get('/unit', ['name' => 'wlc','age'=>23])->assertSee('error');
     }
+
 }

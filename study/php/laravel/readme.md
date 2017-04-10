@@ -481,3 +481,32 @@ $loop->parent	嵌套循环中的父级循环变量`
 `@php
 echo __('i love you');
 @endphp`
+
+
+## 36.php的psySH相当于javascript中的node
+使用php artisan tinker进入PsySH
+可以执行php命令，并直接返回结果
+可以查看php文档，有中文文档
+没有.local/share/psysh的话，就创建该文件夹
+（windows系统存放在C:Users{用户名}AppDataRoamingPsySH）
+$ cd ~/.local/share 
+$ mkdir psysh
+$ cd psydh
+$ wget http://psysh.org/manual/zh/php_manual.sqlite
+
+## 37.添加自定义的artisan命令
+- 简单的方式
+在路由的console.php中定义artisan命令，直接就可以使用
+
+- 复杂的方式
+php artisan make:command SendEmails
+会在app/console/commands目录下创建SendEmails文件
+$signature填写命令形式
+$description填写命令的介绍
+handle填写命令具体要执行的动作
+并且在app/console/kernel.php中注册该命令  
+` protected $commands = [
+        //
+        Commands\SendEmails::class
+    ];`
+    
