@@ -110,8 +110,14 @@ homestead就是一台搭建在vmware的ubuntu服务器，并且配置好了所�
 通过vagrant可以轻松的创建homestead或删除homestead，如何创建或者删除文件夹一样轻松。因为我们可以完全不用在本地安装php,mysql等等软件。
 - 下载安装vmware或virtual box
 - 下载安装vagrant
-- 执行vagrant命令，添加laravel的homestead服务器  
-`vagrant box add laravel/homestead`
+- 克隆homestead配置文件，可以放到全局，也可以放到当前项目下,可以放任何地方
+`cd ~  
+git clone https://github.com/laravel/homestead.git Homestead  `
+- 执行vagrant命令，添加laravel的homestead服务器 
+要在Homested文件夹下进行vagrant命令的操作，切记！
+
+`cd ~/Homestead
+vagrant box add laravel/homestead`
 (下载太慢的话可以用迅雷)
 `https://vagrantcloud.com/laravel/homestead/version/8/provider/virtualbox.box
 vagrant box add laravel/homestead 你刚刚下载的路径/virtualbox.box`
@@ -119,9 +125,7 @@ vagrant box add laravel/homestead 你刚刚下载的路径/virtualbox.box`
 `cd ~/.vagrant.d/boxes/laravel的box/2.0.0/virtualbox/
 vi box.ovf`
 在<Adapter .. >标签内，添加cable="true"属性  
-- 克隆homestead配置文件，可以放到全局，也可以放到当前项目下,可以放任何地方
-`cd ~  
-git clone https://github.com/laravel/homestead.git Homestead  `
+
 - 同步本地和homestead的项目文件夹，这样我们就可以在本地phpstorm写代码，同步到homestead
 修改Homestead.yaml文件中的,map是本地的Code，指向服务器的/home/vagrant/Code  
 `folders:  
@@ -145,6 +149,11 @@ Mac/Linux：
 `php vendor/bin/homestead make ` 
 Windows:    
 `vendor\bin\homestead make`  
+- 针对vagrant最新版在windows下的vagrant up出错解决办法，修改/Homestead/script/homestead.rb
+40行改成这个 config.vm.box_version = settings["version"] ||= ">= 0"  
+90行改成这个 config.vm.network "forwarded_port", guest: guest, host: host, host_ip: "127.0.0.1", auto_correct: true  
+若想改其他参数，也都改这个文件  
+- windows下添加homestead快捷操作命令的话，记得把win和linux的两种设置都设置一下，因为我经常使用bash而不是cmd
 
 ## 12.路由正则约束
 - 针对指定路由的正则约束  
