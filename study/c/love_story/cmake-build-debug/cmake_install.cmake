@@ -1,4 +1,4 @@
-# Install script for directory: /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/C-3
+# Install script for directory: /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/C-3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

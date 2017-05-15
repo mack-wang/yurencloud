@@ -54,45 +54,45 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/C-3
+CMAKE_SOURCE_DIR = /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/C-3/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/C_3.dir
+# Target rules for target CMakeFiles/love_story.dir
 
 # All Build rule for target.
-CMakeFiles/C_3.dir/all:
-	$(MAKE) -f CMakeFiles/C_3.dir/build.make CMakeFiles/C_3.dir/depend
-	$(MAKE) -f CMakeFiles/C_3.dir/build.make CMakeFiles/C_3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/C-3/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target C_3"
-.PHONY : CMakeFiles/C_3.dir/all
+CMakeFiles/love_story.dir/all:
+	$(MAKE) -f CMakeFiles/love_story.dir/build.make CMakeFiles/love_story.dir/depend
+	$(MAKE) -f CMakeFiles/love_story.dir/build.make CMakeFiles/love_story.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target love_story"
+.PHONY : CMakeFiles/love_story.dir/all
 
 # Include target in all.
-all: CMakeFiles/C_3.dir/all
+all: CMakeFiles/love_story.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/C_3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/C-3/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/C_3.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/C-3/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/C_3.dir/rule
+CMakeFiles/love_story.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/love_story.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/love_story.dir/rule
 
 # Convenience name for target.
-C_3: CMakeFiles/C_3.dir/rule
+love_story: CMakeFiles/love_story.dir/rule
 
-.PHONY : C_3
-
-# clean rule for target.
-CMakeFiles/C_3.dir/clean:
-	$(MAKE) -f CMakeFiles/C_3.dir/build.make CMakeFiles/C_3.dir/clean
-.PHONY : CMakeFiles/C_3.dir/clean
+.PHONY : love_story
 
 # clean rule for target.
-clean: CMakeFiles/C_3.dir/clean
+CMakeFiles/love_story.dir/clean:
+	$(MAKE) -f CMakeFiles/love_story.dir/build.make CMakeFiles/love_story.dir/clean
+.PHONY : CMakeFiles/love_story.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/love_story.dir/clean
 
 .PHONY : clean
 

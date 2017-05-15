@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/C-3
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story
 -- The C compiler identification is AppleClang 8.1.0.8020042
 -- The CXX compiler identification is AppleClang 8.1.0.8020042
 -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/C-3/cmake-build-debug
+-- Build files have been written to: /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug
