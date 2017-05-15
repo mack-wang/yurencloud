@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_
 CMakeFiles/love_story.dir/all:
 	$(MAKE) -f CMakeFiles/love_story.dir/build.make CMakeFiles/love_story.dir/depend
 	$(MAKE) -f CMakeFiles/love_story.dir/build.make CMakeFiles/love_story.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target love_story"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target love_story"
 .PHONY : CMakeFiles/love_story.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/love_story.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/love_story.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/love_story.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/love_story.dir/rule

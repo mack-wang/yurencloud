@@ -123,6 +123,33 @@ love_story/fast:
 	$(MAKE) -f CMakeFiles/love_story.dir/build.make CMakeFiles/love_story.dir/build
 .PHONY : love_story/fast
 
+hello.o: hello.c.o
+
+.PHONY : hello.o
+
+# target to build an object file
+hello.c.o:
+	$(MAKE) -f CMakeFiles/love_story.dir/build.make CMakeFiles/love_story.dir/hello.c.o
+.PHONY : hello.c.o
+
+hello.i: hello.c.i
+
+.PHONY : hello.i
+
+# target to preprocess a source file
+hello.c.i:
+	$(MAKE) -f CMakeFiles/love_story.dir/build.make CMakeFiles/love_story.dir/hello.c.i
+.PHONY : hello.c.i
+
+hello.s: hello.c.s
+
+.PHONY : hello.s
+
+# target to generate assembly for a file
+hello.c.s:
+	$(MAKE) -f CMakeFiles/love_story.dir/build.make CMakeFiles/love_story.dir/hello.c.s
+.PHONY : hello.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... love_story"
+	@echo "... hello.o"
+	@echo "... hello.i"
+	@echo "... hello.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/hello.c
+stdio.h
+-
+hello.h
+/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/hello.h
+
+/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/hello.h
+
+/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/main.c
+hello.h
+/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/hello.h
+stdio.h
+-
+

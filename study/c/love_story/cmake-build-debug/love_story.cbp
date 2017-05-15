@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/hello.c">
+			<Option target="love_story"/>
+		</Unit>
+		<Unit filename="/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/hello.h">
+			<Option target="love_story"/>
+		</Unit>
 		<Unit filename="/Users/wanglecheng/Web/www/mack-wang/yurencloud/study/c/love_story/main.c">
 			<Option target="love_story"/>
 		</Unit>
