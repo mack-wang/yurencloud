@@ -39,6 +39,9 @@ MACK;
 
 $baz = <<<FOOBAR
 Property example
+Property example
+Property example
+Property example
 FOOBAR;
 
 //要起始名加双引号声明标识符，测试时提示错误
@@ -72,4 +75,9 @@ var_dump(hex2bin("ff"));
 var_dump(bin2hex("1000101"));
 
 printf("%x",bin2hex("10"));
+
+//把默认的nl（在命令行中才有效果）换行换成html的换行
+echo nl2br($baz);
+
+//TODO::到str_word_count()
 ?>
