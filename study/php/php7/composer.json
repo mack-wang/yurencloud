@@ -1,0 +1,12 @@
+{
+    "name": "vendor/php_study",
+    "require": {
+        "psy/psysh": "^0.8.5"
+    },
+    "authors": [
+        {
+            "name": "mack-wang",
+            "email": "641212003@qq.com"
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/love_story.dir/main.c.o CMakeFiles/love_story.dir/hello.c.o  -o love_story 
