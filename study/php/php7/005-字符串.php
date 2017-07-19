@@ -79,5 +79,4 @@ printf("%x",bin2hex("10"));
 //把默认的nl（在命令行中才有效果）换行换成html的换行
 echo nl2br($baz);
 
-//TODO::到str_word_count()
 ?>
