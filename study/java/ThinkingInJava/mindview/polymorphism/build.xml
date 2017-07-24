@@ -158,7 +158,7 @@
 
   <target name="Music">
     <java
-     classname="polymorphism.music.Music"
+     classname="polymorphism.polymorphism.music.Music"
      classpath="${java.class.path};${basedir};${basedir}/.."
      dir="../polymorphism/music/"
      failonerror="true"
@@ -167,7 +167,7 @@
 
   <target name="Music2">
     <java
-     classname="polymorphism.music.Music2"
+     classname="polymorphism.polymorphism.music.Music2"
      classpath="${java.class.path};${basedir};${basedir}/.."
      dir="../polymorphism/music/"
      failonerror="true"
