@@ -31,5 +31,18 @@ public class MultiDimensional {
         System.out.println(a == a);//true
         System.out.println(a == ca);//true
 
+        int[] z = {7,89,31,1};
+        String[] x = {"hello","apple","bob","Can"};
+        Arrays.sort(z);//排序是直接改变数组本身，return void
+        Arrays.sort(x);
+        System.out.println(Arrays.toString(z));
+        System.out.println(Arrays.toString(x));//大写字母先排序，然后才小写排序
+        Arrays.sort(x,String.CASE_INSENSITIVE_ORDER);//忽略大小写，按字母的先后顺序排序
+        System.out.println(Arrays.toString(x));
+
+        /*
+        * 因为数组是固定长度对象，所以不可以进行插入操作。如果真的想进行插入操作，应该用可变数组，即容器。
+        * */
+
     }
 }
